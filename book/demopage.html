@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<title>Pro HTML5 Programming: Chapter 2 - Canvas</title>
+
+<meta name="viewport" content="width = 1300" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="description" content="" />
+
+<link rel="icon" type="image/png" href="pics/favicon.png" />
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/turn.js"></script>
+
+</head>
+<body>
+<div id="viewport">
+<header>
+	<nav>
+		<a href="#home" class="on">Home</a>
+		<a href="#usage">Two</a>
+		<a href="#get">Three</a>
+		<a href="#reference">Four</a>
+		<a href="#credits">Five</a>
+	</nav>
+
+</header>
+
+
+<div id="controllers" style="display:none;">
+	<div class="pages shadows" id="magazine">
+		
+		<!-- Home -->
+		
+		<div turn-effect="flipboard">
+			<p>The awesome paper-like effect made for HTML5</p>
+		</div>
+		
+		<!-- Usage -->
+
+		<div> 
+
+			<div class="page-content">
+				<h1>turn.js</h1>
+				<div style="clear:both"></div>
+				<p class="definition">is a plugin for jQuery that adds a beautiful transition similar to real pages in a book or magazine for HTML5.</p>
+			<ul>
+				<li> + Uses Hardware acceleration</li>
+				<li> + Works on tablets and smartphones</li>
+				<li> + Easy to manipulate</li>
+				<li> + Lightweight, only 6K</li>
+			</ul>
+
+			</div>
+
+		</div>
+
+		<!-- Quick Reference -->
+
+		<div> 
+			<div class="page-content">
+
+			<h2>Getting Started</h2>
+
+			<p>Here's an example:</p>
+
+			
+<pre>
+<span class="sel-id">#magazine</span>{
+	width:<span class="num">800</span>px;
+	height:<span class="num">400</span>px;
+}
+<span class="sel-id">#magazine</span> <span class="sel-class">.turn-page</span>{
+	width:<span class="num">400</span>px;
+	height:<span class="num">400</span>px;
+	background-color:<span class="prop">#ccc</span>;
+}
+</pre>
+			
+
+<pre>
+&lt;div id=<span class="string">'magazine'</span>&gt;
+	&lt;div&gt; <span class="text">Page 1</span> &lt;/div&gt;
+	&lt;div&gt; <span class="text">Page 2</span> &lt;/div&gt;
+	&lt;div&gt; <span class="text">Page 3</span> &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<pre>
+$(<span class="string">'#magazine'</span>).turn();
+</pre>
+
+			<p>That's it!</p>
+			</div>
+
+		</div>
+
+		<!-- Get turn.js 1 -->
+
+		<div> 
+			<h1>Get turn.js</h1>
+		</div>
+		
+		<!-- Get turn.js 2 -->
+
+		<div> 
+			<div class="page-content">
+				<div class="download">
+				<p><a href="turn.min.js" target="_blank" class="btn">Download light version</a></p>
+				<p><a href="https://github.com/blasten/turn.js" target="_blank" class="btn" style="margin:20px 0px;">Github repository</a></p>
+				</div>
+<pre>
+$ git clone git://github.com/blasten/turn.js.git
+</pre>
+			<h3>License</h3>
+			<p> turn.js is MIT Licensed </p>
+			<h3>Support development</h3>
+			<p>Is turn.js useful for you? <br />
+				Making a donation will help to improve turn.js.</p>
+
+			<form action="https://www.paypal.com/cgi-bin/webscr" id="donate-form" target="_blank" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----">
+	<p><a href="javascript:void(0)" onclick="$('#donate-form').submit();">Donate now</a></p>
+</form>
+
+
+
+			</div>
+		 </div>
+		
+
+		<!-- Reference 1 -->
+		<div>
+			<h1>Quick Reference</h1>
+		</div>
+
+		<!-- Reference 2 -->
+		<div>
+			<div>
+			<div class="page-content">
+
+
+				<h3>Constructor</h3>
+
+
+<pre>
+$('selector').turn([options]);
+</pre>
+				<p> Parameters:
+					<ul>
+						<li><b>options</b></li>
+						<ul>
+							<li><b>width</b> <i>type: number, default: $('selector').width()</i></li>
+							<li><b>height</b> <i>type: number, default: $('selector').height()</i></li>
+							<li><b>page</b> <i>type: number, default: 1</i></li>
+							<li><b>shadows</b> <i>type: boolean, default: true</i></li>
+							<li><b>duration</b> <i>type: number, default: 600</i></li>
+							<li><b>acceleration</b> <i>type: boolean, default: true</i></li>
+						</ul>
+					</ul>	
+				</p>
+				
+				<h4>Calling Methods or Properties</h4>
+<pre>
+$('selector').turn(property | method [, parameters]);
+</pre>
+
+
+				<p><b><a href="https://github.com/blasten/turn.js/wiki/Reference" target="_blank">Full Reference on Github &rarr;</a></b></p>
+				</div>
+			</div>
+		</div>
+
+		<!--   -->
+		<div> 
+			<div class="page-content">
+				<b>Hello Everyone,</b> <br />
+
+				<p>I'm Emmanuel Garcia.</p>
+				
+				<p>
+				I'm native from Venezuela and currently living in Cincinnati, but I'm planning to move to Silicon Valley or New York.
+				I've been a front end developer since years ago when I started working in my Bachelor's in CS.
+				</p>
+				<p>I also have eight years of experience developing scalable software in PHP.</p>
+			
+				<p>These are some of the things I love to work with: jQuery, node.js, express.js, socket.io, Coffee Script.</p>
+
+				<h2> turn.js </h2>
+				<p> I decided to develop turn.js, because it was neccesary as a part of an app for magazines. 
+					I spent a while working in the math for this effect.
+					 Being inspired by the effect of iBooks and Maps for iOS, I created two objects: one for manipulating the overall publication and another for each individual page. The last one is completely independent, in that it offers an API for creating its own implementations.</p>
+
+				<h2> Contact </h2>
+				
+				<p>
+					<a href="#credits" onclick="window.location.href=decodeURIComponent('mailto%3Ablasten%40gmail.com');">blasten&#64;gmail&#46;com</a>
+					or
+					<a href="http://www.twitter.com/blasten" target="_blank">@blasten</a>
+				</p>
+
+				<p>Any bug, comment or suggestion about turn.js, just click the 
+				<a href="https://github.com/blasten/turn.js/issues" target="_blank">feedback button</a>.</p>
+		
+			</div>
+		</div>
+	</div>
+
+	<div id="next"> <i></i> </div>
+	<div id="previous"> <i></i> </div>
+	<div id="shadow-page"></div>
+</div>
+
+
+
+<footer>
+	<div class="share">
+		<a class="fb" href="http://www.facebook.com/share.php?u=http://www.turnjs.com" target="_blank"></a>
+		<a class="tw" href="https://twitter.com/share?url=http://www.turnjs.com&text=turn.js the page flip effect for HTML5" target="_blank"></a>
+		<a class="gp" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://www.turnjs.com" target="_blank"></a>
+	</div>
+	&copy; by <a href="http://www.twitter.com/blasten" target="_blank">@blasten</a>
+</footer>
+
+
+</div>
+
+<script src="js/turn-implementation-original.js"></script>
+
+</body>
+</html>

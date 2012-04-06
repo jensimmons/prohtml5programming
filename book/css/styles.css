@@ -1,0 +1,555 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\000037}}
+body {
+  margin: 0px;
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000312}}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000315}}
+h3 {
+  font-size: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000318}}
+p {
+  line-height: 1.8em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000321}}
+h1 {
+  font-size: 50px;
+  margin: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000325}}
+h2 {
+  font-size: 40px;
+  margin: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000329}}
+p {
+  margin: 1em 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000332}}
+ul {
+  margin: 50px 10px;
+  padding: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000336}}
+ul li {
+  font-size: 20px;
+  line-height: 60px;
+  list-style: none;
+  margin: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000342}}
+pre {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000348}}
+::selection {
+  background: #666;
+  color: white;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000354}}
+::-moz-selection {
+  background: #666;
+  color: white;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000360}}
+#viewport {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000364}}
+.pages, #controllers {
+  width: 1200px;
+  height: 700px;
+  position: relative;
+  margin: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000371}}
+.x1024 .pages, .x1024 #controllers {
+  width: 1024px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000375}}
+.x1024 .turn-page, .x1024 #shadow-page {
+  width: 512px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000379}}
+.clear {
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000383}}
+.turn-page {
+  width: 600px;
+  height: 700px;
+  overflow: hidden;
+  background: white;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: #f0f0f0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000394}}
+.turn-page-wrapper {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000398}}
+#shadow-page {
+  width: 600px;
+  height: 700px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  -moz-box-shadow: 5px 5px 10px #888;
+  -webkit-box-shadow: 5px 5px 10px #888;
+  box-shadow: 5px 2px 10px #888;
+  z-index: -1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003110}}
+#next, #previous {
+  opacity: 0;
+  position: absolute;
+  height: 700px;
+  width: 24px;
+  background: #999;
+  -webkit-user-select: none;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  z-index: 1000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003125}}
+#next i, #previous i {
+  background: url(../images/sprite.png) no-repeat;
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-top: 334px;
+  margin-left: -4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003134}}
+#next {
+  -webkit-border-radius: 0px 10px 10px 0px;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -ms-border-radius: 0px 10px 10px 0px;
+  -o-border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px;
+  right: -24px;
+  top: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003144}}
+#next i {
+  background-position: -32px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003148}}
+#previous {
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  -ms-border-radius: 10px 0px 0px 10px;
+  -o-border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
+  left: -24px;
+  top: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003158}}
+#previous i {
+  background-position: 0px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003162}}
+#next.visible:hover, #previous.visible:hover {
+  opacity: 1 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003166}}
+nav {
+  text-align: center;
+  white-space: nowrap;
+  margin: 30px 0px;
+  -webkit-user-select: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003173}}
+nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "lucida grande",tahoma,verdana;
+  margin: 10px;
+  padding: 5px 10px;
+  color: #666;
+  letter-spacing: -1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003184}}
+nav a.on {
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003190}}
+footer {
+  text-align: center;
+  font-size: 11px;
+  font-family: Candara, arial;
+  margin: 30px;
+  color: #666;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003198}}
+footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003203}}
+footer a:hover {
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003207}}
+.page-content {
+  margin: 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003211}}
+.page-content a {
+  text-decoration: none;
+  color: #2F548E;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003216}}
+.page-content a:hover {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003220}}
+.turn-page.p1 {
+  background-color: #000;
+  background-image: url(../images/cover.jpg);
+  background-size: 100% 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003225}}
+h1.book-title {
+  color: #fff;
+  text-align: center;
+  padding: 48% 5%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003231}}
+.turn-page.p1 p {
+  margin-top: 380px;
+  text-align: center;
+  font: 18px "Candara", arial;
+  color: #666;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003240}}
+.turn-page.p2 .page-content {
+  margin: 100px 50px;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003250}}
+.turn-page.p3 .page-content {
+  margin: 80px 20px;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003257}}
+.turn-page {
+  background-image: -webkit-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #e4e4e4), color-stop(1, #f7f7f7));
+  background-image: -moz-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
+  background-image: -o-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
+  background-image: -ms-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003265}}
+.turn-page.p4 h1, .turn-page.p6 h1 {
+  font-weight: normal;
+  font-size: 60px;
+  margin: 0px;
+  line-height: 700px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003275}}
+.turn-page.p5 .page-content {
+  font: 15px "lucida grande",tahoma,verdana;
+  margin: 200px 50px;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003282}}
+.turn-page.p7 {
+  font: 16px "Candara", arial;
+  color: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003286}}
+.turn-page.p7 i {
+  padding-left: 10px;
+  color: #888;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003291}}
+.turn-page.p7 .page-content {
+  margin: 130px 50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003295}}
+.turn-page.p7 h4 {
+  font: bold 13px Monaco, Consolas, "Lucida Console", monospace;
+}
+
+/* -------------------------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003301}}
+.turn-page.p8 {
+  background-size: 100% 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003305}}
+.turn-page.p8 .page-content {
+  margin: 40px 20px;
+  font: 16px "Candara", arial;
+  color: black;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003312}}
+.download p {
+  margin: 20px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003316}}
+pre {
+  background-color: #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 10px;
+  margin: 0;
+  white-space: pre;
+  color: black;
+  margin: 20px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003333}}
+pre .sel-id {
+  color: #B6D1FF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003337}}
+pre .sel-class {
+  color: #AA9BD0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003341}}
+pre .num, pre .prop {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003345}}
+pre .string {
+  color: #B6D1FF;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003349}}
+pre .text {
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003353}}
+.share {
+  height: 32px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003357}}
+.share a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 60px 40px;
+  margin: -2px 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003365}}
+.share a.gp {
+  background-position: 20px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003368}}
+.share a.gp:hover {
+  background-position: 20px 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003372}}
+.share a.fb {
+  background-position: 0px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003376}}
+.share a.fb:hover {
+  background-position: 0px 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003380}}
+.share a.tw {
+  background-position: 40px 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003384}}
+.share a.tw:hover {
+  background-position: 40px 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003388}}
+.page-content .btn {
+  padding: 5px 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #999;
+  background-color: #ddd;
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+  background-image: -webkit-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
+  background-image: -moz-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
+  background-image: -o-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
+  background-image: -ms-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(1, #aaaaaa));
+  font: 16px "Candara", arial;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003408}}
+.page-content .btn:hover {
+  -webkit-box-shadow: inset 0 0 4px #666;
+  -moz-box-shadow: inset 0 0 4px #666;
+  -o-box-shadow: inset 0 0 4px #666;
+  -ms-box-shadow: inset 0 0 4px #666;
+  border: 1px solid #555;
+  color: #111;
+  text-decoration: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003418}}
+.page-content .btn:active {
+  color: #fff;
+  text-shadow: 1px 1px 1px #32373E;
+  background-image: -webkit-linear-gradient(top, #81888e 0%, #43474e 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #81888e), color-stop(1, #43474e));
+  background-image: -moz-linear-gradient(top, #81888e 0%, #43474e 100%);
+  background-image: -o-linear-gradient(top, #81888e 0%, #43474e 100%);
+  background-image: -ms-linear-gradient(top, #81888e 0%, #43474e 100%);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003428}}
+.feedback {
+  position: fixed;
+  z-index: 1000;
+  left: 0px;
+  top: 50%;
+  height: 110px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003436}}
+.feedback > a {
+  position: relative;
+  top: -75px;
+  background: #aaa;
+  width: 110px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -ms-border-radius: 0px 0px 10px 10px;
+  -o-border-radius: 0px 0px 10px 10px;
+  display: block;
+  font: 20px arial;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  -webkit-transform: rotate(-90deg) translate(0px, -43px);
+  -moz-transform: rotate(-90deg) translate(0px, -43px);
+  -o-transform: rotate(-90deg) translate(0px, -43px);
+  transform: rotate(-90deg) translate(0px, -43px);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003457}}
+.feedback > a:hover {
+  background: #333;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003461}}
+.join-area {
+  text-align: center;
+  margin: 30px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003466}}
+.join {
+  border: 1px solid #0045CC;
+  background-image: -webkit-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0086cc), color-stop(1, #0045cc)) !important;
+  background-image: -moz-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
+  background-image: -o-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
+  background-image: -ms-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
+  color: white !important;
+  font: 18px arial;
+  text-shadow: 1px 1px 1px #003497;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\00003484}}
+.join:hover {
+  -webkit-box-shadow: inset 0 0 10px #0057AC;
+  -moz-box-shadow: inset 0 0 10px #0057AC;
+  -o-box-shadow: inset 0 0 10px #0057AC;
+  -ms-box-shadow: inset 0 0 10px #0057AC;
+}
