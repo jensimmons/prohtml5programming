@@ -1,22 +1,27 @@
 
+// Let's create some variables
 
 
+// Now import browser resets
+@import "normalize";
+// And some forms resets
+@import "formalize";
 
+
+// How about some typographyand text styling
+@import "typography";
+
+
+// How about some typographyand text styling
 
 
 body {
 	margin: 0px;
-  font-family: Georgia, serif;
   font-size: 16px;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-}
-h3 {
-	font-size:20px;
-}
-p {
-  line-height: 1.8em;
 }
 h1 {
 	font-size: 50px;
@@ -26,7 +31,12 @@ h2 {
 	font-size: 40px;
 	margin: 0px;
 }
+h3 {
+	font-size:20px;
+}
+
 p {
+  line-height: 1.8em;
 	margin: 1em 0px;
 }
 ul {
@@ -39,10 +49,7 @@ ul li {
 	list-style: none;
 	margin: 0px;
 }
-pre {
-	background:rgba(0,0,0, 0.6);
-	color:#ccc;
-}
+
 
 
 ::selection{ 
@@ -313,77 +320,6 @@ h1.book-title {
 	margin:20px 0px;
 }
 
-pre{
-	background-color:#ccc;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-	border-radius:  10px;
-	font-family: Monaco, Consolas, "Lucida Console", monospace;
-	font-size: 13px;
-	line-height: 20px;
-	padding: 10px;
-	margin: 0;
-	white-space: pre;
-	color:black;
-	margin:20px 0px;
-}
-
-pre .sel-id{
-	color: #B6D1FF;
-}
-
-pre .sel-class{
-	color: #AA9BD0;
-}
-
-pre .num, pre .prop{
-	color:white;
-}
-
-pre .string{
-	color:#B6D1FF;
-}
-
-pre .text{
-	color:white;
-}
-
-.share {
-	height:32px;
-}
-
-.share a{
-	display:inline-block;
-	width:20px;
-	height:20px;
-	background-size:60px 40px;
-	margin:-2px 5px;
-}
-
-.share a.gp{
-	background-position:20px 0px;
-}
-.share a.gp:hover{
-	background-position:20px 20px;
-}
-
-.share a.fb{
-	background-position:0px 0px;
-}
-
-.share a.fb:hover{
-	background-position:0px 20px;
-}
-
-.share a.tw{
-	background-position:40px 0px;
-}
-
-.share a.tw:hover{
-	background-position:40px 20px;
-}
 
 .page-content .btn{
 	padding:5px 10px;

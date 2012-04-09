@@ -1,0 +1,195 @@
+
+//-----------------------------------------------------------------------
+// Switching Box Models 
+//-----------------------------------------------------------------------
+
+// Setting the box model to do it the IE way, putting padding inside box widths
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+// to get rid of this on specific items, use .unborderbox { box-sizing: content-box; }
+//
+// If you need to support ie6 & 7, add this https://github.com/Schepp/box-sizing-polyfill
+
+* { 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+//-----------------------------------------------------------------------
+// Switching Other CSS Defaults 
+//-----------------------------------------------------------------------
+
+// Setting every background to no-repeat. Then you can tell the few that need to repeat to do so.
+
+* {
+  background-repeat: no-repeat;
+}
+
+//-----------------------------------------------------------------------
+// Setting up for Responsive & HTML5 Images 
+//-----------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ie7 img,
+.iem7 img { 
+  -ms-interpolation-mode: bicubic; 
+}
+
+//-----------------------------------------------------------------------
+// Define Some Super Helpful CSS Classes To Use Wherever 
+//-----------------------------------------------------------------------
+
+// Image replacement
+//----------------------------------------------
+// A new image-replacement technique
+// https://github.com/h5bp/html5-boilerplate/issues/1005#issuecomment-4293007
+
+.ir {
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+
+
+// Hide for screenreaders and visual browsers
+//----------------------------------------------
+.hidden { 
+  display: none; 
+  visibility: hidden; 
+}
+
+// Hide visually
+//----------------------------------------------
+.visuallyhidden { 
+  position: absolute;
+  clip: rect(0 0 0 0); 
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  height: 1px;      
+  width: 1px;
+  border: 0; 
+}
+
+// Allow an element to be focusable via keyboard
+//----------------------------------------------
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { 
+  position: static;
+  clip: auto; 
+  overflow: visible;
+  height: auto; 
+  margin: 0;   
+  width: auto; 
+}
+
+// Hide but maintain layout
+//----------------------------------------------
+.invisible { 
+  visibility: hidden; 
+}
+
+
+//-----------------------------------------------------------------------
+// Setting Some Details That Will Work for Most Cases 
+//-----------------------------------------------------------------------
+
+html {
+  overflow-y: scroll;
+}
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+  content: '';
+  content: none; 
+}
+i, 
+em { 
+  font-style: italic; 
+}
+sup, 
+sub { 
+  position: relative;
+  font-size: 75%; 
+  line-height: 0; 
+}
+sup { 
+  top: -.5em; 
+}
+sub { 
+  bottom: -.25em; 
+}
+address { 
+  font-style: normal; 
+}
+pre, 
+code { 
+  font : .875em 'andale mono', 'lucida console', monospace; 
+  line-height : 1.5; 
+}
+pre { 
+  margin-bottom: 1.5em; 
+  white-space: pre; 
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+}
+small {
+  font-size: 80%;
+}
+menu {
+  display: block; 
+} // all the other new HTML5 elements are set to block in normalize
+
+abbr[title] { 
+  cursor: help; 
+} // also argmenting normalize, which sets just a dotted bottom border 
+
+dl, 
+dd { 
+  margin-bottom : 1.5em; 
+}
+dt { 
+  font-weight : normal; 
+}
+figure {
+  margin-bottom: 1.5em; 
+}
+figure img,
+figure object,
+figure embed {
+  margin-bottom: .75em;
+  max-width: 100%; 
+}
+figcaption {
+  display: block;
+  font-weight: normal; 
+}
+
+
+// Tables
+//----------------------------------------------
+table { 
+  margin-bottom: 1.4em; 
+  width: 100%;
+  font-size: .875em; // 14 / 16 = .875
+}
+th { 
+  font-weight: bold; 
+}
+th, td, caption { 
+  padding: .25em 10px .25em 5px; 
+}
+tfoot { 
+  font-style: italic; 
+}
+caption { 
+  background-color: transparent; 
+}
+

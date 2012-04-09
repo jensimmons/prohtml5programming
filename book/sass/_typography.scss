@@ -1,0 +1,358 @@
+//-----------------------------------------------------------------------
+// Typographic Base
+//-----------------------------------------------------------------------
+
+html { 
+  font-family: Georgia, serif;
+  line-height: 1.8em;
+  color:#333; 
+}
+body {
+  font-size: 0.95em;
+}
+
+
+//-----------------------------------------------------------------------
+// Links and Highlights
+//-----------------------------------------------------------------------
+
+a, 
+a:visited {
+  outline : none;
+  color: #4b91b7;
+  text-decoration : none; 
+} 
+a:hover,
+li a.active:hover { 
+  outline : none;
+  color: #889a9f;
+  text-decoration : underline; 
+}
+a:active, 
+a:focus { 
+  outline : none;
+  color : #000; 
+}
+a:link { 
+  -webkit-tap-highlight-color : #ffffb3; 
+}
+li a.active {
+  color: #4eaebb;
+}
+::-webkit-selection { 
+  background : #ffffb3; 
+  text-shadow : none; 
+}
+::-moz-selection { 
+  background : #ffffb3; 
+  text-shadow : none; 
+}
+::selection { 
+  background : #ffffb3; 
+  text-shadow : none; 
+}
+
+
+//-----------------------------------------------------------------------
+// Headings
+//-----------------------------------------------------------------------
+
+h1 { 
+  font-size: 2em;
+  margin: 0.67em 0;
+  line-height: 1.1; 
+  font-weight: normal;
+}
+h2 { 
+  font-size: 1.5em;
+  margin: 0.83em 0;
+  line-height : 1.2; 
+  font-weight: normal;
+}
+h3 { 
+  font-size: 1.17em;
+  margin: 0 0 1em;
+  line-height : 1.17; 
+  font-weight: normal;
+}
+h4 { 
+  font-size: 1em;
+  margin: 1.33em 0;
+  line-height : 1.25; 
+  font-weight: normal;
+}
+h5 { 
+  font-size: 0.83em;
+  margin: 1.67em 0;
+  line-height : 1.6; 
+  font-weight: normal;
+}
+h6 { 
+  font-size: 0.75em;
+  margin: 2.33em 0;
+  line-height: 1.6;
+}
+
+h1#site-name {
+  margin-top: 0;
+}
+
+@media all and (min-width: 480px) {
+  h1 {
+
+  }
+  h2 {
+
+  }
+  h3 {
+
+  }
+  h4 {
+  
+  }
+  h5 {
+  
+  }
+  h6 {
+  
+  }  
+}
+@media all and (min-width: 600px) {
+  h1 {
+
+  }
+  h2 {
+
+  }
+  h3 {
+  
+  }
+  h4 {
+
+  }
+  h5 {
+  
+  }
+  h6 {
+
+  }  
+}
+@media all and (min-width: 768px) {
+  h1 {
+
+  }
+  h2 {
+
+  }
+  h3 {
+  
+  }
+  h4 {
+  
+  }
+  h5 {
+  
+  }
+  h6 {
+  
+  }  
+}
+@media all and (min-width: 1024px) {
+  h1 {
+
+  }
+  h2 {
+
+  }
+  h3 {
+  
+  }
+  h4 {
+  
+  }
+  h5 {
+  
+  }
+  h6 {
+  
+  }  
+}
+@media all and (min-width: 1280px) {
+  h1 {
+
+  }
+  h2 {
+
+  }
+  h3 {
+  
+  }
+  h4 {
+  
+  }
+  h5 {
+  
+  }
+  h6 {
+  
+  }  
+}
+
+
+//-----------------------------------------------------------------------
+// General Typography
+//-----------------------------------------------------------------------
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+  margin: 0 0 1.4em 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul { 
+  margin: 0 0 1.5em 0;
+  padding-left: 1.5em;
+}
+ol { 
+  margin: 0 0 1.5em 0;
+  padding-left: 2.5em;
+  list-style-type : decimal; 
+}
+
+li ul, 
+li ol { 
+  margin : 0;
+}
+
+blockquote  { 
+  margin : 0 0 1.5em 0; 
+  padding-left : 24px; 
+  border-left : 1px solid rgb(200,200,200);
+  font-style : italic; 
+}
+
+hr {
+	height: 1px;
+	border-top: 1px solid #cccccc;
+}
+
+
+@media all and (min-width: 600px) {
+  p {
+    
+  }
+}
+@media all and (min-width: 768px) {
+  p {
+
+  }
+}
+@media all and (min-width: 1024px) {
+  p {
+
+  }
+}
+@media all and (min-width: 1280px) {
+  p {
+     
+  }
+}
+
+//-----------------------------------------------------------------------
+// Stlying Code
+//-----------------------------------------------------------------------
+
+pre {
+	background-color: #ccc;
+	background:rgba(0,0,0, 0.6);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius:  10px;
+  white-space: pre; 
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+	font-family: 'andale mono', Monaco, Consolas, "Lucida Console", monospace;
+	font-size: 13px;
+  line-height : 1.5; 
+	padding: 10px;
+	margin: 0;
+	color: black;
+	margin: 20px 0px;
+
+}
+pre .sel-id{
+	color: #B6D1FF;
+}
+
+pre .sel-class{
+	color: #AA9BD0;
+}
+
+pre .num, pre .prop{
+	color:white;
+}
+
+pre .string{
+	color:#B6D1FF;
+}
+
+pre .text{
+	color:white;
+}
+
+//-----------------------------------------------------------------------
+// Generic Button
+//-----------------------------------------------------------------------
+
+a.button {
+  color: #fff;
+  background: #f77708;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding: 4px 25px;
+  text-align: center;
+  display: inline-block;
+  margin: 25px 0;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+a.button:hover {
+  background: red;
+  text-decoration: none;
+}
+@media all and (min-width: 480px) {
+  a.button {
+
+  }
+}
+
+
+//-----------------------------------------------------------------------
+// Forms
+//-----------------------------------------------------------------------
+
+textarea,
+input[type='date'], 
+input[type='datetime'], 
+input[type='datetime-local'], 
+input[type='email'], 
+input[type='month'], 
+input[type='number'], 
+input[type='password'], 
+input[type='search'], 
+input[type='tel'], 
+input[type='text'], 
+input[type='time'], 
+input[type='url'], 
+input[type='week'] {
+	font-size: 14px;
+}
+
