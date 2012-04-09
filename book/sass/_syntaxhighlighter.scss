@@ -1,22 +1,16 @@
-// "shStyles" is the main parent stylesheet for Syntax Highlighter
-// it loads shCore and shThemeDefault
-// shCore defines the structure of the styling
-// shThemeDefault simply loads _shTheme_template plus it adds one declaration
-// _shTheme_template defines the colors and things for the theme
-// shTheme_template is named theme_template in the original Syntax Highlighter code
-// I changes the name to make it more consistent with the other files
-
-// We could simplfy this nesting and eliminate the extra level of nest
-// I debated sticking closely to the way Syntax Highlighter is structured vs making it easier to manage this project without regards to the original source library
-
 // Syntax Highlighter 3.0.83
 // http://alexgorbatchev.com/SyntaxHighlighter/
 // https://github.com/alexgorbatchev/SyntaxHighlighter
 
-@import "_shCore.scss";
-@import "_shThemeDefault.scss";
+@import "syntaxhighlightercore";
+@import "syntaxhighlightertheme";
+
+.syntaxhighlighter {
+	.keyword { font-weight: bold; }
+}
 
 // Added by Jen
 .syntaxhighlighter .toolbar {
   display: none;
 } // Hide the commerical for Syntax Highlighter
+
