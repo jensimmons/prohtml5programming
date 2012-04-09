@@ -56,6 +56,20 @@ img {
   color: transparent;
 }
 
+// Clearfix
+//----------------------------------------------
+// Using the new-in-2011 technique
+// http://nicolasgallagher.com/micro-clearfix-hack
+.clearfix:before, .clearfix:after { 
+  content: ""; 
+  display: table; 
+}
+.clearfix:after { 
+  clear: both; 
+}
+.clearfix { 
+  *zoom: 1; 
+}
 
 // Hide for screenreaders and visual browsers
 //----------------------------------------------

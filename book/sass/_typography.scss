@@ -4,11 +4,11 @@
 
 html { 
   font-family: Georgia, serif;
-  line-height: 1.8em;
+  line-height: 1.9em;
   color:#333; 
 }
 body {
-  font-size: 0.95em;
+  font-size: 0.90em;
 }
 
 
@@ -95,6 +95,11 @@ h6 {
 
 h1#site-name {
   margin-top: 0;
+}
+h1.book-title {
+  color: #fff;
+  text-align: center;
+  padding: 48% 5%;
 }
 
 @media all and (min-width: 480px) {
@@ -267,45 +272,23 @@ hr {
 // Stlying Code
 //-----------------------------------------------------------------------
 
-pre {
-	background-color: #ccc;
-	background:rgba(0,0,0, 0.6);
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-	border-radius:  10px;
-  white-space: pre; 
-  white-space: pre-wrap; 
-  word-wrap: break-word; 
-	font-family: 'andale mono', Monaco, Consolas, "Lucida Console", monospace;
-	font-size: 13px;
-  line-height : 1.5; 
-	padding: 10px;
-	margin: 0;
-	color: black;
-	margin: 20px 0px;
 
-}
-pre .sel-id{
-	color: #B6D1FF;
+  pre {
+  	background-color: #ccc;
+  	background:rgba(0,0,0, 0.6);
+  	-webkit-border-radius: 1em;
+  	-moz-border-radius: 1em;
+  	-ms-border-radius: 1em;
+  	-o-border-radius: 1em;
+  	border-radius:  1em;
+    white-space: pre; 
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+  	font-family: 'andale mono', Monaco, Consolas, "Lucida Console", monospace;
+  	padding: 10px;
+//  	margin: 20px 0px;	
 }
 
-pre .sel-class{
-	color: #AA9BD0;
-}
-
-pre .num, pre .prop{
-	color:white;
-}
-
-pre .string{
-	color:#B6D1FF;
-}
-
-pre .text{
-	color:white;
-}
 
 //-----------------------------------------------------------------------
 // Generic Button
