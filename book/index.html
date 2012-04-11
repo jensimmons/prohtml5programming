@@ -21,7 +21,13 @@
 <link rel="stylesheet" href="css/styles.css" />
 
 <style type="text/css">
-  body {width:80%;margin: 4em auto;}
+  body {width:80%;margin: 4em auto;line-height: 1.5em;}
+  h1{margin-bottom: 0;}
+  h2{margin-top: 0.4em;}
+  table{margin-top: 4em;}
+  table,td,th,tr{border:1px solid #ccc;}
+  th,td{padding:1em;}
+  th{background:#efefef;}
 </style>
 
 <!--[if (lt IE 9) & (!IEMobile)]>
@@ -58,11 +64,63 @@
 </head>
 
 <body>
-<h1>Experiments in New Book Forms</h1>
+<h1>Experiments in Digital Book Forms</h1>
 <h2>for <i>Pro HTML5 Programming</i></h2>
-<ul>
-<li><a href="chapter2.html">Turn.js page turning — Chapter 2</a></li>
-</ul>
+<p>Created by Peter Lubbers and Jen Simmons, with Dylan Wooters</p>
+
+<table>
+<tr>
+  <th>Possibility</th>
+  <th>Pros</th>
+  <th>Cons</th>
+  <th>Example</th>
+  <th>Verdict</th>
+</tr>
+<tr>
+  <td>Turn.js-based website</td>
+  <td>Looks like a book. Uses a page turning metaphor familiar to users of digital book readers. Because the book  exists as a website, it's easy to setup free access to a sample and easy to link to external websites.</td>
+  <td>Laborious and tedious to place content. Text doesn't resize. Fixed-sized book doesn't resize for different size screens. Requires infrastructure for a paywall restricting and managing access a website.</td>
+  <td><a href="chapter2.html">Chapter 2</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>Responsive-web-design-based website</td>
+  <td>Works on a wide-range of devices and sizes of screen. Fully accessible, text resizes. Because the book  exists as a website, it's easy to setup free access to a sample and easy to link to external websites.</td>
+  <td>Might not "look like a book" with sexy page turning animations. Might feel like a website. (TBA, design exploration needed to see what we might come up with.) Requires infrastructure for a paywall restricting and managing access a website.</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>iBooks Author book</td>
+  <td>Provides a book metaphor in a popular and powerful app. Authoring tool makes it easy to place long-form content. <i>Might</i> allow us to use HTML5 inside a book (further exploration needed). Apple provides ecommerce platform for books with marketing tools. The product makes sense as a thing a customer has bought — a file to download and keep.</td>
+  <td>Book product only works in iBooks (iPhone/iPad/iPod only). Can only be sold through the iBooks store. Apple gets a 30% cut.</td>
+  <td>&nbsp;</td>
+  <td>Need to just try it out, and create an iBooks Author book examples to learn more.</td>
+</tr>
+<tr>
+  <td>iOS Mobile App (HTML5 wrapped up as an app via PhoneGap)</td>
+  <td>Provides all the technology we need. The product makes sense as a thing a customer has bought — a file to download and keep.</td>
+  <td>While a lot of publishers are making books into apps, books and apps are different creatures in most people's minds. Sold through the Apple App store. Apple gets a 30% cut.</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+
+<tr>
+  <td>Traditional eBook files: ePub, Mobi, DAISY and PDF</td>
+  <td>Known quantity. One file format or another will work on all ebook readers. Can place videos in some file formats.</td>
+  <td>Can't implement any HTML5 technology. No possibilities for the reader to edit code examples. No live demonstrations. Provides nothing new.</td>
+  <td>&nbsp;</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>EPUB 3 book</td>
+  <td>Might be awesome.</td>
+  <td>Might be too early. Existing ebook readers don't support the format yet.</td>
+  <td>&nbsp;</td>
+  <td>More research needed</td>
+</tr>
+
+</table>
 
 </body>
 </html>
