@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000327}}
 article,
 aside,
 details,
@@ -13,7 +13,7 @@ summary {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000337}}
 audio,
 canvas,
 video {
@@ -22,24 +22,24 @@ video {
   *zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000347}}
 audio:not([controls]) {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000356}}
 [hidden] {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000372}}
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000386}}
 html,
 button,
 input,
@@ -48,92 +48,92 @@ textarea {
   font-family: sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\0000394}}
 body {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003107}}
 a:focus {
   outline: thin dotted;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003117}}
 a:hover,
 a:active {
   outline: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003131}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003136}}
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003141}}
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003146}}
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003151}}
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003156}}
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003165}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003174}}
 b,
 strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003178}}
 blockquote {
   margin: 1em 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003186}}
 dfn {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003194}}
 mark {
   background: #ff0;
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003204}}
 p,
 pre {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003216}}
 pre,
 code,
 kbd,
@@ -143,31 +143,31 @@ samp {
   font-size: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003226}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003239}}
 q {
   quotes: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003246}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003246}}
 q:before,
 q:after {
   content: '';
   content: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003251}}
 small {
   font-size: 75%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003261}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003261}}
 sub,
 sup {
   font-size: 75%;
@@ -176,17 +176,17 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003268}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003268}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003272}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003272}}
 sub {
   bottom: -0.25em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003288}}
 dl,
 menu,
 ol,
@@ -194,54 +194,54 @@ ul {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003292}}
 dd {
   margin: 0 0 0 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003302}}
 menu,
 ol,
 ul {
   padding: 0 0 0 40px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003311}}
 nav ul,
 nav ol {
   list-style: none;
   list-style-image: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003327}}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003336}}
 svg:not(:root) {
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003349}}
 figure {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003362}}
 form {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003370}}
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003382}}
 legend {
   border: 0;
   padding: 0;
@@ -249,7 +249,7 @@ legend {
   *margin-left: -7px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003398}}
 button,
 input,
 select,
@@ -260,13 +260,13 @@ textarea {
   *vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003410}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003410}}
 button,
 input {
   line-height: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003424}}
 button,
 input[type="button"],
 input[type="reset"],
@@ -276,13 +276,13 @@ input[type="submit"] {
   *overflow: visible;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003435}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003435}}
 button[disabled],
 input[disabled] {
   cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003446}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003446}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -291,7 +291,7 @@ input[type="radio"] {
   *width: 13px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003458}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003458}}
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -299,37 +299,37 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003470}}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003480}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003480}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003490}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003490}}
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003504}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_normalize\.scss}line{font-family:\00003504}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000310}}
 input[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000317}}
 input:invalid,
 button:invalid,
 select:invalid,
@@ -340,7 +340,7 @@ textarea:invalid {
   box-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000326}}
 input:focus,
 button:focus,
 select:focus,
@@ -352,7 +352,7 @@ textarea:focus {
   z-index: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000338}}
 input[type="file"]:focus, input[type="file"]:active,
 input[type="radio"]:focus,
 input[type="radio"]:active,
@@ -364,7 +364,7 @@ input[type="checkbox"]:active {
   box-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000348}}
 button,
 input[type="reset"],
 input[type="submit"],
@@ -403,7 +403,7 @@ input[type="button"] {
   *padding-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000385}}
 button:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
@@ -416,7 +416,7 @@ input[type="button"]:hover {
   background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\0000396}}
 button:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
@@ -434,7 +434,7 @@ input[type="button"]:active {
   border-color: #999999 #bbbbbb #dddddd;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003112}}
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
@@ -443,13 +443,13 @@ input[type="button"]::-moz-focus-inner {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003117}}
 button {
   *padding-top: 1px;
   *padding-bottom: 1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003136}}
 textarea,
 select,
 input[type="date"],
@@ -497,7 +497,7 @@ input[type="week"] {
   *height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003182}}
 textarea[disabled],
 select[disabled],
 input[type="date"][disabled],
@@ -516,7 +516,7 @@ input[type="week"][disabled] {
   background-color: #eeeeee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003191}}
 button[disabled],
 input[disabled],
 select[disabled],
@@ -535,32 +535,32 @@ textarea[disabled] {
   cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003205}}
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003210}}
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003215}}
 input.placeholder_text,
 textarea.placeholder_text {
   color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003221}}
 textarea,
 select[size],
 select[multiple] {
   height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003226}}
 select[size="0"],
 select[size="1"] {
   height: 1.8em;
@@ -568,7 +568,7 @@ select[size="1"] {
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003234}}
   select[size],
   select[multiple],
   select[multiple][size] {
@@ -576,7 +576,7 @@ select[size="1"] {
     padding-right: 3px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003241}}
   select,
   select[size="0"],
   select[size="1"] {
@@ -586,7 +586,7 @@ select[size="1"] {
     padding-right: 20px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003248}}
   ::-webkit-validation-bubble-message {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -601,7 +601,7 @@ select[size="1"] {
     height: 16px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003264}}
   ::-webkit-validation-bubble-arrow,
   ::-webkit-validation-bubble-top-outer-arrow,
   ::-webkit-validation-bubble-top-inner-arrow {
@@ -611,7 +611,7 @@ select[size="1"] {
     border: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003271}}
 textarea {
   min-height: 40px;
   overflow: auto;
@@ -619,7 +619,7 @@ textarea {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003278}}
 optgroup {
   color: black;
   font-style: normal;
@@ -627,13 +627,13 @@ optgroup {
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_formalize\.scss}line{font-family:\00003284}}
 optgroup::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000321}}
 .syntaxhighlighter a,
 .syntaxhighlighter div,
 .syntaxhighlighter code,
@@ -672,7 +672,7 @@ optgroup::-moz-focus-inner {
   min-height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000357}}
 .syntaxhighlighter {
   width: 100%;
   margin: 1em 0 1em 0;
@@ -680,40 +680,40 @@ optgroup::-moz-focus-inner {
   overflow: auto;
   font-size: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000365}}
 .syntaxhighlighter.source {
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000368}}
 .syntaxhighlighter .bold {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000369}}
 .syntaxhighlighter .italic {
   font-style: italic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000371}}
 .syntaxhighlighter .line {
   white-space: pre;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000374}}
 .syntaxhighlighter table {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000376}}
 .syntaxhighlighter table caption {
   text-align: left;
   padding: .5em 0 0.5em 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000381}}
 .syntaxhighlighter table td.code {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000384}}
 .syntaxhighlighter table td.code .container {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\0000387}}
 .syntaxhighlighter table td.code .container textarea {
   box-sizing: border-box;
   position: absolute;
@@ -727,28 +727,28 @@ optgroup::-moz-focus-inner {
   overflow: hidden;
   white-space: pre;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003104}}
 .syntaxhighlighter table td.gutter .line {
   text-align: right;
   padding: 0 0.5em 0 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003109}}
 .syntaxhighlighter table td.code .line {
   padding: 0 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003116}}
 .syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
   padding-left: 0em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003120}}
 .syntaxhighlighter.show {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003124}}
 .syntaxhighlighter.collapsed table {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003126}}
 .syntaxhighlighter.collapsed .toolbar {
   padding: 0.1em 0.8em 0em 0.8em;
   font-size: 1em;
@@ -756,21 +756,21 @@ optgroup::-moz-focus-inner {
   width: auto;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003133}}
 .syntaxhighlighter.collapsed .toolbar span {
   display: inline;
   margin-right: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003137}}
 .syntaxhighlighter.collapsed .toolbar span a {
   padding: 0;
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003140}}
 .syntaxhighlighter.collapsed .toolbar span a.expandSource {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003147}}
 .syntaxhighlighter .toolbar {
   position: absolute;
   right: 1px;
@@ -780,35 +780,35 @@ optgroup::-moz-focus-inner {
   font-size: 10px;
   z-index: 10;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003156}}
 .syntaxhighlighter .toolbar span.title {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003158}}
 .syntaxhighlighter .toolbar a {
   display: block;
   text-align: center;
   text-decoration: none;
   padding-top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003164}}
 .syntaxhighlighter .toolbar a.expandSource {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003168}}
 .syntaxhighlighter.ie {
   font-size: .9em;
   padding: 1px 0 1px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003172}}
 .syntaxhighlighter.ie .toolbar {
   line-height: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003174}}
 .syntaxhighlighter.ie .toolbar a {
   padding-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003187}}
 .syntaxhighlighter.printing .line.alt1 .content,
 .syntaxhighlighter.printing .line.alt2 .content,
 .syntaxhighlighter.printing .line.highlighted .number,
@@ -816,219 +816,219 @@ optgroup::-moz-focus-inner {
 .syntaxhighlighter.printing .line.highlighted.alt2 .content {
   background: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003191}}
 .syntaxhighlighter.printing .line .number {
   color: #bbbbbb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003193}}
 .syntaxhighlighter.printing .line .content {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003197}}
 .syntaxhighlighter.printing .toolbar {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003198}}
 .syntaxhighlighter.printing a {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003199}}
 .syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003200}}
 .syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
   color: #008200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003201}}
 .syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
   color: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003202}}
 .syntaxhighlighter.printing .keyword {
   color: #006699;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003206}}
 .syntaxhighlighter.printing .preprocessor {
   color: gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003207}}
 .syntaxhighlighter.printing .variable {
   color: #aa7700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003208}}
 .syntaxhighlighter.printing .value {
   color: #009900;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003209}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003209}}
 .syntaxhighlighter.printing .functions {
   color: #ff1493;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003210}}
 .syntaxhighlighter.printing .constants {
   color: #0066cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003211}}
 .syntaxhighlighter.printing .script {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003212}}
 .syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
   color: gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003213}}
 .syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
   color: #ff1493;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003214}}
 .syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightercore\.scss}line{font-family:\00003215}}
 .syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
   color: black;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000341}}
 .syntaxhighlighter {
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000346}}
 .syntaxhighlighter .line.alt1 {
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000347}}
 .syntaxhighlighter .line.alt2 {
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000351}}
 .syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
   background-color: #e0e0e0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000352}}
 .syntaxhighlighter .line.highlighted.number {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000357}}
 .syntaxhighlighter table caption {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000363}}
 .syntaxhighlighter .gutter {
   color: #afafaf;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000365}}
 .syntaxhighlighter .gutter .line {
   border-right: 3px solid #6ce26c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000368}}
 .syntaxhighlighter .gutter .line.highlighted {
   background-color: #6ce26c;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000375}}
 .syntaxhighlighter.printing .line .content {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000377}}
 .syntaxhighlighter.collapsed {
   overflow: visible;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000380}}
 .syntaxhighlighter.collapsed .toolbar {
   color: blue;
   background: white;
   border: 1px solid #6ce26c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000385}}
 .syntaxhighlighter.collapsed .toolbar a {
   color: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000387}}
 .syntaxhighlighter.collapsed .toolbar a:hover {
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000392}}
 .syntaxhighlighter .toolbar {
   color: white;
   background: #6ce26c;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000396}}
 .syntaxhighlighter .toolbar a {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\0000398}}
 .syntaxhighlighter .toolbar a:hover {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003103}}
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003104}}
 .syntaxhighlighter .comments, .syntaxhighlighter .comments a {
   color: #008200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003105}}
 .syntaxhighlighter .string, .syntaxhighlighter .string a {
   color: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003106}}
 .syntaxhighlighter .keyword {
   color: #006699;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003107}}
 .syntaxhighlighter .preprocessor {
   color: gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003108}}
 .syntaxhighlighter .variable {
   color: #aa7700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003109}}
 .syntaxhighlighter .value {
   color: #009900;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003110}}
 .syntaxhighlighter .functions {
   color: #ff1493;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003111}}
 .syntaxhighlighter .constants {
   color: #0066cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003112}}
 .syntaxhighlighter .script {
   font-weight: bold;
   color: #006699;
   background-color: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003117}}
 .syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
   color: gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003118}}
 .syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
   color: #ff1493;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlightertheme\.scss}line{font-family:\00003119}}
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
   color: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlighter\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlighter\.scss}line{font-family:\000039}}
 .syntaxhighlighter .keyword {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_syntaxhighlighter\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_syntaxhighlighter\.scss}line{font-family:\0000313}}
 .syntaxhighlighter .toolbar {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000312}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1036,53 +1036,53 @@ optgroup::-moz-focus-inner {
   box-sizing: border-box;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000326}}
 * {
   background-repeat: no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000334}}
 img {
   max-width: 100%;
   height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000340}}
 .ie7 img,
 .iem7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000353}}
 .ir {
   font: 0/0 serif;
   text-shadow: none;
   color: transparent;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000363}}
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000367}}
 .clearfix:after {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000370}}
 .clearfix {
   *zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000376}}
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000383}}
 .visuallyhidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -1094,7 +1094,7 @@ img {
   border: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\0000397}}
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   position: static;
@@ -1105,17 +1105,17 @@ img {
   width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003108}}
 .invisible {
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003117}}
 html {
   overflow-y: scroll;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003123}}
 blockquote:before,
 blockquote:after,
 q:before,
@@ -1124,13 +1124,13 @@ q:after {
   content: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003128}}
 i,
 em {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003132}}
 sup,
 sub {
   position: relative;
@@ -1138,29 +1138,29 @@ sub {
   line-height: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003137}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003140}}
 sub {
   bottom: -0.25em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003143}}
 address {
   font-style: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003147}}
 pre,
 code {
   font: .875em 'andale mono', 'lucida console', monospace;
   line-height: 1.5;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003151}}
 pre {
   margin-bottom: 1.5em;
   white-space: pre;
@@ -1168,38 +1168,38 @@ pre {
   word-wrap: break-word;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003157}}
 small {
   font-size: 80%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003160}}
 menu {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003164}}
 abbr[title] {
   cursor: help;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003169}}
 dl,
 dd {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003172}}
 dt {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003175}}
 figure {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003180}}
 figure img,
 figure object,
 figure embed {
@@ -1207,45 +1207,45 @@ figure embed {
   max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003184}}
 figcaption {
   display: block;
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003192}}
 table {
   margin-bottom: 1.4em;
   width: 100%;
   font-size: .875em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003197}}
 th {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003200}}
 th, td, caption {
   padding: .25em 10px .25em 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003203}}
 tfoot {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_html\.scss}line{font-family:\00003206}}
 caption {
   background-color: transparent;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000312}}
 #viewport {
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000316}}
 .pages, #controllers {
   width: 1200px;
   height: 700px;
@@ -1253,17 +1253,17 @@ caption {
   margin: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000323}}
 .x1024 .pages, .x1024 #controllers {
   width: 1024px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000327}}
 .x1024 .turn-page, .x1024 #shadow-page {
   width: 512px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000331}}
 .turn-page {
   width: 600px;
   height: 700px;
@@ -1275,12 +1275,12 @@ caption {
   background-color: #f0f0f0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000342}}
 .turn-page-wrapper {
   overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000346}}
 #shadow-page {
   width: 600px;
   height: 700px;
@@ -1293,7 +1293,7 @@ caption {
   z-index: -1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000358}}
 #next, #previous {
   opacity: 0;
   position: absolute;
@@ -1309,7 +1309,7 @@ caption {
   z-index: 1000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000373}}
 #next i, #previous i {
   background: url(../images/sprite.png) no-repeat;
   width: 32px;
@@ -1319,7 +1319,7 @@ caption {
   margin-left: -4px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000382}}
 #next {
   -webkit-border-radius: 0px 10px 10px 0px;
   -moz-border-radius: 0px 10px 10px 0px;
@@ -1330,12 +1330,12 @@ caption {
   top: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000392}}
 #next i {
   background-position: -32px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\0000396}}
 #previous {
   -webkit-border-radius: 10px 0px 0px 10px;
   -moz-border-radius: 10px 0px 0px 10px;
@@ -1346,17 +1346,17 @@ caption {
   top: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003106}}
 #previous i {
   background-position: 0px 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003110}}
 #next.visible:hover, #previous.visible:hover {
   opacity: 1 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003114}}
 nav {
   text-align: center;
   white-space: nowrap;
@@ -1364,7 +1364,7 @@ nav {
   -webkit-user-select: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003121}}
 nav a {
   text-decoration: none;
   font-size: 18px;
@@ -1376,12 +1376,12 @@ nav a {
   letter-spacing: -1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003132}}
 nav a.on {
   color: #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003138}}
 footer {
   text-align: center;
   font-size: 11px;
@@ -1390,62 +1390,41 @@ footer {
   color: #666;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003145}}
 footer a {
   color: #666;
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003149}}
 footer a:hover {
   color: #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003153}}
 .page-content {
   margin: 50px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003156}}
 .page-content a {
   text-decoration: none;
   color: #2F548E;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003164}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003160}}
 .page-content a:hover {
   text-decoration: underline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003163}}
 .turn-page.p1 {
   background-color: #000;
   background-image: url(../images/cover.jpg);
   background-size: 100% 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003175}}
-.turn-page.p1 p {
-  margin-top: 380px;
-  text-align: center;
-  font: 18px "Candara", arial;
-  color: #666;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003184}}
-.turn-page.p2 .page-content {
-  margin: 100px 50px;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003194}}
-.turn-page.p3 .page-content {
-  margin: 80px 20px;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003169}}
 .turn-page {
   background-image: -webkit-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
   background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #e4e4e4), color-stop(1, #f7f7f7));
@@ -1454,153 +1433,19 @@ footer a:hover {
   background-image: -ms-linear-gradient(left, #e4e4e4 0%, #f7f7f7 100%);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003209}}
-.turn-page.p4 h1, .turn-page.p6 h1 {
-  font-weight: normal;
-  font-size: 60px;
-  margin: 0px;
-  line-height: 700px;
-  text-align: center;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003219}}
-.turn-page.p5 .page-content {
-  font: 15px "lucida grande",tahoma,verdana;
-  margin: 200px 50px;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003226}}
-.turn-page.p7 {
-  font: 16px "Candara", arial;
-  color: #333;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003230}}
-.turn-page.p7 i {
-  padding-left: 10px;
-  color: #888;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003235}}
-.turn-page.p7 .page-content {
-  margin: 130px 50px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003239}}
-.turn-page.p7 h4 {
-  font: bold 13px Monaco, Consolas, "Lucida Console", monospace;
-}
-
-/* -------------------------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003245}}
-.turn-page.p8 {
-  background-size: 100% 100%;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003249}}
-.turn-page.p8 .page-content {
-  margin: 40px 20px;
-  font: 16px "Candara", arial;
-  color: black;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003256}}
-.download p {
-  margin: 20px 0px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003261}}
-.page-content .btn {
-  padding: 5px 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  border: 1px solid #999;
-  background-color: #ddd;
-  color: #333;
-  text-shadow: 1px 1px 1px #ccc;
-  background-image: -webkit-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
-  background-image: -moz-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
-  background-image: -o-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
-  background-image: -ms-linear-gradient(top, #cccccc 0%, #aaaaaa 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cccccc), color-stop(1, #aaaaaa));
-  font: 16px "Candara", arial;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003281}}
-.page-content .btn:hover {
-  -webkit-box-shadow: inset 0 0 4px #666;
-  -moz-box-shadow: inset 0 0 4px #666;
-  -o-box-shadow: inset 0 0 4px #666;
-  -ms-box-shadow: inset 0 0 4px #666;
-  border: 1px solid #555;
-  color: #111;
-  text-decoration: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003291}}
-.page-content .btn:active {
-  color: #fff;
-  text-shadow: 1px 1px 1px #32373E;
-  background-image: -webkit-linear-gradient(top, #81888e 0%, #43474e 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #81888e), color-stop(1, #43474e));
-  background-image: -moz-linear-gradient(top, #81888e 0%, #43474e 100%);
-  background-image: -o-linear-gradient(top, #81888e 0%, #43474e 100%);
-  background-image: -ms-linear-gradient(top, #81888e 0%, #43474e 100%);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003301}}
-.join-area {
-  text-align: center;
-  margin: 30px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003306}}
-.join {
-  border: 1px solid #0045CC;
-  background-image: -webkit-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #0086cc), color-stop(1, #0045cc)) !important;
-  background-image: -moz-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
-  background-image: -o-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
-  background-image: -ms-linear-gradient(top, #0086cc 0%, #0045cc 100%) !important;
-  color: white !important;
-  font: 18px arial;
-  text-shadow: 1px 1px 1px #003497;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  text-decoration: none;
-  padding: 5px 10px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_turn\.scss}line{font-family:\00003324}}
-.join:hover {
-  -webkit-box-shadow: inset 0 0 10px #0057AC;
-  -moz-box-shadow: inset 0 0 10px #0057AC;
-  -o-box-shadow: inset 0 0 10px #0057AC;
-  -ms-box-shadow: inset 0 0 10px #0057AC;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\000035}}
 html {
   font-family: Georgia, serif;
   line-height: 1.9em;
   color: #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000310}}
 body {
   font-size: 0.90em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000320}}
 a,
 a:visited {
   outline: none;
@@ -1608,7 +1453,7 @@ a:visited {
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000326}}
 a:hover,
 li a.active:hover {
   outline: none;
@@ -1616,42 +1461,42 @@ li a.active:hover {
   text-decoration: underline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000332}}
 a:active,
 a:focus {
   outline: none;
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000336}}
 a:link {
   -webkit-tap-highlight-color: #ffffb3;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000339}}
 li a.active {
   color: #4eaebb;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000342}}
 ::-webkit-selection {
   background: #ffffb3;
   text-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000346}}
 ::-moz-selection {
   background: #ffffb3;
   text-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000350}}
 ::selection {
   background: #ffffb3;
   text-shadow: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000360}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -1659,7 +1504,7 @@ h1 {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000366}}
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
@@ -1667,7 +1512,7 @@ h2 {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000372}}
 h3 {
   font-size: 1.17em;
   margin: 0 0 1em;
@@ -1675,7 +1520,7 @@ h3 {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000378}}
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
@@ -1683,7 +1528,7 @@ h4 {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000384}}
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
@@ -1691,26 +1536,37 @@ h5 {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000390}}
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
   line-height: 1.6;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000396}}
 h1#site-name {
   margin-top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\0000399}}
 h1.book-title {
   color: #fff;
   text-align: center;
   padding: 48% 5%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003104}}
+aside h1 {
+  font-size: 1.6em;
+  margin: 0 0 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003108}}
+figcaption {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003223}}
 p,
 ol,
 ul,
@@ -1719,31 +1575,38 @@ address {
   margin: 0 0 1.4em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003226}}
 p:last-child {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003229}}
+aside {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
+  line-height: 1.8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003234}}
 ul {
   margin: 0 0 1.5em 0;
   padding-left: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003238}}
 ol {
   margin: 0 0 1.5em 0;
   padding-left: 2.5em;
   list-style-type: decimal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003245}}
 li ul,
 li ol {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003249}}
 blockquote {
   margin: 0 0 1.5em 0;
   padding-left: 24px;
@@ -1751,13 +1614,13 @@ blockquote {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003256}}
 hr {
   height: 1px;
   border-top: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003276}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003288}}
 pre {
   background-color: #ccc;
   background: rgba(0, 0, 0, 0.6);
@@ -1773,7 +1636,7 @@ pre {
   padding: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003309}}
 a.button {
   color: #fff;
   background: #f77708;
@@ -1788,13 +1651,13 @@ a.button {
   font-size: 0.8em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003322}}
 a.button:hover {
   background: red;
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Dropbox\/apress-project\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003350}}
 textarea,
 input[type='date'],
 input[type='datetime'],
@@ -1810,4 +1673,10 @@ input[type='time'],
 input[type='url'],
 input[type='week'] {
   font-size: 14px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000349}}
+aside {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2.5em;
 }

@@ -101,6 +101,14 @@ h1.book-title {
   text-align: center;
   padding: 48% 5%;
 }
+aside h1 { 
+  font-size: 1.6em;
+  margin: 0 0 1em;
+}
+figcaption {
+  font-style: italic;
+}
+
 
 @media all and (min-width: 480px) {
   h1 {
@@ -218,7 +226,11 @@ address {
 p:last-child {
   margin-bottom: 0;
 }
-
+aside {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
+  line-height: 1.8;
+}
 ul { 
   margin: 0 0 1.5em 0;
   padding-left: 1.5em;
