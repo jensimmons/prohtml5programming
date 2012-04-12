@@ -1555,7 +1555,17 @@ h1.book-title {
   padding: 48% 5%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003104}}
+aside h1 {
+  margin: 0 0 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003108}}
+figcaption {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003223}}
 p,
 ol,
 ul,
@@ -1564,31 +1574,37 @@ address {
   margin: 0 0 1.4em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003226}}
 p:last-child {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003229}}
+aside {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003233}}
 ul {
   margin: 0 0 1.5em 0;
   padding-left: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003237}}
 ol {
   margin: 0 0 1.5em 0;
   padding-left: 2.5em;
   list-style-type: decimal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003244}}
 li ul,
 li ol {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003248}}
 blockquote {
   margin: 0 0 1.5em 0;
   padding-left: 24px;
@@ -1596,13 +1612,13 @@ blockquote {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003255}}
 hr {
   height: 1px;
   border-top: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003276}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003287}}
 pre {
   background-color: #ccc;
   background: rgba(0, 0, 0, 0.6);
@@ -1618,7 +1634,7 @@ pre {
   padding: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003308}}
 a.button {
   color: #fff;
   background: #f77708;
@@ -1633,13 +1649,13 @@ a.button {
   font-size: 0.8em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003321}}
 a.button:hover {
   background: red;
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/_typography\.scss}line{font-family:\00003349}}
 textarea,
 input[type='date'],
 input[type='datetime'],
@@ -1655,4 +1671,11 @@ input[type='time'],
 input[type='url'],
 input[type='week'] {
   font-size: 14px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/book\/sass\/styles\.scss}line{font-family:\0000349}}
+aside {
+  background: rgba(150, 150, 150, 0.1);
+  border: 1px solid #ccc;
+  padding: 2em;
 }
