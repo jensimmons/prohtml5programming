@@ -32,8 +32,6 @@
 		<a href="#home" class="on">Cover</a>
 		<a href="#usage">Chapter 2</a>
 		<a href="#get">Overview</a>
-		<a href="#reference">four</a>
-		<a href="#credits">five</a>
 	</nav>
 </header>
 
@@ -142,17 +140,8 @@
 
 		<div> 
 			<div class="page-content">
-
-
-			</div>
-		</div>	
-
-
-		<!-- *************************************************************** -->
-
-		<div> 
-			<div class="page-content">
-
+      <figure><img src="images/fig2-1.jpg"></figure>
+      <figcaption>Figure 2-1. x and y coordinates on a canvas</figcaption>
 
 			</div>
 		</div>	
@@ -163,48 +152,20 @@
 		<div> 
 			<div class="page-content">
 
+<h3>When Not to Use Canvas</h3>
+<p>Although the canvas element is great and very useful, you should not use the canvas element when another element will suffice. For example, it would not be a good idea to dynamically draw all the different headings for an HTML document on a canvas instead of simply using heading styles (H1, H2, and so on) that are meant for that purpose.</p>
+<h3>Fallback Content</h3>
+<p>In case your web page is accessed by a browser that does not support the canvas element or a subset of the Canvas API features, it is a good idea to provide an alternate source. For example, you can provide an alternate image or just some text that explains what the user could be enjoying if they actually used a modern browser. Listing 2-2 shows how alternate text can be specified inside a canvas element. Browsers that do not support the canvas element will simply render this fallback content.</p>
+<figcaption>Listing 2-2. Use of fallback text inside a canvas element</figcaption>
+<pre class="brush: xml;">
+<canvas>
+  Update your browser to enjoy canvas!
+</canvas>
+</pre>
+<p>Instead of the previous text shown, you can also point to an image that can be displayed in case the browser does not support the canvas element.</p>
 
 			</div>
 		</div>	
-
-
-		<!-- *************************************************************** -->
-
-
-		<div> 
-			<div class="page-content">
-			
-  			<h2>Getting Started</h2>
-  			<p>Here's an example:</p>
-  
-        <pre class="brush: css;">
-        <span class="sel-id">#magazine</span>{
-        	width:<span class="num">800</span>px;
-        	height:<span class="num">400</span>px;
-        }
-        <span class="sel-id">#magazine</span> <span class="sel-class">.turn-page</span>{
-        	width:<span class="num">400</span>px;
-        	height:<span class="num">400</span>px;
-        	background-color:<span class="prop">#ccc</span>;
-        }
-        </pre>
-        
-        <pre class="brush: xml;">
-        &lt;div id=<span class="string">'magazine'</span>&gt;
-        	&lt;div&gt; <span class="text">Page 1</span> &lt;/div&gt;
-        	&lt;div&gt; <span class="text">Page 2</span> &lt;/div&gt;
-        	&lt;div&gt; <span class="text">Page 3</span> &lt;/div&gt;
-        &lt;/div&gt;
-        </pre>
-        
-        <pre class="brush: js;">
-        $(<span class="string">'#magazine'</span>).turn();
-        </pre>
-  
-  			<p>That's it!</p>
-  			
-			</div>
-		</div>
 
 
 		<!-- *************************************************************** -->
