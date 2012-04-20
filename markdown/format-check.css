@@ -1,0 +1,68 @@
+* {
+    -moz-box-sizing: border-box;
+}
+  body {
+    width: 80%;
+    margin: 2em auto;
+    max-width: 600px;
+  }
+	aside { 
+	 padding: 0.5em 2em;
+	 background: #444;
+	 color: #fff;
+	 font-family: Helvetica, Arial;
+	 line-height: 1.5em;
+	 font-size: 80%;
+	 width: 45%;
+	 float: right;
+	 margin: 1em 0 2em 5%;
+	}
+	aside h1 {
+	 font-weight: normal;
+	}
+	figure {
+	 margin: 2em 0 1em;
+	}
+	figcaption {
+	 color: #888;
+	 font-style: italic;
+	 margin: 0;
+	}
+	canvas {
+	 border: 1px solid #888;
+	}
+	pre {
+	 margin: 0;
+	}
+
+
+
+// Tables
+//----------------------------------------------
+table { 
+  margin: 1.4em 0; 
+  width: 100%;
+}
+th { 
+  font-weight: bold; 
+}
+th, td, caption { 
+  padding: .25em 10px .25em 5px; 
+  margin: 0;
+}
+tfoot { 
+  font-style: italic; 
+}
+caption { 
+  background-color: transparent; 
+}
+
+table, td, th, tr {
+    border: 1px solid #CCCCCC;
+}
+th, td {
+    padding: 1em;
+}
+th {
+    background: none repeat scroll 0 0 #EFEFEF;
+}
