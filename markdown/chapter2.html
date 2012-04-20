@@ -10,26 +10,26 @@
 <h1>Chapter 2</h1>
 <h1 id="usingthecanvasapi">Using the Canvas API</h1>
 
-<p>In this chapter, we?ll explore what you can do with the Canvas API?a cool API that enables you to dynamically generate and render graphics, charts, images, and animation. We?ll walk you through using the basics of the rendering API to create a drawing that can scale and adjust to the browser environment. We?ll show you how to create dynamic pictures based on user input in a heatmap display. Of course, we?ll also alert you to the pitfalls of using Canvas and share tricks to overcome them.</p>
+<p>In this chapter, we'll explore what you can do with the Canvas API'a cool API that enables you to dynamically generate and render graphics, charts, images, and animation. We'll walk you through using the basics of the rendering API to create a drawing that can scale and adjust to the browser environment. We'll show you how to create dynamic pictures based on user input in a heatmap display. Of course, we'll also alert you to the pitfalls of using Canvas and share tricks to overcome them.</p>
 
-<p>This chapter presumes only a minimal amount of graphics expertise, so don?t be afraid to jump in and try out one of the most powerful features of HTML5.</p>
+<p>This chapter presumes only a minimal amount of graphics expertise, so don't be afraid to jump in and try out one of the most powerful features of HTML5.</p>
 
 <h2 id="overviewofhtml5canvas">Overview of HTML5 Canvas</h2>
 
-<p>An entire book could be written about the use of the Canvas API (and it wouldn?t be a small book). Because we have only a chapter, we?re going to cover (what we think is) the most commonly used functionality in this very extensive API.</p>
+<p>An entire book could be written about the use of the Canvas API (and it wouldn't be a small book). Because we have only a chapter, we're going to cover (what we think is) the most commonly used functionality in this very extensive API.</p>
 
 <h3 id="history">History</h3>
 
 <p>The canvas concept was originally introduced by Apple to be used in Mac OS X WebKit to create dashboard widgets. Before the arrival of canvas, you could only use drawing APIs in a browser through plugins such as Adobe plugins for Flash and Scalable Vector Graphics (SVG), Vector Markup Language (VML) only in Internet Explorer, or other clever JavaScript hacks. </p>
 
-<p>Try, for example, to draw a simple diagonal line without a canvas element?it sounds easy, but it is a fairly complex task if you do not have a simple two-dimensional drawing API at your disposal. Canvas provides just that, and because it is an extremely useful thing to have in the browser, it was added to the HTML5 specification.</p>
+<p>Try, for example, to draw a simple diagonal line without a canvas element—it sounds easy, but it is a fairly complex task if you do not have a simple two-dimensional drawing API at your disposal. Canvas provides just that, and because it is an extremely useful thing to have in the browser, it was added to the HTML5 specification.</p>
 
 <p>Early on, Apple hinted at possibly reserving the intellectual property rights in the WHATWG draft of the canvas specification, which caused concern at the time among some followers of web standardization. In the end, however, Apple disclosed the patents under the W3C&#8217;s royalty-free patent licensing terms.</p>
 
 
 <aside><h1 id="svgversuscanvas">SVG versus Canvas</h1>
 
-<p>Peter says: ?Canvas is essentially a bitmap canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page?s DOM or part of any namespace?something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled seamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked). </p>
+<p>Peter says: "Canvas is essentially a bitmap canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page's DOM or part of any namespace—something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled seamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked). </p>
 
 <p>Why then, would the WHATWG HTML5 specification not use SVG exclusively? Despite its obvious shortcomings, the HTML5 Canvas API has two things going for it: it performs well because it does not have to store objects for every primitive it draws, and it is relatively easy to implement the Canvas API based on many of the popular two-dimensional drawing APIs found in other programming languages. Ultimately, it is better to have one bird in the hand than two in the bush.?</p>
 </aside>
@@ -57,7 +57,7 @@
 <p>As shown in Figure 2&#8211;1, coordinates in a canvas start at x=0,y=0 in the upper-left corner?which we will refer to as the origin?and increase (in pixels) horizontally over the x-axis and vertically over the y-axis.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/ch2/fig2-1.jpg">
 <figcaption>Figure 2&#8211;1. x and y coordinates on a canvas</figcaption>
 </figure>
 
@@ -223,7 +223,7 @@ Figure 2&#8211;2 shows what the canvas in Listing 2&#8211;5 would look like in a
 A key recommendation for reusable code is that you usually want to draw at the origin (coordinate 0,0) and apply transformations?scale, translate, rotate, and so forth?to modify your drawing code into its final appearance, as shown in Figure 2&#8211;4.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/ch2/fig2-4.jpg">
 <figcaption>Figure 2&#8211;4. Overview of transformation and drawing at the origin</figcaption>
 </figure>
 
@@ -270,7 +270,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 </ol>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;5. Translated diagonal line on a canvas</figcaption>
 </figure>
 
@@ -351,7 +351,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>All the calls in this routine should be familiar to you already. We fetch the canvas context, save it for future reference, translate our position to a new location, draw the canopy, stroke it onto the canvas, and then restore our state. Figure 2&#8211;6 shows the results of our handiwork, a simply line representation of a tree canopy. We?ll expand on this as we go forward, but it?s a good first step.
 ?
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;6. A simple path of a tree canopy</figcaption>
 </figure>
 
@@ -388,7 +388,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>Although we are not using it here, we could also set the lineCap property to be either butt, square, or round to specify how lines should display at the endpoints. Alas, our example has no dangling line ends. Figure 2&#8211;7 shows our spruced-up tree canopy, now stroked with a wider, smoother, brown line instead of the flat black line from before.
 ?
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;7. Stylish stroked tree canopy</figcaption>
 </figure>
 
@@ -408,7 +408,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>First, we set the fillStyle to the appropriate color. As we will see later, it is also possible to set the fill to be a gradient or an image pattern. Then, we simply call the context?s fill function to let the canvas fill all the pixels inside all the closed paths of our current shape, as shown in Figure 2&#8211;8.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;8. Filled tree canopy</figcaption>
 </figure>
 
@@ -442,7 +442,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>Figure 2&#8211;9 shows our simple, flatly filled tree trunk attached to our previous canopy path.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;9. Tree with filled rectangular trunk</figcaption>
 </figure>
 <h3>Drawing Curves</h3>
@@ -480,14 +480,14 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>As shown in Figure 2&#8211;10, the quadraticCurveTo function begins at the current drawing location and takes two x, y point locations as its parameters. The second one is the final stop in our curve. The first one represents a control point. The control point sits to the side of the curve (not on it) and acts almost as a gravitational pull for the points along the curve path. By adjusting the location of the control point, you can adjust the curvature of the path you are drawing. We draw a second quadratic curve up and to the right to complete our path; then stroke it just as we did for our tree canopy before (only wider).
 ??
 <figure>
-  <img src="chapter2-images/kitten.jpg">
+  <img src="images/kitten.jpg">
   <figcaption>Figure 2&#8211;10. Quadratic curve start, end, and control points</figcaption>
 </figure>
 
 <p>Other options for curves in the HTML5 Canvas API include the bezierCurveTo, arcTo, and arc functions. These curves take additional control points, a radius, or angles to determine the characteristics of the curve. Figure 2&#8211;11 shows the two quadratic curves stroked on our canvas to create a path through the trees.
 ?
 <figure>
-  <img src="chapter2-images/kitten.jpg">
+  <img src="images/kitten.jpg">
   <figcaption>Figure 2&#8211;11. Quadratic curves for a path</figcaption>
 </figure>
 
@@ -529,7 +529,7 @@ A key recommendation for reusable code is that you usually want to draw at the o
 <p>As you can see in Figure 2&#8211;12, the change to the appearance of our trunk is only slightly different from the filled rectangle we used before.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;12. Tree with an image used for trunk</figcaption>
 </figure>
 
@@ -592,7 +592,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>Applying these two gradients creates a nice, smooth light source on our rendered tree as shown in Figure 2&#8211;13, making it appear curved and covered by a slight shadow from the canopy above. Let?s keep it.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;13. Tree with gradient trunk</figcaption>
 </figure>
 
@@ -662,7 +662,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>Figure 2&#8211;14 shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;14. A trail with a repeating background pattern</figcaption>
 </figure>
 
@@ -726,7 +726,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>The scale function takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2&#8211;15.
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;15. Tree with a larger scale</figcaption>
 </figure>
 
@@ -791,7 +791,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>Note that the sheared ?shadow? tree is rendered first, so that the actual tree appears above it in Z-order (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure 2&#8211;16.</p>
 ?
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;16. Trees with transformed shadows</figcaption>
 </figure>
 
@@ -861,7 +861,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>As you can see from the result in Figure 2&#8211;17, the trail drawing just got a whole lot?you guessed it?happier.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;17. Background pattern-filled text</figcaption>
 </figure>
 
@@ -922,7 +922,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2&#8211;18 shows the newly applied shadows.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;18. Title with shadowed text</figcaption>
 </figure>
 
@@ -941,7 +941,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 </ul>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;19. Pixel data and the internal data structure that represents it</figcaption>
 </figure>
 
@@ -999,7 +999,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>As shown in Figure 2&#8211;20, if a page served up from http://www.example.com contains a canvas element, it is entirely possible that the code in the page could try to render an image from http://www.remote.com inside the canvas. After all, it is perfectly acceptable to render images from remote sites inside any given web page.
 ?
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;20. Local and remote image sources</figcaption>
 </figure>
 
@@ -1016,7 +1016,7 @@ Let?s see this in more detail with a code sample that applies two gradients to a
 <p>Let?s build a simple heatmap using the capabilities we learned about in the Canvas API. In this case, our heat data source will be not external data, but the movement of our mouse across the map. Moving the mouse over a portion of the map will cause the heat to increase, and holding the mouse at a given position will rapidly increase the temperature to maximum levels. We can overlay such a heatmap display(shown in Figure 2&#8211;21) on a nondescript terrain map, just to provide a sample case. </p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;21. The heatmap application</figcaption>
 </figure>
 
@@ -1283,7 +1283,7 @@ Then, as shown in Listing 2&#8211;27, we will set a handler to change the displa
 <p>Once we update our drawing, we can see the animating rain on top of our trail.</p>
 
 <figure>
-<img src="chapter2-images/kitten.jpg">
+<img src="images/kitten.jpg">
 <figcaption>Figure 2&#8211;22. Still shot of canvas with rain animation</figcaption>
 </figure>
 
