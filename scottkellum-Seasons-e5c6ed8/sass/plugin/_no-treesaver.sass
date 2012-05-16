@@ -1,0 +1,66 @@
+// SUPPORT FOR NON-TREESAVER PAGES
+
+// Hide no-treesaver elements unless they are in a placed figure
+html.no-treesaver
+  figure > div
+    display: none
+    &.no-js
+      display: block
+  
+// No-treesaver styles
+html.no-treesaver
+  overflow: auto
+  overflow-y: scroll
+  body
+    max-width: 50em
+    margin: 0 auto
+    overflow: visible
+    background: $page
+  header, article, footer
+    padding: ($line-height / 2) $line-height
+  header
+    h1
+      +solid($line-height)
+      margin-bottom: ms(-2)
+  .nav
+    height: 1.3em
+    ol, ul
+      list-style: none
+      padding: 0 $margin
+    li
+      display: inline
+      position: relative
+      ol, ul
+        display: none
+      &:hover
+        ol, ul
+          display: block
+          position: absolute
+  article
+    div, iframe, object
+      display: none
+      &.no-treesaver
+        overflow: visible
+        display: block
+        float: left
+        padding: 1em 0
+        width: 100%
+        @media all and (min-width: 30em)
+          width: 60%
+          padding-right: 1em
+        div
+          display: block
+          width: 100%
+        img, iframe, video
+          width: 100%
+          height: auto
+  footer
+    clear: both
+    padding-bottom: 2em
+    position: static
+    .nav li
+      ol, ul
+        top: auto
+        bottom: 100%
+
+$seasons-no-treesaver-loaded: true

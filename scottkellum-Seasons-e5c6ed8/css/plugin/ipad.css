@@ -1,0 +1,55 @@
+ /*
+ IPAD PIXEL-PERFECT STYLES
+ These styles allow you to create iPad specific grids.
+ To use create a new set of grids with the class "fixed ipad" followed by either "vertical" or "horizontal"
+ Margins will be over-written.
+ */
+
+.os-ipad, .os-ipad .grid, .os-iphone, .os-iphone .grid {
+  -webkit-font-smoothing: antialiased; }
+
+html.offline .no-offline, html.offline [data-requires~="no-offline"] {
+  display: none; }
+html.offline [data-requires~="offline"] {
+  display: block; }
+
+html.no-offline [data-requires~="no-offline"] {
+  display: block; }
+html.no-offline [data-requires~="offline"] {
+  display: none; }
+
+.grid.ipad {
+  min-width: 99999px;
+  width: 99999px;
+  margin: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border: none; }
+
+.os-ipad .grid {
+  min-width: 99999px;
+  width: 99999px;
+  opacity: 1 !important; }
+.os-ipad .grid.fixed.ipad.horizontal {
+  height: 644px;
+  width: 771px;
+  min-width: 771px;
+  padding: 0 126.5px; }
+.os-ipad .grid.fixed.ipad.vertical {
+  height: 900px;
+  width: 507px;
+  min-width: 507px;
+  padding: 0 130.5px; }
+
+.os-ipad.fullscreen .grid.fixed.ipad.horizontal {
+  height: 748px; }
+.os-ipad.fullscreen .grid.fixed.ipad.vertical {
+  height: 1004px; }
