@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Publisher PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Publisher>
+<PublisherInfo>
+<PublisherName>Apress</PublisherName>
+<PublisherLocation>New York</PublisherLocation>
+</PublisherInfo>
+<Book Language="En">
+<BookInfo ContainsESM="No" Language="En" NumberingStyle="ChapterOnly" TocLevels="0" OutputMedium="All">
+<BookID>978-1-4302-3865-2</BookID>
+<BookTitle>Pro HTML5 Programming</BookTitle>
+<BookDOI>10.1007/978-1-4302-3865-2</BookDOI>
+<BookPrintISBN>978-1-4302-3864-5</BookPrintISBN>
+<BookElectronicISBN>978-1-4302-3865-2</BookElectronicISBN>
+<EditionNumber>2</EditionNumber>
+<BookChapterCount>13</BookChapterCount>
+<BookCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+</BookCopyright>
+</BookInfo>
+<BookBackmatter>
+<BookBackmatterInfo>
+<BookBackmatterFirstPage>1</BookBackmatterFirstPage>
+<BookBackmatterLastPage>10</BookBackmatterLastPage>
+</BookBackmatterInfo>
+<BodyBackmatter>
+<Index ID="Ind1_2">
+<Heading>Index</Heading>
+<IndexDiv>
+<Heading>A</Heading>
+<IndexEntry><PrimaryIE>Accessible Rich Internet Applications (ARIA), 5</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>addColorStop function, 41</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>addElement, 225</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>addEventListener() method, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>addToPoint function, 57</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Almost Standards mode, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Animation, canvas, 37, 58&#x2013;61</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Apple Safari, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>arc function, 38</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>arcTo function, 38</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Asyncore, 169</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Audio</PrimaryIE><SecondaryIE>activation, 94, 95</SecondaryIE><SecondaryIE>API, 86&#x2013;100, 104&#x2013;106, 316</SecondaryIE><SecondaryIE>codecs, 84, 85</SecondaryIE><SecondaryIE>containers, 83, 84</SecondaryIE><SecondaryIE>controls, 90</SecondaryIE><SecondaryIE>streaming, 85</SecondaryIE><SecondaryIE>unsupported, 85</SecondaryIE><SecondaryIE>working with, 94, 95</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Audio element</PrimaryIE><SecondaryIE>background noise in a page, 103, 104</SecondaryIE><SecondaryIE>browser support for, 86&#x2013;88</SecondaryIE><SecondaryIE>declaring, 89</SecondaryIE><SecondaryIE>playback controls, 91, 92, 94</SecondaryIE><SecondaryIE>source, 90, 91</SecondaryIE><SecondaryIE>understanding, 89&#x2013;94</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>autobuffer attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>autocomplete attribute, 201</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>autofocus attribute, 201, 202</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>autoplay attribute, 92, 93, 104</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>B</Heading>
+<IndexEntry><PrimaryIE>Background patterns, 43, 44</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>beginPath function, 29, 32</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>bezierCurveTo function, 38</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Broadcast server, 168, 170</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Broadcast.html, 182</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Broadcast.py, 170, 175</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Browser database storage</PrimaryIE><SecondaryIE>future of, 286&#x2013;288, 291</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Browser support</PrimaryIE><SecondaryIE>for cookies, 263</SecondaryIE><SecondaryIE>for HTML5, 313</SecondaryIE><SecondaryIE>for Web SQL Database, 286, 290</SecondaryIE><SecondaryIE>for WebSocket API, 176</SecondaryIE><SecondaryIE>for Web Storage, 264</SecondaryIE><SecondaryIE>for Web Storage API, 264, 265</SecondaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>C</Heading>
+<IndexEntry><PrimaryIE>canPlayType() function, 92</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Canvas API, 23</PrimaryIE><SecondaryIE>accessibility issues, 26</SecondaryIE><SecondaryIE>adding a canvas to a page, 27&#x2013;29</SecondaryIE><SecondaryIE>animations, 37</SecondaryIE><SecondaryIE>applying transformations to drawings, 30, 32</SecondaryIE><SecondaryIE>background patterns, 43, 44</SecondaryIE><SecondaryIE>browser support for, 26, 27</SecondaryIE><SecondaryIE>building application with, 55&#x2013;58, 60, 61</SecondaryIE><SecondaryIE>canvas security, 54</SecondaryIE><SecondaryIE>concept of, 23</SecondaryIE><SecondaryIE>coordinates, 24, 25</SecondaryIE><SecondaryIE>creating diagonal line on, 28, 29</SecondaryIE><SecondaryIE>CSS, 26</SecondaryIE><SecondaryIE>drawing curves, 37&#x2013;39</SecondaryIE><SecondaryIE>drawing operations supported by, 24</SecondaryIE><SecondaryIE>fallback content for, 25, 26</SecondaryIE><SecondaryIE>gradients, 41, 42</SecondaryIE><SecondaryIE>history of, 23</SecondaryIE><SecondaryIE>ID attribute, 27</SecondaryIE><SecondaryIE>inserting images, 39, 40</SecondaryIE><SecondaryIE>overview, 23&#x2013;26</SecondaryIE><SecondaryIE>paths, working with, 32&#x2013;34</SecondaryIE><SecondaryIE>scaling canvas objects, 44&#x2013;46</SecondaryIE><SecondaryIE><Emphasis Type="Italic">vs</Emphasis>. SVG, 23</SecondaryIE><SecondaryIE>using fill styles, 35&#x2013;37</SecondaryIE><SecondaryIE>using shadows, 50, 51</SecondaryIE><SecondaryIE>using stroke styles, 34, 35</SecondaryIE><SecondaryIE>using text, 48&#x2013;50</SecondaryIE><SecondaryIE>using transformations, 46&#x2013;48</SecondaryIE><SecondaryIE>when not to use, 25</SecondaryIE><SecondaryIE>working with pixel adata, 52&#x2010;54</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Canvas element, 314</PrimaryIE><SecondaryIE>adding, 96</SecondaryIE><SecondaryIE>updating content, 98</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Canvas image data, 254</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Carakan engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cell phone geolocation data, 110</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Chakra engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Character set, 8</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Chat widgets, 136, 142, 143</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>checkValidity function, 207</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Chrome, Storage panel, 273</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>clear() function, 271</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>clearWatch() function, 120</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Clipping features, 37</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>closePath function, 33</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Comet applications, 160</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Communication API</PrimaryIE><SecondaryIE>MessageEvent interface and, 140</SecondaryIE><SecondaryIE>postMessage API (</SecondaryIE><SeeIE><Emphasis Type="Italic">see</Emphasis> postMessage API)</SeeIE><SecondaryIE>XMLHttpRequest Level 2 (</SecondaryIE><SeeIE><Emphasis Type="Italic">see</Emphasis> XMLHttpRequest Level 2)</SeeIE></IndexEntry>
+<IndexEntry><PrimaryIE>context.createImageData function, 53</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>context.getImageData function, 52, 53</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>context.putImageData function, 53</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>context.rotate(angle) function, 46</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>context.scale function, 45</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Control functions, 92</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Control points, 38</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>controls attribute, 90, 91, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cookies, 263, 264</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>createImageData function, 53</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cross document messaging, 135&#x2013;138, 140&#x2013;146</PrimaryIE><SecondaryIE>browser support for, 139</SecondaryIE><SecondaryIE>using postMessage API, 139, 140 (</SecondaryIE>
+<SeeAlsoIE><Emphasis Type="Italic">see</Emphasis> also postMessage API)</SeeAlsoIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cross origin resource sharing (CORS), 86, 147, 148</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cross-origin communication</PrimaryIE><SeeIE><Emphasis Type="Italic">See</Emphasis> XMLHttpRequest Level 2; postMessage API</SeeIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cross-origin XMLHttpRequests, 147, 149</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE><Emphasis Type="Bold">Cross-site scripting error</Emphasis>, 138</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Cross-window communication, 292, 293</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>CSS pseudoclasses, 214, 215</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>currentSrc attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>currentTime attribute, 93, 100</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>custom validity errors, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>customError constraint, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>customError validation constraint, 213</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>D</Heading>
+<IndexEntry><PrimaryIE>Dashboard widgets, 23</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Data</PrimaryIE><SecondaryIE>property, 136</SecondaryIE><SecondaryIE>sharing across windows, 292, 293</SecondaryIE><SecondaryIE>storage, 275 (</SecondaryIE>
+<SeeAlsoIE><Emphasis Type="Italic">see also</Emphasis> Web Storage API)</SeeAlsoIE></IndexEntry>
+<IndexEntry><PrimaryIE>Database storage</PrimaryIE><SecondaryIE>future of browser, 286&#x2013;288, 291</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>&#x003C;datalist&#x003E; element, 211</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>datalist element, 202</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>dataReturned() function, 185, 186, 281</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Device element, 316</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Devices, 316</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>3D graphics, 314</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Diagonal lines</PrimaryIE><SecondaryIE>on a canvas, 28, 29</SecondaryIE><SecondaryIE>using translation, 30&#x2013;32</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Disk space quota, 271</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>dispatchEvent() method, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>displayLocation() routine, 279</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Distance function, 277</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>distance() utility method, 279</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>DOCTYPE, 8, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>document.getElementById(), 278</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>drawPoint function, 57</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>dropEffect, 225</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>3D shaders, 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>duration attribute, 93</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>E</Heading>
+<IndexEntry><PrimaryIE>EchoHandler, 170</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ECMAScript 5 standard, 20</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ECMAScript engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>effectAllowed, 225</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Embedded content type, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>enableHighAccuracy attribute, 118</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ended attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>error attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Error messages</PrimaryIE><SecondaryIE>user-friendly, 184</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Event building process, 221</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Event capture process, 221</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Event handlers</PrimaryIE><SecondaryIE>to display content of storage event, 273</SecondaryIE><SecondaryIE>for gestures, 318</SecondaryIE><SecondaryIE>for invalid events, 208, 209, 212</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Event listeners</PrimaryIE><SecondaryIE>adding, to WebSocket, 178</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>evt.preventDefault(), 208</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>executeSql(), 288</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>executeSQL(), 288</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>External input, 138</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>F</Heading>
+<IndexEntry><PrimaryIE>File racerBroadcast.html, 282&#x2013;284</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Fill styles, 35&#x2013;37</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>fillRect convenience function, 36, 37</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>fillText function, 48</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Flash video, 88</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Flow content type, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Form controls, 193</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>&#x003C;form&#x003E; element, 193</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Forms API, 193, 200</PrimaryIE><SecondaryIE>autocomplete attribute, 201</SecondaryIE><SecondaryIE>autofocus attribute, 201, 202</SecondaryIE><SecondaryIE>CSS pseudoclasses, 214, 215</SecondaryIE><SecondaryIE>datalist element, 202</SecondaryIE><SecondaryIE>form validation</SecondaryIE><TertiaryIE>checking, 204&#x2013;207</TertiaryIE><TertiaryIE>passwords, 213, 214</TertiaryIE><TertiaryIE>turning off, 209</TertiaryIE><TertiaryIE>validation feedback, 207&#x2013;209</TertiaryIE><TertiaryIE>validation fields and functions, 207</TertiaryIE><SecondaryIE>list attribute, 202</SecondaryIE><SecondaryIE>max attribute, 203</SecondaryIE><SecondaryIE>min attribute, 203</SecondaryIE><SecondaryIE>placeholder attribute, 200</SecondaryIE><SecondaryIE>required attribute, 203</SecondaryIE><SecondaryIE>spellcheck attribute, 202</SecondaryIE><SecondaryIE>step attribute, 203</SecondaryIE><SecondaryIE>valueAsNumber function, 203</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>framebusting, 157</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>frameHeight variable, 97</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>frameWidth variable, 97</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Full-screen video, 86</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Functional forms, 194</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>G</Heading>
+<IndexEntry><PrimaryIE>Geolocation API, 107</PrimaryIE><SecondaryIE>browser support for, 111</SecondaryIE><SecondaryIE>building application with, 120&#x2013;122</SecondaryIE><TertiaryIE>code sample, 126, 128, 129</TertiaryIE><TertiaryIE>processing geolocation data, 123&#x2013;126</TertiaryIE><TertiaryIE>writing HTML display, 122, 123</TertiaryIE><SecondaryIE>checking for browser support, 114</SecondaryIE><SecondaryIE>Google Maps and, 131, 132</SecondaryIE><SecondaryIE>location information, 107</SecondaryIE><TertiaryIE>cell phone data, 110</TertiaryIE><TertiaryIE>GPS data, 109</TertiaryIE><TertiaryIE>IP address-based, 109</TertiaryIE><TertiaryIE>latitude and longitude coordinates, 107, 108</TertiaryIE><TertiaryIE>sources of, 108, 109</TertiaryIE><TertiaryIE>user-defined data, 111</TertiaryIE><SecondaryIE>location tracker application and, 185, 186</SecondaryIE><SecondaryIE>position requests, 115</SecondaryIE><TertiaryIE>one-shot, 115&#x2013;117, 119</TertiaryIE><TertiaryIE>repeated, 119, 120</TertiaryIE><SecondaryIE>privacy, 112</SecondaryIE><TertiaryIE>dealing with location information, 114</TertiaryIE><TertiaryIE>privacy protection mechanism, 113</TertiaryIE><SecondaryIE>request attributes, optional, 118, 119</SecondaryIE><SecondaryIE>status bar, 130, 131</SecondaryIE><SecondaryIE>uses of, 107</SecondaryIE><SecondaryIE>Wi-Fi&#x2013;based geolocation data, 110</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Gestures, 318</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getColor function, 57</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getContext() function, 31, 314</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getCurrentPosition() function, 131</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getElementById() function, 17</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getElementsByName() function, 17</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getElementsByTagName() function, 17</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getImageData function, 52&#x2013;54</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>getItem(key) function, 270</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>GL Shading Language (GLSL), 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Glass pane, 58</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Google Chrome, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Google Maps, 131, 132</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>GPS geolocation data, 109</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Gradients, 41, 42</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>H</Heading>
+<IndexEntry><PrimaryIE>handleLocationError() function, 117</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Heading content type, 10</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Heads-up displays (HUDs), 314</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Heatmaps, 55&#x2013;58</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>height attribute, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Hickson, Ian, 161</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTML5, 1</PrimaryIE><SecondaryIE>3D shaders, 315</SecondaryIE><SecondaryIE>API selector, 18, 19</SecondaryIE><TertiaryIE>formal specification, 19</TertiaryIE><TertiaryIE>JavaScript methods, 17</TertiaryIE><TertiaryIE>QuerySelector methods, 17</TertiaryIE><SecondaryIE>audio data API, 316</SecondaryIE><SecondaryIE>browser support for, 313</SecondaryIE><SecondaryIE>candidate recommendation date, 2</SecondaryIE><SecondaryIE>design principles</SecondaryIE><TertiaryIE>compatibility and paving, cow paths, 3</TertiaryIE><TertiaryIE>interoperability simplification, 4, 5</TertiaryIE><TertiaryIE>presentation and content separation, 4</TertiaryIE><TertiaryIE>security, 4</TertiaryIE><TertiaryIE>universal Access, 5</TertiaryIE><TertiaryIE>utility and the priority of constituencies, 3, 4</TertiaryIE><SecondaryIE>device elements, 316</SecondaryIE><SecondaryIE>DOCTYPE and character set, 8, 9</SecondaryIE><SecondaryIE>DOM Level 3, 21</SecondaryIE><SecondaryIE>future of begin, 313</SecondaryIE><SecondaryIE>future of end, 321</SecondaryIE><SecondaryIE>gesture events, 318</SecondaryIE><SecondaryIE>history of, 1, 2</SecondaryIE><SecondaryIE>HTML definition, 313</SecondaryIE><SecondaryIE>JavaScript logging and debugging, 19, 20</SecondaryIE><SecondaryIE>location-aware applications and WebSockets, 22</SecondaryIE><SecondaryIE>markup elements, 9, 10</SecondaryIE><SecondaryIE>organizations, 3</SecondaryIE><SecondaryIE>orientation event, 317</SecondaryIE><SecondaryIE>overview end, 22</SecondaryIE><SecondaryIE>peer-to-peer networking, 320</SecondaryIE><SecondaryIE>plugin&#x2013;free paradigm</SecondaryIE><TertiaryIE>APIs, 7</TertiaryIE><TertiaryIE>applications, 7</TertiaryIE><TertiaryIE>features, 6</TertiaryIE><TertiaryIE>Microsoft Paint, user interface, 7</TertiaryIE><TertiaryIE><Emphasis Type="Italic">Modernizr</Emphasis>&#x2014;a JavaScript library, 7</TertiaryIE><TertiaryIE>native functionality, 6</TertiaryIE><TertiaryIE>problems, 5</TertiaryIE><TertiaryIE>specification, 6</TertiaryIE><SecondaryIE>semantic markup, 16</SecondaryIE><TertiaryIE>CSS3 features, HTML5 page, 12, 13, 15, 16</TertiaryIE><TertiaryIE>HTML5 page, CSS styles, 11</TertiaryIE><TertiaryIE>Internet Explorer, 16</TertiaryIE><TertiaryIE>sectioning content type, 10</TertiaryIE><SecondaryIE>three dimensions, 314</SecondaryIE><SecondaryIE>touch events, 319</SecondaryIE><SecondaryIE>touchscreen device events, 317</SecondaryIE><SecondaryIE>video, 320</SecondaryIE><SecondaryIE>Web browser JavaScript engines, 21, 22</SecondaryIE><SecondaryIE>WebGL, 314</SecondaryIE><SecondaryIE>window.JSON, 20</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTML5 drag-and-drop, 217</PrimaryIE><SecondaryIE>clean up process, 233</SecondaryIE><SecondaryIE>data retrieval, 220</SecondaryIE><SecondaryIE>data transfer, 219</SecondaryIE><SecondaryIE>demo, styles for, 227</SecondaryIE><SecondaryIE>dispaly customization, 239, 240</SecondaryIE><SecondaryIE><Emphasis Type="Bold">drag source</Emphasis>, 218</SecondaryIE><SecondaryIE>draggable member names and ages, 226, 227</SecondaryIE><SecondaryIE>dragleave and dragenter, 231</SecondaryIE><SecondaryIE>dragover handler, 231</SecondaryIE><SecondaryIE>dragstart handler, 230</SecondaryIE><SecondaryIE>drop handler, 232, 233</SecondaryIE><SecondaryIE>drop list target, 227</SecondaryIE><SecondaryIE><Emphasis Type="Bold">drop target</Emphasis>, 218</SecondaryIE><SecondaryIE>dropzone, 234, 235</SecondaryIE><SecondaryIE>event flow, 222, 224</SecondaryIE><TertiaryIE>drag, 223</TertiaryIE><TertiaryIE>drag participation, 224</TertiaryIE><TertiaryIE>dragend fire, 223</TertiaryIE><TertiaryIE>dragenter, 223</TertiaryIE><TertiaryIE>dragleave, 223</TertiaryIE><TertiaryIE>dragover, 223</TertiaryIE><TertiaryIE>dragstart, 222</TertiaryIE><TertiaryIE>drop, 223</TertiaryIE><TertiaryIE>transfer and control, 224, 225</TertiaryIE><SecondaryIE>event handler registration, 228</SecondaryIE><SecondaryIE>events, 221</SecondaryIE><SecondaryIE>feedback, 219</SecondaryIE><SecondaryIE>file handling, 235</SecondaryIE><TertiaryIE>dataTransfer object, 235</TertiaryIE><TertiaryIE>dragover and dragleave handler, 238</TertiaryIE><TertiaryIE>file drop demo, 237</TertiaryIE><TertiaryIE>file drop drag, 237</TertiaryIE><TertiaryIE>fileDrag.html, 236</TertiaryIE><TertiaryIE>items, 235</TertiaryIE><TertiaryIE>W3C file API, 235</TertiaryIE><SecondaryIE>MIME types, 219, 220</SecondaryIE><SecondaryIE>negotiation, data flavors, 220, 221</SecondaryIE><SecondaryIE>notification, 229</SecondaryIE><SecondaryIE>propagation and prevention, 221, 222</SecondaryIE><SecondaryIE>racers sorted, 226</SecondaryIE><SecondaryIE>successful interaction, 219</SecondaryIE><SecondaryIE>variable declaration, 228</SecondaryIE><SecondaryIE>Web, 217, 218</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTML5 Forms</PrimaryIE><SecondaryIE>browser support, 194, 195</SecondaryIE><SecondaryIE>building application with, 209&#x2013;214</SecondaryIE><SecondaryIE>functional behavior, 194</SecondaryIE><SecondaryIE>new attributes and functions, 200&#x2013;204</SecondaryIE><SecondaryIE>new elements in, 195&#x2013;199</SecondaryIE><SecondaryIE>overview, 193&#x2013;198</SecondaryIE><SecondaryIE><Emphasis Type="Italic">vs</Emphasis>. XForms, 194</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTML5 offline web applications, 295</PrimaryIE><SecondaryIE>about:cache page, Firefox, 296</SecondaryIE><SecondaryIE>application cache API</SecondaryIE><TertiaryIE>.appcache extension, 299</TertiaryIE><TertiaryIE>browser support, 297</TertiaryIE><TertiaryIE>cache manifest file contents, 298</TertiaryIE><TertiaryIE>client and server configuration, 303</TertiaryIE><TertiaryIE>common events, 301</TertiaryIE><TertiaryIE>Content-type: text/cache-manifest, 299</TertiaryIE><TertiaryIE>FALLBACK entries, 300</TertiaryIE><TertiaryIE>manifest attribute, html element, 298</TertiaryIE><TertiaryIE>manifest file, 299, 300</TertiaryIE><TertiaryIE>mime.types, 299</TertiaryIE><TertiaryIE>navigator.onLine property, 298</TertiaryIE><TertiaryIE>NETWORK specification, 300</TertiaryIE><TertiaryIE>online status, 298, 299</TertiaryIE><TertiaryIE>process, manifest file, 301, 302</TertiaryIE><TertiaryIE>SimpleHTTPServer module, 299</TertiaryIE><TertiaryIE>Six Cache States, 300</TertiaryIE><TertiaryIE>update() method, 301</TertiaryIE><TertiaryIE>window.applicationCache object, 300</TertiaryIE><TertiaryIE>window.applicationCache.status, 300</TertiaryIE><TertiaryIE>window.navigator object, 298</TertiaryIE><SecondaryIE>application cache entries, 297</SecondaryIE><SecondaryIE>application caching, 295</SecondaryIE><SecondaryIE>application resources, 306</SecondaryIE><SecondaryIE>applicationCache support, 309</SecondaryIE><SecondaryIE>browser support, 297</SecondaryIE><SecondaryIE>browser-only devices, 295</SecondaryIE><SecondaryIE>cache manifest file, 296</SecondaryIE><SecondaryIE>geolocation API, 303</SecondaryIE><SecondaryIE>geolocation tracking code, 310</SecondaryIE><SecondaryIE>HTML structure and CSS, UI, 306</SecondaryIE><SecondaryIE>intermittent connectivity, 295</SecondaryIE><SecondaryIE>offline event handling, 311</SecondaryIE><SecondaryIE>offline JavaScript, 307&#x2013;309</SecondaryIE><SecondaryIE>offline storage, 296</SecondaryIE><SecondaryIE>Python -m SimpleHTTPServer 9999</SecondaryIE><TertiaryIE>chrome developer tools, 304, 305</TertiaryIE><TertiaryIE>Firefox, 303, 304</TertiaryIE><TertiaryIE>offline mode, 305, 306</TertiaryIE><TertiaryIE>text/cache-manifest content type, 305</TertiaryIE><SecondaryIE>storage code, 310</SecondaryIE><SecondaryIE>universal connectivity, 295</SecondaryIE><SecondaryIE>update button handler, 309</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTML5 Web SQL Database</PrimaryIE><SecondaryIE>browser support for, 286, 290</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTTP request headers, 160, 165</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTTP response headers, 160, 165</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>HTTP/1.1 101 WebSocket Protocol Handshake, 168</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>I</Heading>
+<IndexEntry><PrimaryIE>ID attribute, 27</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>iframes, 136</PrimaryIE><SecondaryIE>communication between, 137</SecondaryIE><SecondaryIE><Emphasis Type="Bold">communication between HTML page and</Emphasis>, 136</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Image data, 254</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>imageData objects, 255</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>imageData.data, 255</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Images inserting into a canvas, 39, 40</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Images processing, 254</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Indexed databases, 286, 287</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Inkscape, 81</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>&#x003C;input type=&#x201D;range&#x201D;&#x003E; input control, 197</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Interaction handling, 317</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Interactive content type, 10</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Internet Engineering Task Force (IETF), 3</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>IP address-based geolocation data, 109</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>IP geolocation, 303</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>J</Heading>
+<IndexEntry><PrimaryIE>J&#x00E4;gerMonkey engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>JavaScript engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>JavaScript Object Notation (JSON)</PrimaryIE><SecondaryIE>object storage, 291, 292</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>JSON object storage, 291, 292</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>JSON.parse() function, 291</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Just-in-time (JIT) compilation engine, 21</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>K</Heading>
+<IndexEntry><PrimaryIE>Kaazing WebSocket Gateway, 168</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>key attribute, 272</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Key(index) function, 270</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>L</Heading>
+<IndexEntry><PrimaryIE>length attribute, 270</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>lineCap property, 35</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>lineTo function, 29, 33</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>lineTo(x, y) function, 32</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>list attribute, 202, 211</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>load() function, 92</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>loadData() function, 291</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>loadDemo() function, 56, 58, 123, 125, 126, 176, 185, 281</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>localStorage object, 264, 269</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Location tracker, 182, 183</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Long-polling, 160</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>loop attribute, 93, 104</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>M</Heading>
+<IndexEntry><PrimaryIE>max attribute, 203</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>maximumAge attribute, 118</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>maxLength constraint, 212</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Media controls, 91, 92, 94</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Media elements</PrimaryIE><SeeIE><Emphasis Type="Italic">See</Emphasis> Video element; Audio element</SeeIE></IndexEntry>
+<IndexEntry><PrimaryIE>Media source files, 90, 91</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Media streaming, 85</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Message processor function, 278</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>MessageEvent interface, 140</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>messageHandler function, 246</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Metadata content type, 10</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Microsoft Internet Explorer, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>mime.types file, 299</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>min attribute, 203</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>mod_pywebsocket, 168</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Modifications, 30</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Mouseover video playback, 105, 106</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>moveTo function, 29</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>moveTo(x, y) function, 32</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Mozilla</PrimaryIE><SecondaryIE>audio data API, 317</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Mozilla Firefox, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Multipurpose Internet Mail Exchange (MIME), 219, 220</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>muted attribute, 93</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>N</Heading>
+<IndexEntry><PrimaryIE>Nitro engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>noValidate attribute, 209</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>O</Heading>
+<IndexEntry><PrimaryIE>ocket.onmessage callback, 281</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>oldValue attribute, 272</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>onchange handler, 197</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>One-shot position requests, 115&#x2013;117, 119</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>onload handler, 40</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>onmessage handler, 185</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>onmessage method, 163</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>onopen handler, 185</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ontouchcancel event handler, 319</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ontouchend event handler, 319</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ontouchmove event handler, 319</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ontouchstart event handler, 319</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>openDatabase() function, 287</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>OpenGL ES 2, 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>OpenGL shaders, 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Opera</PrimaryIE><SecondaryIE>browser, 21</SecondaryIE><SecondaryIE>storage panel, 274</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>!! operator, 88</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Orientation event, 317, 318</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Origin-clean canvas, 54</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Origins</PrimaryIE><SecondaryIE><Emphasis Type="Bold">comparing against white list</Emphasis>, 140</SecondaryIE><SecondaryIE>concept of, 138, 147</SecondaryIE><SecondaryIE>header, 147</SecondaryIE><SecondaryIE>property, 136</SecondaryIE><SecondaryIE>security, 138</SecondaryIE><SecondaryIE>serialization of, 138</SecondaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>P</Heading>
+<IndexEntry><PrimaryIE>Page load routine, 279</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>parse() function, 20</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Password validation, 213, 214</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Path routines, 46</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Paths, working with, 32&#x2013;34</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>pattern attribute, 205, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>patternMismatch constraint, 205</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>pause() function, 92</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>paused attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Peer-to-peer (P2P) networking, 320</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Phrasing content type, 10</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Pixel data, 52&#x2013;54</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>placeholder attribute, 200</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>play() function, 92, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Plugins, 87</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Polling, 160</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Position information utility function, 277</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>poster attribute, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>postMessage API, 135, 244, 255</PrimaryIE><SecondaryIE>browser support, 139</SecondaryIE><SecondaryIE>building application using, 139&#x2013;142</SecondaryIE><TertiaryIE>application in action, 146</TertiaryIE><TertiaryIE>chat widget page, 142, 143</TertiaryIE><TertiaryIE>code, 143&#x2013;145</TertiaryIE><TertiaryIE>portal page, 142</TertiaryIE><SecondaryIE>cross-site scripting attacks, 137</SecondaryIE><SecondaryIE><Emphasis Type="Bold">event listener for message events</Emphasis>, 136</SecondaryIE><SecondaryIE>iframe, 136, 137</SecondaryIE><SecondaryIE>origin security, 138</SecondaryIE><SecondaryIE>receiving messages, 140</SecondaryIE><SecondaryIE>secuity rules, 138</SecondaryIE><SecondaryIE>sending messages, 139</SecondaryIE><SecondaryIE>using, 139, 140</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>preventDefault(), 213, 221, 222</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Priority of Constituencies, 3, 4</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Progress element, 198</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>putImageData function, 53</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Python WebSocket echo server, 168</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>Q</Heading>
+<IndexEntry><PrimaryIE>Quadratic curves, 37, 39</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>quadraticCurveTo function, 38</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Quake II game, 314, 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>querySelector() function, 17</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>querySelectorAll() function, 17</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Quirks mode, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>QUOTA_EXCEEDED_ERR error, 270, 271</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>R</Heading>
+<IndexEntry><PrimaryIE>Radial gradient, 42</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Range control, 197</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Range elements, 197</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Range input type, 197</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>rangeOverflow constraint, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>rangeUnderflow constraint, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Read-only media attributes, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>readyState attribute, 150</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>readyState property, 150</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>readystatechange event, 149, 150</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Real-time web</PrimaryIE><SecondaryIE>history of, 159&#x2013;161</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>removeItem(key) function, 271</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Repeated position requests, 119, 120</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>requestAnimationFrame function, 61</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>required attribute, 203, 205, 211</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Reset function, 56</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Reusable code, 30</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>S</Heading>
+<IndexEntry><PrimaryIE>Safari</PrimaryIE><SecondaryIE>Storage panel, 274</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>saveData() function, 292</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Scalable vector graphics (SVG), 23, 63</PrimaryIE><SecondaryIE>2D graphics creation, 66</SecondaryIE><SecondaryIE>addition, page, 67</SecondaryIE><SecondaryIE>basic shapes, 67, 68</SecondaryIE><SecondaryIE>closeup images, 66</SecondaryIE><SecondaryIE>content definition, 69</SecondaryIE><SecondaryIE>elements transformation, 68, 69</SecondaryIE><SecondaryIE>elements, ChromeWeb Inspector, 64, 65</SecondaryIE><SecondaryIE><Emphasis Type="Italic">Happy Trails!</Emphasis>, 64</SecondaryIE><SecondaryIE>history, 63</SecondaryIE><SecondaryIE>interactive application, 74</SecondaryIE><TertiaryIE>AddTree function, 75</TertiaryIE><TertiaryIE>CSS style, 76, 77</TertiaryIE><TertiaryIE>removeTree function, 76</TertiaryIE><TertiaryIE>trails-dynamic.html code, 77&#x2013;79</TertiaryIE><TertiaryIE>updateTrees function, 75, 76</TertiaryIE><SecondaryIE>markup document, 64</SecondaryIE><SecondaryIE>new file creation, 80, 81</SecondaryIE><SecondaryIE>paths, 71, 72</SecondaryIE><SecondaryIE>patterns and gradients, 70</SecondaryIE><SecondaryIE>text selection, 72</SecondaryIE><SecondaryIE>tools, 80</SecondaryIE><SecondaryIE>trails-static.html, 73, 74</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Scale function, 45</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Scaling canvas objects, 44&#x2013;46</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Scriptable media attributes, 94</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Sectioning content type, 10</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Security, canvas, 54</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Send method, 163</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>sendMyLocation() function, 186</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Server validation, 204</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>sessionStorage object, 264, 266&#x2013;269, 279, 280</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>setDragImage, 225</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>setItem(key, value) function, 270</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>shadowBlur property, 50</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>shadowColor property, 50</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>shadowOffsetX property, 50</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>shadowOffsetY property, 50</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Shadows, 50, 51</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>shape routines, 46</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>SimpleHTTPServer module, 299</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Slow-script warnings, 241</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>socket.onmessage handler, 187</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>socket.onopen callback, 281</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>spellcheck attribute, 202</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>split() routine, 278</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>split() utility, 187</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>SquirrelFish Extreme engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>src attribute, 90, 91</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Standards (or no-quirks) mode, 9</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>startTime attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>startVideo function, 98, 99</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Status bar, 130, 131</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>step attribute, 203</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>stepMismatch constraint, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>stopPropagation(), 213, 221, 222</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>stopTimeline function, 101</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Storage interface, 269</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>storage.key(), 280</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>storageArea, 272</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>StorageEvent interface, 272</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>StorageEvent object, 272</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>storageLog.html page, 292, 293</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Streaming, 160</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>stringify() function, 20</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>stroke styles, 34, 35</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>strokeStyle property, 43</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>strokeText function, 48</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Structured data, 156</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>successCallback function, 115</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>T</Heading>
+<IndexEntry><PrimaryIE>Tamarin technology, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>TCPConnection, 161</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Theora video codec, 85</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>timeout attribute, 119</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>toggleSound() function, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>tooLong constraint, 206</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Touch API, 319</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Touch events, 319, 320</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Touchscreen device events, 317</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>transaction.executeSql() function, 288</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Translate method, 31</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Tree Canopy, 71</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Two-dimensional context, 28</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>typeMismatch constraint, 205, 211</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>U</Heading>
+<IndexEntry><PrimaryIE>update() method, 301</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>updateFrame function, 97, 98</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>updateInterval variable, 97</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>updateLocation() function, 116, 117, 186</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>User-defined geolocation data, 111</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>V</Heading>
+<IndexEntry><PrimaryIE>V8 engine, 21</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>validationMessage attribute, 207</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>ValidityState object, 204, 205, 213</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>valueAsNumber function, 203</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>valueMissing constraint, 205</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Vector Markup Language (VML), 23</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>video</PrimaryIE><SecondaryIE>accessibility, 88, 89</SecondaryIE><SecondaryIE>attributes, 95</SecondaryIE><SecondaryIE>codecs, 84, 85</SecondaryIE><SecondaryIE>containers, 83, 84</SecondaryIE><SecondaryIE>Flash, 88</SecondaryIE><SecondaryIE>full-screen, 86</SecondaryIE><SecondaryIE>streaming, 85</SecondaryIE><SecondaryIE>unsupported, 85</SecondaryIE><SecondaryIE>Video API, 86&#x2013;100, 104&#x2013;106</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>video element</PrimaryIE><SecondaryIE>adding, 96</SecondaryIE><SecondaryIE>adding variables, 97</SecondaryIE><SecondaryIE>browser support for, 86&#x2013;88</SecondaryIE><SecondaryIE>creating video timeline browser, 95&#x2013;101</SecondaryIE><SecondaryIE>declaring, 89</SecondaryIE><SecondaryIE>mouseover video playback, 105, 106</SecondaryIE><SecondaryIE>playback controls, 91, 92, 94</SecondaryIE><SecondaryIE>source, 90, 91</SecondaryIE><SecondaryIE>startVideo function, adding, 98, 99</SecondaryIE><SecondaryIE>stopTimeline function, adding, 101</SecondaryIE><SecondaryIE>timeline code, 101</SecondaryIE><SecondaryIE>understanding, 89&#x2013;94</SecondaryIE><SecondaryIE>updateFrame function, adding, 97, 98</SecondaryIE><SecondaryIE>using input, handling, 99, 100</SecondaryIE><SecondaryIE>working with, 95&#x2013;101</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>videoHeight attribute, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>videoWidth attribute, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>volume attribute, 93</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Vorbis audio codec, 85</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>W</Heading>
+<IndexEntry><PrimaryIE>watchPosition() function, 120, 121, 131</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web 2.0, 1</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web Accessibility Initiative (WAI), 5</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web Hypertext Application Technology Working Group (WHATWG), 3</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web Hypertext Application Working Group (WHATWG), 1</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web SQL Database, 286&#x2013;289, 291</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web storage API, 263</PrimaryIE><SecondaryIE>application</SecondaryIE><TertiaryIE>checking for browser support, 264, 265, 280</TertiaryIE><TertiaryIE>communicating updates, 272, 273</TertiaryIE><TertiaryIE>local <Emphasis Type="Italic">vs</Emphasis>. session storage, 269</TertiaryIE><TertiaryIE>plugging data leaks, 267, 268</TertiaryIE><TertiaryIE>setting and retrieving values, 266, 267</TertiaryIE><SecondaryIE>attributes and functions, 269&#x2013;271</SecondaryIE><SecondaryIE>benefits of, 285</SecondaryIE><SecondaryIE>browser support, 263, 264</SecondaryIE><SecondaryIE>browser treatment of, 273, 275</SecondaryIE><SecondaryIE>building application with begin, 275</SecondaryIE><SecondaryIE>building application with end, 286</SecondaryIE><SecondaryIE><Emphasis Type="Italic">vs</Emphasis>. cookies, 263, 264</SecondaryIE><SecondaryIE>cross-window communication, 292, 293</SecondaryIE><SecondaryIE>database (</SecondaryIE><SeeIE><Emphasis Type="Italic">see</Emphasis> Browser database storage)</SeeIE><SecondaryIE>indexed database, 289, 290</SecondaryIE><SecondaryIE>JSON object storage, 291, 292</SecondaryIE><SecondaryIE>storage values, 273, 275</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web Video Text Tracks (WebVTT), 88, 89</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Web Workers API, 241, 242</PrimaryIE><SecondaryIE>browser support for, 242</SecondaryIE><SecondaryIE>building application with, 250, 251</SecondaryIE><TertiaryIE>application in action, 256, 257</TertiaryIE><TertiaryIE>coding blur.html application page, 253</TertiaryIE><TertiaryIE>coding blur.js helper script, 252</TertiaryIE><TertiaryIE>coding blurWorker.js Web Worker script, 254</TertiaryIE><TertiaryIE>communicating with Web Workers, 254, 255</TertiaryIE><TertiaryIE>example code, 257, 261</TertiaryIE><SecondaryIE>checking for browser support, 242, 243</SecondaryIE><SecondaryIE>coding JavaScript file, 246</SecondaryIE><SecondaryIE>communicating with web workers, 244, 245</SecondaryIE><SecondaryIE>creating Web Workers, 243</SecondaryIE><TertiaryIE>inline workers, 243</TertiaryIE><TertiaryIE>shared workers, 243</TertiaryIE><SecondaryIE>example code, 248, 249</SecondaryIE><SecondaryIE>handling errors, 246</SecondaryIE><SecondaryIE>loading and executing JavaScript, 244</SecondaryIE><SecondaryIE>stopping Web Workers, 247</SecondaryIE><SecondaryIE>timers, 248</SecondaryIE><SecondaryIE>within Web Workers, 247</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>WebGL, 314, 315</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>WebSocket, 281</PrimaryIE><SecondaryIE>interface, 163</SecondaryIE><SecondaryIE>server implementations, 168</SecondaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>WebSocket API, 3, 159</PrimaryIE><SecondaryIE>applications</SecondaryIE><TertiaryIE>adding event listeners, 178</TertiaryIE><TertiaryIE>sending messages, 179, 180, 182</TertiaryIE><SecondaryIE>browser support for, 176</SecondaryIE><SecondaryIE>building application</SecondaryIE><TertiaryIE>adding Geolocation code, 185</TertiaryIE><TertiaryIE>adding WebSocket code, 185</TertiaryIE><TertiaryIE>coding HTML file, 183, 185</TertiaryIE><TertiaryIE>location tracker, 182, 183</TertiaryIE><TertiaryIE>tracker HTML code, 188&#x2013;190</TertiaryIE><SecondaryIE>building application</SecondaryIE><TertiaryIE>adding Geolocation code, 186</TertiaryIE><SecondaryIE>echo server, 167&#x2013;169</SecondaryIE><SecondaryIE>definition, webSocket, 161</SecondaryIE><SecondaryIE>framing</SecondaryIE><TertiaryIE>broadcast server, 170</TertiaryIE><TertiaryIE>broadcast.py code, 175</TertiaryIE><TertiaryIE>components, 169</TertiaryIE><TertiaryIE>EchoHandler, 170</TertiaryIE><TertiaryIE>masking, 169</TertiaryIE><TertiaryIE>server communication, 176</TertiaryIE><TertiaryIE>websocket.py, 170&#x2013;175</TertiaryIE><TertiaryIE>WebSocketConnection, 170</TertiaryIE><SecondaryIE>handshake, 161, 162</SecondaryIE><SecondaryIE>interface, 163</SecondaryIE><SecondaryIE>network traffic and latency</SecondaryIE><TertiaryIE>half-duplex polling solution, 166, 167</TertiaryIE><TertiaryIE>HTTP request header, 164, 165</TertiaryIE><TertiaryIE>HTTP response header, 165</TertiaryIE><TertiaryIE>network overhead, 165</TertiaryIE><TertiaryIE>polling, 164, 165</TertiaryIE><TertiaryIE><Emphasis Type="Italic">vs</Emphasis>. polling solution, 166</TertiaryIE><TertiaryIE>reduction, 166</TertiaryIE><TertiaryIE>XMLHTTPRequest, 164</TertiaryIE><SecondaryIE>protocol, 161, 162</SecondaryIE><SecondaryIE>real-time and HTTP</SecondaryIE><TertiaryIE>complexity applications, 160</TertiaryIE><TertiaryIE>long-polling, 160</TertiaryIE><TertiaryIE>polling, 160</TertiaryIE><TertiaryIE>request and response headers, 160</TertiaryIE><TertiaryIE>streaming, 160</TertiaryIE><TertiaryIE>web server, 159</TertiaryIE><SecondaryIE>transport protocol, 161</SecondaryIE><SecondaryIE>using</SecondaryIE><TertiaryIE>begin, 176</TertiaryIE><TertiaryIE>creating WebSocket object and connecting to WebSocket server, 177</TertiaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>WebSocketConnection, 170</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>WebSocketConnection instance, 169</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>width attribute, 95</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Wi-Fi geolocation data, 110</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>willValidate attribute, 207</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>Window object, 269</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>window.openDatabase() function, 287</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>window.orientation property, 317</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>window.WebSocket command, 176</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>World Wide Web Consortium (W3C), 1, 3</PrimaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>X</Heading>
+<IndexEntry><PrimaryIE>XForms, 194</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>XMLHttpRequest, 146, 164</PrimaryIE></IndexEntry>
+<IndexEntry><PrimaryIE>XMLHttpRequest Level 2</PrimaryIE><SecondaryIE>application in action, 156</SecondaryIE><SecondaryIE>browser support, 150</SecondaryIE><SecondaryIE><Emphasis Type="Bold">client-side</Emphasis> <Emphasis Type="BoldItalic">vs.</Emphasis> <Emphasis Type="Bold">server-side aggregation</Emphasis>, 148</SecondaryIE><SecondaryIE>code for application, 154</SecondaryIE><SecondaryIE>cross-origin communication, 147, 149</SecondaryIE><SecondaryIE>progress events, 149, 150</SecondaryIE><SecondaryIE>using, 150</SecondaryIE><TertiaryIE>binary data, 152</TertiaryIE><TertiaryIE>building application, 152&#x2013;154</TertiaryIE><TertiaryIE>making cross-origin requests, 151</TertiaryIE><TertiaryIE>progress events, 151</TertiaryIE></IndexEntry>
+</IndexDiv>
+<IndexDiv>
+<Heading>Z</Heading>
+<IndexEntry><PrimaryIE>Z-order, 47</PrimaryIE></IndexEntry>
+</IndexDiv>
+</Index>
+</BodyBackmatter>
+<BodyRef FileRef="978-1-4302-3865-2_BookBackmatter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</BookBackmatter>
+</Book>
+</Publisher>

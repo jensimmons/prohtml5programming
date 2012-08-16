@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Chapter PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Chapter Language="En" OutputMedium="All" ID="Chap10_10">
+<ChapterInfo Language="En" ChapterType="OriginalPaper" NumberingStyle="ChapterOnly" TocLevels="0" ContainsESM="No" OutputMedium="All">
+<ChapterID>10</ChapterID>
+<ChapterNumber>Chapter 10</ChapterNumber>
+<ChapterDOI>10.1007/978-1-4302-3865-2_10</ChapterDOI>
+<ChapterSequenceNumber>10</ChapterSequenceNumber>
+<ChapterTitle Language="En">Using the Web Workers API<IndexTerm><Primary>Web Workers API</Primary></IndexTerm></ChapterTitle>
+<ChapterFirstPage>1</ChapterFirstPage>
+<ChapterLastPage>23</ChapterLastPage>
+<ChapterCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+</ChapterCopyright>
+<ChapterHistory>
+<OnlineDate>
+<Year><?InsertOnReleaseOF OFYear?></Year>
+<Month><?InsertOnReleaseOF OFMonth?></Month>
+<Day><?InsertOnReleaseOF OFDay?></Day>
+</OnlineDate>
+</ChapterHistory>
+</ChapterInfo>
+<ChapterHeader>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1_10" CorrespondingAffiliationID="Aff1_10">
+<AuthorName>
+<GivenName>Peter</GivenName>
+<FamilyName>Lubbers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_10">
+<AuthorName>
+<GivenName>Brian</GivenName>
+<FamilyName>Albers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_10">
+<AuthorName>
+<GivenName>Frank</GivenName>
+<FamilyName>Salim</FamilyName>
+</AuthorName>
+</Author>
+<Affiliation ID="Aff1_10">
+<OrgName>Technical Communication at Kaazing</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<State>CA</State>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<Abstract ID="Abs1_10" Language="En" OutputMedium="Online">
+<Heading>Abstract</Heading>
+<Para>JavaScript is single-threaded. As a result, long-lasting computations (not necessarily due to poorly written code) will block the UI thread and make it impossible to add text to text boxes, click buttons, use CSS effects, and, in most browsers, open new tabs until control has returned. As an answer to that problem, HTML5 Web Workers provide background-processing capabilities to web applications and typically run on separate threads so that JavaScript applications using Web Workers can take advantage of multicore CPUs. Separating long-running tasks into Web Workers also avoids the dreaded slow-script warnings, shown in Figure 10-1, that display when JavaScript loops continue for several seconds.</Para>
+</Abstract>
+</ChapterHeader>
+<Body>
+<Para>JavaScript is single-threaded. As a result, long-lasting computations (not necessarily due to poorly written code) will block the UI thread and make it impossible to add text to text boxes, click buttons, use CSS effects, and, in most browsers, open new tabs until control has returned. As an answer to that problem, HTML5 Web Workers provide background-processing capabilities to web applications and typically run on separate threads so that JavaScript applications using Web Workers can take advantage of multicore CPUs. Separating long-running tasks into Web Workers also avoids the dreaded slow-script warnings<IndexTerm><Primary>slow-script warnings</Primary></IndexTerm>, shown in Figure <InternalRef RefID="Fig1_10">10-1</InternalRef>, that display when JavaScript loops continue for several seconds.<Figure ID="Fig1_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>Slow script warning in Firefox</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO1_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig1_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>As powerful as Web Workers are, there are also certain things they cannot do. For example, when a script is executing inside a Web Worker it cannot access the web page&#x2019;s <Literal>window</Literal> object (<Literal> window.document</Literal>), which means that Web Workers don&#x2019;t have direct access to the web page and the DOM API. Although Web Workers cannot block the browser UI, they can still consume CPU cycles and make the system less responsive.</Para>
+<Para>Let&#x2019;s say you want to create a web application that has to perform some background number crunching, but you do not want those tasks to interfere with the interactivity of the web page itself. Using Web Workers, you can spawn a Web Worker to perform the tasks and add an event listener to listen to messages from the Web Worker as they are sent.</Para>
+<Para>Another use case for Web Workers could be an application that listens for broadcast news messages from a back-end server, posting messages to the main web page as they are received from the back-end server. This Web Worker might use Web Sockets or Server-Sent Events to talk to the back-end server.</Para>
+<Para>In this chapter, we&#x2019;ll explore what you can do with Web Workers. First, we&#x2019;ll discuss how Web Workers work and the level of browser support available at the time of this writing. Then, we&#x2019;ll discuss how you can use the APIs to create new workers and how to communicate between a worker and the context that spawned it. Finally, we&#x2019;ll show you how you can build an application with Web Workers.</Para>
+<Section1 ID="Sec2_10">
+<Heading>Browser Support for Web Workers</Heading>
+<Para><IndexTerm><Primary>Web Workers API</Primary><Secondary>browser support for</Secondary></IndexTerm>The majority of the modern web browsers support Web Workers. Check the web site <Literal>http://caniuse.com</Literal> (search for Web Workers) for the most up-to-date support matrix. While there are polyfill (emulation) libraries available for most other APIs&#x2014;for example, for HTML5 Canvas there are libraries such as <Literal>excanvas.js</Literal> and <Literal>flashcanvas.js</Literal> that provide an emulation of the Canvas APIs (using Flash under the covers)&#x2014;an emulation for Web Workers does not make a lot of sense, however. You can either call your worker code as a worker, or run the same code inline in your page, blocking the UI thread. The improved responsiveness of the worker-based page may just be enough to have people upgrade to a more modern browser (at least we hope it will).</Para>
+</Section1>
+<Section1 ID="Sec3_10">
+<Heading>Using the Web Workers API</Heading>
+<Para>In this section, we&#x2019;ll e<IndexTerm><Primary>Web Workers API</Primary></IndexTerm>xplore the use of the Web Workers API in more detail. For the sake of illustration, we&#x2019;ve created a simple browser page: <Literal> echo.html</Literal>. Using Web Workers is fairly straightforward&#x2014;you create a Web Worker object and pass in a JavaScript file to be executed. Inside the page you set up an event listener to listen to incoming messages and errors that are posted by the Web Worker and if you want to communicate from the page to the Web Worker, you call <Literal>postMessage</Literal> to pass in the required data. The same is true for the code in the Web Worker JavaScript file&#x2014;event handlers must be set up to process incoming messages and errors, and communication with the page is handled with a call to <Literal>postMessage</Literal>.</Para>
+<Section2 ID="Sec4_10">
+<Heading>Checking for Browser Support</Heading>
+<Para>Before you call the Web Workers API<IndexTerm><Primary>Web Workers API</Primary><Secondary>checking for browser support</Secondary></IndexTerm> functions, you will want to make sure there is support in the browser for what you&#x2019;re about to do. This way, you can provide some alternate text, prompting the users of your application to use a more up-to-date browser. Listing 10-1 shows the code you can use to test for browser support.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-1.</Heading>
+<Para>Checking for Browser Support</Para>
+</FormalPara>
+<Para Type="Programcode">function loadDemo() {</Para>
+<Para Type="Programcode">  if (typeof(Worker) !== "undefined") {</Para>
+<Para Type="Programcode">    document.getElementById("support").innerHTML =</Para>
+<Para Type="Programcode">            "Excellent! Your browser supports Web Workers";</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">}</Para>
+<Para>In this example, you test for browser support in the <Literal>loadDemo</Literal> function, which might be called when the page is loaded. A call to <Literal>typeof(Worker)</Literal> will return the window&#x2019;s global <Literal>Worker</Literal> property, which will be undefined if the browser doesn&#x2019;t support the Web Workers API. In this example, the page is updated to reflect whether there is browser support by updating a previously defined <Literal>support</Literal> element on the page with a suitable message, as shown at the top of Figure <InternalRef RefID="Fig2_10">10-2</InternalRef>.
+<Figure ID="Fig2_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>Example of showing <IndexTerm><Primary>Web Workers API</Primary><Secondary>checking for browser support</Secondary></IndexTerm>whether Web Workers is supported</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO2_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig2_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec5_10">
+<Heading>Creating Web Workers</Heading>
+<Para>Web Workers<IndexTerm><Primary>Web Workers API</Primary><Secondary>creating Web Workers</Secondary></IndexTerm> are initialized with the URL of a JavaScript file, which contains the code the worker will execute. This code sets event listeners and communicates with the script that spawned it. The URL for the JavaScript file can be a relative or absolute URL with the same origin (the same scheme, host, and port) as the main page:</Para>
+<Para Type="Programcode">worker = new Worker("echoWorker.js");</Para>
+</Section2>
+<Section2 ID="Sec6_10">
+<Heading>Inline Workers</Heading>
+<Para><IndexTerm><Primary>Web Workers API</Primary><Secondary>creating Web Workers</Secondary><Tertiary>inline workers</Tertiary></IndexTerm>To start a worker you need to point to a file. You may have seen some examples of script elements that have the type <Literal>javascript/worker</Literal>, as shown in the following example:</Para>
+<Para Type="Programcode"> &#x003C;script id="myWorker" type="javascript/worker"&#x003E;</Para>
+<Para>Don&#x2019;t let this fool you into thinking that you can simply set the type of a script element to run the JavaScript code as a Web Worker. In this case, the type information is used to signal the browser and its JavaScript engine <Emphasis Type="Italic">not</Emphasis> to parse and run the script. In fact, the type may as well have been <Emphasis Type="Italic">anything</Emphasis> other than <Literal>text/javascript</Literal>. The script example shown is a building block for <Emphasis Type="Italic">inline Web Workers</Emphasis>&#x2014;a feature that can be used only if your browser also supports the File System API (Blob Builder or File Writer). In that case you can programmatically find the script block (in the previous case, the element with the <Literal>myWorker</Literal> id) and write the Web Worker JavaScript file to disk. After that, you can call the inline Web Worker<IndexTerm><Primary>Web Workers API</Primary><Secondary>creating Web Workers</Secondary><Tertiary>inline workers</Tertiary></IndexTerm> in your code.</Para>
+</Section2>
+<Section2 ID="Sec7_10">
+<Heading>Shared Workers</Heading>
+<Para><IndexTerm><Primary>Web Workers API</Primary><Secondary>creating Web Workers</Secondary><Tertiary>shared workers</Tertiary></IndexTerm>There is yet another type of worker, which is not widely supported at the time of this writing: the shared Web Worker. A shared Web Worker is like a normal Web Worker, but it can be shared across multiple pages on the same origin. Shared Web Workers introduce the notion of <Emphasis Type="Italic">ports</Emphasis> that are used for <Literal>PostMessage</Literal> communication. Shared Web Workers can be useful for data synchronization among multiple pages (or tabs) on the same origin or to share a long-lived resource (like a WebSocket) among several tabs.</Para>
+<Para>The syntax for starting a shared Web Worker is as follows:</Para>
+<Para Type="Programcode">sharedWorker = new SharedWorker(sharedEchoWorker.js');</Para>
+</Section2>
+<Section2 ID="Sec8_10">
+<Heading>Loading and Executing Additional JavaScript</Heading>
+<Para>An application composed <IndexTerm><Primary>Web Workers API</Primary><Secondary>loading and executing JavaScript</Secondary></IndexTerm>of several JavaScript files can contain <Literal>&#x003C;script&#x003E;</Literal> elements that synchronously load JavaScript files as the page loads. However, because Web Workers do not have access to the <Literal>document</Literal> object, there is an alternative mechanism for synchronously importing additional JavaScript files from within workers&#x2013; <Literal>importScripts</Literal>:</Para>
+<Para Type="Programcode">importScripts("helper.js");</Para>
+<Para>Importing a JavaScript file simply loads and executes JavaScript into an existing worker. Multiple scripts can be imported by the same call to <Literal>importScripts</Literal>. They are executed in the order specified:</Para>
+<Para Type="Programcode">importScripts("helper.js", "anotherHelper.js");</Para>
+</Section2>
+<Section2 ID="Sec9_10">
+<Heading>Communicating with Web Workers</Heading>
+<Para>Once the Web Worker<IndexTerm><Primary>Web Workers API</Primary><Secondary>communicating with web workers</Secondary></IndexTerm> is spawned, you can use the <Literal>postMessage</Literal> API to send data to and from Web Workers. This is the same <Literal>postMessage</Literal> API<IndexTerm><Primary>postMessage API</Primary></IndexTerm> that is used for cross-frame and cross-window communication. <Literal> postMessage</Literal> can be used to send most JavaScript objects, but not functions or objects with cyclic references.</Para>
+<Para>Let&#x2019;s say that you want to build a simple Web Worker example that allows users to send a message to a worker, which in turn echoes back the message. This example may not be very useful in real life, but it&#x2019;s useful enough to explain the concepts you need to build more complex examples. Figure <InternalRef RefID="Fig3_10">10-3</InternalRef> shows this example web page and its Web Worker in action. The code for this simple page is listed at the end of this section. <Figure ID="Fig3_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-3</CaptionNumber>
+<CaptionContent>
+<SimplePara>A simple web page that uses Web Workers</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO3_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig3_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>To set up proper communication with your Web Worker, code has to be added to the <Emphasis Type="Italic">main page</Emphasis> (the page that calls the Web Worker) as<IndexTerm><Primary>Web Workers API</Primary><Secondary>communicating with web workers</Secondary></IndexTerm> well as the worker JavaScript file.</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec10_10">
+<Heading>Coding the Main Page</Heading>
+<Para>To communicate from the page to the Web Worker, you call <Literal>postMessage</Literal> to pass in the required data. To listen to incoming messages and errors that are sent by the Web Worker to the page, you set up an event listener.</Para>
+<Para>To set up communication between the main page and the Web Worker, first add the call to <Literal>postMessage</Literal> to the main page, as follows:</Para>
+<Para Type="Programcode">document.getElementById("helloButton").onclick = function() {</Para>
+<Para Type="Programcode">  worker.postMessage("Here's a message for you");</Para>
+<Para Type="Programcode">}</Para>
+<Para>In the preceding example, a message is sent to the Web Worker when the user clicks the <Emphasis Type="Bold">Post a Message</Emphasis> button. Next, add an event <IndexTerm><Primary>Web Workers API</Primary><Secondary>communicating with web workers</Secondary></IndexTerm>listener to the page that listens for messages from the Web Worker:</Para>
+<Para Type="Programcode">worker.addEventListener("message", messageHandler, true);</Para>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">    // process message from worker</Para>
+<Para Type="Programcode">}</Para>
+<Section2 ID="Sec11_10">
+<Heading>Coding the Web Worker JavaScript File</Heading>
+<Para>You must now add similar<IndexTerm><Primary>Web Workers API</Primary><Secondary>coding JavaScript file</Secondary></IndexTerm> code to the Web Worker JavaScript file&#x2014;event handlers must be set up to process incoming messages and errors, and communication with the page is handled with a call to <Literal>postMessage</Literal>.</Para>
+<Para>To complete the communication between the page and the Web Worker, first, add the call to <Literal>postMessage</Literal>; for example, inside a <Literal>messageHandler</Literal> function:</Para>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">  postMessage("worker says: " + e.data + " too");</Para>
+<Para Type="Programcode">}</Para>
+<Para>Next, add an event listener to the Web Worker JavaScript file that handles messages coming from the main page:</Para>
+<Para Type="Programcode">addEventListener("message", messageHandler, true);</Para>
+<Para>In this example, the <Literal>messageHandler</Literal> function<IndexTerm><Primary>messageHandler function</Primary></IndexTerm> is called immediately when the message is received so that the message can be echoed back.</Para>
+<Para>Note that if this was a shared worker, you would use a slightly different syntax (using a <Literal>port</Literal>):</Para>
+<Para Type="Programcode">sharedWorker.port.addEventListener("message", messageHandler, true);</Para>
+<Para Type="Programcode">sharedWorker.port.postMessage("Hello HTML5");</Para>
+<Para>In addition, the worker can listen to a <Literal>connect</Literal> event for incoming connections. You can use this to count active connections.</Para>
+</Section2>
+<Section2 ID="Sec12_10">
+<Heading>Handling Errors</Heading>
+<Para><IndexTerm><Primary>Web Workers API</Primary><Secondary>handling errors</Secondary></IndexTerm>Unhandled errors in a Web Worker script fire error events on the Web Worker object. Listening for these error events is especially important when you are debugging scripts that make use of Web Workers. The following shows an example of an error handling function in a Web Worker JavaScript file that logs errors to the console:</Para>
+<Para Type="Programcode">function errorHandler(e) {</Para>
+<Para Type="Programcode">    console.log(e.message, e);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">    To handle the errors, you must add an event listener to the main page:</Para>
+<Para Type="Programcode">worker.addEventListener("error", errorHandler, true);</Para>
+<Para> Most browsers don&#x2019;t have a great way to step through Web Worker code yet, but Google Chrome offers Web Worker debugging capabilities in its Chrome Developer Tools (in the Scripts tab, look for Worker inspectors), as shown in Figure <InternalRef RefID="Fig4_10">10-4</InternalRef>. <Figure ID="Fig4_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-4</CaptionNumber>
+<CaptionContent>
+<SimplePara>Web Worker debugging options in Chrome Developer ToolsStopping Web Workers</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO4_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig4_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Web Workers don&#x2019;t <IndexTerm><Primary>Web Workers API</Primary><Secondary>stopping Web Workers</Secondary></IndexTerm>stop by themselves; but the page that started them can stop them. If the page is closed, Web Workers will be garbage-collected, so rest assured you won&#x2019;t have any zombie workers hanging around performing background tasks. However, you may want to reclaim resources when a Web Worker is no longer needed&#x2015;perhaps when the main page is notified that the Web Worker has finished its tasks. You may also wish to cancel a long-running task in response to user actions. Calling <Literal>terminate</Literal> stops the Web Worker. A terminated Web Worker will no longer respond to messages or perform any additional computations. You cannot restart a worker; instead, you can create a new worker using the same URL.</Para>
+<Para Type="Programcode">worker.terminate();</Para>
+</Section2>
+<Section2 ID="Sec13_10">
+<Heading>Using Web Workers within Web Workers</Heading>
+<Para>The Worker API can be <IndexTerm><Primary>Web Workers API</Primary><Secondary>within Web Workers</Secondary></IndexTerm>used inside Web Worker scripts to create subworkers:</Para>
+<Para Type="Programcode">var subWorker = new Worker("subWorker.js");</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Lots of Workers</Heading>
+<Para><Emphasis Type="Bold">Peter says</Emphasis>: &#x201C;If you spawn a Worker that <Emphasis Type="Italic">recursively</Emphasis> spawns subworker with the same JavaScript source file, you will see some interesting results, to say the least.&#x201D;</Para>
+</FormalPara>
+</Section2>
+<Section2 ID="Sec16_10">
+<Heading>Using Timers</Heading>
+<Para>Although Web <IndexTerm><Primary>Web Workers API</Primary><Secondary>timers</Secondary></IndexTerm>Workers cannot access the <Literal>window</Literal> object, they can make use of the full JavaScript timing API, typically found on the global window:</Para>
+<Para Type="Programcode">var t = setTimeout(postMessage, 2000, "delayed message");</Para>
+</Section2>
+<Section2 ID="Sec17_10">
+<Heading>Example Code</Heading>
+<Para>For completeness, Listings 10-2 and 10-3 <IndexTerm><Primary>Web Workers API</Primary><Secondary>example code</Secondary></IndexTerm>show the code for the simple page and the Web Worker JavaScript file.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-2.</Heading>
+<Para>Simple HTML Page That Calls a Web Worker</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E; </Para>
+<Para Type="Programcode">&#x003C;title&#x003E;Simple Web Workers Example&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;link rel="stylesheet" href="styles.css"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E;Simple Web Workers Example&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;p id="support"&#x003E;Your browser does not support Web Workers.&#x003C;/p&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="stopButton"&#x003E;Stop Task&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="helloButton"&#x003E;Post a Message&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">   function stopWorker() {</Para>
+<Para Type="Programcode">       worker.terminate();</Para>
+<Para Type="Programcode">   }</Para>
+<Para Type="Programcode">   function messageHandler(e) {</Para>
+<Para Type="Programcode">       console.log(e.data);</Para>
+<Para Type="Programcode">   }</Para>
+<Para Type="Programcode">   function errorHandler(e) {</Para>
+<Para Type="Programcode">       console.warn(e.message, e);</Para>
+<Para Type="Programcode">   }</Para>
+<Para Type="Programcode">   function loadDemo() {</Para>
+<Para Type="Programcode">       if (typeof(Worker) !== "undefined") {</Para>
+<Para Type="Programcode">           document.getElementById("support").innerHTML = "Excellent! Your browser supports Web Workers";</Para>
+<Para Type="Programcode">           worker = new Worker("echoWorker.js");</Para>
+<Para Type="Programcode">           worker.addEventListener("message", messageHandler, true);</Para>
+<Para Type="Programcode">           worker.addEventListener("error", errorHandler, true);</Para>
+<Para Type="Programcode">           document.getElementById("helloButton").onclick = function() {</Para>
+<Para Type="Programcode">               worker.postMessage("Here's a message for you");</Para>
+<Para Type="Programcode">       }</Para>
+<Para Type="Programcode">          document.getElementById("stopButton").onclick = stopWorker;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">window.addEventListener("load", loadDemo, true);</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-3.</Heading>
+<Para>Simple Web Worker JavaScript File</Para>
+</FormalPara>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">    postMessage("worker says: " + e.data + " too");</Para>
+<Para>}</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec18_10">
+<Heading><IndexTerm><Primary>Web Workers API</Primary><Secondary>example code</Secondary></IndexTerm>addEventListener("message", messageHandler, true);Building an Application with Web Workers</Heading>
+<Para>So far, we&#x2019;ve focused on using <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary></IndexTerm>the different Web Worker APIs. Let&#x2019;s see how powerful the Web Workers API can really be by building an application: a web page with an image-blurring filter, parallelized to run on multiple Web Workers. Figure <InternalRef RefID="Fig5_10">10-5</InternalRef> shows what this application looks like when you start it. <Figure ID="Fig5_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-5</CaptionNumber>
+<CaptionContent>
+<SimplePara>Web Worker&#x2013;based web page with image-blurring filter</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO5_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig5_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>This application sends <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary></IndexTerm>image data from a canvas to several Web Workers (you can specify how many). The Web Workers then process the image with a simple box-blur filter. This may take several seconds, depending on the size of the image and the computational resources available (even machines with fast CPUs may have load from other processes, causing JavaScript execution to take more wall-clock time to complete). Figure <InternalRef RefID="Fig6_10">10-6</InternalRef> shows the same page after running the blur filtering process for a while. <Figure ID="Fig6_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-6</CaptionNumber>
+<CaptionContent>
+<SimplePara>Image-Blurring web page after running for a while</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO6_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig6_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>However, because the heavy lifting takes place in Web Workers, there is no danger of slow-script warnings and, therefore, no need to manually partition the task into scheduled slices&#x2014;something you would have to consider if you could not use Web Workers.<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary></IndexTerm>
+</Para>
+<Section2 ID="Sec19_10">
+<Heading>Coding the blur.js Helper Script</Heading>
+<Para>Inside the <Literal>blur.js</Literal> application page, we <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blur.js helper script</Tertiary></IndexTerm>can use a straightforward implementation of a blur filter that loops until it has completely processed its input, as shown in Listing 10-4.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-4.</Heading>
+<Para>A JavaScript Box-blur Implementation in the File blur.js</Para>
+</FormalPara>
+<Para Type="Programcode">function inRange(i, width, height) {</Para>
+<Para Type="Programcode">    return ((i&#x003E;=0) &#x0026;&#x0026; (i &#x003C; width*height*4));</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function averageNeighbors(imageData, width, height, i) {</Para>
+<Para Type="Programcode">    var v = imageData[i];</Para>
+<Para Type="Programcode">    // cardinal directions</Para>
+<Para Type="Programcode">    var north = inRange(i-width*4, width, height) ? imageData[i-width*4] : v;</Para>
+<Para Type="Programcode">    var south = inRange(i + width*4, width, height) ? imageData[i + width*4] : v;</Para>
+<Para Type="Programcode">    var west = inRange(i-4, width, height) ? imageData[i-4] : v;</Para>
+<Para Type="Programcode">    var east = inRange(i + 4, width, height) ? imageData[i + 4] : v;</Para>
+<Para Type="Programcode">    // diagonal neighbors</Para>
+<Para Type="Programcode">    var ne = inRange(i-width*4 + 4, width, height) ? imageData[i-width*4 + 4] : v;</Para>
+<Para Type="Programcode">    var nw = inRange(i-width*4-4, width, height) ? imageData[i-width*4-4] : v;</Para>
+<Para Type="Programcode">    var se = inRange(i + width*4 + 4, width, height) ? imageData[i + width*4 + 4] : v;</Para>
+<Para Type="Programcode">    var sw = inRange(i + width*4-4, width, height) ? imageData[i + width*4-4] : v;</Para>
+<Para Type="Programcode">    // average</Para>
+<Para Type="Programcode">    var newVal = Math.floor((north + south + east + west + se + sw + ne + nw + v)/9);</Para>
+<Para Type="Programcode">    if (isNaN(newVal)) {</Para>
+<Para Type="Programcode">        sendStatus("bad value " + i + " for height " + height);</Para>
+<Para Type="Programcode">        throw new Error("NaN");</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    return newVal;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function boxBlur(imageData, width, height) {</Para>
+<Para Type="Programcode">    var data = [];</Para>
+<Para Type="Programcode">    var val = 0;</Para>
+<Para Type="Programcode">    for (var i=0; i&#x003C;width*height*4; i++) {</Para>
+<Para Type="Programcode">        val = averageNeighbors(imageData, width, height, i);</Para>
+<Para Type="Programcode">        data[i] = val;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    return data;</Para>
+<Para Type="Programcode">}</Para>
+<Para>In brief, this algorithm blurs an image by averaging nearby pixel values. For a large image with millions of pixels, this takes a substantial amount of time. It is very undesirable to run a loop such as this in the UI thread. Even if a slow-script warning did not appear, the page UI would be unresponsive until the loop terminated. For this reason, it makes a good example of<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blur.js helper script</Tertiary></IndexTerm> background computation in Web Workers.</Para>
+</Section2>
+<Section2 ID="Sec20_10">
+<Heading>Coding the blur.html Application Page</Heading>
+<Para>Listing 10-5 shows the<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blur.html application page</Tertiary></IndexTerm> code for the HTML page that calls the Web Worker. The HTML for this example is kept simple for reasons of clarity. The purpose here is not to build a beautiful interface, but to provide a simple skeleton that can control the Web Workers and demonstrate them in action. In this application, a <Literal>canvas</Literal> element that displays the input image is injected into the page. We have buttons to start blurring the image, stop blurring, reset the image, and specify the number of workers to spawn.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-5.</Heading>
+<Para>Code for the Page blur.html</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E;Web Workers&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;link rel="stylesheet" href = "styles.css"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E;Web Workers&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;p id="status"&#x003E;Your browser does not support Web Workers.&#x003C;/p&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="startBlurButton" disabled&#x003E;Blur&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="stopButton" disabled&#x003E;Stop Workers&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button onclick="document.location = document.location;"&#x003E;Reload&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;label for="workerCount"&#x003E;Number of Workers&#x003C;/label&#x003E;</Para>
+<Para Type="Programcode">&#x003C;select id="workerCount"&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;1&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option selected&#x003E;2&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;4&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;8&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;16&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/select&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div id="imageContainer"&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div id="logOutput"&#x003E;&#x003C;/div&#x003E;</Para>
+<Para>Next, let&#x2019;s add the code to create workers to the file <Literal>blur.html</Literal>. We instantiate a <Literal>worker</Literal> object, passing in a URL of a JavaScript file. Each instantiated worker will run the same code but be responsible for processing different parts of the input image:</Para>
+<Para Type="Programcode">function initWorker(src) {</Para>
+<Para Type="Programcode">    var worker = new Worker(src);</Para>
+<Para Type="Programcode">    worker.addEventListener("message", messageHandler, true);</Para>
+<Para Type="Programcode">    worker.addEventListener("error", errorHandler, true);</Para>
+<Para Type="Programcode">    return worker;</Para>
+<Para Type="Programcode">}</Para>
+<Para>Let&#x2019;s add the error handling code to the file <Literal>blur.html</Literal>, as follows. In the event of an error in the worker, the page will be able to display an error message instead of continuing unaware. Our example shouldn&#x2019;t encounter any trouble, but listening for error events is generally <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blur.html application page</Tertiary></IndexTerm>a good practice and is invaluable for debugging.</Para>
+<Para Type="Programcode">function errorHandler(e) {</Para>
+<Para Type="Programcode">    log("error: " + e.message);</Para>
+<Para Type="Programcode">}</Para>
+</Section2>
+<Section2 ID="Sec39_10">
+<Heading>Coding the blurWorker.js Web Worker Script</Heading>
+<Para>Next, we add the code that <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blurWorker.js Web Worker script</Tertiary></IndexTerm>our workers use to communicate with the page to the file <Literal>blurWorker.js</Literal> (see Listing 10-6). As the Web Workers finish blocks of computation, they can use <Literal>postMessage</Literal> to inform the page that they have made progress. We will use this information to update the image displayed on the main page. After creation, our Web Workers wait for a message containing image data and the instruction to commence blurring. This message is a JavaScript object containing the type of message and the image data represented as an array of Numbers.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-6.</Heading>
+<Para>Sending and Handling Image Data in the File blurWorker.js</Para>
+</FormalPara>
+<Para Type="Programcode">function sendStatus(statusText) {</Para>
+<Para Type="Programcode">    postMessage({"type" : "status",</Para>
+<Para Type="Programcode">                 "statusText" : statusText}</Para>
+<Para Type="Programcode">                );</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">    var messageType = e.data.type;</Para>
+<Para Type="Programcode">    switch (messageType) {</Para>
+<Para Type="Programcode">        case ("blur"):</Para>
+<Para Type="Programcode">            sendStatus("Worker started blur on data in range: " +</Para>
+<Para Type="Programcode">                            e.data.startX + "-" + (e.data.startX + e.data.width));</Para>
+<Para Type="Programcode">            var imageData = e.data.imageData;</Para>
+<Para Type="Programcode">            imageData = boxBlur(imageData, e.data.width, e.data.height, e.data.startX);</Para>
+<Para Type="Programcode">            postMessage({"type" : "progress",</Para>
+<Para Type="Programcode">                         "imageData" : imageData,</Para>
+<Para Type="Programcode">                         "width" : e.data.width,</Para>
+<Para Type="Programcode">                         "height" : e.data.height,</Para>
+<Para Type="Programcode">                         "startX" : e.data.startX</Para>
+<Para Type="Programcode">                        });</Para>
+<Para Type="Programcode">            sendStatus("Finished blur on data in range: " +</Para>
+<Para Type="Programcode">                            e.data.startX + "-" + (e.data.width + e.data.startX));</Para>
+<Para Type="Programcode">            break;</Para>
+<Para Type="Programcode">        default:</Para>
+<Para Type="Programcode">            sendStatus("Worker got message: " + e.data);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">addEventListener("message", messageHandler, true);<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>coding blurWorker.js Web Worker script</Tertiary></IndexTerm>
+</Para>
+</Section2>
+<Section2 ID="Sec21_10">
+<Heading>Communicating with the Web Workers</Heading>
+<Para>In the file <Literal>blur.html</Literal>, we can<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>communicating with Web Workers</Tertiary></IndexTerm> use our workers by sending them some data and arguments that represent a blur task. This is done by using <Literal>postMessage</Literal> to send a JavaScript object containing the Array of RGBA image data, the <IndexTerm><Primary>image data</Primary></IndexTerm><IndexTerm><Primary>Canvas image data</Primary></IndexTerm><IndexTerm><Primary>images processing</Primary></IndexTerm>dimensions of the source image, and the range of pixels for which the worker is responsible. Each worker processes a different section of the image based on the message it receives:</Para>
+<Para Type="Programcode">function sendBlurTask(worker, i, chunkWidth) {</Para>
+<Para Type="Programcode">        var chunkHeight = image.height;</Para>
+<Para Type="Programcode">        var chunkStartX = i * chunkWidth;</Para>
+<Para Type="Programcode">        var chunkStartY = 0;</Para>
+<Para Type="Programcode">        var data = ctx.getImageData(chunkStartX, chunkStartY,</Para>
+<Para Type="Programcode">                                    chunkWidth, chunkHeight).data;</Para>
+<Para Type="Programcode">        worker.postMessage({'type' : 'blur',</Para>
+<Para Type="Programcode">                            'imageData' : data,</Para>
+<Para Type="Programcode">                            'width' : chunkWidth,</Para>
+<Para Type="Programcode">                            'height' : chunkHeight,</Para>
+<Para Type="Programcode">                            'startX' : chunkStartX});</Para>
+<Para Type="Programcode">}</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Canvas image data</Heading>
+<Para><Emphasis Type="Bold">Frank says</Emphasis>: &#x201C;<Literal> postMessage</Literal> is <IndexTerm><Primary>postMessage API</Primary></IndexTerm>specified to allow efficient serialization of <Literal>imageData</Literal> objects for<IndexTerm><Primary>imageData objects</Primary></IndexTerm> use with the canvas API. Some browsers that include the Worker and <Literal>postMessage</Literal> APIs may not support the extended serialization capabilities of <Literal>postMessage</Literal> yet.</Para>
+<Para>Because of this, our image processing example presented in this chapter sends <Literal>imageData.data</Literal><IndexTerm><Primary>imageData.data</Primary></IndexTerm> (which serializes like a JavaScript Array) instead of sending the <Literal>imageData</Literal> object itself. As the Web Workers compute their tasks, they communicate their status and results back to the page. Listing 10-6 shows how data is sent from the worker(s) to the page after the blur filter has processed it. Again, the message contains a JavaScript object with fields for image data and coordinates marking the boundaries of the processed section.&#x201D;</Para>
+</FormalPara>
+<Para>On the HTML page side, a message<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>communicating with Web Workers</Tertiary></IndexTerm> handler consumes this data and uses it to update the canvas with the new pixel values. As processed image data comes in, the result is immediately visible. We now have a sample application that can process images while potentially taking advantage of multiple CPU cores. Moreover, we didn&#x2019;t lock up the UI and make it unresponsive while the Web Workers were active. Figure <InternalRef RefID="Fig7_10">10-7</InternalRef> shows the application in action.
+<Figure ID="Fig7_10" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 10-7</CaptionNumber>
+<CaptionContent>
+<SimplePara>The blur application in action</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO7_10">
+<ImageObject FileRef="978-1-4302-3865-2_10_Fig7_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec22_10">
+<Heading>The Application in Action</Heading>
+<Para>To see this example<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>application in action</Tertiary></IndexTerm> in action, the page <Literal>blur.html</Literal> has to be served up by a web server (for example, Apache or Python&#x2019;s SimpleHTTPServer). To following steps show how you can use Python SimpleHTTPServer to run the application:<OrderedList>
+<ListItem>
+<ItemNumber>1.</ItemNumber>
+<ItemContent><Para>Install Python.</Para></ItemContent>
+</ListItem>
+<ListItem>
+<ItemNumber>2.</ItemNumber>
+<ItemContent><Para>Navigate to the directory that contains the example file (<Literal> blur.html</Literal>).</Para></ItemContent>
+</ListItem>
+<ListItem>
+<ItemNumber>3.</ItemNumber>
+<ItemContent><Para>Start Python as follows:</Para></ItemContent>
+</ListItem>
+</OrderedList>python -m SimpleHTTPServer 9999<OrderedList>
+<ListItem>
+<ItemNumber>4.</ItemNumber>
+<ItemContent><Para>Open a browser and navigate to <Literal>http://localhost:9999/blur.html</Literal>. You should now see the page shown in Figure <InternalRef RefID="Fig7_10">10-7</InternalRef>.</Para></ItemContent>
+</ListItem>
+<ListItem>
+<ItemNumber>5.</ItemNumber>
+<ItemContent><Para>If you leave it running for a while, you will see the different quadrants of the image blur slowly. The number of quadrants that blur at the same time depends on the number of workers you started.<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>application in action</Tertiary></IndexTerm>
+</Para></ItemContent>
+</ListItem>
+</OrderedList>
+</Para>
+</Section2>
+<Section2 ID="Sec23_10">
+<Heading>Example Code</Heading>
+<Para>For <IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>example code</Tertiary></IndexTerm>completeness, Listings 10-7, 10-8, and 10-9 contain the full code for the example application.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-7.</Heading>
+<Para>Content of the File blur.html</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E;Web Workers&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;link rel="stylesheet" href = "styles.css"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E;Web Workers&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;p id="status"&#x003E;Your browser does not support Web Workers.&#x003C;/p&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="startBlurButton" disabled&#x003E;Blur&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button id="stopButton" disabled&#x003E;Stop Workers&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button onclick = "document.location = document.location;"&#x003E;Reload&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;label for="workerCount"&#x003E;Number of Workers&#x003C;/label&#x003E;</Para>
+<Para Type="Programcode">&#x003C;select id="workerCount"&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;1&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option selected&#x003E;2&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;4&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;8&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;option&#x003E;16&#x003C;/option&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/select&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div id="imageContainer"&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div id="logOutput"&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">var imageURL = "example2.png";</Para>
+<Para Type="Programcode">var image;</Para>
+<Para Type="Programcode">var ctx;</Para>
+<Para Type="Programcode">var workers = [];</Para>
+<Para Type="Programcode">function log(s) {</Para>
+<Para Type="Programcode">    var logOutput = document.getElementById("logOutput");</Para>
+<Para Type="Programcode">    logOutput.innerHTML = s + "&#x003C;br&#x003E;" + logOutput.innerHTML;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function setRunningState(p) {</Para>
+<Para Type="Programcode">    // while running, the stop button is enabled and the start button is not</Para>
+<Para Type="Programcode">    document.getElementById("startBlurButton").disabled = p;</Para>
+<Para Type="Programcode">    document.getElementById("stopButton").disabled = !p;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function initWorker(src) {</Para>
+<Para Type="Programcode">    var worker = new Worker(src);</Para>
+<Para Type="Programcode">    worker.addEventListener("message", messageHandler, true);</Para>
+<Para Type="Programcode">    worker.addEventListener("error", errorHandler, true);</Para>
+<Para Type="Programcode">    return worker;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function startBlur() {</Para>
+<Para Type="Programcode">    var workerCount = parseInt(document.getElementById("workerCount").value);</Para>
+<Para Type="Programcode">    var width = image.width/workerCount;</Para>
+<Para Type="Programcode">for (var i=0; i&#x003C;workerCount; i++) {</Para>
+<Para Type="Programcode">        var worker = initWorker("blurWorker.js");</Para>
+<Para Type="Programcode">        worker.index = i;</Para>
+<Para Type="Programcode">        worker.width = width;</Para>
+<Para Type="Programcode">        workers[i] = worker;</Para>
+<Para Type="Programcode">        sendBlurTask(worker, i, width);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    setRunningState(true);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function sendBlurTask(worker, i, chunkWidth) {</Para>
+<Para Type="Programcode">        var chunkHeight = image.height;</Para>
+<Para Type="Programcode">        var chunkStartX = i * chunkWidth;</Para>
+<Para Type="Programcode">        var chunkStartY = 0;</Para>
+<Para Type="Programcode">        var data = ctx.getImageData(chunkStartX, chunkStartY,</Para>
+<Para Type="Programcode">                                    chunkWidth, chunkHeight).data;</Para>
+<Para Type="Programcode">        worker.postMessage({'type' : 'blur',</Para>
+<Para Type="Programcode">                            'imageData' : data,</Para>
+<Para Type="Programcode">                            'width' : chunkWidth,</Para>
+<Para Type="Programcode">                            'height' : chunkHeight,</Para>
+<Para Type="Programcode">                            'startX' : chunkStartX});</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function stopBlur() {</Para>
+<Para Type="Programcode">    for (var i=0; i&#x003C;workers.length; i++) {</Para>
+<Para Type="Programcode">        workers[i].terminate();</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    setRunningState(false);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">    var messageType = e.data.type;</Para>
+<Para Type="Programcode">    switch (messageType) {</Para>
+<Para Type="Programcode">        case ("status"):</Para>
+<Para Type="Programcode">            log(e.data.statusText);</Para>
+<Para Type="Programcode">            break;</Para>
+<Para Type="Programcode">        case ("progress"):</Para>
+<Para Type="Programcode">            var imageData = ctx.createImageData(e.data.width, e.data.height);</Para>
+<Para Type="Programcode">            for (var i=0; i&#x003C;imageData.data.length; i++) {</Para>
+<Para Type="Programcode">                var val = e.data.imageData[i];</Para>
+<Para Type="Programcode">                if (val === null || val &#x003E; 255 || val &#x003C; 0) {</Para>
+<Para Type="Programcode">                    log("illegal value: " + val + " at " + i);</Para>
+<Para Type="Programcode">                    return;</Para>
+<Para Type="Programcode">                }</Para>
+<Para Type="Programcode">                imageData.data[i] = val;</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">            ctx.putImageData(imageData, e.data.startX, 0);</Para>
+<Para Type="Programcode">            // blur the same tile again</Para>
+<Para Type="Programcode">            sendBlurTask(e.target, e.target.index, e.target.width);</Para>
+<Para Type="Programcode">            break;</Para>
+<Para Type="Programcode">        default:</Para>
+<Para Type="Programcode">            break;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function errorHandler(e) {</Para>
+<Para Type="Programcode">    log("error: " + e.message);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function loadImageData(url) {</Para>
+<Para Type="Programcode">    var canvas = document.createElement('canvas');</Para>
+<Para Type="Programcode">    ctx = canvas.getContext('2d');</Para>
+<Para Type="Programcode">    image = new Image();</Para>
+<Para Type="Programcode">    image.src = url;</Para>
+<Para Type="Programcode">    document.getElementById("imageContainer").appendChild(canvas);</Para>
+<Para Type="Programcode">    image.onload = function(){</Para>
+<Para Type="Programcode">        canvas.width = image.width;</Para>
+<Para Type="Programcode">        canvas.height = image.height;</Para>
+<Para Type="Programcode">        ctx.drawImage(image, 0, 0);</Para>
+<Para Type="Programcode">        window.imgdata = ctx.getImageData(0, 0, image.width, image.height);</Para>
+<Para Type="Programcode">        n = ctx.createImageData(image.width, image.height);</Para>
+<Para Type="Programcode">        setRunningState(false);</Para>
+<Para Type="Programcode">        log("Image loaded: " + image.width + "x" + image.height + " pixels");</Para>
+<Para Type="Programcode">    };</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function loadDemo() {</Para>
+<Para Type="Programcode">    log("Loading image data");</Para>
+<Para Type="Programcode">    if (typeof(Worker) !== "undefined") {</Para>
+<Para Type="Programcode">        document.getElementById("status").innerHTML = "Your browser supports Web Workers";</Para>
+<Para Type="Programcode">        document.getElementById("stopButton").onclick = stopBlur;</Para>
+<Para Type="Programcode">        document.getElementById("startBlurButton").onclick = startBlur;</Para>
+<Para Type="Programcode">        loadImageData(imageURL);</Para>
+<Para Type="Programcode">        document.getElementById("startBlurButton").disabled = true;</Para>
+<Para Type="Programcode">        document.getElementById("stopButton").disabled = true;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">window.addEventListener("load", loadDemo, true);</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-8.</Heading>
+<Para>Content of the File blurWorker.js</Para>
+</FormalPara>
+<Para Type="Programcode">importScripts("blur.js");</Para>
+<Para Type="Programcode">function sendStatus(statusText) {</Para>
+<Para Type="Programcode">    postMessage({"type" : "status",</Para>
+<Para Type="Programcode">                 "statusText" : statusText}</Para>
+<Para Type="Programcode">                );</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function messageHandler(e) {</Para>
+<Para Type="Programcode">    var messageType = e.data.type;</Para>
+<Para Type="Programcode">    switch (messageType) {</Para>
+<Para Type="Programcode">        case ("blur"):</Para>
+<Para Type="Programcode">            sendStatus("Worker started blur on data in range: " +</Para>
+<Para Type="Programcode">                            e.data.startX + "-" + (e.data.startX + e.data.width));</Para>
+<Para Type="Programcode">            var imageData = e.data.imageData;</Para>
+<Para Type="Programcode">            imageData = boxBlur(imageData, e.data.width, e.data.height, e.data.startX);</Para>
+<Para Type="Programcode">            postMessage({"type" : "progress",</Para>
+<Para Type="Programcode">                         "imageData" : imageData,</Para>
+<Para Type="Programcode">                         "width" : e.data.width,</Para>
+<Para Type="Programcode">                         "height" : e.data.height,</Para>
+<Para Type="Programcode">                         "startX" : e.data.startX</Para>
+<Para Type="Programcode">                        });</Para>
+<Para Type="Programcode">            sendStatus("Finished blur on data in range: " +</Para>
+<Para Type="Programcode">                            e.data.startX + "-" + (e.data.width + e.data.startX));</Para>
+<Para Type="Programcode">            break;</Para>
+<Para Type="Programcode">        default:</Para>
+<Para Type="Programcode">            sendStatus("Worker got message: " + e.data);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">addEventListener("message", messageHandler, true);</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 10-9.</Heading>
+<Para>Content of the File blur.js</Para>
+</FormalPara>
+<Para Type="Programcode">function inRange(i, width, height) {</Para>
+<Para Type="Programcode">    return ((i&#x003E;=0) &#x0026;&#x0026; (i &#x003C;width*height*4));</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function averageNeighbors(imageData, width, height, i) {</Para>
+<Para Type="Programcode">    var v = imageData[i];</Para>
+<Para Type="Programcode">    // cardinal directions</Para>
+<Para Type="Programcode">    var north = inRange(i-width*4, width, height) ? imageData[i-width*4] : v;</Para>
+<Para Type="Programcode">    var south = inRange(i + width*4, width, height) ? imageData[i + width*4] : v;</Para>
+<Para Type="Programcode">    var west = inRange(i-4, width, height) ? imageData[i-4] : v;</Para>
+<Para Type="Programcode">    var east = inRange(i + 4, width, height) ? imageData[i + 4] : v;</Para>
+<Para Type="Programcode">    // diagonal neighbors</Para>
+<Para Type="Programcode">    var ne = inRange(i-width*4 + 4, width, height) ? imageData[i-width*4 + 4] : v;</Para>
+<Para Type="Programcode">    var nw = inRange(i-width*4-4, width, height) ? imageData[i-width*4-4] : v;</Para>
+<Para Type="Programcode">    var se = inRange(i + width*4 + 4, width, height) ? imageData[i + width*4 + 4] : v;</Para>
+<Para Type="Programcode">    var sw = inRange(i + width*4-4, width, height) ? imageData[i + width*4-4] : v;</Para>
+<Para Type="Programcode">    // average</Para>
+<Para Type="Programcode">    var newVal = Math.floor((north + south + east + west + se + sw + ne + nw + v)/9);</Para>
+<Para Type="Programcode">    if (isNaN(newVal)) {</Para>
+<Para Type="Programcode">        sendStatus("bad value " + i + " for height " + height);</Para>
+<Para Type="Programcode">        throw new Error("NaN");</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    return newVal;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">function boxBlur(imageData, width, height) {</Para>
+<Para Type="Programcode">    var data = [];</Para>
+<Para Type="Programcode">    var val = 0;</Para>
+<Para Type="Programcode">    for (var i=0; i &#x003C; width*height*4; i++) {</Para>
+<Para Type="Programcode">        val = averageNeighbors(imageData, width, height, i);</Para>
+<Para Type="Programcode">        data[i] = val;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    return data;</Para>
+<Para Type="Programcode">}</Para>
+<Para>Summary</Para>
+<Para>In this chapter, you have<IndexTerm><Primary>Web Workers API</Primary><Secondary>building application with</Secondary><Tertiary>example code</Tertiary></IndexTerm> seen how Web Workers can be used to create web applications with background processing. This chapter showed you how Web Workers (and inline and shared Web Workers) work. We discussed how you can use the APIs to create new workers and how you communicate between a worker and the context that spawned it. Finally, we showed you how you can build an application with Web Workers. In the next chapter, we&#x2019;ll demonstrate more ways that HTML5 lets you keep local copies of data and reduce the amount of network overhead in your applications.</Para>
+</Section2>
+</Section1>
+</Body>
+<BodyRef FileRef="978-1-4302-3865-2_10_Chapter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</Chapter>

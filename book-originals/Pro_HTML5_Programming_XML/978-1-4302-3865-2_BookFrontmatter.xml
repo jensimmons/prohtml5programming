@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Publisher PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Publisher>
+<PublisherInfo>
+<PublisherName>Apress</PublisherName>
+<PublisherLocation>New York</PublisherLocation>
+<PublisherImprintName>Apress</PublisherImprintName>
+<PublisherLogo>
+<Figure Category="Standard" Float="No" ID="Figa">
+<MediaObject>
+<ImageObject Color="BlackWhite" Format="PNG" Rendition="HTML" Type="Linedraw" FileRef="978-1-4302-3865-2_BookFrontmatter_Figa_HTML.png"/>
+</MediaObject>
+</Figure>
+</PublisherLogo>
+</PublisherInfo>
+<Book Language="En">
+<BookInfo ContainsESM="No" Language="En" NumberingStyle="ChapterOnly" TocLevels="0" OutputMedium="All">
+<BookID>978-1-4302-3865-2</BookID>
+<BookTitle>Pro HTML5 Programming</BookTitle>
+<BookDOI>10.1007/978-1-4302-3865-2</BookDOI>
+<BookPrintISBN>978-1-4302-3864-5</BookPrintISBN>
+<BookElectronicISBN>978-1-4302-3865-2</BookElectronicISBN>
+<EditionNumber>2</EditionNumber>
+<BookChapterCount>13</BookChapterCount>
+<BookCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+<CopyrightComment>
+<SimplePara>President and Publisher: Paul Manning</SimplePara>
+<SimplePara>Lead Editor: Ben Renow-Clarke</SimplePara>
+<SimplePara>Technical Reviewer: Tony Pye</SimplePara>
+<SimplePara>Editorial Board: Steve Anglin, Mark Beckner, Ewan Buckingham, Gary Cornell, Morgan Ergel, Jonathan Gennick, Jonathan Hassell, Robert Hutchinson, Michelle Lowman, James Markham, Matthew Moodie, Jeff Olson, Jeffrey Pepper, Douglas Pundick, Ben Renow-Clarke, Dominic Shakeshaft, Gwenan Spearing, Matt Wade, Tom Welsh</SimplePara>
+<SimplePara>Coordinating Editors: Debra Kelly and Jennifer L. Blackwell</SimplePara>
+<SimplePara>Copy Editors: Heather Lang, Andy Rosenthal, and Nancy Sixsmith</SimplePara>
+<SimplePara>Compositor: Bytheway Publishing Services</SimplePara>
+<SimplePara>Indexer: SPI Global</SimplePara>
+<SimplePara>Artist: SPI Global</SimplePara>
+<SimplePara>Apress and friends of ED books may be purchased in bulk for academic, corporate, or promotional use. eBook versions and licenses are also available for most titles. For more information, reference our Special Bulk Sales-eBook Licensing web page at <Literal>www.apress.com/bulk-sales</Literal>.</SimplePara>
+<SimplePara>The information in this book is distributed on an &#x201C;as is&#x201D; basis, without warranty. Although every precaution has been taken in the preparation of this work, neither the author(s) nor Apress shall have any liability to any person or entity with respect to any loss or damage caused or alleged to be caused directly or indirectly by the information contained in this work.</SimplePara>
+<SimplePara><Emphasis Type="Italic">Any source code or other supplementary materials referenced by the author in this text is available to readers at text is available to readers at</Emphasis> <Literal>www.apress.com</Literal>. <Emphasis Type="Italic">For detailed information about how to locate your book&#x2019;s source code, go to</Emphasis> <Literal>www.apress.com/source-code/.</Literal></SimplePara>
+</CopyrightComment>
+<CopyrightStandardText Country="US" Language="En">All rights reserved. No part of this work may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopying, recording, or by any information storage or retrieval system, without the prior written permission of the copyright owner and the publisher. The W3C logo on the front cover is licensed under Creative Commons Attribution 3.0. The Creative Commons license applies to the use of the logo provided on the front cover and no other content from this book.</CopyrightStandardText>
+<TrademarkQualifierText Country="US" Language="En">Trademarked names, logos, and images may appear in this book. Rather than use a trademark symbol with every occurrence of a trademarked name, logo, or image we use the names, logos, and images only in an editorial fashion and to the benefit of the trademark owner, with no intention of infringement of the trademark.</TrademarkQualifierText>
+<ProductLiability Country="US" Language="En">The use in this publication of trade names, trademarks, service marks, and similar terms, even if they are not identified as such, is not to be taken as an expression of opinion as to whether or not they are subject to proprietary rights. Distributed to the book trade worldwide by Springer Science+Business Media, LLC., 233 Spring Street, 6th Floor, New York, NY 10013. Phone 1-800-SPRINGER, fax (201) 348-4505, e-mail orders-ny@springer-sbm.com, or visit www.springeronline.com.</ProductLiability>
+<SpringerLocationsLine>For information on translations, please e-mail rights@apress.com, or visit www.apress.com.</SpringerLocationsLine>
+</BookCopyright>
+<BookCoverFigureText>
+<SimplePara>Illustrations by: Peter Cohen</SimplePara></BookCoverFigureText>
+</BookInfo>
+<BookHeader>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1">
+<AuthorName>
+<GivenName>Peter</GivenName>
+<FamilyName>Lubbers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1">
+<AuthorName>
+<GivenName>Brian</GivenName>
+<FamilyName>Albers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1">
+<AuthorName>
+<GivenName>Frank</GivenName>
+<FamilyName>Salim</FamilyName>
+</AuthorName>
+</Author>
+<Affiliation ID="Aff1">
+<OrgName>Technical Communication at Kaazing</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<State>CA</State>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<CollaboratorGroup>
+<InstitutionalCollaborator Type="Cover designer">
+<InstitutionalCollaboratorName>Anna Ishchenko</InstitutionalCollaboratorName>
+</InstitutionalCollaborator>
+</CollaboratorGroup>
+</BookHeader>
+<BookFrontmatter>
+<BookFrontmatterInfo>
+<BookFrontmatterFirstPage>i</BookFrontmatterFirstPage>
+<BookFrontmatterLastPage>xiv</BookFrontmatterLastPage>
+</BookFrontmatterInfo>
+<BodyFrontmatter>
+<Dedication>
+<SimplePara>
+<Emphasis Type="Italic">For my beautiful wife, Vittoria,</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">and for my sons, Sean and Rocky. I am so proud of you! And to our cat&#x2014;Cornelius&#x2014;may you rest (and hunt) in peace."</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">&#x2014;Peter Lubbers</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">For John. You make it all worthwhile.</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">&#x2014;Brian Albers</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">For people who still read books.</Emphasis>
+</SimplePara>
+<SimplePara>
+<Emphasis Type="Italic">&#x2014;Frank Salim</Emphasis>
+</SimplePara>
+</Dedication>
+<Foreword>
+<ForewordInfo>
+<ForewordTitle Language="En">Foreword</ForewordTitle>
+</ForewordInfo>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1_FM1">
+<AuthorName>
+<GivenName>Paul</GivenName>
+<FamilyName>Irish</FamilyName>
+</AuthorName>
+<Role>Google Chrome Developer Advocate</Role>
+</Author>
+<Affiliation ID="Aff1_FM1">
+<OrgName>Modernizr &#x0026; HTML5 Boilerplate Developer</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<Body>
+<Para>In June 2004, representatives from the semantic web community, major browser vendors, and the W3C met in San Jose, California to discuss the standards body&#x2019;s response to the rise of web applications. At the end of the second day, a vote was held to decide whether the W3C should augment HTML and the DOM to address the new requirements of web applications. Minutes from the event record the anonymous and curious result, &#x201C;8 for, 14 against.&#x201D;</Para>
+<Para>This schism lead to a divergence in effort: two days later, the WHATWG was formed from the major browser vendors to solve emerging issues. Meanwhile, the W3C pushed forward with the XHTML2 specification, only to drop it five years later to focus on an aligned HTML5 effort with the WHATWG.</Para>
+<Para>Now, seven years since, we stand to benefit greatly from the passionate minds that have designed HTML5. The features both codify de facto standards that have been in use for years and lay the groundwork for next-generation web applications. Putting them to use means a more engaging and responsive web experience for your users and, oftentimes, far less code for you.</Para>
+<Para>In this book, you'll find a well-designed learning curve bringing you up to speed on the features within HTML5 and its associated specifications. You'll learn best practices of feature detection, appropriate use cases, and a lot of the whys that you won&#x2019;t find in the specifications. The code examples are not plain, trivial uses of each API but instead lead you through building actual web applications. I hope this book is able to serve you well, and I hope you&#x2019;ll be as excited about the next generation of the web as I am.</Para>
+</Body>
+</Foreword>
+<Preface>
+<PrefaceInfo>
+<PrefaceTitle Language="En">About the Authors</PrefaceTitle>
+</PrefaceInfo>
+<Body>
+<Para>
+<Figure Category="Standard" Float="No" ID="Figb">
+<MediaObject>
+<ImageObject FileRef="978-1-4302-3865-2_BookFrontmatter_Figb_HTML.jpg" Format="JPEG" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+&#x25A0; <Emphasis Type="Bold">Peter Lubbers</Emphasis> is the senior director of technical communication at Kaazing. An HTML5 and WebSockets enthusiast, Peter is a frequent speaker at international events and teaches HTML5 training courses worldwide. Prior to joining Kaazing, Peter worked for almost ten years as an information architect at Oracle, where he wrote award-winning books and developed patent-pending software solutions. A native of the Netherlands, Peter served as a Special Forces commando in the Royal Dutch Green Berets. Peter lives on the edge of the Tahoe National Forest in California, and in his spare time, he bungee jumps and runs ultramarathons. And, yes, he owns the original HTML5 license plate. You can follow Peter on Twitter (<Literal>@peterlubbers</Literal>).</Para>
+<Para>
+<Figure Category="Standard" Float="No" ID="Figc">
+<MediaObject>
+<ImageObject FileRef="978-1-4302-3865-2_BookFrontmatter_Figc_HTML.jpg" Format="JPEG" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+&#x25A0; <Emphasis Type="Bold">Brian Albers</Emphasis> is the vice president of research and development at Kaazing. His career in web development spans a decade and a half, including his most recent position as a senior development manager at Oracle. Brian is a regular speaker at conferences, such as Web 2.0 Expo, AJAXWorld Expo, and JavaOne, where he focuses on Web and user interface technologies. A native Texan and current California resident, Brian spends as much time as possible escaping to Hawaii. When he cannot relax on the beach, Brian can be found frequenting a variety of virtual worlds in his spare time.</Para>
+<Para>
+<Figure Category="Standard" Float="No" ID="Figd">
+<MediaObject>
+<ImageObject FileRef="978-1-4302-3865-2_BookFrontmatter_Figd_HTML.jpg" Format="JPEG" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+&#x25A0; <Emphasis Type="Bold">Frank Salim</Emphasis> is one of the original engineers at Kaazing who helped craft the WebSockets gateway and client strategy. Frank is a San Diego native currently residing in Mountain View, California. He holds a degree in computer science from Pomona College. When he is not programming, Frank enjoys reading, painting, and inline skating.</Para>
+</Body>
+</Preface>
+<Preface>
+<PrefaceInfo>
+<PrefaceTitle Language="En">About the Technical Reviewer</PrefaceTitle>
+</PrefaceInfo>
+<Body>
+<Para>
+<Figure Category="Standard" Float="No" ID="Fige">
+<MediaObject>
+<ImageObject FileRef="978-1-4302-3865-2_BookFrontmatter_Fige_HTML.jpg" Format="JPEG" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+n <Emphasis Type="Bold">Tony Pye</Emphasis> has a background in software consultancy, web development, and engineering. However, instead of taking his technical expertise into manufacturing, he took the path to geekdom and in 2003 became a partner and Head of Development at INK Digital Agency, one of the UK&#x2019;s top 100 creative agencies*</Para>
+<Para>As well as having an extensive knowledge of current software and coding standards, Tony keeps a sharp eye to the future, watching for emerging technologies, thus ensuring his development team remains at the forefront of an ever-changing digital landscape. Although businesses face many challenges, Tony has the underpinning knowledge and experience to define their technical problems and produce innovative digital solutions for a range of commercial environments. While he is particularly proud of his mobile application development and a self-service touchscreen kiosk web application, which was a first for the fitness industry, he is very coy when it comes to talking about his development work on multi-million pound e-commerce web sites. Generally, though, Tony is a &#x201C;thoroughly good egg,&#x201D; and for anyone that has a digital dilemma he is the man that can find a solution. If you&#x2019;d like to talk to Tony about digital development or anything else for that matter; drop him a line: <Literal>tony@inkdigitalagency.com</Literal>.</Para>
+<Para>*Recognized by the 2010 Recommended Agencies Register survey</Para>
+</Body>
+</Preface>
+<Preface>
+<PrefaceInfo>
+<PrefaceTitle Language="En">Introduction</PrefaceTitle>
+</PrefaceInfo>
+<Body>
+<Para>HTML5 is brand new. Indeed, it isn&#x2019;t even completely finished yet. And if you listen to some ornery pundits, they&#x2019;ll tell you that HTML5 won&#x2019;t be ready for ten years or more!</Para>
+<Para>Why, then, would anyone think that now&#x2019;s the time for a book called <Emphasis Type="Italic">Pro HTML5 Programming</Emphasis>? That&#x2019;s easy. Because for anyone who&#x2019;s looking for an extra edge to make your web application stand above the rest, the time for HTML5 is right now. The authors of this book have been working with, developing, and teaching HTML5 technologies for more than two years now and can claim with certainty that adoption of the new standards is accelerating at dizzying speeds. Even over the course of writing this book, we&#x2019;ve been forced to continually update chapters and reevaluate our assumptions about what is ready to use.</Para>
+<Para>Most users don&#x2019;t really understand the power that&#x2019;s available in the browsers they are now using. Yes, they might notice some minor interface enhancement after their favorite browser has automatically updated. But they might have no idea that this new browser version just introduced a free-form drawing canvas or real-time network communication, or any number of other potential upgrades.</Para>
+<Para>With this book, we aim to help you unlock the power HTML5.</Para>
+<Section1 ID="Sec1_FM1">
+<Heading>Who This Book Is For</Heading>
+<Para>The content in this book is intended for the experienced web application developer who is familiar with JavaScript programming. In other words, we won&#x2019;t be covering the basics of web development in this text. There are many existing resources to get you up to speed in the fundamentals of web programming. That said, if you see yourself in any of the following bullets, this book will likely provide you with useful insight and information you are looking for:<UnorderedList Mark="Bullet"><ItemContent><Para>You sometimes find yourself thinking, &#x201C;If only my browser could...&#x201D;</Para></ItemContent><ItemContent><Para>You find yourself using page source and developer tools to dissect a particularly impressive website.</Para></ItemContent><ItemContent><Para>You enjoy reading the release notes of the latest browser updates to find out what&#x2019;s new.</Para></ItemContent><ItemContent><Para>You are looking for ways to optimize or streamline your applications.</Para></ItemContent><ItemContent><Para>You are willing to tailor your website to provide the best possible experience for users on relatively recent browsers.</Para></ItemContent></UnorderedList></Para>
+<Para>If any of these apply to you, this book may be a good fit with your interests.</Para>
+<Para>While we take care to point out the limitations of browser support where appropriate, our aim is not to give you elaborate workarounds to make your HTML5 application run seamlessly on a ten-year-old browser. Experience has shown that the workarounds and baseline browser support are evolving so rapidly that a book like this is not the best vehicle for such information. Instead, we will focus on the specification of HTML5 and how to use it. Detailed workarounds can be found on the Internet and will become less necessary over time.</Para>
+</Section1>
+<Section1 ID="Sec2_FM1">
+<Heading>An Overview of This Book</Heading>
+<Para>The thirteen chapters of this book cover a selection of popular, useful, and powerful HTML5 APIs. In some cases, we have built on the capabilities introduced in earlier chapters to provide you with richer demonstrations.</Para>
+<Para>Chapter 1, &#x201C;Introduction to HTML5,&#x201D; starts off with the background of past and current versions of the HTML specification. The new high-level semantic tags are presented, along with basic changes and the rationale behind all the recent developments in HTML5. It&#x2019;s good to know this terrain.</Para>
+<Para>Chapter 2, &#x201C;Using the Canvas API&#x201D;, Chapter 3, &#x201C;Working with SVG,&#x201D; and Chapter 4, &#x201C;Working with Audio and Video,&#x201D; describe the new visual and media elements. In these chapters, the focus is on finding simpler ways to spruce up your user interface without plugins or server-side interaction.</Para>
+<Para>Chapter 5, &#x201C;Using the Geolocation API,&#x201D; introduces a truly new feature that was not easily emulated before now&#x2014;the ability for an application to identify the user&#x2019;s current location and use that to customize the experience. Privacy is important here, so we cover some of the caveats, as well.</Para>
+<Para>The next two chapters, &#x201C;Using the Communication APIs&#x201D; and &#x201C;Using the WebSocket API,&#x201D; present increasingly powerful ways that HTML5 lets you communicate with other websites and stream real-time data to an application with both simplicity and minimal overhead. The techniques in these chapters will enable you to simplify the many overly complex architectures deployed on the Web today.</Para>
+<Para>Chapter 8, &#x201C;Using the Forms API,&#x201D; presents you with minimal tweaks you can make to your desktop or mobile web applications today to increase usability, as well as more fundamental changes you can make to detect page entry errors in very common usage scenarios. Chapter 9, &#x201C;Using the Drag and Drop API,&#x201D; elaborates on the new Drag and Drop API features and shows how you can use them.</Para>
+<Para>Chapters 10, 11, and 12&#x2014;&#x201C;Using the Web Workers API,&#x201D; &#x201C;Using the Storage API,&#x201D; and &#x201C;Creating Offline Web Applications&#x201D;&#x2014;deal with the internal plumbing of your applications. Here, you will find ways to optimize the existing functionality to obtain better performance and better data management.</Para>
+<Para>Finally, Chapter 13, &#x201C;The Future of HTML5,&#x201D; will give you a tasty preview of what&#x2019;s still to come.</Para>
+</Section1>
+<Section1 ID="Sec3_FM1">
+<Heading>Example Code and Companion Web Site</Heading>
+<Para>The code for the examples shown in this book is available online in the Source Code section of the Apress web site. Visit <Literal>www.apress.com</Literal>, click Source Code, and look for this book&#x2019;s title. You can download the source code from this book&#x2019;s home page. In addition, we are hosting a companion site for the book at <Literal>www.prohtml5.com</Literal>, from which you can also download the sample code and some practical extras.</Para>
+</Section1>
+<Section1 ID="Sec4_FM1">
+<Heading>Contacting the Authors</Heading>
+<Para>Thank you for buying this book. We hope you enjoy reading it and that you find it a valuable resource. Despite our best effort to avoid errors, we realize that things sometimes slip through the cracks, and we&#x2019;d like to express, in advance, our regrets for any such slip-ups. We welcome your personal feedback, questions, and comments regarding this book&#x2019;s content and source code. You can contact us by sending us e-mail at <Literal>prohtml5@gmail.com</Literal>.</Para>
+</Section1>
+</Body>
+</Preface>
+<BookAcknowledgments>
+<AcknowledgmentTitle Language="En">Acknowledgments</AcknowledgmentTitle>
+<Body>
+<Para>I&#x2019;d like to thank my wife, Vittoria, for her love and patience, and my talented sons, Sean and Rocky&#x2014;reach for the stars, boys!</Para>
+<Para>Thanks to my parents, Herman and Elisabeth, my sister, Alice, and my brother, David, for always believing in me, and to my late grandmother Gebbechien whose courageous acts during the Nazi occupation of Holland were a great lesson to our family.</Para>
+<Para>To my coauthors, the never-tiring Brian and the code-generating human Frank, it has been an honor to work with both of you.</Para>
+<Para>Thanks also to Clay at Apress for all your support, and, finally, thanks to Jonas and John at Kaazing for pushing us to write a &#x201C;real&#x201D; book&#x2014;an &#x201C;unofficial e-book&#x201D; would still be just a figment of our imagination, I am sure!</Para>
+<Para>
+<Emphasis Type="Bold">&#x2014;</Emphasis>Peter Lubbers</Para>
+<Para>To my parents, Ken and Patty Albers, I offer my deepest love and appreciation for the sacrifices you made to bring me so many opportunities. Without your encouragement and the values you instilled in me, I would never have completed this or any other major life journey. You&#x2019;ve been guiding me every step of the way.</Para>
+<Para>To John, my deepest thanks for your patience every time that extra hour of work stretched to two, three, or more. You amaze and inspire me.</Para>
+<Para>To Pitch, Bonnie, and Penelope, a scritch on the chin and a promise that dinner won&#x2019;t be so late any more. To the cats who came before, your purrs stay with me.</Para>
+<Para>To my coworkers at Kaazing, much appreciation for the chance to work with the best and the brightest.</Para>
+<Para>And a special thanks to the editorial staff at Apress for first believing that the time was right for an HTML5 book and then for having patience with us while we attempted to document a rapidly moving target.</Para>
+<Para>&#x2014;Brian Albers</Para>
+<Para>I&#x2019;d like to thank my parents, Mary and Sabri, who are responsible for my existence and without whom this book would literally not be possible.</Para>
+<Para>&#x2014;Frank Salim</Para>
+</Body>
+</BookAcknowledgments>
+<Toc>
+<Heading>Contents</Heading>
+<TocChapter>
+<TocEntry PageNumber="1">&#x25A0; Chapter 1: Overview of HTML5</TocEntry>
+<TocSection1><TocEntry PageNumber="1">The Story So Far&#x2014;The History of HTML5</TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="2">The Myth of 2022 and Why It Doesn&#x2019;t Matter</TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="3">Who Is Developing HTML5?</TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="3">A New Vision</TocEntry>
+<TocSection2><TocEntry PageNumber="3">Compatibility and Paving the Cow Paths</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="6">What&#x2019;s In and What&#x2019;s Out?</TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="8">New DOCTYPE and Character Set</TocEntry>
+<TocSection2><TocEntry PageNumber="23">&#x25A0; Chapter 2: Using the Canvas API</TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="23">History</TocEntry>
+<TocSection2><TocEntry PageNumber="27">Checking for Browser Support</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="58">Practical Extra: Full Page Glass Pane</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 3: Working with Scalable Vector Graphics 63</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="63">History</TocEntry>
+<TocSection2><TocEntry PageNumber="75">Adding Trees</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 4: Working with Audio and Video 83</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="83">Video Containers</TocEntry>
+<TocSection2><TocEntry PageNumber="87">Checking for Browser Support</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 5: Using the Geolocation API 107</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="107">Latitude and Longitude Coordinates</TocEntry>
+<TocSection2><TocEntry PageNumber="112">Privacy</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="114">Checking for Browser Support</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="122">Writing the HTML Display</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="130">What&#x2019;s My Status?</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 6: Using the Communication APIs 135</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="138">Understanding Origin Security</TocEntry>
+<TocSection2><TocEntry PageNumber="147">Cross-Origin XMLHttpRequest</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="156">Structured Data</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 7: Using the WebSocket API 159</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="159">Real-Time and HTTP</TocEntry>
+<TocSection2><TocEntry PageNumber="176">Checking for Browser Support</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="183">Coding the HTML File</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 8: Using the Forms API 193</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="194">HTML Forms Versus XForms</TocEntry>
+<TocSection2><TocEntry PageNumber="200">New Form Attributes and Functions</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="213">Practical Extras</TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 9: Working with Drag-and-Drop 217</Emphasis></TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="218">The Big Picture</TocEntry>
+<TocSection2><TocEntry PageNumber="234">Getting Into the dropzone</TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="239">Customizing the Drag Display</TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 10: Using the Web Workers API 241</Emphasis></TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="242">Checking for Browser Support</TocEntry>
+<TocSection2><TocEntry PageNumber="246">Handling Errors</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="252">Coding the blur.js Helper Script</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 11: Using the Storage APIs 263</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="264">Checking for Browser Support</TocEntry>
+<TocSection2><TocEntry PageNumber="286">The Web SQL Database</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber="291">JSON Object Storage</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 12: Creating Offline Web&#x00A0; Applications 295</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="297">Browser Support for HTML5 Offline Web Applications</TocEntry></TocSection1>
+<TocSection1><TocEntry PageNumber="297">Checking for Browser Support</TocEntry>
+<TocSection2><TocEntry PageNumber="306">Creating a Manifest File for the Application Resources</TocEntry></TocSection2>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Chapter 13: The Future of HTML5 313</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+<TocSection1><TocEntry PageNumber="314">WebGL</TocEntry>
+<TocSection2><TocEntry PageNumber=""><Emphasis Type="Bold">&#x25A0; Index 323</Emphasis></TocEntry></TocSection2>
+</TocSection1>
+</TocChapter>
+</Toc>
+<Loh>
+<Heading>Contents at a Glance</Heading>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Foreword xv</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; About the Authors xvi</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; About the Technical Reviewer xvii</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Acknowledgments xviii</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Introduction xix</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 1: Overview of HTML5 1</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 2: Using the Canvas API 23</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 3: Working with Scalable Vector Graphics 63</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 4: Working with Audio and Video 83</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 5: Using the Geolocation API 107</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 6: Using the Communication APIs 135</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 7: Using the WebSocket API 159</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 8: Using the Forms API 193</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 9: Working with Drag-and-Drop 217</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 10: Using the Web Workers API 241</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 11: Using the Storage APIs 263</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 12: Creating Offline Web Applications 295</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Chapter 13: The Future of HTML5 313</Emphasis>
+</LohEntry>
+<LohEntry>
+<Emphasis Type="Bold">
+&#x25A0; Index 323</Emphasis>
+</LohEntry>
+</Loh>
+</BodyFrontmatter>
+<BodyRef FileRef="123456_1_En_FM1_BookFrontmatter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</BookFrontmatter>
+</Book>
+</Publisher>

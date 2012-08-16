@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Chapter PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Chapter Language="En" OutputMedium="All" ID="Chap7_7">
+<ChapterInfo Language="En" ChapterType="OriginalPaper" NumberingStyle="ChapterOnly" TocLevels="0" ContainsESM="No" OutputMedium="All">
+<ChapterID>7</ChapterID>
+<ChapterNumber>Chapter 7</ChapterNumber>
+<ChapterDOI>10.1007/978-1-4302-3865-2_7</ChapterDOI>
+<ChapterSequenceNumber>7</ChapterSequenceNumber>
+<ChapterTitle Language="En">Using the WebSocket API</ChapterTitle>
+<ChapterFirstPage>1</ChapterFirstPage>
+<ChapterLastPage>36</ChapterLastPage>
+<ChapterCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+</ChapterCopyright>
+<ChapterHistory>
+<OnlineDate>
+<Year><?InsertOnReleaseOF OFYear?></Year>
+<Month><?InsertOnReleaseOF OFMonth?></Month>
+<Day><?InsertOnReleaseOF OFDay?></Day>
+</OnlineDate>
+</ChapterHistory>
+</ChapterInfo>
+<ChapterHeader>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1_7" CorrespondingAffiliationID="Aff1_7">
+<AuthorName>
+<GivenName>Peter</GivenName>
+<FamilyName>Lubbers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_7">
+<AuthorName>
+<GivenName>Brian</GivenName>
+<FamilyName>Albers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_7">
+<AuthorName>
+<GivenName>Frank</GivenName>
+<FamilyName>Salim</FamilyName>
+</AuthorName>
+</Author>
+<Affiliation ID="Aff1_7">
+<OrgName>Technical Communication at Kaazing</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<State>CA</State>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<Abstract Language="En" OutputMedium="Online" ID="Abs1_7">
+<Heading>Abstract</Heading>
+<Para>In this chapter, we&#x2019;ll <IndexTerm><Primary>WebSocket API</Primary></IndexTerm>explore what you can do with the most powerful communication feature in the HTML5 specification: <Emphasis Type="Italic">WebSocket</Emphasis>, which defines a full-duplex communication channel that operates through a single socket over the web. WebSocket is not just another incremental enhancement to conventional HTTP communications; it represents a large advance, especially for real-time, event-driven web applications.</Para>
+</Abstract>
+</ChapterHeader>
+<Body>
+<Para>In this chapter, we&#x2019;ll <IndexTerm><Primary>WebSocket API</Primary></IndexTerm>explore what you can do with the most powerful communication feature in the HTML5 specification: <Emphasis Type="Italic">WebSocket</Emphasis>, which defines a full-duplex communication channel that operates through a single socket over the web. WebSocket is not just another incremental enhancement to conventional HTTP communications; it represents a large advance, especially for real-time, event-driven web applications.</Para>
+<Para>WebSocket provides such an improvement from the old, convoluted &#x201C;hacks&#x201D; that are used to simulate a full-duplex connection in a browser that it prompted Google&#x2019;s Ian Hickson&#x2014;the HTML5 specification lead&#x2014;to say:</Para>
+<Para>&#x201C;Reducing kilobytes of data to 2 bytes&#x2026;and reducing latency from 150 ms to 50 ms is far more than marginal. In fact, these two factors alone are enough to make WebSocket seriously interesting to Google.&#x201D;</Para>
+<Para Type="Programcode">&#x2013; www.ietf.org/mail-archive/web/hybi/current/msg00784.html</Para>
+<Para>We&#x2019;ll show you in detail just why WebSocket provides such a dramatic improvement, and you&#x2019;ll see how&#x2014;in one fell swoop&#x2014;WebSocket makes all the old Comet and Ajax polling, long-polling, and streaming solutions obsolete.</Para>
+<Section1 ID="Sec2_7">
+<Heading>Overview of WebSocket</Heading>
+<Para>Let&#x2019;s take a look at how WebSocket can offer a reduction of unnecessary network traffic and latency by comparing HTTP solutions to full duplex &#x201C;real time&#x201D; browser communication with WebSocket.</Para>
+<Section2 ID="Sec3_7">
+<Heading>Real-Time and HTTP</Heading>
+<Para>Normally when a browser<IndexTerm><Primary>Real-time web</Primary><Secondary>history of</Secondary></IndexTerm> visits a web page, an HTTP request is sent to the web server that hosts that page. The <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>web server</Tertiary></IndexTerm>web server acknowledges this request and sends back the response. In many cases&#x2014;for example, for stock prices, news reports, ticket sales, traffic patterns, medical device readings, and so on&#x2014;the response could be stale by the time the browser renders the page. If you want to get the most up-to-date real-time information, you can constantly refresh that page manually, but that&#x2019;s obviously not a great solution.</Para>
+<Para>Current attempts to provide real-time web applications largely revolve around polling and other server-side push technologies, the most notable of which is &#x201C;Comet&#x201D;, which delays the completion of an HTTP response to deliver messages to the client.</Para>
+<Para>With <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>polling</Tertiary></IndexTerm>polling<IndexTerm><Primary>Polling</Primary></IndexTerm>, the browser sends HTTP requests at regular intervals and immediately receives a response. This technique was the first attempt for the browser to deliver real-time information. Obviously, this is a good solution if the exact interval of message delivery is known, because you can synchronize the client request to occur only when information is available on the server. However, real-time data is often not that predictable, making unnecessary requests inevitable and as a result, many connections are opened and closed needlessly in low-message-rate situations.</Para>
+<Para>With <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>long-polling</Tertiary></IndexTerm>long-polling<IndexTerm><Primary>Long-polling</Primary></IndexTerm>, the browser sends a request to the server and the server keeps the request open for a set period of time. If a notification is received within that period, a response containing the message is sent to the client. If a notification is not received within the set time period, the server sends a response to terminate the open request. It is important to understand, however, that when you have a high message-volume, long-polling does not provide any substantial performance improvements over traditional polling.</Para>
+<Para>With <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>streaming</Tertiary></IndexTerm>streaming<IndexTerm><Primary>Streaming</Primary></IndexTerm>, the browser sends a complete request, but the server sends and maintains an open response that is continuously updated and kept open indefinitely (or for a set period of time). The response is then updated whenever a message is ready to be sent, but the server never signals to complete the response, thus keeping the connection open to deliver future messages. However, since streaming is still encapsulated in HTTP, intervening firewalls and proxy servers may choose to buffer the response, increasing the latency of the message delivery. Therefore, many streaming solutions fall back to long-polling in case a buffering proxy server is detected. Alternatively, TLS (SSL) connections can be used to shield the response from being buffered, but in that case the setup and tear down of each connection taxes the available server resources more heavily.</Para>
+<Para>Ultimately, all of <IndexTerm><Primary>Real-time web</Primary><Secondary>history of</Secondary></IndexTerm>these methods for providing real-time data involve HTTP request<IndexTerm><Primary>HTTP request headers</Primary></IndexTerm><IndexTerm><Primary>HTTP response headers</Primary></IndexTerm> and <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>request and response headers</Tertiary></IndexTerm>response headers, which contain lots of additional, unnecessary header data and introduce latency. On top of that, full-duplex connectivity requires more than just the downstream connection from server to client. In an effort to simulate full-duplex communication over half-duplex HTTP, many of today&#x2019;s solutions use two connections: one for the downstream and one for the upstream. The maintenance and coordination of these two connections introduces significant overhead in terms of resource consumption and adds lots of <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>complexity applications</Tertiary></IndexTerm>complexity. Simply put, HTTP wasn&#x2019;t designed for real-time, full-duplex communication as you can see in the Figure <InternalRef RefID="Fig1_7">7-1</InternalRef>, which shows the complexities associated with building a web application that displays real-time data from a back-end data source using a publish/subscribe model over half-duplex HTTP.<Figure ID="Fig1_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>The complexity of real-time HTTP <IndexTerm><Primary>Websocket API</Primary><Secondary>real-time and HTTP</Secondary><Tertiary>complexity applications</Tertiary></IndexTerm>applications<IndexTerm><Primary>Comet applications</Primary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO1_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig1_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>It gets even worse when you try to scale out those solutions. Simulating bidirectional browser communication over HTTP is error-prone and complex and all that complexity does not scale. Even though your end users might be enjoying something that looks like a real-time web application, this &#x201C;real-time&#x201D; experience has a high price tag. It&#x2019;s a price that you will pay in additional<IndexTerm><Primary>Real-time web</Primary><Secondary>history of</Secondary></IndexTerm> latency, unnecessary network traffic and a drag on CPU performance.</Para>
+</Section2>
+<Section2 ID="Sec4_7">
+<Heading>Understanding WebSocket</Heading>
+<Para>WebSocket was first <IndexTerm><Primary>Websocket API</Primary><Secondary>definition, webSocket</Secondary></IndexTerm>defined <IndexTerm><Primary>TCPConnection</Primary></IndexTerm>as &#x201C;TCPConnection&#x201D; in the Communications section of the HTML5 specification by Ian Hickson<IndexTerm><Primary>Hickson, Ian</Primary></IndexTerm> (lead writer of the HTML5 specification). The specification evolved and changed to WebSocket, which is now an independent specification (just like Geolocation, Web Workers and so on), to keep the discussion focused.</Para>
+<Para>Both TCPConnection and WebSocket are names that refer to lower-level networking interfaces. TCP is a fundamental transport protocol for the Internet. WebSocket is a <IndexTerm><Primary>Websocket API</Primary><Secondary>transport protocol</Secondary></IndexTerm>transport protocol for web applications. It provides a bidirectional stream of data that arrives in order, much like TCP. As with TCP, higher-level protocols can run over WebSocket. To be part of the Web, rather than connecting to an Internet host and port, WebSocket connects to URLs.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>What do Websocket and Model Trains have in Common?</Heading>
+<Para><Emphasis Type="Bold">Peter says</Emphasis>: &#x201C;Ian Hickson is quite the model train enthusiast; he has been planning ways to control trains from computers ever since 1984 when Marklin first came out with a digital controller, long before the web even existed.</Para>
+<Para>At that time, Ian added TCPConnection to the HTML5 specification, he was working on a program to control a model train set from a browser and he was using the prevalent pre-WebSocket &#x201C;hanging GET&#x201D; and XHR techniques to achieve browser to train communication. The train-controller program would have been a lot easier to build if there was a way to have socket communication in a browser&#x2014;much like traditional asynchronous client/server communication model that is found in &#x201C;fat&#x201D; clients. So, inspired by what <Emphasis Type="Italic">could</Emphasis> be possible, the (train) wheels had been set in motion and the WebSocket train had left the station. Next stop: the real-time web.&#x201D;</Para>
+</FormalPara>
+</Section2>
+<Section2 ID="Sec5_7">
+<Heading>The WebSocket Handshake</Heading>
+<Para>To establish a WebSocket<IndexTerm><Primary>WebSocket API</Primary><Secondary>protocol</Secondary></IndexTerm><IndexTerm><Primary>WebSocket API</Primary><Secondary>handshake</Secondary></IndexTerm> connection, the client and server upgrade from the HTTP protocol to the WebSocket protocol during their initial handshake, as shown in Figure <InternalRef RefID="Fig2_7">7-2</InternalRef>. Note that this connection description represents draft 17 of the protocol.
+<Figure ID="Fig2_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>The WebSocket Upgrade handshake</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO2_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig2_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-1.</Heading>
+<Para>The WebSocket Upgrade Handshake</Para>
+</FormalPara>
+<Para><Emphasis Type="Bold">From client to server:</Emphasis></Para>
+<Para Type="Programcode">GET /chat HTTP/1.1</Para>
+<Para Type="Programcode">Host: example.com</Para>
+<Para Type="Programcode">Connection: Upgrade</Para>
+<Para Type="Programcode">Sec-WebSocket-Protocol: sample</Para>
+<Para Type="Programcode">Upgrade: websocket</Para>
+<Para Type="Programcode">Sec-WebSocket-Key: 7cxQRnWs91xJW9T0QLSuVQ==</Para>
+<Para Type="Programcode">Origin: http://example.com</Para>
+<Para Type="Programcode">[8-byte security key]</Para>
+<Para><Emphasis Type="Bold">From server to client:</Emphasis></Para>
+<Para Type="Programcode">HTTP/1.1 101 WebSocket Protocol Handshake</Para>
+<Para Type="Programcode">Upgrade: websocket</Para>
+<Para Type="Programcode">Connection: Upgrade</Para>
+<Para Type="Programcode">Sec-WebSocket-Accept: 7cxQRnWs91xJW9T0QLSuVQ==</Para>
+<Para Type="Programcode">WebSocket-Protocol: sample</Para>
+<Para>Once established, WebSocket messages can be sent back and forth between the client and the server in full-duplex mode. This means that text-based messages can be sent full-duplex, in either direction at the same time. On the network each message starts with a <Literal>0x00</Literal> byte, ends with a <Literal>0xFF</Literal> byte, and <IndexTerm><Primary>WebSocket API</Primary><Secondary>protocol</Secondary></IndexTerm><IndexTerm><Primary>WebSocket API</Primary><Secondary>handshake</Secondary></IndexTerm>contains UTF-8 data in between.</Para>
+</Section2>
+<Section2 ID="Sec6_7">
+<Heading>The WebSocket Interface</Heading>
+<Para>Along with the definition of the <IndexTerm><Primary>WebSocket API</Primary><Secondary>interface</Secondary></IndexTerm>WebSocket protocol, the specification also defines the WebSocket interface for use in JavaScript applications. Listing 7-2 shows the <Literal>WebSocket</Literal> interface.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-2.</Heading>
+<Para>The WebSocket Interface</Para>
+</FormalPara>
+<Para Type="Programcode">[Constructor(DOMString url, optional DOMString protocols),</Para>
+<Para Type="Programcode"> Constructor(DOMString url, optional DOMString[] protocols)]</Para>
+<Para Type="Programcode">interface WebSocket : EventTarget {</Para>
+<Para Type="Programcode">  readonly attribute DOMString url;</Para>
+<Para Type="Programcode">  // ready state</Para>
+<Para Type="Programcode">  const unsigned short CONNECTING = 0;</Para>
+<Para Type="Programcode">  const unsigned short OPEN = 1;</Para>
+<Para Type="Programcode">  const unsigned short CLOSING = 2;</Para>
+<Para Type="Programcode">  const unsigned short CLOSED = 3;</Para>
+<Para Type="Programcode">  readonly attribute unsigned short readyState;</Para>
+<Para Type="Programcode">  readonly attribute unsigned long bufferedAmount;</Para>
+<Para Type="Programcode">  // networking</Para>
+<Para Type="Programcode">  [TreatNonCallableAsNull] attribute Function? onopen;</Para>
+<Para Type="Programcode">  [TreatNonCallableAsNull] attribute Function? onerror;</Para>
+<Para Type="Programcode">  [TreatNonCallableAsNull] attribute Function? onclose;</Para>
+<Para Type="Programcode">  readonly attribute DOMString extensions;</Para>
+<Para Type="Programcode">  readonly attribute DOMString protocol;</Para>
+<Para Type="Programcode">  void close([Clamp] optional unsigned short code, optional DOMString reason);</Para>
+<Para Type="Programcode">  // messaging</Para>
+<Para Type="Programcode">  [TreatNonCallableAsNull] attribute Function? onmessage;</Para>
+<Para Type="Programcode">           attribute DOMString binaryType;</Para>
+<Para Type="Programcode">  void send(DOMString data);</Para>
+<Para Type="Programcode">  void send(ArrayBuffer data);</Para>
+<Para Type="Programcode">  void send(Blob data);</Para>
+<Para Type="Programcode">};</Para>
+<Para>Using the <Literal>WebSocket</Literal> interface is straightforward. To connect a remote host, just create a new <Literal>WebSocket</Literal> instance, providing the new object with a URL that represents the end-point to which you wish to connect. Note that a <Literal>ws://</Literal> and <Literal>wss://</Literal> prefix indicates a WebSocket and a secure WebSocket connection, respectively.</Para>
+<Para>A WebSocket connection is established by upgrading from the HTTP protocol to the WebSocket protocol during the initial handshake between the client and the server, over the same underlying TCP/IP connection. Once established, WebSocket data frames can be sent back and forth between the client and the server in full-duplex mode. The connection itself is exposed via the <Literal>message</Literal><IndexTerm><Primary>onmessage method</Primary></IndexTerm> event and <Literal>send</Literal><IndexTerm><Primary>send method</Primary></IndexTerm> method defined <IndexTerm><Primary>WebSocket interface</Primary></IndexTerm>by the <Literal>WebSocket</Literal> interface. In your code, you use asynchronous event listeners to handle each phase of the connection life cycle.</Para>
+<Para Type="Programcode">myWebSocket.onopen = function(evt) { alert("Connection open &#x2026;"); };<IndexTerm><Primary>WebSocket API</Primary><Secondary>interface</Secondary></IndexTerm>
+</Para>
+<Para Type="Programcode">myWebSocket.onmessage = function(evt) { alert( "Received Message: " + evt.data); };</Para>
+<Para Type="Programcode">myWebSocket.onclose = function(evt) { alert("Connection closed."); };</Para>
+</Section2>
+<Section2 ID="Sec7_7">
+<Heading>A Dramatic Reduction in Unnecessary Network Traffic and Latency</Heading>
+<Para>So how efficient can WebSocket be? Let&#x2019;s compare a polling application and a WebSocket application side by side. To illustrate polling, we will examine a web application in which a web page requests real-time stock data from a web server using a traditional polling model. It does this by <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>polling</Tertiary></IndexTerm>polling a Java Servlet that is hosted on a web server. A message broker receives data from a fictitious stock price feed with continuously updating prices. The web page connects and subscribes to a specific stock channel (a topic on the message broker) and uses an <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>XMLHTTPRequest</Tertiary></IndexTerm>XMLHttpRequest<IndexTerm><Primary>XMLHttpRequest</Primary></IndexTerm> to poll for updates once per second. When updates are received, some calculations are performed and the stock data is displayed as shown in Figure <InternalRef RefID="Fig3_7">7-3</InternalRef>.
+<Figure ID="Fig3_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-3</CaptionNumber>
+<CaptionContent>
+<SimplePara>Example JavaScript stock ticker application</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO3_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig3_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>It all sounds great, but a look under the hood reveals there are some serious issues with this application. For example, in Mozilla Firefox with Firebug, you can see that GET requests hammer the server at one-second intervals. Looking at the HTTP headers reveals the shocking amount of overhead that is associated with each request. Listings 7-3 and 7-4 show the HTTP header <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>HTTP request header</Tertiary></IndexTerm>data for just a single request and response.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-3.</Heading>
+<Para><IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>HTTP request header</Tertiary></IndexTerm> HTTP Request Header<IndexTerm><Primary>HTTP request header</Primary></IndexTerm></Para>
+</FormalPara>
+<Para Type="Programcode">GET /PollingStock//PollingStock HTTP/1.1</Para>
+<Para Type="Programcode">Host: localhost:8080</Para>
+<Para Type="Programcode">User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.5) Gecko/20091102</Para>
+<Para Type="Programcode">Firefox/3.5.5</Para>
+<Para Type="Programcode">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</Para>
+<Para Type="Programcode">Accept-Language: en-us</Para>
+<Para Type="Programcode">Accept-Encoding: gzip,deflate</Para>
+<Para Type="Programcode">Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7</Para>
+<Para Type="Programcode">Keep-Alive: 300</Para>
+<Para Type="Programcode">Connection: keep-alive</Para>
+<Para Type="Programcode">Referer: http://www.example.com/PollingStock/</Para>
+<Para Type="Programcode">Cookie: showInheritedConstant=false; showInheritedProtectedConstant=false;</Para>
+<Para Type="Programcode">showInheritedProperty=false; showInheritedProtectedProperty=false;</Para>
+<Para Type="Programcode">showInheritedMethod=false; showInheritedProtectedMethod=false;</Para>
+<Para Type="Programcode">showInheritedEvent=false; showInheritedStyle=false; showInheritedEffect=false</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-4.</Heading>
+<Para><IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>HTTP response header</Tertiary></IndexTerm>
+HTTP Response Header<IndexTerm><Primary>HTTP response header</Primary></IndexTerm></Para>
+</FormalPara>
+<Para Type="Programcode">HTTP/1.x 200 OK</Para>
+<Para Type="Programcode">X-Powered-By: Servlet/2.5</Para>
+<Para Type="Programcode">Server: Sun Java System Application Server 9.1_02</Para>
+<Para Type="Programcode">Content-Type: text/html;charset=UTF-8</Para>
+<Para Type="Programcode">Content-Length: 21</Para>
+<Para Type="Programcode">Date: Sat, 07 Nov 2009 00:32:46 GMT</Para>
+<Para>Just for fun (ha!), we can count all the characters. The total HTTP request and response header information overhead contains 871 bytes and that does not even include any data. Of course, this is just an example and you can have less than 871 bytes of header data, but there are also common cases where the header data exceeded 2,000 bytes. In this example application, the data for a typical stock topic message is only about 20 characters long. As you can see, it is effectively drowned out by the excessive header information, which was not even required in the first place.</Para>
+<Para>So, what happens when you deploy this application to a large number of users? Let&#x2019;s take a look at the network overhead for just the HTTP request<IndexTerm><Primary>HTTP request header</Primary></IndexTerm><IndexTerm><Primary>HTTP response header</Primary></IndexTerm> and response header data associated with this <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>polling</Tertiary></IndexTerm>polling application in three different use cases.<UnorderedList Mark="Bullet">
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case A</Emphasis>: 1,000 clients polling every second: Network traffic is (871 &#x00D7; 1,000) = 871,000 bytes = 6,968,000 bits per second (6.6 Mbps)</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case B</Emphasis>: 10,000 clients polling every second: Network traffic is (871 &#x00D7; 10,000) = 8,710,000 bytes = 69,680,000 bits per second (66 Mbps)</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case C</Emphasis>: 100,000 clients polling every 1 second: Network traffic is</Para>
+<Para>(871 &#x00D7; 100,000) = 87,100,000 bytes = 696,800,000 bits per second (665 Mbps)<IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>polling</Tertiary></IndexTerm>
+</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>That&#x2019;s an enormous amount of unnecessary network overhead. Consider if we rebuilt the application to use WebSocket, adding an event handler to the web page to asynchronously listen for stock update messages from the message broker (more on that in just a little bit). Each of these messages is a WebSocket frame that has as little as two bytes of overhead (instead of 871). Take a look at how that affects the <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>network overhead</Tertiary></IndexTerm>network overhead in our three use cases.<UnorderedList Mark="Bullet">
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case A</Emphasis>: 1,000 clients receive 1 message per second: Network traffic is</Para>
+<Para>(2 &#x00D7; 1,000) = 2,000 bytes = 16,000 bits per second (0.015 Mbps)</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case B</Emphasis>: 10,000 clients receive 1 message per second: Network traffic is</Para>
+<Para>(2 &#x00D7; 10,000) = 20,000 bytes = 160,000 bits per second (0.153 Mbps)</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">Use case C:</Emphasis> 100,000 clients receive 1 message per second: Network traffic is</Para>
+<Para>(2 &#x00D7; 100,000) = 200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>As you can see in <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>vs. polling solution</Tertiary></IndexTerm>Figure <InternalRef RefID="Fig4_7">7-4</InternalRef>, WebSocket provides a dramatic reduction of unnecessary network traffic compared to the polling solution.
+<Figure ID="Fig4_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-4</CaptionNumber>
+<CaptionContent>
+<SimplePara>Comparison of the unnecessary network overhead between the polling WebSocket traffic <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>vs. polling solution</Tertiary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO4_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig4_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>And what about the reduction <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>reduction</Tertiary></IndexTerm>in latency? Take a look at Figure <InternalRef RefID="Fig5_7">7-5</InternalRef>. In the top half, you can see the latency of the<IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>half-duplex polling solution</Tertiary></IndexTerm> half-duplex polling solution. If we assume, for this example, that it takes 50 milliseconds for a message to travel from the server to the browser, then the polling application introduces a lot of extra latency, because a new request has to be sent to the server when the response is complete. This new request takes another 50 ms and during this time the server cannot send any messages to the browser, resulting in additional server memory consumption.
+<Figure ID="Fig5_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-5</CaptionNumber>
+<CaptionContent>
+<SimplePara>Latency comparison between the <IndexTerm><Primary>WebSocket API</Primary><Secondary>network traffic and latency</Secondary><Tertiary>half-duplex polling solution</Tertiary></IndexTerm>polling and WebSocket applications</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO5_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig5_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>In the bottom half of the figure, you see the reduction in latency provided by the WebSocket solution. Once the connection is upgraded to WebSocket, messages can flow from the server to the browser the moment they arrive. It still takes 50 ms for messages to travel from the server to the browser, but the WebSocket connection remains open so there is no need to send another request to the server.</Para>
+<Para>WebSocket provides an enormous step forward in the scalability of the real-time web. As you have seen in this chapter, WebSocket can provide a 500:1 or&#x2014;depending on the size of the HTTP headers&#x2014;even a 1000:1 reduction in unnecessary HTTP header traffic and 3:1 reduction in latency.</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec8_7">
+<Heading>Writing a Simple Echo WebSocket Server</Heading>
+<Para>Before you can use the<IndexTerm><Primary>WebSocket API</Primary><Secondary>echo server</Secondary></IndexTerm> WebSocket API, you need a server that supports WebSocket. In this section we&#x2019;ll take a look at how a simple WebSocket &#x201C;echo&#x201D; server is written. To run the examples for this chapter, we have included a simple WebSocket server written in Python. The sample code for the following examples is located in the WebSocket section of the book web site.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Websocket Servers</Heading>
+<Para>There are lots of WebSocket server implementations<IndexTerm><Primary>WebSocket server implementations</Primary></IndexTerm> out there already and even more under development. The following are just a few of the existing WebSocket servers:<UnorderedList Mark="Bullet">
+<ItemContent>
+<Para><Emphasis Type="Bold">Kaazing WebSocket Gateway</Emphasis><IndexTerm><Primary>Kaazing WebSocket Gateway</Primary></IndexTerm>&#x2014;a Java-based WebSocket Gateway</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">mod_pywebsocket</Emphasis><IndexTerm><Primary>mod_pywebsocket</Primary></IndexTerm>&#x2014;a Python-based extension for the Apache HTTP Server</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">Netty</Emphasis>&#x2014;a Java network framework which includes WebSocket support</Para></ItemContent>
+<ItemContent>
+<Para><Emphasis Type="Bold">node.js</Emphasis>&#x2014;a server-side JavaScript framework on which multiple WebSocket servers have been written</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>Kaazing&#x2019;s WebSocket Gateway includes full client-side WebSocket emulation support for browsers without native implementation of WebSocket, which allows you to code against the WebSocket API today and have your code work in all browsers.</Para>
+</FormalPara>
+<Para>To run the Python WebSocket echo server<IndexTerm><Primary>Python WebSocket echo server</Primary></IndexTerm> accepting connections at <Literal>ws://localhost:8000/echo</Literal>, open a command prompt, navigate to the folder that contains the file, and issue the following command:</Para>
+<Para Type="Programcode">python websocket.py</Para>
+<Para>We have also included a <Emphasis Type="Italic">broadcast</Emphasis> server <IndexTerm><Primary>Broadcast server</Primary></IndexTerm>that accepts connections at <Literal>ws://localhost:8080/broadcast</Literal>. Contrary to the echo server, any WebSocket message sent to this particular server implementation will bounce back to <Emphasis Type="Italic">everyone</Emphasis> that is currently connected. It&#x2019;s a very simple way to broadcast messages to multiple listeners. To run the broadcast server, open a command prompt, navigate to the folder that contains the file, and issue the following command:</Para>
+<Para Type="Programcode">python broadcast.py</Para>
+<Para>Both scripts make use of the<IndexTerm><Primary>WebSocket API</Primary><Secondary>echo server</Secondary></IndexTerm> example WebSocket protocol library in <Literal>websocket.py</Literal>. You can add handlers for other paths that implement additional server- side behavior.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>This is only a server for the WebSocket protocol, and it cannot respond to HTTP requests. The handshake parser is not fully HTTP compliant. However, because WebSocket connections begin with an HTTP request and rely on the Upgrade header, other servers can serve both WebSocket and HTTP on the same port.</Para>
+<Para>Let&#x2019;s see what happens when a browser tries to communicate with this server. When the browser makes a request to the WebSocket URL, the server sends back the headers that finish the WebSocket handshake. A WebSocket handshake response must contain an <Literal>HTTP/1.1 101</Literal> status code and Upgrade connection headers<IndexTerm><Primary>HTTP/1.1 101 WebSocket Protocol Handshake</Primary></IndexTerm>. This informs the browser that the server is switching from the HTTP handshake to the WebSocket protocol for the remainder of the TCP session.</Para>
+</FormalPara>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>If you are implementing a WebSocket server, you should refer to the protocol draft at the IETF at <Literal>http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol or the latest specification</Literal>.</Para>
+</FormalPara>
+<Para Type="Programcode"># write out response headers</Para>
+<Para Type="Programcode">self.send_bytes("HTTP/1.1 101 Switching Protocols\r\n")</Para>
+<Para Type="Programcode">self.send_bytes("Upgrade: WebSocket\r\n")</Para>
+<Para Type="Programcode">self.send_bytes("Connection: Upgrade\r\n")</Para>
+<Para Type="Programcode">self.send_bytes("Sec-WebSocket-Accept: %s\r\n" % self.hash_key(key))</Para>
+<Para Type="Programcode">if "Sec-WebSocket-Protocol" in headers:</Para>
+<Para Type="Programcode">    protocol = headers["Sec-WebSocket-Protocol"]</Para>
+<Para Type="Programcode">    self.send_bytes("Sec-WebSocket-Protocol: %s\r\n" % protocol)</Para>
+<Section2 ID="Sec9_7">
+<Heading>WebSocket Framing</Heading>
+<Para>After the handshake, <IndexTerm><Primary>WebSocket API</Primary><Secondary>echo server</Secondary></IndexTerm>the client and server can send messages at any time. Each connection is represented in this server by a <IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>components</Tertiary></IndexTerm><Literal>WebSocketConnection</Literal> instance<IndexTerm><Primary>WebSocketConnection instance</Primary></IndexTerm>. The WebSocketConnection&#x2019;s <Literal>send</Literal> function, shown in Figure <InternalRef RefID="Fig6_7">7-6</InternalRef>, writes out a message according to the WebSocket protocol. The bytes preceding the data payload mark the frame length and type. Text frames are UTF-8 encoded. In this server, each WebSocket connection is an <Literal>asyncore.dispatcher_with_send</Literal>, which is an asynchronous socket wrapper with support for buffered sends.
+<Figure ID="Fig6_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-6</CaptionNumber>
+<CaptionContent>
+<SimplePara>Components of a WebSocket frame<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>components</Tertiary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO6_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig6_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Data sent from the browser to the server is masked.<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>masking</Tertiary></IndexTerm> Masking is an unusual feature of the WebSocket protocol. Every byte of payload data is XORed with a random mask to ensure that WebSocket traffic does not look like other protocols. Like the Sec-WebSocket-Key hash, this is meant to mitigate an arcane form of cross-protocol attack against non-compliant network infrastructure.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>There are many other asynchronous I/O frameworks for Python and other languages. Asyncore<IndexTerm><Primary>Asyncore</Primary></IndexTerm> was chosen because it is included in the Python standard library. Note also that this implementation uses draft 10 of the protocol. This is a simple example designed for testing and illustration.</Para>
+</FormalPara>
+<Para><Literal>WebSocketConnection</Literal><IndexTerm><Primary>WebSocketConnection</Primary></IndexTerm> inherits<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>WebSocketConnection</Tertiary></IndexTerm> from <Literal>asyncore.dispatcher_with_send</Literal> and overrides the <Literal>send</Literal> method in order to frame text and binary messages.</Para>
+<Para Type="Programcode">def send(self, s):</Para>
+<Para Type="Programcode">  if self.readystate == "open":</Para>
+<Para Type="Programcode">    self.send_bytes("\x00")</Para>
+<Para Type="Programcode">    self.send_bytes(s.encode("UTF8"))</Para>
+<Para Type="Programcode">    self.send_bytes("\xFF")</Para>
+<Para>Handlers for WebSocketConnections in <Literal>websocket.py</Literal> follow a simplified dispatcher interface. The handler&#x2019;s <Literal>dispatch()</Literal> method is called with the payload of each frame the connection receives. The<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>EchoHandler</Tertiary></IndexTerm> <Literal>EchoHandler</Literal><IndexTerm><Primary>EchoHandler</Primary></IndexTerm> sends back each message to the sender.</Para>
+<Para Type="Programcode">class EchoHandler(object):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    The EchoHandler repeats each incoming string to the same WebSocket.</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    def __init__(self, conn):</Para>
+<Para Type="Programcode">        self.conn = conn</Para>
+<Para Type="Programcode">    def dispatch(self, data):<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>EchoHandler</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">        self.conn.send("echo: " + data)</Para>
+<Para>The basic broadcast server<IndexTerm><Primary>Broadcast server</Primary></IndexTerm> broadcast.py<IndexTerm><Primary>broadcast.py</Primary></IndexTerm> works<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>broadcast server</Tertiary></IndexTerm> in much the same way, but in this case when the broadcast handler receives a frame, it sends it back on all connected WebSockets as shown in the following example:</Para>
+<Para Type="Programcode">class BroadcastHandler(object):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    The BroadcastHandler repeats incoming strings to every connected</Para>
+<Para Type="Programcode">    WebSocket.</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    def __init__(self, conn):</Para>
+<Para Type="Programcode">        self.conn = conn</Para>
+<Para Type="Programcode">    def dispatch(self, data):</Para>
+<Para Type="Programcode">        for session in self.conn.server.sessions:</Para>
+<Para Type="Programcode">            session.send(data)</Para>
+<Para>The handler in <Literal>broadcast.py</Literal><IndexTerm><Primary>broadcast.py</Primary></IndexTerm> provides a lightweight message broadcaster that simply sends and receives any data. This is sufficient for the purposes of our example. Be aware that this broadcast service does not perform any input verification as would be desirable in a production message server. A production WebSocket server should, at the very least, verify the format of incoming data.</Para>
+<Para>For completeness, Listings 7-5 and 7-6 provide the complete code for <Literal>websocket.py</Literal> and <Literal>broadcast.py</Literal>. Note that this is just an example server implementation; it is not suited for production deployment.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-5.</Heading>
+<Para>Complete Code for <IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm> websocket.py
+</Para>
+</FormalPara>
+<Para Type="Programcode">#!/usr/bin/env python</Para>
+<Para Type="Programcode">import asyncore</Para>
+<Para Type="Programcode">import socket</Para>
+<Para Type="Programcode">import struct</Para>
+<Para Type="Programcode">import time</Para>
+<Para Type="Programcode">from hashlib import sha1</Para>
+<Para Type="Programcode">from base64 import encodestring</Para>
+<Para Type="Programcode">class WebSocketConnection(asyncore.dispatcher_with_send):</Para>
+<Para Type="Programcode">  TEXT = 0x01</Para>
+<Para Type="Programcode">  BINARY = 0x02</Para>
+<Para Type="Programcode">  def __init__(self, conn, server):</Para>
+<Para Type="Programcode">    asyncore.dispatcher_with_send.__init__(self, conn)</Para>
+<Para Type="Programcode">    self.server = server</Para>
+<Para Type="Programcode">    self.server.sessions.append(self)</Para>
+<Para Type="Programcode">    self.readystate = "connecting"</Para>
+<Para Type="Programcode">    self.buffer = ""</Para>
+<Para Type="Programcode">  def handle_read(self):</Para>
+<Para Type="Programcode">    data = self.recv(1024)<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    self.buffer += data</Para>
+<Para Type="Programcode">    if self.readystate == "connecting":</Para>
+<Para Type="Programcode">      self.parse_connecting()</Para>
+<Para Type="Programcode">    elif self.readystate == "open":</Para>
+<Para Type="Programcode">      self.parse_frame()</Para>
+<Para Type="Programcode">  def handle_close(self):</Para>
+<Para Type="Programcode">    self.server.sessions.remove(self)</Para>
+<Para Type="Programcode">    self.close()</Para>
+<Para Type="Programcode">  def parse_connecting(self):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    Parse a WebSocket handshake. This is not a full HTTP request parser!</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    header_end = self.buffer.find("\r\n\r\n")</Para>
+<Para Type="Programcode">    if header_end == -1:</Para>
+<Para Type="Programcode">      return</Para>
+<Para Type="Programcode">    else:</Para>
+<Para Type="Programcode">      header = self.buffer[:header_end]</Para>
+<Para Type="Programcode">      # remove header and four bytes of line endings from buffer</Para>
+<Para Type="Programcode">      self.buffer = self.buffer[header_end + 4:]</Para>
+<Para Type="Programcode">      header_lines = header.split("\r\n")</Para>
+<Para Type="Programcode">      headers = {}</Para>
+<Para Type="Programcode">      # validate HTTP request and construct location</Para>
+<Para Type="Programcode">      method, path, protocol = header_lines[0].split(" ")</Para>
+<Para Type="Programcode">      if method != "GET" or protocol != "HTTP/1.1" or path[0] != "/":</Para>
+<Para Type="Programcode">        self.terminate()</Para>
+<Para Type="Programcode">        return</Para>
+<Para Type="Programcode">      # parse headers</Para>
+<Para Type="Programcode">      for line in header_lines[1:]:</Para>
+<Para Type="Programcode">        key, value = line.split(": ")</Para>
+<Para Type="Programcode">        headers[key] = value</Para>
+<Para Type="Programcode">      headers["Location"] = "ws://" + headers["Host"] + path</Para>
+<Para Type="Programcode">      self.readystate = "open"</Para>
+<Para Type="Programcode">      self.handler = self.server.handlers.get(path, None)(self)</Para>
+<Para Type="Programcode">      self.send_server_handshake_10(headers)</Para>
+<Para Type="Programcode">  def terminate(self):</Para>
+<Para Type="Programcode">    self.ready_state = "closed"</Para>
+<Para Type="Programcode">    self.close()</Para>
+<Para Type="Programcode">  def send_server_handshake_10(self, headers):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    Send the WebSocket Protocol draft HyBi-10 handshake response</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    key = headers["Sec-WebSocket-Key"]</Para>
+<Para Type="Programcode">    # write out response headers</Para>
+<Para Type="Programcode">    self.send_bytes("HTTP/1.1 101 Switching Protocols\r\n")</Para>
+<Para Type="Programcode">    self.send_bytes("Upgrade: WebSocket\r\n")</Para>
+<Para Type="Programcode">    self.send_bytes("Connection: Upgrade\r\n")</Para>
+<Para Type="Programcode">    self.send_bytes("Sec-WebSocket-Accept: %s\r\n" % self.hash_key(key))</Para>
+<Para Type="Programcode">    if "Sec-WebSocket-Protocol" in headers:</Para>
+<Para Type="Programcode">      protocol = headers["Sec-WebSocket-Protocol"]</Para>
+<Para Type="Programcode">      self.send_bytes("Sec-WebSocket-Protocol: %s\r\n" % protocol)</Para>
+<Para Type="Programcode">  def hash_key(self, key):</Para>
+<Para Type="Programcode">    guid="258EAFA5-E914-47DA-95CA-C5AB0DC85B11"</Para>
+<Para Type="Programcode">    combined = key + guid</Para>
+<Para Type="Programcode">    hashed = sha1(combined).digest()</Para>
+<Para Type="Programcode">    return encodestring(hashed)</Para>
+<Para Type="Programcode">  def parse_frame(self):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    Parse a WebSocket frame. If there is not a complete frame in the</Para>
+<Para Type="Programcode">    buffer, return without modifying the buffer.</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    buf = self.buffer</Para>
+<Para Type="Programcode">    payload_start = 2</Para>
+<Para Type="Programcode">    # try to pull first two bytes</Para>
+<Para Type="Programcode">    if len(buf) &#x003C; 3:</Para>
+<Para Type="Programcode">      return</Para>
+<Para Type="Programcode">    b = ord(buf[0])</Para>
+<Para Type="Programcode">    fin = b &#x0026; 0x80    # 1st bit</Para>
+<Para Type="Programcode">    # next 3 bits reserved<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    opcode = b &#x0026; 0x0f   # low 4 bits</Para>
+<Para Type="Programcode">    b2 = ord(buf[1])</Para>
+<Para Type="Programcode">    mask = b2 &#x0026; 0x80  # high bit of the second byte</Para>
+<Para Type="Programcode">    length = b2 &#x0026; 0x7f  # low 7 bits of the second byte</Para>
+<Para Type="Programcode">    # check that enough bytes remain</Para>
+<Para Type="Programcode">    if len(buf) &#x003C; payload_start + 4:</Para>
+<Para Type="Programcode">      return</Para>
+<Para Type="Programcode">elif length == 126:</Para>
+<Para Type="Programcode">      length, = struct.unpack("&#x003E;H", buf[2:4])</Para>
+<Para Type="Programcode">      payload_start += 2</Para>
+<Para Type="Programcode">    elif length == 127:</Para>
+<Para Type="Programcode">      length, = struct.unpack("&#x003E;I", buf[2:6])</Para>
+<Para Type="Programcode">      payload_start += 4</Para>
+<Para Type="Programcode">    if mask:</Para>
+<Para Type="Programcode">      mask_bytes = [ord(b) for b in buf[payload_start:payload_start + 4]]</Para>
+<Para Type="Programcode">      payload_start += 4</Para>
+<Para Type="Programcode">    # is there a complete frame in the buffer?</Para>
+<Para Type="Programcode">    if len(buf) &#x003C; payload_start + length:</Para>
+<Para Type="Programcode">      return</Para>
+<Para Type="Programcode">    # remove leading bytes, decode if necessary, dispatch</Para>
+<Para Type="Programcode">    payload = buf[payload_start:payload_start + length]</Para>
+<Para Type="Programcode">    self.buffer = buf[payload_start + length:]</Para>
+<Para Type="Programcode">    # use xor and mask bytes to unmask data</Para>
+<Para Type="Programcode">    if mask:</Para>
+<Para Type="Programcode">      unmasked = [mask_bytes[i % 4] ^ ord(b)</Para>
+<Para Type="Programcode">              for b, i in zip(payload, range(len(payload)))]</Para>
+<Para Type="Programcode">      payload = "".join([chr(c) for c in unmasked])</Para>
+<Para Type="Programcode">    if opcode == WebSocketConnection.TEXT:</Para>
+<Para Type="Programcode">      s = payload.decode("UTF8")</Para>
+<Para Type="Programcode">      self.handler.dispatch(s)</Para>
+<Para Type="Programcode">    if opcode == WebSocketConnection.BINARY:</Para>
+<Para Type="Programcode">      self.handler.dispatch(payload)</Para>
+<Para Type="Programcode">    return True</Para>
+<Para Type="Programcode">  def send(self, s):<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    Encode and send a WebSocket message</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    message = ""</Para>
+<Para Type="Programcode">    # always send an entire message as one frame (fin)</Para>
+<Para Type="Programcode">    b1 = 0x80</Para>
+<Para Type="Programcode">    # in Python 2, strs are bytes and unicodes are strings</Para>
+<Para Type="Programcode">    if type(s) == unicode:</Para>
+<Para Type="Programcode">      b1 |= WebSocketConnection.TEXT</Para>
+<Para Type="Programcode">      payload = s.encode("UTF8")</Para>
+<Para Type="Programcode">    elif type(s) == str:</Para>
+<Para Type="Programcode">      b1 |= WebSocketConnection.BINARY</Para>
+<Para Type="Programcode">      payload = s</Para>
+<Para Type="Programcode">    message += chr(b1)</Para>
+<Para Type="Programcode">    # never mask frames from the server to the client</Para>
+<Para Type="Programcode">    b2 = 0</Para>
+<Para Type="Programcode">    length = len(payload)</Para>
+<Para Type="Programcode">    if length &#x003C; 126:</Para>
+<Para Type="Programcode">      b2 |= length</Para>
+<Para Type="Programcode">      message += chr(b2)</Para>
+<Para Type="Programcode">    elif length &#x003C; (2 ** 16) - 1:</Para>
+<Para Type="Programcode">      b2 |= 126</Para>
+<Para Type="Programcode">      message += chr(b2)</Para>
+<Para Type="Programcode">      l = struct.pack("&#x003E;H", length)</Para>
+<Para Type="Programcode">      message += l</Para>
+<Para Type="Programcode">    else:</Para>
+<Para Type="Programcode">      l = struct.pack("&#x003E;Q", length)</Para>
+<Para Type="Programcode">      b2 |= 127<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">      message += chr(b2)</Para>
+<Para Type="Programcode">      message += l</Para>
+<Para Type="Programcode">    message += payload</Para>
+<Para Type="Programcode">    if self.readystate == "open":</Para>
+<Para Type="Programcode">      self.send_bytes(message)</Para>
+<Para Type="Programcode">  def send_bytes(self, bytes):</Para>
+<Para Type="Programcode">    try:</Para>
+<Para Type="Programcode">      asyncore.dispatcher_with_send.send(self, bytes)</Para>
+<Para Type="Programcode">    except:</Para>
+<Para Type="Programcode">      pass</Para>
+<Para Type="Programcode">class EchoHandler(object):</Para>
+<Para Type="Programcode">  """</Para>
+<Para Type="Programcode">  The EchoHandler repeats each incoming string to the same WebSocket.</Para>
+<Para Type="Programcode">  """</Para>
+<Para Type="Programcode">  def __init__(self, conn):</Para>
+<Para Type="Programcode">    self.conn = conn</Para>
+<Para Type="Programcode">  def dispatch(self, data):</Para>
+<Para Type="Programcode">    try:</Para>
+<Para Type="Programcode">      self.conn.send(data)</Para>
+<Para Type="Programcode">    except:</Para>
+<Para Type="Programcode">      pass</Para>
+<Para Type="Programcode">class WebSocketServer(asyncore.dispatcher):</Para>
+<Para Type="Programcode">  def __init__(self, port=80, handlers=None):</Para>
+<Para Type="Programcode">    asyncore.dispatcher.__init__(self)</Para>
+<Para Type="Programcode">    self.handlers = handlers</Para>
+<Para Type="Programcode">    self.sessions = []</Para>
+<Para Type="Programcode">    self.port = port</Para>
+<Para Type="Programcode">    self.create_socket(socket.AF_INET, socket.SOCK_STREAM)</Para>
+<Para Type="Programcode">    self.set_reuse_addr()</Para>
+<Para Type="Programcode">    self.bind(("", port))</Para>
+<Para Type="Programcode">    self.listen(5)</Para>
+<Para Type="Programcode">  def handle_accept(self):</Para>
+<Para Type="Programcode">    conn, addr = self.accept()<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>websocket.py</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    session = WebSocketConnection(conn, self)</Para>
+<Para Type="Programcode">if __name__ == "__main__":</Para>
+<Para Type="Programcode">  print "Starting WebSocket Server"</Para>
+<Para Type="Programcode">  WebSocketServer(port=8080, handlers={"/echo": EchoHandler})</Para>
+<Para Type="Programcode">  asyncore.loop()</Para>
+<Para>You may have noticed an unusual key calculation in the WebSocket handshake. This is intended to prevent cross-protocol attacks. In short, this should stop malicious WebSocket client code from spoofing connections to non-WebSocket servers. Hashing a GUID and a random value is enough to positively identify that the responding server understands the WebSocket protocol.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-6.</Heading>
+<Para>Complete Code for <IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>broadcast.py code</Tertiary></IndexTerm> broadcast.py<IndexTerm><Primary>broadcast.py</Primary></IndexTerm>
+</Para>
+</FormalPara>
+<Para Type="Programcode">#!/usr/bin/env python</Para>
+<Para Type="Programcode">import asyncore</Para>
+<Para Type="Programcode">from websocket import WebSocketServer</Para>
+<Para Type="Programcode">class BroadcastHandler(object):</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    The BroadcastHandler repeats incoming strings to every connected</Para>
+<Para Type="Programcode">    WebSocket.</Para>
+<Para Type="Programcode">    """</Para>
+<Para Type="Programcode">    def __init__(self, conn):</Para>
+<Para Type="Programcode">        self.conn = conn</Para>
+<Para Type="Programcode">    def dispatch(self, data):</Para>
+<Para Type="Programcode">        for session in self.conn.server.sessions:</Para>
+<Para Type="Programcode">            session.send(data)</Para>
+<Para Type="Programcode">if __name__ == "__main__":<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>broadcast.py code</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    print "Starting WebSocket broadcast server"</Para>
+<Para Type="Programcode">    WebSocketServer(port=8080, handlers={"/broadcast": BroadcastHandler})</Para>
+<Para Type="Programcode">asyncore.loop()</Para>
+<Para>Now that we&#x2019;ve got a working echo server, we need to write the client side. The web browsers implement the connecting half of the WebSocket Protocol. We can use the API from JavaScript to<IndexTerm><Primary>WebSocket API</Primary><Secondary>framing</Secondary><Tertiary>server communication</Tertiary></IndexTerm> communicate with our simple server.</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec10_7">
+<Heading>Using the WebSocket API</Heading>
+<Para>In this section, we&#x2019;ll <IndexTerm><Primary>WebSocket API</Primary><Secondary>using begin</Secondary></IndexTerm>explore the use of WebSocket in more detail.</Para>
+<Section2 ID="Sec11_7">
+<Heading>Checking for Browser Support</Heading>
+<Para>Before you use the WebSocket API<IndexTerm><Primary>WebSocket API</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>browser support</Primary><Secondary>for WebSocket API</Secondary></IndexTerm>, you will want to make sure there is support in the browser for what you&#x2019;re about to do. This way, you can provide some alternate text, prompting the users of your application to upgrade to a more up-to-date browser. Listing 7-7 shows one way you can test for browser support.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-7.</Heading>
+<Para>Checking for Browser Support</Para>
+</FormalPara>
+<Para Type="Programcode">function loadDemo() {</Para>
+<Para Type="Programcode">  if (window.WebSocket) {</Para>
+<Para Type="Programcode">    document.getElementById("support").innerHTML = "HTML5 WebSocket is supported in your</Para>
+<Para Type="Programcode">                                       browser.";</Para>
+<Para Type="Programcode">  } else {</Para>
+<Para Type="Programcode">     document.getElementById("support").innerHTML = "HTML5 WebSocket is not supported in</Para>
+<Para Type="Programcode">                                        your browser.";</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">}</Para>
+<Para>In this example, you test for browser support in the <Literal>loadDemo</Literal> function<IndexTerm><Primary>loadDemo function</Primary></IndexTerm>, which might be called when the application&#x2019;s page is loaded. A call to <Literal>window.WebSocket</Literal> will return the <Literal>WebSocket</Literal> object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined <Literal>support</Literal> element on the page with a suitable message.</Para>
+<Para>Another way to see if WebSocket is supported in your browser, is to use the browser&#x2019;s console (Firebug or Chrome Developer Tools for example). Figure <InternalRef RefID="Fig7_7">7-7</InternalRef> shows how you can test whether WebSocket is supported natively in Google Chrome (if it is not, <IndexTerm><Primary>WebSocket API</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>browser support</Primary><Secondary>for WebSocket API</Secondary></IndexTerm>the <Literal>window.WebSocket</Literal> command<IndexTerm><Primary>window.WebSocket command</Primary></IndexTerm> returns &#x201C;undefined.&#x201D;)
+<Figure ID="Fig7_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-7</CaptionNumber>
+<CaptionContent>
+<SimplePara>Testing WebSocket support in Google Chrome Developer Tools</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO7_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig7_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec12_7">
+<Heading>Basic API Usage</Heading>
+<Para>The sample code for the following examples is located on the book web site in the WebSocket section. This folder contains a websocket.html file and a broadcast.html file (and a tracker.html file used in the following section) as well as the WebSocket server code shown previously that can be run in Python.</Para>
+</Section2>
+<Section2 ID="Sec13_7">
+<Heading>Creating a WebSocket object and Connecting to a WebSocket Server</Heading>
+<Para>Using the<IndexTerm><Primary>WebSocket API</Primary><Secondary>using</Secondary><Tertiary>creating WebSocket object and connecting to WebSocket server</Tertiary></IndexTerm> WebSocket interface is straight-forward. To connect to an end-point, just create a new WebSocket instance, providing the new object with a URL that represents the end-point to which you wish to connect. You can use the <Literal>ws://</Literal> and <Literal>wss://</Literal> prefixes to indicate a WebSocket and a WebSocket Secure connection, respectively.</Para>
+<Para Type="Programcode">url = "ws://localhost:8080/echo";</Para>
+<Para Type="Programcode">w = new WebSocket(url);</Para>
+<Para>When connecting a WebSocket, you have the option of listing the protocols your application can speak. The second argument to the WebSocket constructor can be a string or array of strings with the names of the &#x201C;subprotocols&#x201D; that your application understands and wishes to use to communicate.</Para>
+<Para Type="Programcode">w = new WebSocket(url, protocol);</Para>
+<Para>You can even list several protocols:</Para>
+<Para Type="Programcode">w = new WebSocket(url, [&#x201C;proto1&#x201D;, &#x201C;proto2&#x201D;]);</Para>
+<Para>Hypothetically, proto1 and proto2 are well defined, perhaps even registered and standardized, protocol names that both the client and server can understand. The server will select a preferred protocol from the list. When the socket opens, its protocol property will contain the protocol that the server chose.</Para>
+<Para Type="Programcode">onopen = function(e) {</Para>
+<Para Type="Programcode">  // determine which protocol the server selected</Para>
+<Para Type="Programcode">  log(e.target.protocol)</Para>
+<Para Type="Programcode">}</Para>
+<Para>Protocols you might use include Extensible Messaging and Presence Protocol (XMPP, or Jabber), Advanced Message Queuing Protocol (AMQP), Remote Frame Buffer (RFB, or VNC) and Streaming Text Oriented Messaging Protocol (STOMP). These are real-world protocols spoken by many clients and servers. Using a standard protocol ensures interoperability between web applications and servers from different organizations. It also opens the door for public WebSocket services. You can speak to a server using a known protocol. Client applications that understand the same protocol can then connect and participate.</Para>
+<Para>This example does not use a standard protocol. We aren&#x2019;t introducing external dependencies or taking the space to implement a complete standard protocol. As an example, it uses the WebSocket API directly, just as you would if you were starting to write code for a new protocol.</Para>
+</Section2>
+<Section2 ID="Sec14_7">
+<Heading>Adding Event Listeners</Heading>
+<Para>WebSocket programming<IndexTerm><Primary>Event listeners</Primary><Secondary>adding, to WebSocket</Secondary></IndexTerm><IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>adding event listeners</Tertiary></IndexTerm> follows an asynchronous programming model; once you have an open socket, you simply wait for events. You don&#x2019;t have to actively poll the server anymore. To do this, you add callback functions to the <Literal>WebSocket</Literal> object to listen for events.</Para>
+<Para>A <Literal>WebSocket</Literal> object dispatches three events: open, close, and message. The open event fires when a connection is established, the message event fires when messages are received, and the close event fires when the WebSocket connection is closed. The error event fires in response to unexpected failure. As in most JavaScript APIs, there are corresponding callbacks (<Literal>onopen</Literal>, <Literal>onmessage</Literal>, <Literal>onclose</Literal>, and <Literal>onerror</Literal>) that are called when the events are dispatched.</Para>
+<Para Type="Programcode">w.onopen = function() {</Para>
+<Para Type="Programcode">  log("open");</Para>
+<Para Type="Programcode">  w.send("thank you for accepting this websocket request");</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">w.onmessage = function(e) {</Para>
+<Para Type="Programcode">  log(e.data);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">w.onclose = function(e) {</Para>
+<Para Type="Programcode">  log("closed");</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">w.onerror = function(e) {</Para>
+<Para Type="Programcode">  log(&#x201C;error&#x201D;);</Para>
+<Para Type="Programcode">}</Para>
+<Para>Let&#x2019;s have another look at that message handler. The data attribute on the message event is a string if the WebSocket protocol message was encoded as text. For binary messages, data can be either a Blob or an ArrayBuffer, depending on the value of the WebSocket&#x2019;s <Literal>binaryType</Literal> property.</Para>
+<Para Type="Programcode">w.binaryType = "arraybuffer";</Para>
+<Para Type="Programcode">w.onmessage = function(e) {</Para>
+<Para Type="Programcode">  // data can now be either a string or an ArrayBuffer</Para>
+<Para Type="Programcode">  log(e.data);<IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>adding event listeners</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">}</Para>
+</Section2>
+<Section2 ID="Sec15_7">
+<Heading>Sending Messages</Heading>
+<Para>While the <IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>sending messages</Tertiary></IndexTerm>socket is open (that is, after the <Literal>onopen</Literal> listener is called and before the <Literal>onclose</Literal> listener is called), you can use the send function to <Literal>send</Literal> messages. After sending one or more messages, you can also call <Literal>close</Literal> to terminate the connection, or you can also leave the connection open.</Para>
+<Para Type="Programcode">document.getElementById("sendButton").onclick = function() {</Para>
+<Para Type="Programcode">    w.send(document.getElementById("inputMessage").value);</Para>
+<Para Type="Programcode">}</Para>
+<Para>That&#x2019;s it. Bidirectional browser communication made simple. For completeness, Listing 7-8 shows the entire HTML page with the WebSocket code.</Para>
+<Para>In more advanced uses of WebSocket, you may want to measure how much data is backed up in the outgoing buffer before calling send(). The <Literal>bufferedAmount</Literal> attribute represents the number of bytes that have been sent on the WebSocket that have not yet been written onto the network. This could be useful for throttling the rate at which the application sends data.</Para>
+<Para Type="Programcode">document.getElementById("sendButton").onclick = function() {</Para>
+<Para Type="Programcode">  if (w.bufferedAmount &#x003C; bufferThreshold) {</Para>
+<Para Type="Programcode">    w.send(document.getElementById("inputMessage").value);</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">}</Para>
+<Para>In addition to strings, WebSocket can send binary data. This is especially useful to implement binary protocols, such as the standard Internet protocols typically layered on top of TCP. The WebSocket API supports sending Blob and ArrayBuffer instances as binary data.</Para>
+<Para Type="Programcode">var a = new Uint8Array([8,6,7,5,3,0,9]);</Para>
+<Para Type="Programcode">w.send(a.buffer);</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-8.</Heading>
+<Para>websocket.html Code</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E;WebSocket Test Page&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">    var log = function(s) {</Para>
+<Para Type="Programcode">        if (document.readyState !== "complete") {</Para>
+<Para Type="Programcode">            log.buffer.push(s);</Para>
+<Para Type="Programcode">        } else {</Para>
+<Para Type="Programcode">            document.getElementById("output").textContent += (s + "\n")</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    log.buffer = [];</Para>
+<Para Type="Programcode">    if (this.MozWebSocket) {</Para>
+<Para Type="Programcode">        WebSocket = MozWebSocket;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    url = "ws://localhost:8080/echo";</Para>
+<Para Type="Programcode">    w = new WebSocket(url);</Para>
+<Para Type="Programcode">    w.onopen = function() {</Para>
+<Para Type="Programcode">        log("open");</Para>
+<Para Type="Programcode">        // set the type of binary data messages to ArrayBuffer</Para>
+<Para Type="Programcode">        w.binaryType = "arraybuffer";<IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>sending messages</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">        // send one string and one binary message when the socket opens</Para>
+<Para Type="Programcode">        w.send("thank you for accepting this WebSocket request");</Para>
+<Para Type="Programcode">        var a = new Uint8Array([8,6,7,5,3,0,9]);</Para>
+<Para Type="Programcode">        w.send(a.buffer);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    w.onmessage = function(e) {</Para>
+<Para Type="Programcode">        log(e.data.toString());</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    w.onclose = function(e) {</Para>
+<Para Type="Programcode">        log("closed");</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    w.onerror = function(e) {</Para>
+<Para Type="Programcode">        log("error");</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    window.onload = function() {</Para>
+<Para Type="Programcode">        log(log.buffer.join("\n"));</Para>
+<Para Type="Programcode">        document.getElementById("sendButton").onclick = function() {</Para>
+<Para Type="Programcode">            w.send(document.getElementById("inputMessage").value);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<Para Type="Programcode">&#x003C;input type="text" id="inputMessage" value="Hello, WebSocket!"&#x003E;&#x003C;button id="sendButton"&#x003E;Send&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;pre id="output"&#x003E;&#x003C;/pre&#x003E;</Para>
+<Para Type="Programcode">Running the WebSocket Page</Para>
+<Para>To test <IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>sending messages</Tertiary></IndexTerm>the <Literal>websocket.html</Literal> page that contains the WebSocket code, open a command prompt, navigate to the folder that contains the WebSocket code, and issue the following command to host the HTML file:</Para>
+<Para Type="Programcode">python -m SimpleHTTPServer 9999</Para>
+<Para>Next, open another command prompt, navigate to the folder that contains the WebSocket code, and issue the following command to run the Python WebSocket server:</Para>
+<Para Type="Programcode">python websocket.py</Para>
+<Para>Finally, open a browser that supports WebSocket natively and navigate to <Literal>http://localhost:9999/websocket.html</Literal>.</Para>
+<Para>Figure <InternalRef RefID="Fig8_7">7-8</InternalRef> shows the web page in action.
+<Figure ID="Fig8_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-8</CaptionNumber>
+<CaptionContent>
+<SimplePara>websocket.html in action
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO8_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig8_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>The example code folder also contains a web page that connects to the broadcast service that was created in the previous section. To see that action, close the command prompt that is running the WebSocket server and navigate to the folder that contains the WebSocket code, and issue the following command to run the python WebSocket server.</Para>
+<Para Type="Programcode">python broadcast.py</Para>
+<Para>Open two separate browsers that supports WebSocket natively and navigate (in each browser) to <Literal>http://localhost:9999/broadcast.html</Literal>.</Para>
+<Para>Figure <InternalRef RefID="Fig9_7">7-9</InternalRef> shows the broadcast WebSocket server in action on two separate web pages.
+<Figure ID="Fig9_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-9</CaptionNumber>
+<CaptionContent>
+<SimplePara><IndexTerm><Primary>WebSocket API</Primary><Secondary>applications</Secondary><Tertiary>sending messages</Tertiary></IndexTerm><Emphasis Type="Italic">broadcast.html</Emphasis><IndexTerm><Primary>Broadcast.html</Primary></IndexTerm> <Emphasis Type="Italic">in action in two browsers</Emphasis>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO9_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig9_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec16_7">
+<Heading>Building a WebSocket Application</Heading>
+<Para>Now that we&#x2019;ve seen the <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>location tracker</Tertiary></IndexTerm>basics of WebSocket, it&#x2019;s time to tackle something a little more substantial. Previously, we used the HTML5 Geolocation API to build an application that allowed us to calculate distance traveled directly inside our web page. We can utilize those same Geolocation techniques, mixed together with our new support for WebSocket, and <IndexTerm><Primary>Location tracker</Primary></IndexTerm>create a simple application that keeps multiple participants connected: a location tracker.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>We&#x2019;ll be using the broadcast WebSocket server described above, so if you aren&#x2019;t familiar with it you should consider taking some time to learn its basics.</Para>
+</FormalPara>
+<Para>In this application, we&#x2019;ll combine WebSocket and Geolocation by determining our location and broadcasting it to all available listeners. Everyone who loads this application and connects to the same broadcast server will regularly send their geographic location using the WebSocket. At the same time, the application will listen for any messages from the server and update in real-time display entries for everyone it hears about. In a race scenario, this sort of application could keep runners informed of the location of all their competitors and prompt them to run faster (or slow down).</Para>
+<Para>This tiny application does not include any personal information other than latitude and longitude location. Name, date of birth, and favorite ice cream flavor are kept strictly confidential.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>You Were Warned!</Heading>
+<Para><Emphasis Type="Bold">Brian says</Emphasis>: &#x201C;This application is all about sharing your personal information. Granted, only a location is shared. However, if you (or your users) didn&#x2019;t understand the browser warning that was offered when the Geolocation API was first accessed, this application should be a stark lesson in how easy it will be to transmit sensitive data to remote locations. Make sure your users understand the consequences of agreeing to submit location data.</Para>
+<Para>When in doubt, go above and beyond in your application to let the user know how their sensitive data can be used. Make opting out the easiest path of action.&#x201D;</Para>
+</FormalPara>
+<Para>But that&#x2019;s enough warnings&#x2026; Let&#x2019;s dig into the code. As always, the entire code sample is located online for your perusal. We&#x2019;ll focus on the most important parts here. The finished <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>location tracker</Tertiary></IndexTerm>application will look like Figure <InternalRef RefID="Fig10_7">7-10</InternalRef>. Although ideally, this would be enhanced by overlaying it on a map.
+<Figure ID="Fig10_7" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 7-10</CaptionNumber>
+<CaptionContent>
+<SimplePara>The Location <IndexTerm><Primary>Location tracker</Primary></IndexTerm>Tracker application</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO10_7">
+<ImageObject FileRef="978-1-4302-3865-2_7_Fig10_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Section2 ID="Sec17_7">
+<Heading>Coding the HTML File</Heading>
+<Para>The HTML markup <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>coding HTML file</Tertiary></IndexTerm>for this application will be kept deliberately simple so that we can focus on the data at hand. How simple?</Para>
+<Para Type="Programcode">&#x003C;body onload="loadDemo()"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E;HTML5 WebSocket / Geolocation Tracker&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E;&#x003C;strong&#x003E;Geolocation&#x003C;/strong&#x003E;: &#x003C;p id="geoStatus"&#x003E;HTML5 Geolocation is</Para>
+<Para Type="Programcode"> &#x003C;strong&#x003E;not&#x003C;/strong&#x003E; supported in your browser.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E;&#x003C;strong&#x003E;WebSocket&#x003C;/strong&#x003E;: &#x003C;p id="socketStatus"&#x003E;WebSocket is &#x003C;strong&#x003E;not&#x003C;/strong&#x003E;</Para>
+<Para Type="Programcode"> supported in your browser.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/body&#x003E;</Para>
+<Para>Simple enough that we only include a title and a few status areas: one status area for Geolocation updates, and another to log any WebSocket activity. The actual visuals for location data will be inserted into the page as messages are received in real-time.</Para>
+<Para>By default, our status messages indicate that a viewer&#x2019;s browser does not support either Geolocation or WebSocket. Once we detect support for the two HTML5 technologies, we&#x2019;ll update the status with something a little friendlier.</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">    // reference to the WebSocket</Para>
+<Para Type="Programcode">    var socket;</Para>
+<Para Type="Programcode">    // a semi-unique random ID for this session</Para>
+<Para Type="Programcode">    var myId = Math.floor(100000*Math.random());</Para>
+<Para Type="Programcode">    // number of rows of data presently displayed</Para>
+<Para Type="Programcode">    var rowCount = 0;</Para>
+<Para>The meat of this application is once again accomplished via the script code. First, we will establish a few variables:<UnorderedList Mark="Bullet">
+<ItemContent>
+<Para>A global reference to our <Literal>socket</Literal> so that any function can access it later.</Para></ItemContent>
+<ItemContent>
+<Para>A random <Literal>myId</Literal> number between 0 and 100,000 to identify our location data online. This number is merely used to correlate changes in location over time back to the same source without using more personal information such as names. A sufficiently large pool of numbers makes it unlikely that more than one user will have the same identifier.</Para></ItemContent>
+<ItemContent>
+<Para>A <Literal>rowCount</Literal> which holds how many unique users have transmitted their location data to us. This is largely used for visual formatting.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>The next two functions should look familiar. As in other example applications, we&#x2019;ve provided utilities to help us update our status message. This time, there are two status messages to update.</Para>
+<Para Type="Programcode">    function updateSocketStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("socketStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function updateGeolocationStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("geoStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para>It is always helpful to include a user-friendly set of error messages<IndexTerm><Primary>Error messages</Primary><Secondary>user-friendly</Secondary></IndexTerm> whenever something goes wrong with location retrieval. If you need more information on the error handling associated with Geolocation, consult <ExternalRef>
+<RefSource>Chapter 5</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_5"/>
+</ExternalRef>.</Para>
+<Para Type="Programcode">    function handleLocationError(error) {</Para>
+<Para Type="Programcode">        switch(error.code)</Para>
+<Para Type="Programcode">        {</Para>
+<Para Type="Programcode">        case 0:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("There was an error while retrieving your location: " +</Para>
+<Para Type="Programcode">                        error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 1:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The user prevented this page from retrieving a</Para>
+<Para Type="Programcode">                        location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 2:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser was unable to determine your location: " +</Para>
+<Para Type="Programcode">                        error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 3:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser timed out before retrieving the location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        }<IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>coding HTML file</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">    }</Para>
+</Section2>
+<Section2 ID="Sec18_7">
+<Heading>Adding the WebSocket Code</Heading>
+<Para>Now, let&#x2019;s <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>adding WebSocket code</Tertiary></IndexTerm>examine something more substantial. The <Literal>loadDemo</Literal> function<IndexTerm><Primary>loadDemo function</Primary></IndexTerm> is called on the initial load of our page, making it the starting point of the application.</Para>
+<Para Type="Programcode">    function loadDemo() {</Para>
+<Para Type="Programcode">        // test to make sure that sockets are supported</Para>
+<Para Type="Programcode">        if (window.WebSocket) {</Para>
+<Para Type="Programcode">            // the location of our broadcast WebSocket server</Para>
+<Para Type="Programcode">            url = "ws://localhost:8080";</Para>
+<Para Type="Programcode">            socket = new WebSocket(url);</Para>
+<Para Type="Programcode">            socket.onopen = function() {</Para>
+<Para Type="Programcode">                updateSocketStatus("Connected to WebSocket tracker server");</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">            socket.onmessage = function(e) {</Para>
+<Para Type="Programcode">                updateSocketStatus("Updated location from " + dataReturned(e.data));</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">        }</Para>
+<Para>The first thing we do here is set up our WebSocket connection. As with any HTML5 technology, it is wise to check for support before jumping right in, so we test to make sure that <Literal>window.WebSocket</Literal> is a supported object in this browser.</Para>
+<Para>Once that is verified, we make a connection to the remote broadcast server using the connect string format described above. The connection is stored in our globally declared <Literal>socket</Literal> variable.</Para>
+<Para>Finally, we declare two handlers to take action when our WebSocket receives updates. The <Literal>onopen</Literal> handler<IndexTerm><Primary>onopen handler</Primary></IndexTerm> will merely update the status message to let the user know that we made a successful connection. The <Literal>onmessage</Literal><IndexTerm><Primary>onmessage handler</Primary></IndexTerm> will similarly update the status to let the user know that a message has arrived. It will also call our upcoming <Literal>dataReturned</Literal> function<IndexTerm><Primary>dataReturned function</Primary></IndexTerm> to show <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>adding WebSocket code</Tertiary></IndexTerm>the arriving data in the page, but we&#x2019;ll tackle that later.</Para>
+</Section2>
+<Section2 ID="Sec19_7">
+<Heading>Adding the Geolocation Code</Heading>
+<Para>The next section<IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>adding Geolocation code</Tertiary></IndexTerm><IndexTerm><Primary>Geolocation API</Primary><Secondary>location tracker application and</Secondary></IndexTerm> should be familiar to you from <ExternalRef>
+<RefSource>Chapter 5</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_5"/>
+</ExternalRef>. Here, we verify support for the Geolocation service and update the status message appropriately.</Para>
+<Para Type="Programcode">        var geolocation;</Para>
+<Para Type="Programcode">        if(navigator.geolocation) {</Para>
+<Para Type="Programcode">            geolocation = navigator.geolocation;</Para>
+<Para Type="Programcode">            updateGeolocationStatus("HTML5 Geolocation is supported in your browser.");</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        // register for position updates using the Geolocation API</Para>
+<Para Type="Programcode">        geolocation.watchPosition(updateLocation,</Para>
+<Para Type="Programcode">                                  handleLocationError,</Para>
+<Para Type="Programcode">                                  {maximumAge:20000});</Para>
+<Para Type="Programcode">    }</Para>
+<Para>As before, we watch our current location for changes and register that we want the <Literal>updateLocation</Literal> function<IndexTerm><Primary>updateLocation function</Primary></IndexTerm> called when they occur. Errors are sent to the <Literal>handleLocationError</Literal> function, and the location data is set to expire every twenty seconds.</Para>
+<Para>The next section of code is the handler which is called by the browser whenever a new location is available.</Para>
+<Para Type="Programcode"> function updateLocation(position) {</Para>
+<Para Type="Programcode">        var latitude = position.coords.latitude;</Para>
+<Para Type="Programcode">        var longitude = position.coords.longitude;</Para>
+<Para Type="Programcode">        var timestamp = position.timestamp;</Para>
+<Para Type="Programcode">        updateGeolocationStatus("Location updated at " + timestamp);</Para>
+<Para Type="Programcode">        // Send my location via WebSocket</Para>
+<Para Type="Programcode">        var toSend = JSON.stringify([myId, latitude, longitude]);</Para>
+<Para Type="Programcode">        sendMyLocation(toSend);</Para>
+<Para Type="Programcode">    }</Para>
+<Para>This section is similar to, <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>adding Geolocation code</Tertiary></IndexTerm><IndexTerm><Primary>Geolocation API</Primary><Secondary>location tracker application and</Secondary></IndexTerm>but simpler than, the same handler in <ExternalRef>
+<RefSource>Chapter 5</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_5"/>
+</ExternalRef>. Here, we grab the latitude, longitude, and timestamp from the position provided by the browser. Then, we update the status message to indicate that a new value has arrived.</Para>
+</Section2>
+<Section2 ID="Sec20_7">
+<Heading>Putting It All Together</Heading>
+<Para>The final section calculates a message string to send to the remote broadcast WebSocket server. The string here will be JSON encoded:</Para>
+<Para Type="Programcode">"[&#x003C;id&#x003E;, &#x003C;latitude&#x003E;, &#x003C;longitude&#x003E;]"</Para>
+<Para>The ID will be the randomly calculated value already created to identify this user. The latitude and longitude are provided by the geolocation position object. We send the message directly to the server as a JSON encoded string.</Para>
+<Para>The actual code to send the position to the server resides in the <Literal>sendMyLocation()</Literal> function<IndexTerm><Primary>sendMyLocation() function</Primary></IndexTerm>.</Para>
+<Para Type="Programcode">    function sendMyLocation(newLocation) {</Para>
+<Para Type="Programcode">        if (socket) {</Para>
+<Para Type="Programcode">            socket.send(newLocation);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para>If a socket was successfully created&#x2014;and stored for later access&#x2014;then it is safe to send the message string passed into this function to the server. Once it arrives, the WebSocket message broadcast server will distribute the location string to every browser currently connected and listening for messages. Everyone will know where you are. Or, at least, a largely anonymous &#x201C;you&#x201D; identified only by a random number.</Para>
+<Para>Now that we&#x2019;re sending messages, let&#x2019;s see how those same messages should be processed when they arrive at the browser. Recall that we registered an <Literal>onmessage</Literal> handler on the socket to pass any incoming data to a <Literal>dataReturned()</Literal> function<IndexTerm><Primary>dataReturned() function</Primary></IndexTerm>. Next, we will look at that final function in more detail.</Para>
+<Para Type="Programcode">      function dataReturned(locationData) {</Para>
+<Para Type="Programcode">        // break the data into ID, latitude, and longitude</Para>
+<Para Type="Programcode">        var allData = JSON.parse(locationData);</Para>
+<Para Type="Programcode">        var incomingId = allData[1];</Para>
+<Para Type="Programcode">        var incomingLat = allData[2];</Para>
+<Para Type="Programcode">        var incomingLong = allData[3];</Para>
+<Para>The <Literal>dataReturned</Literal> function serves two purposes. It will create (or update) a display element in the page showing the position reflected in the incoming message string, and it will return a text representation of the user this message originated from. The user name will be used in the status message at the top of the page by the calling function, the <Literal>socket.onmessage</Literal> handler<IndexTerm><Primary>socket.onmessage handler</Primary></IndexTerm>.</Para>
+<Para>The first step taken by this data handler function is to break the incoming message back down into its component parts using <Literal>JSON.parse</Literal><IndexTerm><Primary>split() utility</Primary></IndexTerm>. Although a more robust application would need to check for unexpected formatting, we will assume that all messages to our server are valid, and therefore our string separates cleanly into a random ID, a latitude, and a longitude.</Para>
+<Para Type="Programcode">        // locate the HTML element for this ID</Para>
+<Para Type="Programcode">        // if one doesn't exist, create it</Para>
+<Para Type="Programcode">        var incomingRow = document.getElementById(incomingId);</Para>
+<Para Type="Programcode">        if (!incomingRow) {</Para>
+<Para Type="Programcode">            incomingRow = document.createElement('div');</Para>
+<Para Type="Programcode">            incomingRow.setAttribute('id', incomingId);</Para>
+<Para>Our demonstration user interface will create a visible <Literal>&#x003C;div&#x003E;</Literal> for every random ID for which it receives a message. This includes the user&#x2019;s ID itself; in other words, the user&#x2019;s own data will also be displayed only after it is sent and returned from the WebSocket broadcast server.</Para>
+<Para>Accordingly, the first thing we do with the ID from our message string is use it to locate the display row element matching it. If one does not exist, we create one and set its <Literal>id</Literal> attribute to be the id returned from our socket server for future retrieval.</Para>
+<Para Type="Programcode">            incomingRow.userText = (incomingId == myId) ?</Para>
+<Para Type="Programcode">                                        'Me'            :</Para>
+<Para Type="Programcode">                                        'User ' + rowCount;</Para>
+<Para Type="Programcode">            rowCount++;</Para>
+<Para>The user text to be displayed in the data row is easy to calculate. If the ID matches the user&#x2019;s ID, it is simply &#x2018;me&#x2019;. Otherwise, the username is a combination of a common string and a count of rows, which we will increment.</Para>
+<Para Type="Programcode">            document.body.appendChild(incomingRow);</Para>
+<Para Type="Programcode">        }</Para>
+<Para>Once the new display element is ready, it is inserted into the end of the page. Regardless of whether the display element is newly created or if it already existed&#x2014;due to the fact that a location update was not the first for that particular user&#x2014;the display row needs to be updated with the current text information.</Para>
+<Para Type="Programcode">        // update the row text with the new values</Para>
+<Para Type="Programcode">        incomingRow.innerHTML = incomingRow.userText + " \\ Lat: " +</Para>
+<Para Type="Programcode">                                incomingLat + " \\ Lon: " +</Para>
+<Para Type="Programcode">                                incomingLong;</Para>
+<Para Type="Programcode">        return incomingRow.userText;</Para>
+<Para Type="Programcode">    }</Para>
+<Para>In our case, we will separate the user text name from the latitude and longitude values using a backslash (properly escaped, of course). Finally, the display name is returned to the calling function for updating the status row.</Para>
+<Para>Our simple WebSocket and Geolocation mashup is now complete. Try it out, but keep in mind that unless there are multiple browsers accessing the application at the same time, you won&#x2019;t see many updates. As an exercise to the reader, consider updating this example to display the incoming locations on a global Google Map to get an idea of where HTML5 interest is flourishing at this very moment.</Para>
+</Section2>
+<Section2 ID="Sec21_7">
+<Heading>The Final Code</Heading>
+<Para>For completeness, the Listing 7-9 provides the entire <Literal>tracker.html</Literal> file.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 7-9.</Heading>
+<Para>The <IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>tracker HTML code</Tertiary></IndexTerm> tracker.html Code
+</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;html lang="en"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;head&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E;HTML5 WebSocket / Geolocation Tracker&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;link rel="stylesheet" href="styles.css"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/head&#x003E;</Para>
+<Para Type="Programcode">&#x003C;body onload="loadDemo()"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E;HTML5 WebSocket / Geolocation Tracker&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E;&#x003C;strong&#x003E;Geolocation&#x003C;/strong&#x003E;: &#x003C;p id="geoStatus"&#x003E;HTML5 Geolocation is</Para>
+<Para Type="Programcode"> &#x003C;strong&#x003E;not&#x003C;/strong&#x003E; supported in your browser.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E;&#x003C;strong&#x003E;WebSocket&#x003C;/strong&#x003E;: &#x003C;p id="socketStatus"&#x003E;WebSocket is &#x003C;strong&#x003E;not&#x003C;/strong&#x003E;</Para>
+<Para Type="Programcode"> supported in your browser.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">    // reference to the WebSocket</Para>
+<Para Type="Programcode">    var socket;</Para>
+<Para Type="Programcode">    // a semi-unique random ID for this session</Para>
+<Para Type="Programcode">    var myId = Math.floor(100000*Math.random());</Para>
+<Para Type="Programcode">    // number of rows of data presently displayed</Para>
+<Para Type="Programcode">    var rowCount = 0;</Para>
+<Para Type="Programcode">    function updateSocketStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("socketStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function updateGeolocationStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("geoStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function handleLocationError(error) {</Para>
+<Para Type="Programcode">        switch(error.code)</Para>
+<Para Type="Programcode">        {</Para>
+<Para Type="Programcode">        case 0:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("There was an error while retrieving your location: " +</Para>
+<Para Type="Programcode">                                   error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 1:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The user prevented this page from retrieving a</Para>
+<Para Type="Programcode">                        location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 2:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser was unable to determine your location: " +</Para>
+<Para Type="Programcode">                        error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 3:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser timed out before retrieving the location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function loadDemo() {</Para>
+<Para Type="Programcode">        // test to make sure that sockets are supported</Para>
+<Para Type="Programcode">        if (window.WebSocket) {</Para>
+<Para Type="Programcode">            // the location where our broadcast WebSocket server is located</Para>
+<Para Type="Programcode">            url = "ws://localhost:8080";</Para>
+<Para Type="Programcode">            socket = new WebSocket(url);</Para>
+<Para Type="Programcode">            socket.onopen = function() {</Para>
+<Para Type="Programcode">                updateSocketStatus("Connected to WebSocket tracker server");</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">            socket.onmessage = function(e) {<IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>tracker HTML code</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">                updateSocketStatus("Updated location from " + dataReturned(e.data));</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        var geolocation;</Para>
+<Para Type="Programcode">        if(navigator.geolocation) {</Para>
+<Para Type="Programcode">            geolocation = navigator.geolocation;</Para>
+<Para Type="Programcode">            updateGeolocationStatus("HTML5 Geolocation is supported in your browser.");</Para>
+<Para Type="Programcode">            // register for position updates using the Geolocation API</Para>
+<Para Type="Programcode">            geolocation.watchPosition(updateLocation,</Para>
+<Para Type="Programcode">                                  handleLocationError,</Para>
+<Para Type="Programcode">                                  {maximumAge:20000});</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function updateLocation(position) {</Para>
+<Para Type="Programcode">        var latitude = position.coords.latitude;</Para>
+<Para Type="Programcode">        var longitude = position.coords.longitude;</Para>
+<Para Type="Programcode">        var timestamp = position.timestamp;</Para>
+<Para Type="Programcode">        updateGeolocationStatus("Location updated at " + timestamp);</Para>
+<Para Type="Programcode">        // Send my location via WebSocket</Para>
+<Para Type="Programcode">        var toSend = JSON.stringify([myId, latitude, longitude]);</Para>
+<Para Type="Programcode">        sendMyLocation(toSend);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function sendMyLocation(newLocation) {</Para>
+<Para Type="Programcode">        if (socket) {</Para>
+<Para Type="Programcode">            socket.send(newLocation);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function dataReturned(locationData) {</Para>
+<Para Type="Programcode">        // break the data into ID, latitude, and longitude</Para>
+<Para Type="Programcode">        var allData = JSON.parse(locationData)</Para>
+<Para Type="Programcode">        var incomingId = allData[1];</Para>
+<Para Type="Programcode">        var incomingLat = allData[2];</Para>
+<Para Type="Programcode">        var incomingLong = allData[3];<IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>tracker HTML code</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">        // locate the HTML element for this ID</Para>
+<Para Type="Programcode">        // if one doesn't exist, create it</Para>
+<Para Type="Programcode">        var incomingRow = document.getElementById(incomingId);</Para>
+<Para Type="Programcode">        if (!incomingRow) {</Para>
+<Para Type="Programcode">            incomingRow = document.createElement('div');</Para>
+<Para Type="Programcode">            incomingRow.setAttribute('id', incomingId);</Para>
+<Para Type="Programcode">            incomingRow.userText = (incomingId == myId) ?</Para>
+<Para Type="Programcode">                                        'Me'            :</Para>
+<Para Type="Programcode">                                        'User ' + rowCount;</Para>
+<Para Type="Programcode">            rowCount++;</Para>
+<Para Type="Programcode">            document.body.appendChild(incomingRow);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        // update the row text with the new values</Para>
+<Para Type="Programcode">        incomingRow.innerHTML = incomingRow.userText + " \\ Lat: " +</Para>
+<Para Type="Programcode">                                incomingLat + " \\ Lon: " +</Para>
+<Para Type="Programcode">                                incomingLong;</Para>
+<Para Type="Programcode">        return incomingRow.userText;</Para>
+<Para Type="Programcode">    }<IndexTerm><Primary>WebSocket API</Primary><Secondary>building application</Secondary><Tertiary>tracker HTML code</Tertiary></IndexTerm>
+</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/body&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/html&#x003E;</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec22_7">
+<Heading>Summary</Heading>
+<Para>In this chapter, you have seen how WebSocket provides a simple, yet powerful mechanism for creating compelling, real-time applications.</Para>
+<Para>First we looked at the nature of the protocol itself, and how it interoperates with existing HTTP traffic. We compared the network overhead demands of current polling-based communication strategies versus the limited overhead of WebSocket.</Para>
+<Para>To illustrate WebSocket in action, we explored a simple implementation of a WebSocket server to show how simple it is to implement this protocol in practice. Similarly, we examined the client-side WebSocket API, noting the ease of integration it provides with JavaScript.</Para>
+<Para>Finally, we walked through a more complex sample application which combined the power of Geolocation with WebSocket to demonstrate how well the two technologies can work together.</Para>
+<Para>Now that we've seen how HTML5 brings TCP-style network programming to the browser, we'll turn our attention to gathering more interesting data than just a user&#x2019;s current location. In the next chapter, we look at the enhancements made to form controls in HTML5.</Para>
+</Section1>
+</Body>
+<BodyRef FileRef="978-1-4302-3865-2_7_Chapter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</Chapter>

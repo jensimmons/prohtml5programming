@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Chapter PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Chapter Language="En" OutputMedium="All" ID="Chap13_13">
+<ChapterInfo Language="En" ChapterType="OriginalPaper" NumberingStyle="ChapterOnly" TocLevels="0" ContainsESM="No" OutputMedium="All">
+<ChapterID>13</ChapterID>
+<ChapterNumber>Chapter 13</ChapterNumber>
+<ChapterDOI>10.1007/978-1-4302-3865-2_13</ChapterDOI>
+<ChapterSequenceNumber>13</ChapterSequenceNumber>
+<ChapterTitle Language="En">The Future of HTML5</ChapterTitle>
+<ChapterFirstPage>1</ChapterFirstPage>
+<ChapterLastPage>10</ChapterLastPage>
+<ChapterCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+</ChapterCopyright>
+<ChapterHistory>
+<OnlineDate>
+<Year><?InsertOnReleaseOF OFYear?></Year>
+<Month><?InsertOnReleaseOF OFMonth?></Month>
+<Day><?InsertOnReleaseOF OFDay?></Day>
+</OnlineDate>
+</ChapterHistory>
+</ChapterInfo>
+<ChapterHeader>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1_13" CorrespondingAffiliationID="Aff1_13">
+<AuthorName>
+<GivenName>Peter</GivenName>
+<FamilyName>Lubbers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_13">
+<AuthorName>
+<GivenName>Brian</GivenName>
+<FamilyName>Albers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_13">
+<AuthorName>
+<GivenName>Frank</GivenName>
+<FamilyName>Salim</FamilyName>
+</AuthorName>
+</Author>
+<Affiliation ID="Aff1_13">
+<OrgName>Technical Communication at Kaazing</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<State>CA</State>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<Abstract Language="En" OutputMedium="Online" ID="Abs1_13">
+<Heading>Abstract</Heading>
+<Para>As you have already <IndexTerm><Primary>HTML5</Primary><Secondary>future of begin</Secondary></IndexTerm>seen in this book, HTML5 provides powerful programming features. We also discussed the history behind HTML5&#x2019;s development and HTML5&#x2019;s new plugin-free paradigm. In this chapter, we will look at where things are going. We will discuss some of the features that are not fully baked yet but hold tremendous promise.</Para>
+</Abstract>
+</ChapterHeader>
+<Body>
+<Para>As you have already <IndexTerm><Primary>HTML5</Primary><Secondary>future of begin</Secondary></IndexTerm>seen in this book, HTML5 provides powerful programming features. We also discussed the history behind HTML5&#x2019;s development and HTML5&#x2019;s new plugin-free paradigm. In this chapter, we will look at where things are going. We will discuss some of the features that are not fully baked yet but hold tremendous promise.</Para>
+<Section1 ID="Sec1_13">
+<Heading>Browser Support for HTML5</Heading>
+<Para>Adoption of HTML5 features <IndexTerm><Primary>HTML5</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for HTML5</Secondary></IndexTerm>is accelerating with each new browser update. Several of the features we covered have actually shipped in browsers while we wrote this book. HTML5 development in browsers is undeniably gaining tremendous momentum.</Para>
+<Para>Today, many developers still struggle to develop consistent web applications that work with older browsers. Internet Explorer 6 represents the harshest of the legacy browsers in common use on the Internet today But even IE6 has a limited lifetime, as it becomes harder and harder to procure any operating system that supports it. In time, there will be close to zero users browsing the Web with IE6. More and more users of Internet Explorer are being upgraded to the latest versions. There will always be an oldest browser to contend with, but that bar rises as time passes; at the time of this writing, the market share of Internet Explorer 6 is under 10% and falling. Most users who upgrade go straight to a modern replacement. In time, the lowest common denominator will include HTML5 Video, Canvas, WebSocket, and whatever other features you may have to emulate today to reach a wider audience.</Para>
+<Para>In this book, we covered features that are largely stable and shipping in multiple browsers. There are additional extensions to HTML and APIs currently in earlier stages of development. In this chapter, we will look at some of the upcoming features. Some are in early experimental stages, while others may see eventual standardization and wide availability with only minor<IndexTerm><Primary>HTML5</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>browser support</Primary><Secondary>for HTML5</Secondary></IndexTerm> changes from their current state.</Para>
+</Section1>
+<Section1 ID="Sec2_13">
+<Heading>HTML Evolves</Heading>
+<Para>In this section, we&#x2019;ll explore several exciting features that may appear in browsers in the near future. You probably won&#x2019;t need to wait until 2022 for these, either. There will probably not be a formalized HTML6; the WHATWG has hinted that future development will simply be<IndexTerm><Primary>HTML5</Primary><Secondary>HTML definition</Secondary></IndexTerm> referred to as &#x201C;HTML.&#x201D; Development will be incremental, with specific features and their specifications evolving individually, rather than as a consolidated effort. Browsers will take up features as they gain consensus, and the upcoming features might even be widely available in browsers well before HTML5 is set in stone. The community responsible for driving the Web forward is committed to evolving the platform to meet the needs of users and developers.</Para>
+<Section2 ID="Sec3_13">
+<Heading>WebGL<IndexTerm><Primary>HTML5</Primary><Secondary>WebGL</Secondary></IndexTerm></Heading>
+<Para>WebGL<IndexTerm><Primary>WebGL</Primary></IndexTerm> is an API for 3D graphics<IndexTerm><Primary>3D graphics</Primary></IndexTerm> on the Web. Historically, several browser vendors including Mozilla, Opera, and Google have worked on separate experimental 3D APIs for JavaScript. Today, WebGL is progressing along a path toward standardization and wide availability across HTML5 browsers. The standardization process is taking place with browser vendors and The Khronos Group, the body responsible for OpenGL, a cross-platform 3D drawing standard created in 1992. OpenGL, currently at specification version 4.0, is widely used in gaming and computer-aided design applications as a counterpart and competitor to Microsoft&#x2019;s Direct3D.</Para>
+<Para>As you saw in <ExternalRef>
+<RefSource>Chapter 2</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_2"/>
+</ExternalRef>, you get a 2D drawing context from a <Literal>canvas</Literal> element<IndexTerm><Primary>canvas element</Primary></IndexTerm> by calling <Literal>getContext("2d")</Literal> on the element. Unsurprisingly, this leaves the door open for additional types of drawing contexts. WebGL also uses the <Literal>canvas</Literal> element, but through a 3D context. Current implementations use experimental vendor prefixes (<Literal>moz-webgl</Literal>, <Literal>webkit-3d</Literal>, etc.) as the arguments to the <Literal>getContext()</Literal> <IndexTerm><Primary>getContext() function</Primary></IndexTerm> call. In a WebGL-enabled build of Firefox, for example, you can get a 3D context by calling <Literal>getContext("moz-webgl")</Literal> on a <Literal>canvas</Literal> element. The API of the object returned by such a call to <Literal>getContext()</Literal> is different from the 2D canvas equivalent, as this one provides OpenGL bindings instead of drawing operations. Rather than making calls to draw lines and fill shapes, the WebGL version of the canvas context manages textures and vertex buffers.</Para>
+</Section2>
+<Section2 ID="Sec4_13">
+<Heading>HTML in Three Dimensions<IndexTerm><Primary>HTML5</Primary><Secondary>three dimensions</Secondary></IndexTerm></Heading>
+<Para>WebGL, like the rest of HTML5, will be an integral part of the web platform. Because WebGL renders to a <Literal>canvas</Literal> element<IndexTerm><Primary>canvas element</Primary></IndexTerm>, it is part of the document. You can position and transform 3D <Literal>canvas</Literal> elements, just as you can place images or 2D canvases on a page. In fact, you can do anything you can do with any other <Literal>canvas</Literal> element, including overlaying text and video and performing animations. Combining other document elements and a 3D canvas will make heads-up displays (HUDs)<IndexTerm><Primary>heads-up displays (HUDs)</Primary></IndexTerm> and mixed 2D and 3D interfaces much simpler to develop when compared to pure 3D display technologies. Imagine taking a 3D scene and using HTML markup to overlay a simple web user interface on it. Quite unlike the nonnative menus and controls found in many OpenGL applications, WebGL software will incorporate nicely styled HTML5 form elements with ease.</Para>
+<Para>The existing<IndexTerm><Primary>HTML5</Primary><Secondary>three dimensions</Secondary></IndexTerm> network architecture of the Web will also complement WebGL. WebGL applications will be able to fetch resources such as textures and models from URLs. Multiplayer games can communicate with WebSocket. For example, Figure <InternalRef RefID="Fig1_13">13-1</InternalRef> shows an example of this in action. Google recently ported the classic 3D game Quake II<IndexTerm><Primary>Quake II</Primary></IndexTerm> to the Web using HTML5 WebSocket, Audio, and WebGL, complete with multiplayer competition. Game logic and graphics were implemented in JavaScript, making calls to a WebGL canvas for rendering. Communication to the server to coordinate player movement was achieved using a persistent<IndexTerm><Primary>WebGL</Primary></IndexTerm><IndexTerm><Primary>3D graphics</Primary></IndexTerm> WebSocket connection.
+<Figure ID="Fig1_13" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 13-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>Quake II <IndexTerm><Primary>Quake II game</Primary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO1_13">
+<ImageObject FileRef="978-1-4302-3865-2_13_Fig1_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec5_13">
+<Heading>3D Shaders <IndexTerm><Primary>HTML5</Primary><Secondary>3D shaders</Secondary></IndexTerm></Heading>
+<Para>WebGL is a binding<IndexTerm><Primary>3D shaders</Primary></IndexTerm> for OpenGL ES 2<IndexTerm><Primary>OpenGL ES 2</Primary></IndexTerm> in JavaScript, so it uses the programmable graphics pipeline that is standardized in OpenGL, including shaders. Shaders allow highly flexible rendering effects to be applied to a 3D scene, increasing the realism of the display. WebGL shaders are written in GL Shading Language (GLSL)<IndexTerm><Primary>GL Shading Language (GLSL)</Primary></IndexTerm>. This adds yet another single-purpose language to the web stack. An HTML5 application with WebGL consists of HTML for structure, CSS for style, JavaScript for logic, and GLSL for shaders. Developers can transfer their knowledge of OpenGL shaders<IndexTerm><Primary>OpenGL shaders</Primary></IndexTerm> to a similar API in a web environment.</Para>
+<Para>WebGL is likely to be a <IndexTerm><Primary>WebGL</Primary></IndexTerm>foundational layer for 3D graphics on the Web. Just as JavaScript libraries have abstracted over DOM and provided powerful high-level constructs, there are libraries providing additional functionality on top of WebGL. Libraries are currently under development for scene graphs, <IndexTerm><Primary>HTML5</Primary><Secondary>3D shaders</Secondary></IndexTerm>3D file formats such as COLLADA, and complete engines for game development. Figure <InternalRef RefID="Fig1_13">13-2</InternalRef> shows Shader Toy&#x2014;a WebGL shader workbench built by Inigo Quilez that comes with shaders by nine other demoscene artists. This particular screenshot shows Leizex by Rgba. We can expect an explosion of high-level rendering libraries that bring 3D scene creation power to novice Web programmers in the near future.
+<Figure ID="Fig2_13" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 13-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>Shader Toy is a WebGL shader workbench</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO2_13">
+<ImageObject FileRef="978-1-4302-3865-2_13_Fig2_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec6_13">
+<Heading>Devices</Heading>
+<Para>Web <IndexTerm><Primary>HTML5</Primary><Secondary>device elements</Secondary></IndexTerm>applications will need <IndexTerm><Primary>Devices</Primary></IndexTerm><IndexTerm><Primary>Device element</Primary></IndexTerm>access to multimedia hardware such as webcams, microphones, or attached storage devices. For this, there is already a proposed <Literal>device</Literal> element to give web applications access to data streams from attached hardware. Of course, there are serious privacy implications, so not every script will be able to use your webcam at will. We will probably see a UI pattern of prompting for user permission as seen in the Geolocation and Storage APIs when an application requests elevated privileges. The obvious application for<IndexTerm><Primary>HTML5</Primary><Secondary>device elements</Secondary></IndexTerm> webcams is video conferencing, but there are many other amazing possibilities for computer vision in web applications including augmented reality and head tracking.</Para>
+</Section2>
+<Section2 ID="Sec7_13">
+<Heading>Audio Data API</Heading>
+<Para>Programmable<IndexTerm><Primary>HTML5</Primary><Secondary>audio data API</Secondary></IndexTerm> audio APIs<IndexTerm><Primary>audio APIs</Primary></IndexTerm> will do for <Literal>&#x003C;audio&#x003E;</Literal> what <Literal>&#x003C;canvas&#x003E;</Literal> did for <Literal>&#x003C;img&#x003E;</Literal>. Prior to the <Literal>canvas</Literal> tag, images on the Web were largely opaque to scripts. Image creation and manipulation had to occur on the sidelines&#x2014;namely, on the server. Now, there are tools for creating and manipulating visual media based on the <Literal>canvas</Literal> element. Similarly, audio data APIs will enable music creation in HTML5 applications. This will help round out the content-creation capabilities available to web applications and move us closer to a self-hosting world of tools to create media on and for the Web. Imagine editing audio on the Web without having to leave the browser.</Para>
+<Para>Simple playback of sounds can be done with the <Literal>&#x003C;audio&#x003E;</Literal> element. However, any application that manipulates, analyzes, or generates sound on the fly needs a lower-level API. Text-to-speech, speech-to-speech, synthesizers, and music visualization aren&#x2019;t possible without access to audio data.</Para>
+<Para>We can expect the standard audio API to work well with microphone input from the data element as well as files included with audio tags. With <Literal>&#x003C;device&#x003E;</Literal> and an audio data API, you may be able to make an HTML5 application that allows users to record and edit sound from within a page. Audio clips will be able to be stored in local browser storage and reused and combined with <Literal>canvas</Literal> -based editing tools.</Para>
+<Para>Presently, Mozilla<IndexTerm><Primary>Mozilla</Primary><Secondary>audio data API</Secondary></IndexTerm> has an experimental implementation available in nightly builds. The Mozilla audio data API could act as a starting point for standard cross-browser audio programming capabilities.</Para>
+</Section2>
+<Section2 ID="Sec8_13">
+<Heading>Touchscreen Device Events<IndexTerm><Primary>HTML5</Primary><Secondary>touchscreen device events</Secondary></IndexTerm></Heading>
+<Para>As Web access shifts ever more from desktops and laptops to mobile phones and tablets, HTML5 is also continuing to adapt with changes in interaction handling<IndexTerm><Primary>Interaction handling</Primary></IndexTerm><IndexTerm><Primary>Touchscreen device events</Primary></IndexTerm>. When Apple introduced the iPhone, it also introduced into its browser a set of special events that could be used to handle multitouch inputs and device rotation. Although these events have not yet been standardized, they are being picked up by other vendors of mobile devices. Learning them today will allow you to optimize your web applications for the most popular devices now.</Para>
+</Section2>
+<Section2 ID="Sec9_13">
+<Heading>Orientation</Heading>
+<Para>The simplest event to handle on a mobile device is the orientation event<IndexTerm><Primary>Orientation event</Primary></IndexTerm>. The orientation<IndexTerm><Primary>HTML5</Primary><Secondary>orientation event</Secondary></IndexTerm> event can be added to the document body:</Para>
+<Para Type="Programcode">&#x003C;body onorientationchange="rotateDisplay();"&#x003E;</Para>
+<Para>In the event handler for the orientation change, your code can reference the <Literal>window.orientation</Literal> property<IndexTerm><Primary>window.orientation property</Primary></IndexTerm>. This property will give one of the rotation values shown in Table <InternalRef RefID="Tab1_13">
+13-1</InternalRef>, which is relative to the orientation the device was in when the page was initially loaded.<Table ID="Tab1_13" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 13-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>Orientation Values and Their Meanings</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>Orientation</SimplePara>
+<SimplePara>Value</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Meaning</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>0</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The page is being held in the same orientation as its original load.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>-90</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The device has been rotated 90 degrees clockwise (right) since the original load.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>180</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The device has been rotated upside-down since the original page load.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>90</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The device has been rotated 90 degrees counter-clockwise (left) since the page was originally loaded.</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>Once the orientation is<IndexTerm><Primary>Orientation event</Primary></IndexTerm> known, you can choose to adjust the content accordingly.</Para>
+</Section2>
+<Section2 ID="Sec10_13">
+<Heading>Gestures</Heading>
+<Para>The next type of<IndexTerm><Primary>Gestures</Primary></IndexTerm><IndexTerm><Primary>Event handlers</Primary><Secondary>for gestures</Secondary></IndexTerm> event supported<IndexTerm><Primary>HTML5</Primary><Secondary>gesture events</Secondary></IndexTerm> by mobile devices is a high-level event known as the <Emphasis Type="Italic">gesture</Emphasis>. Consider gesture events as representing a multitouch change in size or rotation. This is usually performed when the user places two or more fingers on the screen simultaneously and pinches or twists. A twist represents a rotation, while a pinch in or out represents a zoom out or in, respectively. To receive gesture events, your code needs to register one of the handlers shown in Table <InternalRef RefID="Tab2_13">13-2</InternalRef>.
+<Table ID="Tab2_13" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 13-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>Event Handlers for Gestures</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>Event Handler</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Description</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ongesturestart</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>A user has placed multiple fingers on the screen and has begun a movement.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ongesturechange</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The user is in the process of moving multiple fingers in a scale or rotation.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ongestureend</Literal></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>The user has completed the scale or rotation by removing fingers.</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>During the gesture, the event handler is free to check the rotation and scale properties of the corresponding event and update the display accordingly. Listing 13-1 shows an example usage of the gesture handlers.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 13-1.</Heading>
+<Para>Example Gesture Handler <IndexTerm><Primary>HTML5</Primary><Secondary>gesture events</Secondary></IndexTerm></Para>
+</FormalPara>
+<Para Type="Programcode">function gestureChange(event) {</Para>
+<Para Type="Programcode">  // Retrieve the amount of change in scale caused by the user gesture</Para>
+<Para Type="Programcode">  // Consider a value of 1.0 to represent the original size, while smaller</Para>
+<Para Type="Programcode">  //  numbers represent a zoom in and larger numbers represent a zoom</Para>
+<Para Type="Programcode">  //  out, based on the ratio of the scale value</Para>
+<Para Type="Programcode">var scale = event.scale;</Para>
+<Para Type="Programcode">  // Retrieve the amount of change in rotation caused by the user gesture</Para>
+<Para Type="Programcode">  // The rotation value is in degrees from 0 to 360, where positive values</Para>
+<Para Type="Programcode">  //   indicate a rotation clockwise and negative values indicate a counter-</Para>
+<Para Type="Programcode">  //   clockwise rotation</Para>
+<Para Type="Programcode">var rotation = event.rotation;</Para>
+<Para Type="Programcode">  // Update the display based on the rotation.</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">// register our gesture change listener on a document node</Para>
+<Para Type="Programcode">node.addEventListener("gesturechange", gestureChange, false);</Para>
+<Para>Gesture events are particularly<IndexTerm><Primary>Gestures</Primary></IndexTerm><IndexTerm><Primary>Event handlers</Primary><Secondary>for gestures</Secondary></IndexTerm> appropriate in applications that need to manipulate objects or displays, such as in diagramming tools or navigation tools.</Para>
+</Section2>
+<Section2 ID="Sec11_13">
+<Heading>Touches</Heading>
+<Para>For those cases where you need low-level control over device events, the <IndexTerm><Primary>HTML5</Primary><Secondary>touch events</Secondary></IndexTerm>touch events<IndexTerm><Primary>Touch events</Primary></IndexTerm> provide as much information as you will likely need. Table <InternalRef RefID="Tab3_13">13-3</InternalRef> shows the different touch events.
+<Table ID="Tab3_13" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 13-3</CaptionNumber>
+<CaptionContent>
+<SimplePara>Touch Events</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>Event Handler</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Description</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ontouchstart</Literal><IndexTerm><Primary>ontouchstart event handler</Primary></IndexTerm></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>A finger has been placed on the surface of the touch device. Multitouch events will occur as more fingers are placed on the device.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ontouchmove</Literal><IndexTerm><Primary>ontouchmove event handler</Primary></IndexTerm></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>One or more of the fingers on the device has moved its location in a drag operation.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ontouchend</Literal><IndexTerm><Primary>ontouchend event handler</Primary></IndexTerm></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>One or more fingers have been lifted away from the device screen.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara><Literal>ontouchcancel</Literal> <IndexTerm><Primary>ontouchcancel event handler</Primary></IndexTerm></SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>An unexpected interruption has stopped the touch operations.</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>Unlike the other mobile device events, the<IndexTerm><Primary>HTML5</Primary><Secondary>touch events</Secondary></IndexTerm> touch events need to represent that there are multiple points of data&#x2014;the many potential fingers&#x2014;present at the same time. As such, <IndexTerm><Primary>Touch events</Primary></IndexTerm>the API for touch handling is a little bit more complex as shown in Listing 13-2.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 13-2.</Heading>
+<Para>Touch API <IndexTerm><Primary>Touch API</Primary></IndexTerm></Para>
+</FormalPara>
+<Para Type="Programcode">function touchMove(event) {</Para>
+<Para Type="Programcode">// the touches list contains an entry for every finger currently touching the screen</Para>
+<Para Type="Programcode">var touches = event.touches;</Para>
+<Para Type="Programcode">  // the changedTouches list contains only those finger touches modified at this</Para>
+<Para Type="Programcode">  // moment in time, either by being added, removed, or repositioned</Para>
+<Para Type="Programcode">varchangedTouches = event.changedTouches;</Para>
+<Para Type="Programcode">  // targetTouches contains only those touches which are placed in the node</Para>
+<Para Type="Programcode">  // where this listener is registered</Para>
+<Para Type="Programcode">vartargetTouches = event.targetTouches;</Para>
+<Para Type="Programcode">  // once you have the touches you'd like to track, you can reference</Para>
+<Para Type="Programcode">  // most attributes you would normally get from other event objects</Para>
+<Para Type="Programcode">varfirstTouch = touches[0];</Para>
+<Para Type="Programcode">varfirstTouchX = firstTouch.pageX;</Para>
+<Para Type="Programcode">varfirstTouchY = firstTouch.pageY;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">// register one of the touch listeners for our example</Para>
+<Para Type="Programcode">node.addEventListener("touchmove", touchMove, false);</Para>
+<Para>You may find that the device&#x2019;s native event handling interferes with your handling of the <IndexTerm><Primary>HTML5</Primary><Secondary>touch events</Secondary></IndexTerm>touch and gesture events. In those cases, you should make the following call:</Para>
+<Para Type="Programcode">event.preventDefault();</Para>
+<Para>This overrides the behavior of the default browser interface and handles the event yourself. Until the mobile events are standardized, it is recommended that you consult the documentation of the <IndexTerm><Primary>Touch events</Primary></IndexTerm>devices you are targeting with your application.</Para>
+</Section2>
+<Section2 ID="Sec12_13">
+<Heading>Peer-to-Peer Networking<IndexTerm><Primary>HTML5</Primary><Secondary>peer-to-peer networking</Secondary></IndexTerm></Heading>
+<Para>We haven&#x2019;t seen the<IndexTerm><Primary>Peer-to-peer (P2P) networking</Primary></IndexTerm> end of advanced networking in web applications either. With both HTTP and WebSocket, there is a client (the browser or other user agent) and a server (the host of the URL). Peer-to-peer (P2P) networking allows clients to communicate directly. This is often more efficient than sending all data through a server. Efficiency, of course, reduces hosting costs and improves application performance. P2P should make for faster multiplayer games and collaboration software.</Para>
+<Para>Another immediate application for P2P combined with the <Literal>device</Literal> element is efficient video chat in HTML5. In peer-to-peer video chat, conversation partners would be able to send data directly to each other without routing through a central server. Outside of HTML5, P2P video chat has been wildly popular in applications like Skype. Because of the high bandwidth required by streaming video, it is likely that neither of those applications would have been possible without peer-to-peer communication.</Para>
+<Para>Browser vendors are already experimenting with P2P networking, such as Opera&#x2019;s Unite technology, which hosts a simplified web server directly in the browser. Opera Unite lets users create and expose services to their peers for chatting, file sharing, and document collaboration.</Para>
+<Para>Of course, P2P networking <IndexTerm><Primary>Peer-to-peer (P2P) networking</Primary></IndexTerm>for the web will require a protocol that takes security and network intermediaries into consideration as well as an API for developers to program against.</Para>
+</Section2>
+<Section2 ID="Sec13_13">
+<Heading>Ultimate Direction</Heading>
+<Para>So far, we have focused on empowering developers to build powerful HTML5 applications. A different perspective is to consider how HTML5 empowers users of web applications. Many HTML5 features allow you to remove or reduce the complexity of scripts and perform feats that previously required plugins. HTML5 video<IndexTerm><Primary>HTML5</Primary><Secondary>video</Secondary></IndexTerm>, for example, lets you specify controls, autoplay, buffering behavior, and a placeholder image without any JavaScript. With CSS3, you can move animation and effects from scripts to styles. This declarative code makes applications more amenable to user styles and ultimately returns power to the people who use your creations every day.</Para>
+<Para>You&#x2019;ve seen how the development tools in all the modern browsers are exposing information about HTML5 features like storage, as well as critically important JavaScript debugging, profiling, and command-line evaluation. HTML5 development will trend toward simplicity, declarative code, and lightweight tools within the browsers or web applications themselves.</Para>
+<Para>Google feels confident enough about the continuing evolution of HTML that it has announced the imminent release of the<IndexTerm><Primary>HTML5</Primary><Secondary>Google Chrome</Secondary></IndexTerm> Google Chrome operating system, a streamlined operating system built around a browser and media player. Google&#x2019;s operating system aims to include enough functionality using HTML APIs to provide a compelling user experience where applications are delivered using the standardized web infrastructure. Similarly, Microsoft has announced that Windows 8 will not support any plugins in the new Metro mode, including the company&#x2019;s own Silverlight plugin.</Para>
+</Section2>
+<Section2 ID="Sec14_13">
+<Heading>Summary</Heading>
+<Para>In this book, you have learned how to use powerful HTML5 APIs. Use them wisely!</Para>
+<Para>In this final chapter, we have given you a glimpse of some of the things that are coming, such as 3D graphics, the new device element, touch events, and P2P networking. Development of HTML5 shows no sign of slowing down and will be very exciting to watch.</Para>
+<Para>Think back for a minute. For those of you who have been surfing the Web, or perhaps even developing for it for ten years or more, consider how far HTML technology has come in just the last few years. Ten years ago, &#x201C;professional HTML programming&#x201D; meant learning to use the new features of HTML 4. Cutting edge developers at the time were just discovering dynamic page updates and <Literal>XMLHttpRequest</Literal> s. The term &#x201C;Ajax&#x201D; was still years from introduction, even if the techniques Ajax described were starting to gain traction. Much of the professional programming in browsers was written to wrangle frames and manipulate image maps.</Para>
+<Para>Today, functions that took pages of script can be performed with just markup. Multiple new methods for communication and interaction are now available to all those willing to download one of the many free HTML5 browsers, crack open their favorite text editors, and try their hands at professional HTML5 programming.</Para>
+<Para>We hope you have enjoyed this <IndexTerm><Primary>HTML5</Primary><Secondary>future of end</Secondary></IndexTerm>exploration of web development, and we hope it has inspired your creativity. We look forward to writing about the innovations you create using HTML5 a decade from now.</Para>
+</Section2>
+</Section1>
+</Body>
+<BodyRef FileRef="978-1-4302-3865-2_13_Chapter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</Chapter>

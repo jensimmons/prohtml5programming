@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Chapter PUBLIC "-//Springer-Verlag//DTD A++ V2.4//EN" "http://devel.springer.de/A++/V2.4/DTD/A++V2.4.dtd">
+<Chapter Language="En" OutputMedium="All" ID="Chap11_11">
+<ChapterInfo Language="En" ChapterType="OriginalPaper" NumberingStyle="ChapterOnly" TocLevels="0" ContainsESM="No" OutputMedium="All">
+<ChapterID>11</ChapterID>
+<ChapterNumber>Chapter 11</ChapterNumber>
+<ChapterDOI>10.1007/978-1-4302-3865-2_11</ChapterDOI>
+<ChapterSequenceNumber>11</ChapterSequenceNumber>
+<ChapterTitle Language="En">Using the Web Storage API</ChapterTitle>
+<ChapterFirstPage>1</ChapterFirstPage>
+<ChapterLastPage>36</ChapterLastPage>
+<ChapterCopyright>
+<CopyrightHolderName>Peter Lubbers, Brian Albers, and Frank Salim</CopyrightHolderName>
+<CopyrightYear>2011</CopyrightYear>
+</ChapterCopyright>
+<ChapterHistory>
+<OnlineDate>
+<Year><?InsertOnReleaseOF OFYear?></Year>
+<Month><?InsertOnReleaseOF OFMonth?></Month>
+<Day><?InsertOnReleaseOF OFDay?></Day>
+</OnlineDate>
+</ChapterHistory>
+</ChapterInfo>
+<ChapterHeader>
+<AuthorGroup>
+<Author AffiliationIDS="Aff1_11" CorrespondingAffiliationID="Aff1_11">
+<AuthorName>
+<GivenName>Peter</GivenName>
+<FamilyName>Lubbers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_11">
+<AuthorName>
+<GivenName>Brian</GivenName>
+<FamilyName>Albers</FamilyName>
+</AuthorName>
+</Author>
+<Author AffiliationIDS="Aff1_11">
+<AuthorName>
+<GivenName>Frank</GivenName>
+<FamilyName>Salim</FamilyName>
+</AuthorName>
+</Author>
+<Affiliation ID="Aff1_11">
+<OrgName>Technical Communication at Kaazing</OrgName>
+<OrgAddress>
+<City>San Francisco</City>
+<State>CA</State>
+<Country>USA</Country>
+</OrgAddress>
+</Affiliation>
+</AuthorGroup>
+<Abstract ID="Abs1_11" Language="En" OutputMedium="Online">
+<Heading>Abstract</Heading>
+<Para>In this chapter, we will explore what you can do with HTML5 Web Storage&#x2014;sometimes referred to as DOMStorage&#x2014;an API that makes it easy to retain data across web requests. Before the Web Storage API, remote web servers needed to store any data that persisted by sending it back and forth from client to server. With the advent of the Web Storage API, developers can now store data directly on the client side in the browser for repeated access across requests or to be retrieved long after you completely close the browser, thus reducing network traffic.</Para>
+</Abstract>
+</ChapterHeader>
+<Body>
+<Para>In this chapter, we <IndexTerm><Primary>Web Storage API</Primary></IndexTerm>will explore what you can do with HTML5 Web Storage&#x2014;sometimes referred to as DOMStorage&#x2014;an API that makes it easy to retain data across web requests. Before the Web Storage API, remote web servers needed to store any data that persisted by sending it back and forth from client to server. With the advent of the Web Storage API, developers can now store data directly on the client side in the browser for repeated access across requests or to be retrieved long after you completely close the browser, thus reducing network traffic.</Para>
+<Para>We&#x2019;ll first look at how Web Storage differs from cookies and then explore how you can store and retrieve data. Next, we will look at the differences between <Literal>localStorage</Literal> and <Literal>sessionStorage</Literal>, the attributes and functions that the storage interface provides, and how you can handle Web Storage events. We wrap up with a look at Web SQL Database API and a few practical extras.</Para>
+<Section1 ID="Sec2_11">
+<Heading>Overview of Web Storage</Heading>
+<Para>To explain the Web Storage API, it is best to review its predecessor, the intriguingly named <IndexTerm><Primary>Cookies</Primary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>vs. cookies</Secondary></IndexTerm>cookie. Browser cookies&#x2014;named after an age-old programming technique for passing small data values between programs&#x2014;are a built-in way of sending text values back and forth from server to browser. Servers can use the values they put into these cookies to track user information across web pages. Cookie values are then transmitted back and forth every time a user visits a domain. For example, cookies can store a session identifier that allows a web server to know which shopping cart belongs to a user by storing a unique ID in a browser cookie that matches the server&#x2019;s own shopping cart database. Then, as a user moves from page to page, the shopping cart can be updated consistently. Another use for cookies is to store local values into an application so that these values can be used on subsequent page loads.</Para>
+<Para>Cookie values can also be used for operations that are slightly less desirable to users, such as tracking which pages a user visits for the sake of targeted advertising. As such, some users have demanded that browsers include functionality to allow them to block or remove cookies either all of the time or for specific sites.</Para>
+<Para>Love them or hate them, <IndexTerm><Primary>Cookies</Primary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>vs. cookies</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for cookies</Secondary></IndexTerm>cookies have been supported by browsers since the earliest days of the Netscape browser, back in the mid-1990s. Cookies are also one of the few features that have been consistently supported across browser vendors since the early days of the Web. Cookies allow data to be tracked across multiple requests, as long as that data is carefully coordinated between the <IndexTerm><Primary>Web Storage API</Primary><Secondary>browser support</Secondary></IndexTerm>server and the browser code. Despite their ubiquity, cookies have some well-known drawbacks:<UnorderedList Mark="Bullet">
+<ItemContent><Para>Cookies are extremely limited in size. Generally, only about 4 KB of data can be set in a cookie, meaning they are unacceptable for large values such as documents or mail.</Para></ItemContent>
+<ItemContent><Para>Cookies are transmitted back and forth from server to browser on every request scoped to that cookie. Not only does this mean that cookie data is visible on the network, making them a security risk when not encrypted, but also that any data persisted as cookies will be consuming network bandwidth every time a URL is loaded. As such, the relatively small size of cookies makes more sense.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>In many cases, the same <IndexTerm><Primary>Cookies</Primary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>vs. cookies</Secondary></IndexTerm>results could be achieved without involving a network or remote server. This is where the HTML5 Web Storage API comes in. By using this simple API, developers can store values in easily retrievable JavaScript objects that persist across page loads. By using either <Literal>sessionStorage</Literal><IndexTerm><Primary>sessionStorage object</Primary></IndexTerm> or <Literal>localStorage</Literal><IndexTerm><Primary>localStorage object</Primary></IndexTerm>, developers can choose to let those values survive either across page loads in a single window or tab or across browser restarts, respectively. Stored data is not transmitted across the network, and is easily accessed on return visits to a page. Furthermore, larger values can be persisted using the Web Storage API values as high as a few megabytes. This makes Web Storage suitable for document and file data that would quickly blow out the size limit of a cookie.</Para>
+</Section1>
+<Section1 ID="Sec3_11">
+<Heading>Browser Support for Web Storage</Heading>
+<Para>Web Storage is one of the most<IndexTerm><Primary>Web Storage API</Primary><Secondary>browser support</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for Web Storage</Secondary></IndexTerm> widely adopted features of HTML5. In fact, since the arrival of Internet Explorer 8 in 2009 all currently shipping browser versions support Web Storage in some capacity. At the time of this publication, the market share of browsers that do not support storage is dwindling down into single digit percentages.</Para>
+<Para>Web Storage is one of the safest new APIs to use in your web applications today because of its widespread support. As usual, though, it is a good idea to first test if Web Storage is supported before you use it. The subsequent section &#x201C;Checking for Browser Support&#x201D; will show you how you can programmatically check if Web Storage is supported.</Para>
+</Section1>
+<Section1 ID="Sec4_11">
+<Heading>Using the Web Storage API</Heading>
+<Para>The Web Storage API is surprisingly simple to use. We&#x2019;ll start by covering basic storage and retrieval of values and then move on to the differences between <Literal>sessionStorage</Literal> and <Literal>localStorage</Literal>. Finally, we&#x2019;ll look at the more advanced aspects of the API, such as event notification when values change.</Para>
+<Section2 ID="Sec5_11">
+<Heading>Checking for Browser Support</Heading>
+<Para>The storage database<IndexTerm><Primary>Browser support</Primary><Secondary>for Web Storage API</Secondary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>checking for browser support</Tertiary></IndexTerm> for a given domain is accessed directly from the <Literal>window</Literal> object. Therefore, determining if a user&#x2019;s browser supports the Web Storage API is as easy as checking for the existence of <Literal>window.sessionStorage</Literal> or <Literal>window.localStorage</Literal>. Listing 11-1 shows a routine that checks for storage support and displays a message about the browser&#x2019;s support for the Web Storage API. Instead of using this code, you can also use the JavaScript utility library Modernizr, which handles some cases that may result in a false positive.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-1.</Heading>
+<Para>Checking for Web Storage Support</Para>
+</FormalPara>
+<Para Type="Programcode">function checkStorageSupport() {</Para>
+<Para Type="Programcode">  //sessionStorage</Para>
+<Para Type="Programcode">  if (window.sessionStorage) {</Para>
+<Para Type="Programcode">    alert('This browser supports sessionStorage');</Para>
+<Para Type="Programcode">  } else {</Para>
+<Para Type="Programcode">    alert('This browser does NOT support sessionStorage');</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">  //localStorage</Para>
+<Para Type="Programcode">  if (window.localStorage) {</Para>
+<Para Type="Programcode">    alert('This browser supports localStorage');</Para>
+<Para Type="Programcode">  } else {</Para>
+<Para Type="Programcode">    alert('This browser does NOT support localStorage');</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">}</Para>
+<Para>Figure <InternalRef RefID="Fig1_11">11-1</InternalRef> shows this check <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>checking for browser support</Tertiary></IndexTerm>for storage support in action.<Figure ID="Fig1_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>Checking for<IndexTerm><Primary>Browser support</Primary><Secondary>for Web Storage API</Secondary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>checking for browser support</Tertiary></IndexTerm> browser support</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO1_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig1_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Some browsers do not support <Literal>sessionStorage</Literal><IndexTerm><Primary>sessionStorage object</Primary></IndexTerm> for files accessed directly from the file system. Make sure you serve up the pages from a web server when you run the examples in this chapter! For example, you can start Python&#x2019;s simple HTTP server in the <Literal>code/storage</Literal> directory as follows:</Para>
+<Para Type="Programcode">python -m SimpleHTTPServer 9999</Para>
+<Para>After that, you can access the files at <Literal>http://localhost:9999/</Literal>. For example, <Literal>http://localhost:9999/browser-test.html</Literal>.</Para>
+<Para>However, you are free to use any server or URL location to run the examples.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>If a user is browsing with his browser set to &#x201C;private&#x201D; mode, then localStorage values will not actually persist once the browser is shut down. This is by design, as users of this mode have explicitly chosen to leave no traces behind. Nonetheless, your application should respond gracefully if storage values are not available in a later browsing session.</Para>
+</FormalPara>
+</Section2>
+<Section2 ID="Sec6_11">
+<Heading>Setting and Retrieving Values</Heading>
+<Para>To begin, we&#x2019;ll <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>setting and retrieving values</Tertiary></IndexTerm>focus on the session storage capability as you learn to set and retrieve simple values in a page. Setting a value can easily be done in a single statement, which we&#x2019;ll initially <IndexTerm><Primary>sessionStorage object</Primary></IndexTerm>write using the long-hand notation:</Para>
+<Para>sessionStorage.setItem(&#x2018;myFirstKey&#x2019;, &#x2018;myFirstValue&#x2019;);</Para>
+<Para>There are a few important points to notice from this storage access statement:<UnorderedList Mark="Bullet">
+<ItemContent><Para>We can omit the reference to the <Literal>window</Literal> for a shorthand notation, as the storage objects are made available in the default page context.</Para></ItemContent>
+<ItemContent><Para>The function we are calling is <Literal>setItem</Literal>, which takes a key string and a value string. Although some browsers might support passing in nonstring values, the specification only allows strings as values.</Para></ItemContent>
+<ItemContent><Para>This particular call will set into the session storage the string <Literal>myFirstValue</Literal>, which can later be retrieved by the key <Literal>myFirstKey</Literal>.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>To retrieve the value, the long-hand notation involves making a call to the <Literal>getItem</Literal> function. For example, if we augmented our previous example with the following statement</Para>
+<Para Type="Programcode">alert(sessionStorage.getItem(&#x2018;myFirstKey&#x2019;));</Para>
+<Para>The browser raises a JavaScript alert displaying the text <Literal>myFirstValue</Literal>. As you can see, setting and retrieving values from the Web Storage API is very straightforward.</Para>
+<Para>However, there is an even simpler way to access the storage objects in your code. You are also able to use expando-properties to set values in storage. Using this approach, the <Literal>setItem</Literal> and <Literal>getItem</Literal> calls can be avoided entirely by simply setting and retrieving values corresponding to the key-value pair directly on the <Literal>sessionStorage</Literal> object. Using this approach, our value set call can be rewritten as follows:</Para>
+<Para Type="Programcode">sessionStorage.myFirstKey = &#x2018;myFirstValue&#x2019;;</Para>
+<Para Type="Programcode">Or even</Para>
+<Para Type="Programcode">sessionStorage[&#x2018;myFirstKey&#x2019;] = &#x2018;myFirstValue&#x2019;;</Para>
+<Para Type="Programcode">Similarly, the value retrieval call can be rewritten as:</Para>
+<Para Type="Programcode">alert(sessionStorage.myFirstKey);</Para>
+<Para>We&#x2019;ll use these formats interchangeably in the chapter for the sake of readability.</Para>
+<Para>That&#x2019;s it for the basics. You now have all the knowledge you need to use session storage in your application. However, you might be wondering what&#x2019;s so special about this <Literal>sessionStorage</Literal> object<IndexTerm><Primary>sessionStorage object</Primary></IndexTerm>. After all, JavaScript allows you to set and get properties on nearly any object. The difference is in the scope. What you may not have realized is that our example set and get calls do not need to occur in the same web page. As long as pages are served from the same origin&#x2014;the combination of scheme, host, and port&#x2014;then values set on <Literal>sessionStorage</Literal> can be retrieved from other pages using the same keys. This also applies to subsequent loads of the same page. As a developer, you are probably used to the idea that changes made in script will disappear whenever a page is reloaded. That is no longer true for values that are set in the Web Storage API; they will <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>setting and retrieving values</Tertiary></IndexTerm>continue to exist across page loads.</Para>
+</Section2>
+<Section2 ID="Sec7_11">
+<Heading>Plugging Data Leaks</Heading>
+<Para>How long do the <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>plugging data leaks</Tertiary></IndexTerm>values persist? For objects set into <Literal>sessionStorage</Literal>, they will persist as long as the browser window (or tab) is not closed. As soon as a user closes the window&#x2014;or browser, for that matter&#x2014;the <Literal>sessionStorage</Literal> values are cleared out. It is useful to consider a <Literal>sessionStorage</Literal> value to be somewhat like a sticky note reminder. Values put into <Literal>sessionStorage</Literal> won&#x2019;t last long, and you should not put anything truly valuable into them, as the values are not guaranteed to be around whenever you are looking for them.</Para>
+<Para>Why, then, would you choose to use the session storage area in your web application? Session storage is perfect for short-lived processes that would normally be represented in wizards or dialogs. If you have data to store over the course of a few pages, that you would not be keen to have resurface the next time a user visits your application, feel free to store them in the session storage area. In the past, these types of values might be submitted by forms and cookies and transmitted back and forth on every page load. Using storage eliminates that overhead.</Para>
+<Para>The <Literal>sessionStorage</Literal> API has another very specific use that solves a problem that has plagued many web-applications:scoping of values. Take, for example, a shopping application that lets you purchase airline tickets. In such an application, preference data such as the ideal departure date and return date could be sent back and forth from browser to server using cookies. This allows the server to remember previous choices as the user moves through the application, picking seats and a choice of meals.</Para>
+<Para>However, it is very common for users to open multiple windows as they shop for travel deals, comparing flights from different vendors for the same departure time. This causes problems in a cookie system, because if a user switches back and forth between browser windows while comparing prices and availability, they are likely to set cookie values in one window that will be unexpectedly applied to another window served from the same URL on its next operation. This is sometimes<IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>plugging data leaks</Tertiary></IndexTerm><IndexTerm><Primary>sessionStorage object</Primary></IndexTerm> referred to as leaking data and is caused by the fact that cookies are shared based on the origin where they are stored. Figure <InternalRef RefID="Fig2_11">11-2</InternalRef> shows how this can play out.
+<Figure ID="Fig2_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>Data leakage while using a travel site to compare prices</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO2_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig2_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Using <Literal>sessionStorage</Literal><IndexTerm><Primary>sessionStorage object</Primary></IndexTerm>, on<IndexTerm><Primary>Web Storage API</Primary><Secondary>applicatio</Secondary><Tertiary>plugging data leaks</Tertiary></IndexTerm> the other hand, allows temporary values like a departure date to be saved across pages that access the application but not leak into other windows where the user is also browsing for flights. Therefore, those preferences will be isolated to each window where the corresponding flights are booked.</Para>
+</Section2>
+<Section2 ID="Sec8_11">
+<Heading>Local Versus Session Storage</Heading>
+<Para>Sometimes, an application<IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>local vs. session storage</Tertiary></IndexTerm><IndexTerm><Primary><Emphasis Type="Bold">localStorage</Emphasis> object</Primary></IndexTerm><IndexTerm><Primary><Emphasis Type="Bold">sessionStorage</Emphasis> object</Primary></IndexTerm> needs values that persist beyond the life of a single tab or window or need to be shared across multiple views. In these cases, it is more appropriate to use a different Web Storage implementation: <Literal>localStorage</Literal>. The good news is that you already know how to use <Literal>localStorage</Literal>. The only programmatic difference between <Literal>sessionStorage</Literal> and <Literal>localStorage</Literal> is the name by which each is accessed&#x2014;through the <Literal>sessionStorage</Literal> and <Literal>localStorage</Literal> objects, respectively. The primary behavioral differences are how long the values persist and how they are shared. Table <InternalRef RefID="Tab1_11">11-1</InternalRef> shows the differences between the two types of storage.<Table ID="Tab1_11" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 11-1</CaptionNumber>
+<CaptionContent>
+<SimplePara>Differences Between sessionStorage and localStorage</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>sessionStorage</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>localStorage</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara>Values persist only as long as the window or tab in which they were stored.</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Values persist beyond window and browser lifetimes.</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Values are only visible<IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>local vs. session storage</Tertiary></IndexTerm><IndexTerm><Primary><Emphasis Type="Bold">localStorage</Emphasis> object</Primary></IndexTerm><IndexTerm><Primary><Emphasis Type="Bold">sessionStorage</Emphasis> object</Primary></IndexTerm> within the window or tab that created them.</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Values are shared across every window or tab running at the same origin.</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>Keep in mind that browsers sometimes redefine the lifespan of a tab or window. For example, some browsers will save and restore the current session when a browser crashes, or when a user shuts down the display with many open tabs. In these cases, the browser may choose to keep the <Literal>sessionStorage</Literal> around when the browser restarts or resumes. So, in effect, <Literal>sessionStorage</Literal> may live longer than you think!</Para>
+</Section2>
+<Section2 ID="Sec9_11">
+<Heading>Other Web Storage API Attributes and Functions</Heading>
+<Para>The Web Storage API<IndexTerm><Primary>Web Storage API</Primary><Secondary>attributes and functions</Secondary></IndexTerm> is one of the simplest in the HTML5 set. We have already looked at both explicit and implicit ways to set and retrieve data from the session and local storage areas. Let&#x2019;s complete our survey of the API by looking at the full set of available attributes and function calls.</Para>
+<Para>The <Literal>sessionStorage</Literal> and <Literal>localStorage</Literal> objects can be retrieved from the <Literal>window</Literal> object<IndexTerm><Primary>window object</Primary></IndexTerm> of the document in which they are being used. Other than their names and the duration of their values, they are identical in functionality. Both implement the <Literal>Storage</Literal> interface<IndexTerm><Primary>Storage interface</Primary></IndexTerm>, which is shown in Listing 11-2.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-2.</Heading>
+<Para>The Storage Interface</Para>
+</FormalPara>
+<Para Type="Programcode">interface Storage {</Para>
+<Para Type="Programcode">  readonly attribute unsigned long length;</Para>
+<Para Type="Programcode">  getter DOMString key(in unsigned long index);</Para>
+<Para Type="Programcode">  getter any getItem(in DOMString key);</Para>
+<Para Type="Programcode">  setter creator void setItem(in DOMString key, in any data);</Para>
+<Para Type="Programcode">  deleter void removeItem(in DOMString key);</Para>
+<Para Type="Programcode">  void clear();</Para>
+<Para Type="Programcode">};</Para>
+<Para>Let&#x2019;s look at the attributes and functions here in more detail.<UnorderedList Mark="Bullet">
+<ItemContent><Para>The <Literal>length</Literal> attribute<IndexTerm><Primary>length attribute</Primary></IndexTerm> specifies how many key-value pairs are currently stored in the storage object. Remember that storage objects are specific to their origin, so that implies that the items (and length) of the storage object only reflect the items stored for the current origin.</Para></ItemContent>
+<ItemContent><Para>The <Literal>key(index)</Literal> function<IndexTerm><Primary>key(index) function</Primary></IndexTerm> allows retrieval of a given key. Generally, this is most useful when you wish to iterate across all the keys in a particular storage object. Keys are zero-based, meaning that the first key is at index (0) and the last key is at index (length &#x2013; 1). Once a key is retrieved, it can be used to fetch its corresponding value. Keys will retain their indices over the life of a given storage object unless a key or one of its predecessors is removed.</Para></ItemContent>
+<ItemContent><Para>As you&#x2019;ve already seen, <Literal>getItem(key)</Literal> function<IndexTerm><Primary>getItem(key) function</Primary></IndexTerm> is one way to retrieve the value based on a given key. The other is to reference the key as an array index to the storage object. In both cases, the value <Literal>null</Literal> will be returned if the key does not exist in storage.</Para></ItemContent>
+<ItemContent><Para>Similarly, <Literal>setItem(key, value)</Literal> function<IndexTerm><Primary>setItem(key, value) function</Primary></IndexTerm> will put a value into storage under the specified key name, or replace an existing value if one already exists under that key name. Note that it is possible to receive an error when setting an item value; if the user has storage turned off for that site, or if the storage is already filled to its maximum amount, a <Literal>QUOTA_EXCEEDED_ERR</Literal> error<IndexTerm><Primary>QUOTA_EXCEEDED_ERR error</Primary></IndexTerm> will be thrown during the attempt. Make sure to handle such an error should your application depend on proper <IndexTerm><Primary>Web Storage API</Primary><Secondary>attributes and functions</Secondary></IndexTerm>storage behavior.</Para></ItemContent>
+<ItemContent><Para>The <Literal>removeItem(key)</Literal> function<IndexTerm><Primary>removeItem(key) function</Primary></IndexTerm> does exactly as you might expect. If a value is currently in storage under the specified key, this call will remove it. If no item was stored under<IndexTerm><Primary>Web Storage API</Primary><Secondary>attributes and functions</Secondary></IndexTerm> that key, no action is taken.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>Unlike some collection and data frameworks, removing an item does not return the old value as a result of the call to remove it. Make sure you&#x2019;ve stored any copy you need independent of the removal.</Para>
+</FormalPara>
+<Para><UnorderedList Mark="Bullet">
+<ItemContent><Para>Finally, the <Literal>clear()</Literal> function<IndexTerm><Primary>clear() function</Primary></IndexTerm> removes all values from the storage list. It is safe to call this on an empty storage object; as such, a call will simply do nothing.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Disk Space Quota</Heading>
+<Para><Emphasis Type="Bold">Peter says:</Emphasis> &#x201C;The specification <IndexTerm><Primary>Disk space quota</Primary></IndexTerm>recommends that browsers allow five megabytes per origin. Browsers should prompt the user when the quota is reached in order to grant more space and may also provide ways for users to see how much space each origin is using.</Para>
+<Para>In reality, the behavior is still a bit inconsistent. Some browsers silently allow a larger quota or prompt for a space increase, while others simply throw the <Literal>QUOTA_EXCEEDED_ERR</Literal> error<IndexTerm><Primary>QUOTA_EXCEEDED_ERR error</Primary></IndexTerm> shown in Figure <InternalRef RefID="Fig3_11">11-3</InternalRef>, while others, like Opera, shown in Figure <InternalRef RefID="Fig4_11">11-4</InternalRef>, implement a nice way to allocate more quota on the fly. The test <IndexTerm><Primary>Web Storage API</Primary><Secondary>attributes and functions</Secondary></IndexTerm>file <Literal>testQuota.html</Literal> used in this example is located in the <Literal>code/storage</Literal> directory.&#x201D;
+</Para>
+</FormalPara>
+<Para><Figure ID="Fig3_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-3</CaptionNumber>
+<CaptionContent>
+<SimplePara>Quota Exceeded Error in Chrome</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO3_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig3_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+<Figure ID="Fig4_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-4</CaptionNumber>
+<CaptionContent>
+<SimplePara>On-the-fly Quota increase in Opera</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO4_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig4_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+<Section2 ID="Sec10_11">
+<Heading>Communicating Web Storage Updates</Heading>
+<Para>Sometimes, things<IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>communicating updates</Tertiary></IndexTerm> get a little more complicated, and storage needs to be accessed by more than one page, browser tab, or worker. Perhaps your application needs to trigger many operations in succession whenever a storage value is changed. For just these cases, the Web Storage API includes an event mechanism to allow notifications of data updates to be communicated to interested listeners. Web Storage events are fired on the window object for every window of the same origin as the storage operation, regardless of whether or not the listening window is doing any storage operations itself.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>Web Storage events can be used to communicate between windows on the same origin. This will be explored a bit more thoroughly in the &#x201C;Practical Extras&#x201D; section.</Para>
+</FormalPara>
+<Para>To register to receive the storage events of a window&#x2019;s origin, simply register an event listener, for example:</Para>
+<Para Type="Programcode">window.addEventListener("storage", displayStorageEvent, true);</Para>
+<Para>As you can see, the name <Literal>storage</Literal> is used to indicate interest in storage events. Any time a <Literal>Storage</Literal> event&#x2014;either <Literal>sessionStorage</Literal> or <Literal>localStorage</Literal> &#x2014;for that origin is raised any registered event listener will receive the storage event as the specified event handler. The storage<IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>communicating updates</Tertiary></IndexTerm> event itself takes the form shown in Listing 11-3.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-3.</Heading>
+<Para>The StorageEvent<IndexTerm><Primary>StorageEvent interface</Primary></IndexTerm> Interface</Para>
+</FormalPara>
+<Para Type="Programcode">interface StorageEvent : Event {</Para>
+<Para Type="Programcode">  readonly attribute DOMString key;</Para>
+<Para Type="Programcode">  readonly attribute any oldValue;</Para>
+<Para Type="Programcode">  readonly attribute any newValue;</Para>
+<Para Type="Programcode">  readonly attribute DOMString url;</Para>
+<Para Type="Programcode">  readonly attribute Storage storageArea;</Para>
+<Para Type="Programcode">};</Para>
+<Para>The <Literal>StorageEvent</Literal> object<IndexTerm><Primary>StorageEvent object</Primary></IndexTerm> will be the first object passed to the event handler, and it contains all the information necessary to understand the nature of the storage change.<UnorderedList Mark="Bullet">
+<ItemContent><Para>The <Literal>key</Literal> attribut<IndexTerm><Primary>key attribute</Primary></IndexTerm>e contains the key value that was updated or removed in the storage.</Para></ItemContent>
+<ItemContent><Para>The <Literal>oldValue</Literal><IndexTerm><Primary>oldValue attribute</Primary></IndexTerm> contains the previous value corresponding to the key before it was updated, and the <Literal>newValue</Literal> contains the value after the change. If the value was newly added, the <Literal>oldValue</Literal> will be null, and if the value has been removed, the <Literal>newValue</Literal> will be null.</Para></ItemContent>
+<ItemContent><Para>The <Literal>url</Literal> will point to the origin where the <Literal>storage</Literal> event occurred.</Para></ItemContent>
+<ItemContent><Para>Finally, the <Literal>storageArea</Literal><IndexTerm><Primary>storageArea</Primary></IndexTerm> provides a convenient reference to the <Literal>sessionStorage</Literal> or <Literal>localStorage</Literal> where the value was changed. This gives the handler an easy way to query the storage for current values or make changes based on other storage changes.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<Para>Listing 11-4 shows a simple event handler<IndexTerm><Primary>Event handlers</Primary><Secondary>to display content of storage event</Secondary></IndexTerm>, which will raise an alert dialog with the contents of any storage <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>communicating updates</Tertiary></IndexTerm>event fired on the page&#x2019;s origin.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-4.</Heading>
+<Para>Event Handler that Displays Content of a Storage Event</Para>
+</FormalPara>
+<Para Type="Programcode">// display the contents of a storage event</Para>
+<Para Type="Programcode">function displayStorageEvent(e) {</Para>
+<Para Type="Programcode">  var logged = "key:" + e.key + ", newValue:" + e.newValue + ", oldValue:" +</Para>
+<Para Type="Programcode">               e.oldValue + ", url:" + e.url + ", storageArea:" + e.storageArea;</Para>
+<Para Type="Programcode">  alert(logged);</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">// add a storage event listener for this origin</Para>
+<Para Type="Programcode">window.addEventListener("storage", displayStorageEvent, true);</Para>
+</Section2>
+<Section2 ID="Sec11_11">
+<Heading>Exploring Web Storage</Heading>
+<Para>Since Web Storage<IndexTerm><Primary>Web Storage API</Primary><Secondary>storage values</Secondary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>browser treatment of</Secondary></IndexTerm> is very similar in function to cookies, it is not too surprising that the most advanced browsers are treating them in a very similar manner. Values that are stored into <Literal>localStorage</Literal> or <Literal>sessionStorage</Literal> can be browsed similar to cookies in the latest browsers, as shown in Figure <InternalRef RefID="Fig5_11">11-5</InternalRef>.
+<Figure ID="Fig5_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-5</CaptionNumber>
+<CaptionContent>
+<SimplePara>Storage values in <IndexTerm><Primary>Chrome</Primary><Secondary>Storage panel</Secondary></IndexTerm>Google Chrome&#x2019;s Storage Panel</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO5_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig5_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>This interface also <IndexTerm><Primary>Web Storage API</Primary><Secondary>storage values</Secondary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>browser treatment of</Secondary></IndexTerm>grants users the ability to remove storage values as desired and easily see what values a given web site is recording while they visit the pages. Not surprisingly, the Safari browser from Apple has a similar, unified display for cookies and storage, as it is based on the same underlying WebKit rendering engine as Chrome is. Figure <InternalRef RefID="Fig6_11">11-6</InternalRef> shows the Safari Storage panel.
+<Figure ID="Fig6_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-6</CaptionNumber>
+<CaptionContent>
+<SimplePara>Storage values in<IndexTerm><Primary>Safari</Primary><Secondary>Storage panel</Secondary></IndexTerm> Safari&#x2019;s Storage panel</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO6_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig6_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Like the other browsers, the Opera Dragonfly storage display allows users to not only browse and delete storage values but also create them as shown in Figure <InternalRef RefID="Fig7_11">11-7</InternalRef>.
+<Figure ID="Fig7_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-7</CaptionNumber>
+<CaptionContent>
+<SimplePara>Storage values<IndexTerm><Primary>Opera</Primary><Secondary>Storage panel</Secondary></IndexTerm> in Opera&#x2019;s Storage panel</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO7_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig7_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>As Web Storage becomes<IndexTerm><Primary>Web Storage API</Primary><Secondary>storage values</Secondary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>browser treatment of</Secondary></IndexTerm> more widely implemented by the various browser vendors, expect both the capacity and tooling available to users and developers to expand rapidly.</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec12_11">
+<Heading>Building an Application with Web Storage</Heading>
+<Para>Now, let&#x2019;s put <IndexTerm><Primary>Web Storage API</Primary><Secondary>building application with begin</Secondary></IndexTerm>together what you&#x2019;ve learned by integrating storage into a web application. As applications grow more complex, it becomes increasingly important to manage as much data as possible without server interaction. Keeping data local to the client reduces network traffic and increases responsiveness by fetching data from a local machine instead of a remote location.</Para>
+<Para>One common problem developers grapple with is how to manage data as users move from page to page within an application. Traditionally, web applications achieve this by storing data on a server and moving it back and forth while the user navigates pages. Alternatively, the <IndexTerm><Primary>Data storage. See Web Storage API</Primary></IndexTerm>application may attempt to keep the user in a single page and update everything dynamically. However, users are prone to wander, and getting data back into the display quickly when a user returns to your application&#x2019;s page is a great way to enhance the user experience.</Para>
+<Para>In our sample application, we&#x2019;ll show how to store temporary application data locally while the user moves from page to page on a web site and quickly load it from storage on each page. To accomplish this, we&#x2019;ll build on the examples of previous chapters. In <ExternalRef>
+<RefSource>Chapter 5</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_5"/>
+</ExternalRef>, we showed how easy it is to gather a user&#x2019;s current location. Then, in <ExternalRef>
+<RefSource>Chapter 7</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_7"/>
+</ExternalRef>, we demonstrated how to take location data and send it to a remote server so that it can be viewed by any number of interested users. Here, we will go one step further: we will listen for broadcasted location data delivered via a WebSocket and store it in local storage so that it is immediately available as users move from page to page.</Para>
+<Para>Imagine that our running club has live location information from its race participants being broadcast from their mobile devices and shared via a WebSocket server. It would be simple for a web application to display the current position of every racer live and in real time, as the racers upload new position information during the race. And a smart web site would cache those race positions to display them quickly as a user navigated among the pages of the site. That&#x2019;s exactly what we&#x2019;re going to build.</Para>
+<Para>In order to achieve this, we&#x2019;ll need to introduce a demonstration web site that can save and restore our racer data. We&#x2019;ve created a three-page example running race site and placed it in our online resources in the folder <Literal>code/storage</Literal>, but you can use any site of your choosing for your own demonstration. The key here is merely that you have multiple web pages that are easily traversed by a user. We will insert a bit of dynamic content into those pages to represent a live leader board, or a list of race participants and their current distance from the finish line. Figure <InternalRef RefID="Fig8_11">11-8</InternalRef> shows the three pages that make up the race site.
+<Figure ID="Fig8_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-8</CaptionNumber>
+<CaptionContent>
+<SimplePara>The example race website</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO8_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig8_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Each of our web pages will contain a common section to display the leader board data. Each entry in the leader board will show the name of one of our racers and his or her current distance from the finish line. When any of our pages is loaded, it will make a WebSocket connection to a race broadcast server and listen for messages indicating the position of a racer. The racers, in turn, will be sending their current position to the same broadcast server, causing the position data to stream down to the page in real time.</Para>
+<Para>All of this has been covered in previous chapters related to Geolocation and WebSockets. In fact, much of the demonstration code here is shared with the examples from earlier in this book. However, there is one key difference in this example: when the data arrives in the page, we will store it in the session storage area for later retrieval. Then, whenever a user navigates to a new page, the stored data will be retrieved and displayed before making a new WebSocket connection. In this way, the temporary data is transferred from page to page without using any cookies or web server communication.</Para>
+<Para>To keep our data feed small, we&#x2019;ll send our racer location messages across the web in a simple format that is easy to read and parse. This format is a <Literal>String</Literal> that uses the semicolon character (<Literal>;</Literal>) as a delimiter separating the chunks of data: name, latitude, and longitude. For example, a racer named Racer X who is at latitude 37.20 and longitude &#x2013;121.53 would be identified with the following string:</Para>
+<Para>;Racer X;37.20;-121.53</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>A common technique is to use the JSON format to send object representations between client and server. We&#x2019;ll show you how to do that in the section &#x201C;Practical Extras&#x201D; later in this chapter.</Para>
+</FormalPara>
+<Para>Now, let&#x2019;s dig into the code itself. Each of our pages will contain identical JavaScript code to connect to the WebSocket server, process and display leader board messages, and save and restore the leader board using <Literal>sessionStorage</Literal>. As such, this code would be a prime candidate to include in a JavaScript library in a real application.</Para>
+<Para>First, we&#x2019;ll establish a few utility methods that you&#x2019;ve seen before. To calculate the distance of any particular racer from the finish line, we need routines to calculate distance between two geolocation positions as shown in Listing 11-5.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-5.</Heading>
+<Para>Distance Calculation Routine</Para>
+</FormalPara>
+<Para Type="Programcode">    // functions for determining the distance between two</Para>
+<Para Type="Programcode">    // latitude and longitude positions</Para>
+<Para Type="Programcode">    function toRadians(num) {</Para>
+<Para Type="Programcode">      return num * Math.PI / 180;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function distance(latitude1, longitude1, latitude2, longitude2) {</Para>
+<Para Type="Programcode">      // R is the radius of the earth in kilometers</Para>
+<Para Type="Programcode">      var R = 6371;</Para>
+<Para Type="Programcode">      var deltaLatitude = toRadians((latitude2-latitude1));</Para>
+<Para Type="Programcode">      var deltaLongitude = toRadians((longitude2-longitude1));</Para>
+<Para Type="Programcode">      latitude1 = toRadians(latitude1), latitude2 = toRadians(latitude2);</Para>
+<Para Type="Programcode">      var a = Math.sin(deltaLatitude/2) *</Para>
+<Para Type="Programcode">              Math.sin(deltaLatitude/2) +</Para>
+<Para Type="Programcode">              Math.cos(latitude1) *</Para>
+<Para Type="Programcode">              Math.cos(latitude2) *</Para>
+<Para Type="Programcode">              Math.sin(deltaLongitude/2) *</Para>
+<Para Type="Programcode">              Math.sin(deltaLongitude/2);</Para>
+<Para Type="Programcode">      var c = 2 * Math.atan2(Math.sqrt(a),</Para>
+<Para Type="Programcode">                             Math.sqrt(1-a));</Para>
+<Para Type="Programcode">      var d = R * c;</Para>
+<Para Type="Programcode">      return d;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    // latitude and longitude for the finish line in the Lake Tahoe race</Para>
+<Para Type="Programcode">    var finishLat = 39.17222;</Para>
+<Para Type="Programcode">    var finishLong = -120.13778;</Para>
+<Para>In this familiar set of functions&#x2014;used earlier in <ExternalRef>
+<RefSource>Chapter 5</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_5"/>
+</ExternalRef>&#x2014;we calculate the distance between two points with a <Literal>distance</Literal> function<IndexTerm><Primary>distance function</Primary></IndexTerm>. The details are not of particular importance, nor are they the most accurate representation of distance along a racetrack, but they&#x2019;ll do for our example.</Para>
+<Para>In the final lines, we establish a latitude and longitude for the finish line location of the race. As you&#x2019;ll see, we will compare these coordinates with incoming racer positions to determine the racers&#x2019; distance from the finish line, and thus, their ranks in the race.</Para>
+<Para>Now, let&#x2019;s look at a tiny snippet of the HTML markup used to display the page.</Para>
+<Para Type="Programcode">        &#x003C;h2&#x003E; Live T216 Leaderboard&#x003C;/h2&#x003E;</Para>
+<Para Type="Programcode">        &#x003C;p id="leaderboardStatus"&#x003E; Leaderboard: Connecting&#x2026;&#x003C;/p&#x003E;</Para>
+<Para Type="Programcode">        &#x003C;div id="leaderboard"&#x003E;&#x003C;/div&#x003E;</Para>
+<Para>Although most of the page HTML is irrelevant to our demonstration, in these few lines, we declare some named elements with the IDs <Literal>leaderboardStatus</Literal> and <Literal>leaderboard</Literal>. The <Literal>leaderboardStatus</Literal> is where we will display the connection information for our WebSocket. And the leaderboard itself is where we will insert <Literal>div</Literal> elements to indicate the position information<IndexTerm><Primary>Position information utility function</Primary></IndexTerm> we are receiving from our WebSocket messages, using the utility function shown in Listing 11-6.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-6.</Heading>
+<Para>Position Information Utility Function</Para>
+</FormalPara>
+<Para Type="Programcode">    // display the name and distance in the page</Para>
+<Para Type="Programcode">    function displayRacerLocation(name, distance) {</Para>
+<Para Type="Programcode">        // locate the HTML element for this ID</Para>
+<Para Type="Programcode">        // if one doesn't exist, create it</Para>
+<Para Type="Programcode">        var incomingRow = document.getElementById(name);</Para>
+<Para Type="Programcode">        if (!incomingRow) {</Para>
+<Para Type="Programcode">            incomingRow = document.createElement('div');</Para>
+<Para Type="Programcode">            incomingRow.setAttribute('id', name);</Para>
+<Para Type="Programcode">            incomingRow.userText = name;</Para>
+<Para Type="Programcode">            document.getElementById("leaderboard").appendChild(incomingRow);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        incomingRow.innerHTML = incomingRow.userText + " is " +</Para>
+<Para Type="Programcode">                              Math.round(distance*10000)/10000 + " km from the finish line";</Para>
+<Para Type="Programcode">    }</Para>
+<Para>This utility is a simple display routine, which takes the racer&#x2019;s name and distance from the finish line. Figure <InternalRef RefID="Fig9_11">11-9</InternalRef> shows what the leader board section looks like on the <Literal>index.html</Literal> page.
+<Figure ID="Fig9_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-9</CaptionNumber>
+<CaptionContent>
+<SimplePara>The race leader board</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO9_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig9_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>The name is used for two purposes; not only is it placed into the status message for that racer but it is also used to reference the unique <Literal>div</Literal> element where that racer&#x2019;s status is stored. If a <Literal>div</Literal> for our racer already exists, we will find it when we look it up using the standard <Literal>document.getElementById()</Literal><IndexTerm><Primary>document.getElementById()</Primary></IndexTerm> routine. If a <Literal>div</Literal> does not already exist in the page for that racer, we will create one and insert it into the <Literal>leaderboard</Literal> area. Either way, we update the <Literal>div</Literal> element corresponding to that racer with the latest distance from the finish line, which will immediately update it in the display of the page. If you have already read <ExternalRef>
+<RefSource>Chapter 7</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_7"/>
+</ExternalRef>, this will be familiar to you from the example application we created there.</Para>
+<Para>Our next function is the message processor<IndexTerm><Primary>Message processor function</Primary></IndexTerm> that will be called whenever data is returned from the broadcasting race WebSocket server, as shown in Listing 11-7.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-7.</Heading>
+<Para>WebSocket Message Processing Function</Para>
+</FormalPara>
+<Para Type="Programcode">    // callback when new position data is retrieved from the websocket</Para>
+<Para Type="Programcode">    function dataReturned(locationData) {</Para>
+<Para Type="Programcode">        // break the data into ID, latitude, and longitude</Para>
+<Para Type="Programcode">        var allData = locationData.split(";");</Para>
+<Para Type="Programcode">        var incomingId  = allData[1];</Para>
+<Para Type="Programcode">        var incomingLat = allData[2];</Para>
+<Para Type="Programcode">        var incomingLong = allData[3];</Para>
+<Para Type="Programcode">        // update the row text with the new values</Para>
+<Para Type="Programcode">        var currentDistance = distance(incomingLat, incomingLong, finishLat, finishLong);</Para>
+<Para Type="Programcode">        // store the incoming user name and distance in storage</Para>
+<Para Type="Programcode">        window.sessionStorage[incomingId] = currentDistance;</Para>
+<Para Type="Programcode">        // display the new user data in the page</Para>
+<Para Type="Programcode">        displayRacerLocation(incomingId, currentDistance);</Para>
+<Para Type="Programcode">        }</Para>
+<Para>This function takes a string in the format described previously, a semicolon-separated message containing the name, latitude, and longitude of a racer. Our first step is to split it into its component parts using the JavaScript <Literal>split()</Literal> routine<IndexTerm><Primary>split() routine</Primary></IndexTerm> to produce the <Literal>incomingId</Literal>, <Literal>incomingLat</Literal>, and <Literal>incomingLong</Literal>, respectively.</Para>
+<Para>Next, it passes the racer&#x2019;s latitude and longitude, as well as the latitude and longitude of the finish line, to the <Literal>distance</Literal> utility method<IndexTerm><Primary>distance() utility method</Primary></IndexTerm> we defined earlier, storing the resulting distance in the <Literal>currentDistance</Literal> variable.</Para>
+<Para>Now that we actually have some data worth storing, we can look at the call which exercises Web Storage.</Para>
+<Para Type="Programcode">        // store the incoming user name and distance in storage</Para>
+<Para Type="Programcode">        window.sessionStorage[incomingId] = currentDistance;</Para>
+<Para>In this line, we use the <Literal>sessionStorage</Literal> object<IndexTerm><Primary>sessionStorage object</Primary></IndexTerm> on the window to store the current distance of the racer from the finish line as a value under the name and ID of the racer. In other words, we will set a value on the session storage with the key being the racer&#x2019;s name and the value being that racer&#x2019;s distance from the finish. As you will see momentarily, this data will be retrieved from storage as the user navigates from page to page on the web site. At the end of the function, we call the <Literal>displayLocation()</Literal> routine<IndexTerm><Primary>displayLocation() routine</Primary></IndexTerm> we previously defined to make sure that this most recent location update is displayed visually in the current page.</Para>
+<Para>Now, on to our final function <IndexTerm><Primary>Page load routine</Primary></IndexTerm>in our storage example&#x2014;the load routine shown in Listing 11-8 that fires whenever visitors access the web page.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-8.</Heading>
+<Para>Initial Page Load Routine</Para>
+</FormalPara>
+<Para Type="Programcode">    // when the page loads, make a socket connection to the race broadcast server</Para>
+<Para Type="Programcode">    function loadDemo() {</Para>
+<Para Type="Programcode">        // make sure the browser supports sessionStorage</Para>
+<Para Type="Programcode">        if (typeof(window.sessionStorage) === "undefined") {</Para>
+<Para Type="Programcode">            document.getElementById("leaderboardStatus").innerHTML = "Your browser does&#x21B5;</Para>
+<Para Type="Programcode">                     not support HTML5 Web Storage";</Para>
+<Para Type="Programcode">            return;</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        var storage = window.sessionStorage;</Para>
+<Para Type="Programcode">        // for each key in the storage database, display a new racer</Para>
+<Para Type="Programcode">        // location in the page</Para>
+<Para Type="Programcode">        for (var i=0; i &#x003C; storage.length; i++) {</Para>
+<Para Type="Programcode">            var currRacer = storage.key(i);</Para>
+<Para Type="Programcode">            displayRacerLocation(currRacer, storage[currRacer]);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        // test to make sure that Web Sockets are supported</Para>
+<Para Type="Programcode">        if (window.WebSocket) {</Para>
+<Para Type="Programcode">            // the location where our broadcast WebSocket server is located</Para>
+<Para Type="Programcode">            url = "ws://websockets.org:7999/broadcast";</Para>
+<Para Type="Programcode">            socket = new WebSocket(url);</Para>
+<Para Type="Programcode">            socket.onopen = function() {</Para>
+<Para Type="Programcode">                document.getElementById("leaderboardStatus").innerHTML = "Leaderboard:</Para>
+<Para Type="Programcode">                         Connected!";</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">            socket.onmessage = function(e) {</Para>
+<Para Type="Programcode">                dataReturned(e.data);</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para>This is a longer function than the others, and there is a lot going on. Let&#x2019;s take it step by step. First, as shown in Listing 11-9, we do a basic error check to make sure that the browser viewing the page supports <Literal>sessionStorage</Literal> by checking for its presence on the window object. If <Literal>sessionStorage</Literal><IndexTerm><Primary>sessionStorage object</Primary></IndexTerm> is not accessible, we simply update the <Literal>leaderboardStatus</Literal> area to indicate as much, and then return out of the loading routine. We won&#x2019;t be attempting to work around <IndexTerm><Primary>Web Storage API</Primary><Secondary>application</Secondary><Tertiary>checking for browser support</Tertiary></IndexTerm>lack of browser storage in this example.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-9.</Heading>
+<Para>Checking for Browser Support</Para>
+</FormalPara>
+<Para Type="Programcode">        // make sure the browser supports sessionStorage</Para>
+<Para Type="Programcode">        if (typeof(window.sessionStorage) === "undefined") {</Para>
+<Para Type="Programcode">            document.getElementById("leaderboardStatus").innerHTML = "Your browser does</Para>
+<Para Type="Programcode">                     not support HTML5 Web Storage";</Para>
+<Para Type="Programcode">            return;</Para>
+<Para Type="Programcode">        }</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>It is possible to rework this demonstration to simply forgo any persistence of data between page navigations and start each page load with a clean leader board if storage is not supported. However, our goal here is to show how storage optimizes the experience for both the user and the network.</Para>
+</FormalPara>
+<Para>The next thing we do on page load is to use the storage to retrieve any racer distance results that have already been served to this or other pages of our website. Recall that we are running an identical block of script code on every one of our site pages, so that the leader board follows the users as they browse around various locations. As such, the leader board may already have stored values into storage from other pages that will be retrieved and displayed here directly on load as shown in Listing 11-10. The previously saved values will follow the user during navigation, as long as the user does not close the window, tab, or browser, thus clearing out the session storage.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-10.</Heading>
+<Para>Displaying Stored Racer Data</Para>
+</FormalPara>
+<Para Type="Programcode">        var storage = window.sessionStorage;</Para>
+<Para Type="Programcode">        // for each key in the storage database, display a new racer</Para>
+<Para Type="Programcode">        // location in the page</Para>
+<Para Type="Programcode">        for (var i=0; i &#x003C; storage.length; i++) {</Para>
+<Para Type="Programcode">            var currRacer = storage.key(i);</Para>
+<Para Type="Programcode">            displayRacerLocation(currRacer, storage[currRacer]);</Para>
+<Para Type="Programcode">        }</Para>
+<Para>This is an important section of code. Here, we query the session for its length&#x2014;in other words, the number of keys the storage contains. Then, we grab each key using <Literal>storage.key()</Literal><IndexTerm><Primary>storage.key()</Primary></IndexTerm> and store it into the <Literal>currRacer</Literal> variable, later using that variable to reference the key&#x2019;s corresponding value with <Literal>storage[currRacer]</Literal>. Together, the key and its value represent a racer and that racer&#x2019;s distance, which were stored on a visit to a previous page.</Para>
+<Para>Once we have a previously stored racer name and distance, we display them using the <Literal>displayRacerLocation()</Literal> function. This all happens very quickly on page load, causing the page to instantaneously fill its leader board with previously transmitted values.</Para>
+<FormalPara RenderingStyle="Style1"><Heading>n Note</Heading>
+<Para>Our sample application relies on being the only application that stores values into the session storage area. If your application needs to share the storage object with other data, you will need to use a more nuanced key strategy than simply storing the keys at root level. We&#x2019;ll look at another storage strategy in the &#x201C;Practical Extras&#x201D; section.</Para>
+</FormalPara>
+<Para>Our last piece of load behavior is to hook up the page to the racer broadcast server using a simple WebSocket<IndexTerm><Primary>WebSocket</Primary></IndexTerm>, as shown in Listing 11-11.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-11.</Heading>
+<Para>Connecting to the WebSocket Broadcast Service</Para>
+</FormalPara>
+<Para Type="Programcode">        // test to make sure that WebSocket is supported</Para>
+<Para Type="Programcode">        if (window.WebSocket) {</Para>
+<Para Type="Programcode">            // the location where our broadcast WebSocket server is located</Para>
+<Para Type="Programcode">            // for the sake of example, we&#x2019;ll just show websockets.org</Para>
+<Para Type="Programcode">            url = "ws://websockets.org:7999/broadcast";</Para>
+<Para Type="Programcode">            socket = new WebSocket(url);</Para>
+<Para Type="Programcode">            socket.onopen = function() {</Para>
+<Para Type="Programcode">                document.getElementById("leaderboardStatus").innerHTML = "Leaderboard: &#x21B5;</Para>
+<Para Type="Programcode">                         Connected!";</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">            socket.onmessage = function(e) {</Para>
+<Para Type="Programcode">                dataReturned(e.data);</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">        }</Para>
+<Para>As we did before in our WebSocket chapter, we first check to make sure that the browser supports WebSocket by checking for the existence of the <Literal>window.WebSocket</Literal> object. Once we have verified that it exists, we connect to the URL where our WebSocket server is running. This server broadcasts racer location messages of the semicolon-separated format listed previously, and whenever we receive one of those messages via the <Literal>socket.onmessage</Literal> callback<IndexTerm><Primary>ocket.onmessage callback</Primary></IndexTerm>, we call our previously discussed <Literal>dataReturned()</Literal> function<IndexTerm><Primary>dataReturned() function</Primary></IndexTerm> to process and display it. We also use the <Literal>socket.onopen</Literal> callback<IndexTerm><Primary>socket.onopen callback</Primary></IndexTerm> to update our <Literal>leaderboardStatus</Literal> area with a simple diagnostic message to indicate that the socket opened successfully.</Para>
+<Para>That&#x2019;s it for our <Literal>load</Literal> routine. The final block of code we declare in our script block is the registration function, which requests that the <Literal>loadDemo()</Literal> function is called whenever page load is complete:</Para>
+<Para Type="Programcode">    // add listeners on page load and unload</Para>
+<Para Type="Programcode">    window.addEventListener("load", loadDemo, true);</Para>
+<Para>As you have seen many times before, this event listener requests that our <Literal>loadDemo()</Literal> function<IndexTerm><Primary>loadDemo() function</Primary></IndexTerm> will be called when the window has completed loading.</Para>
+<Para>But how do we get racer data transmitted from the trails to the broadcast WebSocket server and into our pages? Well, we could actually use the tracker example previously declared in the WebSocket chapter by simply pointing its connect URL to the broadcast server listed previously. However, we have also created a very simple racer broadcast source page, shown in Listing 11-12, which serves a similar purpose. This page would theoretically be run on the mobile devices of the race participants. Although it does not include any Web Storage code itself, it is a convenient way to transmit the properly formatted data when run in a browser with both WebSocket and Geolocation support. The file <Literal>racerBroadcast.html</Literal> is available from the web site sample area provided for this book.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-12.</Heading>
+<Para>Contents of the <IndexTerm><Primary>File racerBroadcast.html</Primary></IndexTerm> File racerBroadcast.html</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;head&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E; Racer Broadcast&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;link rel="stylesheet" href="styles.css"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/head&#x003E;</Para>
+<Para Type="Programcode">&#x003C;body onload="loadDemo()"&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E; Racer Broadcast&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">Racer name: &#x003C;input type="text" id="racerName" value="Racer X"/&#x003E;</Para>
+<Para Type="Programcode">&#x003C;button onclick="startSendingLocation()"&#x003E; Start&#x003C;/button&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E; &#x003C;strong&#x003E; Geolocation&#x003C;/strong&#x003E;: &#x003C;p id="geoStatus"&#x003E; HTML5 Geolocation not &#x21B5;</Para>
+<Para Type="Programcode"> started.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;div&#x003E; &#x003C;strong&#x003E; WebSocket&#x003C;/strong&#x003E;: &#x003C;p id="socketStatus"&#x003E; HTML5 Web Sockets are &#x21B5;</Para>
+<Para Type="Programcode"> &#x003C;strong&#x003E; not&#x003C;/strong&#x003E; supported in your browser.&#x003C;/p&#x003E;&#x003C;/div&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script type="text/javascript"&#x003E;</Para>
+<Para Type="Programcode">    // reference to the Web Socket</Para>
+<Para Type="Programcode">    var socket;</Para>
+<Para Type="Programcode">    var lastLocation;</Para>
+<Para Type="Programcode">    function updateSocketStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("socketStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function updateGeolocationStatus(message) {</Para>
+<Para Type="Programcode">        document.getElementById("geoStatus").innerHTML = message;</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function handleLocationError(error) {</Para>
+<Para Type="Programcode">        switch(error.code)</Para>
+<Para Type="Programcode">        {</Para>
+<Para Type="Programcode">        case 0:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("There was an error while retrieving your location: " +</Para>
+<Para Type="Programcode">                                   error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 1:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The user prevented this page from retrieving a</Para>
+<Para Type="Programcode">                                   location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 2:<IndexTerm><Primary>File racerBroadcast.html</Primary></IndexTerm>
+</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser was unable to determine your location: " +</Para>
+<Para Type="Programcode">                                   error.message);</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        case 3:</Para>
+<Para Type="Programcode">          updateGeolocationStatus("The browser timed out before retrieving the location.");</Para>
+<Para Type="Programcode">          break;</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function loadDemo() {</Para>
+<Para Type="Programcode">        // test to make sure that Web Sockets are supported</Para>
+<Para Type="Programcode">        if (window.WebSocket) {</Para>
+<Para Type="Programcode">            // the location where our broadcast WebSocket server is located</Para>
+<Para Type="Programcode">            url = "ws://websockets.org:7999/broadcast";</Para>
+<Para Type="Programcode">            socket = new WebSocket(url);</Para>
+<Para Type="Programcode">            socket.onopen = function() {</Para>
+<Para Type="Programcode">                updateSocketStatus("Connected to WebSocket race broadcast server");</Para>
+<Para Type="Programcode">            }</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function updateLocation(position) {</Para>
+<Para Type="Programcode">        var latitude = position.coords.latitude;</Para>
+<Para Type="Programcode">        var longitude = position.coords.longitude;</Para>
+<Para Type="Programcode">        var timestamp = position.timestamp;</Para>
+<Para Type="Programcode">        updateGeolocationStatus("Location updated at " + timestamp);</Para>
+<Para Type="Programcode">        // Schedule a message to send my location via WebSocket</Para>
+<Para Type="Programcode">        var toSend =     ";" + document.getElementById("racerName").value</Para>
+<Para Type="Programcode">                         + ";" + latitude + ";" + longitude;</Para>
+<Para Type="Programcode">        setTimeout("sendMyLocation('" + toSend + "')", 1000);<IndexTerm><Primary>File racerBroadcast.html</Primary></IndexTerm>
+</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function sendMyLocation(newLocation) {</Para>
+<Para Type="Programcode">        if (socket) {</Para>
+<Para Type="Programcode">            socket.send(newLocation);</Para>
+<Para Type="Programcode">            updateSocketStatus("Sent: " + newLocation);</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function startSendingLocation() {</Para>
+<Para Type="Programcode">        var geolocation;</Para>
+<Para Type="Programcode">        if(navigator.geolocation) {</Para>
+<Para Type="Programcode">            geolocation = navigator.geolocation;</Para>
+<Para Type="Programcode">            updateGeolocationStatus("HTML5 Geolocation is supported in your browser.");</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        else {</Para>
+<Para Type="Programcode">            geolocation = google.gears.factory.create('beta.geolocation');</Para>
+<Para Type="Programcode">            updateGeolocationStatus("Geolocation is supported via Google Gears");</Para>
+<Para Type="Programcode">        }</Para>
+<Para Type="Programcode">        // register for position updates using the Geolocation API</Para>
+<Para Type="Programcode">        geolocation.watchPosition(updateLocation,</Para>
+<Para Type="Programcode">                                  handleLocationError,</Para>
+<Para Type="Programcode">                                  {maximumAge:20000});</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/body&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/html&#x003E;</Para>
+<Para>We won&#x2019;t spend too much space covering this <IndexTerm><Primary>File racerBroadcast.html</Primary></IndexTerm>file in detail, as it is nearly identical to the tracker example in <ExternalRef>
+<RefSource>Chapter 7</RefSource>
+<RefTarget TargetType="DOI" Address="10.1007/978-1-4302-3865-2_7"/>
+</ExternalRef>. The primary difference is that this file contains a text field for entering the racer&#x2019;s name:</Para>
+<Para>Racer name: &#x003C;input type="text" id="racerName" value="Racer X"/&#x003E;</Para>
+<Para>The racer&#x2019;s name is now sent to the broadcast server as part of the data string:</Para>
+<Para Type="Programcode">var toSend =    ";" + document.getElementById("racerName").value</Para>
+<Para Type="Programcode">           + ";" + latitude + ";" + longitude;</Para>
+<Para>To try it out for yourself, open two windows in a browser that supports Web Storage, Geolocation, and WebSocket, such as Google Chrome. In the first, load the running club&#x2019;s <Literal>index.html</Literal> page. You will see it connect to the race broadcast site using WebSocket and then await any racer data notifications. In the second window, open the <Literal>racerBroadcast.html</Literal> file. After this page, too, has connected to the WebSocket broadcast site, enter a name for your racer, and click the Start button. You&#x2019;ll see that the racer broadcast has transmitted the location of your favorite racer, and it should show up in the leader board in your other browser window. Figure <InternalRef RefID="Fig10_11">11-10</InternalRef> shows what this looks like.
+<Figure ID="Fig10_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-10</CaptionNumber>
+<CaptionContent>
+<SimplePara>Race page and racerBroadcast.html side by side</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO10_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig10_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Now, navigate to other racing club pages using the Signup and About the Race links on the left side of the page. Because all of these pages have been configured to load our script, they will immediately load and populate the leader board with the previous racer data, which was delivered while browsing other pages. Send more racer status notifications (from the broadcast page), and you&#x2019;ll see them propagate through the club site pages as you navigate, as well.</Para>
+<Para>Now that we&#x2019;ve finished our code, let&#x2019;s review what we&#x2019;ve built. We&#x2019;ve created a simple function block, suitable for inclusion in a shared JavaScript library, which connects to a WebSocket broadcast server and listens for racer updates. When an update is received, the script displays the position in the page <Emphasis Type="Italic">and</Emphasis> stores it using <Literal>sessionStorage</Literal>. When the page is loaded, it checks for any previously stored racer position values, thus maintaining the state as the user navigates the site. What<IndexTerm><Primary>Web Storage API</Primary><Secondary>benefits of</Secondary></IndexTerm> are some of the benefits we gain from this approach?<UnorderedList Mark="Bullet">
+<ItemContent><Para><Emphasis Type="Italic">Reduced network traffic:</Emphasis> Race information is stored locally in the browser. Once it arrives, it sticks around for every page load, rather than using cookies or server requests to fetch it again.</Para></ItemContent>
+<ItemContent><Para><Emphasis Type="Italic">Immediate display of values:</Emphasis> The browser pages themselves can be cached rather than loaded from the network, because the dynamic parts of the page&#x2014;the current leaderboard status&#x2014;are local data. This data is rapidly displayed without any network load time.</Para></ItemContent>
+<ItemContent><Para><Emphasis Type="Italic">Transient storage</Emphasis>: The race data isn&#x2019;t very useful after the race has completed. Consequently, we store it in session storage area, meaning it is discarded when the window or tab is shut down, and it no longer consumes any space.</Para></ItemContent>
+</UnorderedList>
+</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>A Word About Bulletproofing</Heading>
+<Para><Emphasis Type="Bold">Brian says:</Emphasis> &#x201C;We&#x2019;ve accomplished a lot in this example using only a few lines of script code. But don&#x2019;t be lulled into thinking everything is this easy in a real, publicly accessible website. We took some shortcuts that simply are not acceptable for a production application.</Para>
+<Para>For example, our message format does not support similarly named racers and would best be replaced by a unique identifier representing each racer. Our distance calculation is &#x201C;as the crow flies&#x201D; and not truly indicative of progress in an off-road race. Standard disclaimers apply&#x2014;more localization, more error checking, and more attention to detail will make your site work for all participants.&#x201D;</Para>
+</FormalPara>
+<Para>This same technique we demonstrated in this example can be applied to any number of data types: chat, e-mail, and sports scores are other examples that can be cached and displayed from page to page using local or session storage just as we&#x2019;ve shown here. If your application sends user-specific data back and forth from browser <IndexTerm><Primary>Web Storage API</Primary><Secondary>building application with end</Secondary></IndexTerm>to server at regular intervals, consider using Web Storage to streamline your flow.</Para>
+</Section1>
+<Section1 ID="Sec13_11">
+<Heading>The Future of Browser Database Storage</Heading>
+<Para>The key-value <IndexTerm><Primary>Web Storage API</Primary><Secondary>database</Secondary><SeeAlso><Emphasis Type="Italic">See</Emphasis> Browser database storage</SeeAlso></IndexTerm>Storage API is great for persisting data, but what about indexed storage that can be queried? HTML5 applications will eventually have access to indexed databases<IndexTerm><Primary>Indexed databases</Primary></IndexTerm><IndexTerm><Primary>Browser database storage</Primary><Secondary>future of</Secondary></IndexTerm><IndexTerm><Primary>Database storage</Primary><Secondary>future of browser</Secondary></IndexTerm> as well. The exact details of the database APIs are still solidifying, and there are two primary proposals.</Para>
+<Section2 ID="Sec14_11">
+<Heading>The Web SQL Database</Heading>
+<Para>One of the proposals, Web SQL Database<IndexTerm><Primary>Web SQL Database</Primary></IndexTerm>, has been implemented in Safari, Chrome, and Opera. Table <InternalRef RefID="Tab2_11">11-2</InternalRef> shows the browser support for Web SQL Database.
+<Table ID="Tab2_11" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 11-2</CaptionNumber>
+<CaptionContent>
+<SimplePara>Browser Support for HTML5 Web SQL Database<IndexTerm><Primary>HTML5 Web SQL Database</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for Web SQL Database</Secondary></IndexTerm><IndexTerm><Primary>HTML5 Web SQL Database</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for Web SQL Database</Secondary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>Browser</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Details</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara>Chrome</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in version 3.0 and greater</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Firefox</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Not supported</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Internet Explorer</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Not supported</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Opera</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in version 10.5 and greater</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Safari</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in version 3.2 and greater</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>Web SQL Database allows applications access to SQLite through an asynchronous JavaScript interface. Although it will not be part of the common Web platform nor the eventual recommended database API for HTML5 applications, the SQL API can be useful when targeting a specific platform such as mobile Safari. In any case, this API shows off the power of databases in the browser. Just like the other storage APIs, the browser can limit the amount of storage available to each origin and clear out the data when user data is cleared.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>The Fate of Web SQL Database</Heading>
+<Para><Emphasis Type="Bold">Frank says:</Emphasis> &#x201C;Even though Web SQL DB is already in Safari, Chrome, and Opera, it will not be implemented in Firefox and it is listed as &#x2018;stalled&#x2019; on the WHATWG wiki. The specification defines an API for executing SQL statements given as strings and defers to SQLite for the SQL <IndexTerm><Primary>Web SQL Database</Primary></IndexTerm>dialect. Since it is undesirable for a standard to require a specific implementation of SQL, Web SQL Database has been surpassed by a newer specification, Indexed Database<IndexTerm><Primary>Indexed Database</Primary></IndexTerm> (formerly WebSimpleDB), which is simpler and not tied to a specific SQL database version. Browser implementations of Indexed Database are currently in progress, and we&#x2019;ll cover them in the next section.&#x201D;</Para>
+</FormalPara>
+<Para>Because Web SQL Database is already implemented in the wild, we are including a basic example but omiting the complete details of the API. This example demonstrates the basic<IndexTerm><Primary>Browser database storage</Primary><Secondary>future of</Secondary></IndexTerm><IndexTerm><Primary>Database storage</Primary><Secondary>future of browser</Secondary></IndexTerm> use of the Web SQL Database API. It opens a database called <Literal>mydb</Literal>, creates a <Literal>racers</Literal> table if a table by that name does not already exist, and populates the table with a list of predefined names. Figure <InternalRef RefID="Fig11_11">11-11</InternalRef> shows this database with<IndexTerm><Primary>Web SQL Database</Primary></IndexTerm> racers table in Safari&#x2019;s Web Inspector.
+<Figure ID="Fig11_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-11</CaptionNumber>
+<CaptionContent>
+<SimplePara>Database with racers table in Safari&#x2019;s Web Inspector</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO11_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig11_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>To begin, we open a database by name. The <Literal>window.openDatabase()</Literal> function<IndexTerm><Primary>window.openDatabase() function</Primary></IndexTerm> returns a <Literal>Database</Literal> object through which database interaction takes place. The <Literal>openDatabase()</Literal> function<IndexTerm><Primary>openDatabase() function</Primary></IndexTerm> takes a name as well as an optional version and description. With an open database, application code can now start transactions. SQL statements are executed in the context of a transaction using the <Literal>transaction.executeSql()</Literal> function<IndexTerm><Primary>transaction.executeSql() function</Primary></IndexTerm>. This simple example uses <Literal>executeSql()</Literal><IndexTerm><Primary>executeSql()</Primary></IndexTerm> to create a table, insert racer names into the table, and later query the database to create an HTML table. Figure <InternalRef RefID="Fig12_11">11-12</InternalRef> shows the output HTML file with the list of names retrieved from the table.
+<Figure ID="Fig12_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-12</CaptionNumber>
+<CaptionContent>
+<SimplePara>sql.html displaying the results of SELECT * FROM racers</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO12_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig12_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+<Para>Database operations can <IndexTerm><Primary>Web SQL Database</Primary></IndexTerm>take some time to complete. Instead of blocking script execution until a result set is available, queries run in the background. When the results are available, a function given as the third argument to <Literal>executeSQL()</Literal><IndexTerm><Primary>executeSQL()</Primary></IndexTerm> is called back with the transaction and the result <IndexTerm><Primary>Browser database storage</Primary><Secondary>future of</Secondary></IndexTerm><IndexTerm><Primary>Database storage</Primary><Secondary>future of browser</Secondary></IndexTerm>set as arguments.</Para>
+<Para>Listing 11-13 shows the complete code for the file <Literal>sql.html</Literal>; the sample code shown is also located in the <Literal>code/storage</Literal> folder.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-13.</Heading>
+<Para>Using the<IndexTerm><Primary>Web SQL Database</Primary></IndexTerm> Web SQL Database API</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;!DOCTYPE html&#x003E;</Para>
+<Para Type="Programcode">&#x003C;title&#x003E; Web SQL Database&#x003C;/title&#x003E;</Para>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">    // open a database by name</Para>
+<Para Type="Programcode">    var db = openDatabase('db', '1.0', 'my first database', 2 * 1024 * 1024);</Para>
+<Para Type="Programcode">    function log(id, name) {</Para>
+<Para Type="Programcode">        var row = document.createElement("tr");</Para>
+<Para Type="Programcode">        var idCell = document.createElement("td");</Para>
+<Para Type="Programcode">        var nameCell = document.createElement("td");</Para>
+<Para Type="Programcode">        idCell.textContent = id;</Para>
+<Para Type="Programcode">        nameCell.textContent = name;</Para>
+<Para Type="Programcode">        row.appendChild(idCell);</Para>
+<Para Type="Programcode">        row.appendChild(nameCell);</Para>
+<Para Type="Programcode">        document.getElementById("racers").appendChild(row);</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function doQuery() {</Para>
+<Para Type="Programcode">        db.transaction(function (tx) {</Para>
+<Para Type="Programcode">                tx.executeSql('SELECT * from racers', [], function(tx, result) {</Para>
+<Para Type="Programcode">                    // log SQL result set</Para>
+<Para Type="Programcode">                    for (var i=0; i&#x003C;result.rows.length; i++) {</Para>
+<Para Type="Programcode">                        var item = result.rows.item(i);</Para>
+<Para Type="Programcode">                        log(item.id, item.name);</Para>
+<Para Type="Programcode">                    }</Para>
+<Para Type="Programcode">                });</Para>
+<Para Type="Programcode">            });</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    function initDatabase() {</Para>
+<Para Type="Programcode">        var names = ["Peter Lubbers", "Brian Albers", "Frank Salim"];</Para>
+<Para Type="Programcode">        db.transaction(function (tx) {</Para>
+<Para Type="Programcode">                tx.executeSql('CREATE TABLE IF NOT EXISTS racers (id integer primary key &#x21B5;</Para>
+<Para Type="Programcode"> autoincrement, name)');</Para>
+<Para Type="Programcode">                for (var i=0; i&#x003C;names.length; i++) {</Para>
+<Para Type="Programcode">                    tx.executeSql('INSERT INTO racers (name) VALUES (?)', [names[i]]);</Para>
+<Para Type="Programcode">                }</Para>
+<Para Type="Programcode">                doQuery();</Para>
+<Para Type="Programcode">            });<IndexTerm><Primary>Web SQL Database</Primary></IndexTerm>
+</Para>
+<Para Type="Programcode">    }</Para>
+<Para Type="Programcode">    initDatabase();</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<Para Type="Programcode">&#x003C;h1&#x003E; Web SQL Database&#x003C;/h1&#x003E;</Para>
+<Para Type="Programcode">&#x003C;table id="racers" border="1" cellspacing="0" style="width:100%"&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;th&#x003E; Id&#x003C;/th&#x003E;</Para>
+<Para Type="Programcode">    &#x003C;th&#x003E; Name&#x003C;/th&#x003E;</Para>
+<Para Type="Programcode">&#x003C;/table&#x003E;</Para>
+</Section2>
+<Section2 ID="Sec15_11">
+<Heading>The Indexed Database API</Heading>
+<Para>A second proposal for browser database storage gained prominence in 2010. The <IndexTerm><Primary>Web Storage API</Primary><Secondary>indexed database</Secondary></IndexTerm>Indexed Database API is supported by Microsoft and Mozilla and is seen as a counter to the Web SQL Database. Where the Web SQL Database looks to bring the established SQL language into browsers, the Indexed Database aims to bring low-level indexed storage capabilities, with the hope that more developer-friendly libraries will be built on top of the indexed core.</Para>
+<Para>While the Web SQL API supports using query languages to issue SQL statements against tables of data, the Indexed DB API issues synchronous or asynchronous function calls directly against a tree-like object storage engine. Unlike Web SQL, the Indexed DB does not work with tables and columns.</Para>
+<Para>The support for the Indexed Database API is growing (see Table <InternalRef RefID="Tab3_11">11-3</InternalRef>).
+<Table ID="Tab3_11" Float="Yes">
+<Caption Language="En">
+<CaptionNumber>Table 11-3</CaptionNumber>
+<CaptionContent>
+<SimplePara>Browser Support for the Indexed Database API<IndexTerm><Primary>HTML5 Web SQL Database</Primary><Secondary>browser support for</Secondary></IndexTerm><IndexTerm><Primary>Browser support</Primary><Secondary>for Web SQL Database</Secondary></IndexTerm>
+</SimplePara>
+</CaptionContent>
+</Caption>
+<tgroup cols="2" align="left">
+<colspec colnum="1" colname="c1" align="left"/>
+<colspec colnum="2" colname="c2" align="left"/>
+<thead>
+<row>
+<entry colname="c1">
+<SimplePara>Browser</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Details</SimplePara>
+</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry colname="c1">
+<SimplePara>Chrome</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in current versions</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Firefox</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in current versions</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Internet Explorer</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Supported in version 10+</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Opera</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Not currently supported</SimplePara>
+</entry>
+</row>
+<row>
+<entry colname="c1">
+<SimplePara>Safari</SimplePara>
+</entry>
+<entry colname="c2">
+<SimplePara>Not currently supported</SimplePara>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</Table>
+</Para>
+<Para>Microsoft and Mozilla have announced that they will not support the Web SQL Database and have thrown their weight behind the Indexed Database instead. Google&#x2019;s Chrome has joined in with support, and as such, it is likely that the Indexed Database is the future of standardized structured storage in the browser. Among their reasons are the fact that SQL is not a true standard and also that the only implementation of Web SQL was the SQLite project. With only one implementation and a loose standard, they could not support WebSQL in the HTML5 specification.</Para>
+<Para>The Indexed Database API eschews query strings in favor of a low-level API that allows values to be stored directly in JavaScript objects. Values stored in the database can be retrieved by key or using indexes, and the API can be accessed in either synchronous or asynchronous manner. Like the WebSQL proposal, indexed databases are scoped by origin so that you can only access the storage created in your own web pages.</Para>
+<Para>Creation or modification of Indexed Database storage is done under the context of transactions, which can be classified as either READ_ONLY, READ_WRITE, or VERSION_CHANGE. While the first two may be self-explanatory, the VERSION_CHANGE transaction type is used whenever an operation will modify the structure of the database.</Para>
+<Para>Retrieving records from an Indexed Database is done via a cursor object. A cursor object iterates over a range of records in either increasing or decreasing order. At any time a cursor either has a value or does not, due to the fact that it is either in the process of loading or has reached the end of its iteration.</Para>
+<Para>A detailed description of the<IndexTerm><Primary>Web Storage API</Primary><Secondary>indexed database</Secondary></IndexTerm> Indexed Database API is beyond the scope of this book. If you are intending to implement a query engine on top of the built-in API, you should consult the official specification at <Literal>http://www.w3.org/TR/IndexedDB/</Literal>. Otherwise, you would be wise to wait for one of the proposed engines layered on top of the standard to be made available to use a more developer-friendly database API. At this point, no third-party libraries have gained prominence or significant backing.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Why Use a Hammer&#x2026;</Heading>
+<Para><Emphasis Type="Bold">Brian says:</Emphasis> &#x201C;&#x2026;when you can instead use these ingots, that forge, and the mold of your choosing? On the Mozilla blog, Arun Ranganathan argued that he would welcome APIs like the Web SQL API being built on top of the Indexed Database standard. This attitude has perplexed many developers, as there is a widespread belief that, in order to make the Indexed Database usable, it will require third-party JavaScript libraries built on top of the standard. The Indexed Database itself is simply too complex for most web developers to use it in its current form.</Para>
+<Para>This begs the question: if developers end up needing third-party libraries to take advantage of the built-in storage API, wouldn&#x2019;t it be prudent to simply build that storage in native code rather than as a JavaScript library that must be downloaded and interpreted at runtime? Time will tell if the Indexed Database suits the needs of the majority.&#x201D;</Para>
+</FormalPara>
+</Section2>
+</Section1>
+<Section1 ID="Sec16_11">
+<Heading>Practical Extras</Heading>
+<Para>Sometimes, <IndexTerm><Primary>Browser database storage</Primary><Secondary>future of</Secondary></IndexTerm><IndexTerm><Primary>Database storage</Primary><Secondary>future of browser</Secondary></IndexTerm><IndexTerm><Primary>Web SQL Database</Primary></IndexTerm>there are techniques that don&#x2019;t fit into our regular examples but nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</Para>
+<Section2 ID="Sec17_11">
+<Heading>JSON Object Storage</Heading>
+<Para>Although the <IndexTerm><Primary>JSON object storage</Primary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>JSON object storage</Secondary></IndexTerm>specification for Web Storage allows for objects of any type to be stored as key-value pairs, in current implementations, some browsers limit values to be text string data types. There is a practical workaround, however, due to the fact that modern versions of browsers contain built-in support for JavaScript Object Notation (JSON)<IndexTerm><Primary>JavaScript Object Notation (JSON)</Primary><Secondary>object storage</Secondary></IndexTerm>.</Para>
+<Para>JSON is a standard for data-interchange that can represent objects as strings and vice-versa. JSON has been used for over a decade to transmit objects from browser clients to servers over HTTP. Now, we can use it to serialize complex objects in and out of Web Storage in order to persist complex data types. Consider the script block in Listing 11-14.</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-14.</Heading>
+<Para>JSON Object Storage</Para>
+</FormalPara>
+<Para Type="Programcode">&#x003C;script&#x003E;</Para>
+<Para Type="Programcode">  var data;</Para>
+<Para Type="Programcode">  function loadData() {</Para>
+<Para Type="Programcode">    data = JSON.parse(sessionStorage["myStorageKey"])</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">  function saveData() {</Para>
+<Para Type="Programcode">    sessionStorage["myStorageKey"] = JSON.stringify(data);</Para>
+<Para Type="Programcode">  }</Para>
+<Para Type="Programcode">  window.addEventListener("load", loadData, true);</Para>
+<Para Type="Programcode">  window.addEventListener("unload", saveData, true);</Para>
+<Para Type="Programcode">&#x003C;/script&#x003E;</Para>
+<Para>As you can see, the script contains event listeners to register handlers for load and unload events in the browser window. In this case, the handlers call the <Literal>loadData()</Literal> and <Literal>saveData()</Literal> functions, respectively.</Para>
+<Para>In the <Literal>loadData()</Literal> function<IndexTerm><Primary>loadData() function</Primary></IndexTerm>, the session storage area is queried for the value of a storage key, and that key is passed to the <Literal>JSON.parse()</Literal> function<IndexTerm><Primary>JSON.parse() function</Primary></IndexTerm>. The <Literal>JSON.parse()</Literal> routine will take a previously saved string representation of an object and reconstitute it into a copy of the original. This routine is called every time the page loads.</Para>
+<Para>Similarly, the <Literal>saveData()</Literal> function<IndexTerm><Primary>saveData() function</Primary></IndexTerm> takes a data value and calls <Literal>JSON.stringify()</Literal> on it to turn it into a string representation of the object. That string is, in turn, stored back into storage. By registering the <Literal>saveData()</Literal> function on the <Literal>unload</Literal> browser event, we ensure that it is called every time the user navigates away or shuts down the browser or window.</Para>
+<Para>The practical result of these two functions is that any object we wish to track in storage, no matter if it is a complex object type, can be stored and reloaded as users navigate in and out of the application. This allows developers to extend the <IndexTerm><Primary>JSON object storage</Primary></IndexTerm><IndexTerm><Primary>Web Storage API</Primary><Secondary>JSON object storage</Secondary></IndexTerm>techniques <IndexTerm><Primary>JavaScript Object Notation (JSON)</Primary><Secondary>object storage</Secondary></IndexTerm>we have already shown to nontext data.</Para>
+</Section2>
+<Section2 ID="Sec18_11">
+<Heading>A Window into Sharing</Heading>
+<Para>As alluded to in an<IndexTerm><Primary>Web Storage API</Primary><Secondary>cross-window communication</Secondary></IndexTerm><IndexTerm><Primary>Data</Primary><Secondary>sharing across windows</Secondary></IndexTerm><IndexTerm><Primary>Cross-window communication</Primary></IndexTerm> earlier section, the ability for Web Storage events to fire in any window browsing the same origin has some powerful implications. It means that storage can be used to send messages from window to window, even if they are not all using the storage object itself. This, in turn implies that we can now share data across windows that have the same origin.</Para>
+<Para>Let&#x2019;s see how this works using some code samples. To listen to cross-window messages, a simple script needs only to register a handler for storage events. Let&#x2019;s assume that a page running at <Literal>http://www.example.com/storageLog.html</Literal> contains the code shown in Listing 11-15 (the sample file <Literal>storageLog.html</Literal> for this example is also located in the <Literal>code/storage</Literal> folder).</Para>
+<FormalPara RenderingStyle="Style1">
+<Heading>Listing 11-15.</Heading>
+<Para>Cross-Window Communication Using Storage</Para>
+</FormalPara>
+<Para Type="Programcode">// display records of new storage events</Para>
+<Para Type="Programcode">function displayStorageEvent(e) {</Para>
+<Para Type="Programcode">  var incomingRow = document.createElement('div');</Para>
+<Para Type="Programcode">  document.getElementById("container").appendChild(incomingRow);</Para>
+<Para Type="Programcode">  var logged = "key:" + e.key + ", newValue:" + e.newValue + ", oldValue:" +</Para>
+<Para Type="Programcode">                e.oldValue + ", url:" + e.url + ", storageArea:" + e.storageArea; +</Para>
+<Para Type="Programcode">                incomingRow.innerHTML = logged;</Para>
+<Para Type="Programcode">}</Para>
+<Para Type="Programcode">// add listeners on storage events</Para>
+<Para Type="Programcode">window.addEventListener("storage", displayStorageEvent, true);</Para>
+<Para>After registering an event listener for the <Literal>storage</Literal> event type, this window will receive notification of storage changes in any pages. For example, if a browser window viewing <Literal>http://www.example.com/browser-test.html</Literal> that is currently browsing the same origin sets or changes a new storage value, the <Literal>storageLog.html</Literal> page<IndexTerm><Primary>storageLog.html page</Primary></IndexTerm> will receive a notification. Therefore, to send a message to a receiving window, the sending window need only modify a storage object, and its old and new values will be sent as part of the notification. For example, if a storage value is updated using <Literal>localStorage.setItem()</Literal>, then the <Literal>displayStorageEvent()</Literal> handler in the <Literal>storageLog.html</Literal> page hosted at the same origin will receive an event. By carefully coordinating event names and values, the two pages can now communicate, a feat which has been difficult to accomplish before. Figure <InternalRef RefID="Fig13_11">11-13</InternalRef> shows the <Literal>storageLog.html</Literal> page in action, simply logging storage events it receives.
+<Figure ID="Fig13_11" Float="Yes" Category="Standard">
+<Caption Language="En">
+<CaptionNumber>Figure 11-13</CaptionNumber>
+<CaptionContent>
+<SimplePara>The storageLog.html page<IndexTerm><Primary>storageLog.html page</Primary></IndexTerm> logging storage eventsSummary</SimplePara>
+</CaptionContent>
+</Caption>
+<MediaObject ID="MO13_11">
+<ImageObject FileRef="978-1-4302-3865-2_11_Fig13_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
+</MediaObject>
+</Figure>
+</Para>
+</Section2>
+</Section1>
+<Section1 ID="Sec19_11">
+<Heading>Summary</Heading>
+<Para>In this chapter, we showed how Web Storage can be used as an alternative to browser cookies for keeping local copies of data across windows, tabs, and (with <Literal>localStorage</Literal>) even across browser restarts. You&#x2019;ve seen that data can be appropriately segregated between windows by using <Literal>sessionStorage</Literal>, and shared&#x2014;even across windows&#x2014;by using storage events. In our full-fledged example, we showed a practical way to use storage to track data from page to page as users navigate a website, which could just as easily be applied to other data types. We even demonstrated how nontext<IndexTerm><Primary>Web Storage API</Primary><Secondary>cross-window communication</Secondary></IndexTerm><IndexTerm><Primary>Data</Primary><Secondary>sharing across windows</Secondary></IndexTerm><IndexTerm><Primary>Cross-window communication</Primary></IndexTerm> data types can be stored when a page loads or unloads to save and restore the state of a page across visits.</Para>
+<Para>In the next chapter, we&#x2019;ll show you how HTML5 lets you create offline applications.</Para>
+</Section1>
+</Body>
+<BodyRef FileRef="978-1-4302-3865-2_11_Chapter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
+</Chapter>
