@@ -8,6 +8,17 @@
       "timestamp": "timestamp"
     },
     {
+      "url": "ch2.html",
+      "title": "Chapter 2: Canvas",
+      "publication": "publication",
+      "section": "section",
+      "subject": "subject",
+      "hed": "hed",
+      "dek": "dek",
+      "byline": "byline",
+      "timestamp": "timestamp"
+    },
+    {
       "url": "sample-ad.html",
       "title": "ad"
     },
