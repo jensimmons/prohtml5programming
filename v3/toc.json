@@ -3,34 +3,41 @@
   "contents": [
     {
       "url": "index.html",
-      "title": "title",
-      "publication": "publication",
+      "title": "Pro HTML5 Programming",
+      "publication": "Pro HTML5 Programming",
+      "timestamp": "timestamp"
+    },
+    {
+      "url": "ch1.html",
+      "title": "Chapter 1: Overview of HTML5",
+      "publication": "Pro HTML5 Programming",
+      "section": "Chapter 2",
+      "subject": "Canvas",
+      "hed": "hed",
+      "dek": "dek",
+      "byline": "Peter Lubbers, Brian Albers, Frank Salim",
       "timestamp": "timestamp"
     },
     {
       "url": "ch2.html",
       "title": "Chapter 2: Canvas",
-      "publication": "publication",
-      "section": "section",
-      "subject": "subject",
+      "publication": "Pro HTML5 Programming",
+      "section": "Chapter 2",
+      "subject": "Canvas",
       "hed": "hed",
       "dek": "dek",
-      "byline": "byline",
+      "byline": "Peter Lubbers, Brian Albers, Frank Salim",
       "timestamp": "timestamp"
-    },
-    {
-      "url": "sample-ad.html",
-      "title": "ad"
     },
     {
       "url": "article.html",
       "title": "title",
-      "publication": "publication",
-      "section": "section",
-      "subject": "subject",
+      "publication": "Pro HTML5 Programming",
+      "section": "Chapter X",
+      "subject": "Title of The Chapter",
       "hed": "hed",
       "dek": "dek",
-      "byline": "byline",
+      "byline": "Peter Lubbers, Brian Albers, Frank Salim",
       "timestamp": "timestamp"
     }
   ]
