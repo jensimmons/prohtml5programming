@@ -1,0 +1,45 @@
+/*	Helvetica LT Std				*/
+@font-face {
+	font-family: Helvetica;
+	src:	url('fonts/HelveticaLTStd/normal/helveticaltstd-roman-webfont.eot');
+	src:	url('fonts/HelveticaLTStd/normal/helveticaltstd-roman-webfont-.eot#iefix') format('embedded-opentype'),
+			url('fonts/HelveticaLTStd/normal/helveticaltstd-roman-webfont.woff') format('woff'),
+			url('fonts/HelveticaLTStd/normal/helveticaltstd-roman-webfont.ttf') format('truetype'),
+			url('fonts/HelveticaLTStd/normal/helveticaltstd-roman-webfont.svg#HelveticaLTStdRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Helvetica;
+	src:	url('fonts/HelveticaLTStd/oblique/helveticaltstd-obl-webfont.eot');
+	src:	url('fonts/HelveticaLTStd/oblique/helveticaltstd-obl-webfont-.eot#iefix') format('embedded-opentype'),
+			url('fonts/HelveticaLTStd/oblique/helveticaltstd-obl-webfont.woff') format('woff'),
+			url('fonts/HelveticaLTStd/oblique/helveticaltstd-obl-webfont.ttf') format('truetype'),
+			url('fonts/HelveticaLTStd/oblique/helveticaltstd-obl-webfont.svg#HelveticaLTStdItalic') format('svg');
+	font-weight: normal;
+	font-style: oblique;
+}
+
+@font-face {
+	font-family: Helvetica;
+	src:	url('fonts/HelveticaLTStd/bold/helveticaltstd-bold-webfont.eot');
+	src:	url('fonts/HelveticaLTStd/bold/helveticaltstd-bold-webfont-.eot#iefix') format('embedded-opentype'),
+			url('fonts/HelveticaLTStd/bold/helveticaltstd-bold-webfont.woff') format('woff'),
+			url('fonts/HelveticaLTStd/bold/helveticaltstd-bold-webfont.ttf') format('truetype'),
+			url('fonts/HelveticaLTStd/bold/helveticaltstd-bold-webfont.svg#HelveticaLTStdBold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Helvetica;
+	src:	url('fonts/HelveticaLTStd/boldoblique/helveticaltstd-boldobl-webfont.eot');
+	src:	url('fonts/HelveticaLTStd/boldoblique/helveticaltstd-boldobl-webfont-.eot#iefix') format('embedded-opentype'),
+			url('fonts/HelveticaLTStd/boldoblique/helveticaltstd-boldobl-webfont.woff') format('woff'),
+			url('fonts/HelveticaLTStd/boldoblique/helveticaltstd-boldobl-webfont.ttf') format('truetype'),
+			url('fonts/HelveticaLTStd/boldoblique/helveticaltstd-boldobl-webfont.svg#HelveticaLTStdBoldItalic') format('svg');
+	font-weight: bold;
+	font-style: oblique;
+}
+/* Localized */
