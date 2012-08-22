@@ -25,14 +25,15 @@ $bottom: 3em;
 // number of modules across to calculate:
 $columns: 12;
 
-$text: #333333;
+$text: #333;
 $page: white;
-$body: #666666;
+$body: #eee;
 
 // FONTS
-$font: serif;
-$hed: sans-serif;
-$subhed: sans-serif;
+$font: Georgia, serif;
+$hed: SourceSansProBold, sans-serif;
+$subhed: SourceSansProSemibold, sans-serif;
+$aside: SourceSansProLight, sans-serif;
 
 // IMAGE/PAGE RATIOS
 // If you wish to scale images and have fixed page sizes image ratios are a must. This allows images sizes to be measured for Treesaver.

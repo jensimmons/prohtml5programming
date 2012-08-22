@@ -226,6 +226,102 @@ mark {
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'SourceSansProSemiboldItalic';
+  src: url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.svg#SourceSansProSemiboldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBold';
+  src: url("../fonts/source-sans/SourceSansPro-Bold-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.svg#SourceSansProBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBoldItalic';
+  src: url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBlack';
+  src: url("../fonts/source-sans/SourceSansPro-Black-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Black-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Black-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Black-webfont.svg#SourceSansProBlack") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBlackItalic';
+  src: url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.svg#SourceSansProBlackItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProExtraLight';
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.svg#SourceSansProExtraLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProExtraLightItalic';
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.svg#SourceSansProExtraLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProLight';
+  src: url("../fonts/source-sans/SourceSansPro-Light-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Light-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Light-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Light-webfont.svg#SourceSansProLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProLightItalic';
+  src: url("../fonts/source-sans/SourceSansPro-LightIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-LightIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.svg#SourceSansProLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProRegular';
+  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.svg#SourceSansProRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProItalic';
+  src: url("../fonts/source-sans/SourceSansPro-It-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-It-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-It-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-It-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-It-webfont.svg#SourceSansProItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProSemibold';
+  src: url("../fonts/source-sans/SourceSansPro-Semibold-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.svg#SourceSansProSemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* line 11, ../sass/_pages.scss */
 p {
   color: #333333;
@@ -246,13 +342,13 @@ p.caption {
 
 /* line 25, ../sass/_pages.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: SourceSansProSemibold, sans-serif;
+  font-weight: normal;
 }
 
 /* line 30, ../sass/_pages.scss */
 h1 {
-  font-family: sans-serif;
+  font-family: SourceSansProBold, sans-serif;
   font-size: 1.5em;
   line-height: 1em;
 }
@@ -262,6 +358,15 @@ h1 {
   margin: 1.5em;
   padding: 0 1.5em;
   background: white;
+}
+
+/* line 51, ../sass/_pages.scss */
+.runningtitle {
+  font-family: SourceSansProLight, sans-serif;
+}
+/* line 56, ../sass/_pages.scss */
+.runningtitle .section {
+  float: right;
 }
 
 /* line 7, ../sass/_chrome.scss */
@@ -277,18 +382,19 @@ nav {
   display: block;
   position: absolute;
   z-index: 1;
+  font-family: SourceSansProLight, sans-serif;
 }
 
-/* line 21, ../sass/_chrome.scss */
+/* line 22, ../sass/_chrome.scss */
 .sidebar .content, .menu .content {
   display: none;
 }
-/* line 25, ../sass/_chrome.scss */
+/* line 26, ../sass/_chrome.scss */
 .sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
   display: block;
 }
 
-/* line 33, ../sass/_chrome.scss */
+/* line 34, ../sass/_chrome.scss */
 .lightbox {
   position: fixed;
   overflow: hidden;
@@ -299,7 +405,7 @@ nav {
   z-index: 99;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 42, ../sass/_chrome.scss */
+/* line 43, ../sass/_chrome.scss */
 .lightbox .container {
   position: absolute;
   overflow: hidden;
@@ -958,9 +1064,9 @@ html.js .hidden, html.no-js .hidden {
 html {
   font-size: 16px;
   line-height: 1.5em;
-  font-family: serif;
+  font-family: Georgia, serif;
   color: #333333;
-  background-color: #666666;
+  background-color: #eeeeee;
 }
 
 /* line 161, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */

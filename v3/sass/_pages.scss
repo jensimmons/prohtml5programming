@@ -24,7 +24,7 @@ p {
 
 h1, h2, h3, h4 ,h5 ,h6 {
   font-family: $subhed;
-  font-weight: bold;
+  font-weight: normal;
   }
 
 h1 {
@@ -45,3 +45,15 @@ h1 {
 .department.grid {
   
   }
+  
+// Page edges
+
+.runningtitle {
+  font-family: $aside;
+  .publication {
+    
+  }
+  .section {
+    float: right;
+  }
+}
