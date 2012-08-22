@@ -1,0 +1,39 @@
+// CREDITS
+//  Thanks to Filipe Fortes and Bram Stein for Treesaver :: http://treesaverjs.com/
+//  Thanks to Tim Murtaugh and Michael Pick for HTML5 Reset :: http://html5reset.org/
+//
+//  Seasons is created and developed by Scott Kellum in collaboration with the Treesaver team :: http://treesaver.net/
+
+// This is a styling framework to be used with Treesaver
+//  It creates a flexable yet solid foundation for building templates.
+//
+// ** To run you need to have SASS installed: http://sass-lang.com/ **
+//  The, just watch the "sass" folder from the project directory.
+//  sass --watch sass:html/_/css
+
+// IMPORT TOOLS AND RESET:
+$reset: true;
+
+@import "seasons/tools";
+
+// Configuration:
+@import "config";
+
+// Pages:
+@import "pages";
+
+// Chrome:
+@import "chrome";
+
+// CORE TREESAVER FUNCTIONALITY:
+@import "seasons/core";
+
+// PLUGINS:
+@import "seasons/plugin/ad";
+
+//@import seasons/plugin/mobile
+//@import seasons/plugin/ipad
+@import "seasons/plugin/tablet-7-normalize";
+
+//@import seasons/plugin/tablet-7-template
+//@import seasons/plugin/no-treesaver

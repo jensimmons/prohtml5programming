@@ -1,0 +1,77 @@
+// CONFIGURATION //
+
+// BASE SIZE TO BE USED THROUGHOUT STYLES
+// This must be a fixed unit of measurement, usually correlating to your text size.
+$base-size: 16px;
+
+// FONT-SIZE
+$size: 1em;
+
+// LINE HEIGHT
+// Basing the modular scale off of ems for this. ms(n) refers to the position on a built-in modular scale where "n" is the position. However you can use any value you like.
+$line-height: 1.5em;
+
+// GRID MEASUREMENTS
+// Grid module measurements. See Mark Boulton’s write up on grids http://www.markboulton.co.uk/journal/comments/rethinking-css-grids
+$module-w: 4.5em;
+$module-h: $module-w;
+$gutter: 1.5em;
+
+// grid margins:
+$margin: $gutter;
+$top: 2em;
+$bottom: 3em;
+
+// number of modules across to calculate:
+$columns: 12;
+
+$text: #333333;
+$page: white;
+$body: #666666;
+
+// FONTS
+$font: serif;
+$hed: sans-serif;
+$subhed: sans-serif;
+
+// IMAGE/PAGE RATIOS
+// If you wish to scale images and have fixed page sizes image ratios are a must. This allows images sizes to be measured for Treesaver.
+// Image sizes still need to be hard coded for lightboxes.
+@mixin ratios {
+  @include ratio(16, 9);
+  @include ratio(4, 3);
+  @include ratio(5, 4);
+  @include ratio(1, 1);
+  @include ratio(4, 5);
+  @include ratio(3, 4);
+}
+
+// Debug tools adds element highlihgting using one-letter classes and mixins.
+// @include r, @include g, @include b, @include c, @include m, @include y
+// .r, .g, .b, .c, .m, .y
+// red, green, blue, cyan, magenta, yellow
+$debug: true;
+
+// EXTRAS (optional) //
+
+// Vertical grid
+//$vertical-grid: true // Compile vertical grid (true/false)
+//$rows: 20 // # of rows to calculate on the vertical grid
+
+// Scrollable figure styles
+//$scroll-support: false
+
+// Hyphenate paragraphs (via CSS3 hyphenation)
+//$hyphenate: false
+
+// Page Opacity (prev, next page at 50% opacity)
+//$page-opacity: false
+
+// Caption placement tools
+//$caption-placement: false
+
+// Fullbleed figure support
+//$fullbleed: false
+
+// Online/offline elements. The ability to show/hide based on network status.
+//$offline-elements: false
