@@ -322,6 +322,116 @@ mark {
   font-style: normal;
 }
 
+/* =============================================================================
+   Typography
+
+   To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+   so that the line height of our base font becomes the basic unit of vertical
+   measurement. We use multiples of that unit to set the top and bottom margins
+   for our block level elements and to set the line heights of any fonts.
+   For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+   ========================================================================== */
+/* line 72, ../sass/_typography.scss */
+body {
+  font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+}
+
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+/* line 81, ../sass/_typography.scss */
+h1 {
+  /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
+  font-size: 1.75em;
+  line-height: 1.71429em;
+  /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
+  margin-top: 0.85714em;
+  margin-bottom: 0.85714em;
+  font-weight: 300;
+}
+
+/* line 91, ../sass/_typography.scss */
+h2 {
+  font-size: 1.3125em;
+  line-height: 2.28571em;
+  margin-top: 1.14286em;
+  margin-bottom: 1.14286em;
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+/* line 99, ../sass/_typography.scss */
+h3 {
+  font-size: 1.02375em;
+  line-height: 1.4652em;
+  margin-top: 1.4652em;
+  margin-bottom: 1.4652em;
+  font-weight: 600;
+}
+
+/* line 106, ../sass/_typography.scss */
+h4 {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin-top: 1.71429em;
+  margin-bottom: 1.71429em;
+  font-weight: 600;
+}
+
+/* line 113, ../sass/_typography.scss */
+h5 {
+  font-size: 0.72625em;
+  line-height: 2.0654em;
+  margin-top: 2.0654em;
+  margin-bottom: 2.0654em;
+  font-weight: 400;
+}
+
+/* line 120, ../sass/_typography.scss */
+h6 {
+  font-size: 0.65625em;
+  line-height: 2.28571em;
+  margin-top: 2.28571em;
+  margin-bottom: 2.28571em;
+  font-weight: 400;
+}
+
+/* Thematic break */
+/* line 128, ../sass/_typography.scss */
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
+  margin: 1.5em 0;
+}
+
+/* line 135, ../sass/_typography.scss */
+blockquote {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 0.75em 30px;
+}
+
+/* line 141, ../sass/_typography.scss */
+p,
+pre {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 0em 0;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/* line 154, ../sass/_typography.scss */
+dl,
+menu,
+ol,
+ul,
+.item-list ul {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: 1.5em 0;
+}
+
 /* line 11, ../sass/_pages.scss */
 p {
   color: #333333;
@@ -342,31 +452,42 @@ p.caption {
 
 /* line 25, ../sass/_pages.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: SourceSansProSemibold, sans-serif;
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-weight: normal;
 }
 
 /* line 30, ../sass/_pages.scss */
 h1 {
-  font-family: SourceSansProBold, sans-serif;
+  font-family: SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 1.5em;
   line-height: 1em;
 }
 
 /* line 37, ../sass/_pages.scss */
 .grid {
-  margin: 1.5em;
-  padding: 0 1.5em;
+  margin: 2.5em;
+  padding: 1em 2.5em 0;
   background: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* line 51, ../sass/_pages.scss */
+/* line 53, ../sass/_pages.scss */
 .runningtitle {
-  font-family: SourceSansProLight, sans-serif;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 11.62px;
+  color: #777;
+  letter-spacing: 0.03em;
 }
-/* line 56, ../sass/_pages.scss */
+/* line 61, ../sass/_pages.scss */
 .runningtitle .section {
   float: right;
+}
+
+/* line 66, ../sass/_pages.scss */
+.cover {
+  background: #000;
 }
 
 /* line 7, ../sass/_chrome.scss */
@@ -382,7 +503,7 @@ nav {
   display: block;
   position: absolute;
   z-index: 1;
-  font-family: SourceSansProLight, sans-serif;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
 /* line 22, ../sass/_chrome.scss */
@@ -417,6 +538,54 @@ nav {
   background: black;
 }
 
+/* line 3, ../sass/_temp.scss */
+.menu {
+  display: none;
+}
+
+/* line 7, ../sass/_temp.scss */
+nav {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  font-family: Helvetica, Sans-Serif;
+}
+/* line 16, ../sass/_temp.scss */
+nav .contents {
+  margin: 0 auto;
+  position: relative;
+}
+/* line 20, ../sass/_temp.scss */
+nav .next {
+  position: absolute;
+  right: 0;
+  top: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+/* line 27, ../sass/_temp.scss */
+nav .prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 34, ../sass/_temp.scss */
+.pagenumbers {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w1, .container.w1 [ratio="16x9"] img {
   width: 4.5em;
@@ -425,68 +594,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w2, .container.w2 [ratio="16x9"] img {
-  width: 10.5em;
+  width: 11.5em;
   height: 6em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w3, .container.w3 [ratio="16x9"] img {
-  width: 16.5em;
-  height: 9em;
+  width: 18.5em;
+  height: 10em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w4, .container.w4 [ratio="16x9"] img {
-  width: 22.5em;
-  height: 13em;
+  width: 25.5em;
+  height: 14em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w5, .container.w5 [ratio="16x9"] img {
-  width: 28.5em;
-  height: 16em;
+  width: 32.5em;
+  height: 18em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w6, .container.w6 [ratio="16x9"] img {
-  width: 34.5em;
-  height: 19em;
+  width: 39.5em;
+  height: 22em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w7, .container.w7 [ratio="16x9"] img {
-  width: 40.5em;
-  height: 23em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r16x9.w8, .container.w8 [ratio="16x9"] img {
   width: 46.5em;
   height: 26em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r16x9.w9, .container.w9 [ratio="16x9"] img {
-  width: 52.5em;
+.r16x9.w8, .container.w8 [ratio="16x9"] img {
+  width: 53.5em;
   height: 30em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r16x9.w9, .container.w9 [ratio="16x9"] img {
+  width: 60.5em;
+  height: 34em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w10, .container.w10 [ratio="16x9"] img {
-  width: 58.5em;
-  height: 33em;
+  width: 67.5em;
+  height: 38em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w11, .container.w11 [ratio="16x9"] img {
-  width: 64.5em;
-  height: 36em;
+  width: 74.5em;
+  height: 42em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r16x9.w12, .container.w12 [ratio="16x9"] img {
-  width: 70.5em;
-  height: 40em;
+  width: 81.5em;
+  height: 46em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -497,68 +666,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w2, .container.w2 [ratio="4x3"] img {
-  width: 10.5em;
-  height: 8em;
+  width: 11.5em;
+  height: 9em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w3, .container.w3 [ratio="4x3"] img {
-  width: 16.5em;
-  height: 12em;
+  width: 18.5em;
+  height: 14em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w4, .container.w4 [ratio="4x3"] img {
-  width: 22.5em;
-  height: 17em;
+  width: 25.5em;
+  height: 19em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w5, .container.w5 [ratio="4x3"] img {
-  width: 28.5em;
-  height: 21em;
+  width: 32.5em;
+  height: 24em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w6, .container.w6 [ratio="4x3"] img {
-  width: 34.5em;
-  height: 26em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r4x3.w7, .container.w7 [ratio="4x3"] img {
-  width: 40.5em;
+  width: 39.5em;
   height: 30em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r4x3.w8, .container.w8 [ratio="4x3"] img {
+.r4x3.w7, .container.w7 [ratio="4x3"] img {
   width: 46.5em;
   height: 35em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r4x3.w8, .container.w8 [ratio="4x3"] img {
+  width: 53.5em;
+  height: 40em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w9, .container.w9 [ratio="4x3"] img {
-  width: 52.5em;
-  height: 39em;
+  width: 60.5em;
+  height: 45em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w10, .container.w10 [ratio="4x3"] img {
-  width: 58.5em;
-  height: 44em;
+  width: 67.5em;
+  height: 51em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w11, .container.w11 [ratio="4x3"] img {
-  width: 64.5em;
-  height: 48em;
+  width: 74.5em;
+  height: 56em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x3.w12, .container.w12 [ratio="4x3"] img {
-  width: 70.5em;
-  height: 53em;
+  width: 81.5em;
+  height: 61em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -569,68 +738,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w2, .container.w2 [ratio="5x4"] img {
-  width: 10.5em;
-  height: 8em;
+  width: 11.5em;
+  height: 9em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w3, .container.w3 [ratio="5x4"] img {
-  width: 16.5em;
-  height: 13em;
+  width: 18.5em;
+  height: 15em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w4, .container.w4 [ratio="5x4"] img {
-  width: 22.5em;
-  height: 18em;
+  width: 25.5em;
+  height: 20em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w5, .container.w5 [ratio="5x4"] img {
-  width: 28.5em;
-  height: 23em;
+  width: 32.5em;
+  height: 26em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w6, .container.w6 [ratio="5x4"] img {
-  width: 34.5em;
-  height: 28em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r5x4.w7, .container.w7 [ratio="5x4"] img {
-  width: 40.5em;
+  width: 39.5em;
   height: 32em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r5x4.w8, .container.w8 [ratio="5x4"] img {
+.r5x4.w7, .container.w7 [ratio="5x4"] img {
   width: 46.5em;
   height: 37em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r5x4.w8, .container.w8 [ratio="5x4"] img {
+  width: 53.5em;
+  height: 43em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w9, .container.w9 [ratio="5x4"] img {
-  width: 52.5em;
-  height: 42em;
+  width: 60.5em;
+  height: 48em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w10, .container.w10 [ratio="5x4"] img {
-  width: 58.5em;
-  height: 47em;
+  width: 67.5em;
+  height: 54em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w11, .container.w11 [ratio="5x4"] img {
-  width: 64.5em;
-  height: 52em;
+  width: 74.5em;
+  height: 60em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r5x4.w12, .container.w12 [ratio="5x4"] img {
-  width: 70.5em;
-  height: 56em;
+  width: 81.5em;
+  height: 65em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -641,68 +810,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w2, .container.w2 [ratio="1x1"] img {
-  width: 10.5em;
-  height: 11em;
+  width: 11.5em;
+  height: 12em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w3, .container.w3 [ratio="1x1"] img {
-  width: 16.5em;
-  height: 17em;
+  width: 18.5em;
+  height: 19em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w4, .container.w4 [ratio="1x1"] img {
-  width: 22.5em;
-  height: 23em;
+  width: 25.5em;
+  height: 26em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w5, .container.w5 [ratio="1x1"] img {
-  width: 28.5em;
-  height: 29em;
+  width: 32.5em;
+  height: 33em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w6, .container.w6 [ratio="1x1"] img {
-  width: 34.5em;
-  height: 35em;
+  width: 39.5em;
+  height: 40em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w7, .container.w7 [ratio="1x1"] img {
-  width: 40.5em;
-  height: 41em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r1x1.w8, .container.w8 [ratio="1x1"] img {
   width: 46.5em;
   height: 47em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r1x1.w8, .container.w8 [ratio="1x1"] img {
+  width: 53.5em;
+  height: 54em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w9, .container.w9 [ratio="1x1"] img {
-  width: 52.5em;
-  height: 53em;
+  width: 60.5em;
+  height: 61em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w10, .container.w10 [ratio="1x1"] img {
-  width: 58.5em;
-  height: 59em;
+  width: 67.5em;
+  height: 68em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w11, .container.w11 [ratio="1x1"] img {
-  width: 64.5em;
-  height: 65em;
+  width: 74.5em;
+  height: 75em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r1x1.w12, .container.w12 [ratio="1x1"] img {
-  width: 70.5em;
-  height: 71em;
+  width: 81.5em;
+  height: 82em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -713,68 +882,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w2, .container.w2 [ratio="4x5"] img {
-  width: 10.5em;
-  height: 13em;
+  width: 11.5em;
+  height: 14em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w3, .container.w3 [ratio="4x5"] img {
-  width: 16.5em;
-  height: 21em;
+  width: 18.5em;
+  height: 23em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w4, .container.w4 [ratio="4x5"] img {
-  width: 22.5em;
-  height: 28em;
+  width: 25.5em;
+  height: 32em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w5, .container.w5 [ratio="4x5"] img {
-  width: 28.5em;
-  height: 36em;
+  width: 32.5em;
+  height: 41em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w6, .container.w6 [ratio="4x5"] img {
-  width: 34.5em;
-  height: 43em;
+  width: 39.5em;
+  height: 49em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w7, .container.w7 [ratio="4x5"] img {
-  width: 40.5em;
-  height: 51em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r4x5.w8, .container.w8 [ratio="4x5"] img {
   width: 46.5em;
   height: 58em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r4x5.w8, .container.w8 [ratio="4x5"] img {
+  width: 53.5em;
+  height: 67em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w9, .container.w9 [ratio="4x5"] img {
-  width: 52.5em;
-  height: 66em;
+  width: 60.5em;
+  height: 76em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w10, .container.w10 [ratio="4x5"] img {
-  width: 58.5em;
-  height: 73em;
+  width: 67.5em;
+  height: 84em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w11, .container.w11 [ratio="4x5"] img {
-  width: 64.5em;
-  height: 81em;
+  width: 74.5em;
+  height: 93em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r4x5.w12, .container.w12 [ratio="4x5"] img {
-  width: 70.5em;
-  height: 88em;
+  width: 81.5em;
+  height: 102em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -785,68 +954,68 @@ nav {
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w2, .container.w2 [ratio="3x4"] img {
-  width: 10.5em;
-  height: 14em;
+  width: 11.5em;
+  height: 15em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w3, .container.w3 [ratio="3x4"] img {
-  width: 16.5em;
-  height: 22em;
+  width: 18.5em;
+  height: 25em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w4, .container.w4 [ratio="3x4"] img {
-  width: 22.5em;
-  height: 30em;
+  width: 25.5em;
+  height: 34em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w5, .container.w5 [ratio="3x4"] img {
-  width: 28.5em;
-  height: 38em;
+  width: 32.5em;
+  height: 43em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w6, .container.w6 [ratio="3x4"] img {
-  width: 34.5em;
-  height: 46em;
+  width: 39.5em;
+  height: 53em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w7, .container.w7 [ratio="3x4"] img {
-  width: 40.5em;
-  height: 54em;
-}
-
-/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.r3x4.w8, .container.w8 [ratio="3x4"] img {
   width: 46.5em;
   height: 62em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.r3x4.w8, .container.w8 [ratio="3x4"] img {
+  width: 53.5em;
+  height: 71em;
+}
+
+/* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w9, .container.w9 [ratio="3x4"] img {
-  width: 52.5em;
-  height: 70em;
+  width: 60.5em;
+  height: 81em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w10, .container.w10 [ratio="3x4"] img {
-  width: 58.5em;
-  height: 78em;
+  width: 67.5em;
+  height: 90em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w11, .container.w11 [ratio="3x4"] img {
-  width: 64.5em;
-  height: 86em;
+  width: 74.5em;
+  height: 99em;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .r3x4.w12, .container.w12 [ratio="3x4"] img {
-  width: 70.5em;
-  height: 94em;
+  width: 81.5em;
+  height: 109em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -856,57 +1025,57 @@ nav {
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c2 {
-  margin-left: 6em;
+  margin-left: 7em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c3 {
-  margin-left: 12em;
+  margin-left: 14em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c4 {
-  margin-left: 18em;
+  margin-left: 21em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c5 {
-  margin-left: 24em;
+  margin-left: 28em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c6 {
-  margin-left: 30em;
+  margin-left: 35em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c7 {
-  margin-left: 36em;
-}
-
-/* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.c8 {
   margin-left: 42em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.c8 {
+  margin-left: 49em;
+}
+
+/* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c9 {
-  margin-left: 48em;
+  margin-left: 56em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c10 {
-  margin-left: 54em;
+  margin-left: 63em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c11 {
-  margin-left: 60em;
+  margin-left: 70em;
 }
 
 /* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .c12 {
-  margin-left: 66em;
+  margin-left: 77em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -916,62 +1085,62 @@ nav {
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w2 {
-  width: 10.5em;
+  width: 11.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w3 {
-  width: 16.5em;
+  width: 18.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w4 {
-  width: 22.5em;
+  width: 25.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w5 {
-  width: 28.5em;
+  width: 32.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w6 {
-  width: 34.5em;
+  width: 39.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w7 {
-  width: 40.5em;
-}
-
-/* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
-.w8 {
   width: 46.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
+.w8 {
+  width: 53.5em;
+}
+
+/* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w9 {
-  width: 52.5em;
+  width: 60.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w10 {
-  width: 58.5em;
+  width: 67.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w11 {
-  width: 64.5em;
+  width: 74.5em;
 }
 
 /* line 48, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .w12 {
-  width: 70.5em;
+  width: 81.5em;
 }
 
 /* line 72, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .column {
-  width: 16.5em;
+  width: 18.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -1062,9 +1231,9 @@ html.js .hidden, html.no-js .hidden {
 
 /* line 155, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 html {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5em;
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
   color: #333333;
   background-color: #eeeeee;
 }
@@ -1084,8 +1253,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
   hyphens: auto;
 }
 
@@ -1093,8 +1260,8 @@ p {
 .column, .container {
   position: absolute;
   overflow: hidden;
-  top: 2em;
-  bottom: 3em;
+  top: 4em;
+  bottom: 4em;
 }
 
 /* line 184, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -1187,8 +1354,8 @@ figure {
 
 /* line 245, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
 .fill .caption {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
 }
 
 /* line 250, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -1305,75 +1472,15 @@ html.no-offline [data-requires~="offline"] {
   background: #ffff99 !important;
 }
 
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w1 {
-  width: 100px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w2 {
-  width: 200px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w3 {
-  width: 300px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w4 {
-  width: 400px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w5 {
-  width: 500px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w6 {
-  width: 600px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w7 {
-  width: 700px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w8 {
-  width: 800px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w9 {
-  width: 900px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w10 {
-  width: 1000px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w11 {
-  width: 1100px;
-}
-
-/* line 4, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_ad.sass */
-.ad.grid.w12 {
-  width: 1200px;
-}
-
 @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (orientation: portrait) {
   /* line 12, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_tablet-7-normalize.sass */
   html {
-    font-size: 19.2px;
+    font-size: 16.8px;
   }
 }
 @media screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 683px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 400px) and (orientation: portrait) {
   /* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/plugin/_tablet-7-normalize.sass */
   html {
-    font-size: 12.8px;
+    font-size: 11.2px;
   }
 }

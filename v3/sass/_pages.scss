@@ -36,8 +36,10 @@ h1 {
 // Styles here apply to every grid in your publication
 .grid {
   margin: $gutter;
-  padding: 0 $margin;
+  padding: 1em $margin 0;
   background: $page;
+  @include box-shadow (0 2px 4px rgba(0, 0, 0, 0.3));
+
   }
 
 // GRID STYLES
@@ -49,11 +51,18 @@ h1 {
 // Page edges
 
 .runningtitle {
-  font-family: $aside;
+  font-family: $sourcesans;
+  font-size: 0.83 * $base-size;
+  color: #777;
+  letter-spacing: 0.03em;
   .publication {
     
   }
   .section {
     float: right;
   }
+}
+
+.cover {
+  background: #000;
 }

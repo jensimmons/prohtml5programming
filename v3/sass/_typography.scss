@@ -1,0 +1,157 @@
+/* =============================================================================
+   Typography
+
+   To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+   so that the line height of our base font becomes the basic unit of vertical
+   measurement. We use multiples of that unit to set the top and bottom margins
+   for our block level elements and to set the line heights of any fonts.
+   For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+   ========================================================================== */
+
+
+//-----------------------------------------------------------------------
+// Typography
+//-----------------------------------------------------------------------
+// BASE SIZE TO BE USED THROUGHOUT STYLES
+// This must be a fixed unit of measurement, usually correlating to your text size.
+$base-size: 14px;
+
+// FONT-SIZE
+$size: 1em;
+
+// LINE HEIGHT
+// Basing the modular scale off of ems for this. ms(n) refers to the position on a built-in modular scale where "n" is the position. However you can use any value you like.
+$line-height: 1.5em;
+
+
+//-----------------------------------------------------------------------
+// Typography sizing
+//-----------------------------------------------------------------------
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+//$base-font-size:   14px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+$h1-font-size: 2    * $base-size;
+$h2-font-size: 1.5  * $base-size;
+$h3-font-size: 1.17 * $base-size;
+$h4-font-size: 1    * $base-size;
+$h5-font-size: 0.83 * $base-size;
+$h6-font-size: 0.75 * $base-size;
+
+// The amount lists, blockquotes and comments are indented.
+$indent-amount: 30px;
+
+//-----------------------------------------------------------------------
+// Font stacks
+//-----------------------------------------------------------------------
+
+$serif:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+$sans-serif:    SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+
+$hed:           SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$subhed:        SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+
+$sourcesans:    SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$georgia:       Georgia, "Times New Roman", "DejaVu Serif", serif;
+$font:          Georgia, "Times New Roman", "DejaVu Serif", serif;
+$helvetica:     "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$courier:       "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $georgia; // The font family set on the html element.
+$font-body:        $georgia;
+$font-monospace:   $courier;
+
+
+body {
+  font-family: $base-font-family;
+}
+
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+
+h1 {
+  /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
+  @include adjust-font-size-to( $h1-font-size );
+
+  /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
+  @include leader(1, $h1-font-size);
+  @include trailer(1, $h1-font-size);
+  font-weight: 300;
+}
+
+h2 {
+  @include adjust-font-size-to( $h2-font-size );
+  @include leader(1, $h2-font-size);
+  @include trailer(1, $h2-font-size);
+  line-height: 1.2em;
+  font-weight: 600;
+}
+
+h3 {
+  @include adjust-font-size-to( $h3-font-size );
+  @include leader(1, $h3-font-size);
+  @include trailer(1, $h3-font-size);
+  font-weight: 600;
+}
+
+h4 {
+  @include adjust-font-size-to( $h4-font-size );
+  @include leader(1, $h4-font-size);
+  @include trailer(1, $h4-font-size);
+  font-weight: 600;
+}
+
+h5 {
+  @include adjust-font-size-to( $h5-font-size );
+  @include leader(1, $h5-font-size);
+  @include trailer(1, $h5-font-size);
+  font-weight: 400;
+}
+
+h6 {
+  @include adjust-font-size-to( $h6-font-size );
+  @include leader(1, $h6-font-size);
+  @include trailer(1, $h6-font-size);
+  font-weight: 400;
+}
+
+/* Thematic break */
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
+  margin: rhythm(1) 0;
+}
+
+blockquote {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(0.5) $indent-amount;
+}
+
+p,
+pre {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(0) 0;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+dl,
+menu,
+ol,
+ul,
+.item-list ul /* Drupal override */ {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(1) 0;
+}

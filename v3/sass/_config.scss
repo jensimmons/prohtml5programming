@@ -1,39 +1,28 @@
-// CONFIGURATION //
 
-// BASE SIZE TO BE USED THROUGHOUT STYLES
-// This must be a fixed unit of measurement, usually correlating to your text size.
-$base-size: 16px;
-
-// FONT-SIZE
-$size: 1em;
-
-// LINE HEIGHT
-// Basing the modular scale off of ems for this. ms(n) refers to the position on a built-in modular scale where "n" is the position. However you can use any value you like.
-$line-height: 1.5em;
-
-// GRID MEASUREMENTS
-// Grid module measurements. See Mark Boulton’s write up on grids http://www.markboulton.co.uk/journal/comments/rethinking-css-grids
+//-----------------------------------------------------------------------
+// Grid Measurements
+//-----------------------------------------------------------------------
+// Grid module measurements. 
 $module-w: 4.5em;
 $module-h: $module-w;
-$gutter: 1.5em;
+$gutter: 2.5em;
 
 // grid margins:
 $margin: $gutter;
-$top: 2em;
-$bottom: 3em;
+$top: 4em;
+$bottom: 4em;
 
 // number of modules across to calculate:
 $columns: 12;
 
 $text: #333;
-$page: white;
+$page: #fff;
 $body: #eee;
 
-// FONTS
-$font: Georgia, serif;
-$hed: SourceSansProBold, sans-serif;
-$subhed: SourceSansProSemibold, sans-serif;
-$aside: SourceSansProLight, sans-serif;
+
+//-----------------------------------------------------------------------
+// Treesaver Things
+//-----------------------------------------------------------------------
 
 // IMAGE/PAGE RATIOS
 // If you wish to scale images and have fixed page sizes image ratios are a must. This allows images sizes to be measured for Treesaver.
