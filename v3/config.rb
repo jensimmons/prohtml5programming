@@ -1,5 +1,4 @@
 require 'seasons'
-require 'modular-scale'
 # Require any additional compass plugins here.
 
 
