@@ -331,7 +331,7 @@ mark {
    for our block level elements and to set the line heights of any fonts.
    For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
    ========================================================================== */
-/* line 72, ../sass/_typography.scss */
+/* line 78, ../sass/_typography.scss */
 body {
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
 }
@@ -340,7 +340,19 @@ body {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
-/* line 81, ../sass/_typography.scss */
+/* line 87, ../sass/_typography.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+
+/* line 92, ../sass/_typography.scss */
+h1 {
+  font-family: SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 98, ../sass/_typography.scss */
 h1 {
   /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
   font-size: 1.75em;
@@ -348,57 +360,62 @@ h1 {
   /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
   margin-top: 0.85714em;
   margin-bottom: 0.85714em;
-  font-weight: 300;
+  font-weight: 500;
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-/* line 91, ../sass/_typography.scss */
+/* line 109, ../sass/_typography.scss */
 h2 {
-  font-size: 1.3125em;
-  line-height: 2.28571em;
-  margin-top: 1.14286em;
-  margin-bottom: 1.14286em;
+  font-size: 1.61875em;
+  line-height: 1.85328em;
+  margin-top: 0.92664em;
+  margin-bottom: 0.92664em;
   line-height: 1.2em;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-/* line 99, ../sass/_typography.scss */
+/* line 118, ../sass/_typography.scss */
 h3 {
-  font-size: 1.02375em;
-  line-height: 1.4652em;
-  margin-top: 1.4652em;
-  margin-bottom: 1.4652em;
-  font-weight: 600;
+  font-size: 1.4875em;
+  line-height: 2.01681em;
+  margin-top: 1.0084em;
+  margin-bottom: 1.0084em;
+  font-weight: 500;
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-/* line 106, ../sass/_typography.scss */
+/* line 126, ../sass/_typography.scss */
 h4 {
+  font-size: 1.225em;
+  line-height: 1.22449em;
+  margin-top: 1.22449em;
+  margin-bottom: 1.22449em;
+  font-weight: 500;
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+
+/* line 134, ../sass/_typography.scss */
+h5 {
   font-size: 0.875em;
   line-height: 1.71429em;
   margin-top: 1.71429em;
   margin-bottom: 1.71429em;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-/* line 113, ../sass/_typography.scss */
-h5 {
+/* line 142, ../sass/_typography.scss */
+h6 {
   font-size: 0.72625em;
   line-height: 2.0654em;
   margin-top: 2.0654em;
   margin-bottom: 2.0654em;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-/* line 120, ../sass/_typography.scss */
-h6 {
-  font-size: 0.65625em;
-  line-height: 2.28571em;
-  margin-top: 2.28571em;
-  margin-bottom: 2.28571em;
-  font-weight: 400;
-}
-
-/* Thematic break */
-/* line 128, ../sass/_typography.scss */
+/* line 150, ../sass/_typography.scss */
 hr {
   height: 1px;
   border: 1px solid #666;
@@ -406,23 +423,27 @@ hr {
   margin: 1.5em 0;
 }
 
-/* line 135, ../sass/_typography.scss */
+/* line 158, ../sass/_typography.scss */
+p,
+pre {
+  margin: 0em 0;
+}
+
+/* line 162, ../sass/_typography.scss */
+figcaption {
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+
+/* line 166, ../sass/_typography.scss */
 blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 0.75em 30px;
 }
 
-/* line 141, ../sass/_typography.scss */
-p,
-pre {
-  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
-  margin: 0em 0;
-}
-
 /* =============================================================================
    Lists
    ========================================================================== */
-/* line 154, ../sass/_typography.scss */
+/* line 180, ../sass/_typography.scss */
 dl,
 menu,
 ol,
@@ -430,6 +451,83 @@ ul,
 .item-list ul {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 1.5em 0;
+}
+
+/* line 7, ../sass/_chrome.scss */
+.viewer {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 14, ../sass/_chrome.scss */
+nav {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+/* line 26, ../sass/_chrome.scss */
+nav .contents {
+  margin: 0 auto;
+  position: relative;
+}
+/* line 30, ../sass/_chrome.scss */
+nav .next {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 37, ../sass/_chrome.scss */
+nav .prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 45, ../sass/_chrome.scss */
+.sidebar .content, .menu .content {
+  display: none;
+}
+/* line 49, ../sass/_chrome.scss */
+.sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
+  display: block;
+}
+
+/* line 55, ../sass/_chrome.scss */
+.pagenumbers {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* line 65, ../sass/_chrome.scss */
+.lightbox {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 74, ../sass/_chrome.scss */
+.lightbox .container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  background: black;
 }
 
 /* line 11, ../sass/_pages.scss */
@@ -451,19 +549,41 @@ p.caption {
 }
 
 /* line 25, ../sass/_pages.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-  font-weight: normal;
+canvas {
+  margin: 1.5em 0;
 }
 
-/* line 30, ../sass/_pages.scss */
-h1 {
-  font-family: SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-  font-size: 1.5em;
-  line-height: 1em;
+/* line 33, ../sass/_pages.scss */
+hgroup {
+  border-bottom: 1px solid #000;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+}
+/* line 38, ../sass/_pages.scss */
+hgroup h1,
+hgroup h2 {
+  margin: 0;
+  line-height: 1.4em;
+  text-align: center;
+}
+/* line 43, ../sass/_pages.scss */
+hgroup h1:first-child {
+  font-size: 3em;
 }
 
-/* line 37, ../sass/_pages.scss */
+/* line 52, ../sass/_pages.scss */
+figure {
+  border: 1px solid black;
+  padding: 1em;
+}
+
+/* line 56, ../sass/_pages.scss */
+pre {
+  background: #eee;
+  padding: 1em;
+}
+
+/* line 66, ../sass/_pages.scss */
 .grid {
   margin: 2.5em;
   padding: 1em 2.5em 0;
@@ -473,117 +593,21 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* line 53, ../sass/_pages.scss */
+/* line 85, ../sass/_pages.scss */
 .runningtitle {
-  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 11.62px;
   color: #777;
   letter-spacing: 0.03em;
 }
-/* line 61, ../sass/_pages.scss */
+/* line 93, ../sass/_pages.scss */
 .runningtitle .section {
   float: right;
 }
 
-/* line 66, ../sass/_pages.scss */
+/* line 98, ../sass/_pages.scss */
 .cover {
   background: #000;
-}
-
-/* line 7, ../sass/_chrome.scss */
-.viewer {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-/* line 14, ../sass/_chrome.scss */
-nav {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-}
-
-/* line 22, ../sass/_chrome.scss */
-.sidebar .content, .menu .content {
-  display: none;
-}
-/* line 26, ../sass/_chrome.scss */
-.sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
-  display: block;
-}
-
-/* line 34, ../sass/_chrome.scss */
-.lightbox {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  background: rgba(0, 0, 0, 0.5);
-}
-/* line 43, ../sass/_chrome.scss */
-.lightbox .container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 8px;
-  background: black;
-}
-
-/* line 3, ../sass/_temp.scss */
-.menu {
-  display: none;
-}
-
-/* line 7, ../sass/_temp.scss */
-nav {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
-  font-family: Helvetica, Sans-Serif;
-}
-/* line 16, ../sass/_temp.scss */
-nav .contents {
-  margin: 0 auto;
-  position: relative;
-}
-/* line 20, ../sass/_temp.scss */
-nav .next {
-  position: absolute;
-  right: 0;
-  top: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-}
-/* line 27, ../sass/_temp.scss */
-nav .prev {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* line 34, ../sass/_temp.scss */
-.pagenumbers {
-  display: block;
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  font-weight: bold;
 }
 
 /* line 34, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */
@@ -1261,7 +1285,7 @@ p {
   position: absolute;
   overflow: hidden;
   top: 4em;
-  bottom: 4em;
+  bottom: 3em;
 }
 
 /* line 184, ../../../../../../../Library/Ruby/Gems/1.8/gems/seasons-0.9.3.beta16/stylesheets/seasons/_core.sass */

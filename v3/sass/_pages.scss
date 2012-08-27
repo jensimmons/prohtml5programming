@@ -22,17 +22,46 @@ p {
     }
   }
 
-h1, h2, h3, h4 ,h5 ,h6 {
-  font-family: $subhed;
-  font-weight: normal;
-  }
+canvas {
+  margin: rhythm(1) 0;
+}
 
-h1 {
-  font-family: $hed;
-  @include solid($line-height);
-  }
+//-----------------------------------------------------------------------
+// Temporary
+//-----------------------------------------------------------------------
 
+hgroup {
+  border-bottom: 1px solid #000;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  h1, 
+  h2 {
+    margin: 0;
+    line-height: 1.4em;
+    text-align: center;
+  }
+  h1:first-child {
+    font-size: 3em;
+  }
+}
+
+//-----------------------------------------------------------------------
+// Figures
+//-----------------------------------------------------------------------
+
+figure {
+  border: 1px solid black;
+  padding: 1em;
+}
+pre {
+  background: #eee;
+  padding: 1em;
+}
+
+//-----------------------------------------------------------------------
 // GENERAL GRID STYLES
+//-----------------------------------------------------------------------
+
 // Styles here apply to every grid in your publication
 .grid {
   margin: $gutter;
@@ -46,8 +75,11 @@ h1 {
 // Styles to specify grids in your publication, for example the department grid.
 .department.grid {
   
-  }
-  
+}
+.title {
+//  @include w6;
+} 
+ 
 // Page edges
 
 .runningtitle {

@@ -12,22 +12,53 @@
   }
 
 nav {
-  display: block;
+//  display: block;
+//  z-index: 1;
+
   position: absolute;
-  z-index: 1;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
   font-family: $sourcesans;
+  
+  .contents {
+    margin: 0 auto;
+    position: relative;
   }
+  .next {
+    position: absolute;
+    right: 0;
+    top: 0;
+//    @include element-invisible;
+    
+  }
+  .prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
 
 .sidebar, .menu {
   .content {
     display: none;
-    }
+  }
   &.sidebar-active, &.menu-active {
     .content {
       display: block;
-      }
     }
   }
+}
+
+.pagenumbers {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
 
 // LIGHTBOX
 
@@ -49,5 +80,5 @@ nav {
     left: 0;
     padding: 8px;
     background: black;
-    }
   }
+}

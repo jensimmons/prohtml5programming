@@ -37,11 +37,11 @@ $line-height: 1.5em;
 $base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
 
 $h1-font-size: 2    * $base-size;
-$h2-font-size: 1.5  * $base-size;
-$h3-font-size: 1.17 * $base-size;
-$h4-font-size: 1    * $base-size;
-$h5-font-size: 0.83 * $base-size;
-$h6-font-size: 0.75 * $base-size;
+$h2-font-size: 1.85  * $base-size;
+$h3-font-size: 1.7 * $base-size;
+$h4-font-size: 1.4    * $base-size;
+$h5-font-size: 1 * $base-size;
+$h6-font-size: 0.83 * $base-size;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
@@ -50,17 +50,23 @@ $indent-amount: 30px;
 // Font stacks
 //-----------------------------------------------------------------------
 
-$serif:         Georgia, "Times New Roman", "DejaVu Serif", serif;
-$sans-serif:    SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$font:              Georgia, "Times New Roman", "DejaVu Serif", serif;
+$serif:             Georgia, "Times New Roman", "DejaVu Serif", serif;
+$sans-serif:        SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 
-$hed:           SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$subhed:        SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$hed:               SourceSansProBold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$subhed:            SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 
-$sourcesans:    SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$georgia:       Georgia, "Times New Roman", "DejaVu Serif", serif;
-$font:          Georgia, "Times New Roman", "DejaVu Serif", serif;
-$helvetica:     "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$courier:       "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+$sourcesans:        SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+
+$sourcesans-bold:   SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$sourcesans:        SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$sourcesans-light:  SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+
+
+$georgia:           Georgia, "Times New Roman", "DejaVu Serif", serif;
+$helvetica:         "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$courier:           "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 
 // Now create some variables for the font stacks we want to use on this site.
@@ -77,6 +83,17 @@ body {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
+ 
+h1, h2, h3, h4 ,h5 ,h6 {
+  font-family: $sourcesans-bold;
+  
+}
+
+h1 {
+  font-family: $hed;
+  @include solid($line-height);
+  }
+ 
 
 h1 {
   /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
@@ -85,7 +102,8 @@ h1 {
   /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
   @include leader(1, $h1-font-size);
   @include trailer(1, $h1-font-size);
-  font-weight: 300;
+  font-weight: 500;
+  font-family: $sourcesans-bold;
 }
 
 h2 {
@@ -93,38 +111,42 @@ h2 {
   @include leader(1, $h2-font-size);
   @include trailer(1, $h2-font-size);
   line-height: 1.2em;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: $sourcesans-bold;
 }
 
 h3 {
   @include adjust-font-size-to( $h3-font-size );
   @include leader(1, $h3-font-size);
   @include trailer(1, $h3-font-size);
-  font-weight: 600;
+  font-weight: 500;
+  font-family: $sourcesans-bold;
 }
 
 h4 {
   @include adjust-font-size-to( $h4-font-size );
   @include leader(1, $h4-font-size);
   @include trailer(1, $h4-font-size);
-  font-weight: 600;
+  font-weight: 500;
+  font-family: $sourcesans-bold;
 }
 
 h5 {
   @include adjust-font-size-to( $h5-font-size );
   @include leader(1, $h5-font-size);
   @include trailer(1, $h5-font-size);
-  font-weight: 400;
+  font-weight: 500;
+  font-family: $sourcesans;
 }
 
 h6 {
   @include adjust-font-size-to( $h6-font-size );
   @include leader(1, $h6-font-size);
   @include trailer(1, $h6-font-size);
-  font-weight: 400;
+  font-weight: 500;
+  font-family: $sourcesans-light;
 }
 
-/* Thematic break */
 hr {
   height: 1px;
   border: 1px solid #666;
@@ -132,16 +154,20 @@ hr {
   margin: rhythm(1) 0;
 }
 
+p,
+pre {
+  margin: rhythm(0) 0;
+}
+
+figcaption {
+  font-family: $sourcesans-light;
+}
+
 blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: rhythm(0.5) $indent-amount;
 }
 
-p,
-pre {
-  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
-  margin: rhythm(0) 0;
-}
 
 /* =============================================================================
    Lists
