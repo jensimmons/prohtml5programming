@@ -85,7 +85,8 @@
   document.getElementById(&#x201C;support&#x201D;).innerHTML =
     "HTML5 Canvas is supported in your browser.";
 } catch (e) {
-  document.getElementById(&#x201C;support&#x201D;).innerHTML = &#x201C;HTML5 Canvas is not supported in your browser.&#x201D;;
+  document.getElementById(&#x201C;support&#x201D;).innerHTML = 
+    &#x201C;HTML5 Canvas is not supported in your browser.&#x201D;;
 }</code></pre>
 </figure>
 
@@ -523,89 +524,46 @@ context.lineWidth = 20;
 context.stroke();</pre></code>
 </figure>
 
-<p>As you can see, we are still calling <code>stroke()</code> for our path. However, this time we have set a <code>strokeStyle</code> property<IndexTerm>
-<Primary>strokeStyle property</Primary></IndexTerm> on the context first, passing in the result of a call to <code>context.createPattern</code>. Oh, and once again the image needs to be previously loaded in order for the canvas to perform the operation. The second argument is a repetition pattern that can be one of the choices shown in Table 2-2.<Table ID="Tab2_2" Float="Yes">
-<Caption Language="En">
-<CaptionNumber>Table 2-2</CaptionNumber>
-<CaptionContent>
-<Simplep>Repetition Patterns</Simplep>
-</CaptionContent>
-</Caption>
-<tgroup cols="2" align="left">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<thead>
-<row>
-<entry colname="c1">
-<Simplep>Repeat</Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Value</Simplep>
-</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry colname="c1">
-<Simplep><code>repeat</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>(Default) The image is repeated in both directions</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>repeat-x</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>The image is repeated only in the X dimension</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>repeat-y</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>The image is repeated only in the Y dimension</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>no-repeat</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>The image is displayed once and not repeated</Simplep>
-</entry>
-</row>
-</tbody>
-</tgroup>
-</Table>
-</p>
-<p>Figure 2-14 shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.
-<Figure ID="Fig14_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-14</CaptionNumber>
-<CaptionContent>
-<Simplep>A trail with a repeating <IndexTerm>
-<Primary>background patterns</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>background patterns</Secondary></IndexTerm> background pattern</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO14_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig14_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec22_2">
+<p>As you can see, we are still calling <code>stroke()</code> for our path. However, this time we have set a <code>strokeStyle</code> property on the context first, passing in the result of a call to <code>context.createPattern</code>. Oh, and once again the image needs to be previously loaded in order for the canvas to perform the operation. The second argument is a repetition pattern that can be one of the choices shown in Table 2-2.</p>
+
+<figure>
+  <figcaption>Table 2-1. Repetition Patterns</figcaption>
+  <table>
+    <tr>
+      <th>Repeat</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td><code>repeat</code></td>
+      <td>(Default) The image is repeated in both directions</td>
+    </tr>
+    <tr>
+      <td><code>repeat-x</code></td>
+      <td>The image is repeated only in the X dimension</td>
+    </tr>
+    <tr>
+      <td><code>repeat-y</code></td>
+      <td>The image is repeated only in the Y dimension</td>
+    </tr>
+    <tr>
+      <td><code>no-repeat</code></td>
+      <td>The image is displayed once and not repeated</td>
+    </tr>
+  </table>
+</figure>
+
+<p>Figure 2-14 shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-14. A trail with a repeating background pattern</figcaption>
+</figure>
+
 <h3>Scaling Canvas Objects</h3>
-<p>What kind of forest <IndexTerm>
-<Primary>scaling canvas objects</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>scaling canvas objects</Secondary></IndexTerm>has only one tree? Let&#x2019;s fix that right away. To make this a little easier, we will adjust our code sample to isolate the tree drawing operations to a single routine, called <code>drawTree</code>, as shown in Listing 2-19.</p>
-<aside>
-<h3>Listing 2-19.</h3>
-<p>Function to Draw the Tree Object</p>
-</aside>
+<p>What kind of forest has only one tree? Let&#x2019;s fix that right away. To make this a little easier, we will adjust our code sample to isolate the tree drawing operations to a single routine, called <code>drawTree</code>, as shown in Listing 2-19.</p>
+
+<figure>
+<figcaption>Listing 2-19. Function to Draw the Tree Object</figcaption>
 <pre><code>// Move tree drawing into its own function for reuse
 function drawTree(context) {
   var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
@@ -614,423 +572,287 @@ function drawTree(context) {
   trunkGradient.addColorStop(1, '#552200');
   context.fillStyle = trunkGradient;
   context.fillRect(-5, -50, 10, 50);
+  
   var canopyShadow = context.createLinearGradient(0, -50, 0, 0);
   canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
   canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
   context.fillStyle = canopyShadow;
   context.fillRect(-5, -50, 10, 50);
+  
   createCanopyPath(context);
+  
   context.lineWidth = 4;
   context.lineJoin = 'round';
   context.strokeStyle = '#663300';
   context.stroke();
+  
   context.fillStyle = '#339900';
   context.fill();
-}</p>
-<p>As you can see, the <code>drawTree</code> function contains all the code we previously created to draw the canopy, trunk, and trunk gradient. Now we will use one of the transformation routines&#x2014; <code>context.scale</code><IndexTerm>
-<Primary>context.scale function</Primary></IndexTerm>&#x2014;to draw a second tree at a new location and with a larger size, as <IndexTerm>
-<Primary>scaling canvas objects</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>scaling canvas objects</Secondary></IndexTerm>shown in Listing 2-20.</p>
-<aside>
-<h3>Listing 2-20.</h3>
-<p>Drawing the Tree Objects</p>
-</aside>
+}</pre></code>
+</figure>
+
+<p>As you can see, the <code>drawTree</code> function contains all the code we previously created to draw the canopy, trunk, and trunk gradient. Now we will use one of the transformation routines&#x2014; <code>context.scale</code>&#x2014;to draw a second tree at a new location and with a larger size, as shown in Listing 2-20.</p>
+
+<figure>
+<figcaption>Listing 2-20. Drawing the Tree Objects</figcaption>
 <pre><code>// Draw the first tree at X=130, Y=250
 context.save();
 context.translate(130, 250);
 drawTree(context);
 context.restore();
+
 // Draw the second tree at X=260, Y=500
 context.save();
 context.translate(260, 500);
+
 // Scale this tree twice normal in both dimensions
 context.scale(2, 2);
 drawTree(context);
-context.restore();</p>
-<p>The <code>scale</code> function<IndexTerm>
-<Primary>scale function</Primary></IndexTerm> takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2-15.
-<Figure ID="Fig15_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-15</CaptionNumber>
-<CaptionContent>
-<Simplep>Tree with a<IndexTerm>
-<Primary>scaling canvas objects</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>scaling canvas objects</Secondary></IndexTerm> larger scale</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO15_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig15_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+context.restore();</pre></code>
+</figure>
+
+<p>The <code>scale</code> function takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2-15.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-15. Tree with a larger scale</figcaption>
+</figure>
+
 <aside>
 <h3>Always perform shape and path routines at the origin</h3>
-<p><Emphasis Type="Bold">Brian says (and really means it, this time)</i>: &#x201C;This example illustrates one of the reasons why it is a good idea to perform shape and path routines at the origin; then translate them when complete, as we do here in our code. The reason is that transforms such as <code>scale</code> and <code>rotate</code> operate from the origin.</p>
+<p><b>Brian says (and really means it, this time)</b>: &#x201C;This example illustrates one of the reasons why it is a good idea to perform shape and path routines at the origin; then translate them when complete, as we do here in our code. The reason is that transforms such as <code>scale</code> and <code>rotate</code> operate from the origin.</p>
 <p>If you perform a <code>rotate</code> transform to a shape drawn off origin, a <code>rotate</code> transform will rotate the shape around the origin rather than rotating in place. Similarly, if you performed a scale operation to shapes before translating them to their proper position, all locations for path coordinates would also be multiplied by the scaling factor. Depending on the scale factor applied, this new location could even be off the canvas altogether, leaving you wondering why your scale operation just &#x2018;deleted&#x2019; the image.&#x201D;</p>
 </aside>
-</Section2>
-<Section2 ID="Sec23_2">
+
 <h3>Using Canvas Transforms</h3>
-<p>Transform operations are <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using transformations</Secondary></IndexTerm>not limited to scales and translates. It is also possible to rotate the drawing context using the <code>context.rotate(angle)</code> function<IndexTerm>
-<Primary>context.rotate(angle) function</Primary></IndexTerm> or even to modify the underlying transform directly for more advanced operations such as shearing of the rendered paths. If you wanted to rotate the display of an image, you would merely need to call the series of operations shown in Listing 2-21.</p>
-<aside>
-<h3>Listing 2-21.</h3>
-<p>A Rotated Image</p>
-</aside>
+<p>Transform operations are not limited to scales and translates. It is also possible to rotate the drawing context using the <code>context.rotate(angle)</code> function or even to modify the underlying transform directly for more advanced operations such as shearing of the rendered paths. If you wanted to rotate the display of an image, you would merely need to call the series of operations shown in Listing 2-21.</p>
+
+<figure>
+<figcaption>Listing 2-21. A Rotated Image</figcaption>
 <pre><code>context.save();
 // rotation angle is specified in radians
 context.rotate(1.57);
 context.drawImage(myImage, 0, 0, 100, 100);
-context.restore();</p>
+
+context.restore();</pre></code>
+</figure>
+
 <p>In Listing 2-22, however, we will show how you can apply an arbitrary transform to the path coordinates to radically alter the display of our existing tree path in order to create a shadow effect.</p>
-<aside>
-<h3>Listing 2-22.</h3>
-<p>Using a Transform</p>
-</aside>
+
+<figure>
+<figcaption>Listing 2-22. Using a Transform</figcaption>
 <pre><code>// Create a 3 stop gradient horizontally across the trunk
 // Save the current canvas state for later
 context.save();
+
 // Create a slanted tree as the shadow by applying
 //  a shear transform, changing X values to increase
 //  as Y values increase
 // With this transform applied, all coordinates are
 //  multiplied by the matrix.
 context.transform(1, 0,-0.5, 1, 0, 0);
+
 // Shrink the shadow down to 60% height in the Y dimension
 context.scale(1, 0.6);
+
 // Set the tree fill to be black, but at only 20% alpha
 context.fillStyle = 'rgba(0, 0, 0, 0.2)';
 context.fillRect(-5, -50, 10, 50);
+
 // Redraw the tree with the shadow effects applied
 createCanopyPath(context);
 context.fill();
+
 // Restore the canvas state
-context.restore();</p>
-<p>Modifying the context transform directly as we&#x2019;ve done here is something you should attempt only if you are familiar with the matrix mathematics <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using transformations</Secondary></IndexTerm>underpinning two-dimensional drawing systems. If you check the math behind this transform, you will see that we are shifting the X values of our drawing by a factor of the corresponding Y values in order to shear the gray tree being used as a shadow. Then, by applying a scale factor of 60%, the sheared tree is decreased in size.</p>
-<p>Note that the sheared &#x201C;shadow&#x201D; tree is rendered first, so that the actual tree appears above<IndexTerm>
-<Primary>Z-order</Primary></IndexTerm> it in <i>Z-order</i> (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure 2-16.
-<Figure ID="Fig16_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-16</CaptionNumber>
-<CaptionContent>
-<Simplep>Trees with <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using transformations</Secondary></IndexTerm> transformed shadows</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO16_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig16_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec24_2">
+context.restore();</pre></code>
+</figure>
+
+<p>Modifying the context transform directly as we&#x2019;ve done here is something you should attempt only if you are familiar with the matrix mathematics underpinning two-dimensional drawing systems. If you check the math behind this transform, you will see that we are shifting the X values of our drawing by a factor of the corresponding Y values in order to shear the gray tree being used as a shadow. Then, by applying a scale factor of 60%, the sheared tree is decreased in size.</p>
+<p>Note that the sheared &#x201C;shadow&#x201D; tree is rendered first, so that the actual tree appears above it in <i>Z-order</i> (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure 2-16.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-16. Trees with transformed shadows</figcaption>
+</figure>
+
 <h3>Using Canvas Text</h3>
-<p>As we approach the end<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using text</Secondary></IndexTerm> of our trail creation, let&#x2019;s demonstrate the power of the Canvas API text functions by adding a fancy title to the top of our display. It is important to note that text rendering on a canvas is treated the same way as any other path object: text can be stroked or filled, and all rendering transformations and styles can apply to text just as they do to any other shape.</p>
-<p>As you might expect, <IndexTerm>
-<Primary>fillText function</Primary></IndexTerm><IndexTerm>
-<Primary>strokeText function</Primary></IndexTerm>the text drawing routines consist of two functions on the context object:<Unol Mark="Bullet">
+<p>As we approach the end of our trail creation, let&#x2019;s demonstrate the power of the Canvas API text functions by adding a fancy title to the top of our display. It is important to note that text rendering on a canvas is treated the same way as any other path object: text can be stroked or filled, and all rendering transformations and styles can apply to text just as they do to any other shape.</p>
+<p>As you might expect, the text drawing routines consist of two functions on the context object:</p>
+<ul>
+<li><code>fillText (text, x, y, maxwidth)</code></li>
+<li><code>strokeText (text, x, y, maxwidth)</code></li>
+</ul>
 
-<p><code>fillText (text, x, y, maxwidth)</code></p>
-
-
-<p><code>strokeText (text, x, y, maxwidth)</code></p>
-
-</Unol>
-</p>
 <p>Both functions take the text as well as the location at which it should be drawn. Optionally, a <code>maxwidth</code> argument can be provided to constrain the size of the text by automatically shrinking the font to fit the given size. In addition, a <code>measureText</code> function is available to return a metrics object containing the width of the given text should it be rendered using the current context settings.</p>
-<p>As is the case with all browser text display, the actual appearance of the text is highly configurable using context properties that are similar to their CSS counterparts, as shown in Table 2-3.
-<Table ID="Tab3_2" Float="Yes">
-<Caption Language="En">
-<CaptionNumber>Table 2-3</CaptionNumber>
-<CaptionContent>
-<Simplep>Possible Settings for Background Pattern Repetition</Simplep>
-</CaptionContent>
-</Caption>
-<tgroup cols="3" align="left">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<colspec colnum="3" colname="c3" align="left"/>
-<thead>
-<row>
-<entry colname="c1">
-<Simplep>Property</Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Values</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Note</Simplep>
-</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry colname="c1">
-<Simplep><code>font</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>CSS font string</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Example: italic Arial, sans-serif</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>textAlign</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>start, end, left, right, center</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Defaults to start</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>textBaseline</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>top, hanging, middle, alphabetic, ideographic, bottom</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Defaults to alphabetic</Simplep>
-</entry>
-</row>
-</tbody>
-</tgroup>
-</Table>
-</p>
-<p>All these context properties <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using text</Secondary></IndexTerm>can be set to alter the context or accessed to query the current values. In Listing 2-23, we will create a large text message with the font face <code>Impact</code> and fill it with the background pattern of our existing bark image. In order to center the text across the top of our canvas, we will declare a maximum width and a <code>center</code> alignment.</p>
-<aside>
-<h3>Listing 2-23.</h3>
-<p>Using Canvas Text</p>
-</aside>
+<p>As is the case with all browser text display, the actual appearance of the text is highly configurable using context properties that are similar to their CSS counterparts, as shown in Table 2-2.</p>
+
+
+<figure>
+  <figcaption>Table 2-2. Possible Settings for Background Pattern Repetition</figcaption>
+  <table>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Note</th>
+    </tr>
+    <tr>
+      <td><code>font</code></td>
+      <td>CSS font string</td>
+      <td>Example: italic Arial, sans-serif</td>
+    </tr>
+    <tr>
+      <td><code>textAlign</code></td>
+      <td>start, end, left, right, center</td>
+      <td>Defaults to start</td>
+    </tr>
+    <tr>
+      <td><code>textBaseline</code></td>
+      <td>top, hanging, middle, alphabetic, ideographic, bottom</td>
+      <td>Defaults to alphabetic</td>
+    </tr>
+  </table>
+</figure>
+
+<p>All these context properties can be set to alter the context or accessed to query the current values. In Listing 2-23, we will create a large text message with the font face <code>Impact</code> and fill it with the background pattern of our existing bark image. In order to center the text across the top of our canvas, we will declare a maximum width and a <code>center</code> alignment.</p>
+
+<figure>
+<figcaption>Listing 2-23. Using Canvas Text</figcaption>
 <pre><code>// Draw title text on our canvas
 context.save();
+
 // The font will be 60 pixel, Impact face
 context.font = "60px impact";
+
 // Use a brown fill for our text
 context.fillStyle = '#996600';
 // Text can be aligned when displayed
 context.textAlign = 'center';
+
 // Draw the text in the middle of the canvas with a max
 //  width set to center properly
 context.fillText('Happy Trails!', 200, 60, 400);
-context.restore();</p>
-<p>As you can see from the result in Figure 2-17, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.
-<Figure ID="Fig17_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-17</CaptionNumber>
-<CaptionContent>
-<Simplep>Background pattern-filled text<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using text</Secondary></IndexTerm>
-</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO17_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig17_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec25_2">
+context.restore();</pre></code>
+</figure>
+
+<p>As you can see from the result in Figure 2-17, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-17. Background pattern-filled text</figcaption>
+</figure>
+
 <h3>Applying Shadows</h3>
-<p>Finally, we will use the<IndexTerm>
-<Primary>shadows</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using shadows</Secondary></IndexTerm> built-in canvas shadow API to add a blurred shadow effect to our new text display. Like many graphical effects, shadows are best applied in moderation, even though the Canvas API allows you to apply shadows to any operation we have already covered.</p>
-<p>Once again, shadows are controlled by a few global <code>context</code> properties, as shown in Table 2-4.
-<Table ID="Tab4_2" Float="Yes">
-<Caption Language="En">
-<CaptionNumber>Table 2-4</CaptionNumber>
-<CaptionContent>
-<Simplep>Shadow Properties</Simplep>
-</CaptionContent>
-</Caption>
-<tgroup cols="3" align="left">
-<colspec colnum="1" colname="c1" align="left"/>
-<colspec colnum="2" colname="c2" align="left"/>
-<colspec colnum="3" colname="c3" align="left"/>
-<thead>
-<row>
-<entry colname="c1">
-<Simplep>Property</Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Values</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Note</Simplep>
-</entry>
-</row>
-</thead>
-<tbody>
-<row>
-<entry colname="c1">
-<Simplep><code>shadowColor</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Any CSS color</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Can include an alpha component</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>shadowOffsetX</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Pixel count</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Positive values move shadow to the right, negative left</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>shadowOffsetY</code></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Pixel count</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Positive values move shadow down, negative up</Simplep>
-</entry>
-</row>
-<row>
-<entry colname="c1">
-<Simplep><code>shadowBlur</code><IndexTerm><Primary>shadowBlur property</Primary></IndexTerm></Simplep>
-</entry>
-<entry colname="c2">
-<Simplep>Gaussian blur</Simplep>
-</entry>
-<entry colname="c3">
-<Simplep>Higher values cause blurrier shadow edges</Simplep>
-</entry>
-</row>
-</tbody>
-</tgroup>
-</Table>
-</p>
+<p>Finally, we will use the built-in canvas shadow API to add a blurred shadow effect to our new text display. Like many graphical effects, shadows are best applied in moderation, even though the Canvas API allows you to apply shadows to any operation we have already covered.</p>
+<p>Once again, shadows are controlled by a few global <code>context</code> properties, as shown in Table 2-3.
+
+<figure>
+  <figcaption>Table 2-3. Shadow Properties</figcaption>
+  <table>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+      <th>Note</th>
+    </tr>
+    <tr>
+      <td><code>shadowColor</code></td>
+      <td>Any CSS color</td>
+      <td>Can include an alpha component</td>
+    </tr>
+    <tr>
+      <td><code>shadowOffsetX</code></td>
+      <td>Pixel count</td>
+      <td>Positive values move shadow to the right, negative left</td>
+    </tr>
+    <tr>
+      <td><code>shadowOffsetY</code></td>
+      <td>Pixel count</td>
+      <td>Positive values move shadow down, negative up</td>
+    </tr>
+    <tr>
+      <td><code>shadowBlur</code></td>
+      <td>Gaussian blur</td>
+      <td>Higher values cause blurrier shadow edges</td>
+    </tr>
+  </table>
+</figure>
+
 <p>The shadow effect is triggered on any path, text, or image render if the <code>shadowColor</code> and at least one of the other properties is set to a nondefault value. Listing 2-24 shows how we can apply a shadow to our new trails title text.</p>
-<aside>
-<h3>Listing 2-24.</h3>
-<p>Applying a Shadow</p>
-</aside>
+
+<figure>
+<figcaption>Listing 2-24. Applying a Shadow</figcaption>
 <pre><code>// Set some shadow on our text, black with 20% alpha
 context.shadowColor = 'rgba(0, 0, 0, 0.2)';
+
 // Move the shadow to the right 15 pixels, up 10
 context.shadowOffsetX = 15;
 context.shadowOffsetY = -10;
+
 // Blur the shadow slightly
-context.shadowBlur = 2;</p>
-<p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2-18 shows <IndexTerm>
-<Primary>shadows</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using shadows</Secondary></IndexTerm>the newly applied shadows.
-<Figure ID="Fig18_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-18</CaptionNumber>
-<CaptionContent>
-<Simplep>Title with shadowed text</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO18_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig18_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-<p>As you can see, the shadow generated by CSS is positional only and not in sync with the transformational shadow we created for our tree. For the sake<IndexTerm>
-<Primary>shadows</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using shadows</Secondary></IndexTerm> of consistency, you should probably only use one approach to drawing shadows in a given canvas scene.</p>
-</Section2>
-<Section2 ID="Sec26_2">
+context.shadowBlur = 2;</pre></code>
+</figure>
+
+<p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2-18 shows the newly applied shadows.</p>
+
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-18. Title with shadowed text</figcaption>
+</figure>
+
+<p>As you can see, the shadow generated by CSS is positional only and not in sync with the transformational shadow we created for our tree. For the sake of consistency, you should probably only use one approach to drawing shadows in a given canvas scene.</p>
+
 <h3>Working with Pixel Data</h3>
-<p>One of the most<IndexTerm>
-<Primary>pixel data</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm> useful&#x2014;albeit nonobvious&#x2014;aspects of the Canvas API is the ability for developers to easily get access to the underlying pixels in the canvas. This access works in both directions: it is trivial to get access to the pixel values as a numerical array, and it is equally easy to modify those values and apply them back to the canvas. In fact, it is entirely possible to manipulate the canvas entirely through the pixel value calls and forgo the rendering calls we&#x2019;ve discussed in this chapter. This is made possible by the existence of three functions on the <code>context</code> API.</p>
-<p>First up is <code>context.getImageData(sx, sy, sw, sh)</code><IndexTerm>
-<Primary>context.getImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>getImageData function</Primary></IndexTerm>. This function returns a representation of the current state of the canvas display as a collection of integers. Specifically, it returns an object containing three properties:<Unol Mark="Bullet">
+<p>One of the most useful&#x2014;albeit nonobvious&#x2014;aspects of the Canvas API is the ability for developers to easily get access to the underlying pixels in the canvas. This access works in both directions: it is trivial to get access to the pixel values as a numerical array, and it is equally easy to modify those values and apply them back to the canvas. In fact, it is entirely possible to manipulate the canvas entirely through the pixel value calls and forgo the rendering calls we&#x2019;ve discussed in this chapter. This is made possible by the existence of three functions on the <code>context</code> API.</p>
+<p>First up is <code>context.getImageData(sx, sy, sw, sh)</code>. This function returns a representation of the current state of the canvas display as a collection of integers. Specifically, it returns an object containing three properties:</p>
 
-<p><code>width</code>: The number of pixels in each row of the pixel data</p>
-
-
-<p><code>height</code>: The number of pixels in each column of the pixel data<IndexTerm>
-<Primary>pixel data</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>
-</p>
-
-
-<p><code>data</code>: A one-dimensional array containing the actual RGBA values for each pixel retrieved from the canvas. This array contains four values for each pixel&#x2014;a red, green, blue, and alpha component&#x2014;each with a value from 0 to 255. Therefore, each pixel retrieved from the canvas becomes four integer values in the data array. The data array is populated by pixels from left to right and top to bottom (for example, across the first row, then across the second row, and so on), as shown in Figure 2-19.
-</p>
+<ul>
+<li><code>width</code>: The number of pixels in each row of the pixel data</li>
+<li><code>height</code>: The number of pixels in each column of the pixel data</li>
+<li><code>data</code>: A one-dimensional array containing the actual RGBA values for each pixel retrieved from the canvas. This array contains four values for each pixel&#x2014;a red, green, blue, and alpha component&#x2014;each with a value from 0 to 255. Therefore, each pixel retrieved from the canvas becomes four integer values in the data array. The data array is populated by pixels from left to right and top to bottom (for example, across the first row, then across the second row, and so on), as shown in Figure 2-19.</li>
+</ul>
 
 <figure>
 <img src="images/ch2/fig2-19.jpg"/>
 <figcaption>Figure 2-19. Pixel data and the internal data structure that represents it</figcaption>
 </figure>
 
-<p>The data returned by the call to <code>getImageData</code> is limited to the region defined by the four pmeters. Only canvas pixels contained in the <IndexTerm>
-<Primary>pixel data</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>rectangular region surrounded by the source <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code> pmeters will be retrieved. Therefore, to access all pixel values as data, you should pass in <code>getImageData(0, 0, canvas.width, canvas.height)</code>.</p>
+<p>The data returned by the call to <code>getImageData</code> is limited to the region defined by the four parameters. Only canvas pixels contained in the rectangular region surrounded by the source <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code> parameters will be retrieved. Therefore, to access all pixel values as data, you should pass in <code>getImageData(0, 0, canvas.width, canvas.height)</code>.</p>
 <p>Because there are four image data values representing each pixel, it can be a little tricky to calculate exactly which index represents the values for a given pixel. The formula is as follows.</p>
-<p>For any pixel at coordinate (x,y) in a canvas <IndexTerm>
-<Primary>context.getImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>getImageData function</Primary></IndexTerm>with a given width and height, you can locate the component values:<Unol Mark="Bullet">
+<p>For any pixel at coordinate (x,y) in a canvas with a given width and height, you can locate the component values:</p>
 
-<p><Emphasis Type="Bold">Red component</i>: ((width * y) + x) * 4</p>
+<ul>
+<li><b>Red component</b>: ((width * y) + x) * 4</li>
+<li><b>Green component</b>: ((width * y) + x) * 4 + 1</li>
+<li><b>Blue component</b>: ((width * y) + x) * 4 + 2</li>
+<li><b>Alpha component</b>: ((width * y) + x) * 4 + 3</li>
+</ul>
 
-
-<p><Emphasis Type="Bold">Green component</i>: ((width * y) + x) * 4 + 1</p>
-
-
-<p><Emphasis Type="Bold">Blue component</i>: ((width * y) + x) * 4 + 2</p>
-
-
-<p><Emphasis Type="Bold">Alpha component</i>: ((width * y) + x) * 4 + 3</p>
-
-</Unol>
-</p>
-<p>Once you have access to the object with image data, it is quite easy to modify the pixel values in the data array mathematically, because they are each simply integers from 0 to 255. Changing the red, green, blue, or alpha values for one or more pixels makes it easy to update the canvas display by using the second function: <code>context.putImageData</code><IndexTerm>
-<Primary>context.putImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>putImageData function</Primary></IndexTerm>(imagedata, dx, dy).</p>
-<p><code>putImageData</code> allows you to pass in a set of image data in the same format as it was originally retrieved; that&#x2019;s quite handy because you can modify the values the canvas originally gave you and put them back. Once this function is called, the canvas will immediately update to reflect the new values of the pixels you passed in as the image data. The <code>dx</code> and <code>dy</code> pmeters allow you to specify an offset for where to start applying your data array into the existing canvas, should you choose to use one.</p>
-<p>Finally, if you want to start from scratch with a set of blank canvas data, you can call <code>context.createImageData</code><IndexTerm>
-<Primary>context.createImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>createImageData function</Primary></IndexTerm>(sw, sh) to create a new set of image data tied to the canvas object. This set of data can be programmatically changed as before, even<IndexTerm>
-<Primary>pixel data</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm> though it does not represent the current state of the canvas when retrieved.</p>
+<p>Once you have access to the object with image data, it is quite easy to modify the pixel values in the data array mathematically, because they are each simply integers from 0 to 255. Changing the red, green, blue, or alpha values for one or more pixels makes it easy to update the canvas display by using the second function: <code>context.putImageData</code> (imagedata, dx, dy).</p>
+<p><code>putImageData</code> allows you to pass in a set of image data in the same format as it was originally retrieved; that&#x2019;s quite handy because you can modify the values the canvas originally gave you and put them back. Once this function is called, the canvas will immediately update to reflect the new values of the pixels you passed in as the image data. The <code>dx</code> and <code>dy</code> parameters allow you to specify an offset for where to start applying your data array into the existing canvas, should you choose to use one.</p>
+<p>Finally, if you want to start from scratch with a set of blank canvas data, you can call <code>context.createImageData</code> (sw, sh) to create a new set of image data tied to the canvas object. This set of data can be programmatically changed as before, even though it does not represent the current state of the canvas when retrieved.</p>
 <p>There is yet another way to get data out of a canvas: the <code>canvas.toDataURL</code> API. This function gives you a programmatic way to retrieve the current rendering data of a canvas in a text format, but in this case the format is a standard representation of the data that browsers can interpret as images.</p>
-<p>A data URL is a string containing the data of an image&#x2014;such as a PNG&#x2014;that a browser can display just like a normal image file. The format of a data URL is best illustrated with an example:
-data:image/png;base64, WCAYAAABkY9jZxn&#x2026;</p>
+<p>A data URL is a string containing the data of an image&#x2014;such as a PNG&#x2014;that a browser can display just like a normal image file. The format of a data URL is best illustrated with an example:</p>
+<p><code>data:image/png;base64, WCAYAAABkY9jZxn&#x2026;</code></p>
 <p>This example shows that the format is the string <code>data:</code> followed by a MIME type (such as <code>image/png</code>), followed by a flag indicating whether or not the data is encoded in base64 format, and then the text representing the data itself.</p>
 <p>Don&#x2019;t worry about the format, as you won&#x2019;t be generating it yourself. The important point is that with a simple call, you can get the content of a canvas delivered to you in one of these special URLs. When you call <code>canvas.toDataURL(type)</code>, you can pass in a type of image you would like the canvas data generated in, such as <code>image/png</code> (the default) or <code>image/jpeg</code>. The data URL returned to you can be used as the source of image elements in a page or CSS styles, as shown in Listing 2-25.</p>
-<aside>
-<h3>Listing 2-25.</h3>
-<p>Creating an Image from a Canvas</p>
-</aside>
+
+<figure>
+<figcaption>Listing 2-25. Creating an Image from a Canvas</figcaption>
 <pre><code>var myCanvas = document.getElementById("myCanvas");
+
 // draw operations into the canvas&#x2026;
 // get the canvas data as a data URL
 var canvasData = myCanvas.toDataURL();
+
 // set the data as the source of a new image
 var img = new Image();
-img.src = canvasData;</p>
-<p>You don&#x2019;t have to use a data URL right away. You could even store the URL in your browser&#x2019;s local storage for later retrieval and manipulation. Browser storage will be covered later in this book.<IndexTerm>
-<Primary>pixel data</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>
-</p>
-</Section2>
-<Section2 ID="Sec27_2">
+img.src = canvasData;</pre></code>
+</figure>
+
+<p>You don&#x2019;t have to use a data URL right away. You could even store the URL in your browser&#x2019;s local storage for later retrieval and manipulation. Browser storage will be covered later in this book.</p>
+
 <h3>Implementing Canvas Security</h3>
-<p>There is an important <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>canvas security</Secondary></IndexTerm><IndexTerm>
-<Primary>security, canvas</Primary></IndexTerm>caveat to using pixel manipulation, as described in the previous section. Although most developers would use pixel manipulation for legitimate means, it is quite possible that the ability to fetch and update data from a canvas could be used for nefarious purposes. For this reason, the concept of <IndexTerm>
-<Primary>origin-clean canvas</Primary></IndexTerm>an <i>origin-clean</i> canvas was specified, so that canvases that are <i>tainted</i> with images from origins other than the source of the containing page cannot have their data retrieved.</p>
+<p>There is an important caveat to using pixel manipulation, as described in the previous section. Although most developers would use pixel manipulation for legitimate means, it is quite possible that the ability to fetch and update data from a canvas could be used for nefarious purposes. For this reason, the concept of an <i>origin-clean</i> canvas was specified, so that canvases that are <i>tainted</i> with images from origins other than the source of the containing page cannot have their data retrieved.</p>
 <p>As shown in Figure 2-20, if a page served up from <code>http://www.example.com</code> contains a <code>canvas</code> element, it is entirely possible that the code in the page could try to render an image from <code>http://www.remote.com</code> inside the canvas. After all, it is perfectly acceptable to render images from remote sites inside any given web page.</p>
 
 <figure>
@@ -1039,128 +861,117 @@ img.src = canvasData;</p>
 </figure>
 
 <p>However, before the arrival of the Canvas API, it was not possible to programmatically retrieve the pixel values of a downloaded image. Private images from other sites could be displayed in a page but not read or copied. Allowing scripts to read image data from other origins would effectively share users' photographs and other sensitive online image file with the entire web.</p>
-<p>In order to prevent this, any canvas that contains images rendered from remote origins will throw a security exception if the <code>getImageData</code> or <code>toDataURL</code> functions<IndexTerm>
-<Primary>getImageData function</Primary></IndexTerm> are called. It is perfectly acceptable to render remote images into a canvas from another origin as long as you (or any other scriptwriter) do not attempt to fetch the data from that canvas after it has been tainted. Be aware of this<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>canvas security</Secondary></IndexTerm><IndexTerm>
-<Primary>security, canvas</Primary></IndexTerm> limitation and practice safe rendering.</p>
-</Section2>
-</Section1>
-<Section1 ID="Sec28_2">
-<h3>Building an Application with HTML5 Canvas</h3>
-<p>There are many different <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>application possibilities for using the Canvas API: graphs, charts, image editing, and so on. However, one of the most intriguing uses for the canvas is to modify or overlay existing content. One popular type of overlay is known as a <IndexTerm>
-<Primary>heatmaps</Primary></IndexTerm>heatmap. Although the name implies a temperature measurement, the heat in this case can refer to any level of measurable activity. Areas on the map with high levels of activity are colored as hot (for example, red, yellow, or white). Areas with less activity show no color change at all, or minimal blacks and grays.</p>
+<p>In order to prevent this, any canvas that contains images rendered from remote origins will throw a security exception if the <code>getImageData</code> or <code>toDataURL</code> functions are called. It is perfectly acceptable to render remote images into a canvas from another origin as long as you (or any other scriptwriter) do not attempt to fetch the data from that canvas after it has been tainted. Be aware of this limitation and practice safe rendering.</p>
+
+<h2>Building an Application with HTML5 Canvas</h2>
+<p>There are many different application possibilities for using the Canvas API: graphs, charts, image editing, and so on. However, one of the most intriguing uses for the canvas is to modify or overlay existing content. One popular type of overlay is known as a heatmap. Although the name implies a temperature measurement, the heat in this case can refer to any level of measurable activity. Areas on the map with high levels of activity are colored as hot (for example, red, yellow, or white). Areas with less activity show no color change at all, or minimal blacks and grays.</p>
 <p>For example, a heatmap can be used to indicate traffic on a city map, or storm activity on a global map. And situations such as these are easy to implement in HTML5 by combining a canvas display with an underlying map source. Essentially, the canvas can be used to overlay the map and draw the heat levels based on the appropriate activity data.</p>
 <p>Let&#x2019;s build a simple heatmap using the capabilities we learned about in the Canvas API. In this case, our heat data source will be not external data, but the movement of our mouse across the map. Moving the mouse over a portion of the map will cause the heat to increase, and holding the mouse at a given position will rapidly increase the temperature to maximum levels. We can overlay such a heatmap display(shown in Figure 2-21) on a nondescript terrain map, just to provide a sample case.
-<Figure ID="Fig21_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-21</CaptionNumber>
-<CaptionContent>
-<Simplep>The heatmap application</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO21_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig21_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-<p>Now that you&#x2019;ve seen the end<IndexTerm>
-<Primary>heatmaps</Primary></IndexTerm> result of our heatmap application, let&#x2019;s step through the code sample. As usual, the working examples are available online for your download and perusal.</p>
-<p>Let&#x2019;s start with the HTML elements declared in this example. For this display, the HTML consists of only a title, a canvas, and a button we can use to<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm> reset the heatmap. The background display for the canvas consists of a simple <code>mapbg.jpg</code> applied to the canvas via CSS as shown in Listing 2-26.</p>
-<aside>
-<h3>Listing 2-26.</h3>
-<p>The Heatmap Canvas Element</p>
-</aside>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-21. The heatmap application</figcaption>
+</figure>
+
+<p>Now that you&#x2019;ve seen the end result of our heatmap application, let&#x2019;s step through the code sample. As usual, the working examples are available online for your download and perusal.</p>
+<p>Let&#x2019;s start with the HTML elements declared in this example. For this display, the HTML consists of only a title, a canvas, and a button we can use to reset the heatmap. The background display for the canvas consists of a simple <code>mapbg.jpg</code> applied to the canvas via CSS as shown in Listing 2-26.</p>
+
+<figure>
+<figcaption>Listing 2-26. The Heatmap Canvas Element</figcaption>
 <pre><code>&#x003C;style type="text/css"&#x003E;
   #heatmap {
       background-image: url("mapbg.jpg");
   }
 &#x003C;/style&#x003E;
 &#x003C;h2&#x003E;Heatmap &#x003C;/h2&#x003E;
-&#x003C;canvas id="heatmap" class="clear" style="border: 1px solid ; " height="300"
-width="300"&#x003E; &#x003C;/canvas&#x003E;
-&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</p>
-<p>We also declare some initial variables to be used later in the example.
-  var points = {};
+&#x003C;canvas id="heatmap" class="clear" style="border: 1px solid;"
+      height="300" width="300"&#x003E; &#x003C;/canvas&#x003E;
+&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</pre></code>
+</figure>
+
+<p>We also declare some initial variables to be used later in the example.</p>
+<pre><code>  var points = {};
   var SCALE = 3;
   var x = -1;
-  var y = -1;</p>
+  var y = -1;</code></pre>
+  
 <p>Next, we will set the canvas to have a high transparency value for its global drawing operations, and set the composite mode to cause new draws to lighten the underlying pixels rather than replace them.</p>
-<p>Then, as shown in Listing 2-27, we <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>will set a handler to change the display&#x2014; <code>addToPoint</code> &#x2014;every <IndexTerm>
-<Primary>heatmaps</Primary></IndexTerm>time the mouse moves or one-tenth of a second passes.</p>
-<aside>
-<h3>Listing 2-27.</h3>
-<p>The loadDemo<IndexTerm>
-<Primary>loadDemo function</Primary></IndexTerm> <i>Function</i></p>
-</aside>
+<p>Then, as shown in Listing 2-27, we will set a handler to change the display&#x2014; <code>addToPoint</code> &#x2014;every time the mouse moves or one-tenth of a second passes.</p>
+
+
+<figure>
+<figcaption>Listing 2-27. The loadDemo <i>Function</i></figcaption>
 <pre><code>function loadDemo() {
   document.getElementById("resetButton").onclick = reset;
+  
   canvas = document.getElementById("heatmap");
   context = canvas.getContext('2d');
   context.globalAlpha = 0.2;
   context.globalCompositeOperation = "lighter"
+
 function sample() {
   if (x != -1) {
     addToPoint(x,y)
   }
   setTimeout(sample, 100);
 }
+
 canvas.onmousemove = function(e) {
   x = e.clientX - e.target.offsetLeft;
   y = e.clientY - e.target.offsetTop;
   addToPoint(x,y)
 }
+
   sample();
-}</p>
-<p>If the user clicks <Emphasis Type="Bold">Reset</i>, the entire canvas area is cleared and reset to its original state by using the canvas&#x2019; <code>clearRect</code> function, as shown in Listing 2-28.</p>
-<aside>
-<h3>Listing 2-28.</h3>
-<p>The<IndexTerm>
-<Primary>reset function</Primary></IndexTerm> <i>reset Function</i></p>
-</aside>
+}</pre></code>
+</figure>
+
+<p>If the user clicks <b>Reset</b>, the entire canvas area is cleared and reset to its original state by using the canvas&#x2019; <code>clearRect</code> function, as shown in Listing 2-28.</p>
+
+<figure>
+<figcaption>Listing 2-28. The <i>reset Function</i></figcaption>
 <pre><code>function reset() {
   points = {};
   context.clearRect(0,0,300,300);
   x = -1;
   y = -1;
-}</p>
-<p>Next we create a lookup table <IndexTerm>
-<Primary>heatmaps</Primary></IndexTerm>of colors to use when drawing heat on the canvas. Listing 2-29 shows how the colors range in brightness from least to greatest, and they will be used to represent varying levels of heat on the display. The greater the value of the <code>intensity</code>, the brighter the returned color.</p>
-<aside>
-<h3>Listing 2-29.</h3>
-<p>The<IndexTerm>
-<Primary>getColor function</Primary></IndexTerm> <i>getColor Function</i></p>
-</aside>
+}</pre></code>
+</figure>
+
+<p>Next we create a lookup table of colors to use when drawing heat on the canvas. Listing 2-29 shows how the colors range in brightness from least to greatest, and they will be used to represent varying levels of heat on the display. The greater the value of the <code>intensity</code>, the brighter the returned color.</p>
+
+<figure>
+<figcaption>Listing 2-29. The <i>getColor Function</i></figcaption>
 <pre><code>function getColor(intensity) {
   var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];
   return colors[Math.floor(intensity/2)];
-}</p>
-<p>Whenever the mouse moves or hovers over an area of the canvas, a point is drawn. The point grows in size (and brightness) the longer the mouse stays in the immediate area. As shown in Listing 2-30, we use the <code>context.arc</code> function to draw a circle of a given <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>radius, and we draw a brighter, hotter color for larger radius values by passing the radius to our <code>getColor</code> function.</p>
-<aside>
-<h3>Listing 2-30.</h3>
-<p>The<IndexTerm>
-<Primary>drawPoint function</Primary></IndexTerm> <i>drawPoint Function</i></p>
-</aside>
+}</pre></code>
+</figure>
+
+<p>Whenever the mouse moves or hovers over an area of the canvas, a point is drawn. The point grows in size (and brightness) the longer the mouse stays in the immediate area. As shown in Listing 2-30, we use the <code>context.arc</code> function to draw a circle of a given radius, and we draw a brighter, hotter color for larger radius values by passing the radius to our <code>getColor</code> function.</p>
+
+<figure>
+<figcaption>Listing 2-30. The <i>drawPoint Function</i></figcaption>
 <pre><code>function drawPoint(x, y, radius) {
   context.fillStyle = getColor(radius);
   radius = Math.sqrt(radius)*6;
+  
   context.beginPath();
   context.arc(x, y, radius, 0, Math.PI*2, true)
+  
   context.closePath();
   context.fill();
-}</p>
-<p>In the <code>addToPoint</code> function<IndexTerm>
-<Primary>addToPoint function</Primary></IndexTerm>&#x2014;which you will recall is accessed every time the mouse moves or hovers over a point&#x2014;a heat value is increased and stored for that particular point on the canvas. Listing 2-31 shows that the maximum point value is 10. Once the current value of heat for a given pixel is found, the appropriate pixel is passed to <code>drawPoint</code> with its corresponding heat/radius value.</p>
-<aside>
-<h3>Listing 2-31.</h3>
-<p>The addToPoint Function</p>
-</aside>
+}</pre></code>
+</figure>
+
+<p>In the <code>addToPoint</code> function&#x2014;which you will recall is accessed every time the mouse moves or hovers over a point&#x2014;a heat value is increased and stored for that particular point on the canvas. Listing 2-31 shows that the maximum point value is 10. Once the current value of heat for a given pixel is found, the appropriate pixel is passed to <code>drawPoint</code> with its corresponding heat/radius value.</p>
+
+<figure>
+<figcaption>Listing 2-31. The addToPoint Function</figcaption>
 <pre><code>function addToPoint(x, y) {
   x = Math.floor(x/SCALE);
   y = Math.floor(y/SCALE);
+  
   if (!points[[x,y]]) {
     points[[x,y]] = 1;
   } else if (points[[x,y]]==10) {
@@ -1169,57 +980,41 @@ canvas.onmousemove = function(e) {
     points[[x,y]]++;
   }
   drawPoint(x*SCALE,y*SCALE, points[[x,y]]);
-}</p>
-<p>Finally, the <IndexTerm>
-<Primary>heatmaps</Primary></IndexTerm>initial <code>loadDemo</code> function<IndexTerm>
-<Primary>loadDemo function</Primary></IndexTerm> is registered to be called whenever the window completes loading.
-window.addEventListener("load", loadDemo, true);</p>
+}</pre></code>
+</figure>
+
+<p>Finally, the initial <code>loadDemo</code> function is registered to be called whenever the window completes loading.</p>
+<p><code>window.addEventListener("load", loadDemo, true);</code></p>
 <p>Together, these one hundred or so lines of code illustrate how much you can do with the Canvas API in a short amount of time, without using any plug-ins or external rendering technology. With an infinite number of data sources available it is easy to see how they can be visualized simply and effectively.</p>
-<Section2 ID="Sec29_2">
+
 <h3>Practical Extra: Full Page Glass Pane</h3>
-<p>In the example application, you<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm> saw how you can apply a canvas on top of a graphic. You can also apply a canvas on top of the entire browser window or portions of the same&#x2014;a technique commonly referred to<IndexTerm>
-<Primary>glass pane</Primary></IndexTerm> as glass pane. Once you have positioned the glass pane canvas on top of a web page, you can do all kinds of cool and handy things with it.</p>
+<p>In the example application, you saw how you can apply a canvas on top of a graphic. You can also apply a canvas on top of the entire browser window or portions of the same&#x2014;a technique commonly referred to as glass pane. Once you have positioned the glass pane canvas on top of a web page, you can do all kinds of cool and handy things with it.</p>
 <p>For example, you can use a routine to retrieve the absolute position of all the DOM elements on a page and create a step-by-step help function that can guide users of a web application through the steps they must perform to start and use the application.</p>
-<p>Or, you can use the glass pane canvas to scribble feedback on someone&#x2019;s web page using the mouse events for drawing input. Some things to keep in mind if you try to use a canvas in this capacity:<Unol Mark="Bullet">
+<p>Or, you can use the glass pane canvas to scribble feedback on someone&#x2019;s web page using the mouse events for drawing input. Some things to keep in mind if you try to use a canvas in this capacity:</p>
 
-<p>You will need to set the canvas positioning to absolute and give it a specific position, width, and height. Without an explicit width and height setting, the canvas will remain at a zero pixel size.</p>
+<ul>
+<li>You will need to set the canvas positioning to absolute and give it a specific position, width, and height. Without an explicit width and height setting, the canvas will remain at a zero pixel size.</li>
+<li>Don&#x2019;t forget to set a high Z-index on the canvas so that it floats above all the visible content. A canvas rendered under all the existing content doesn&#x2019;t get much chance to shine.</li>
+<li>Your glass pane canvas can block access to events in the content below, so be sparing in how you use it and remove it when it is unnecessary.</li>
+</ul>
 
+<h3>Practical Extra: Timing Your Canvas Animation</h3>
 
-<p>Don&#x2019;t forget to set a high Z-index on the canvas so that it floats above all the visible content. A canvas rendered under all the existing content doesn&#x2019;t get much chance to shine.</p>
-
-
-<p>Your glass pane<IndexTerm>
-<Primary>glass pane</Primary></IndexTerm> canvas can block access to events in the content below, so be sparing in how you use it and remove it <IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>when it is unnecessary.</p>
-
-</Unol>
-</p>
-</Section2>
-<Section2 ID="Sec30_2">
-<h3>Practical Extra: Timing Your Canvas Animation<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm>
-</h3>
 <p>Earlier in the chapter, we mentioned that it is a common practice to animate elements on a canvas. This could be used for gaming, transitional effects, or simply to replace animated GIFs in an existing web page. But one area where JavaScript has been lacking is a reliable way to schedule your animation updates.</p>
-<p>Today, most developers use the classic <code>setTimeout</code> or <code>setInterval</code> calls to schedule changes to a web page or application. Both of these calls allow you to schedule a callback after a certain number of milliseconds, which then allows you to make changes to the page during the callback. However, there are some significant problems with using that approach:<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
-<Unol Mark="Bullet">
+<p>Today, most developers use the classic <code>setTimeout</code> or <code>setInterval</code> calls to schedule changes to a web page or application. Both of these calls allow you to schedule a callback after a certain number of milliseconds, which then allows you to make changes to the page during the callback. However, there are some significant problems with using that approach:</p>
 
-<p>As a developer, you need to guess at the appropriate number of milliseconds in the future to schedule the next update. With the modern Web running on a wider variety of devices than ever, it is tricky to know the suggested frame rate for a high-powered desktop device versus a mobile phone. And even if you guess how many frames to schedule per second, you may end up competing with other pages or machine load.</p>
+<ul>
+<li>As a developer, you need to guess at the appropriate number of milliseconds in the future to schedule the next update. With the modern Web running on a wider variety of devices than ever, it is tricky to know the suggested frame rate for a high-powered desktop device versus a mobile phone. And even if you guess how many frames to schedule per second, you may end up competing with other pages or machine load.</li>
+<li>It is more common than ever for users to browse with multiple windows or tabs, even on mobile devices. If you use <code>setTimeout</code> and <code>setInterval</code> to schedule your page updates, these will continue to happen even when the page is in the background. Running your scripts when they aren&#x2019;t even visible is a great way to convince users that your web application is draining their phone battery!</li>
+</ul>
 
-
-<p>It is more common than ever for users to browse with multiple windows or tabs, even on mobile devices. If you use <code>setTimeout</code> and <code>setInterval</code> to schedule your page updates, these will continue to happen even when the page is in the background. Running your scripts when they aren&#x2019;t even visible is a great way to convince users that your web application is draining their phone battery!</p>
-
-</Unol>
-</p>
 <p>As an alternative, many browsers now offer a <code>requestAnimationFrame</code> function on the <code>window</code> object. This function takes a callback as its argument, and the callback will be invoked whenever the browser deems it appropriate for the animation to be updated.</p>
 <p>Let&#x2019;s add another example (Listing 2-32) of our trail scene, this one with a crudely animated rain storm to signify the cancellation of our upcoming race. This code builds on the previous examples, and redundant code is not listed here.</p>
-<aside>
-<h3>Listing 2-32.</h3>
-<p>Basic Animation<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm> <i>Frame Request</i>
-</p>
-</aside>
+
+
+<figure>
+<figcaption>Listing 2-32. Basic Animation Frame Request</figcaption>
+
 <pre><code>// create an image for our rain texture
 var rain = new Image();
 rain.src = "rain.png";
@@ -1228,7 +1023,9 @@ rain.onload = function () {
   // once the rain is loaded
   window.requestAnimFrame(loopAnimation, canvas);
 }
+
 // Previous code omitted&#x2026;
+
 // this function allows us to cover all browsers
 // by aliasing the different browser-specific
 // versions of the function to a single function
@@ -1244,14 +1041,18 @@ window.requestAnimFrame = (function(){
             window.setTimeout(callback, 1000 / 60);
           };
 ;})();
+
 // This function is where we update the content of our canvas
 function drawAFrame() {
   var context = canvas.getContext('2d');
+  
   // do some drawing on the canvas, using the elapsedTime
   // as a guide for changes.
   context.save();
+  
   // draw the existing trails picture first
   drawTrails();
+  
   // Darken the canvas for an eerie sky.
   // By only darkening most of the time, we create lightning flashes
   if (Math.random() &#x003E; .01) {
@@ -1259,13 +1060,12 @@ function drawAFrame() {
     context.fillStyle = '#000000';
     context.fillRect(0, 0, 400, 600);
     context.globalAlpha = 1.0;
-  }</p>
-<p><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
+  }
 
   // then draw a rain image, adjusted by the current time
   var now = Date.now();
   context.fillStyle = context.createPattern(rain, 'repeat');
+  
   // We'll draw two translated rain images at different rates to
   // show thick rain and snow
   // Our rectangle will be bigger than the display size, and
@@ -1274,12 +1074,14 @@ function drawAFrame() {
   context.translate(-256 + (0.1 * now) % 256, -256 + (0.5 * now) % 256);
   context.fillRect(0, 0, 400 + 256, 600 + 256);
   context.restore();
+  
   // The second rectangle translates at a different rate for
   // thicker rain appearance
   context.save();
   context.translate(-256 + (0.08 * now) % 256, -256 + (0.2 * now) % 256);
   context.fillRect(0, 0, 400 + 256, 600 + 256);
   context.restore();
+  
   // draw some explanatory text
   context.font = '32px san-serif';
   context.textAlign = 'center';
@@ -1287,44 +1089,28 @@ function drawAFrame() {
   context.fillText('Event canceled due to weather!', 200, 550, 400);
   context.restore();
 }
+
 // This function will be called whenever the browser is ready
 // for our application to render another frame.
 function loopAnimation(currentTime) {
   // Draw a single frame of animation on our canvas
   drawAFrame();
+  
   // After this frame is drawn, let the browser schedule
   // the next one
   window.requestAnimFrame(loopAnimation, canvas);
-}</p>
-<p>Once we update our drawing, we can see the animating<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm> rain on top of our trail (see Figure 2-22).<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
-<Figure ID="Fig22_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-22</CaptionNumber>
-<CaptionContent>
-<Simplep>Still shot of canvas with rain animation<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm>
-</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO22_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig22_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-<p><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>It is up to the browser to decide how often to call the animation frame callback. Pages in the background will be called less frequently, and the browser may clip the rendering to the element provided to the <code>requestAnimationFrame</code> call (&#x201C;<code>canvas</code>&#x201D; in our example) to optimize drawing resources. You aren&#x2019;t guaranteed a frame rate, but you are spared the work of scheduling for different environments!</p>
-<p>This technique is not limited to the Canvas API. You can use <code>requestAnimationFrame</code> to make changes anywhere on the page content or CSS. There are other ways to produce movement on a web page&#x2014;CSS animations<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm> come to mind&#x2014;but if you are working with script-based changes, the <code>requestAnimationFrame</code> function<IndexTerm>
-<Primary>requestAnimationFrame function</Primary></IndexTerm> is the way to go<IndexTerm>
-<Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>.</p>
-</Section2>
-</Section1>
-<Section1 ID="Sec31_2">
+}</pre></code>
+</figure>
+
+<p>Once we update our drawing, we can see the animating rain on top of our trail (see Figure 2-22).</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-22. Still shot of canvas with rain animation</figcaption>
+</figure>
+
+<p>It is up to the browser to decide how often to call the animation frame callback. Pages in the background will be called less frequently, and the browser may clip the rendering to the element provided to the <code>requestAnimationFrame</code> call (&#x201C;<code>canvas</code>&#x201D; in our example) to optimize drawing resources. You aren&#x2019;t guaranteed a frame rate, but you are spared the work of scheduling for different environments!</p>
+<p>This technique is not limited to the Canvas API. You can use <code>requestAnimationFrame</code> to make changes anywhere on the page content or CSS. There are other ways to produce movement on a web page&#x2014;CSS animations come to mind&#x2014;but if you are working with script-based changes, the <code>requestAnimationFrame</code> function is the way to go.</p>
+
 <h3>Summary</h3>
 <p>As you can see, the Canvas API provides a very powerful way to modify the appearance of your web application without resorting to odd document hacks. Images, gradients, and complex paths can be combined to create nearly any type of display you may be looking to present. Keep in mind that you generally need to draw at the origin, load any images you want to display before attempting to draw them, and be mindful of tainting your canvas with foreign image sources. However, if you learn to harness the power of the canvas, you can create applications that were never possible in a web page before.</p>
-</Section1>
-</Body>
-<BodyRef FileRef="978-1-4302-3865-2_2_Chapter_OnlinePDF.pdf" TargetType="OnlinePDF" PDFType="Typeset" OutputMedium="Online"/>
-</Chapter>
