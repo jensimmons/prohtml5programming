@@ -576,7 +576,12 @@ canvas {
   background: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000352}}
+img {
+  max-width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000359}}
 .figure {
   padding: 0 1em;
   background: #eee;
@@ -584,7 +589,7 @@ canvas {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000371}}
 .grid {
   margin: 2.5em;
   padding: 1em 2.5em 0;
@@ -594,19 +599,19 @@ canvas {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000390}}
 .runningtitle {
   font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 11.62px;
   color: #777;
   letter-spacing: 0.03em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000398}}
 .runningtitle .section {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003103}}
 .cover {
   background: #000;
 }
