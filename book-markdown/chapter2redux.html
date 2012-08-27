@@ -16,7 +16,7 @@
 
 <aside>
 <h3>SVG versus Canvas</h3>
-<p><b>Peter says</b>: &#x201C;Canvas is essentially a <i>bitmap</i> canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page&#x2019;s DOM or part of any namespace&#x2014;something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled seamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked).</p>
+<p><b>Peter says</b>: &#x201C;Canvas is essentially a <i>bitmap</i> canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page&#x2019;s DOM or part of any namespace&#x2014;something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled yeseamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked).</p>
 <p>Why then, would the WHATWG HTML5 specification not use SVG exclusively? Despite its obvious shortcomings, the HTML5 Canvas API has two things going for it: it performs well because it does not have to store objects for every primitive it draws, and it is relatively easy to implement the Canvas API based on many of the popular two-dimensional drawing APIs found in other programming languages. Ultimately, it is better to have one bird in the hand than two in the bush.&#x201D;</p>
 </aside>
 
@@ -125,10 +125,12 @@
     // Get the canvas element and its drawing context
     var canvas = document.getElementById('diagonal');
     var context = canvas.getContext('2d');
+    
     // Create a path in absolute coordinates
     context.beginPath();
     context.moveTo(70, 140);
     context.lineTo(140, 70);
+    
     // Stroke the line onto the canvas
     context.stroke();
   }
@@ -144,7 +146,7 @@
 </aside>
 
 <p>You then use the context to perform drawing operations. In this case, you can create the diagonal line by calling three methods&#x2014; <code>beginPath</code>, <code>moveTo</code>, and <code>lineTo</code>&#x2014;passing in the line&#x2019;s start and end coordinates.</p>
-<p>The drawing methods <code>moveTo</code> and <code>lineTo</code> do not actually create the line; you finalize a canvas operation and draw the line by calling the <code>context.stroke();</code> method. Figure <InternalRef RefID="Fig3_2">2-3</InternalRef> shows the diagonal line created with the example code.
+<p>The drawing methods <code>moveTo</code> and <code>lineTo</code> do not actually create the line; you finalize a canvas operation and draw the line by calling the <code>context.stroke();</code> method. Figure 2-3 shows the diagonal line created with the example code.
 
 <figure>
 [Insert live code example here]
@@ -160,434 +162,369 @@
 <p>Perhaps the easiest way to think of the transformation system&#x2014;at least, the easiest way that does not involve a great amount of mathematical formulae and hand-waving&#x2014;is as a modification layer that sits between the commands you issue and the output on the canvas display. This modification layer is always present, even if you choose not to interact with it.</p>
 <p>Modifications, or <i>transformations</i> in the parlance of drawing systems, can be applied sequentially, combined, and modified at will. Every drawing operation is passed through the modification layer to be modified before it appears on the canvas. Although this adds an extra layer of complexity, it also adds tremendous power to the drawing system. It grants access to the powerful modifications that modern image-editing tools support in real time, yet in an API that is only as complex as it absolutely needs to be.</p>
 <p>Don&#x2019;t be fooled into thinking that you are optimizing performance if you don&#x2019;t use transformation calls in your code. The canvas implementation uses and applies transformations implicitly in its rendering engine, whether or not you call them directly. It is wiser to understand the system up front because it will be crucial to know if you step outside the most basic drawing operations.</p>
-<p>A key recommendation for reusable code is that you usually want to <i>draw at the origin</i> (coordinate 0,0) and apply transformations&#x2014;scale, translate, rotate, and so forth&#x2014;to modify your drawing code into its final appearance, as shown in Figure <InternalRef RefID="Fig4_2">2-4</InternalRef>.
-<Figure ID="Fig4_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-4</CaptionNumber>
-<CaptionContent>
-<Simplep>Overview of transformation and drawing at the origin</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO4_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig4_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+<p>A key recommendation for reusable code is that you usually want to <i>draw at the origin</i> (coordinate 0,0) and apply transformations&#x2014;scale, translate, rotate, and so forth&#x2014;to modify your drawing code into its final appearance, as shown in Figure 2-4.</p>
+
+<figure>
+<img src="images/ch2/fig2-4.jpg"/>
+<figcaption>Figure 2-4. Overview of transformation and drawing at the origin</figcaption>
+</figure>
+
 <p>Listing 2-7 shows this best practice in action using the simplest transform: <code>translate</code>.</p>
-<aside>
-<h3>Listing 2-7.</h3>
-<p>Using Translation to Create a Diagonal Line on a Canvas</p>
-</aside>
-<pre><code>&#x003C;script&#x003E;</p>
-<pre><code>  function drawDiagonal() {</p>
-<pre><code>    var canvas = document.getElementById('diagonal');</p>
-<pre><code>    var context = canvas.getContext('2d');</p>
-<pre><code>    // Save a copy of the current drawing state</p>
-<pre><code>    context.save();</p>
-<pre><code>    // Move the drawing context to the right, and down</p>
-<pre><code>    context.translate(70, 140);</p>
-<pre><code>    // Draw the same line as before, but using the origin as a start</p>
-<pre><code>    context.beginPath();</p>
-<pre><code>    context.moveTo(0, 0);</p>
-<pre><code>    context.lineTo(70, -70);</p>
-<pre><code>    context.stroke();</p>
-<pre><code>    // Restore the old drawing state</p>
-<pre><code>    context.restore();</p>
-<pre><code>  }</p>
-<pre><code>  window.addEventListener("load", drawDiagonal, true);</p>
-<pre><code>&#x003C;/script&#x003E;</p>
-<p>Let&#x2019;s examine the JavaScript code used to create this second, translated diagonal line.<OrderedList>
-<ListItem>
-<ItemNumber>1.</ItemNumber>
-<ItemContent><p>First, you access the canvas object by referencing its ID value (in this case, diagonal).</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>2.</ItemNumber>
-<ItemContent><p>You then retrieve a context variable by calling the canvas object&#x2019;s getContext function.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>3.</ItemNumber>
-<ItemContent><p>Next, you want to save the still unmodified context so you can get back to its original state at the end of the drawing and transformation operation. If you do not save the state, the modifications you&#x2019;re making during the operation (translate, scale, and so on) will continue to be applied to the context in future operations, and that might not be desirable. Saving the context state before transforming it will allow us to restore it later.
-</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>4.</ItemNumber>
-<ItemContent><p>The next step is to apply the translate method to the context. With this operation, the translation coordinates you supply will be added to the eventual drawing coordinates (the diagonal line) at the time any drawing is rendered, thus moving the line to its final location, but only after the drawing operation is complete.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>5.</ItemNumber>
-<ItemContent><p>After the translation has been applied, you can perform the normal drawing operations to create the diagonal line. In this case, you can create the diagonal line by calling three methods&#x2014;beginPath, moveTo, and lineTo&#x2014;this time drawing at the origin (0,0) instead of coordinates 70,140.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>6.</ItemNumber>
-<ItemContent><p>After the line has been sketched, you can render it to the canvas (for example, draw the line) by calling the context.stroke method.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>7.</ItemNumber>
-<ItemContent><p>Finally, you restore the context to its clean original state, so that future canvas operations are performed without the translation that was applied in this operation. Figure <InternalRef RefID="Fig5_2">2-5</InternalRef> shows the diagonal line created with the example code.</p>
-</ItemContent>
-</ListItem>
-</OrderedList>
-</p>
-<p><Figure ID="Fig5_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-5</CaptionNumber>
-<CaptionContent>
-<Simplep>Translated Diagonal Line on a Canvas</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO5_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig5_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+
+<figure>
+<figcaption>Listing 2-7. Using Translation to Create a Diagonal Line on a Canvas</figcaption>
+<pre><code>&#x003C;script&#x003E;
+  function drawDiagonal() {
+    var canvas = document.getElementById('diagonal');
+    var context = canvas.getContext('2d');
+    
+    // Save a copy of the current drawing state
+    context.save();
+    
+    // Move the drawing context to the right, and down
+    context.translate(70, 140);
+    
+    // Draw the same line as before, but using the origin as a start
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(70, -70);
+    context.stroke();
+    
+    // Restore the old drawing state
+    context.restore();
+  }
+  
+  window.addEventListener("load", drawDiagonal, true);
+&#x003C;/script&#x003E;</code></pre>
+</figure>
+
+
+<p>Let&#x2019;s examine the JavaScript code used to create this second, translated diagonal line.<ol>
+<li>First, you access the canvas object by referencing its ID value (in this case, diagonal).</li>
+<li>You then retrieve a context variable by calling the canvas object&#x2019;s getContext function.</li>
+<li>Next, you want to save the still unmodified context so you can get back to its original state at the end of the drawing and transformation operation. If you do not save the state, the modifications you&#x2019;re making during the operation (translate, scale, and so on) will continue to be applied to the context in future operations, and that might not be desirable. Saving the context state before transforming it will allow us to restore it later.</li>
+<li>The next step is to apply the translate method to the context. With this operation, the translation coordinates you supply will be added to the eventual drawing coordinates (the diagonal line) at the time any drawing is rendered, thus moving the line to its final location, but only after the drawing operation is complete.</li>
+<li>After the translation has been applied, you can perform the normal drawing operations to create the diagonal line. In this case, you can create the diagonal line by calling three methods&#x2014;beginPath, moveTo, and lineTo&#x2014;this time drawing at the origin (0,0) instead of coordinates 70,140.</li>
+<li>After the line has been sketched, you can render it to the canvas (for example, draw the line) by calling the context.stroke method.</li>
+<li>Finally, you restore the context to its clean original state, so that future canvas operations are performed without the translation that was applied in this operation. Figure 2-5 shows the diagonal line created with the example code./li>
+</ol>
+
+<figure>
+[Insert live code example here]
+<figcaption>Figure 2-5. Translated Diagonal Line on a Canvas</figcaption>
+</figure>
+
 <p>Even though your new line looks remarkably like the old one, you created it using the power of transformations, something that will become more apparent as we progress through the rest of this chapter.</p>
-</Section2>
-<Section2 ID="Sec14_2">
+
 <h3>Working with Paths</h3>
 <p>Although we could offer many more exciting examples for drawing lines, we are ready now to progress to something a bit more complex: <i>paths</i>. Paths in the HTML5 Canvas API represent any shape you care to render. Our original line example was a path, as you might have gathered from the conspicuous <code>beginPath</code> call used to start it off. But paths can be as complicated as you desire, with multiple line and curve segments and even subpaths. If you are looking to draw almost any shape on a canvas, the path API will be your focus point.</p>
 <p>When embarking on any routine to draw a shape or path, the first call you make is <code>beginPath</code>. This simple function takes no arguments, but it signals to the canvas that you wish to start a new shape description. This function is mostly useful to the canvas so that it can calculate the interior and exterior of the shape you are creating for later fills and strokes.</p>
 <p>A path always tracks the concept of a current location, which defaults to the origin. The canvas internally tracks the current location, but you will modify it with your drawing routines.</p>
-<p>Once the shape is begun, you can use a variety of functions on the context to plot the layout of your shape. You&#x2019;ve already seen the simplest context pathing functions in action:<UnorderedList Mark="Bullet">
-<ItemContent><p><code>moveTo(x, y)</code>: moves the current location to a new destination of (x, y) without drawing.</p></ItemContent>
-<ItemContent><p><code>lineTo(x, y)</code>: moves the current location to a new destination of (x, y) drawing a straight line from the current position to the new one.</p></ItemContent>
-</UnorderedList>
-</p>
+<p>Once the shape is begun, you can use a variety of functions on the context to plot the layout of your shape. You&#x2019;ve already seen the simplest context pathing functions in action:</p>
+<ul>
+<li><code>moveTo(x, y)</code>: moves the current location to a new destination of (x, y) without drawing.</li>
+<li><code>lineTo(x, y)</code>: moves the current location to a new destination of (x, y) drawing a straight line from the current position to the new one.</li>
+</ul>
 <p>Essentially, the difference between these two calls is that the first is akin to lifting a drawing pen and moving to a new location, whereas the second tells the canvas to leave the pen on the paper and move it in a straight line to the new destination. However, it is worth pointing out again that <i>no actual drawing occurs until you stroke or fill the path</i>. At present, we are merely defining the positions in our path so that it can be drawn later.</p>
 <p>The next special pathing function is a call to <code>closePath</code>. This command is very similar in behavior to the <code>lineTo</code> function, with the difference being that the destination is automatically assumed to be the origination of the path. However, the <code>closePath</code> also informs the canvas that the current shape has closed or formed a completely contained area. This will be useful for future fills and strokes.</p>
 <p>At this point, you are free to continue with more segments in your path to create additional subpaths. Or you can <code>beginPath</code> at any time to start over and clear the path list entirely.</p>
 <p>As with most complex systems, it is often better to see them in action. Let&#x2019;s depart from our line examples and use the Canvas API to start to create a new scene that illustrates a forest with a trail-running path. This scene will serve as a logo of sorts for our race event. And as with any picture, we will start with a basic element, which in this case is the canopy of a simple pine tree. Listing 2-8 shows how to draw the pine tree&#x2019;s canopy.</p>
-<aside>
-<h3>Listing 2-8.</h3>
-<p>Function That Creates a Path for a Tree Canopy</p>
-</aside>
-<pre><code>function createCanopyPath(context) {</p>
-<pre><code>  // Draw the tree canopy</p>
-<pre><code>  context.beginPath();</p>
-<pre><code>  context.moveTo(-25, -50);</p>
-<pre><code>  context.lineTo(-10, -80);</p>
-<pre><code>  context.lineTo(-20, -80);</p>
-<pre><code>  context.lineTo(-5, -110);</p>
-<pre><code>  context.lineTo(-15, -110);</p>
-<pre><code>  // Top of the tree</p>
-<pre><code>  context.lineTo(0, -140);</p>
-<pre><code>  context.lineTo(15, -110);</p>
-<pre><code>  context.lineTo(5, -110);</p>
-<pre><code>  context.lineTo(20, -80);</p>
-<pre><code>  context.lineTo(10, -80);</p>
-<pre><code>  context.lineTo(25, -50);</p>
-<pre><code>  // Close the path back to its start point</p>
-<pre><code>  context.closePath();</p>
-<pre><code>}</p>
+
+<figure>
+<figcaption>Listing 2-8. Function That Creates a Path for a Tree Canopy</figcaption>
+<pre><code>function createCanopyPath(context) {
+  // Draw the tree canopy
+  context.beginPath();
+  
+  context.moveTo(-25, -50);
+  context.lineTo(-10, -80);
+  context.lineTo(-20, -80);
+  context.lineTo(-5, -110);
+  context.lineTo(-15, -110);
+  
+  // Top of the tree
+  context.lineTo(0, -140);
+  
+  context.lineTo(15, -110);
+  context.lineTo(5, -110);
+  context.lineTo(20, -80);
+  context.lineTo(10, -80);
+  context.lineTo(25, -50);
+  
+  // Close the path back to its start point
+  context.closePath();
+}</code></pre>
+</figure>
+
 <p>As you can see from the code, we used the same move and line commands from before, but more of them. These lines form the branches of a simple tree shape, and we close the path back at the end. Our tree will leave a notable gap at the bottom, and we will use this in future sections to draw the trunk. Listing 2-9 shows how to use that canopy drawing function to actually render our simple tree shape onto a canvas.</p>
-<aside>
-<h3>Listing 2-9.</h3>
-<p>Function That Draws a Tree on the Canvas</p>
-</aside>
-<pre><code>function drawTrails() {</p>
-<pre><code>  var canvas = document.getElementById('trails');</p>
-<pre><code>  var context = canvas.getContext('2d');</p>
-<pre><code>  context.save();</p>
-<pre><code>  context.translate(130, 250);</p>
-<pre><code>  // Create the shape for our canopy path</p>
-<pre><code>  createCanopyPath(context);</p>
-<pre><code>  // Stroke the current path</p>
-<pre><code>  context.stroke();</p>
-<pre><code>  context.restore();</p>
-<pre><code>}</p>
-<p>All the calls in this routine should be familiar to you already. We fetch the canvas context, save it for future reference, translate our position to a new location, draw the canopy, stroke it onto the canvas, and then restore our state. Figure <InternalRef RefID="Fig6_2">2-6</InternalRef> shows the results of our handiwork, a simply line representation of a tree canopy. We&#x2019;ll expand on this as we go forward, but it&#x2019;s a good first step.
-<Figure ID="Fig6_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-6</CaptionNumber>
-<CaptionContent>
-<Simplep>A simple path of a tree canopy</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO6_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig6_HTML.gif" Format="GIF" Color="BlackWhite" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec15_2">
+
+<figure>
+<figcaption>Listing 2-9. Function That Draws a Tree on the Canvas</figcaption>
+<pre><code>function drawTrails() {
+  var canvas = document.getElementById('trails');
+  var context = canvas.getContext('2d');
+  
+  context.save();
+  context.translate(130, 250);
+  
+  // Create the shape for our canopy path
+  createCanopyPath(context);
+  
+  // Stroke the current path
+  context.stroke();
+  context.restore();
+}</code></pre>
+</figure>
+
+<p>All the calls in this routine should be familiar to you already. We fetch the canvas context, save it for future reference, translate our position to a new location, draw the canopy, stroke it onto the canvas, and then restore our state. Figure 2-6 shows the results of our handiwork, a simply line representation of a tree canopy. We&#x2019;ll expand on this as we go forward, but it&#x2019;s a good first step.</p>
+
+
+<figure>
+[Insert live code example here]
+<figcaption>Figure 2-6. A simple path of a tree canopy</figcaption>
+</figure>
+
 <h3>Working with Stroke Styles</h3>
 <p>The Canvas API wouldn&#x2019;t be powerful or popular if developers were stuck using simple stick drawings and black lines. Let&#x2019;s use the stroke styling capabilities to make our canopy a little more tree-like. Listing 2-10 shows some basic commands that can modify the properties of the context in order to make the stroked shape look more appealing.</p>
-<aside>
-<h3>Listing 2-10.</h3>
-<p>Using a Stroke Style</p>
-</aside>
-<pre><code>// Increase the line width</p>
-<pre><code>context.lineWidth = 4;</p>
-<pre><code>// Round the corners at path joints</p>
-<pre><code>context.lineJoin = 'round';</p>
-<pre><code>// Change the color to brown</p>
-<pre><code>context.strokeStyle = '#663300';</p>
-<pre><code>// Finally, stroke the canopy</p>
-<pre><code>context.stroke();</p>
+
+<figure>
+<figcaption>Listing 2-10. Using a Stroke Style</figcaption>
+<pre><code>// Increase the line width
+context.lineWidth = 4;
+
+// Round the corners at path joints
+context.lineJoin = 'round';
+
+// Change the color to brown
+context.strokeStyle = '#663300';
+
+// Finally, stroke the canopy
+context.stroke();</code></pre>
+</figure>
+
 <p>By adding the above properties before stroking, we change the appearance of any future stroked shapes&#x2014;at least until we restore the context back to a previous state.</p>
 <p>First, we increase the width of the stroked lines to four pixels.</p>
 <p>Next, we set the <code>lineJoin</code> property to <code>round</code>, which causes the joints of our shape&#x2019;s segments to take on a more rounded corner shape. We could also set the <code>lineJoin</code> to <code>bevel</code> or <code>miter</code> (and the corresponding <code>context.miterLimit</code> value to tweak it) to choose other corner options.</p>
 <p>Finally, we change the color of the stroke by using the <code>strokeStyle</code> property. In our example, we are setting the color to a CSS value, but as you will see in later sections, it is also possible to set the <code>strokeStyle</code> to be an image pattern or a gradient for fancier displays.</p>
-<p>Although we are not using it here, we could also set the <code>lineCap</code> property to be either <code>butt</code>, <code>square</code>, or <code>round</code> to specify how lines should display at the endpoints. Alas, our example has no dangling line ends. Figure <InternalRef RefID="Fig7_2">2-7</InternalRef> shows our spruced-up tree canopy, now stroked with a wider, smoother, brown line instead of the flat black line from before.
-<Figure ID="Fig7_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-7</CaptionNumber>
-<CaptionContent>
-<Simplep>Stylish stroked tree canopy</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO7_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig7_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec16_2">
+<p>Although we are not using it here, we could also set the <code>lineCap</code> property to be either <code>butt</code>, <code>square</code>, or <code>round</code> to specify how lines should display at the endpoints. Alas, our example has no dangling line ends. Figure 2-7 shows our spruced-up tree canopy, now stroked with a wider, smoother, brown line instead of the flat black line from before.
+
+<figure>
+[Insert live code example here]
+<figcaption>Figure 2-7. Stylish stroked tree canopy</figcaption>
+</figure>
+
 <h3>Working with Fill Styles</h3>
 <p>As you might expect, stroking is not the only way to affect the appearance of canvas shapes. The next common way to modify a shape is to specify how its paths and subpaths are filled. Listing 2-11 shows how simple it is to fill our canopy with a pleasant, green color.</p>
-<aside>
-<h3>Listing 2-11.</h3>
-<p>Using a Fill Style</p>
-</aside>
-<pre><code>// Set the fill color to green and fill the canopy</p>
-<pre><code>context.fillStyle = '#339900';</p>
-<pre><code>context.fill();</p>
-<p>First, we set the <code>fillStyle</code> to the appropriate color. As we will see later, it is also possible to set the fill to be a gradient or an image pattern. Then, we simply call the context&#x2019;s <code>fill</code> function to let the canvas fill all the pixels inside all the closed paths of our current shape, as shown in Figure <InternalRef RefID="Fig8_2">2-8</InternalRef>.
-<Figure ID="Fig8_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-8</CaptionNumber>
-<CaptionContent>
-<Simplep>Filled tree canopy</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO8_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig8_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+
+<figure>
+<figcaption>Listing 2-11. Using a Fill Style</figcaption>
+<pre><code>// Set the fill color to green and fill the canopy
+context.fillStyle = '#339900';
+context.fill();</pre></code>
+</figure>
+
+<p>First, we set the <code>fillStyle</code> to the appropriate color. As we will see later, it is also possible to set the fill to be a gradient or an image pattern. Then, we simply call the context&#x2019;s <code>fill</code> function to let the canvas fill all the pixels inside all the closed paths of our current shape, as shown in Figure 2-8.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-8. Filled tree canopy</figcaption>
+</figure>
+
 <p>Because we stroked our canopy before filling it, the fill covers part of the stroked path. This is due to the fact that the wide stroke&#x2014;in our case, four pixels wide&#x2014;is centered along the line of the path shape. The fill applies to all pixels on the interior of the shape, and as such it will cover half of the stroked line pixels. Should you prefer the full stroke to appear, you can simply fill <i>before</i> stroking the path.</p>
-</Section2>
-<Section2 ID="Sec17_2">
+
 <h3>Filling Rectangular Content</h3>
 <p>Every tree deserves a strong foundation. Thankfully, we left space for our tree trunk in the original shape path. Listing 2-12 shows how we can add the simplest rendering of a tree trunk by using the <code>fillRect</code> convenience function.</p>
-<aside>
-<h3>Listing 2-12.</h3>
-<p>Using the fillRect Convenience Function</p>
-</aside>
-<pre><code>// Change fill color to brown</p>
-<pre><code>context.fillStyle = '#663300';</p>
-<pre><code>// Fill a rectangle for the tree trunk</p>
-<pre><code>context.fillRect(-5, -50, 10, 50);</p>
+
+<figure>
+<figcaption>Listing 2-12. Using the fillRect Convenience Function</figcaption>
+<pre><code>// Change fill color to brown
+context.fillStyle = '#663300';
+
+// Fill a rectangle for the tree trunk
+context.fillRect(-5, -50, 10, 50);</pre></code>
+</figure>
+
 <p>Here, we once again set a brown fill style. But instead of explicitly drawing the corners of our trunk rectangle using the <code>lineTo</code> ability, we will draw the entire trunk in one step by using <code>fillRect</code>. The <code>fillRect</code> call takes the x and y location, as well as the width and height, and then immediately fills it with the current fill style.</p>
 <p>Although we are not using them here, corresponding functions exist to <code>strokeRect</code> and <code>clearRect</code>. The former will draw the outline of the rectangle based on a given position and dimension, while the latter will remove any content from the rectangular area and reset it to its original, transparent color.</p>
+
 <aside>
 <h3>Canvas animations</h3>
-<p><Emphasis Type="Bold">Brian says</i>: &#x201C;The ability to clear rectangles in the canvas is core to creating animations and games using the Canvas API. By repeatedly drawing and clearing sections of the canvas, it is possible to present the illusion of animation, and many examples of this already exist on the Web. However, to create animations that perform smoothly, you will need to utilize <i>clipping</i> features and perhaps even a secondary buffered canvas to minimize the flickering caused by frequent canvas clears. Although animations are not the focus of this book, check out the &#x2018;Practical Extra&#x2019; sections of this chapter for some tips on using HTML5 to animate your pages.&#x201D;</p>
+<p><b>Brian says</b>: &#x201C;The ability to clear rectangles in the canvas is core to creating animations and games using the Canvas API. By repeatedly drawing and clearing sections of the canvas, it is possible to present the illusion of animation, and many examples of this already exist on the Web. However, to create animations that perform smoothly, you will need to utilize <i>clipping</i> features and perhaps even a secondary buffered canvas to minimize the flickering caused by frequent canvas clears. Although animations are not the focus of this book, check out the &#x2018;Practical Extra&#x2019; sections of this chapter for some tips on using HTML5 to animate your pages.&#x201D;</p>
 </aside>
-<p>Figure <InternalRef RefID="Fig9_2">2-9</InternalRef> shows our simple, flatly filled tree trunk attached to our previous canopy path.
-<Figure ID="Fig9_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-9</CaptionNumber>
-<CaptionContent>
-<Simplep>
-Tree with filled <IndexTerm>
-<Primary>fill styles</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>using fill styles</Secondary></IndexTerm>rectangular trunk</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO9_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig9_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec18_2">
+
+<p>Figure 2-9 shows our simple, flatly filled tree trunk attached to our previous canopy path.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-9. Tree with filled rectangular trunk</figcaption>
+</figure>
+
 <h3>Drawing Curves</h3>
 <p>The world, particularly the natural world, is not filled with straight lines and rectangles. Fortunately, the canvas provides a variety of functions for creating curves in our paths. We will demonstrate the simplest option&#x2014;a <i>quadratic</i> curve&#x2014;to form a path through our virtual forest. Listing 2-13 demonstrates the addition of two quadratic curves.</p>
-<aside>
-<h3>Listing 2-13.</h3>
-<p>Drawing a Curve</p>
-</aside>
-<pre><code>// Save the canvas state and draw the path</p>
-<pre><code>context.save();</p>
-<pre><code>context.translate(-10, 350);</p>
-<pre><code>context.beginPath();</p>
-<pre><code>// The first curve bends up and right</p>
-<pre><code>context.moveTo(0, 0);</p>
-<pre><code>context.quadraticCurveTo(170, -50, 260, -190);</p>
-<pre><code>// The second curve continues down and right</p>
-<pre><code>context.quadraticCurveTo(310, -250, 410,-250);</p>
-<pre><code>// Draw the path in a wide brown stroke</p>
-<pre><code>context.strokeStyle = '#663300';</p>
-<pre><code>context.lineWidth = 20;</p>
-<pre><code>context.stroke();</p>
-<pre><code>// Restore the previous canvas state</p>
-<pre><code>context.restore();</p>
+
+<figure>
+<figcaption>Listing 2-13. Drawing a Curve</figcaption>
+<pre><code>// Save the canvas state and draw the path
+context.save();
+
+context.translate(-10, 350);
+context.beginPath();
+
+// The first curve bends up and right
+context.moveTo(0, 0);
+context.quadraticCurveTo(170, -50, 260, -190);
+
+// The second curve continues down and right
+context.quadraticCurveTo(310, -250, 410,-250);
+
+// Draw the path in a wide brown stroke
+context.strokeStyle = '#663300';
+context.lineWidth = 20;
+context.stroke();
+
+// Restore the previous canvas state
+context.restore();</pre></code>
+</figure>
+
 <p>As before, one of the first things we will do is save our canvas context state, because we will be modifying the translation and stroke options here. For our forest path, we will start by moving back to the origin and drawing a first quadratic curve up and to the right.</p>
-<p>As shown in Figure <InternalRef RefID="Fig10_2">2-10</InternalRef>, the <code>quadraticCurveTo</code> function begins at the current drawing location and takes two x, y point locations as its pmeters. The second one is the final stop in our curve. The first one represents a <i>control point</i>. The control point sits to the side of the curve (not on it) and acts almost as a gravitational pull for the points along the curve path. By adjusting the location of the control point, you can adjust the curvature of the path you are drawing. We draw a second quadratic curve up and to the right to complete our path; then stroke it just as we did for our tree canopy before (only wider).
-<Figure ID="Fig10_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-10</CaptionNumber>
-<CaptionContent>
-<Simplep>Quadratic curve start, end, and control points<!--<query ID="Q1_2"><query_pgraph>The word Y-Axis should be turned 180 degrees, as it is in the figure 1.</query_pgraph></query>--></Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO10_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig10_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-<p>Other options for curves in the HTML5 Canvas API include the <code>bezierCurveTo</code>, <code>arcTo</code>, and <code>arc</code> functions. These curves take additional control points, a radius, or angles to determine the characteristics of the curve. Figure <InternalRef RefID="Fig11_2">2-11</InternalRef> shows the two quadratic curves stroked on our canvas to create a path through the trees.
-<Figure ID="Fig11_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-11</CaptionNumber>
-<CaptionContent>
-<Simplep>Quadratic curves for a path</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO11_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig11_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec19_2">
+<p>As shown in Figure 2-10, the <code>quadraticCurveTo</code> function begins at the current drawing location and takes two x, y point locations as its parameters. The second one is the final stop in our curve. The first one represents a <i>control point</i>. The control point sits to the side of the curve (not on it) and acts almost as a gravitational pull for the points along the curve path. By adjusting the location of the control point, you can adjust the curvature of the path you are drawing. We draw a second quadratic curve up and to the right to complete our path; then stroke it just as we did for our tree canopy before (only wider).</p>
+
+<figure>
+<img src="images/ch2/fig2-10.jpg"/>
+<figcaption>Figure 2-10. Quadratic curve start, end, and control points</figcaption>
+</figure>
+
+<p>Other options for curves in the HTML5 Canvas API include the <code>bezierCurveTo</code>, <code>arcTo</code>, and <code>arc</code> functions. These curves take additional control points, a radius, or angles to determine the characteristics of the curve. Figure 2-11 shows the two quadratic curves stroked on our canvas to create a path through the trees.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-11. Quadratic curves for a path</figcaption>
+</figure>
+
 <h3>Inserting Images into a Canvas</h3>
 <p>Images can be extremely handy to display inside a canvas. They can be stamped, stretched, modified with transformations, and often be the focus of the entire canvas. Thankfully, the Canvas API includes a few simple commands for adding image content to the canvas.</p>
 <p>But images also add a complication to the canvas operations: you must wait for them to load. Browsers will usually be loading images asynchronously as your page script is rendering. However, if you attempt to render an image onto a canvas before it has completely loaded, the canvas will fail to render any image at all. As such, you should be careful to make sure the image is loaded completely before you attempt to render it.</p>
 <p>To solve this problem in our simple forest trail example, we will load an image of a bark texture to use directly in the canvas. In order to make sure that the image has completed loading before we render, we will switch the loading code to only execute as a callback from image loading completion, as shown in Listing 2-14.</p>
-<aside>
-<h3>Listing 2-14.</h3>
-<p>Loading the Image</p>
-</aside>
-<pre><code>// Load the bark image</p>
-<pre><code>var bark = new Image();</p>
-<pre><code>bark.src = "bark.jpg";</p>
-<pre><code>// Once the image is loaded, draw on the canvas</p>
-<pre><code>bark.onload = function () {</p>
-<pre><code>  drawTrails();</p>
-<pre><code>}</p>
+
+
+<figure>
+<figcaption>Listing 2-14. Loading the Image</figcaption>
+<pre><code>// Load the bark image
+var bark = new Image();
+bark.src = "bark.jpg";
+
+// Once the image is loaded, draw on the canvas
+bark.onload = function () {
+  drawTrails();
+}</pre></code>
+</figure>
+
 <p>As you can see, we&#x2019;ve added an <code>onload</code> handler to the <code>bark.jpg</code> image to call the main <code>drawTrails</code> function only when the image loading has completed. This guarantees that the image will be available to the next calls we add to the canvas rendering, as shown in Listing 2-15.</p>
-<aside>
-<h3>Listing 2-15.</h3>
-<p>Drawing an Image on a Canvas</p>
-</aside>
-<pre><code>// Draw the bark pattern image where</p>
-<pre><code>//  the filled rectangle was before</p>
-<pre><code>context.drawImage(bark, -5, -50, 10, 50);</p>
+
+<figure>
+<figcaption>Listing 2-15. Drawing an Image on a Canvas</figcaption>
+<pre><code>// Draw the bark pattern image where
+//  the filled rectangle was before
+context.drawImage(bark, -5, -50, 10, 50);</pre></code>
+</figure>
+
 <p>Here, we have replaced the previous call to <code>fillRect</code> with a simple routine to display our bark image as the new trunk for our tree. Although the image is a subtle replacement, it provides more texture to our display. Note that in this call, we are specifying an x, y, width, and height argument in addition to the image itself. This option will scale the image to fit into the 10 &#x00D7; 50 pixel space that we have allocated for our trunk. We could also have passed in source dimensions to have more control over the clipping area of the incoming image to be displayed.</p>
-<p>As you can see in Figure <InternalRef RefID="Fig12_2">2-12</InternalRef>, the change to the appearance of our trunk is only slightly different from the filled rectangle we used before.
-<Figure ID="Fig12_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-12</CaptionNumber>
-<CaptionContent>
-<Simplep>Tree with an image <IndexTerm>
-<Primary>images inserting into a canvas</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>inserting images</Secondary></IndexTerm> used for trunk</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO12_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig12_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
-</Section2>
-<Section2 ID="Sec20_2">
+<p>As you can see in Figure 2-12, the change to the appearance of our trunk is only slightly different from the filled rectangle we used before.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-12. Tree with an image</figcaption>
+</figure>
+
 <h3>Using Gradients</h3>
-<p>Not satisfied with the tree trunk? Well, neither are we. Let&#x2019;s take another approach to drawing our tree trunk that uses a little more finesse: gradients. Gradients allow you to apply a gradual algorithmic sampling of colors as either a stroke or fill style, just like the patterns were applied in the last section. Creating gradients requires a three-step process:<OrderedList>
-<ListItem>
-<ItemNumber>1.</ItemNumber>
-<ItemContent><p>Create the gradient object itself.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>2.</ItemNumber>
-<ItemContent><p>Apply color stops to the gradient object, signaling changes in color along the transition.</p></ItemContent>
-</ListItem>
-<ListItem>
-<ItemNumber>3.</ItemNumber>
-<ItemContent><p>Set the gradient as either a fillStyle or a strokeStyle on the context.</p></ItemContent>
-</ListItem>
-</OrderedList>
-</p>
+<p>Not satisfied with the tree trunk? Well, neither are we. Let&#x2019;s take another approach to drawing our tree trunk that uses a little more finesse: gradients. Gradients allow you to apply a gradual algorithmic sampling of colors as either a stroke or fill style, just like the patterns were applied in the last section. Creating gradients requires a three-step process:</p>
+<ol>
+<li>Create the gradient object itself.
+<li>Apply color stops to the gradient object, signaling changes in color along the transition.</li>
+<li>Set the gradient as either a fillStyle or a strokeStyle on the context.</li>
+</ol>
+
 <p>It is perhaps easiest to think of gradients as a smooth change of color that moves along a line. For example, if you supply points A and B as the arguments to the creation of a gradient, the color will be transitioned for any stroke or fill that moves in the direction of point A to point B.</p>
 <p>To determine what colors are displayed, simply use the <code>addColorStop</code> function on the gradient object itself. This function allows you to specify an offset and a color. The color argument is the color you want to be applied in the stroke or fill at the offset position. The offset position is a value between 0.0 and 1.0, representing how far along the gradient line the color should be reached.</p>
 <p>If you create a gradient from point (0,0) to point (0,100) and specify a white color stop at offset 0.0 and a black offset at offset 1.0, then when the stroke or fill occurs, you will see the color gradually shift from white (the beginning color stop) to black (the end color stop) as the rendering moves from point (0,0) to point (0,100).</p>
 <p>As with other color values, it is possible to supply an alpha (for example, transparency) value as part of the color and make that alpha value transition as well. To do so, you will need to use another textual representation of the color value, such as the CSS <code>rgba</code> function that includes an alpha component.</p>
 <p>Let&#x2019;s see this in more detail with a code sample that applies two gradients to a <code>fillRect</code> representing our final tree trunk, as shown in Listing 2-16.</p>
-<aside>
-<h3>Listing 2-16.</h3>
-<p>Using a Gradient</p>
-</aside>
-<pre><code>// Create a 3 stop gradient horizontally across the trunk</p>
-<pre><code>var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);</p>
-<pre><code>// The beginning of the trunk is medium brown</p>
-<pre><code>trunkGradient.addColorStop(0, '#663300');</p>
-<pre><code>// The middle-left of the trunk is lighter in color</p>
-<pre><code>trunkGradient.addColorStop(0.4, '#996600');</p>
-<pre><code>// The right edge of the trunk is darkest</p>
-<pre><code>trunkGradient.addColorStop(1, '#552200');</p>
-<pre><code>// Apply the gradient as the fill style, and draw the trunk</p>
-<pre><code>context.fillStyle = trunkGradient;</p>
-<pre><code>context.fillRect(-5, -50, 10, 50);</p>
-<pre><code>// A second, vertical gradient creates a shadow from the</p>
-<pre><code>//  canopy on the trunk</p>
-<pre><code>var canopyShadow = context.createLinearGradient(0, -50, 0, 0);</p>
-<pre><code>// The beginning of the shadow gradient is black, but with</p>
-<pre><code>//  a 50% alpha value</p>
-<pre><code>canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');</p>
-<pre><code>// Slightly further down, the gradient completely fades to</p>
-<pre><code>//  fully transparent. The rest of the trunk gets no shadow.</p>
-<pre><code>canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');</p>
-<pre><code>// Draw the shadow gradient on top of the trunk gradient</p>
-<pre><code>context.fillStyle = canopyShadow;</p>
-<pre><code>context.fillRect(-5, -50, 10, 50);</p>
-<p>Applying these two gradients creates a nice, smooth light source on our rendered tree as shown in Figure <InternalRef RefID="Fig13_2">2-13</InternalRef>, making <IndexTerm>
-<Primary>gradients</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>gradients</Secondary></IndexTerm>it appear curved and covered by a slight shadow from the canopy above. Let&#x2019;s keep it.
-<Figure ID="Fig13_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-13</CaptionNumber>
-<CaptionContent>
-<Simplep>Tree with gradient trunk</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO13_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig13_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure></p>
-<p>Besides the linear gradient used in our example, the Canvas API also supports a radial gradient<IndexTerm>
-<Primary>radial gradient</Primary></IndexTerm> option that allows you to specify two circular representations in which the color stops are applied to the cone between the two circles. The radial gradient uses the same color stops as the linear gradient, but takes its arguments in the form shown in Listing 2-17.</p>
-<aside>
-<h3>Listing 2-17.</h3>
-<p>Example of Applying a Radial Gradient</p>
-</aside>
-<pre><code>createRadialGradient(x0, y0, r0, x1, y1, r1)</p>
+
+<figure>
+<figcaption>Listing 2-16. Using a Gradient</figcaption>
+<pre><code>// Create a 3 stop gradient horizontally across the trunk
+var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
+
+// The beginning of the trunk is medium brown
+trunkGradient.addColorStop(0, '#663300');
+
+// The middle-left of the trunk is lighter in color
+trunkGradient.addColorStop(0.4, '#996600');
+
+// The right edge of the trunk is darkest
+trunkGradient.addColorStop(1, '#552200');
+
+// Apply the gradient as the fill style, and draw the trunk
+context.fillStyle = trunkGradient;
+context.fillRect(-5, -50, 10, 50);
+
+// A second, vertical gradient creates a shadow from the
+//  canopy on the trunk
+var canopyShadow = context.createLinearGradient(0, -50, 0, 0);
+
+// The beginning of the shadow gradient is black, but with
+//  a 50% alpha value
+canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+
+// Slightly further down, the gradient completely fades to
+//  fully transparent. The rest of the trunk gets no shadow.
+canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
+
+// Draw the shadow gradient on top of the trunk gradient
+context.fillStyle = canopyShadow;
+context.fillRect(-5, -50, 10, 50);
+</pre></code>
+</figure>
+
+<p>Applying these two gradients creates a nice, smooth light source on our rendered tree as shown in Figure 2-13, making it appear curved and covered by a slight shadow from the canopy above. Let&#x2019;s keep it.</p>
+
+<figure>
+[Insert here]
+<figcaption>Figure 2-13. Tree with gradient trunk</figcaption>
+</figure>
+
+<p>Besides the linear gradient used in our example, the Canvas API also supports a radial gradient option that allows you to specify two circular representations in which the color stops are applied to the cone between the two circles. The radial gradient uses the same color stops as the linear gradient, but takes its arguments in the form shown in Listing 2-17.</p>
+
+<figure>
+<figcaption>Listing 2-17. Example of Applying a Radial Gradient</figcaption>
+<pre><code>createRadialGradient(x0, y0, r0, x1, y1, r1)</pre></code>
+</figure>
+
 <p>In this example, the first three arguments represent a circle centered at (x0, y0) with radius r0, and the last three arguments represent a second circle centered at (x1, y1) with radius r1. The gradient is drawn across the area between the two circles.</p>
-</Section2>
-<Section2 ID="Sec21_2">
+
 <h3>Using Background Patterns</h3>
-<p>Direct rendering of images has many<IndexTerm>
-<Primary>background patterns</Primary></IndexTerm><IndexTerm>
-<Primary>Canvas API</Primary><Secondary>background patterns</Secondary></IndexTerm> uses, but in some cases it is beneficial to use an image as a background tile, similar to the capability available in CSS. We&#x2019;ve already seen how it is possible to set a stroke or fill style to be a solid color. The HTML5 Canvas API also includes an option to set an image as a repeatable pattern for either a path stroke or fill.</p>
+<p>Direct rendering of images has many uses, but in some cases it is beneficial to use an image as a background tile, similar to the capability available in CSS. We&#x2019;ve already seen how it is possible to set a stroke or fill style to be a solid color. The HTML5 Canvas API also includes an option to set an image as a repeatable pattern for either a path stroke or fill.</p>
 <p>To make our forest trail appear a bit more rugged, we will demonstrate the capability by replacing the previous stroked trail curve with one that uses a background image fill. In doing so, we&#x2019;ll swap out our now-unused bark image for a gravel image that we will put to use here. Listing 2-18 shows we replace the call to <code>drawImage</code> with a call to <code>createPattern</code>.</p>
-<aside>
-<h3>Listing 2-18.</h3>
-<p>Using a Background Pattern</p>
-</aside>
-<pre><code>// Replace the bark image with</p>
-<pre><code>// a trail gravel image</p>
-<pre><code>var gravel = new Image();</p>
-<pre><code>gravel.src = "gravel.jpg";</p>
-<pre><code>gravel.onload = function () {</p>
-<pre><code>    drawTrails();</p>
-<pre><code>}</p>
-<pre><code>// Replace the solid stroke with a repeated</p>
-<pre><code>// background pattern</p>
-<pre><code>context.strokeStyle = context.createPattern(gravel, 'repeat');</p>
-<pre><code>context.lineWidth = 20;</p>
-<pre><code>context.stroke();</p>
+
+<figure>
+<figcaption>Listing 2-18. Using a Background Pattern</figcaption>
+<pre><code>// Replace the bark image with
+// a trail gravel image
+var gravel = new Image();
+gravel.src = "gravel.jpg";
+gravel.onload = function () {
+    drawTrails();
+}
+
+// Replace the solid stroke with a repeated
+// background pattern
+context.strokeStyle = context.createPattern(gravel, 'repeat');
+context.lineWidth = 20;
+context.stroke();</pre></code>
+</figure>
+
 <p>As you can see, we are still calling <code>stroke()</code> for our path. However, this time we have set a <code>strokeStyle</code> property<IndexTerm>
-<Primary>strokeStyle property</Primary></IndexTerm> on the context first, passing in the result of a call to <code>context.createPattern</code>. Oh, and once again the image needs to be previously loaded in order for the canvas to perform the operation. The second argument is a repetition pattern that can be one of the choices shown in Table <InternalRef RefID="Tab2_2">2-2</InternalRef>.<Table ID="Tab2_2" Float="Yes">
+<Primary>strokeStyle property</Primary></IndexTerm> on the context first, passing in the result of a call to <code>context.createPattern</code>. Oh, and once again the image needs to be previously loaded in order for the canvas to perform the operation. The second argument is a repetition pattern that can be one of the choices shown in Table 2-2.<Table ID="Tab2_2" Float="Yes">
 <Caption Language="En">
 <CaptionNumber>Table 2-2</CaptionNumber>
 <CaptionContent>
@@ -644,7 +581,7 @@ Tree with filled <IndexTerm>
 </tgroup>
 </Table>
 </p>
-<p>Figure <InternalRef RefID="Fig14_2">2-14</InternalRef> shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.
+<p>Figure 2-14 shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.
 <Figure ID="Fig14_2" Float="Yes" Category="Standard">
 <Caption Language="En">
 <CaptionNumber>Figure 2-14</CaptionNumber>
@@ -669,27 +606,27 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-19.</h3>
 <p>Function to Draw the Tree Object</p>
 </aside>
-<pre><code>// Move tree drawing into its own function for reuse</p>
-<pre><code>function drawTree(context) {</p>
-<pre><code>  var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);</p>
-<pre><code>  trunkGradient.addColorStop(0, '#663300');</p>
-<pre><code>  trunkGradient.addColorStop(0.4, '#996600');</p>
-<pre><code>  trunkGradient.addColorStop(1, '#552200');</p>
-<pre><code>  context.fillStyle = trunkGradient;</p>
-<pre><code>  context.fillRect(-5, -50, 10, 50);</p>
-<pre><code>  var canopyShadow = context.createLinearGradient(0, -50, 0, 0);</p>
-<pre><code>  canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');</p>
-<pre><code>  canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');</p>
-<pre><code>  context.fillStyle = canopyShadow;</p>
-<pre><code>  context.fillRect(-5, -50, 10, 50);</p>
-<pre><code>  createCanopyPath(context);</p>
-<pre><code>  context.lineWidth = 4;</p>
-<pre><code>  context.lineJoin = 'round';</p>
-<pre><code>  context.strokeStyle = '#663300';</p>
-<pre><code>  context.stroke();</p>
-<pre><code>  context.fillStyle = '#339900';</p>
-<pre><code>  context.fill();</p>
-<pre><code>}</p>
+<pre><code>// Move tree drawing into its own function for reuse
+function drawTree(context) {
+  var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
+  trunkGradient.addColorStop(0, '#663300');
+  trunkGradient.addColorStop(0.4, '#996600');
+  trunkGradient.addColorStop(1, '#552200');
+  context.fillStyle = trunkGradient;
+  context.fillRect(-5, -50, 10, 50);
+  var canopyShadow = context.createLinearGradient(0, -50, 0, 0);
+  canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+  canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
+  context.fillStyle = canopyShadow;
+  context.fillRect(-5, -50, 10, 50);
+  createCanopyPath(context);
+  context.lineWidth = 4;
+  context.lineJoin = 'round';
+  context.strokeStyle = '#663300';
+  context.stroke();
+  context.fillStyle = '#339900';
+  context.fill();
+}</p>
 <p>As you can see, the <code>drawTree</code> function contains all the code we previously created to draw the canopy, trunk, and trunk gradient. Now we will use one of the transformation routines&#x2014; <code>context.scale</code><IndexTerm>
 <Primary>context.scale function</Primary></IndexTerm>&#x2014;to draw a second tree at a new location and with a larger size, as <IndexTerm>
 <Primary>scaling canvas objects</Primary></IndexTerm><IndexTerm>
@@ -698,20 +635,20 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-20.</h3>
 <p>Drawing the Tree Objects</p>
 </aside>
-<pre><code>// Draw the first tree at X=130, Y=250</p>
-<pre><code>context.save();</p>
-<pre><code>context.translate(130, 250);</p>
-<pre><code>drawTree(context);</p>
-<pre><code>context.restore();</p>
-<pre><code>// Draw the second tree at X=260, Y=500</p>
-<pre><code>context.save();</p>
-<pre><code>context.translate(260, 500);</p>
-<pre><code>// Scale this tree twice normal in both dimensions</p>
-<pre><code>context.scale(2, 2);</p>
-<pre><code>drawTree(context);</p>
-<pre><code>context.restore();</p>
+<pre><code>// Draw the first tree at X=130, Y=250
+context.save();
+context.translate(130, 250);
+drawTree(context);
+context.restore();
+// Draw the second tree at X=260, Y=500
+context.save();
+context.translate(260, 500);
+// Scale this tree twice normal in both dimensions
+context.scale(2, 2);
+drawTree(context);
+context.restore();</p>
 <p>The <code>scale</code> function<IndexTerm>
-<Primary>scale function</Primary></IndexTerm> takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure <InternalRef RefID="Fig15_2">2-15</InternalRef>.
+<Primary>scale function</Primary></IndexTerm> takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2-15.
 <Figure ID="Fig15_2" Float="Yes" Category="Standard">
 <Caption Language="En">
 <CaptionNumber>Figure 2-15</CaptionNumber>
@@ -741,39 +678,39 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-21.</h3>
 <p>A Rotated Image</p>
 </aside>
-<pre><code>context.save();</p>
-<pre><code>// rotation angle is specified in radians</p>
-<pre><code>context.rotate(1.57);</p>
-<pre><code>context.drawImage(myImage, 0, 0, 100, 100);</p>
-<pre><code>context.restore();</p>
+<pre><code>context.save();
+// rotation angle is specified in radians
+context.rotate(1.57);
+context.drawImage(myImage, 0, 0, 100, 100);
+context.restore();</p>
 <p>In Listing 2-22, however, we will show how you can apply an arbitrary transform to the path coordinates to radically alter the display of our existing tree path in order to create a shadow effect.</p>
 <aside>
 <h3>Listing 2-22.</h3>
 <p>Using a Transform</p>
 </aside>
-<pre><code>// Create a 3 stop gradient horizontally across the trunk</p>
-<pre><code>// Save the current canvas state for later</p>
-<pre><code>context.save();</p>
-<pre><code>// Create a slanted tree as the shadow by applying</p>
-<pre><code>//  a shear transform, changing X values to increase</p>
-<pre><code>//  as Y values increase</p>
-<pre><code>// With this transform applied, all coordinates are</p>
-<pre><code>//  multiplied by the matrix.</p>
-<pre><code>context.transform(1, 0,-0.5, 1, 0, 0);</p>
-<pre><code>// Shrink the shadow down to 60% height in the Y dimension</p>
-<pre><code>context.scale(1, 0.6);</p>
-<pre><code>// Set the tree fill to be black, but at only 20% alpha</p>
-<pre><code>context.fillStyle = 'rgba(0, 0, 0, 0.2)';</p>
-<pre><code>context.fillRect(-5, -50, 10, 50);</p>
-<pre><code>// Redraw the tree with the shadow effects applied</p>
-<pre><code>createCanopyPath(context);</p>
-<pre><code>context.fill();</p>
-<pre><code>// Restore the canvas state</p>
-<pre><code>context.restore();</p>
+<pre><code>// Create a 3 stop gradient horizontally across the trunk
+// Save the current canvas state for later
+context.save();
+// Create a slanted tree as the shadow by applying
+//  a shear transform, changing X values to increase
+//  as Y values increase
+// With this transform applied, all coordinates are
+//  multiplied by the matrix.
+context.transform(1, 0,-0.5, 1, 0, 0);
+// Shrink the shadow down to 60% height in the Y dimension
+context.scale(1, 0.6);
+// Set the tree fill to be black, but at only 20% alpha
+context.fillStyle = 'rgba(0, 0, 0, 0.2)';
+context.fillRect(-5, -50, 10, 50);
+// Redraw the tree with the shadow effects applied
+createCanopyPath(context);
+context.fill();
+// Restore the canvas state
+context.restore();</p>
 <p>Modifying the context transform directly as we&#x2019;ve done here is something you should attempt only if you are familiar with the matrix mathematics <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>using transformations</Secondary></IndexTerm>underpinning two-dimensional drawing systems. If you check the math behind this transform, you will see that we are shifting the X values of our drawing by a factor of the corresponding Y values in order to shear the gray tree being used as a shadow. Then, by applying a scale factor of 60%, the sheared tree is decreased in size.</p>
 <p>Note that the sheared &#x201C;shadow&#x201D; tree is rendered first, so that the actual tree appears above<IndexTerm>
-<Primary>Z-order</Primary></IndexTerm> it in <i>Z-order</i> (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure <InternalRef RefID="Fig16_2">2-16</InternalRef>.
+<Primary>Z-order</Primary></IndexTerm> it in <i>Z-order</i> (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure 2-16.
 <Figure ID="Fig16_2" Float="Yes" Category="Standard">
 <Caption Language="En">
 <CaptionNumber>Figure 2-16</CaptionNumber>
@@ -794,17 +731,17 @@ Tree with filled <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>using text</Secondary></IndexTerm> of our trail creation, let&#x2019;s demonstrate the power of the Canvas API text functions by adding a fancy title to the top of our display. It is important to note that text rendering on a canvas is treated the same way as any other path object: text can be stroked or filled, and all rendering transformations and styles can apply to text just as they do to any other shape.</p>
 <p>As you might expect, <IndexTerm>
 <Primary>fillText function</Primary></IndexTerm><IndexTerm>
-<Primary>strokeText function</Primary></IndexTerm>the text drawing routines consist of two functions on the context object:<UnorderedList Mark="Bullet">
-<ItemContent>
+<Primary>strokeText function</Primary></IndexTerm>the text drawing routines consist of two functions on the context object:<Unol Mark="Bullet">
+
 <p><code>fillText (text, x, y, maxwidth)</code></p>
-</ItemContent>
-<ItemContent>
+
+
 <p><code>strokeText (text, x, y, maxwidth)</code></p>
-</ItemContent>
-</UnorderedList>
+
+</Unol>
 </p>
 <p>Both functions take the text as well as the location at which it should be drawn. Optionally, a <code>maxwidth</code> argument can be provided to constrain the size of the text by automatically shrinking the font to fit the given size. In addition, a <code>measureText</code> function is available to return a metrics object containing the width of the given text should it be rendered using the current context settings.</p>
-<p>As is the case with all browser text display, the actual appearance of the text is highly configurable using context properties that are similar to their CSS counterparts, as shown in Table <InternalRef RefID="Tab3_2">2-3</InternalRef>.
+<p>As is the case with all browser text display, the actual appearance of the text is highly configurable using context properties that are similar to their CSS counterparts, as shown in Table 2-3.
 <Table ID="Tab3_2" Float="Yes">
 <Caption Language="En">
 <CaptionNumber>Table 2-3</CaptionNumber>
@@ -873,19 +810,19 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-23.</h3>
 <p>Using Canvas Text</p>
 </aside>
-<pre><code>// Draw title text on our canvas</p>
-<pre><code>context.save();</p>
-<pre><code>// The font will be 60 pixel, Impact face</p>
-<pre><code>context.font = "60px impact";</p>
-<pre><code>// Use a brown fill for our text</p>
-<pre><code>context.fillStyle = '#996600';</p>
-<pre><code>// Text can be aligned when displayed</p>
-<pre><code>context.textAlign = 'center';</p>
-<pre><code>// Draw the text in the middle of the canvas with a max</p>
-<pre><code>//  width set to center properly</p>
-<pre><code>context.fillText('Happy Trails!', 200, 60, 400);</p>
-<pre><code>context.restore();</p>
-<p>As you can see from the result in Figure <InternalRef RefID="Fig17_2">2-17</InternalRef>, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.
+<pre><code>// Draw title text on our canvas
+context.save();
+// The font will be 60 pixel, Impact face
+context.font = "60px impact";
+// Use a brown fill for our text
+context.fillStyle = '#996600';
+// Text can be aligned when displayed
+context.textAlign = 'center';
+// Draw the text in the middle of the canvas with a max
+//  width set to center properly
+context.fillText('Happy Trails!', 200, 60, 400);
+context.restore();</p>
+<p>As you can see from the result in Figure 2-17, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.
 <Figure ID="Fig17_2" Float="Yes" Category="Standard">
 <Caption Language="En">
 <CaptionNumber>Figure 2-17</CaptionNumber>
@@ -906,7 +843,7 @@ Tree with filled <IndexTerm>
 <p>Finally, we will use the<IndexTerm>
 <Primary>shadows</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>using shadows</Secondary></IndexTerm> built-in canvas shadow API to add a blurred shadow effect to our new text display. Like many graphical effects, shadows are best applied in moderation, even though the Canvas API allows you to apply shadows to any operation we have already covered.</p>
-<p>Once again, shadows are controlled by a few global <code>context</code> properties, as shown in Table <InternalRef RefID="Tab4_2">2-4</InternalRef>.
+<p>Once again, shadows are controlled by a few global <code>context</code> properties, as shown in Table 2-4.
 <Table ID="Tab4_2" Float="Yes">
 <Caption Language="En">
 <CaptionNumber>Table 2-4</CaptionNumber>
@@ -985,14 +922,14 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-24.</h3>
 <p>Applying a Shadow</p>
 </aside>
-<pre><code>// Set some shadow on our text, black with 20% alpha</p>
-<pre><code>context.shadowColor = 'rgba(0, 0, 0, 0.2)';</p>
-<pre><code>// Move the shadow to the right 15 pixels, up 10</p>
-<pre><code>context.shadowOffsetX = 15;</p>
-<pre><code>context.shadowOffsetY = -10;</p>
-<pre><code>// Blur the shadow slightly</p>
-<pre><code>context.shadowBlur = 2;</p>
-<p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure <InternalRef RefID="Fig18_2">2-18</InternalRef> shows <IndexTerm>
+<pre><code>// Set some shadow on our text, black with 20% alpha
+context.shadowColor = 'rgba(0, 0, 0, 0.2)';
+// Move the shadow to the right 15 pixels, up 10
+context.shadowOffsetX = 15;
+context.shadowOffsetY = -10;
+// Blur the shadow slightly
+context.shadowBlur = 2;</p>
+<p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2-18 shows <IndexTerm>
 <Primary>shadows</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>using shadows</Secondary></IndexTerm>the newly applied shadows.
 <Figure ID="Fig18_2" Float="Yes" Category="Standard">
@@ -1018,54 +955,45 @@ Tree with filled <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm> useful&#x2014;albeit nonobvious&#x2014;aspects of the Canvas API is the ability for developers to easily get access to the underlying pixels in the canvas. This access works in both directions: it is trivial to get access to the pixel values as a numerical array, and it is equally easy to modify those values and apply them back to the canvas. In fact, it is entirely possible to manipulate the canvas entirely through the pixel value calls and forgo the rendering calls we&#x2019;ve discussed in this chapter. This is made possible by the existence of three functions on the <code>context</code> API.</p>
 <p>First up is <code>context.getImageData(sx, sy, sw, sh)</code><IndexTerm>
 <Primary>context.getImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>getImageData function</Primary></IndexTerm>. This function returns a representation of the current state of the canvas display as a collection of integers. Specifically, it returns an object containing three properties:<UnorderedList Mark="Bullet">
-<ItemContent>
+<Primary>getImageData function</Primary></IndexTerm>. This function returns a representation of the current state of the canvas display as a collection of integers. Specifically, it returns an object containing three properties:<Unol Mark="Bullet">
+
 <p><code>width</code>: The number of pixels in each row of the pixel data</p>
-</ItemContent>
-<ItemContent>
+
+
 <p><code>height</code>: The number of pixels in each column of the pixel data<IndexTerm>
 <Primary>pixel data</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>
 </p>
-</ItemContent>
-<ItemContent>
-<p><code>data</code>: A one-dimensional array containing the actual RGBA values for each pixel retrieved from the canvas. This array contains four values for each pixel&#x2014;a red, green, blue, and alpha component&#x2014;each with a value from 0 to 255. Therefore, each pixel retrieved from the canvas becomes four integer values in the data array. The data array is populated by pixels from left to right and top to bottom (for example, across the first row, then across the second row, and so on), as shown in Figure <InternalRef RefID="Fig19_2">2-19</InternalRef>.
+
+
+<p><code>data</code>: A one-dimensional array containing the actual RGBA values for each pixel retrieved from the canvas. This array contains four values for each pixel&#x2014;a red, green, blue, and alpha component&#x2014;each with a value from 0 to 255. Therefore, each pixel retrieved from the canvas becomes four integer values in the data array. The data array is populated by pixels from left to right and top to bottom (for example, across the first row, then across the second row, and so on), as shown in Figure 2-19.
 </p>
-</ItemContent>
-</UnorderedList>
-</p>
-<p><Figure ID="Fig19_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-19</CaptionNumber>
-<CaptionContent>
-<Simplep>Pixel data and the internal data structure that represents it</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO19_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig19_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+
+<figure>
+<img src="images/ch2/fig2-19.jpg"/>
+<figcaption>Figure 2-19. Pixel data and the internal data structure that represents it</figcaption>
+</figure>
+
 <p>The data returned by the call to <code>getImageData</code> is limited to the region defined by the four pmeters. Only canvas pixels contained in the <IndexTerm>
 <Primary>pixel data</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>rectangular region surrounded by the source <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code> pmeters will be retrieved. Therefore, to access all pixel values as data, you should pass in <code>getImageData(0, 0, canvas.width, canvas.height)</code>.</p>
 <p>Because there are four image data values representing each pixel, it can be a little tricky to calculate exactly which index represents the values for a given pixel. The formula is as follows.</p>
 <p>For any pixel at coordinate (x,y) in a canvas <IndexTerm>
 <Primary>context.getImageData function</Primary></IndexTerm><IndexTerm>
-<Primary>getImageData function</Primary></IndexTerm>with a given width and height, you can locate the component values:<UnorderedList Mark="Bullet">
-<ItemContent>
+<Primary>getImageData function</Primary></IndexTerm>with a given width and height, you can locate the component values:<Unol Mark="Bullet">
+
 <p><Emphasis Type="Bold">Red component</i>: ((width * y) + x) * 4</p>
-</ItemContent>
-<ItemContent>
+
+
 <p><Emphasis Type="Bold">Green component</i>: ((width * y) + x) * 4 + 1</p>
-</ItemContent>
-<ItemContent>
+
+
 <p><Emphasis Type="Bold">Blue component</i>: ((width * y) + x) * 4 + 2</p>
-</ItemContent>
-<ItemContent>
+
+
 <p><Emphasis Type="Bold">Alpha component</i>: ((width * y) + x) * 4 + 3</p>
-</ItemContent>
-</UnorderedList>
+
+</Unol>
 </p>
 <p>Once you have access to the object with image data, it is quite easy to modify the pixel values in the data array mathematically, because they are each simply integers from 0 to 255. Changing the red, green, blue, or alpha values for one or more pixels makes it easy to update the canvas display by using the second function: <code>context.putImageData</code><IndexTerm>
 <Primary>context.putImageData function</Primary></IndexTerm><IndexTerm>
@@ -1077,21 +1005,21 @@ Tree with filled <IndexTerm>
 <Primary>pixel data</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm> though it does not represent the current state of the canvas when retrieved.</p>
 <p>There is yet another way to get data out of a canvas: the <code>canvas.toDataURL</code> API. This function gives you a programmatic way to retrieve the current rendering data of a canvas in a text format, but in this case the format is a standard representation of the data that browsers can interpret as images.</p>
-<p>A data URL is a string containing the data of an image&#x2014;such as a PNG&#x2014;that a browser can display just like a normal image file. The format of a data URL is best illustrated with an example:</p>
-<pre><code>data:image/png;base64, WCAYAAABkY9jZxn&#x2026;</p>
+<p>A data URL is a string containing the data of an image&#x2014;such as a PNG&#x2014;that a browser can display just like a normal image file. The format of a data URL is best illustrated with an example:
+data:image/png;base64, WCAYAAABkY9jZxn&#x2026;</p>
 <p>This example shows that the format is the string <code>data:</code> followed by a MIME type (such as <code>image/png</code>), followed by a flag indicating whether or not the data is encoded in base64 format, and then the text representing the data itself.</p>
 <p>Don&#x2019;t worry about the format, as you won&#x2019;t be generating it yourself. The important point is that with a simple call, you can get the content of a canvas delivered to you in one of these special URLs. When you call <code>canvas.toDataURL(type)</code>, you can pass in a type of image you would like the canvas data generated in, such as <code>image/png</code> (the default) or <code>image/jpeg</code>. The data URL returned to you can be used as the source of image elements in a page or CSS styles, as shown in Listing 2-25.</p>
 <aside>
 <h3>Listing 2-25.</h3>
 <p>Creating an Image from a Canvas</p>
 </aside>
-<pre><code>var myCanvas = document.getElementById("myCanvas");</p>
-<pre><code>// draw operations into the canvas&#x2026;</p>
-<pre><code>// get the canvas data as a data URL</p>
-<pre><code>var canvasData = myCanvas.toDataURL();</p>
-<pre><code>// set the data as the source of a new image</p>
-<pre><code>var img = new Image();</p>
-<pre><code>img.src = canvasData;</p>
+<pre><code>var myCanvas = document.getElementById("myCanvas");
+// draw operations into the canvas&#x2026;
+// get the canvas data as a data URL
+var canvasData = myCanvas.toDataURL();
+// set the data as the source of a new image
+var img = new Image();
+img.src = canvasData;</p>
 <p>You don&#x2019;t have to use a data URL right away. You could even store the URL in your browser&#x2019;s local storage for later retrieval and manipulation. Browser storage will be covered later in this book.<IndexTerm>
 <Primary>pixel data</Primary></IndexTerm><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>working with pixel adata</Secondary></IndexTerm>
@@ -1103,19 +1031,13 @@ Tree with filled <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>canvas security</Secondary></IndexTerm><IndexTerm>
 <Primary>security, canvas</Primary></IndexTerm>caveat to using pixel manipulation, as described in the previous section. Although most developers would use pixel manipulation for legitimate means, it is quite possible that the ability to fetch and update data from a canvas could be used for nefarious purposes. For this reason, the concept of <IndexTerm>
 <Primary>origin-clean canvas</Primary></IndexTerm>an <i>origin-clean</i> canvas was specified, so that canvases that are <i>tainted</i> with images from origins other than the source of the containing page cannot have their data retrieved.</p>
-<p>As shown in Figure <InternalRef RefID="Fig20_2">2-20</InternalRef>, if a page served up from <code>http://www.example.com</code> contains a <code>canvas</code> element, it is entirely possible that the code in the page could try to render an image from <code>http://www.remote.com</code> inside the canvas. After all, it is perfectly acceptable to render images from remote sites inside any given web page.
-<Figure ID="Fig20_2" Float="Yes" Category="Standard">
-<Caption Language="En">
-<CaptionNumber>Figure 2-20</CaptionNumber>
-<CaptionContent>
-<Simplep>Local and remote image sources</Simplep>
-</CaptionContent>
-</Caption>
-<MediaObject ID="MO20_2">
-<ImageObject FileRef="978-1-4302-3865-2_2_Fig20_HTML.gif" Format="GIF" Color="Color" Type="Linedraw" Rendition="HTML"/>
-</MediaObject>
-</Figure>
-</p>
+<p>As shown in Figure 2-20, if a page served up from <code>http://www.example.com</code> contains a <code>canvas</code> element, it is entirely possible that the code in the page could try to render an image from <code>http://www.remote.com</code> inside the canvas. After all, it is perfectly acceptable to render images from remote sites inside any given web page.</p>
+
+<figure>
+<img src="images/ch2/fig2-20.jpg"/>
+<figcaption>Figure 2-20. Local and remote image sources</figcaption>
+</figure>
+
 <p>However, before the arrival of the Canvas API, it was not possible to programmatically retrieve the pixel values of a downloaded image. Private images from other sites could be displayed in a page but not read or copied. Allowing scripts to read image data from other origins would effectively share users' photographs and other sensitive online image file with the entire web.</p>
 <p>In order to prevent this, any canvas that contains images rendered from remote origins will throw a security exception if the <code>getImageData</code> or <code>toDataURL</code> functions<IndexTerm>
 <Primary>getImageData function</Primary></IndexTerm> are called. It is perfectly acceptable to render remote images into a canvas from another origin as long as you (or any other scriptwriter) do not attempt to fetch the data from that canvas after it has been tainted. Be aware of this<IndexTerm>
@@ -1129,7 +1051,7 @@ Tree with filled <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>application possibilities for using the Canvas API: graphs, charts, image editing, and so on. However, one of the most intriguing uses for the canvas is to modify or overlay existing content. One popular type of overlay is known as a <IndexTerm>
 <Primary>heatmaps</Primary></IndexTerm>heatmap. Although the name implies a temperature measurement, the heat in this case can refer to any level of measurable activity. Areas on the map with high levels of activity are colored as hot (for example, red, yellow, or white). Areas with less activity show no color change at all, or minimal blacks and grays.</p>
 <p>For example, a heatmap can be used to indicate traffic on a city map, or storm activity on a global map. And situations such as these are easy to implement in HTML5 by combining a canvas display with an underlying map source. Essentially, the canvas can be used to overlay the map and draw the heat levels based on the appropriate activity data.</p>
-<p>Let&#x2019;s build a simple heatmap using the capabilities we learned about in the Canvas API. In this case, our heat data source will be not external data, but the movement of our mouse across the map. Moving the mouse over a portion of the map will cause the heat to increase, and holding the mouse at a given position will rapidly increase the temperature to maximum levels. We can overlay such a heatmap display(shown in Figure <InternalRef RefID="Fig21_2">2-21</InternalRef>) on a nondescript terrain map, just to provide a sample case.
+<p>Let&#x2019;s build a simple heatmap using the capabilities we learned about in the Canvas API. In this case, our heat data source will be not external data, but the movement of our mouse across the map. Moving the mouse over a portion of the map will cause the heat to increase, and holding the mouse at a given position will rapidly increase the temperature to maximum levels. We can overlay such a heatmap display(shown in Figure 2-21) on a nondescript terrain map, just to provide a sample case.
 <Figure ID="Fig21_2" Float="Yes" Category="Standard">
 <Caption Language="En">
 <CaptionNumber>Figure 2-21</CaptionNumber>
@@ -1150,20 +1072,20 @@ Tree with filled <IndexTerm>
 <h3>Listing 2-26.</h3>
 <p>The Heatmap Canvas Element</p>
 </aside>
-<pre><code>&#x003C;style type="text/css"&#x003E;</p>
-<pre><code>  #heatmap {</p>
-<pre><code>      background-image: url("mapbg.jpg");</p>
-<pre><code>  }</p>
-<pre><code>&#x003C;/style&#x003E;</p>
-<pre><code>&#x003C;h2&#x003E;Heatmap &#x003C;/h2&#x003E;</p>
-<pre><code>&#x003C;canvas id="heatmap" class="clear" style="border: 1px solid ; " height="300"</p>
-<pre><code>width="300"&#x003E; &#x003C;/canvas&#x003E;</p>
-<pre><code>&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</p>
-<p>We also declare some initial variables to be used later in the example.</p>
-<pre><code>  var points = {};</p>
-<pre><code>  var SCALE = 3;</p>
-<pre><code>  var x = -1;</p>
-<pre><code>  var y = -1;</p>
+<pre><code>&#x003C;style type="text/css"&#x003E;
+  #heatmap {
+      background-image: url("mapbg.jpg");
+  }
+&#x003C;/style&#x003E;
+&#x003C;h2&#x003E;Heatmap &#x003C;/h2&#x003E;
+&#x003C;canvas id="heatmap" class="clear" style="border: 1px solid ; " height="300"
+width="300"&#x003E; &#x003C;/canvas&#x003E;
+&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</p>
+<p>We also declare some initial variables to be used later in the example.
+  var points = {};
+  var SCALE = 3;
+  var x = -1;
+  var y = -1;</p>
 <p>Next, we will set the canvas to have a high transparency value for its global drawing operations, and set the composite mode to cause new draws to lighten the underlying pixels rather than replace them.</p>
 <p>Then, as shown in Listing 2-27, we <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>will set a handler to change the display&#x2014; <code>addToPoint</code> &#x2014;every <IndexTerm>
@@ -1173,37 +1095,37 @@ Tree with filled <IndexTerm>
 <p>The loadDemo<IndexTerm>
 <Primary>loadDemo function</Primary></IndexTerm> <i>Function</i></p>
 </aside>
-<pre><code>function loadDemo() {</p>
-<pre><code>  document.getElementById("resetButton").onclick = reset;</p>
-<pre><code>  canvas = document.getElementById("heatmap");</p>
-<pre><code>  context = canvas.getContext('2d');</p>
-<pre><code>  context.globalAlpha = 0.2;</p>
-<pre><code>  context.globalCompositeOperation = "lighter"</p>
-<pre><code>function sample() {</p>
-<pre><code>  if (x != -1) {</p>
-<pre><code>    addToPoint(x,y)</p>
-<pre><code>  }</p>
-<pre><code>  setTimeout(sample, 100);</p>
-<pre><code>}</p>
-<pre><code>canvas.onmousemove = function(e) {</p>
-<pre><code>  x = e.clientX - e.target.offsetLeft;</p>
-<pre><code>  y = e.clientY - e.target.offsetTop;</p>
-<pre><code>  addToPoint(x,y)</p>
-<pre><code>}</p>
-<pre><code>  sample();</p>
-<pre><code>}</p>
+<pre><code>function loadDemo() {
+  document.getElementById("resetButton").onclick = reset;
+  canvas = document.getElementById("heatmap");
+  context = canvas.getContext('2d');
+  context.globalAlpha = 0.2;
+  context.globalCompositeOperation = "lighter"
+function sample() {
+  if (x != -1) {
+    addToPoint(x,y)
+  }
+  setTimeout(sample, 100);
+}
+canvas.onmousemove = function(e) {
+  x = e.clientX - e.target.offsetLeft;
+  y = e.clientY - e.target.offsetTop;
+  addToPoint(x,y)
+}
+  sample();
+}</p>
 <p>If the user clicks <Emphasis Type="Bold">Reset</i>, the entire canvas area is cleared and reset to its original state by using the canvas&#x2019; <code>clearRect</code> function, as shown in Listing 2-28.</p>
 <aside>
 <h3>Listing 2-28.</h3>
 <p>The<IndexTerm>
 <Primary>reset function</Primary></IndexTerm> <i>reset Function</i></p>
 </aside>
-<pre><code>function reset() {</p>
-<pre><code>  points = {};</p>
-<pre><code>  context.clearRect(0,0,300,300);</p>
-<pre><code>  x = -1;</p>
-<pre><code>  y = -1;</p>
-<pre><code>}</p>
+<pre><code>function reset() {
+  points = {};
+  context.clearRect(0,0,300,300);
+  x = -1;
+  y = -1;
+}</p>
 <p>Next we create a lookup table <IndexTerm>
 <Primary>heatmaps</Primary></IndexTerm>of colors to use when drawing heat on the canvas. Listing 2-29 shows how the colors range in brightness from least to greatest, and they will be used to represent varying levels of heat on the display. The greater the value of the <code>intensity</code>, the brighter the returned color.</p>
 <aside>
@@ -1211,10 +1133,10 @@ Tree with filled <IndexTerm>
 <p>The<IndexTerm>
 <Primary>getColor function</Primary></IndexTerm> <i>getColor Function</i></p>
 </aside>
-<pre><code>function getColor(intensity) {</p>
-<pre><code>  var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];</p>
-<pre><code>  return colors[Math.floor(intensity/2)];</p>
-<pre><code>}</p>
+<pre><code>function getColor(intensity) {
+  var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];
+  return colors[Math.floor(intensity/2)];
+}</p>
 <p>Whenever the mouse moves or hovers over an area of the canvas, a point is drawn. The point grows in size (and brightness) the longer the mouse stays in the immediate area. As shown in Listing 2-30, we use the <code>context.arc</code> function to draw a circle of a given <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>radius, and we draw a brighter, hotter color for larger radius values by passing the radius to our <code>getColor</code> function.</p>
 <aside>
@@ -1222,36 +1144,36 @@ Tree with filled <IndexTerm>
 <p>The<IndexTerm>
 <Primary>drawPoint function</Primary></IndexTerm> <i>drawPoint Function</i></p>
 </aside>
-<pre><code>function drawPoint(x, y, radius) {</p>
-<pre><code>  context.fillStyle = getColor(radius);</p>
-<pre><code>  radius = Math.sqrt(radius)*6;</p>
-<pre><code>  context.beginPath();</p>
-<pre><code>  context.arc(x, y, radius, 0, Math.PI*2, true)</p>
-<pre><code>  context.closePath();</p>
-<pre><code>  context.fill();</p>
-<pre><code>}</p>
+<pre><code>function drawPoint(x, y, radius) {
+  context.fillStyle = getColor(radius);
+  radius = Math.sqrt(radius)*6;
+  context.beginPath();
+  context.arc(x, y, radius, 0, Math.PI*2, true)
+  context.closePath();
+  context.fill();
+}</p>
 <p>In the <code>addToPoint</code> function<IndexTerm>
 <Primary>addToPoint function</Primary></IndexTerm>&#x2014;which you will recall is accessed every time the mouse moves or hovers over a point&#x2014;a heat value is increased and stored for that particular point on the canvas. Listing 2-31 shows that the maximum point value is 10. Once the current value of heat for a given pixel is found, the appropriate pixel is passed to <code>drawPoint</code> with its corresponding heat/radius value.</p>
 <aside>
 <h3>Listing 2-31.</h3>
 <p>The addToPoint Function</p>
 </aside>
-<pre><code>function addToPoint(x, y) {</p>
-<pre><code>  x = Math.floor(x/SCALE);</p>
-<pre><code>  y = Math.floor(y/SCALE);</p>
-<pre><code>  if (!points[[x,y]]) {</p>
-<pre><code>    points[[x,y]] = 1;</p>
-<pre><code>  } else if (points[[x,y]]==10) {</p>
-<pre><code>    return</p>
-<pre><code>  } else {</p>
-<pre><code>    points[[x,y]]++;</p>
-<pre><code>  }</p>
-<pre><code>  drawPoint(x*SCALE,y*SCALE, points[[x,y]]);</p>
-<pre><code>}</p>
+<pre><code>function addToPoint(x, y) {
+  x = Math.floor(x/SCALE);
+  y = Math.floor(y/SCALE);
+  if (!points[[x,y]]) {
+    points[[x,y]] = 1;
+  } else if (points[[x,y]]==10) {
+    return
+  } else {
+    points[[x,y]]++;
+  }
+  drawPoint(x*SCALE,y*SCALE, points[[x,y]]);
+}</p>
 <p>Finally, the <IndexTerm>
 <Primary>heatmaps</Primary></IndexTerm>initial <code>loadDemo</code> function<IndexTerm>
-<Primary>loadDemo function</Primary></IndexTerm> is registered to be called whenever the window completes loading.</p>
-<pre><code>window.addEventListener("load", loadDemo, true);</p>
+<Primary>loadDemo function</Primary></IndexTerm> is registered to be called whenever the window completes loading.
+window.addEventListener("load", loadDemo, true);</p>
 <p>Together, these one hundred or so lines of code illustrate how much you can do with the Canvas API in a short amount of time, without using any plug-ins or external rendering technology. With an infinite number of data sources available it is easy to see how they can be visualized simply and effectively.</p>
 <Section2 ID="Sec29_2">
 <h3>Practical Extra: Full Page Glass Pane</h3>
@@ -1259,19 +1181,19 @@ Tree with filled <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm> saw how you can apply a canvas on top of a graphic. You can also apply a canvas on top of the entire browser window or portions of the same&#x2014;a technique commonly referred to<IndexTerm>
 <Primary>glass pane</Primary></IndexTerm> as glass pane. Once you have positioned the glass pane canvas on top of a web page, you can do all kinds of cool and handy things with it.</p>
 <p>For example, you can use a routine to retrieve the absolute position of all the DOM elements on a page and create a step-by-step help function that can guide users of a web application through the steps they must perform to start and use the application.</p>
-<p>Or, you can use the glass pane canvas to scribble feedback on someone&#x2019;s web page using the mouse events for drawing input. Some things to keep in mind if you try to use a canvas in this capacity:<UnorderedList Mark="Bullet">
-<ItemContent>
+<p>Or, you can use the glass pane canvas to scribble feedback on someone&#x2019;s web page using the mouse events for drawing input. Some things to keep in mind if you try to use a canvas in this capacity:<Unol Mark="Bullet">
+
 <p>You will need to set the canvas positioning to absolute and give it a specific position, width, and height. Without an explicit width and height setting, the canvas will remain at a zero pixel size.</p>
-</ItemContent>
-<ItemContent>
+
+
 <p>Don&#x2019;t forget to set a high Z-index on the canvas so that it floats above all the visible content. A canvas rendered under all the existing content doesn&#x2019;t get much chance to shine.</p>
-</ItemContent>
-<ItemContent>
+
+
 <p>Your glass pane<IndexTerm>
 <Primary>glass pane</Primary></IndexTerm> canvas can block access to events in the content below, so be sparing in how you use it and remove it <IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>when it is unnecessary.</p>
-</ItemContent>
-</UnorderedList>
+
+</Unol>
 </p>
 </Section2>
 <Section2 ID="Sec30_2">
@@ -1281,14 +1203,14 @@ Tree with filled <IndexTerm>
 <p>Earlier in the chapter, we mentioned that it is a common practice to animate elements on a canvas. This could be used for gaming, transitional effects, or simply to replace animated GIFs in an existing web page. But one area where JavaScript has been lacking is a reliable way to schedule your animation updates.</p>
 <p>Today, most developers use the classic <code>setTimeout</code> or <code>setInterval</code> calls to schedule changes to a web page or application. Both of these calls allow you to schedule a callback after a certain number of milliseconds, which then allows you to make changes to the page during the callback. However, there are some significant problems with using that approach:<IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
-<UnorderedList Mark="Bullet">
-<ItemContent>
+<Unol Mark="Bullet">
+
 <p>As a developer, you need to guess at the appropriate number of milliseconds in the future to schedule the next update. With the modern Web running on a wider variety of devices than ever, it is tricky to know the suggested frame rate for a high-powered desktop device versus a mobile phone. And even if you guess how many frames to schedule per second, you may end up competing with other pages or machine load.</p>
-</ItemContent>
-<ItemContent>
+
+
 <p>It is more common than ever for users to browse with multiple windows or tabs, even on mobile devices. If you use <code>setTimeout</code> and <code>setInterval</code> to schedule your page updates, these will continue to happen even when the page is in the background. Running your scripts when they aren&#x2019;t even visible is a great way to convince users that your web application is draining their phone battery!</p>
-</ItemContent>
-</UnorderedList>
+
+</Unol>
 </p>
 <p>As an alternative, many browsers now offer a <code>requestAnimationFrame</code> function on the <code>window</code> object. This function takes a callback as its argument, and the callback will be invoked whenever the browser deems it appropriate for the animation to be updated.</p>
 <p>Let&#x2019;s add another example (Listing 2-32) of our trail scene, this one with a crudely animated rain storm to signify the cancellation of our upcoming race. This code builds on the previous examples, and redundant code is not listed here.</p>
@@ -1298,84 +1220,84 @@ Tree with filled <IndexTerm>
 <Primary>animation, canvas</Primary></IndexTerm> <i>Frame Request</i>
 </p>
 </aside>
-<pre><code>// create an image for our rain texture</p>
-<pre><code>var rain = new Image();</p>
-<pre><code>rain.src = "rain.png";</p>
-<pre><code>rain.onload = function () {</p>
-<pre><code>  // Start off the animation with a single frame request</p>
-<pre><code>  // once the rain is loaded</p>
-<pre><code>  window.requestAnimFrame(loopAnimation, canvas);</p>
-<pre><code>}</p>
-<pre><code>// Previous code omitted&#x2026;</p>
-<pre><code>// this function allows us to cover all browsers</p>
-<pre><code>// by aliasing the different browser-specific</p>
-<pre><code>// versions of the function to a single function</p>
-<pre><code>window.requestAnimFrame = (function(){</p>
-<pre><code>  return  window.requestAnimationFrame       ||</p>
-<pre><code>          window.webkitRequestAnimationFrame ||</p>
-<pre><code>          window.mozRequestAnimationFrame    ||</p>
-<pre><code>          window.oRequestAnimationFrame      ||</p>
-<pre><code>          window.msRequestAnimationFrame     ||</p>
-<pre><code>          // fall back to the old setTimeout technique if nothing</p>
-<pre><code>          // else is available</p>
-<pre><code>          function(/* function */ callback, /* DOMElement */ element){</p>
-<pre><code>            window.setTimeout(callback, 1000 / 60);</p>
-<pre><code>          };</p>
-<pre><code>;})();</p>
-<pre><code>// This function is where we update the content of our canvas</p>
-<pre><code>function drawAFrame() {</p>
-<pre><code>  var context = canvas.getContext('2d');</p>
-<pre><code>  // do some drawing on the canvas, using the elapsedTime</p>
-<pre><code>  // as a guide for changes.</p>
-<pre><code>  context.save();</p>
-<pre><code>  // draw the existing trails picture first</p>
-<pre><code>  drawTrails();</p>
-<pre><code>  // Darken the canvas for an eerie sky.</p>
-<pre><code>  // By only darkening most of the time, we create lightning flashes</p>
-<pre><code>  if (Math.random() &#x003E; .01) {</p>
-<pre><code>    context.globalAlpha = 0.65;</p>
-<pre><code>    context.fillStyle = '#000000';</p>
-<pre><code>    context.fillRect(0, 0, 400, 600);</p>
-<pre><code>    context.globalAlpha = 1.0;</p>
-<pre><code>  }</p>
+<pre><code>// create an image for our rain texture
+var rain = new Image();
+rain.src = "rain.png";
+rain.onload = function () {
+  // Start off the animation with a single frame request
+  // once the rain is loaded
+  window.requestAnimFrame(loopAnimation, canvas);
+}
+// Previous code omitted&#x2026;
+// this function allows us to cover all browsers
+// by aliasing the different browser-specific
+// versions of the function to a single function
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
+          // fall back to the old setTimeout technique if nothing
+          // else is available
+          function(/* function */ callback, /* DOMElement */ element){
+            window.setTimeout(callback, 1000 / 60);
+          };
+;})();
+// This function is where we update the content of our canvas
+function drawAFrame() {
+  var context = canvas.getContext('2d');
+  // do some drawing on the canvas, using the elapsedTime
+  // as a guide for changes.
+  context.save();
+  // draw the existing trails picture first
+  drawTrails();
+  // Darken the canvas for an eerie sky.
+  // By only darkening most of the time, we create lightning flashes
+  if (Math.random() &#x003E; .01) {
+    context.globalAlpha = 0.65;
+    context.fillStyle = '#000000';
+    context.fillRect(0, 0, 400, 600);
+    context.globalAlpha = 1.0;
+  }</p>
 <p><IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
-</p>
-<pre><code>  // then draw a rain image, adjusted by the current time</p>
-<pre><code>  var now = Date.now();</p>
-<pre><code>  context.fillStyle = context.createPattern(rain, 'repeat');</p>
-<pre><code>  // We'll draw two translated rain images at different rates to</p>
-<pre><code>  // show thick rain and snow</p>
-<pre><code>  // Our rectangle will be bigger than the display size, and</p>
-<pre><code>  // repositioned based on the time</p>
-<pre><code>  context.save();</p>
-<pre><code>  context.translate(-256 + (0.1 * now) % 256, -256 + (0.5 * now) % 256);</p>
-<pre><code>  context.fillRect(0, 0, 400 + 256, 600 + 256);</p>
-<pre><code>  context.restore();</p>
-<pre><code>  // The second rectangle translates at a different rate for</p>
-<pre><code>  // thicker rain appearance</p>
-<pre><code>  context.save();</p>
-<pre><code>  context.translate(-256 + (0.08 * now) % 256, -256 + (0.2 * now) % 256);</p>
-<pre><code>  context.fillRect(0, 0, 400 + 256, 600 + 256);</p>
-<pre><code>  context.restore();</p>
-<pre><code>  // draw some explanatory text</p>
-<pre><code>  context.font = '32px san-serif';</p>
-<pre><code>  context.textAlign = 'center';</p>
-<pre><code>  context.fillStyle = '#990000';</p>
-<pre><code>  context.fillText('Event canceled due to weather!', 200, 550, 400);</p>
-<pre><code>  context.restore();</p>
-<pre><code>}</p>
-<pre><code>// This function will be called whenever the browser is ready</p>
-<pre><code>// for our application to render another frame.</p>
-<pre><code>function loopAnimation(currentTime) {</p>
-<pre><code>  // Draw a single frame of animation on our canvas</p>
-<pre><code>  drawAFrame();</p>
-<pre><code>  // After this frame is drawn, let the browser schedule</p>
-<pre><code>  // the next one</p>
-<pre><code>  window.requestAnimFrame(loopAnimation, canvas);</p>
-<pre><code>}</p>
+
+  // then draw a rain image, adjusted by the current time
+  var now = Date.now();
+  context.fillStyle = context.createPattern(rain, 'repeat');
+  // We'll draw two translated rain images at different rates to
+  // show thick rain and snow
+  // Our rectangle will be bigger than the display size, and
+  // repositioned based on the time
+  context.save();
+  context.translate(-256 + (0.1 * now) % 256, -256 + (0.5 * now) % 256);
+  context.fillRect(0, 0, 400 + 256, 600 + 256);
+  context.restore();
+  // The second rectangle translates at a different rate for
+  // thicker rain appearance
+  context.save();
+  context.translate(-256 + (0.08 * now) % 256, -256 + (0.2 * now) % 256);
+  context.fillRect(0, 0, 400 + 256, 600 + 256);
+  context.restore();
+  // draw some explanatory text
+  context.font = '32px san-serif';
+  context.textAlign = 'center';
+  context.fillStyle = '#990000';
+  context.fillText('Event canceled due to weather!', 200, 550, 400);
+  context.restore();
+}
+// This function will be called whenever the browser is ready
+// for our application to render another frame.
+function loopAnimation(currentTime) {
+  // Draw a single frame of animation on our canvas
+  drawAFrame();
+  // After this frame is drawn, let the browser schedule
+  // the next one
+  window.requestAnimFrame(loopAnimation, canvas);
+}</p>
 <p>Once we update our drawing, we can see the animating<IndexTerm>
-<Primary>animation, canvas</Primary></IndexTerm> rain on top of our trail (see Figure <InternalRef RefID="Fig22_2">2-22</InternalRef>).<IndexTerm>
+<Primary>animation, canvas</Primary></IndexTerm> rain on top of our trail (see Figure 2-22).<IndexTerm>
 <Primary>Canvas API</Primary><Secondary>building application with</Secondary></IndexTerm>
 <Figure ID="Fig22_2" Float="Yes" Category="Standard">
 <Caption Language="En">
