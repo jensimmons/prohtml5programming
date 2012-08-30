@@ -452,83 +452,6 @@ ul,
   margin: 1.5em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\000037}}
-.viewer {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000314}}
-nav {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
-  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000326}}
-nav .contents {
-  margin: 0 auto;
-  position: relative;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000330}}
-nav .next {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000337}}
-nav .prev {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000345}}
-.sidebar .content, .menu .content {
-  display: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000349}}
-.sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000355}}
-.pagenumbers {
-  display: block;
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000365}}
-.lightbox {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  background: rgba(0, 0, 0, 0.5);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000374}}
-.lightbox .container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 8px;
-  background: black;
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000311}}
 p {
   color: #333333;
@@ -613,6 +536,83 @@ img {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003103}}
 .cover {
   background: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\000037}}
+.viewer {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000314}}
+nav {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000326}}
+nav .contents {
+  margin: 0 auto;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000330}}
+nav .next {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000337}}
+nav .prev {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000345}}
+.sidebar .content, .menu .content {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000349}}
+.sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000355}}
+.pagenumbers {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000365}}
+.lightbox {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000374}}
+.lightbox .container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  background: black;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
@@ -1167,9 +1167,14 @@ img {
   width: 81.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000355}}
+.w6.grid:not(.fixed):not(.sizetocontainer) {
+  max-width: 81.5em;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000372}}
 .column {
-  width: 18.5em;
+  width: 39.5em;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -1469,6 +1474,36 @@ html.no-offline [data-requires~="no-offline"] {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003315}}
 html.no-offline [data-requires~="offline"] {
   display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003322}}
+.r {
+  background: #ff9999 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003324}}
+.g {
+  background: #99ff99 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003326}}
+.b {
+  background: #9999ff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003328}}
+.c {
+  background: #99ffff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003330}}
+.m {
+  background: #ff99ff !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003332}}
+.y {
+  background: #ffff99 !important;
 }
 
 @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (orientation: portrait) {
