@@ -13,28 +13,17 @@
     <link rel="stylesheet" href="../doc/docs.css">
     <link rel="stylesheet" href="../theme/ambiance.css">
     <style type=text/css>
-        .CodeMirror-scroll {
-            height: 624px;
+      .CodeMirror-scroll {
+        height: 624px;
         }
       .code-mirror-container {
-
         border: 1px solid #ccc;
         width: 40%;
         min-width: 300px;
-        /*height: auto !important;*/
-/*        overflow-y: auto;*/
-        /*padding: 1em;*/
         float: left;
-/*        border-radius: 5px;*/
         margin-right: 2em;
       }
       .CodeMirror {
-/*        float: left;
-        width: 50%;
-        border: 1px solid #999;*/
-        /*height: 600px;*/
-        /*overflow-y: auto;*/
-        /*margin: 1em;*/
       }
       iframe {
         width: 424px;
@@ -49,113 +38,7 @@
     <h1>Live Code Example</h1>
     <div class="code-mirror-container">
       <textarea id="code" name="code">
-<!doctype html>
-<html>
-  <head>
-    <meta charset"=utf-8">
-    <title>Pro HTML5 Programming: Using the Canvas API</title>
-  </head>
-  <body>
-    <canvas id="trails" width="400" height="600"></canvas>
-    <script id="listing-2.17">
-      var gravel = new Image();
-      gravel.src = "gravel.jpg";
-      gravel.onload = function () {
-        drawTrails();
-      }
-
-      function createCanopyPath(context) {
-        context.beginPath();
-        context.moveTo(-25, -50);
-        context.lineTo(-10, -80);
-        context.lineTo(-20, -80);
-        context.lineTo(-5, -110);
-        context.lineTo(-15, -110);
-
-        context.lineTo(0, -140);
-
-        context.lineTo(15, -110);
-        context.lineTo(5, -110);
-        context.lineTo(20, -80);
-        context.lineTo(10, -80);
-        context.lineTo(25, -50);
-        context.closePath();
-      }
-
-      function drawTree(context) {
-        context.save();
-        context.transform(1, 0,
-                          -0.5, 1,
-                          0, 0);
-        context.scale(1, 0.6);
-        context.fillStyle = 'rgba(0, 0, 0, 0.2)';
-        context.fillRect(-5, -50, 10, 50);
-        createCanopyPath(context);
-        context.fill();
-        context.restore();
-
-        var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
-        trunkGradient.addColorStop(0, '#663300');
-        trunkGradient.addColorStop(0.4, '#996600');
-        trunkGradient.addColorStop(1, '#552200');
-        context.fillStyle = trunkGradient;
-        context.fillRect(-5, -50, 10, 50);
-
-        var canopyShadow = context.createLinearGradient(0, -50, 0, 0);
-        canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
-        canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
-        context.fillStyle = canopyShadow;
-        context.fillRect(-5, -50, 10, 50);
-
-        createCanopyPath(context);
-
-        context.lineWidth = 4;
-        context.lineJoin = 'round';
-        context.strokeStyle = '#663300';
-        context.stroke();
-
-        context.fillStyle = '#339900';
-        context.fill();
-      }
-
-
-      function drawTrails() {
-        var canvas = document.getElementById('trails');
-        var context = canvas.getContext('2d');
-
-        context.save();
-        context.translate(130, 250);
-        drawTree(context);
-        context.restore();
-
-        context.save();
-        context.translate(260, 500);
-
-        context.scale(2, 2);
-        drawTree(context);
-        context.restore();
-
-        context.save();
-        context.translate(-10, 350);
-        context.beginPath();
-        context.moveTo(0, 0);
-        context.quadraticCurveTo(170, -50, 260, -190);
-        context.quadraticCurveTo(310, -250, 410,-250);
-        context.strokeStyle = context.createPattern(gravel, 'repeat');
-        context.lineWidth = 20;
-        context.stroke();
-        context.restore();
-
-        context.save();
-        context.font = "60px impact";
-        context.textAlign = 'center';
-        context.fillStyle = '#996600';
-        context.fillText('Happy Trails!', 200, 60, 400);
-        context.restore();
-      }
-    </script>
-  </body>
-</html></textarea>
+      </textarea>
     </div>
 
     <iframe id="preview"></iframe>
