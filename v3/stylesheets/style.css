@@ -504,17 +504,17 @@ img {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000359}}
-.figure {
+.listing {
   padding: 0 1em;
-  background: #eee;
+  background: #f4f4f4;
   padding: 1em;
   margin: 1em 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000371}}
 .grid {
-  margin: 2.5em;
-  padding: 1em 2.5em 0;
+  margin: 2.75em;
+  padding: 1em 2.75em 0;
   background: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -617,434 +617,434 @@ nav .prev {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r16x9.w1, .container.w1 [ratio="16x9"] img {
-  width: 4.5em;
-  height: 3em;
+  width: 2.75em;
+  height: 2em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r16x9.w2, .container.w2 [ratio="16x9"] img {
-  width: 11.5em;
-  height: 6em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w3, .container.w3 [ratio="16x9"] img {
-  width: 18.5em;
-  height: 10em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w4, .container.w4 [ratio="16x9"] img {
-  width: 25.5em;
-  height: 14em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w5, .container.w5 [ratio="16x9"] img {
-  width: 32.5em;
-  height: 18em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w6, .container.w6 [ratio="16x9"] img {
-  width: 39.5em;
-  height: 22em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w7, .container.w7 [ratio="16x9"] img {
-  width: 46.5em;
-  height: 26em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w8, .container.w8 [ratio="16x9"] img {
-  width: 53.5em;
-  height: 30em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w9, .container.w9 [ratio="16x9"] img {
-  width: 60.5em;
-  height: 34em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w10, .container.w10 [ratio="16x9"] img {
-  width: 67.5em;
-  height: 38em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w11, .container.w11 [ratio="16x9"] img {
-  width: 74.5em;
-  height: 42em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w12, .container.w12 [ratio="16x9"] img {
-  width: 81.5em;
-  height: 46em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w1, .container.w1 [ratio="4x3"] img {
-  width: 4.5em;
-  height: 3em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w2, .container.w2 [ratio="4x3"] img {
-  width: 11.5em;
-  height: 9em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w3, .container.w3 [ratio="4x3"] img {
-  width: 18.5em;
-  height: 14em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w4, .container.w4 [ratio="4x3"] img {
-  width: 25.5em;
-  height: 19em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w5, .container.w5 [ratio="4x3"] img {
-  width: 32.5em;
-  height: 24em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w6, .container.w6 [ratio="4x3"] img {
-  width: 39.5em;
-  height: 30em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w7, .container.w7 [ratio="4x3"] img {
-  width: 46.5em;
-  height: 35em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w8, .container.w8 [ratio="4x3"] img {
-  width: 53.5em;
-  height: 40em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w9, .container.w9 [ratio="4x3"] img {
-  width: 60.5em;
-  height: 45em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w10, .container.w10 [ratio="4x3"] img {
-  width: 67.5em;
-  height: 51em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w11, .container.w11 [ratio="4x3"] img {
-  width: 74.5em;
-  height: 56em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w12, .container.w12 [ratio="4x3"] img {
-  width: 81.5em;
-  height: 61em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w1, .container.w1 [ratio="5x4"] img {
-  width: 4.5em;
-  height: 4em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w2, .container.w2 [ratio="5x4"] img {
-  width: 11.5em;
-  height: 9em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w3, .container.w3 [ratio="5x4"] img {
-  width: 18.5em;
-  height: 15em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w4, .container.w4 [ratio="5x4"] img {
-  width: 25.5em;
-  height: 20em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w5, .container.w5 [ratio="5x4"] img {
-  width: 32.5em;
-  height: 26em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w6, .container.w6 [ratio="5x4"] img {
-  width: 39.5em;
-  height: 32em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w7, .container.w7 [ratio="5x4"] img {
-  width: 46.5em;
-  height: 37em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w8, .container.w8 [ratio="5x4"] img {
-  width: 53.5em;
-  height: 43em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w9, .container.w9 [ratio="5x4"] img {
-  width: 60.5em;
-  height: 48em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w10, .container.w10 [ratio="5x4"] img {
-  width: 67.5em;
-  height: 54em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w11, .container.w11 [ratio="5x4"] img {
-  width: 74.5em;
-  height: 60em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w12, .container.w12 [ratio="5x4"] img {
-  width: 81.5em;
-  height: 65em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w1, .container.w1 [ratio="1x1"] img {
-  width: 4.5em;
+  width: 8.25em;
   height: 5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w2, .container.w2 [ratio="1x1"] img {
-  width: 11.5em;
-  height: 12em;
+.r16x9.w3, .container.w3 [ratio="16x9"] img {
+  width: 13.75em;
+  height: 8em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w3, .container.w3 [ratio="1x1"] img {
-  width: 18.5em;
-  height: 19em;
+.r16x9.w4, .container.w4 [ratio="16x9"] img {
+  width: 19.25em;
+  height: 11em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w4, .container.w4 [ratio="1x1"] img {
-  width: 25.5em;
-  height: 26em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w5, .container.w5 [ratio="1x1"] img {
-  width: 32.5em;
-  height: 33em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w6, .container.w6 [ratio="1x1"] img {
-  width: 39.5em;
-  height: 40em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w7, .container.w7 [ratio="1x1"] img {
-  width: 46.5em;
-  height: 47em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w8, .container.w8 [ratio="1x1"] img {
-  width: 53.5em;
-  height: 54em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w9, .container.w9 [ratio="1x1"] img {
-  width: 60.5em;
-  height: 61em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w10, .container.w10 [ratio="1x1"] img {
-  width: 67.5em;
-  height: 68em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w11, .container.w11 [ratio="1x1"] img {
-  width: 74.5em;
-  height: 75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w12, .container.w12 [ratio="1x1"] img {
-  width: 81.5em;
-  height: 82em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w1, .container.w1 [ratio="4x5"] img {
-  width: 4.5em;
-  height: 6em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w2, .container.w2 [ratio="4x5"] img {
-  width: 11.5em;
+.r16x9.w5, .container.w5 [ratio="16x9"] img {
+  width: 24.75em;
   height: 14em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w3, .container.w3 [ratio="4x5"] img {
-  width: 18.5em;
+.r16x9.w6, .container.w6 [ratio="16x9"] img {
+  width: 30.25em;
+  height: 17em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r16x9.w7, .container.w7 [ratio="16x9"] img {
+  width: 35.75em;
+  height: 20em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r16x9.w8, .container.w8 [ratio="16x9"] img {
+  width: 41.25em;
   height: 23em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w4, .container.w4 [ratio="4x5"] img {
-  width: 25.5em;
+.r16x9.w9, .container.w9 [ratio="16x9"] img {
+  width: 46.75em;
+  height: 26em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r16x9.w10, .container.w10 [ratio="16x9"] img {
+  width: 52.25em;
+  height: 29em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r16x9.w11, .container.w11 [ratio="16x9"] img {
+  width: 57.75em;
   height: 32em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w5, .container.w5 [ratio="4x5"] img {
-  width: 32.5em;
-  height: 41em;
+.r16x9.w12, .container.w12 [ratio="16x9"] img {
+  width: 63.25em;
+  height: 36em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w6, .container.w6 [ratio="4x5"] img {
-  width: 39.5em;
-  height: 49em;
+.r4x3.w1, .container.w1 [ratio="4x3"] img {
+  width: 2.75em;
+  height: 2em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w7, .container.w7 [ratio="4x5"] img {
-  width: 46.5em;
-  height: 58em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w8, .container.w8 [ratio="4x5"] img {
-  width: 53.5em;
-  height: 67em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w9, .container.w9 [ratio="4x5"] img {
-  width: 60.5em;
-  height: 76em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w10, .container.w10 [ratio="4x5"] img {
-  width: 67.5em;
-  height: 84em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w11, .container.w11 [ratio="4x5"] img {
-  width: 74.5em;
-  height: 93em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w12, .container.w12 [ratio="4x5"] img {
-  width: 81.5em;
-  height: 102em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w1, .container.w1 [ratio="3x4"] img {
-  width: 4.5em;
+.r4x3.w2, .container.w2 [ratio="4x3"] img {
+  width: 8.25em;
   height: 6em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w2, .container.w2 [ratio="3x4"] img {
-  width: 11.5em;
-  height: 15em;
+.r4x3.w3, .container.w3 [ratio="4x3"] img {
+  width: 13.75em;
+  height: 10em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w3, .container.w3 [ratio="3x4"] img {
-  width: 18.5em;
-  height: 25em;
+.r4x3.w4, .container.w4 [ratio="4x3"] img {
+  width: 19.25em;
+  height: 14em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w4, .container.w4 [ratio="3x4"] img {
-  width: 25.5em;
-  height: 34em;
+.r4x3.w5, .container.w5 [ratio="4x3"] img {
+  width: 24.75em;
+  height: 19em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w5, .container.w5 [ratio="3x4"] img {
-  width: 32.5em;
+.r4x3.w6, .container.w6 [ratio="4x3"] img {
+  width: 30.25em;
+  height: 23em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w7, .container.w7 [ratio="4x3"] img {
+  width: 35.75em;
+  height: 27em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w8, .container.w8 [ratio="4x3"] img {
+  width: 41.25em;
+  height: 31em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w9, .container.w9 [ratio="4x3"] img {
+  width: 46.75em;
+  height: 35em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w10, .container.w10 [ratio="4x3"] img {
+  width: 52.25em;
+  height: 39em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w11, .container.w11 [ratio="4x3"] img {
+  width: 57.75em;
   height: 43em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x3.w12, .container.w12 [ratio="4x3"] img {
+  width: 63.25em;
+  height: 47em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w1, .container.w1 [ratio="5x4"] img {
+  width: 2.75em;
+  height: 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w2, .container.w2 [ratio="5x4"] img {
+  width: 8.25em;
+  height: 7em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w3, .container.w3 [ratio="5x4"] img {
+  width: 13.75em;
+  height: 11em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w4, .container.w4 [ratio="5x4"] img {
+  width: 19.25em;
+  height: 15em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w5, .container.w5 [ratio="5x4"] img {
+  width: 24.75em;
+  height: 20em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w6, .container.w6 [ratio="5x4"] img {
+  width: 30.25em;
+  height: 24em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w7, .container.w7 [ratio="5x4"] img {
+  width: 35.75em;
+  height: 29em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w8, .container.w8 [ratio="5x4"] img {
+  width: 41.25em;
+  height: 33em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w9, .container.w9 [ratio="5x4"] img {
+  width: 46.75em;
+  height: 37em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w10, .container.w10 [ratio="5x4"] img {
+  width: 52.25em;
+  height: 42em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w11, .container.w11 [ratio="5x4"] img {
+  width: 57.75em;
+  height: 46em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r5x4.w12, .container.w12 [ratio="5x4"] img {
+  width: 63.25em;
+  height: 51em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w1, .container.w1 [ratio="1x1"] img {
+  width: 2.75em;
+  height: 3em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w2, .container.w2 [ratio="1x1"] img {
+  width: 8.25em;
+  height: 8em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w3, .container.w3 [ratio="1x1"] img {
+  width: 13.75em;
+  height: 14em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w4, .container.w4 [ratio="1x1"] img {
+  width: 19.25em;
+  height: 19em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w5, .container.w5 [ratio="1x1"] img {
+  width: 24.75em;
+  height: 25em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w6, .container.w6 [ratio="1x1"] img {
+  width: 30.25em;
+  height: 30em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w7, .container.w7 [ratio="1x1"] img {
+  width: 35.75em;
+  height: 36em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w8, .container.w8 [ratio="1x1"] img {
+  width: 41.25em;
+  height: 41em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w9, .container.w9 [ratio="1x1"] img {
+  width: 46.75em;
+  height: 47em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w10, .container.w10 [ratio="1x1"] img {
+  width: 52.25em;
+  height: 52em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w11, .container.w11 [ratio="1x1"] img {
+  width: 57.75em;
+  height: 58em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r1x1.w12, .container.w12 [ratio="1x1"] img {
+  width: 63.25em;
+  height: 63em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w1, .container.w1 [ratio="4x5"] img {
+  width: 2.75em;
+  height: 3em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w2, .container.w2 [ratio="4x5"] img {
+  width: 8.25em;
+  height: 10em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w3, .container.w3 [ratio="4x5"] img {
+  width: 13.75em;
+  height: 17em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w4, .container.w4 [ratio="4x5"] img {
+  width: 19.25em;
+  height: 24em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w5, .container.w5 [ratio="4x5"] img {
+  width: 24.75em;
+  height: 31em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w6, .container.w6 [ratio="4x5"] img {
+  width: 30.25em;
+  height: 38em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w7, .container.w7 [ratio="4x5"] img {
+  width: 35.75em;
+  height: 45em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w8, .container.w8 [ratio="4x5"] img {
+  width: 41.25em;
+  height: 52em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w9, .container.w9 [ratio="4x5"] img {
+  width: 46.75em;
+  height: 58em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w10, .container.w10 [ratio="4x5"] img {
+  width: 52.25em;
+  height: 65em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w11, .container.w11 [ratio="4x5"] img {
+  width: 57.75em;
+  height: 72em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r4x5.w12, .container.w12 [ratio="4x5"] img {
+  width: 63.25em;
+  height: 79em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r3x4.w1, .container.w1 [ratio="3x4"] img {
+  width: 2.75em;
+  height: 4em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r3x4.w2, .container.w2 [ratio="3x4"] img {
+  width: 8.25em;
+  height: 11em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r3x4.w3, .container.w3 [ratio="3x4"] img {
+  width: 13.75em;
+  height: 18em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r3x4.w4, .container.w4 [ratio="3x4"] img {
+  width: 19.25em;
+  height: 26em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
+.r3x4.w5, .container.w5 [ratio="3x4"] img {
+  width: 24.75em;
+  height: 33em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w6, .container.w6 [ratio="3x4"] img {
-  width: 39.5em;
-  height: 53em;
+  width: 30.25em;
+  height: 40em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w7, .container.w7 [ratio="3x4"] img {
-  width: 46.5em;
-  height: 62em;
+  width: 35.75em;
+  height: 48em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w8, .container.w8 [ratio="3x4"] img {
-  width: 53.5em;
-  height: 71em;
+  width: 41.25em;
+  height: 55em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w9, .container.w9 [ratio="3x4"] img {
-  width: 60.5em;
-  height: 81em;
+  width: 46.75em;
+  height: 62em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w10, .container.w10 [ratio="3x4"] img {
-  width: 67.5em;
-  height: 90em;
+  width: 52.25em;
+  height: 70em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w11, .container.w11 [ratio="3x4"] img {
-  width: 74.5em;
-  height: 99em;
+  width: 57.75em;
+  height: 77em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
 .r3x4.w12, .container.w12 [ratio="3x4"] img {
-  width: 81.5em;
-  height: 109em;
+  width: 63.25em;
+  height: 84em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
@@ -1054,127 +1054,127 @@ nav .prev {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c2 {
-  margin-left: 7em;
+  margin-left: 5.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c3 {
-  margin-left: 14em;
+  margin-left: 11em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c4 {
-  margin-left: 21em;
+  margin-left: 16.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c5 {
-  margin-left: 28em;
+  margin-left: 22em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c6 {
-  margin-left: 35em;
+  margin-left: 27.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c7 {
-  margin-left: 42em;
+  margin-left: 33em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c8 {
-  margin-left: 49em;
+  margin-left: 38.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c9 {
-  margin-left: 56em;
+  margin-left: 44em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c10 {
-  margin-left: 63em;
+  margin-left: 49.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c11 {
-  margin-left: 70em;
+  margin-left: 55em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
 .c12 {
-  margin-left: 77em;
+  margin-left: 60.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w1 {
-  width: 4.5em;
+  width: 2.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w2 {
-  width: 11.5em;
+  width: 8.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w3 {
-  width: 18.5em;
+  width: 13.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w4 {
-  width: 25.5em;
+  width: 19.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w5 {
-  width: 32.5em;
+  width: 24.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w6 {
-  width: 39.5em;
+  width: 30.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w7 {
-  width: 46.5em;
+  width: 35.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w8 {
-  width: 53.5em;
+  width: 41.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w9 {
-  width: 60.5em;
+  width: 46.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w10 {
-  width: 67.5em;
+  width: 52.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w11 {
-  width: 74.5em;
+  width: 57.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
 .w12 {
-  width: 81.5em;
+  width: 63.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000355}}
 .w6.grid:not(.fixed):not(.sizetocontainer) {
-  max-width: 81.5em;
+  max-width: 63.25em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000372}}
 .column {
-  width: 39.5em;
+  width: 30.25em;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -1294,7 +1294,7 @@ p {
 .column, .container {
   position: absolute;
   overflow: hidden;
-  top: 4em;
+  top: 3em;
   bottom: 3em;
 }
 
@@ -1388,8 +1388,8 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003245}}
 .fill .caption {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
+  padding-left: 2.75em;
+  padding-right: 2.75em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003250}}
