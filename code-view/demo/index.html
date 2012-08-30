@@ -9,9 +9,11 @@
     <script src="../mode/css/css.js"></script>
     <script src="../mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
     <link rel="stylesheet" href="../lib/codemirror.css">
     <link rel="stylesheet" href="../doc/docs.css">
     <link rel="stylesheet" href="../theme/ambiance.css">
+    <link rel="stylesheet" href="apress_colorbox.css">
     <style type=text/css>
       .CodeMirror-scroll {
         height: 624px;
@@ -35,13 +37,24 @@
     </style>
   </head>
   <body>
-    <h1>Live Code Example</h1>
-    <div class="code-mirror-container">
-      <textarea id="code" name="code">
-      </textarea>
+    <div class="">
+      <a href="#code-view-source" class="inline" data-listing="2">Code view 2</a>
+      <a href="#code-view-source" class="inline" data-listing="8">Code view 8</a>
     </div>
 
-    <iframe id="preview"></iframe>
+    <div class="code-view-source-container" style="display:none;">
+      <div id="code-view-source">
+        <h1>Live Code Example</h1>
+        <div class="code-mirror-container">
+          <textarea id="code" name="code">
+          </textarea>
+        </div>
+
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+
+
     <script>
       var delay;
       // Initialize CodeMirror editor with a nice html5 canvas demo.
@@ -861,6 +874,18 @@
                     '  </scr' + 'ipt>\n' +
                     '</html>\n'
                    );
+      jQuery(function () {
+        jQuery(".inline").colorbox({
+          inline:true, width:"90%", 
+          onComplete:function(){ 
+            editor.setValue(listings[$(this).data('listing')]);
+          },
+          onClosed:function(){
+            editor.setValue('');
+          }
+        });
+      });
+
     </script>
   </body>
 </html>
