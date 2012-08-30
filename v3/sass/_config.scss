@@ -67,6 +67,9 @@ $font-monospace:   $courier;
 //-----------------------------------------------------------------------
 // Grid Measurements
 //-----------------------------------------------------------------------
+
+$consistant-page-width: true;
+
 // Grid module measurements. 
 $module-w: 4.5em;
 $module-h: $module-w;
@@ -79,6 +82,7 @@ $bottom: 3em;
 
 // number of modules across to calculate:
 $columns: 12;
+$text-column-span: 6;
 
 $text: #333;
 $page: #fff;
@@ -88,6 +92,7 @@ $body: #eee;
 //-----------------------------------------------------------------------
 // Treesaver Things
 //-----------------------------------------------------------------------
+
 
 // IMAGE/PAGE RATIOS
 // If you wish to scale images and have fixed page sizes image ratios are a must. This allows images sizes to be measured for Treesaver.
@@ -105,7 +110,7 @@ $body: #eee;
 // @include r, @include g, @include b, @include c, @include m, @include y
 // .r, .g, .b, .c, .m, .y
 // red, green, blue, cyan, magenta, yellow
-$debug: false;
+$debug: true;
 
 // EXTRAS (optional) //
 

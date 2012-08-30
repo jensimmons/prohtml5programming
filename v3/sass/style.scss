@@ -7,22 +7,20 @@
 // This is a styling framework to be used with Treesaver
 //  It creates a flexable yet solid foundation for building templates.
 //
-// ** To run you need to have SASS installed: http://sass-lang.com/ **
-//  The, just watch the "sass" folder from the project directory.
-//  sass --watch sass:html/_/css
+// ** To do any development on this project, you need to have SASS installed: http://sass-lang.com as well as Seasons.**
+
 
 // IMPORT TOOLS AND RESET:
 $reset: true;
 
 @import "seasons/tools";
 @import "compass";
-// @import "";
-
-// Import custom mixins:
-@import "mixins";
 
 // Configuration:
 @import "config";
+
+// Import custom mixins:
+@import "mixins";
 
 // Font Import:
 @import "fontface";
@@ -30,14 +28,11 @@ $reset: true;
 // Typography:
 @import "typography";
 
-// Chrome:
-@import "chrome";
-
 // Pages:
 @import "pages";
 
-// Temp:
-@import "temp";
+// Chrome:
+@import "chrome";
 
 // CORE TREESAVER FUNCTIONALITY:
 @import "seasons/core";
