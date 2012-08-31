@@ -414,7 +414,7 @@ h6 {
   @include trailer(1, $h6-font-size);
 }
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000383}}
 hr {
   height: 1px;
   border: 1px solid #666;
@@ -422,18 +422,24 @@ hr {
   margin: 1.5em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000391}}
 p,
 pre {
   margin: 0em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000394}}
+pre {
+  margin: 1.5em 0;
+  font-size: 11.62px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000399}}
 figcaption {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003103}}
 blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 0.75em 30px;
@@ -442,7 +448,7 @@ blockquote {
 /* =============================================================================
    Lists
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003118}}
 dl,
 menu,
 ol,
@@ -454,7 +460,7 @@ ul,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000311}}
 p {
-  color: #333333;
+  color: #1b1d1e;
   text-indent: 1.5em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000314}}
@@ -503,12 +509,11 @@ img {
   max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000359}}
-.listing {
-  padding: 0 1em;
-  background: #f4f4f4;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000360}}
+aside {
   padding: 1em;
-  margin: 1em 0;
+  background: #f4f5f7;
+  margin: 0 0 1em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000371}}
@@ -611,8 +616,8 @@ nav .prev {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 8px;
-  background: black;
+  padding: 20px;
+  background: white;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
@@ -1268,8 +1273,8 @@ html {
   font-size: 14px;
   line-height: 1.5em;
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
-  color: #333333;
-  background-color: #eeeeee;
+  color: #1b1d1e;
+  background-color: #585d60;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003161}}
@@ -1474,36 +1479,6 @@ html.no-offline [data-requires~="no-offline"] {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003315}}
 html.no-offline [data-requires~="offline"] {
   display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003322}}
-.r {
-  background: #ff9999 !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003324}}
-.g {
-  background: #99ff99 !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003326}}
-.b {
-  background: #9999ff !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003328}}
-.c {
-  background: #99ffff !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003330}}
-.m {
-  background: #ff99ff !important;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003332}}
-.y {
-  background: #ffff99 !important;
 }
 
 @media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (orientation: portrait) {
