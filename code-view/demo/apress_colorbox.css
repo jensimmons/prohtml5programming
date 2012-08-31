@@ -20,9 +20,14 @@
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
 #cboxOverlay{background:url(images/overlay.png) repeat 0 0;}
-#colorbox{ background: #fff;}
+#colorbox{ background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 #cboxWrapper {
   padding: 1em;
+}
+#colorbox h1.hdr {
+  margin-top: 0px;
 }
 /*    #cboxTopLeft{width:21px; height:21px; background:url(images/controls.png) no-repeat -101px 0;}
     #cboxTopRight{width:21px; height:21px; background:url(images/controls.png) no-repeat -130px 0;}
