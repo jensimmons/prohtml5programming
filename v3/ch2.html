@@ -21,16 +21,30 @@
   
   <!-- LOAD TREESAVER -->
   <script src="javascripts/treesaver-0.9.3b.js"></script>
+
   
 	<!-- RESOURCES.HTML CONTAINS THE LAYOUTS AND TOC.HTML CONTAINS YOUR TABLE OF CONTENTS -->
   <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
   <link rel="shortcut icon" href="images/favicon.ico" />
 
+  <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
+  <script src="javascripts/jquery-1.8.0.min.js"></script>
+  <script src="javascripts/jquery.colorbox-min.js"></script>
+  <script src="codemirror/lib/codemirror.js"></script>
+  <script src="codemirror/mode/xml/xml.js"></script>
+  <script src="codemirror/mode/javascript/javascript.js"></script>
+  <script src="codemirror/mode/css/css.js"></script>
+  <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="javascripts/codeview_ch2.js"></script>
+
+  
+  <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="codemirror/theme/ambiance.css">
+  <link rel="stylesheet" href="stylesheets/apress_colorbox.css">
+
 </head>
     
 <body>
-
-
 
 <!-- Insert fallback navigation for non-treesaver js situations. See article.html from Seasons for an example. Do the same with the footer at the end of this file. -->
 
@@ -49,6 +63,11 @@
 
 <p>In this chapter, we&#x2019;ll explore what you can do with the Canvas API&#x2014;a cool API that enables you to dynamically generate and render graphics, charts, images, and animation. We&#x2019;ll walk you through using the basics of the rendering API to create a drawing that can scale and adjust to the browser environment. We&#x2019;ll show you how to create dynamic pictures based on user input in a heatmap display. Of course, we&#x2019;ll also alert you to the pitfalls of using Canvas and share tricks to overcome them.</p>
 <p>This chapter presumes only a minimal amount of graphics expertise, so don&#x2019;t be afraid to jump in and try out one of the most powerful features of HTML5.</p>
+
+<p><a class='cb-codeview' href="#code-view-source" data-listing="2-7">Listing 2-7</a> <a class='cb-codeview' href="#code-view-source"  data-listing="2-11">Listing 2-11</a></p>
+
+
+</p>
 
 <h2>Overview of HTML5 Canvas</h2>
 <p>An entire book could be written about the use of the Canvas API (and it wouldn&#x2019;t be a small book). Because we have only a chapter, we&#x2019;re going to cover (what we think is) the most commonly used functionality in this very extensive API.</p>

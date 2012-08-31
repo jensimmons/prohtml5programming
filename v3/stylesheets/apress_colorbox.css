@@ -92,3 +92,24 @@
 .cboxIE6 #cboxMiddleRight {
     _behavior: expression(this.src = this.src ? this.src : this.currentStyle.backgroundImage.split('"')[1], this.style.background = "none", this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=" + this.src + ", sizingMethod='scale')");
 }
+
+.CodeMirror-scroll {
+  height: 624px;
+  }
+.code-mirror-container {
+  border: 1px solid #ccc;
+  width: 40%;
+  min-width: 300px;
+  float: left;
+  margin-right: 2em;
+}
+.CodeMirror {
+}  
+iframe#preview {
+  width: 424px;
+  float: left;
+  height: 624px;
+  border: 1px solid #ccc;
+
+}
+
