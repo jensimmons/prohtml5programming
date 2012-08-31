@@ -460,7 +460,7 @@ ul,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000311}}
 p {
-  color: #333333;
+  color: #1b1d1e;
   text-indent: 1.5em;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000314}}
@@ -512,7 +512,7 @@ img {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000360}}
 aside {
   padding: 1em;
-  background: #f4f4f4;
+  background: #f4f5f7;
   margin: 0 0 1em;
 }
 
@@ -1273,8 +1273,8 @@ html {
   font-size: 14px;
   line-height: 1.5em;
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
-  color: #333333;
-  background-color: #eeeeee;
+  color: #1b1d1e;
+  background-color: #585d60;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003161}}
