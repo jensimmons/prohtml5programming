@@ -45,7 +45,6 @@ h6 {
   font-size: 0.83 * $base-size;
 }
 
-
 /*
 h1 {
   @include adjust-font-size-to( $h1-font-size );
@@ -92,6 +91,9 @@ p,
 pre {
   margin: rhythm(0) 0;
 }
+pre {
+  font-size: 0.83 * $base-size;
+}
 
 figcaption {
   font-family: $sourcesans-light;
@@ -101,6 +103,7 @@ blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: rhythm(0.5) $indent-amount;
 }
+
 
 
 /* =============================================================================
