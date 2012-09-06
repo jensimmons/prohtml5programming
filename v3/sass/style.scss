@@ -10,9 +10,13 @@
 // ** To do any development on this project, you need to have SASS installed: http://sass-lang.com as well as Seasons.**
 
 
-// IMPORT TOOLS AND RESET:
-$reset: true;
-
+// Import:
+@import "normalize";
+@import "formalize";
+$reset: false;
+* { box-sizing: border-box; }
+  
+// Import Tools:
 @import "seasons/tools";
 @import "compass";
 
@@ -25,13 +29,9 @@ $reset: true;
 // Font Import:
 @import "fontface";
 
-// Typography:
+// Import CSS:
 @import "typography";
-
-// Pages:
 @import "pages";
-
-// Chrome:
 @import "chrome";
 
 // CORE TREESAVER FUNCTIONALITY:

@@ -41,20 +41,25 @@
             {{/contents}}
           </div>
           <!--SHOW OR HIDE CONTENTS-->
-          <button class="open-sidebar">Show Contents</button>
-          <button class="close-sidebar">Hide Contents</button>
-          <button class="toggle-sidebar">Toggle Contents</button>
+     <!-- <button class="open-sidebar">Show Contents</button>
+          <button class="close-sidebar">Hide Contents</button> -->
+          <button class="toggle-sidebar">Table of Contents</button>
         </div>
         
-        <!--PAGE NUMBERS-->
-        <div class="numbering" data-ts-template="position">{{pagenumber}}/{{pagecount}}</div>
         
         <!--PREVIOUS/NEXT BUTTONS-->
-        <button class="prev">Prev</button>
-        <button class="next">Next</button>
-        <button class="prevArticle">Prev Chapter</button>
-        <button class="nextArticle">Next Chapter</button>
-
+        <div class="prev-next">
+          <div class="prev-buttons">
+            <button class="prev">Prev</button>
+            <button class="prevArticle">Prev Chapter</button>
+          </div>
+          <div class="next-buttons">
+            <button class="next">Next</button>
+            <button class="nextArticle">Next Chapter</button>
+          </div>
+          <!--PAGE NUMBERS-->
+          <div class="numbering" data-ts-template="position">{{pagenumber}}/{{pagecount}}</div>
+        </div>
         <!--MENU
         <div class="menu">
           <button>Menu</button>

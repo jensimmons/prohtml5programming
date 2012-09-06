@@ -3,7 +3,11 @@
 // All UI elements that don't belong on pages gets styled here.
 // It keeps everything separate and tidy.
 // Variables you defined in you skin will carry over to this file.
+
+//-----------------------------------------------------------------------
 // Position the viewer. The viewer is the area in which pages can be displayed.
+//-----------------------------------------------------------------------
+
 .viewer {
   top: 0;
   right: 0;
@@ -11,35 +15,121 @@
   left: 0;
   }
 
-nav {
-//  display: block;
-//  z-index: 1;
 
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
+//-----------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------
+
+nav {
+  display: block;
+  z-index: 1;
+
   font-family: $sourcesans;
   
   .contents {
     margin: 0 auto;
     position: relative;
   }
-  .next {
+}
+.prev-next{ 
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  line-height: 30px;
+
+  .next-buttons {
     position: absolute;
-    right: 0;
-    top: 0;
-//    @include element-invisible;
-    
+    right: 10px;
+    top: 0;    
   }
-  .prev {
+  .prev-buttons {
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 0;
   }
 }
+.numbering {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+//-----------------------------------------------------------------------
+// Buttons
+//-----------------------------------------------------------------------
+
+button,
+a.button {
+  -webkit-appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background: #dddddd url('../images/button.png?1298351022') repeat-x;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(#ffffff, #dddddd);
+  background-image: -moz-linear-gradient(#ffffff, #dddddd);
+  background-image: -o-linear-gradient(#ffffff, #dddddd);
+  background-image: -ms-linear-gradient(#ffffff, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  display: inline-block;
+  font: bold 12px/1.3 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  outline: 0;
+  overflow: visible;
+  margin: 0;
+  padding: 3px 10px;
+  text-shadow: white 0 1px 1px;
+  text-decoration: none;
+  vertical-align: top;
+  width: auto;
+  *padding-top: 2px;
+  *padding-bottom: 0;
+}
+button:hover,
+a.button:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+  background-image: -moz-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+  background-image: -o-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+  background-image: -ms-linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+  background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+}
+button:active,
+a.button:active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #dddddd), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  background-image: -moz-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  background-image: -ms-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  background-image: linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  border-color: #999999 #bbbbbb #dddddd;
+}
+button::-moz-focus-inner,
+a.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+//-----------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------
 
 .sidebar, .menu {
   .content {

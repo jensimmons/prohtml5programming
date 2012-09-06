@@ -1,229 +1,764 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000311}}
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video, button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 1em;
-  vertical-align: baseline;
-  background: transparent;
-  cursor: default;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000321}}
-article, aside, figure, footer, header, hgroup, nav, section {
+/* normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000321}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000324}}
-blockquote, q {
-  quotes: none;
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000331}}
+audio,
+canvas,
+video {
+  display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000327}}
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000340}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000331}}
-a {
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000349}}
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000363}}
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Removes default margin.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000373}}
+body {
   margin: 0;
-  padding: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000385}}
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000394}}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003107}}
+h1 {
+  font-size: 2em;
+}
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003115}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003124}}
+b,
+strong {
+  font-weight: bold;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003132}}
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003140}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003153}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003162}}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * Sets consistent quote types.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003172}}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003180}}
+small {
+  font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003189}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
   vertical-align: baseline;
-  background: transparent;
-  color: inherit;
-  text-decoration: inherit;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000339}}
-del {
-  text-decoration: line-through;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003196}}
+sup {
+  top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000342}}
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted black;
-  cursor: help;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003200}}
+sub {
+  bottom: -0.25em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000346}}
-.zoomable, .zoomable * {
-  cursor: -webkit-zoom-in;
-  cursor: -moz-zoom-in;
-  cursor: -ms-zoom-in;
-  cursor: -o-zoom-in;
-  cursor: zoom-in;
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003212}}
+img {
+  border: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000353}}
-.lightbox, .lightbox * {
-  cursor: -webkit-zoom-out;
-  cursor: -moz-zoom-out;
-  cursor: -ms-zoom-out;
-  cursor: -o-zoom-out;
-  cursor: zoom-out;
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003220}}
+svg:not(:root) {
+  overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000363}}
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003232}}
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003244}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003255}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003269}}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003281}}
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003296}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003306}}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003316}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003327}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003340}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003349}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003359}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003372}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000366}}
-th {
-  font-weight: bold;
-  vertical-align: bottom;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\000032}}
+input[type="search"]::-webkit-search-decoration {
+  display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000369}}
-td {
-  font-weight: normal;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000310}}
+input:invalid,
+button:invalid,
+a.button:invalid,
+select:invalid,
+textarea:invalid {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000319}}
+input:focus,
+button:focus,
+a.button:focus,
+select:focus,
+textarea:focus {
+  -webkit-box-shadow: #0066ff 0 0 5px 0;
+  -moz-box-shadow: #0066ff 0 0 5px 0;
+  box-shadow: #0066ff 0 0 5px 0;
+  z-index: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000330}}
+input[type="file"]:focus, input[type="file"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000340}}
+button,
+a.button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background: #dddddd url("../images/button.png?1298351022") repeat-x;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(white, #dddddd);
+  background-image: -moz-linear-gradient(white, #dddddd);
+  background-image: -o-linear-gradient(white, #dddddd);
+  background-image: -ms-linear-gradient(white, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  display: inline-block;
+  font: bold 12px/1.3 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  outline: 0;
+  overflow: visible;
+  margin: 0;
+  padding: 3px 10px;
+  text-shadow: white 0 1px 1px;
+  text-decoration: none;
   vertical-align: top;
+  width: auto;
+  *padding-top: 2px;
+  *padding-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000373}}
-hr {
-  display: block;
-  height: 1px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000378}}
+button:hover,
+a.button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -moz-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -o-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -ms-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\0000390}}
+button:active,
+a.button:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(1px, #dddddd), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -moz-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -o-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -ms-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  border-color: #999999 #bbbbbb #dddddd;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003106}}
+button::-moz-focus-inner,
+a.button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner {
   border: 0;
-  margin: 1em 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000380}}
-input, select {
-  vertical-align: middle;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003111}}
+a.button {
+  *padding-bottom: 3px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000383}}
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  white-space: pre-line;
-  word-wrap: break-word;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003115}}
+button {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000390}}
-input[type="radio"] {
-  vertical-align: text-bottom;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003134}}
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: white;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: black;
+  outline: 0;
+  margin: 0;
+  padding: 2px 3px;
+  text-align: left;
+  font-size: 13px;
+  font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
+  height: 1.8em;
+  vertical-align: top;
+  *padding-top: 2px;
+  *padding-bottom: 1px;
+  *height: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000392}}
-input[type="checkbox"] {
-  vertical-align: bottom;
-  *vertical-align: baseline;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003177}}
+textarea[disabled],
+select[disabled],
+input[type="date"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="email"][disabled],
+input[type="month"][disabled],
+input[type="number"][disabled],
+input[type="password"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="text"][disabled],
+input[type="time"][disabled],
+input[type="url"][disabled],
+input[type="week"][disabled] {
+  background-color: #eeeeee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\0000395}}
-.ie6 input {
-  vertical-align: text-bottom;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003187}}
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled],
+a.button_disabled {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  color: #888888;
+  cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003102}}
-a:hover, a:active {
-  outline: none;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003200}}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003105}}
-strong, th {
-  font-weight: bold;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003205}}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003108}}
-td, td img {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003210}}
+input.placeholder_text,
+textarea.placeholder_text {
+  color: #888888;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003216}}
+textarea,
+select[size],
+select[multiple] {
+  height: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003221}}
+select[size="0"],
+select[size="1"] {
+  height: 1.8em;
+  *height: auto;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003229}}
+  select[size],
+  select[multiple],
+  select[multiple][size] {
+    background-image: none;
+    padding-right: 3px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003236}}
+  select,
+  select[size="0"],
+  select[size="1"] {
+    background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 20px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003243}}
+  ::-webkit-validation-bubble-message {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #666666), color-stop(1, black));
+    border: 1px solid;
+    border-color: #747474 #5e5e5e #4f4f4f;
+    color: white;
+    font: 13px/17px "Lucida Grande", Arial, "Liberation Sans", FreeSans, sans-serif;
+    overflow: hidden;
+    padding: 15px 15px 17px;
+    text-shadow: black 0 0 1px;
+    height: 16px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003259}}
+  ::-webkit-validation-bubble-arrow,
+  ::-webkit-validation-bubble-top-outer-arrow,
+  ::-webkit-validation-bubble-top-inner-arrow {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #666666;
+    border: 0;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003266}}
+textarea {
+  min-height: 40px;
+  overflow: auto;
+  resize: vertical;
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003273}}
+optgroup {
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+  font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003279}}
+optgroup::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003286}}
+.ie6_button,
+* html button,
+* html a.button {
+  background: #dddddd url("../images/button.png?1298351022") repeat-x;
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  font: bold 12px/1.2 Arial, sans-serif;
+  padding: 2px 10px 0px;
+  text-decoration: none;
+  overflow: visible;
+  vertical-align: top;
+  width: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003300}}
+* html a.button {
+  position: relative;
+  top: 3px;
+  padding-bottom: 2px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003306}}
+* html button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003313}}
+.ie6_input,
+* html textarea,
+* html select {
+  background: white;
+  border: 1px solid;
+  border-color: #848484 #c1c1c1 #e1e1e1;
+  color: black;
+  padding: 2px 3px 1px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
   vertical-align: top;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003115}}
-sub, sup {
-  line-height: 0;
-  position: relative;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003324}}
+* html select {
+  margin-top: 1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003118}}
-sup {
-  top: -0.5em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003330}}
+.placeholder_text,
+.ie6_input_disabled,
+.ie6_button_disabled {
+  color: #888888;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003120}}
-sub {
-  bottom: -0.25em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_formalize\.scss}line{font-family:\00003334}}
+.ie6_input_disabled {
+  background: #eeeeee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003126}}
-pre, code, kbd, samp {
-  font-family: monospace, sans-serif;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003130}}
-input {
-  cursor: auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003132}}
-textarea {
-  cursor: text;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003134}}
-a, a *, .clickable, label, input[type=button], input[type=submit], input[type=reset], button, #nextPage, #previousPage, #nextPage *, #previousPage * {
-  cursor: pointer;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003140}}
-button, input, select, textarea {
-  margin: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003146}}
-button {
-  width: auto;
-  overflow: visible;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003153}}
-.ie7 img {
-  -ms-interpolation-mode: bicubic;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003159}}
-.ie6 html {
-  filter: expression(document.execCommand("BackgroundImageCache", false, true));
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003165}}
-.clearfix:before, .clearfix:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003170}}
-.clearfix:after {
-  clear: both;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003172}}
-.clearfix {
-  zoom: 1;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003175}}
-ins {
-  background-color: #fcd700;
-  color: black;
-  text-decoration: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/tools\/_reset\.sass}line{font-family:\00003179}}
-mark {
-  background-color: #fcd700;
-  color: black;
-  font-style: italic;
-  font-weight: bold;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/style\.scss}line{font-family:\0000317}}
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -516,7 +1051,14 @@ aside {
   margin: 0 0 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000366}}
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000377}}
 .grid {
   margin: 2.75em;
   padding: 1em 2.75em 0;
@@ -526,24 +1068,24 @@ aside {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000396}}
 .runningtitle {
   font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 11.62px;
   color: #777;
   letter-spacing: 0.03em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003104}}
 .runningtitle .section {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003109}}
 .cover {
   background: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000311}}
 .viewer {
   top: 0;
   right: 0;
@@ -551,44 +1093,129 @@ aside {
   left: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000323}}
 nav {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
+  display: block;
+  z-index: 1;
   font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000329}}
 nav .contents {
   margin: 0 auto;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000330}}
-nav .next {
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000334}}
+.prev-next {
   position: absolute;
+  bottom: 4px;
+  left: 0;
   right: 0;
+  height: 30px;
+  line-height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000342}}
+.prev-next .next-buttons {
+  position: absolute;
+  right: 10px;
   top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000337}}
-nav .prev {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000347}}
+.prev-next .prev-buttons {
   position: absolute;
-  left: 0;
+  left: 10px;
   top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000353}}
+.numbering {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000367}}
+button,
+a.button {
+  -webkit-appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background: #dddddd url("../images/button.png?1298351022") repeat-x;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(white, #dddddd);
+  background-image: -moz-linear-gradient(white, #dddddd);
+  background-image: -o-linear-gradient(white, #dddddd);
+  background-image: -ms-linear-gradient(white, #dddddd);
+  background-image: linear-gradient(#ffffff, #dddddd);
+  border: 1px solid;
+  border-color: #dddddd #bbbbbb #999999;
+  cursor: pointer;
+  color: #333333;
+  display: inline-block;
+  font: bold 12px/1.3 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  outline: 0;
+  overflow: visible;
+  margin: 0;
+  padding: 3px 10px;
+  text-shadow: white 0 1px 1px;
+  text-decoration: none;
+  vertical-align: top;
+  width: auto;
+  *padding-top: 2px;
+  *padding-bottom: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003102}}
+button:hover,
+a.button:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(1px, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -moz-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -o-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: -ms-linear-gradient(white, #eeeeee 1px, #cccccc);
+  background-image: linear-gradient(#ffffff, #eeeeee 1px, #cccccc);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003111}}
+button:active,
+a.button:active {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, white), color-stop(1px, #dddddd), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -moz-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -o-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: -ms-linear-gradient(white, #dddddd 1px, #eeeeee);
+  background-image: linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
+  -webkit-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  -moz-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
+  border-color: #999999 #bbbbbb #dddddd;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003124}}
+button::-moz-focus-inner,
+a.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003135}}
 .sidebar .content, .menu .content {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003139}}
 .sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003145}}
 .pagenumbers {
   display: block;
   text-align: center;
@@ -597,7 +1224,7 @@ nav .prev {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003155}}
 .lightbox {
   position: fixed;
   overflow: hidden;
@@ -608,7 +1235,7 @@ nav .prev {
   z-index: 99;
   background: rgba(0, 0, 0, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003164}}
 .lightbox .container {
   position: absolute;
   overflow: hidden;
