@@ -4,6 +4,12 @@
 // It keeps everything separate and tidy.
 // Variables you defined in you skin will carry over to this file.
 
+
+html {
+  background-image: url('../images/subtlepatterns/grid.png');
+}
+
+
 //-----------------------------------------------------------------------
 // Position the viewer. The viewer is the area in which pages can be displayed.
 //-----------------------------------------------------------------------
@@ -23,11 +29,9 @@
 nav {
   display: block;
   z-index: 1;
-
   font-family: $sourcesans;
-  
   .contents {
-    margin: 0 auto;
+    margin: 4px 10px 0;
     position: relative;
   }
 }
@@ -53,9 +57,9 @@ nav {
 .numbering {
   display: block;
   text-align: center;
-  color: #999;
+  color: #777;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 
