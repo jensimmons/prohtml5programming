@@ -1,0 +1,121 @@
+/* =============================================================================
+   Typography
+
+   To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+   so that the line height of our base font becomes the basic unit of vertical
+   measurement. We use multiples of that unit to set the top and bottom margins
+   for our block level elements and to set the line heights of any fonts.
+   For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+   ========================================================================== */
+
+body {
+  font-family: $base-font-family;
+}
+
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+ 
+h1, h2, h3, h4 ,h5 ,h6 {
+  font-family: $sourcesans-bold;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2    * $base-size;
+}
+h2 {
+  font-size: 1.85 * $base-size;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+}
+h3 {
+  font-size: 1.4  * $base-size;
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+}
+h4 {
+  font-size: 1.4  * $base-size;
+}
+h5 {
+  font-size: 1    * $base-size;
+}
+h6 {
+  font-size: 0.83 * $base-size;
+}
+
+/*
+h1 {
+  @include adjust-font-size-to( $h1-font-size );
+}
+h1 + h1 {
+  @include leader (0);
+}
+h2 {
+  @include adjust-font-size-to( $h2-font-size );
+  @include leader(1, $h2-font-size);
+  @include trailer(1, $h2-font-size);
+  @include solid($line-height);
+}
+h3 {
+  @include adjust-font-size-to( $h3-font-size );
+  @include leader(1, $h3-font-size);
+  @include trailer(1, $h3-font-size);
+}
+h4 {
+  @include adjust-font-size-to( $h4-font-size );
+  @include leader(1, $h4-font-size);
+  @include trailer(1, $h4-font-size);
+}
+h5 {
+  @include adjust-font-size-to( $h5-font-size );
+  @include leader(1, $h5-font-size);
+  @include trailer(1, $h5-font-size);
+}
+h6 {
+  @include adjust-font-size-to( $h6-font-size );
+  @include leader(1, $h6-font-size);
+  @include trailer(1, $h6-font-size);
+}
+*/
+
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
+  margin: rhythm(1) 0;
+}
+
+p,
+pre {
+  margin: rhythm(0) 0;
+}
+pre {
+  margin: rhythm(1) 0;
+  font-size: 0.83 * $base-size;
+}
+
+figcaption {
+  font-family: $sourcesans-light;
+}
+
+blockquote {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(0.5) $indent-amount;
+}
+
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+dl,
+menu,
+ol,
+ul,
+.item-list ul /* Drupal override */ {
+  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(1) 0;
+}
