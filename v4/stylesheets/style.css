@@ -5,7 +5,7 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000321}}
 article,
 aside,
 details,
@@ -23,7 +23,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000331}}
 audio,
 canvas,
 video {
@@ -34,7 +34,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000340}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -43,7 +43,7 @@ audio:not([controls]) {
 /*
  * Addresses styling for `hidden` attribute not present in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000349}}
 [hidden] {
   display: none;
 }
@@ -56,7 +56,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000363}}
 html {
   font-family: sans-serif;
   /* 1 */
@@ -69,7 +69,7 @@ html {
 /*
  * Removes default margin.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000373}}
 body {
   margin: 0;
 }
@@ -80,7 +80,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000385}}
 a:focus {
   outline: thin dotted;
 }
@@ -88,7 +88,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000394}}
 a:active,
 a:hover {
   outline: 0;
@@ -101,7 +101,7 @@ a:hover {
  * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
  * Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003107}}
 h1 {
   font-size: 2em;
 }
@@ -109,7 +109,7 @@ h1 {
 /*
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003115}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -117,7 +117,7 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003124}}
 b,
 strong {
   font-weight: bold;
@@ -126,7 +126,7 @@ strong {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003132}}
 dfn {
   font-style: italic;
 }
@@ -134,7 +134,7 @@ dfn {
 /*
  * Addresses styling not present in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003140}}
 mark {
   background: #ff0;
   color: #000;
@@ -143,7 +143,7 @@ mark {
 /*
  * Corrects font family set oddly in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003153}}
 code,
 kbd,
 pre,
@@ -155,7 +155,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003162}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -165,7 +165,7 @@ pre {
 /*
  * Sets consistent quote types.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003172}}
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
@@ -173,7 +173,7 @@ q {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003180}}
 small {
   font-size: 80%;
 }
@@ -181,7 +181,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003189}}
 sub,
 sup {
   font-size: 75%;
@@ -190,12 +190,12 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003196}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003200}}
 sub {
   bottom: -0.25em;
 }
@@ -206,7 +206,7 @@ sub {
 /*
  * Removes border when inside `a` element in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003212}}
 img {
   border: 0;
 }
@@ -214,7 +214,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003220}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -225,7 +225,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 8/9 and Safari 5.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003232}}
 figure {
   margin: 0;
 }
@@ -236,7 +236,7 @@ figure {
 /*
  * Define consistent border, margin, and padding.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003244}}
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -247,7 +247,7 @@ fieldset {
  * 1. Corrects color not being inherited in IE 8/9.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003255}}
 legend {
   border: 0;
   /* 1 */
@@ -260,7 +260,7 @@ legend {
  * 2. Corrects font size not being inherited in all browsers.
  * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003269}}
 button,
 input,
 select,
@@ -277,7 +277,7 @@ textarea {
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003281}}
 button,
 input {
   line-height: normal;
@@ -290,7 +290,7 @@ input {
  * 3. Improves usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003296}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -304,7 +304,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003306}}
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -314,7 +314,7 @@ input[disabled] {
  * 1. Addresses box sizing set to `content-box` in IE 8/9.
  * 2. Removes excess padding in IE 8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003316}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -328,7 +328,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003327}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -342,7 +342,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003340}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -351,7 +351,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 4+.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003349}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -362,7 +362,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003359}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -376,13 +376,13 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_normalize\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003372}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/style\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/style\.scss}line{font-family:\0000316}}
 * {
   box-sizing: border-box;
 }
@@ -492,7 +492,7 @@ table {
    for our block level elements and to set the line heights of any fonts.
    For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000311}}
 body {
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
 }
@@ -501,42 +501,42 @@ body {
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000320}}
 h1, h2, h3, h4, h5, h6 {
   font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-weight: 500;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000325}}
 h1 {
   font-size: 28px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000328}}
 h2 {
   font-size: 25.9px;
   margin-top: 0.8em;
   margin-bottom: 0.2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000333}}
 h3 {
   font-size: 19.6px;
   margin-top: 0.2em;
   margin-bottom: 0.1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000338}}
 h4 {
   font-size: 19.6px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000341}}
 h5 {
   font-size: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000344}}
 h6 {
   font-size: 11.62px;
 }
@@ -575,7 +575,7 @@ h6 {
   @include trailer(1, $h6-font-size);
 }
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000383}}
 hr {
   height: 1px;
   border: 1px solid #666;
@@ -583,24 +583,24 @@ hr {
   margin: 1.5em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000391}}
 p,
 pre {
   margin: 0em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000394}}
 pre {
   margin: 1.5em 0;
   font-size: 11.62px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000399}}
 figcaption {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003103}}
 blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 0.75em 30px;
@@ -609,7 +609,7 @@ blockquote {
 /* =============================================================================
    Lists
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_typography\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003118}}
 dl,
 menu,
 ol,
@@ -619,58 +619,58 @@ ul,
   margin: 1.5em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000311}}
 p {
   color: #1b1d1e;
   text-indent: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000314}}
 p.noindent, p.caption, .keeptogether p {
   text-indent: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000317}}
 p.caption {
   text-align: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000319}}
 .lightbox p.caption {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000325}}
 canvas {
   margin: 1.5em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000333}}
 hgroup {
   border-bottom: 1px solid #000;
   margin-bottom: 2em;
   padding-bottom: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000338}}
 hgroup h1,
 hgroup h2 {
   margin: 0;
   line-height: 1.4em;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000343}}
 hgroup h1:first-child {
   font-size: 3em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000348}}
 canvas {
   background: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000352}}
 img {
   max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000360}}
 aside {
   padding: 1em;
   background: #f4f5f7;
@@ -679,14 +679,14 @@ aside {
   box-decoration-break: clone;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000368}}
 video {
   width: 100%    !important;
   height: auto   !important;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000379}}
 .grid {
   margin: 2.75em;
   padding: 1em 2.75em 0;
@@ -696,1088 +696,19 @@ video {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\0000397}}
 .runningtitle {
   font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 11.62px;
   color: #a0a0a0;
   letter-spacing: 0.03em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\00003105}}
 .runningtitle .section {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_pages\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_pages\.scss}line{font-family:\00003110}}
 .cover {
   background: #000;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\000038}}
-html {
-  background-image: url("../images/subtlepatterns/grid.png");
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000317}}
-.viewer {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000329}}
-nav {
-  display: block;
-  z-index: 1;
-  font-family: SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000333}}
-nav .contents {
-  margin: 4px 10px 0;
-  position: relative;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000338}}
-.prev-next {
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  right: 0;
-  height: 30px;
-  line-height: 30px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000346}}
-.prev-next .next-buttons {
-  position: absolute;
-  right: 10px;
-  top: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000351}}
-.prev-next .prev-buttons {
-  position: absolute;
-  left: 10px;
-  top: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000357}}
-.numbering {
-  display: block;
-  text-align: center;
-  color: #777;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000364}}
-.toc {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  background: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  padding: 0.8em 1.1em;
-  font-size: 12px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000372}}
-.toc ul, .toc li {
-  margin: 0;
-  list-style: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000376}}
-.toc a {
-  text-decoration: none;
-  color: #555;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000380}}
-.toc a:hover {
-  color: #000;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\0000391}}
-button,
-a.button {
-  -webkit-appearance: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  background: #dddddd url("../images/button.png?1298351022") repeat-x;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #efefef));
-  background-image: -webkit-linear-gradient(#f9f9f9, #efefef);
-  background-image: -moz-linear-gradient(#f9f9f9, #efefef);
-  background-image: -o-linear-gradient(#f9f9f9, #efefef);
-  background-image: linear-gradient(#f9f9f9, #efefef);
-  border: 1px solid;
-  border-color: #ddd #ccc #bebebe;
-  cursor: pointer;
-  color: #333;
-  display: inline-block;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.3;
-  outline: 0;
-  overflow: visible;
-  margin: 0;
-  padding: 3px 10px;
-  text-shadow: white 0 1px 1px;
-  text-decoration: none;
-  vertical-align: top;
-  width: auto;
-  *padding-top: 2px;
-  *padding-bottom: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003117}}
-button:hover,
-a.button:hover {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #efefef), color-stop(100%, #e1e1e1));
-  background-image: -webkit-linear-gradient(#ffffff, #efefef 1px, #e1e1e1);
-  background-image: -moz-linear-gradient(#ffffff, #efefef 1px, #e1e1e1);
-  background-image: -o-linear-gradient(#ffffff, #efefef 1px, #e1e1e1);
-  background-image: linear-gradient(#ffffff, #efefef 1px, #e1e1e1);
-  border-color: #ddd #c2c2c2 #b3b3b3;
-  color: #000;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003123}}
-button:active,
-a.button:active {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(1px, #dddddd), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
-  background-image: -moz-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
-  background-image: -o-linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
-  background-image: linear-gradient(#ffffff, #dddddd 1px, #eeeeee);
-  -webkit-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
-  -moz-box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
-  box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
-  border-color: #999 #bbb #ddd;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003129}}
-button::-moz-focus-inner,
-a.button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003140}}
-.sidebar .content, .menu .content {
-  display: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003144}}
-.sidebar.sidebar-active .content, .sidebar.menu-active .content, .menu.sidebar-active .content, .menu.menu-active .content {
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003150}}
-.pagenumbers {
-  display: block;
-  text-align: center;
-  color: #999;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003160}}
-.lightbox {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  background: rgba(0, 0, 0, 0.5);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v3\/sass\/_chrome\.scss}line{font-family:\00003169}}
-.lightbox .container {
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  background: white;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w1, .container.w1 [ratio="16x9"] img {
-  width: 2.75em;
-  height: 2em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w2, .container.w2 [ratio="16x9"] img {
-  width: 8.25em;
-  height: 5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w3, .container.w3 [ratio="16x9"] img {
-  width: 13.75em;
-  height: 8em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w4, .container.w4 [ratio="16x9"] img {
-  width: 19.25em;
-  height: 11em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w5, .container.w5 [ratio="16x9"] img {
-  width: 24.75em;
-  height: 14em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w6, .container.w6 [ratio="16x9"] img {
-  width: 30.25em;
-  height: 17em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w7, .container.w7 [ratio="16x9"] img {
-  width: 35.75em;
-  height: 20em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w8, .container.w8 [ratio="16x9"] img {
-  width: 41.25em;
-  height: 23em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w9, .container.w9 [ratio="16x9"] img {
-  width: 46.75em;
-  height: 26em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w10, .container.w10 [ratio="16x9"] img {
-  width: 52.25em;
-  height: 29em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w11, .container.w11 [ratio="16x9"] img {
-  width: 57.75em;
-  height: 32em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r16x9.w12, .container.w12 [ratio="16x9"] img {
-  width: 63.25em;
-  height: 36em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w1, .container.w1 [ratio="4x3"] img {
-  width: 2.75em;
-  height: 2em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w2, .container.w2 [ratio="4x3"] img {
-  width: 8.25em;
-  height: 6em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w3, .container.w3 [ratio="4x3"] img {
-  width: 13.75em;
-  height: 10em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w4, .container.w4 [ratio="4x3"] img {
-  width: 19.25em;
-  height: 14em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w5, .container.w5 [ratio="4x3"] img {
-  width: 24.75em;
-  height: 19em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w6, .container.w6 [ratio="4x3"] img {
-  width: 30.25em;
-  height: 23em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w7, .container.w7 [ratio="4x3"] img {
-  width: 35.75em;
-  height: 27em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w8, .container.w8 [ratio="4x3"] img {
-  width: 41.25em;
-  height: 31em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w9, .container.w9 [ratio="4x3"] img {
-  width: 46.75em;
-  height: 35em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w10, .container.w10 [ratio="4x3"] img {
-  width: 52.25em;
-  height: 39em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w11, .container.w11 [ratio="4x3"] img {
-  width: 57.75em;
-  height: 43em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x3.w12, .container.w12 [ratio="4x3"] img {
-  width: 63.25em;
-  height: 47em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w1, .container.w1 [ratio="5x4"] img {
-  width: 2.75em;
-  height: 2em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w2, .container.w2 [ratio="5x4"] img {
-  width: 8.25em;
-  height: 7em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w3, .container.w3 [ratio="5x4"] img {
-  width: 13.75em;
-  height: 11em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w4, .container.w4 [ratio="5x4"] img {
-  width: 19.25em;
-  height: 15em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w5, .container.w5 [ratio="5x4"] img {
-  width: 24.75em;
-  height: 20em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w6, .container.w6 [ratio="5x4"] img {
-  width: 30.25em;
-  height: 24em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w7, .container.w7 [ratio="5x4"] img {
-  width: 35.75em;
-  height: 29em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w8, .container.w8 [ratio="5x4"] img {
-  width: 41.25em;
-  height: 33em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w9, .container.w9 [ratio="5x4"] img {
-  width: 46.75em;
-  height: 37em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w10, .container.w10 [ratio="5x4"] img {
-  width: 52.25em;
-  height: 42em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w11, .container.w11 [ratio="5x4"] img {
-  width: 57.75em;
-  height: 46em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r5x4.w12, .container.w12 [ratio="5x4"] img {
-  width: 63.25em;
-  height: 51em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w1, .container.w1 [ratio="1x1"] img {
-  width: 2.75em;
-  height: 3em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w2, .container.w2 [ratio="1x1"] img {
-  width: 8.25em;
-  height: 8em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w3, .container.w3 [ratio="1x1"] img {
-  width: 13.75em;
-  height: 14em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w4, .container.w4 [ratio="1x1"] img {
-  width: 19.25em;
-  height: 19em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w5, .container.w5 [ratio="1x1"] img {
-  width: 24.75em;
-  height: 25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w6, .container.w6 [ratio="1x1"] img {
-  width: 30.25em;
-  height: 30em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w7, .container.w7 [ratio="1x1"] img {
-  width: 35.75em;
-  height: 36em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w8, .container.w8 [ratio="1x1"] img {
-  width: 41.25em;
-  height: 41em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w9, .container.w9 [ratio="1x1"] img {
-  width: 46.75em;
-  height: 47em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w10, .container.w10 [ratio="1x1"] img {
-  width: 52.25em;
-  height: 52em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w11, .container.w11 [ratio="1x1"] img {
-  width: 57.75em;
-  height: 58em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r1x1.w12, .container.w12 [ratio="1x1"] img {
-  width: 63.25em;
-  height: 63em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w1, .container.w1 [ratio="4x5"] img {
-  width: 2.75em;
-  height: 3em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w2, .container.w2 [ratio="4x5"] img {
-  width: 8.25em;
-  height: 10em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w3, .container.w3 [ratio="4x5"] img {
-  width: 13.75em;
-  height: 17em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w4, .container.w4 [ratio="4x5"] img {
-  width: 19.25em;
-  height: 24em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w5, .container.w5 [ratio="4x5"] img {
-  width: 24.75em;
-  height: 31em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w6, .container.w6 [ratio="4x5"] img {
-  width: 30.25em;
-  height: 38em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w7, .container.w7 [ratio="4x5"] img {
-  width: 35.75em;
-  height: 45em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w8, .container.w8 [ratio="4x5"] img {
-  width: 41.25em;
-  height: 52em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w9, .container.w9 [ratio="4x5"] img {
-  width: 46.75em;
-  height: 58em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w10, .container.w10 [ratio="4x5"] img {
-  width: 52.25em;
-  height: 65em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w11, .container.w11 [ratio="4x5"] img {
-  width: 57.75em;
-  height: 72em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r4x5.w12, .container.w12 [ratio="4x5"] img {
-  width: 63.25em;
-  height: 79em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w1, .container.w1 [ratio="3x4"] img {
-  width: 2.75em;
-  height: 4em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w2, .container.w2 [ratio="3x4"] img {
-  width: 8.25em;
-  height: 11em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w3, .container.w3 [ratio="3x4"] img {
-  width: 13.75em;
-  height: 18em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w4, .container.w4 [ratio="3x4"] img {
-  width: 19.25em;
-  height: 26em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w5, .container.w5 [ratio="3x4"] img {
-  width: 24.75em;
-  height: 33em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w6, .container.w6 [ratio="3x4"] img {
-  width: 30.25em;
-  height: 40em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w7, .container.w7 [ratio="3x4"] img {
-  width: 35.75em;
-  height: 48em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w8, .container.w8 [ratio="3x4"] img {
-  width: 41.25em;
-  height: 55em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w9, .container.w9 [ratio="3x4"] img {
-  width: 46.75em;
-  height: 62em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w10, .container.w10 [ratio="3x4"] img {
-  width: 52.25em;
-  height: 70em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w11, .container.w11 [ratio="3x4"] img {
-  width: 57.75em;
-  height: 77em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000334}}
-.r3x4.w12, .container.w12 [ratio="3x4"] img {
-  width: 63.25em;
-  height: 84em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c1 {
-  margin-left: 0em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c2 {
-  margin-left: 5.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c3 {
-  margin-left: 11em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c4 {
-  margin-left: 16.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c5 {
-  margin-left: 22em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c6 {
-  margin-left: 27.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c7 {
-  margin-left: 33em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c8 {
-  margin-left: 38.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c9 {
-  margin-left: 44em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c10 {
-  margin-left: 49.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c11 {
-  margin-left: 55em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000345}}
-.c12 {
-  margin-left: 60.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w1 {
-  width: 2.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w2 {
-  width: 8.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w3 {
-  width: 13.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w4 {
-  width: 19.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w5 {
-  width: 24.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w6 {
-  width: 30.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w7 {
-  width: 35.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w8 {
-  width: 41.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w9 {
-  width: 46.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w10 {
-  width: 52.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w11 {
-  width: 57.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000348}}
-.w12 {
-  width: 63.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000355}}
-.w6.grid:not(.fixed):not(.sizetocontainer) {
-  max-width: 63.25em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000372}}
-.column {
-  width: 30.25em;
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000379}}
-.grid {
-  position: absolute;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\0000388}}
-.fixed.grid, .sizetocontainer.grid {
-  max-width: none;
-  max-height: none;
-  min-width: none;
-  min-height: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003102}}
-html.js .hidden, html.no-js .hidden {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003106}}
-.chrome, .viewer {
-  position: absolute;
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003110}}
-.chrome {
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003120}}
-.container.scroll {
-  position: absolute;
-  overflow: auto;
-  overflow-x: hidden;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003124}}
-.grid .scroll-fade:after {
-  content: "\0020";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  z-index: 3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
-  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), white);
-  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), white);
-  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0), white);
-  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), white);
-  background-image: linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003138}}
-.container .scroll {
-  overflow: auto;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 40px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003144}}
-::-webkit-scrollbar, ::-moz-scrollbar, ::scrollbar {
-  -webkit-appearance: none;
-  width: 6px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003147}}
-::-webkit-scrollbar-thumb, ::-moz-scrollbar-thumb, ::scrollbar-thumb {
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003151}}
-.touch ::-webkit-scrollbar, .touch ::-moz-scrollbar, .touch ::-scrollbar {
-  width: 3px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003155}}
-html {
-  font-size: 14px;
-  line-height: 1.5em;
-  font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
-  color: #1b1d1e;
-  background-color: #d7d7d7;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003161}}
-html, body {
-  overflow: hidden;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003165}}
-h1, h2, h3, h4, h5, h6 {
-  text-rendering: optimizeLegibility;
-  word-wrap: break-word;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003172}}
-p {
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003177}}
-.column, .container {
-  position: absolute;
-  overflow: hidden;
-  top: 3em;
-  bottom: 3em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003184}}
-.column {
-  min-height: 4.5em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003190}}
-#previousPage, #nextPage {
-  opacity: 0.5;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003194}}
-.grid.trimleft {
-  padding-left: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003196}}
-.grid.trimright {
-  padding-right: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003200}}
-figure {
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003203}}
-.colapsed {
-  position: absolute;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003205}}
-.topfix {
-  top: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003207}}
-.rightfix {
-  right: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003209}}
-.bottomfix {
-  bottom: 0;
-  top: auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003212}}
-.leftfix {
-  left: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003215}}
-.overflow {
-  overflow: visible;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003219}}
-.error, .loading {
-  position: absolute;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003221}}
-.error#nextPage, .error#previousPage, .loading#nextPage, .loading#previousPage {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003224}}
-.hidden, .microdata {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003227}}
-.group {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  padding: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003234}}
-.center, .center * {
-  text-align: center;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003238}}
-.nocap .caption {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003245}}
-.fill .caption {
-  padding-left: 2.75em;
-  padding-right: 2.75em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003250}}
-.caption.left {
-  text-align: left;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003252}}
-.caption.right {
-  right: 0;
-  text-align: right;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003256}}
-.insetcap .caption {
-  position: absolute;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003258}}
-.insetcap.ul .caption {
-  top: 0;
-  left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003261}}
-.insetcap.ur .caption {
-  top: 0;
-  right: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003264}}
-.insetcap.ll .caption {
-  bottom: 0;
-  left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003267}}
-.insetcap.lr .caption {
-  bottom: 0;
-  right: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003275}}
-.fullbleed {
-  position: absolute;
-  bottom: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: auto;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003289}}
-html:not(.browser-msie) .chrome:first-child .grid, html:not(.browser-msie) .chrome:first-child nav {
-  -moz-filter: blur(2px);
-  -webkit-filter: blur(2px);
-  -o-filter: blur(2px);
-  filter: blur(2px);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003291}}
-html:not(.browser-msie) .chrome:last-child .grid, html:not(.browser-msie) .chrome:last-child nav {
-  -moz-filter: blur(0);
-  -webkit-filter: blur(0);
-  -o-filter: blur(0);
-  filter: blur(0);
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003298}}
-.os-ipad, .os-ipad .grid, .os-iphone, .os-iphone .grid {
-  -webkit-font-smoothing: antialiased;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003307}}
-html.offline .no-offline, html.offline [data-requires~="no-offline"] {
-  display: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003309}}
-html.offline [data-requires~="offline"] {
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003313}}
-html.no-offline [data-requires~="no-offline"] {
-  display: block;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/_core\.sass}line{font-family:\00003315}}
-html.no-offline [data-requires~="offline"] {
-  display: none;
-}
-
-@media screen and (-webkit-device-pixel-ratio: 1) and (device-width: 1024px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1) and (device-width: 600px) and (orientation: portrait) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/plugin\/_tablet-7-normalize\.sass}line{font-family:\0000312}}
-  html {
-    font-size: 16.8px;
-  }
-}
-@media screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 683px) and (orientation: landscape), screen and (-webkit-device-pixel-ratio: 1.5) and (device-width: 400px) and (orientation: portrait) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/seasons-0\.9\.3\.beta16\/stylesheets\/seasons\/plugin\/_tablet-7-normalize\.sass}line{font-family:\0000317}}
-  html {
-    font-size: 11.2px;
-  }
 }

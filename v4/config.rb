@@ -1,5 +1,5 @@
 # Require any additional compass plugins here.
-require 'seasons'
+# require 'seasons'
 
 
 # Change this to :production when ready to deploy the CSS to the live server.
