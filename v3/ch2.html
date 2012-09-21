@@ -62,6 +62,7 @@
 </figure>
 
 <p>In this chapter, we&#x2019;ll explore what you can do with the Canvas API&#x2014;a cool API that enables you to dynamically generate and render graphics, charts, images, and animation. We&#x2019;ll walk you through using the basics of the rendering API to create a drawing that can scale and adjust to the browser environment. We&#x2019;ll show you how to create dynamic pictures based on user input in a heatmap display. Of course, we&#x2019;ll also alert you to the pitfalls of using Canvas and share tricks to overcome them.</p>
+
 <p>This chapter presumes only a minimal amount of graphics expertise, so don&#x2019;t be afraid to jump in and try out one of the most powerful features of HTML5.</p>
 
 <h2>Overview of HTML5 Canvas</h2>
@@ -73,7 +74,7 @@
 <p>Early on, Apple hinted at possibly reserving the intellectual property rights in the WHATWG draft of the canvas specification, which caused concern at the time among some followers of web standardization. In the end, however, Apple disclosed the patents under the W3C's royalty-free patent licensing terms.</p>
 
 <figure>
-<aside data-sizes="single">
+<aside>
 <h3>SVG versus Canvas</h3>
 <p><b>Peter says</b>: &#x201C;Canvas is essentially a <i>bitmap</i> canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page&#x2019;s DOM or part of any namespace&#x2014;something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled seamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked).</p>
 <p>Why then, would the WHATWG HTML5 specification not use SVG exclusively? Despite its obvious shortcomings, the HTML5 Canvas API has two things going for it: it performs well because it does not have to store objects for every primitive it draws, and it is relatively easy to implement the Canvas API based on many of the popular two-dimensional drawing APIs found in other programming languages. Ultimately, it is better to have one bird in the hand than two in the bush.&#x201D;</p>
