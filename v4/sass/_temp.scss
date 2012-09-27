@@ -1,24 +1,35 @@
 // Temp fixes that we should recosider later //
 
+* {
+  @include box-sizing(border-box);
+}
+
 body{
   background-color: #d7d7d7;
 }
+
 div#content {
-  margin: 0 1em 0;
-  padding: 1em;
+  margin: 2em 1em;
+  padding: 3em;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+@media screen and (min-width: 1000px) {
+  div#content {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
+h2, h3, h4, h5, h6 {
+  padding: 1em 0 0;
+}
 p {
   font-size: 14px;
   line-height: 1.5;
 }
 .listing {
-  padding: 1em 0 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
   padding: 1em 0 0;
 }
 
