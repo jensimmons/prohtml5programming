@@ -712,3 +712,32 @@ video {
 .cover {
   background: #000;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_temp\.scss}line{font-family:\000033}}
+body {
+  background-color: #d7d7d7;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_temp\.scss}line{font-family:\000036}}
+div#content {
+  margin: 0 1em 0;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_temp\.scss}line{font-family:\0000313}}
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_temp\.scss}line{font-family:\0000317}}
+.listing {
+  padding: 1em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_temp\.scss}line{font-family:\0000321}}
+h1, h2, h3, h4, h5, h6 {
+  padding: 1em 0 0;
+}
