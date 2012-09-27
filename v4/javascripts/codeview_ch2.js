@@ -17,7 +17,7 @@
         }
 
         function initCodeview () {
-          console.log('initCodeview');     
+          // console.log('initCodeview');     
           // Initialize CodeMirror editor with a nice html5 canvas demo.
           editor = CodeMirror.fromTextArea(document.getElementById('code'), {
             mode: 'text/html',
@@ -44,7 +44,7 @@
               jQuery('#code-view-source h1').html('');
             }
           });
-          console.log('codeview initialized');
+          // console.log('codeview initialized');
         }
 
         function codeviewReady() {
