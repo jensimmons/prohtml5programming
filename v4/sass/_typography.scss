@@ -50,7 +50,7 @@ h6 {
 }
 
 p {
-  margin: rhythm(1) 0;
+  margin: rhythm(0.4) 0;
   text-indent: $indent-amount;
   &.noindent, &.caption & {
     text-indent: 0;

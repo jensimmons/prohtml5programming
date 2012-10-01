@@ -63,22 +63,25 @@ img {
 //-----------------------------------------------------------------------
 
 figure {
-  background: #f9f9f9;
   border: 1px solid #c2c2c2;
   padding: 1em;
   margin: 1em 0;
+}
+figure.listing {
+  background: #f9f9f9;
 }
 aside {
   clear: both;
   margin: 0 0 1em;
   padding: 1em;
   background: #f4f5f7;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
 //  box-decoration-break: clone;
   float: right;
   width: 45%;
   margin-left: 5%;
+  font-family: $sourcesans;
 }
 
 video {
