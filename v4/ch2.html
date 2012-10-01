@@ -181,7 +181,8 @@
 <p>Not very exciting, but as any artist would tell you, it is full of potential. Now, let&#x2019;s do something with this pristine canvas. As mentioned before, it is not easy to draw a diagonal line on a web page without HTML5 Canvas. Let&#x2019;s see how easy it is now that we <i>can</i> use Canvas. Listing 2-6 shows how, with just a few lines of code, you can draw a diagonal line on the canvas we added to the page earlier.</p>
 
 <div class="listing">
-<figcaption>Listing 2-6. </figcaption>
+<figcaption>Listing 2-6. <a href="#inline-code-example" class="show-inline-editor" data-listing="2-6">(View live code example)</a></figcaption>
+<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
 <pre><code>&#x003C;script&#x003E;
   function drawDiagonal() {
     // Get the canvas element and its drawing context
@@ -234,8 +235,9 @@
 <p>Listing 2-7 shows this best practice in action using the simplest transform: <code>translate</code>.</p>
 
 <div class="listing">
-<figcaption>Listing 2-7. Using Translation to Create a Diagonal Line on a Canvas</figcaption>
-<pre><code>&#x003C;script&#x003E;
+<figcaption>Listing 2-7. Using Translation to Create a Diagonal Line on a Canvas <a href="#inline-code-example" class="show-inline-editor" data-listing="2-7">(View live code example)</a></figcaption>
+<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
+<pre class="cf" style="clear: left;"><code>&#x003C;script&#x003E;
   function drawDiagonal() {
     var canvas = document.getElementById('diagonal');
     var context = canvas.getContext('2d');
@@ -1188,6 +1190,20 @@ function loopAnimation(currentTime) {
 <div class="ignore-me code-view-source-container" style="display:none;">
   <div id="code-view-source">
     <h1 class="hdr">Live Code Example</h1>
+    <div class="code-mirror-container">
+      <textarea id="code" name="code">
+      </textarea>
+    </div>
+
+    <iframe id="preview"></iframe>
+  </div>
+</div>
+
+<div class="ignore-me inline-codeview-source-container" style="display:none;">
+  <div id="code-view-source">
+    <div class="control-bar">
+      <div class="control reset">Reset</div>
+    </div>
     <div class="code-mirror-container">
       <textarea id="code" name="code">
       </textarea>

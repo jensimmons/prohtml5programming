@@ -1,60 +1,129 @@
 
 
-        var delay;
-        var editor;
-        var codeviewReadyDelay;
-        var preview;
-        var previewFrame;
+        // var delay;
+        // var editor;
+        // var codeviewReadyDelay;
+        // var preview;
+        // var previewFrame;
 
-        function updatePreview() {
-          if (document.getElementById('preview')) {
-            var previewFrame = document.getElementById('preview');
-            var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-            preview.open();
-            preview.write(editor.getValue());
-            preview.close();
-          }
+        function updatePreview( args ) {
+          var iEditor = args[0];
+          var previewFrame = jQuery('#preview', iEditor.container).get(0);
+          var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+          preview.open();
+          preview.write(iEditor.editor.getValue());
+          preview.close();
         }
 
-        function initCodeview () {
-          // console.log('initCodeview');     
-          // Initialize CodeMirror editor with a nice html5 canvas demo.
-          editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        // function initCodeview () {
+        //   // console.log('initCodeview');     
+        //   // Initialize CodeMirror editor with a nice html5 canvas demo.
+        //   editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+        //     mode: 'text/html',
+        //     tabMode: 'indent',
+        //     theme: 'default',
+        //     lineWrapping: true,
+        //     lineNumbers: true,
+        //     onChange: function() {
+        //       clearTimeout(delay);
+        //       delay = setTimeout(updatePreview, 300);
+        //     }
+        //   });
+        //   setTimeout(updatePreview, 300);
+        // 
+        //   jQuery(".cb-codeview").colorbox({
+        //     inline: true, width:"90%", height: "90%", 
+        //     onComplete:function () { 
+        //       var listingNumber = $(this).data('listing');
+        //       var codeObj = codeListings[listingNumber];
+        //       editor.setValue(codeObj.code);
+        //       jQuery('#code-view-source h1').html('Listing ' + listingNumber + ': ' + codeObj.title);
+        //     },
+        //     onClosed:function () {
+        //       editor.setValue('');
+        //       jQuery('#code-view-source h1').html('');
+        //     }
+        //   });
+        //   // console.log('codeview initialized');
+        // }
+
+        // function codeviewReady() {
+        //   clearTimeout(codeviewReadyDelay);
+        //   if($('.ignore-me').length && $('a.cb-codeview').length && $('#preview').length) {
+        //     initCodeview();  
+        //   } else {
+        //     codeviewReadyDelay = setTimeout(codeviewReady, 100);
+        //   }
+        // }
+        
+        // function enableInlineEditor( el ) { // el: container
+        //   // Initialize CodeMirror editor with a nice html5 canvas demo.
+        //   inline = CodeMirror.fromTextArea(jQuery('#code', el), {
+        //     mode: 'text/html',
+        //     tabMode: 'indent',
+        //     theme: 'default',
+        //     lineWrapping: true,
+        //     lineNumbers: true,
+        //     onChange: function () {
+        //       clearTimeout(delay);
+        //       delay = setTimeout(updateInlinePreview, 300, [el]);
+        //     }
+        // }
+        var inlineEditors = {};
+        
+        var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
+          var me = this;
+          this.trigger = el;
+          
+          this.delay;
+          this.listingNumber = el.data('listing'); 
+          inlineEditors[this.listingNumber] = this;
+          this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
+          this.container.html( jQuery('.inline-codeview-source-container').html() );
+          this.resetControl = jQuery('.control-bar .control.reset', this.container);
+          this.previewFrame = jQuery('#preview', this.container).get(0);
+          this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
             mode: 'text/html',
             tabMode: 'indent',
             theme: 'default',
+            lineWrapping: true,
             lineNumbers: true,
-            onChange: function() {
-              clearTimeout(delay);
-              delay = setTimeout(updatePreview, 300);
+            onChange: function () {
+              window.clearTimeout(me.delay);
+              me.delay = window.setTimeout(updatePreview, 300, [me]);
             }
           });
-          setTimeout(updatePreview, 300);
-
-          jQuery(".cb-codeview").colorbox({
-            inline: true, width:"90%", height: "90%", 
-            onComplete:function(){ 
-              var listingNumber = $(this).data('listing');
-              var codeObj = codeListings[listingNumber];
-              editor.setValue(codeObj.code);
-              jQuery('#code-view-source h1').html('Listing ' + listingNumber + ': ' + codeObj.title);
-            },
-            onClosed:function(){
-              editor.setValue('');
-              jQuery('#code-view-source h1').html('');
-            }
+          this.resetControl.bind('click', function (evt) {
+            me.reset();
           });
-          // console.log('codeview initialized');
+          this.removeEditor = function () {
+            window.clearTimeout(me.delay);
+            me.editor = null;
+            me.container.html('');
+            me.container.hide();
+          };
+          this.reset();
         }
-
-        function codeviewReady() {
-          clearTimeout(codeviewReadyDelay);
-          if($('.ignore-me').length && $('a.cb-codeview').length && $('#preview').length) {
-            initCodeview();  
-          } else {
-            codeviewReadyDelay = setTimeout(codeviewReady, 100);
-          }
+        
+        inlineEditor.prototype.reset = function () {
+          this.editor.setValue(codeListings[this.listingNumber].code);
         }
+        
+        function inlineCodeview() {
+          
+          jQuery(".show-inline-editor").live('click', function (evt) {
+            evt.stopPropagation();
+            evt.preventDefault();
+            var $this = jQuery(this);
+            var listing = jQuery(this).data('listing');
+            inlineEditors[listing] = new inlineEditor($this);
+            // $this.hide();
+          });
+        }
+        
+        jQuery( function () {
+          inlineCodeview();
+        });
 
         var codeListings = {
           '2-6': {
@@ -864,7 +933,7 @@
           }
         };
 
-        jQuery(function () {
-          codeviewReady();
-
-        });
+        // jQuery(function () {
+        //   codeviewReady();
+        // 
+        // });
