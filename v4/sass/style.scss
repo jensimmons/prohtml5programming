@@ -1,49 +1,23 @@
-// CREDITS
-//  Thanks to Filipe Fortes and Bram Stein for Treesaver :: http://treesaverjs.com/
-//  Thanks to Tim Murtaugh and Michael Pick for HTML5 Reset :: http://html5reset.org/
-//
-//  Seasons is created and developed by Scott Kellum in collaboration with the Treesaver team :: http://treesaver.net/
 
-// This is a styling framework to be used with Treesaver
-//  It creates a flexable yet solid foundation for building templates.
-//
-// ** To do any development on this project, you need to have SASS installed: http://sass-lang.com as well as Seasons.**
-
-
-// Import:
-@import "normalize";
-$reset: false;
-* { box-sizing: border-box; }
-  
-// Import Tools:
-// @import "seasons/tools";
+// Import Tools
 @import "compass";
 
-// Configuration:
+// Reset
+@import "normalize";
+* {
+  @include box-sizing(border-box);
+}
+
+// Configuration
 @import "config";
 
-// Import custom mixins:
+// Import custom mixins
 @import "mixins";
 
-// Font Import:
+// Font Import
 @import "fontface";
 
-// Import CSS:
+// Import CSS
 @import "typography";
 @import "pages";
-// @import "chrome";
 
-@import "temp";
-
-// CORE TREESAVER FUNCTIONALITY:
-// @import "seasons/core";
-
-// PLUGINS:
-// @import "seasons/plugin/ad";
-
-//@import seasons/plugin/mobile
-//@import seasons/plugin/ipad
-// @import "seasons/plugin/tablet-7-normalize";
-
-//@import seasons/plugin/tablet-7-template
-//@import seasons/plugin/no-treesaver

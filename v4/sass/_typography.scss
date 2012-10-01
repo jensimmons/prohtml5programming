@@ -9,43 +9,14 @@
    ========================================================================== */
 
 body {
-  font-family: $base-font-family;
+  font-family: $base-font;
+  
 }
-
-/*
- * Addresses font sizes and margins set differently in IE6/7
- * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
- */
  
 h1, h2, h3, h4 ,h5 ,h6 {
-  font-family: $sourcesans-bold;
+  font-family: $headline-font;
   font-weight: 500;
 }
-
-h1 {
-  font-size: 2    * $base-size;
-}
-h2 {
-  font-size: 1.85 * $base-size;
-  margin-top: 0.8em;
-  margin-bottom: 0.2em;
-}
-h3 {
-  font-size: 1.4  * $base-size;
-  margin-top: 0.2em;
-  margin-bottom: 0.1em;
-}
-h4 {
-  font-size: 1.4  * $base-size;
-}
-h5 {
-  font-size: 1    * $base-size;
-}
-h6 {
-  font-size: 0.83 * $base-size;
-}
-
-/*
 h1 {
   @include adjust-font-size-to( $h1-font-size );
 }
@@ -56,48 +27,45 @@ h2 {
   @include adjust-font-size-to( $h2-font-size );
   @include leader(1, $h2-font-size);
   @include trailer(1, $h2-font-size);
-  @include solid($line-height);
 }
 h3 {
   @include adjust-font-size-to( $h3-font-size );
-  @include leader(1, $h3-font-size);
-  @include trailer(1, $h3-font-size);
+  @include leader(0, $h3-font-size);
+  @include trailer(0, $h3-font-size);
 }
 h4 {
   @include adjust-font-size-to( $h4-font-size );
-  @include leader(1, $h4-font-size);
-  @include trailer(1, $h4-font-size);
+  @include leader(0, $h4-font-size);
+  @include trailer(0, $h4-font-size);
 }
 h5 {
   @include adjust-font-size-to( $h5-font-size );
-  @include leader(1, $h5-font-size);
-  @include trailer(1, $h5-font-size);
+  @include leader(0, $h5-font-size);
+  @include trailer(0, $h5-font-size);
 }
 h6 {
   @include adjust-font-size-to( $h6-font-size );
-  @include leader(1, $h6-font-size);
-  @include trailer(1, $h6-font-size);
-}
-*/
-
-hr {
-  height: 1px;
-  border: 1px solid #666;
-  padding-bottom: -1px;
-  margin: rhythm(1) 0;
+  @include leader(0, $h6-font-size);
+  @include trailer(0, $h6-font-size);
 }
 
-p,
-pre {
-  margin: rhythm(0) 0;
-}
-pre {
+p {
   margin: rhythm(1) 0;
-  font-size: 0.83 * $base-size;
+  text-indent: $indent-amount;
+  &.noindent, &.caption & {
+    text-indent: 0;
+  }
+  &.caption {
+    text-align: left;
+    .lightbox & {
+      color: #fff;
+    }
+  }
 }
 
 figcaption {
-  font-family: $sourcesans-light;
+  font-family: $accent-font;
+  @include adjust-font-size-to(14px);
 }
 
 blockquote {
@@ -105,17 +73,30 @@ blockquote {
   margin: rhythm(0.5) $indent-amount;
 }
 
+canvas {
+  margin: rhythm(1) 0;
+}
 
-
-/* =============================================================================
-   Lists
-   ========================================================================== */
+code,
+kbd,
+pre,
+samp {
+  margin: rhythm(1) 0;
+  @include adjust-font-size-to(14px);
+}
 
 dl,
 menu,
 ol,
 ul,
-.item-list ul /* Drupal override */ {
+.item-list ul {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
+  margin: rhythm(1) 0;
+}
+
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  padding-bottom: -1px;
   margin: rhythm(1) 0;
 }

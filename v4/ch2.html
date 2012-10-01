@@ -13,16 +13,6 @@
 	<!-- LINK TO THE STYLE SHEET -->
 	<link rel="stylesheet" href="stylesheets/style.css" />
 	
-	<!-- RESOURCES.HTML CONTAINS THE PAGE LAYOUTS -->
-	<link rel="resources prefetch" href="resources.html" />
-
-	<!-- TOC.JSON CONTAINS THE ARTICLE ORDER -->
-  <link rel="index" href="toc.json" type="application/json">
-  
-  <!-- LOAD TREESAVER -->
-  <script src="javascripts/treesaver-0.9.3b.js"></script>
-
-  
 	<!-- RESOURCES.HTML CONTAINS THE LAYOUTS AND TOC.HTML CONTAINS YOUR TABLE OF CONTENTS -->
   <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
   <link rel="shortcut icon" href="images/favicon.ico" />
@@ -37,7 +27,6 @@
   <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
   <script src="javascripts/codeview_ch2.js"></script>
 
-  
   <link rel="stylesheet" href="codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="codemirror/theme/ambiance.css">
   <link rel="stylesheet" href="stylesheets/apress_colorbox.css">
@@ -46,20 +35,12 @@
     
 <body>
 
-<!-- Insert fallback navigation for non-treesaver js situations. See article.html from Seasons for an example. Do the same with the footer at the end of this file. -->
+<article>
 
-
-
-<div id="content">
-<!--======================== CONTENT ========================-->
-<article data-grids="department">
-
-<figure>
-<hgroup data-sizes="title fallback">
+<hgroup>
   <h1>Chapter 2</h1>
   <h1>Using the Canvas API</h1>
 </hgroup>
-</figure>
 
 <p>In this chapter, we&#x2019;ll explore what you can do with the Canvas API&#x2014;a cool API that enables you to dynamically generate and render graphics, charts, images, and animation. We&#x2019;ll walk you through using the basics of the rendering API to create a drawing that can scale and adjust to the browser environment. We&#x2019;ll show you how to create dynamic pictures based on user input in a heatmap display. Of course, we&#x2019;ll also alert you to the pitfalls of using Canvas and share tricks to overcome them.</p>
 <p>This chapter presumes only a minimal amount of graphics expertise, so don&#x2019;t be afraid to jump in and try out one of the most powerful features of HTML5.</p>
@@ -74,21 +55,19 @@
 <p>Try, for example, to draw a simple diagonal line without a <code>canvas</code> element&#x2014;it sounds easy, but it is a fairly complex task if you do not have a simple two-dimensional drawing API at your disposal. Canvas provides just that, and because it is an extremely useful thing to have in the browser, it was added to the HTML5 specification.</p>
 <p>Early on, Apple hinted at possibly reserving the intellectual property rights in the WHATWG draft of the canvas specification, which caused concern at the time among some followers of web standardization. In the end, however, Apple disclosed the patents under the W3C's royalty-free patent licensing terms.</p>
 
-<figure>
-<aside data-sizes="single">
+<aside>
 <h3>SVG versus Canvas</h3>
 <p><b>Peter says</b>: &#x201C;Canvas is essentially a <i>bitmap</i> canvas, and as such images that are drawn on a canvas are final and cannot be resized in the way that Scalable Vector Graphic (SVG) images can. Furthermore, objects drawn on a canvas are not part of the page&#x2019;s DOM or part of any namespace&#x2014;something that is considered a weakness if you need hit detection or object-based updates. SVG images, on the other hand can be scaled seamlessly at different resolutions and allow for hit detection (knowing precisely where an image is clicked).</p>
 <p>Why then, would the WHATWG HTML5 specification not use SVG exclusively? Despite its obvious shortcomings, the HTML5 Canvas API has two things going for it: it performs well because it does not have to store objects for every primitive it draws, and it is relatively easy to implement the Canvas API based on many of the popular two-dimensional drawing APIs found in other programming languages. Ultimately, it is better to have one bird in the hand than two in the bush.&#x201D;</p>
 </aside>
-</figure>
 
 <h3>What Is a Canvas?</h3>
 <p>When you use a <code>canvas</code> element in your web page, it creates a rectangular area on the page. By default, this rectangular area is 300 pixels wide and 150 pixels high, but you can specify the exact size and set other attributes for your <code>canvas</code> element. Listing 2-1 shows the most basic <code>canvas</code> element that can be added to an HTML page.</p>
 
-<div class="listing">
+<figure class="listing">
   <figcaption>Listing 2-1. A Basic Canvas Element</figcaption>
   <pre><code>&#x003C;canvas&#x003E; &#x003C;/canvas&#x003E;</code></pre>
-</div>
+</figure>
 
 <p>Once you have added a <code>canvas</code> element to your page, you can use JavaScript to manipulate it any way you want. You can add graphics, lines, and text to it; you can draw on it; and you can even add advanced animations to it.</p>
 <p>The Canvas API supports the same two-dimensional drawing operations that most modern operating systems and frameworks support. If you have ever programmed two-dimensional graphics in recent years, you will probably feel right at home with the Canvas API because it is designed to be similar to existing systems. If you haven&#x2019;t, you&#x2019;re about to discover how much more powerful a rendering system can be than the previous images and CSS tricks developers have used for years to create web graphics.</p>
@@ -1178,11 +1157,6 @@ function loopAnimation(currentTime) {
 <p>As you can see, the Canvas API provides a very powerful way to modify the appearance of your web application without resorting to odd document hacks. Images, gradients, and complex paths can be combined to create nearly any type of display you may be looking to present. Keep in mind that you generally need to draw at the origin, load any images you want to display before attempting to draw them, and be mindful of tainting your canvas with foreign image sources. However, if you learn to harness the power of the canvas, you can create applications that were never possible in a web page before.</p>
 
 </article>
-<!--====================== END CONTENT ======================-->
-</div>
-
-
-<!-- Insert fallback footer for non-treesaver js situations. See article.html from Seasons for an example. -->
 
 <!-- MOD: MARKUP FOR CODEVIEW COLORBOX -->
 <div class="ignore-me code-view-source-container" style="display:none;">
