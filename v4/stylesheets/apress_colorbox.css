@@ -98,7 +98,7 @@
   }
 .code-mirror-container {
   border: 1px solid #ccc;
-  width: 40%;
+  width: 48%;
   min-width: 300px;
   float: left;
   margin-right: 2em;
@@ -106,7 +106,7 @@
 .CodeMirror {
 }  
 iframe#preview {
-  width: 424px;
+  width: 48%;
   float: left;
   height: 624px;
   border: 1px solid #ccc;

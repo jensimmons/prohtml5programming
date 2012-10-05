@@ -111,12 +111,13 @@
         
         function inlineCodeview() {
           
-          jQuery(".show-inline-editor").live('click', function (evt) {
+          jQuery(".show-inline-editor:not('.open')").bind('click', function (evt) {
             evt.stopPropagation();
             evt.preventDefault();
             var $this = jQuery(this);
             var listing = jQuery(this).data('listing');
             inlineEditors[listing] = new inlineEditor($this);
+            $this.addClass('open');
             // $this.hide();
           });
         }
