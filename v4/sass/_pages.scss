@@ -15,7 +15,7 @@ article {
   padding: 3em;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-
+  box-decoration-break: clone;
   margin: $gutter;
   padding: 1em $margin 0;
   background: $page;
