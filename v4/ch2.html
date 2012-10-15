@@ -25,6 +25,8 @@
   <script src="codemirror/mode/css/css.js"></script>
   <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
   <script src="javascripts/codeview_ch2.js"></script>
+  <script src="javascripts/toc.js"></script>
+  
   <script src="javascripts/persistent_headers.js"></script>
 
   <link rel="stylesheet" href="codemirror/lib/codemirror.css">
@@ -1205,10 +1207,30 @@
   var menuObj = [];
   jQuery(function () {
     var h1 = $('h1').eq(0);
-    
     var currentChap = h1.text();
+    
+    var output = '<nav><ul>';
+    if(toc) {
+      output += ('<li class="toc"><a href="#" class="link-toc">Table of Contents</a>\n');
+      output += '<ul>';
+      for(var i=0; i < toc.length; i++) {
+        
+        for(var key in toc[i]) {
+          var currentClass = '';
+          if(toc[i].hasOwnProperty(key)) {
+            if (key == currentChap) {
+              currentClass = 'link-current';
+            }
+            output += ('<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n');
+          }
+        }
+        
+      }
+      output += '</ul></li>';
+    }
+
     jQuery('<a name="item_0" />').insertBefore(h1);
-    var output = '<nav><ul><li class="current"><a href="#item_0" >' + currentChap + '</a>\n';
+    output += ('<li class="current"><a href="#item_0" >' + currentChap + '</a>\n');
     // console.log(menuObj);
     var sections = jQuery('h2');
     var j = 0;
@@ -1241,6 +1263,32 @@
     output += '</li></ul></nav>\n';
     jQuery('div.nav-container').append(jQuery(output));
     // console.log(output);
+    jQuery('.link-toc').live('click', function (evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      var parent = $(this).parents('li:first');
+      parent.children('ul').show();
+      parent.siblings('.current').hide();
+      // toc click 
+      //   hide sibling .current
+      //   show toc children ul
+      //   
+    });
+    jQuery('.link-current').live('click', function (evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      var parent = $(this).parents('li.toc:first');
+      parent.children('ul').hide();
+      parent.siblings('.current').show();
+    });
+    // link-current
+    //   hide toc children ul
+    //   show sibling .current
+    jQuery('.menu-link').live('click', function (evt) {
+      jQuery('.link-current').click();
+    }); 
+    
+    jQuery('.link-current').click();
   });
 </script>
 
