@@ -100,3 +100,61 @@ hr {
   padding-bottom: -1px;
   margin: rhythm(1) 0;
 }
+
+.menu-link {
+  color: #fff;
+  float: right;
+  font-family: $headline-font;
+  whitespace: nowrap;
+  min-width: 86px; /* sheesh */
+  
+  a {
+    display: block;
+    background: #333;
+    padding: 3px 12px;
+    color: #fff;
+    text-decoration: none;
+  }
+  img {
+    display: inline-block;
+  }
+  span {
+    padding-left: 6px;
+    display: inline-block;
+  }
+}
+nav { 
+  width: 360px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    background: #000;
+  }
+  li li {
+    background: #333;
+  }
+  li li li {
+    background: #999;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: $headline-font;
+    @include adjust-font-size-to(14px);
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid #fff;
+    padding: 0.2em 0.5em 0.2em 1em;
+  }
+
+}
+
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}

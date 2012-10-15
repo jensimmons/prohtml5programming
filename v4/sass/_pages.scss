@@ -21,9 +21,17 @@ article {
   background: $page;
   @include box-shadow (0 2px 4px rgba(0, 0, 0, 0.3));
 }
+.nav-container {
+  margin: 4em 1em;
+}
 
 @media screen and (min-width: 1000px) {
   article {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-container {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -33,6 +41,7 @@ article {
 hgroup {
   text-align: center;
   border-bottom: 1px solid #000;
+  clear: both;
   @include trailer(0, $h1-font-size);
   h1:first-child {
     @include adjust-font-size-to(48px);

@@ -25,6 +25,7 @@
   <script src="codemirror/mode/css/css.js"></script>
   <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
   <script src="javascripts/codeview_ch2.js"></script>
+  <script src="javascripts/persistent_headers.js"></script>
 
   <link rel="stylesheet" href="codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="codemirror/theme/ambiance.css">
@@ -33,7 +34,9 @@
     
 <body>
 
-<article>
+<article class="persist-area">
+
+<div class="menu-link persist-header orig-menu"><a class="svg-menu" href="#main-navigation"><img src="images/icon-menu.svg"/><span>Menu</span></a></div>
 
 <hgroup>
   <h1>Chapter 2</h1>
@@ -1195,6 +1198,8 @@
     <iframe id="preview"></iframe>
   </div>
 </div>
+<a name="main-navigation" id="main-navigation"/>
+<div class="nav-container"> </div>
 
 <script type="text/javascript" charset="utf-8">
   var menuObj = [];
@@ -1203,7 +1208,7 @@
     
     var currentChap = h1.text();
     jQuery('<a name="item_0" />').insertBefore(h1);
-    var output = '<nav><ul><li><a href="#item_0" >' + currentChap + '</a>\n';
+    var output = '<nav><ul><li class="current"><a href="#item_0" >' + currentChap + '</a>\n';
     // console.log(menuObj);
     var sections = jQuery('h2');
     var j = 0;
@@ -1234,7 +1239,7 @@
       j++;
     });
     output += '</li></ul></nav>\n';
-    jQuery('body').append(jQuery(output));
+    jQuery('div.nav-container').append(jQuery(output));
     // console.log(output);
   });
 </script>
