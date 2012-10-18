@@ -4,7 +4,7 @@
 
 /* TEAM */
     Peter Lubbers, author, @peterlubbers, Lake Tahoe, California
-    Dylan Wooters, project manager, @8dylan8, New York, New York
+    Dylan Wooters, product owner, @8dylan8, New York, New York
     Jen Simmons, designer, @jensimmons, Brooklyn, New York
     Chris O'Connor, developer, @opinxit, Brooklyn, New York
 
