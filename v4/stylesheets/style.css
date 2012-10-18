@@ -1020,3 +1020,45 @@ a.button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000035}}
+.CodeMirror-scroll {
+  height: 624px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000038}}
+.code-mirror-container {
+  border: 1px solid #ccc;
+  width: 48%;
+  min-width: 300px;
+  float: left;
+  margin-right: 2em;
+  font-size: 13px;
+  clear: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000320}}
+iframe#preview {
+  width: 48%;
+  float: left;
+  height: 624px;
+  border: 1px solid #ccc;
+}
+
+/* placeholder styles */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000328}}
+.control-bar {
+  float: left;
+  clear: left;
+  padding-bottom: 0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000333}}
+.control.reset {
+  float: left;
+  padding: 0.2em 0.5em;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  background: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
