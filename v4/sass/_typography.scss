@@ -24,16 +24,18 @@ h1 + h1 {
 }
 h2 {
   @include adjust-font-size-to( $h2-font-size );
-  @include leader(0.8, $h2-font-size);
-  @include trailer(0.2, $h2-font-size);
+  @include leader(1.5, $h2-font-size);
+  @include trailer(0, $h2-font-size);
+  @include adjust-leading-to(1.2, $h2-font-size);
 }
 h3 {
   @include adjust-font-size-to( $h3-font-size );
-  @include leader(1, $h3-font-size);
-  @include trailer(0, $h3-font-size);
+  @include leader(1.6, $h3-font-size);
+  @include trailer(0.4, $h3-font-size);
+  @include adjust-leading-to(1.2, $h2-font-size);
 }
 aside h3 {
-  margin: 0;
+  @include leader(0, $h3-font-size);
 }
 h4 {
   @include adjust-font-size-to( $h4-font-size );
@@ -64,10 +66,7 @@ p {
     }
   }
 }
-aside p {
 
-
-}
 figcaption {
   font-family: $accent-font;
   @include adjust-font-size-to(16px);
@@ -105,56 +104,4 @@ hr {
   border: 1px solid #666;
   padding-bottom: -1px;
   margin: rhythm(1) 0;
-}
-
-.menu-link {
-  color: #fff;
-  float: right;
-  font-family: $headline-font;
-  whitespace: nowrap;
-  min-width: 86px; /* sheesh */
-  
-  a {
-    display: block;
-    background: #333;
-    padding: 3px 12px;
-    color: #fff;
-    text-decoration: none;
-  }
-  img {
-    display: inline-block;
-  }
-  span {
-    padding-left: 6px;
-    display: inline-block;
-  }
-}
-nav { 
-  width: 360px;
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    background: #000;
-  }
-  li li {
-    background: #333;
-  }
-  li li li {
-    background: #999;
-  }
-
-  a {
-    text-decoration: none;
-    font-family: $headline-font;
-    @include adjust-font-size-to(14px);
-    color: #fff;
-    display: block;
-    border-bottom: 1px solid #fff;
-    padding: 0.2em 0.5em 0.2em 1em;
-  }
-
 }
