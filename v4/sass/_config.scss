@@ -36,7 +36,7 @@ $indent-amount: 24px;
 //-----------------------------------------------------------------------
 
 // Let's define some font stacks
-$sourcesans:        SourceSansPro, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$sourcesans:        SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $sourcesans-light:  SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $sourcesans-bold:   SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 $georgia:           Georgia, "Times New Roman", "DejaVu Serif", serif;
@@ -49,6 +49,7 @@ $body-font:         $georgia;
 $accent-font:       $sourcesans-light;
 $monospace-font:    $courier;
 $headline-font:     $sourcesans-bold;
+$interface-font:    $sourcesans;
 
 
 //-----------------------------------------------------------------------
