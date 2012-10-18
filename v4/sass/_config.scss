@@ -16,7 +16,7 @@ $body: #d7d7d7;
 // http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
 $base-font-size:   16px; // The font size set on the root html element.
-$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+$base-line-height: 26px; // This line-height determines the basic unit of vertical rhythm.
 @include establish-baseline;
 
 $h1-font-size: 2    * $base-font-size;

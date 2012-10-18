@@ -10,7 +10,6 @@
 
 body {
   font-family: $base-font;
-  
 }
  
 h1, h2, h3, h4 ,h5 ,h6 {
@@ -25,13 +24,16 @@ h1 + h1 {
 }
 h2 {
   @include adjust-font-size-to( $h2-font-size );
-  @include leader(1, $h2-font-size);
-  @include trailer(1, $h2-font-size);
+  @include leader(0.8, $h2-font-size);
+  @include trailer(0.2, $h2-font-size);
 }
 h3 {
   @include adjust-font-size-to( $h3-font-size );
-  @include leader(0, $h3-font-size);
+  @include leader(1, $h3-font-size);
   @include trailer(0, $h3-font-size);
+}
+aside h3 {
+  margin: 0;
 }
 h4 {
   @include adjust-font-size-to( $h4-font-size );
@@ -62,10 +64,13 @@ p {
     }
   }
 }
+aside p {
 
+
+}
 figcaption {
   font-family: $accent-font;
-  @include adjust-font-size-to(14px);
+  @include adjust-font-size-to(16px);
 }
 
 blockquote {
@@ -76,10 +81,11 @@ blockquote {
 canvas {
   margin: rhythm(1) 0;
 }
-
+pre {
+  margin-left: $indent-amount;
+}
 code,
 kbd,
-pre,
 samp {
   margin: rhythm(1) 0;
   @include adjust-font-size-to(14px);
@@ -151,10 +157,4 @@ nav {
     padding: 0.2em 0.5em 0.2em 1em;
   }
 
-}
-
-.floatingHeader {
-  position: fixed;
-  top: 0;
-  visibility: hidden;
 }

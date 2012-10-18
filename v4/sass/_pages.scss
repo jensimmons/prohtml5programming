@@ -4,6 +4,16 @@
 //-----------------------------------------------------------------------
 // Temporary
 //-----------------------------------------------------------------------
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
+
+
+//-----------------------------------------------------------------------
+// General
+//-----------------------------------------------------------------------
 
 html {
   background-color: #d7d7d7;
@@ -62,26 +72,17 @@ img {
 // Figures, Code, and Asides
 //-----------------------------------------------------------------------
 
-figure {
-  border: 1px solid #c2c2c2;
-  padding: 1em;
-  margin: 1em 0;
-}
-figure.listing {
-  background: #f9f9f9;
-}
 aside {
-  clear: both;
-  margin: 0 0 1em;
-  padding: 1em;
-  background: #f4f5f7;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-//  box-decoration-break: clone;
   float: right;
   width: 45%;
-  margin-left: 5%;
+  clear: both;
+  background: #F2F2F2;
+  border: 1px solid #D8DDE0;
+  margin: 0 0 1em 5%;
+  padding: 0.5em 1.5em;
+  box-decoration-break: clone;
   font-family: $sourcesans;
+  @include adjust-font-size-to(13px);
 }
 
 video {
