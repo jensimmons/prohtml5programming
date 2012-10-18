@@ -69,7 +69,7 @@
   
 <!--======================== CONTENT ========================-->
 
-<article>
+<article [role="main"]>
 
 <hgroup>
   <h1>Chapter 2</h1>
@@ -1239,7 +1239,7 @@ function loopAnimation(currentTime) {
         var h1 = $('h1').eq(0);
         var currentChap = h1.text();
         
-        var output = '<nav><ul>';
+        var output = '<nav role="navigation"><ul>';
         if(toc) {
           output += ('<li class="toc"><a href="#" class="link-toc">Table of Contents</a>\n');
           output += '<ul>';
