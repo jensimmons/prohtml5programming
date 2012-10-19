@@ -1,5 +1,4 @@
 
-
 //-----------------------------------------------------------------------
 // General
 //-----------------------------------------------------------------------
@@ -9,32 +8,13 @@ html {
 }
 
 article {
-  margin: 2em 1em;
-  padding: 3em;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  box-decoration-break: clone;
-  margin: $gutter;
-  padding: 1em $margin 0;
   background: $page;
   @include box-shadow (0 2px 4px rgba(0, 0, 0, 0.3));
+  box-decoration-break: clone;
 }
-
-@media screen and (min-width: 1000px) {
-  article {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 
 canvas {
   background: #fff;
-}
-
-img {
-  max-width: 100%;
 }
 
 //-----------------------------------------------------------------------
@@ -45,16 +25,16 @@ hgroup {
   text-align: center;
   border-bottom: 1px solid #000;
   clear: both;
-  @include trailer(0, $h1-font-size);
+  @include trailer(2, $h1-font-size);
   h1 {
-    @include adjust-font-size-to(36px);
-    @include leader(0, $h1-font-size);
+    @include adjust-font-size-to(32px);
+    @include leader(0.2, $h1-font-size);
     @include trailer(0, $h1-font-size);
   }
   h1:last-child {
-    @include adjust-font-size-to(48px);
+    @include adjust-font-size-to(44px);
     @include leader(0, $h1-font-size);
-    @include trailer(0, $h1-font-size);  
+    @include trailer(0.3, $h1-font-size);  
   }
 }
 

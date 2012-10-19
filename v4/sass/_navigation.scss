@@ -3,8 +3,7 @@
 //-----------------------------------------------------------------------
 
 nav { 
-  width: 360px;
-
+  width: 100%;
   ul {
     list-style: none;
     margin: 0;
@@ -14,27 +13,33 @@ nav {
     background: #000;
   }
   li li {
-    background: #333;
+    background: #4C4C51;
   }
   li li li {
-    background: #999;
+    background: #8C8C91;
   }
-
   a {
     text-decoration: none;
-    font-family: $headline-font;
+    font-family: $interface-font;
     @include adjust-font-size-to(14px);
+    @include adjust-leading-to(1, $base-font-size);
     color: #fff;
     display: block;
     border-bottom: 1px solid #fff;
     padding: 0.2em 0.5em 0.2em 1em;
   }
-
+  li li li a {
+    padding-left: 2em;
+  }
 }
-.nav-container {
-  margin: 4em 1em;
+@media screen and (min-width: 380px) {
+  nav {
+    max-width: 360px;
+  }
+  .nav-container {
+    margin: 4em 10px;
+  }
 }
-
 @media screen and (min-width: 1000px) {
   .nav-container {
     width: 1000px;
@@ -42,7 +47,6 @@ nav {
     margin-right: auto;
   }
 }
-
 .floatingHeader {
   position: fixed;
   top: 0;
@@ -50,7 +54,7 @@ nav {
 }
 .menu-link {
   float: left;
-  font-family: $accent-font;
+  font-family: $sourcesans-light;
   color: #fff;
   min-width: 86px; /* sheesh */
   a {
