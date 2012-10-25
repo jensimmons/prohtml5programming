@@ -10,6 +10,7 @@
 
 body {
   font-family: $base-font;
+  color: $text;
 }
  
 h1, h2, h3, h4 ,h5 ,h6 {
@@ -81,6 +82,7 @@ a:visited {
 figcaption {
   font-family: $accent-font;
   @include adjust-font-size-to(14px);
+  color: lighten($text, 20%);
 }
 .listing figcaption {
   margin-top: 2em;

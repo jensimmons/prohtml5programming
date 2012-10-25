@@ -4,9 +4,9 @@
 //-----------------------------------------------------------------------
 
 $text: #1b1d1e;
-$page: #fff;
-$body: #d7d7d7;
+//$body: #d7d7d7;
 $link: rgb(214,49,47);
+$page: #fff; // page background color
 
 
 //-----------------------------------------------------------------------
@@ -47,6 +47,7 @@ $courier:           "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 // Now let's create variables for fonts in use
 $base-font:         $georgia; 
 $body-font:         $georgia;
+$alt-font:          $sourcesans;
 $accent-font:       $sourcesans-light;
 $monospace-font:    $courier;
 $headline-font:     $sourcesans-bold;
