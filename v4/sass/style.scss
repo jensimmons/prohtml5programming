@@ -1,6 +1,9 @@
 
-// Import Tools
+// Import Compass: http://compass-style.org
 @import "compass";
+
+// Import additional mixins
+@import "mixins";
 
 // Reset
 @import "normalize";
@@ -8,16 +11,13 @@
   @include box-sizing(border-box);
 }
 
-// Configuration
-@import "config";
+// Set universal variables
+@import "variables";
 
-// Import custom mixins
-@import "mixins";
-
-// Font Import
+// Import fonts
 @import "fontface";
 
-// Import CSS
+// Import CSS for this project
 @import "typography";
 @import "layout";
 @import "page";
