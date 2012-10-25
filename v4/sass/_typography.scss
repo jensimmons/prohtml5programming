@@ -81,18 +81,16 @@ figcaption {
   @include adjust-font-size-to(14px);
   color: lighten($text, 20%);
 }
-.listing figcaption {
-  margin-top: 2em;
-}
 
 blockquote {
-  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: rhythm(0.5) $indent-amount;
 }
 
 canvas {
+  background: #fff;
   margin: rhythm(1) 0;
 }
+
 pre {
   margin: 0.5em 0 1em $indent-amount;
 }
@@ -103,16 +101,12 @@ samp {
   @include adjust-font-size-to(13px);
   line-height: 1em;
 }
-p code {
-  font-size: 1em;
-  padding: 0 0.5em;
-}
+
 dl,
 menu,
 ol,
 ul,
 .item-list ul {
-  /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: rhythm(1) 0;
 }
 ul {
@@ -121,6 +115,7 @@ ul {
 ol {
   padding-left: $indent-amount*1.9;
 }
+
 hr {
   height: 1px;
   border: 1px solid #666;

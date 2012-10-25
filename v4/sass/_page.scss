@@ -1,6 +1,6 @@
 
 //-----------------------------------------------------------------------
-// General
+// Whole Page
 //-----------------------------------------------------------------------
 
 html {
@@ -13,9 +13,7 @@ article {
   box-decoration-break: clone;
 }
 
-canvas {
-  background: #fff;
-}
+
 
 //-----------------------------------------------------------------------
 // Header
@@ -40,7 +38,7 @@ hgroup {
 
 
 //-----------------------------------------------------------------------
-// Figures, Code, and Asides
+// Asides
 //-----------------------------------------------------------------------
 
 aside {
@@ -73,11 +71,27 @@ aside {
   }
 }
 
-video {
-  width: 100%    !important;
-  height: auto   !important;
-  margin: 1em 0;
+
+//-----------------------------------------------------------------------
+// Pre and Code
+//-----------------------------------------------------------------------
+
+.code-example pre {
+  clear: both;
 }
+pre code {
+  color: #2e6cc2;
+  line-height: 0.7em;
+}
+p code {
+  font-size: 1em;
+  padding: 0 0.5em;
+}
+
+
+//-----------------------------------------------------------------------
+// Figures
+//-----------------------------------------------------------------------
 
 figure.image {
   text-align: center;
@@ -86,10 +100,96 @@ figure.image {
     margin-top: 1em;  
   }
 }
+.listing {
+  margin-top: 2em;
+}
+.code-example figcaption {
+  width: 80%;
+  float: left;
+}
+.temporary-until-we-get-the-right-markup-here { // buttons for opening and closing code examples
+  font-family: $accent-font;
+  max-width: 20%;
+  float: right;
+  a {
+    float: right;
+    color: #444;
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+}
+.show-inline-editor {
+  float: right;
+}
 
-pre code {
-  color: #0000cc;
-  line-height: 0.7em;
+//-----------------------------------------------------------------------
+// Overrides for Code Mirror
+//-----------------------------------------------------------------------
+.code-editor-container {
+  @include clearfix;
+  clear:both;
+  @include adjust-font-size-to(13px);
+}
+
+.code-mirror-container, 
+iframe#preview { 
+  border: 1px solid #ddd;
+  @include border-radius (6px);
+}
+
+.code-mirror-container { // left pane, with code
+  margin-right: 2%;
+}
+
+iframe#preview { // right pane, with demo
+  border: 1px solid #ddd;
+  min-height: 250px;
+//  height: 624px;
+}
+
+@media screen and (min-width: 700px) { 
+  .code-mirror-container, 
+  iframe#preview { 
+    width: 49%;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 700px) { 
+  iframe#preview { 
+//    min-height: 600px;
+  }
+}
+
+
+.show-inline-editor {
+  
+}
+/* placeholder styles */
+.control-bar {
+  clear: left;
+  float: left;
+  padding: 0.5em 0;
+  width: 100%;
+}
+.control.reset {
+  float: right;
+  font-family: $accent-font;
+  cursor: pointer;
+  @extend button;
+}
+
+
+//-----------------------------------------------------------------------
+// Video
+//-----------------------------------------------------------------------
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  margin: 1em 0;
 }
 
 

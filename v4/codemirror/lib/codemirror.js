@@ -2061,7 +2061,7 @@ var CodeMirror = (function() {
   CodeMirror.defaults = {
     value: "",
     mode: null,
-    theme: "default",
+    theme: "ambiance",
     indentUnit: 2,
     indentWithTabs: false,
     smartIndent: true,
