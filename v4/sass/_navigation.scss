@@ -28,6 +28,16 @@ nav {
     border-bottom: 1px solid #fff;
     padding: 0.2em 0.5em 0.2em 1em;
   }
+  a,
+  a:link,
+  a:visited {
+    color: $menu-link;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: darken($menu-link, 20%);
+    }
+  }
   li li li a {
     padding-left: 2em;
   }

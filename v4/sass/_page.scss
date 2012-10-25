@@ -27,13 +27,13 @@ hgroup {
   clear: both;
   @include trailer(2, $h1-font-size);
   h1 {
-    @include adjust-font-size-to(32px);
+    @include adjust-font-size-to(28px);
     @include leader(0.2, $h1-font-size);
     @include trailer(0, $h1-font-size);
   }
   h1:last-child {
-    @include adjust-font-size-to(44px);
-    @include leader(0, $h1-font-size);
+    @include adjust-font-size-to(42px);
+    @include leader(0.1, $h1-font-size);
     @include trailer(0.3, $h1-font-size);  
   }
 }
@@ -56,12 +56,42 @@ aside {
   box-decoration-break: clone;
   font-family: $sourcesans;
   @include adjust-font-size-to(13px);
+  line-height: 1.7em;
+  h3 {
+    margin-top: 0.75em;
+    text-align: center;
+  }
+  p {
+    text-indent: $indent-amount*.75;
+  }
+  p:first-child {
+    text-indent: 0;
+  }
+  p:first-child {
+    font-size: 200%;
+  }
+  p code {
+    padding: 0;
+  }
 }
 
 video {
   width: 100%    !important;
   height: auto   !important;
   margin: 1em 0;
+}
+
+figure.image {
+  text-align: center;
+  margin: 2em 0;
+  figcaption {
+    margin-top: 1em;  
+  }
+}
+
+pre code {
+  color: #0000cc;
+  line-height: 0.7em;
 }
 
 

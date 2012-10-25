@@ -109,7 +109,7 @@
 <h3>Canvas Coordinates</h3>
 <p>As shown in Figure 2-1, coordinates in a canvas start at <code>x=0,y=0</code> in the upper-left corner&#x2014;which we will refer to as the <i>origin</i>&#x2014;and increase (in pixels) horizontally over the x-axis and vertically over the y-axis.</p>
 
-<figure>
+<figure class="image">
 <img src="images/ch2/fig2-1.gif">
 <figcaption>Figure 2-1. x and y coordinates on a canvas</figcaption>
 </figure>
@@ -186,7 +186,7 @@
 
 <p>Note the addition of the ID <code>diagonal</code> to make it easy to locate this <code>canvas</code> element programmatically. An ID attribute is crucial to any canvas because all the useful operations on this element must be done through scripting. Without an ID, you will have difficulty locating the element to interoperate with it.</p>
 
-<figure>
+<figure class="image">
   <canvas id="diagonal" style="border: 1px solid;" width="200" height="200"></canvas>
   <figcaption>Figure 2-2. A simple HTML5 canvas element on an HTML page</figcaption>
 </figure>
@@ -224,7 +224,7 @@ function drawDiagonal() {
 <p>You then use the context to perform drawing operations. In this case, you can create the diagonal line by calling three methods&#x2014; <code>beginPath</code>, <code>moveTo</code>, and <code>lineTo</code>&#x2014;passing in the line&#x2019;s start and end coordinates.</p>
 <p>The drawing methods <code>moveTo</code> and <code>lineTo</code> do not actually create the line; you finalize a canvas operation and draw the line by calling the <code>context.stroke();</code> method. Figure 2-3 shows the diagonal line created with the example code.
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-3.gif">
   <figcaption>Figure 2-3. Diagonal line on a canvas</figcaption>
 </figure>
@@ -240,7 +240,7 @@ function drawDiagonal() {
 <p>Don&#x2019;t be fooled into thinking that you are optimizing performance if you don&#x2019;t use transformation calls in your code. The canvas implementation uses and applies transformations implicitly in its rendering engine, whether or not you call them directly. It is wiser to understand the system up front because it will be crucial to know if you step outside the most basic drawing operations.</p>
 <p>A key recommendation for reusable code is that you usually want to <i>draw at the origin</i> (coordinate 0,0) and apply transformations&#x2014;scale, translate, rotate, and so forth&#x2014;to modify your drawing code into its final appearance, as shown in Figure 2-4.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-4.gif">
   <figcaption>Figure 2-4. Overview of transformation and drawing at the origin</figcaption>
 </figure>
@@ -286,7 +286,7 @@ function drawDiagonal() {
 <li>Finally, you restore the context to its clean original state, so that future canvas operations are performed without the translation that was applied in this operation. Figure 2-5 shows the diagonal line created with the example code./li>
 </ol>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-3.gif">
   <figcaption>Figure 2-5. Translated Diagonal Line on a Canvas</figcaption>
 </figure>
@@ -355,7 +355,7 @@ function drawDiagonal() {
 
 <p>All the calls in this routine should be familiar to you already. We fetch the canvas context, save it for future reference, translate our position to a new location, draw the canopy, stroke it onto the canvas, and then restore our state. Figure 2-6 shows the results of our handiwork, a simply line representation of a tree canopy. We&#x2019;ll expand on this as we go forward, but it&#x2019;s a good first step.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-6.gif">
   <figcaption>Figure 2-6. A simple path of a tree canopy</figcaption>
 </figure>
@@ -384,7 +384,7 @@ context.stroke();</code></pre>
 <p>Finally, we change the color of the stroke by using the <code>strokeStyle</code> property. In our example, we are setting the color to a CSS value, but as you will see in later sections, it is also possible to set the <code>strokeStyle</code> to be an image pattern or a gradient for fancier displays.</p>
 <p>Although we are not using it here, we could also set the <code>lineCap</code> property to be either <code>butt</code>, <code>square</code>, or <code>round</code> to specify how lines should display at the endpoints. Alas, our example has no dangling line ends. Figure 2-7 shows our spruced-up tree canopy, now stroked with a wider, smoother, brown line instead of the flat black line from before.
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-7.gif">
   <figcaption>Figure 2-7. Stylish stroked tree canopy</figcaption>
 </figure>
@@ -401,7 +401,7 @@ context.fill();</pre></code>
 
 <p>First, we set the <code>fillStyle</code> to the appropriate color. As we will see later, it is also possible to set the fill to be a gradient or an image pattern. Then, we simply call the context&#x2019;s <code>fill</code> function to let the canvas fill all the pixels inside all the closed paths of our current shape, as shown in Figure 2-8.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-8.gif">
   <figcaption>Figure 2-8. Filled tree canopy</figcaption>
 </figure>
@@ -430,7 +430,7 @@ context.fillRect(-5, -50, 10, 50);</pre></code>
 
 <p>Figure 2-9 shows our simple, flatly filled tree trunk attached to our previous canopy path.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-9.gif">
   <figcaption>Figure 2-9. Tree with filled rectangular trunk</figcaption>
 </figure>
@@ -465,14 +465,14 @@ context.restore();</pre></code>
 <p>As before, one of the first things we will do is save our canvas context state, because we will be modifying the translation and stroke options here. For our forest path, we will start by moving back to the origin and drawing a first quadratic curve up and to the right.</p>
 <p>As shown in Figure 2-10, the <code>quadraticCurveTo</code> function begins at the current drawing location and takes two x, y point locations as its parameters. The second one is the final stop in our curve. The first one represents a <i>control point</i>. The control point sits to the side of the curve (not on it) and acts almost as a gravitational pull for the points along the curve path. By adjusting the location of the control point, you can adjust the curvature of the path you are drawing. We draw a second quadratic curve up and to the right to complete our path; then stroke it just as we did for our tree canopy before (only wider).</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-10.gif">
   <figcaption>Figure 2-10. Quadratic curve start, end, and control points</figcaption>
 </figure>
 
 <p>Other options for curves in the HTML5 Canvas API include the <code>bezierCurveTo</code>, <code>arcTo</code>, and <code>arc</code> functions. These curves take additional control points, a radius, or angles to determine the characteristics of the curve. Figure 2-11 shows the two quadratic curves stroked on our canvas to create a path through the trees.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-11.gif">
   <figcaption>Figure 2-11. Quadratic curves for a path</figcaption>
 </figure>
@@ -506,7 +506,7 @@ context.drawImage(bark, -5, -50, 10, 50);</pre></code>
 <p>Here, we have replaced the previous call to <code>fillRect</code> with a simple routine to display our bark image as the new trunk for our tree. Although the image is a subtle replacement, it provides more texture to our display. Note that in this call, we are specifying an x, y, width, and height argument in addition to the image itself. This option will scale the image to fit into the 10 &#x00D7; 50 pixel space that we have allocated for our trunk. We could also have passed in source dimensions to have more control over the clipping area of the incoming image to be displayed.</p>
 <p>As you can see in Figure 2-12, the change to the appearance of our trunk is only slightly different from the filled rectangle we used before.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-11.gif">
   <figcaption>Figure 2-12. Tree with an image</figcaption>
 </figure>
@@ -563,7 +563,7 @@ context.fillRect(-5, -50, 10, 50);
 
 <p>Applying these two gradients creates a nice, smooth light source on our rendered tree as shown in Figure 2-13, making it appear curved and covered by a slight shadow from the canopy above. Let&#x2019;s keep it.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-13.gif">
   <figcaption>Figure 2-13. Tree with gradient trunk</figcaption>
 </figure>
@@ -630,12 +630,12 @@ context.stroke();</pre></code>
 
 <p>Figure 2-14 shows the result of the use of a background image rather than an explicitly drawn image to represent our trail.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-14.gif">
   <figcaption>Figure 2-14. A trail with a repeating background pattern</figcaption>
 </figure>
 
-<figure>
+<figure class="image">
 <code>[Insert example here]</code>
 </figure>
 
@@ -693,7 +693,7 @@ context.restore();</pre></code>
 
 <p>The <code>scale</code> function takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2-15.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-15.gif">
   <figcaption>Figure 2-15. Tree with a larger scale</figcaption>
 </figure>
@@ -750,7 +750,7 @@ context.restore();</pre></code>
 <p>Modifying the context transform directly as we&#x2019;ve done here is something you should attempt only if you are familiar with the matrix mathematics underpinning two-dimensional drawing systems. If you check the math behind this transform, you will see that we are shifting the X values of our drawing by a factor of the corresponding Y values in order to shear the gray tree being used as a shadow. Then, by applying a scale factor of 60%, the sheared tree is decreased in size.</p>
 <p>Note that the sheared &#x201C;shadow&#x201D; tree is rendered first, so that the actual tree appears above it in <i>Z-order</i> (the order in which the canvas objects overlap). Also, the shadow tree is drawn using the CSS notation for RGBA, which allows us to set the alpha value to only 20% of normal. This creates the light, semitransparent look for the shadow tree. Once applied to our scaled trees, the output renders as shown in Figure 2-16.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-16.gif">
   <figcaption>Figure 2-16. Trees with transformed shadows</figcaption>
 </figure>
@@ -818,7 +818,7 @@ context.restore();</pre></code>
 
 <p>As you can see from the result in Figure 2-17, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-17.gif">
   <figcaption>Figure 2-17. Background pattern-filled text</figcaption>
 </figure>
@@ -877,7 +877,7 @@ context.shadowBlur = 2;</pre></code>
 
 <p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2-18 shows the newly applied shadows.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-18.gif">
   <figcaption>Figure 2-18. Title with shadowed text</figcaption>
 </figure>
@@ -894,7 +894,7 @@ context.shadowBlur = 2;</pre></code>
 <li><code>data</code>: A one-dimensional array containing the actual RGBA values for each pixel retrieved from the canvas. This array contains four values for each pixel&#x2014;a red, green, blue, and alpha component&#x2014;each with a value from 0 to 255. Therefore, each pixel retrieved from the canvas becomes four integer values in the data array. The data array is populated by pixels from left to right and top to bottom (for example, across the first row, then across the second row, and so on), as shown in Figure 2-19.</li>
 </ul>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-19.gif"/>
   <figcaption>Figure 2-19. Pixel data and the internal data structure that represents it</figcaption>
 </figure>
@@ -938,7 +938,7 @@ img.src = canvasData;</pre></code>
 <p>There is an important caveat to using pixel manipulation, as described in the previous section. Although most developers would use pixel manipulation for legitimate means, it is quite possible that the ability to fetch and update data from a canvas could be used for nefarious purposes. For this reason, the concept of an <i>origin-clean</i> canvas was specified, so that canvases that are <i>tainted</i> with images from origins other than the source of the containing page cannot have their data retrieved.</p>
 <p>As shown in Figure 2-20, if a page served up from <code>http://www.example.com</code> contains a <code>canvas</code> element, it is entirely possible that the code in the page could try to render an image from <code>http://www.remote.com</code> inside the canvas. After all, it is perfectly acceptable to render images from remote sites inside any given web page.</p>
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-20.gif"/>
   <figcaption>Figure 2-20. Local and remote image sources</figcaption>
 </figure>
@@ -954,7 +954,7 @@ img.src = canvasData;</pre></code>
 <p>For example, a heatmap can be used to indicate traffic on a city map, or storm activity on a global map. And situations such as these are easy to implement in HTML5 by combining a canvas display with an underlying map source. Essentially, the canvas can be used to overlay the map and draw the heat levels based on the appropriate activity data.</p>
 <p>Let&#x2019;s build a simple heatmap using the capabilities we learned about in the Canvas API. In this case, our heat data source will be not external data, but the movement of our mouse across the map. Moving the mouse over a portion of the map will cause the heat to increase, and holding the mouse at a given position will rapidly increase the temperature to maximum levels. We can overlay such a heatmap display(shown in Figure 2-21) on a nondescript terrain map, just to provide a sample case.
 
-<figure>
+<figure class="image">
   <img src="images/ch2/fig2-21.gif">
   <figcaption>Figure 2-21. The heatmap application</figcaption>
 </figure>
@@ -1190,7 +1190,7 @@ function loopAnimation(currentTime) {
 
 <p>Once we update our drawing, we can see the animating rain on top of our trail (see Figure 2-22).</p>
 
-<figure>
+<figure class="image">
 <code>[Insert example here]</code>
 <figcaption>Figure 2-22. Still shot of canvas with rain animation</figcaption>
 </figure>

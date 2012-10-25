@@ -5,37 +5,37 @@
 
 article {
   margin: 0.5em;
-  padding: 1em 1.5em;
+  padding: 1em 1.5em 2.5em;
 }
 
 @media screen and (min-width: 400px) { 
   article {
     margin: 1em;
-    padding: 1em 2em;
+    padding: 1em 2em 2.5em;
   }
 }
 @media screen and (min-width: 550px) { 
   article {
     margin: 1.5em;
-    padding: 1em 2em;
+    padding: 1em 2em 2.5em;
   }
 }
 @media screen and (min-width: 700px) { 
   article {
     margin: 1.5em;
-    padding: 1em 2.75em;
+    padding: 1em 2.75em 2.5em;
   }
 }
 @media screen and (min-width: 950px) { 
   article {
     margin: 2em;
-    padding: 1em 5em 2em;
+    padding: 1em 5em 2.5em;
   }
 }
 @media screen and (min-width: 1064px) { // sets max-width of 1000px for the main content
   article {
     width: 1000px;
-    margin: 2em auto;
+    margin: 2em auto 2.5em;
   }
 }
 

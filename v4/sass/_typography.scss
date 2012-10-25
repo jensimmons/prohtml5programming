@@ -35,9 +35,6 @@ h3 {
   @include trailer(0.4, $h3-font-size);
   @include adjust-leading-to(1.2, $h2-font-size);
 }
-aside h3 {
-  margin-top: 1em;
-}
 h4 {
   @include adjust-font-size-to( $h4-font-size );
   @include leader(0, $h4-font-size);
@@ -106,7 +103,10 @@ samp {
   @include adjust-font-size-to(13px);
   line-height: 1em;
 }
-
+p code {
+  font-size: 1em;
+  padding: 0 0.5em;
+}
 dl,
 menu,
 ol,
@@ -115,7 +115,12 @@ ul,
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: rhythm(1) 0;
 }
-
+ul {
+  padding-left: $indent-amount*1.6;
+}
+ol {
+  padding-left: $indent-amount*1.9;
+}
 hr {
   height: 1px;
   border: 1px solid #666;
