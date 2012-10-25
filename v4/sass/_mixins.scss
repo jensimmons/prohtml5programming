@@ -37,23 +37,3 @@
     @include element-invisible-off;
   }
 }
-
-// The word "Unpublished" displayed underneath unpublished nodes and comments.
-@mixin unpublished-div {
-  height: 0;
-  overflow: visible;
-  color: #d8d8d8;
-  font-size: 75px;
-  line-height: 1;
-  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  word-wrap: break-word; // A very nice CSS3 property
-
-  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
-    .lt-ie8 &>* {
-      position: relative; // Otherwise these elements will appear below the "Unpublished" text.
-    }
-  }
-}

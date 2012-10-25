@@ -11,7 +11,7 @@
   min-width: 300px;
   float: left;
   margin-right: 2em;
-  font-size: 13px;
+  @include adjust-font-size-to(13px);
   clear: left;
 }
 .CodeMirror {

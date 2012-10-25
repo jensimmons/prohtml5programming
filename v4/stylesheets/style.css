@@ -525,7 +525,7 @@ table {
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/style\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/style\.scss}line{font-family:\0000310}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -681,22 +681,22 @@ h2 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000331}}
 h3 {
-  font-size: 1.4em;
-  line-height: 2.32143em;
-  margin-top: 1.85714em;
-  margin-bottom: 0.46429em;
+  font-size: 1.3em;
+  line-height: 1.25em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
   line-height: 1.05405em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000337}}
 aside h3 {
-  margin-top: 0em;
+  margin-top: 1em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000340}}
 h4 {
-  font-size: 1.4em;
-  line-height: 2.32143em;
+  font-size: 1.2em;
+  line-height: 1.35417em;
   margin-top: 0em;
   margin-bottom: 0em;
 }
@@ -735,39 +735,61 @@ p.caption {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000370}}
-figcaption {
-  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-  font-size: 1em;
-  line-height: 1.625em;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000372}}
+a,
+a:link,
+a:visited {
+  color: #d6312f;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000376}}
+a:hover, a:focus,
+a:link:hover,
+a:link:focus,
+a:visited:hover,
+a:visited:focus {
+  color: #e78584;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000381}}
+figcaption {
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000385}}
+.listing figcaption {
+  margin-top: 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000389}}
 blockquote {
   /* Sets 1 unit of vertical rhythm on the top and bottom margin. */
   margin: 0.8125em 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000394}}
 canvas {
   margin: 1.625em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000397}}
 pre {
-  margin-left: 24px;
+  margin: 0.5em 0 1em 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003102}}
 code,
 kbd,
 samp {
   margin: 1.625em 0;
-  font-size: 0.875em;
-  line-height: 1.85714em;
+  font-size: 0.8125em;
+  line-height: 2em;
+  line-height: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003112}}
 dl,
 menu,
 ol,
@@ -777,7 +799,7 @@ ul,
   margin: 1.625em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003117}}
 hr {
   height: 1px;
   border: 1px solid #666;
@@ -885,7 +907,7 @@ aside {
   border-bottom-style: solid;
   border-bottom-width: 0.0625em;
   padding-bottom: 1.8875em;
-  margin: 0 0 1em 5%;
+  margin: 1em 0 1em 5%;
   padding: 0.5em 1.5em;
   box-decoration-break: clone;
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
@@ -1071,7 +1093,8 @@ a.button::-moz-focus-inner {
   min-width: 300px;
   float: left;
   margin-right: 2em;
-  font-size: 13px;
+  font-size: 0.8125em;
+  line-height: 2em;
   clear: left;
 }
 

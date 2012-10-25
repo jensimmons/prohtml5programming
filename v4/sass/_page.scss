@@ -51,7 +51,7 @@ aside {
   border: 1px solid #D8DDE0;
   @include leading-border(1px, 1.2, $base-font-size, solid);
   @include trailing-border(1px, 1.2, $base-font-size, solid);
-  margin: 0 0 1em 5%;
+  margin: 1em 0 1em 5%;
   padding: 0.5em 1.5em;
   box-decoration-break: clone;
   font-family: $sourcesans;

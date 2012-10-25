@@ -35,7 +35,7 @@ h3 {
   @include adjust-leading-to(1.2, $h2-font-size);
 }
 aside h3 {
-  @include leader(0, $h3-font-size);
+  margin-top: 1em;
 }
 h4 {
   @include adjust-font-size-to( $h4-font-size );
@@ -67,9 +67,23 @@ p {
   }
 }
 
+a,
+a:link,
+a:visited {
+  color: $link;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: lighten($link, 20%);
+  }
+}
+
 figcaption {
   font-family: $accent-font;
-  @include adjust-font-size-to(16px);
+  @include adjust-font-size-to(14px);
+}
+.listing figcaption {
+  margin-top: 2em;
 }
 
 blockquote {
@@ -81,13 +95,14 @@ canvas {
   margin: rhythm(1) 0;
 }
 pre {
-  margin-left: $indent-amount;
+  margin: 0.5em 0 1em $indent-amount;
 }
 code,
 kbd,
 samp {
   margin: rhythm(1) 0;
-  @include adjust-font-size-to(14px);
+  @include adjust-font-size-to(13px);
+  line-height: 1em;
 }
 
 dl,
