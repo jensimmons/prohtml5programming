@@ -42,13 +42,8 @@ hgroup {
 //-----------------------------------------------------------------------
 
 aside {
-  float: right;
-  width: 45%;
-  clear: both;
   background: #F2F2F2;
   border: 1px solid #D8DDE0;
-  margin: 1em 0 1em 5%;
-  padding: 0.5em 1.5em;
   box-decoration-break: clone;
   font-family: $sourcesans;
   @include adjust-font-size-to(13px);
