@@ -115,7 +115,7 @@ function showStaticCodeview() {
           this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
             mode: 'text/html',
             tabMode: 'indent',
-            theme: 'default',
+            theme: 'ambiance',
             lineWrapping: true,
             lineNumbers: true,
             onChange: function () {
