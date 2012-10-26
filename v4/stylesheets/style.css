@@ -1368,3 +1368,21 @@ a.button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000032}}
+figure .show-inline-editor {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000035}}
+figure .close-inline-editor {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000310}}
+figure.open-editor .show-inline-editor {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000313}}
+figure.open-editor .close-inline-editor {
+  display: inline-block;
+}

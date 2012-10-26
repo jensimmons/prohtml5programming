@@ -50,7 +50,7 @@ function showStaticCodeview() {
           this.listingNumber = el.data('listing'); 
           inlineEditors[this.listingNumber] = this;
           this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
-          this.container.html( jQuery('.inline-codeview-source-container').html() );
+          this.container.html( jQuery('.inline-codeview-source-container').clone().html() );
           this.resetControl = jQuery('.control-bar .control.reset', this.container);
           this.previewFrame = jQuery('#preview', this.container).get(0);
           this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
@@ -71,7 +71,6 @@ function showStaticCodeview() {
             window.clearTimeout(me.delay);
             me.editor = null;
             me.container.html('');
-            me.container.hide();
           };
           this.reset();
           jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
@@ -94,6 +93,18 @@ function showStaticCodeview() {
             $figure.addClass('open-editor');
             jQuery('.static-code-container:first', $figure).hide();
 
+          });
+          jQuery('.close-inline-editor').bind('click', function (evt) {
+            evt.stopPropagation();
+            evt.preventDefault();
+            var $this = jQuery(this);
+            var $figure = $this.parents('figure:first');
+            var listing = jQuery(this).data('listing');
+            inlineEditors[listing].removeEditor();
+            inlineEditors[listing] = null;
+            jQuery('.static-code-container:first', $figure).show();
+            $this.siblings('.show-inline-editor:first').removeClass('open');
+            $figure.removeClass('open-editor');
           });
         }
         
