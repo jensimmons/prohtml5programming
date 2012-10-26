@@ -1,3 +1,4 @@
+/* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
 function showStaticCodeview() {
   var staticCodeareas = [];
   var testCodeareas = jQuery('figure pre code');
@@ -30,12 +31,6 @@ function showStaticCodeview() {
   });
 }
 
-        // var delay;
-        // var editor;
-        // var codeviewReadyDelay;
-        // var preview;
-        // var previewFrame;
-
         function updatePreview( args ) {
           var iEditor = args[0];
           var previewFrame = jQuery('#preview', iEditor.container).get(0);
@@ -45,60 +40,6 @@ function showStaticCodeview() {
           preview.close();
         }
 
-        // function initCodeview () {
-        //   // console.log('initCodeview');     
-        //   // Initialize CodeMirror editor with a nice html5 canvas demo.
-        //   editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-        //     mode: 'text/html',
-        //     tabMode: 'indent',
-        //     theme: 'default',
-        //     lineWrapping: true,
-        //     lineNumbers: true,
-        //     onChange: function() {
-        //       clearTimeout(delay);
-        //       delay = setTimeout(updatePreview, 300);
-        //     }
-        //   });
-        //   setTimeout(updatePreview, 300);
-        // 
-        //   jQuery(".cb-codeview").colorbox({
-        //     inline: true, width:"90%", height: "90%", 
-        //     onComplete:function () { 
-        //       var listingNumber = $(this).data('listing');
-        //       var codeObj = codeListings[listingNumber];
-        //       editor.setValue(codeObj.code);
-        //       jQuery('#code-view-source h1').html('Listing ' + listingNumber + ': ' + codeObj.title);
-        //     },
-        //     onClosed:function () {
-        //       editor.setValue('');
-        //       jQuery('#code-view-source h1').html('');
-        //     }
-        //   });
-        //   // console.log('codeview initialized');
-        // }
-
-        // function codeviewReady() {
-        //   clearTimeout(codeviewReadyDelay);
-        //   if($('.ignore-me').length && $('a.cb-codeview').length && $('#preview').length) {
-        //     initCodeview();  
-        //   } else {
-        //     codeviewReadyDelay = setTimeout(codeviewReady, 100);
-        //   }
-        // }
-        
-        // function enableInlineEditor( el ) { // el: container
-        //   // Initialize CodeMirror editor with a nice html5 canvas demo.
-        //   inline = CodeMirror.fromTextArea(jQuery('#code', el), {
-        //     mode: 'text/html',
-        //     tabMode: 'indent',
-        //     theme: 'default',
-        //     lineWrapping: true,
-        //     lineNumbers: true,
-        //     onChange: function () {
-        //       clearTimeout(delay);
-        //       delay = setTimeout(updateInlinePreview, 300, [el]);
-        //     }
-        // }
         var inlineEditors = {};
         
         var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
@@ -133,6 +74,7 @@ function showStaticCodeview() {
             me.container.hide();
           };
           this.reset();
+          jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
         }
         
         inlineEditor.prototype.reset = function () {
@@ -145,10 +87,13 @@ function showStaticCodeview() {
             evt.stopPropagation();
             evt.preventDefault();
             var $this = jQuery(this);
+            var $figure = $this.parents('figure:first');
             var listing = jQuery(this).data('listing');
             inlineEditors[listing] = new inlineEditor($this);
             $this.addClass('open');
-            // $this.hide();
+            $figure.addClass('open-editor');
+            jQuery('.static-code-container:first', $figure).hide();
+
           });
         }
         

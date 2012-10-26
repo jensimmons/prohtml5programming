@@ -138,6 +138,7 @@ figure.code-example {
 iframe#preview { 
   border: 1px solid #ddd;
   @include border-radius (6px);
+  overflow: hidden;
 }
 
 .code-mirror-container { // left pane, with code

@@ -1035,21 +1035,22 @@ iframe#preview {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
+  overflow: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003144}}
 .code-mirror-container {
   margin-right: 2%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003148}}
 iframe#preview {
   border: 1px solid #ddd;
   min-height: 250px;
 }
 
 @media screen and (min-width: 700px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003156}}
   .code-mirror-container,
   iframe#preview {
     width: 49%;
@@ -1057,7 +1058,7 @@ iframe#preview {
   }
 }
 /* placeholder styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003173}}
 .control-bar {
   clear: left;
   float: left;
@@ -1065,21 +1066,21 @@ iframe#preview {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003178}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003179}}
 .control.reset {
   float: right;
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003191}}
 video {
   width: 100%    !important;
   height: auto   !important;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003202}}
 table {
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 0.813em;
@@ -1089,18 +1090,18 @@ table {
   margin: 0.3em 0 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003209}}
 table code {
   font-size: 0.875em;
   line-height: 1.857em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003212}}
 tr:nth-of-type(odd) {
   background: #eee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003215}}
 th {
   background: #858585;
   border: 1px solid #aaa;
@@ -1108,30 +1109,30 @@ th {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003221}}
 td {
   border: 1px solid #ccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003223}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003224}}
 td, th {
   padding: 7px 8px 3px;
   text-align: left;
 }
 
 @media only screen and (max-width: 760px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003230}}
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003233}}
   table {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003238}}
   thead tr {
     position: absolute !important;
     height: 1px;
@@ -1141,13 +1142,13 @@ td, th {
     clip: rect(1px, 1px, 1px, 1px);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003242}}
   tr {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003246}}
   td {
     border: none;
     border-bottom: 1px solid #eee;
@@ -1155,17 +1156,17 @@ td, th {
     padding-left: 30%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003252}}
   tr:nth-of-type(odd) td {
     border-bottom: 1px solid #f8f8f8;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003255}}
   tr:last-child td:last-child {
     border-bottom: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003258}}
   td:before {
     position: absolute;
     top: 6px;
@@ -1176,17 +1177,17 @@ td, th {
   }
 
   /*	Label the data */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003268}}
   td:nth-of-type(1):before {
     content: "Property";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003268}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003269}}
   td:nth-of-type(2):before {
     content: "Value";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003270}}
   td:nth-of-type(3):before {
     content: "Note";
   }
