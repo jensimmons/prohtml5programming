@@ -93,6 +93,9 @@ p code {
 // Figures
 //-----------------------------------------------------------------------
 
+figure {
+  @include clearfix;
+}
 figure.image {
   text-align: center;
   margin: 2em 0;
@@ -103,9 +106,12 @@ figure.image {
 .listing {
   margin-top: 2em;
 }
-.code-example figcaption {
-  width: 80%;
-  float: left;
+figure.code-example {
+//  background: SOMETHING DARK;
+  figcaption {
+    width: 80%;
+    float: left;
+  }
 }
 .temporary-until-we-get-the-right-markup-here { // buttons for opening and closing code examples
   font-family: $accent-font;
