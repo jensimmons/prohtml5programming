@@ -1,4 +1,34 @@
-
+function showStaticCodeview() {
+  var staticCodeareas = [];
+  var testCodeareas = jQuery('figure pre code');
+  var testCode, testPre, boldLines, staticArea, editor;
+  var staticCodeContainer = jQuery('<div class="static-code-container"></div>');
+  testCodeareas.each(function () {
+    testCode = jQuery(this).text();
+    boldLines = jQuery(this).data('bold') ? jQuery(this).data('bold').split(',') : [];
+    testPre = jQuery(this).parents('pre:first');
+    // testPre.replaceWith(staticCodeContainer.clone());
+    staticArea = staticCodeContainer.clone().insertAfter(testPre).get(0);
+    testPre.remove();
+    editor = CodeMirror( staticArea, {
+        mode: 'text/html',
+        tabMode: 'indent',
+        theme: 'static',
+        readOnly: true,
+        lineWrapping: true,
+        lineNumbers: false,
+        pollInterval: 3000,
+        value: testCode
+      } 
+    );
+    staticCodeareas.push(editor);
+    if (boldLines.length) {
+      for(var i=0, l = boldLines.length; i< l; i++) {
+        editor.setLineClass(parseInt(boldLines[i]), 'cm-strong');
+      }
+    } 
+  });
+}
 
         // var delay;
         // var editor;
@@ -124,6 +154,7 @@
         
         jQuery( function () {
           inlineCodeview();
+          showStaticCodeview();
         });
 
         var codeListings = {

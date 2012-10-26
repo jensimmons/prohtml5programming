@@ -94,6 +94,14 @@ canvas {
 pre {
   margin: 0.5em 0 1em $indent-amount;
 }
+.static-code-container {
+  margin: 0.5em 0 1em $indent-amount;
+  margin: rhythm(1) 0;
+  @include adjust-font-size-to(13px);
+  line-height: 1em;
+  clear: both;
+}
+
 code,
 kbd,
 samp {
