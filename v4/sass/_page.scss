@@ -101,8 +101,12 @@ figure.image {
 .listing {
   margin-top: 2em;
 }
+
+//-----------------------------------------------------------------------
+// Code Editor
+//-----------------------------------------------------------------------
+
 figure.code-example {
-//  background: SOMETHING DARK;
   figcaption {
     width: 80%;
     float: left;
@@ -125,37 +129,46 @@ figure.code-example {
   float: right;
 }
 
-//-----------------------------------------------------------------------
-// Overrides for Code Mirror
-//-----------------------------------------------------------------------
-.code-editor-container {
-  @include clearfix;
-  clear:both;
-  @include adjust-font-size-to(13px);
-}
+figure.open-editor {
+  background: #4E493D;
+  padding: 0.75%;
+  figcaption {
+    color: #fff;
+  }
+  .inline-codeview-container {
+    padding-top: 2px !important; 
+    
+  } 
+  .code-editor-container {
+    @include clearfix;
+    clear:both;
+    @include adjust-font-size-to(13px);
+  } 
+  .code-mirror-container,                 // both panes
+  iframe#preview { 
+    border: 1px solid #292518;
+    border-bottom-color: #82827F;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+    
+  }
+  .code-mirror-container {                // left pane, with code
 
-.code-mirror-container, 
-iframe#preview { 
-  border: 1px solid #ddd;
-  @include border-radius (6px);
-  overflow: hidden;
-}
-
-.code-mirror-container { // left pane, with code
-  margin-right: 2%;
-}
-
-iframe#preview { // right pane, with demo
-  border: 1px solid #ddd;
-  min-height: 250px;
-//  height: 624px;
+  }
+  iframe#preview {                        // right pane, with demo
+    background: #fff;
+    padding: 2em;
+  }
 }
 
 @media screen and (min-width: 700px) { 
   .code-mirror-container, 
   iframe#preview { 
-    width: 49%;
+    width: 49.625%;
     float: left;
+  }
+  .code-mirror-container {                // left pane, with code
+    margin-right: 0.75%;
   }
 }
 
@@ -164,6 +177,7 @@ iframe#preview { // right pane, with demo
 //    min-height: 600px;
   }
 }
+
 
 
 .show-inline-editor {
