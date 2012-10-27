@@ -75,7 +75,6 @@ aside {
   clear: both;
 }
 pre code {
-  color: #2e6cc2;
   line-height: 0.7em;
 }
 p code {
@@ -129,16 +128,17 @@ figure.code-example {
   float: right;
 }
 
+.inline-codeview-container {
+  padding-top: 2px !important; 
+  
+} 
+
 figure.open-editor {
   background: #4E493D;
   padding: 0.75%;
   figcaption {
     color: #fff;
   }
-  .inline-codeview-container {
-    padding-top: 2px !important; 
-    
-  } 
   .code-editor-container {
     @include clearfix;
     clear:both;
@@ -150,7 +150,7 @@ figure.open-editor {
     border-bottom-color: #82827F;
     overflow: hidden;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
-    
+    width: 100%;
   }
   .code-mirror-container {                // left pane, with code
 
@@ -159,42 +159,33 @@ figure.open-editor {
     background: #fff;
     padding: 2em;
   }
-}
-
-@media screen and (min-width: 700px) { 
-  .code-mirror-container, 
-  iframe#preview { 
-    width: 49.625%;
+  .control-bar {
+    clear: left;
     float: left;
+    padding: 0.5em 1%;
+    width: 102%;
+    background: #2C2821;
+    margin: 4px 0 -1% -1%;
   }
-  .code-mirror-container {                // left pane, with code
-    margin-right: 0.75%;
+  .control.reset {
+    float: right;
+    font-family: $accent-font;
+    cursor: pointer;
+    @extend button;
   }
 }
 
 @media screen and (min-width: 700px) { 
-  iframe#preview { 
-//    min-height: 600px;
+  figure.open-editor {
+    .code-mirror-container, 
+    iframe#preview { 
+      width: 49.625%;
+      float: left;
+    }
+    .code-mirror-container {                // left pane, with code
+      margin-right: 0.75%;
+    }
   }
-}
-
-
-
-.show-inline-editor {
-  
-}
-/* placeholder styles */
-.control-bar {
-  clear: left;
-  float: left;
-  padding: 0.5em 0;
-  width: 100%;
-}
-.control.reset {
-  float: right;
-  font-family: $accent-font;
-  cursor: pointer;
-  @extend button;
 }
 
 

@@ -38,3 +38,19 @@ div.CodeMirror .cm-s-static span.CodeMirror-nonmatchingbracket {color: #2E6CC2;}
 div.CodeMirror pre {
   line-height: 1.7em;
 }
+
+
+
+// Jen grabbed  this code from the elegant theme to override all the blue blue blue
+// This should get cleaned up!!!
+
+.cm-s-static span.cm-number, .cm-s-elegant span.cm-string, .cm-s-elegant span.cm-atom {color: #762;}
+.cm-s-static span.cm-comment {color: #262; font-style: italic; line-height: 1em;}
+.cm-s-static span.cm-meta {color: #555; font-style: italic; line-height: 1em;}
+.cm-s-static span.cm-variable {color: black;}
+.cm-s-static span.cm-variable-2 {color: #b11;}
+.cm-s-static span.cm-qualifier {color: #555;}
+.cm-s-static span.cm-keyword {color: #730;}
+.cm-s-static span.cm-builtin {color: #30a;}
+.cm-s-static span.cm-error {background-color: #fdd;}
+.cm-s-static span.cm-link {color: #762;}
