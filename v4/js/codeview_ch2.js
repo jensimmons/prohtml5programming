@@ -88,9 +88,9 @@ function showStaticCodeview() {
             var $this = jQuery(this);
             var $figure = $this.parents('figure:first');
             var listing = jQuery(this).data('listing');
-            inlineEditors[listing] = new inlineEditor($this);
             $this.addClass('open');
             $figure.addClass('open-editor');
+            inlineEditors[listing] = new inlineEditor($this);
             jQuery('.static-code-container:first', $figure).hide();
 
           });
