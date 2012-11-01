@@ -1,19 +1,16 @@
 /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
 function showStaticCodeview() {
   var staticCodeareas = [];
-  var testFigures = jQuery('figure.listing');
-  // var codeStrareas = jQuery('pre code', testFigures);
+  var figures = jQuery('figure.listing');
   var codeStr, $pre, boldLines, staticArea, editor, cmMode;
   var staticCodeContainer = '<div class="static-code-container"></div>';
-  testFigures.each(function () {
+  figures.each(function () {
     $figure = jQuery(this);
     $pre = jQuery('pre:first', $figure);
     $code = jQuery('code:first', $pre);
     codeStr = $code.text();
-    cmMode = $figure.data('cm-mode') ? $figure.data('cm-mode') : 'javascript';
+    cmMode = $code.data('cm-mode') ? $code.data('cm-mode') : 'javascript';
     boldLines = $code.data('bold') ? $code.data('bold').split(',') : [];
-    // $pre = jQuery(this).parents('pre:first');
-    // $pre.replaceWith(staticCodeContainer.clone());
     staticArea = jQuery(staticCodeContainer).insertAfter($pre).get(0);
     $pre.remove();
     editor = CodeMirror( staticArea, {

@@ -100,7 +100,7 @@
 
 <figure class="listing">
 <figcaption>Listing 2-1. A Basic Canvas Element</figcaption>
-<pre><code>&#x003C;canvas&#x003E; &#x003C;/canvas&#x003E;</code></pre>
+<pre><code data-cm-mode="text/html">&#x003C;canvas&#x003E; &#x003C;/canvas&#x003E;</code></pre>
 </figure>
 
 <p>Once you have added a <code>canvas</code> element to your page, you can use JavaScript to manipulate it any way you want. You can add graphics, lines, and text to it; you can draw on it; and you can even add advanced animations to it.</p>
@@ -123,7 +123,7 @@
 
 <figure class="listing">
 <figcaption>Listing 2-2. Use of Fallback Text Inside a Canvas Element</figcaption>
-<pre><code>&#x003C;canvas&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;canvas&#x003E;
   Update your browser to enjoy canvas!
 &#x003C;/canvas&#x003E;</code></pre>
 </figure>
@@ -155,7 +155,7 @@
 <p>Before you use the <code>canvas</code> element, you will want to make sure there is support in the browser. This way, you can provide some alternate text in case there is no support in their antique browser. Listing 2-3 shows one way you can use to test for browser support.</p>
 <figure class="listing">
 <figcaption>Listing 2-3. Checking for Browser Support</figcaption>
-<pre><code>try {
+<pre><code data-cm-mode="javascript">try {
   document.createElement(&#x201C;canvas&#x201D;).getContext(&#x201C;2d&#x201D;);
   document.getElementById(&#x201C;support&#x201D;).innerHTML =
     "HTML5 Canvas is supported in your browser.";
@@ -174,14 +174,14 @@
 
 <figure class="listing">
 <figcaption>Listing 2-4. The Canvas Element</figcaption>
-<pre><code>&#x003C;canvas height=&#x201C;200&#x201D; width="200"&#x003E; &#x003C;/canvas&#x003E;</code></pre>
+<pre><code data-cm-mode="text/html">&#x003C;canvas height=&#x201C;200&#x201D; width="200"&#x003E; &#x003C;/canvas&#x003E;</code></pre>
 </figure>
 
 <p>The resulting canvas will show up as an &#x201C;invisible&#x201D; 200 &#x00D7; 200 pixel rectangle on your page. If you want to add a border around it, you could use the HTML code shown in Listing 2-5 to style the canvas with normal CSS borders.</p>
 
 <figure class="listing">
 <figcaption>Listing 2-5. Canvas Element with a Solid Border</figcaption>
-<pre><code>&#x003C;canvas id="diagonal" style="border: 1px solid;" width="200" height="200"&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;canvas id="diagonal" style="border: 1px solid;" width="200" height="200"&#x003E;
 &#x003C;/canvas&#x003E;</code></pre>
 </figure>
 
@@ -194,7 +194,7 @@
 
 <p>Not very exciting, but as any artist would tell you, it is full of potential. Now, let&#x2019;s do something with this pristine canvas. As mentioned before, it is not easy to draw a diagonal line on a web page without HTML5 Canvas. Let&#x2019;s see how easy it is now that we <i>can</i> use Canvas. Listing 2-6 shows how, with just a few lines of code, you can draw a diagonal line on the canvas we added to the page earlier.</p>
 
-<figure class="listing" data-listing="2-6" data-cm-mode="text/html">
+<figure class="listing" data-listing="2-6">
   <figcaption>Listing 2-6.</figcaption> 
   <div class="temporary-until-we-get-the-right-markup-here">
     <a href="#inline-code-example" class="show-inline-editor button" data-listing="2-6">Open editor</a>
@@ -202,7 +202,7 @@
   </div>
 
 <div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
-<pre><code data-bold="3,6,7">&#x003C;script&#x003E;
+<pre><code data-bold="3,6,7" data-cm-mode="text/html">&#x003C;script&#x003E;
   function drawDiagonal() {
     // Get the canvas element and its drawing context
     var canvas = document.getElementById('diagonal');
@@ -262,7 +262,7 @@
   </div>
 
 <div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
-<pre><code>&#x003C;script&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;script&#x003E;
   function drawDiagonal() {
     var canvas = document.getElementById('diagonal');
     var context = canvas.getContext('2d');
@@ -321,7 +321,7 @@
 
 <figure class="listing">
 <figcaption>Listing 2-8. Function That Creates a Path for a Tree Canopy</figcaption>
-<pre><code>function createCanopyPath(context) {
+<pre><code data-cm-mode="javascript">function createCanopyPath(context) {
   // Draw the tree canopy
   context.beginPath();
 
@@ -355,7 +355,7 @@
   </div>
 
 <div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
-<pre><code>function drawTrails() {
+<pre><code data-cm-mode="javascript">function drawTrails() {
   var canvas = document.getElementById('trails');
   var context = canvas.getContext('2d');
 
@@ -383,7 +383,7 @@
 
 <figure class="listing">
 <figcaption>Listing 2-10. Using a Stroke Style</figcaption>
-<pre><code>// Increase the line width
+<pre><code data-cm-mode="javascript">// Increase the line width
 context.lineWidth = 4;
 
 // Round the corners at path joints
@@ -412,7 +412,7 @@ context.stroke();</code></pre>
 
 <figure class="listing">
 <figcaption>Listing 2-11. Using a Fill Style</figcaption>
-<pre><code>// Set the fill color to green and fill the canopy
+<pre><code data-cm-mode="javascript">// Set the fill color to green and fill the canopy
 context.fillStyle = '#339900';
 context.fill();</pre></code>
 </figure>
@@ -431,7 +431,7 @@ context.fill();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-12. Using the fillRect Convenience Function</figcaption>
-<pre><code>// Change fill color to brown
+<pre><code data-cm-mode="javascript">// Change fill color to brown
 context.fillStyle = '#663300';
 
 // Fill a rectangle for the tree trunk
@@ -458,7 +458,7 @@ context.fillRect(-5, -50, 10, 50);</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-13. Drawing a Curve</figcaption>
-<pre><code>// Save the canvas state and draw the path
+<pre><code data-cm-mode="javascript">// Save the canvas state and draw the path
 context.save();
 
 context.translate(-10, 350);
@@ -502,7 +502,7 @@ context.restore();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-14. Loading the Image</figcaption>
-<pre><code>// Load the bark image
+<pre><code data-cm-mode="javascript">// Load the bark image
 var bark = new Image();
 bark.src = "bark.jpg";
 
@@ -516,7 +516,7 @@ bark.onload = function () {
 
 <figure class="listing">
 <figcaption>Listing 2-15. Drawing an Image on a Canvas</figcaption>
-<pre><code>// Draw the bark pattern image where
+<pre><code data-cm-mode="javascript">// Draw the bark pattern image where
 //  the filled rectangle was before
 context.drawImage(bark, -5, -50, 10, 50);</pre></code>
 </figure>
@@ -545,7 +545,7 @@ context.drawImage(bark, -5, -50, 10, 50);</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-16. Using a Gradient</figcaption>
-<pre><code>// Create a 3 stop gradient horizontally across the trunk
+<pre><code data-cm-mode="javascript">// Create a 3 stop gradient horizontally across the trunk
 var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
 
 // The beginning of the trunk is medium brown
@@ -590,7 +590,7 @@ context.fillRect(-5, -50, 10, 50);
 
 <figure class="listing">
   <figcaption>Listing 2-17. Example of Applying a Radial Gradient</figcaption>
-  <pre><code>createRadialGradient(x0, y0, r0, x1, y1, r1)</pre></code>
+  <pre><code data-cm-mode="javascript">createRadialGradient(x0, y0, r0, x1, y1, r1)</pre></code>
 </figure>
 
 <p>In this example, the first three arguments represent a circle centered at (x0, y0) with radius r0, and the last three arguments represent a second circle centered at (x1, y1) with radius r1. The gradient is drawn across the area between the two circles.</p>
@@ -601,7 +601,7 @@ context.fillRect(-5, -50, 10, 50);
 
 <figure class="listing">
 <figcaption>Listing 2-18. Using a Background Pattern</figcaption>
-<pre><code>// Replace the bark image with
+<pre><code data-cm-mode="javascript">// Replace the bark image with
 // a trail gravel image
 var gravel = new Image();
 gravel.src = "gravel.jpg";
@@ -662,7 +662,7 @@ context.stroke();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-19. Function to Draw the Tree Object</figcaption>
-<pre><code>// Move tree drawing into its own function for reuse
+<pre><code data-cm-mode="javascript">// Move tree drawing into its own function for reuse
 function drawTree(context) {
   var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
   trunkGradient.addColorStop(0, '#663300');
@@ -693,7 +693,7 @@ function drawTree(context) {
 
 <figure class="listing">
 <figcaption>Listing 2-20. Drawing the Tree Objects</figcaption>
-<pre><code>// Draw the first tree at X=130, Y=250
+<pre><code data-cm-mode="javascript">// Draw the first tree at X=130, Y=250
 context.save();
 context.translate(130, 250);
 drawTree(context);
@@ -727,7 +727,7 @@ context.restore();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-21. A Rotated Image</figcaption>
-<pre><code>context.save();
+<pre><code data-cm-mode="javascript">context.save();
 // rotation angle is specified in radians
 context.rotate(1.57);
 context.drawImage(myImage, 0, 0, 100, 100);
@@ -739,7 +739,7 @@ context.restore();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-22. Using a Transform</figcaption>
-<pre><code>// Create a 3 stop gradient horizontally across the trunk
+<pre><code data-cm-mode="javascript">// Create a 3 stop gradient horizontally across the trunk
 // Save the current canvas state for later
 context.save();
 
@@ -817,7 +817,7 @@ context.restore();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-23. Using Canvas Text</figcaption>
-<pre><code>// Draw title text on our canvas
+<pre><code data-cm-mode="javascript">// Draw title text on our canvas
 context.save();
 
 // The font will be 60 pixel, Impact face
@@ -882,7 +882,7 @@ context.restore();</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-24. Applying a Shadow</figcaption>
-<pre><code>// Set some shadow on our text, black with 20% alpha
+<pre><code data-cm-mode="javascript">// Set some shadow on our text, black with 20% alpha
 context.shadowColor = 'rgba(0, 0, 0, 0.2)';
 
 // Move the shadow to the right 15 pixels, up 10
@@ -939,7 +939,7 @@ context.shadowBlur = 2;</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-25. Creating an Image from a Canvas</figcaption>
-<pre><code>var myCanvas = document.getElementById("myCanvas");
+<pre><code data-cm-mode="javascript">var myCanvas = document.getElementById("myCanvas");
 
 // draw operations into the canvas&#x2026;
 // get the canvas data as a data URL
@@ -982,7 +982,7 @@ img.src = canvasData;</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-26. The Heatmap Canvas Element</figcaption>
-<pre><code>&#x003C;style type="text/css"&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;style type="text/css"&#x003E;
   #heatmap {
       background-image: url("mapbg.jpg");
   }
@@ -1005,7 +1005,7 @@ img.src = canvasData;</pre></code>
 
 <figure class="listing">
 <figcaption>Listing 2-27. The loadDemo <i>Function</i></figcaption>
-<pre><code>function loadDemo() {
+<pre><code data-cm-mode="javascript">function loadDemo() {
   document.getElementById("resetButton").onclick = reset;
 
   canvas = document.getElementById("heatmap");
@@ -1034,7 +1034,7 @@ canvas.onmousemove = function(e) {
 
 <figure class="listing">
 <figcaption>Listing 2-28. The <i>reset Function</i></figcaption>
-<pre><code>function reset() {
+<pre><code data-cm-mode="javascript">function reset() {
   points = {};
   context.clearRect(0,0,300,300);
   x = -1;
@@ -1046,7 +1046,7 @@ canvas.onmousemove = function(e) {
 
 <figure class="listing">
 <figcaption>Listing 2-29. The <i>getColor Function</i></figcaption>
-<pre><code>function getColor(intensity) {
+<pre><code data-cm-mode="javascript">function getColor(intensity) {
   var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];
   return colors[Math.floor(intensity/2)];
 }</pre></code>
@@ -1056,7 +1056,7 @@ canvas.onmousemove = function(e) {
 
 <figure class="listing">
 <figcaption>Listing 2-30. The <i>drawPoint Function</i></figcaption>
-<pre><code>function drawPoint(x, y, radius) {
+<pre><code data-cm-mode="javascript">function drawPoint(x, y, radius) {
   context.fillStyle = getColor(radius);
   radius = Math.sqrt(radius)*6;
 
@@ -1072,7 +1072,7 @@ canvas.onmousemove = function(e) {
 
 <figure class="listing">
 <figcaption>Listing 2-31. The addToPoint Function</figcaption>
-<pre><code>function addToPoint(x, y) {
+<pre><code data-cm-mode="javascript">function addToPoint(x, y) {
   x = Math.floor(x/SCALE);
   y = Math.floor(y/SCALE);
 
@@ -1119,7 +1119,7 @@ canvas.onmousemove = function(e) {
 <figure class="listing">
 <figcaption>Listing 2-32. Basic Animation Frame Request</figcaption>
 
-<pre><code>// create an image for our rain texture
+<pre><code data-cm-mode="javascript">// create an image for our rain texture
 var rain = new Image();
 rain.src = "rain.png";
 rain.onload = function () {
