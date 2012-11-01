@@ -1,25 +1,30 @@
 /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
 function showStaticCodeview() {
   var staticCodeareas = [];
-  var testCodeareas = jQuery('figure pre code');
-  var testCode, testPre, boldLines, staticArea, editor;
-  var staticCodeContainer = jQuery('<div class="static-code-container"></div>');
-  testCodeareas.each(function () {
-    testCode = jQuery(this).text();
-    boldLines = jQuery(this).data('bold') ? jQuery(this).data('bold').split(',') : [];
-    testPre = jQuery(this).parents('pre:first');
-    // testPre.replaceWith(staticCodeContainer.clone());
-    staticArea = staticCodeContainer.clone().insertAfter(testPre).get(0);
-    testPre.remove();
+  var testFigures = jQuery('figure.listing');
+  // var codeStrareas = jQuery('pre code', testFigures);
+  var codeStr, $pre, boldLines, staticArea, editor, cmMode;
+  var staticCodeContainer = '<div class="static-code-container"></div>';
+  testFigures.each(function () {
+    $figure = jQuery(this);
+    $pre = jQuery('pre:first', $figure);
+    $code = jQuery('code:first', $pre);
+    codeStr = $code.text();
+    cmMode = $figure.data('cm-mode') ? $figure.data('cm-mode') : 'javascript';
+    boldLines = $code.data('bold') ? $code.data('bold').split(',') : [];
+    // $pre = jQuery(this).parents('pre:first');
+    // $pre.replaceWith(staticCodeContainer.clone());
+    staticArea = jQuery(staticCodeContainer).insertAfter($pre).get(0);
+    $pre.remove();
     editor = CodeMirror( staticArea, {
-        mode: 'text/html',
+        mode: cmMode,
         tabMode: 'indent',
         theme: 'static',
         readOnly: true,
         lineWrapping: true,
         lineNumbers: false,
         pollInterval: 3000,
-        value: testCode
+        value: codeStr
       } 
     );
     staticCodeareas.push(editor);
