@@ -347,8 +347,14 @@
 
 <p>As you can see from the code, we used the same move and line commands from before, but more of them. These lines form the branches of a simple tree shape, and we close the path back at the end. Our tree will leave a notable gap at the bottom, and we will use this in future sections to draw the trunk. Listing 2-9 shows how to use that canopy drawing function to actually render our simple tree shape onto a canvas.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-9" data-cm-mode="javascript">
 <figcaption>Listing 2-9. Function That Draws a Tree on the Canvas</figcaption>
+  <div class="temporary-until-we-get-the-right-markup-here">
+    <a href="#inline-code-example" class="show-inline-editor button" data-listing="2-9">Open editor</a>
+    <a href="#close-inline-code-example" class="close-inline-editor button" data-listing="2-9">Close editor</a>
+  </div>
+
+<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
 <pre><code>function drawTrails() {
   var canvas = document.getElementById('trails');
   var context = canvas.getContext('2d');
@@ -1222,40 +1228,6 @@ function loopAnimation(currentTime) {
 <!--====================== END CONTENT ======================-->
 </div> <!-- closing .persist-area-->
         
-    <!-- MOD: MARKUP FOR CODEVIEW COLORBOX -->
-    <div class="ignore-me code-view-source-container" style="display:none;">
-      <div id="code-view-source">
-        <h1 class="hdr">Live Code Example</h1>
-
-        <div class="code-editor-container"> <!-- Jen added this -->
-          <div class="code-mirror-container">
-            <textarea id="code" name="code">
-            </textarea>
-          </div>
-          <iframe id="preview"></iframe>
-        </div>
-        
-      </div>
-    </div>
-    
-    <div class="ignore-me inline-codeview-source-container" style="display:none;">
-      <div id="code-view-source">
-
-        <div class="code-editor-container"> <!-- Jen added this -->
-          <div class="code-mirror-container">
-            <textarea id="code" name="code">
-            </textarea>
-          </div>
-          <iframe id="preview"></iframe>
-        </div>
-
-
-        <div class="control-bar">
-          <div class="control reset">Reset</div>
-        </div>
-
-      </div>
-    </div>
     <a name="main-navigation" id="main-navigation"/>
     <div class="nav-container"> </div>
   

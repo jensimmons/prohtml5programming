@@ -40,6 +40,19 @@ function showStaticCodeview() {
           preview.close();
         }
 
+        var editorTemplate = '<div id="code-view-source">\n\n' +
+        '<div class="code-editor-container">\n' +
+          '<div class="code-mirror-container">\n' +
+            '<textarea id="code" name="code">\n' +
+            '</textarea>\n' +
+          '</div>\n' +
+          '<iframe id="preview"></iframe>\n' +
+        '</div>\n\n' + 
+        '<div class="control-bar">\n' +
+          '<div class="control reset">Reset</div>\n' +
+        '</div>\n' +
+      '</div>';
+      
         var inlineEditors = {};
         
         var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
@@ -50,7 +63,7 @@ function showStaticCodeview() {
           this.listingNumber = el.data('listing'); 
           inlineEditors[this.listingNumber] = this;
           this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
-          this.container.html( jQuery('.inline-codeview-source-container').clone().html() );
+          this.container.html( jQuery(editorTemplate) );
           this.resetControl = jQuery('.control-bar .control.reset', this.container);
           this.previewFrame = jQuery('#preview', this.container).get(0);
           this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
