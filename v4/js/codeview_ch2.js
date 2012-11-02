@@ -41,7 +41,12 @@ function showStaticCodeview() {
           preview.write(iEditor.editor.getValue());
           preview.close();
         }
-
+        var editorContainerTemplate = '<div class="temporary-until-we-get-the-right-markup-here">\n' +
+              '<a href="#inline-code-example" class="show-inline-editor button">Open editor</a>\n' +
+              '<a href="#close-inline-code-example" class="close-inline-editor button">Close editor</a>\n' +
+            '</div>\n\n' +
+          '<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>';
+        
         var editorTemplate = '<div id="code-view-source">\n\n' +
         '<div class="code-editor-container">\n' +
           '<div class="code-mirror-container">\n' +
@@ -96,7 +101,17 @@ function showStaticCodeview() {
         }
         
         function inlineCodeview() {
-          
+          jQuery("figure.listing[data-listing]").each(function () {
+            var $thisFigure = jQuery(this);
+            var thisListing = $thisFigure.data('listing');
+            // ensure we have a code listing for this figure.listing
+            
+            // append the editor container template
+            jQuery('figcaption:first', $thisFigure).after(jQuery(editorContainerTemplate));
+            // set the data-listing on the triggers
+            jQuery('.button', $thisFigure).data('listing', thisListing);
+            // bind the events
+          });
           jQuery(".show-inline-editor:not('.open')").bind('click', function (evt) {
             evt.stopPropagation();
             evt.preventDefault();

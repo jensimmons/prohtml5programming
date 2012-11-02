@@ -254,14 +254,8 @@
 
 <p>Listing 2-7 shows this best practice in action using the simplest transform: <code>translate</code>.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-7">
   <figcaption>Listing 2-7. Using Translation to Create a Diagonal Line on a Canvas</figcaption> 
-  <div class="temporary-until-we-get-the-right-markup-here">
-    <a href="#inline-code-example" class="show-inline-editor button" data-listing="2-7">Open editor</a>
-    <a href="#close-inline-code-example" class="close-inline-editor button" data-listing="2-7">Close editor</a>
-  </div>
-
-<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
 <pre><code data-cm-mode="text/html">&#x003C;script&#x003E;
   function drawDiagonal() {
     var canvas = document.getElementById('diagonal');
@@ -347,14 +341,8 @@
 
 <p>As you can see from the code, we used the same move and line commands from before, but more of them. These lines form the branches of a simple tree shape, and we close the path back at the end. Our tree will leave a notable gap at the bottom, and we will use this in future sections to draw the trunk. Listing 2-9 shows how to use that canopy drawing function to actually render our simple tree shape onto a canvas.</p>
 
-<figure class="listing" data-listing="2-9" data-cm-mode="javascript">
+<figure class="listing" data-listing="2-9">
 <figcaption>Listing 2-9. Function That Draws a Tree on the Canvas</figcaption>
-  <div class="temporary-until-we-get-the-right-markup-here">
-    <a href="#inline-code-example" class="show-inline-editor button" data-listing="2-9">Open editor</a>
-    <a href="#close-inline-code-example" class="close-inline-editor button" data-listing="2-9">Close editor</a>
-  </div>
-
-<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
 <pre><code data-cm-mode="javascript">function drawTrails() {
   var canvas = document.getElementById('trails');
   var context = canvas.getContext('2d');
@@ -381,7 +369,7 @@
 <h3>Working with Stroke Styles</h3>
 <p>The Canvas API wouldn&#x2019;t be powerful or popular if developers were stuck using simple stick drawings and black lines. Let&#x2019;s use the stroke styling capabilities to make our canopy a little more tree-like. Listing 2-10 shows some basic commands that can modify the properties of the context in order to make the stroked shape look more appealing.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-10">
 <figcaption>Listing 2-10. Using a Stroke Style</figcaption>
 <pre><code data-cm-mode="javascript">// Increase the line width
 context.lineWidth = 4;
@@ -410,7 +398,7 @@ context.stroke();</code></pre>
 <h3>Working with Fill Styles</h3>
 <p>As you might expect, stroking is not the only way to affect the appearance of canvas shapes. The next common way to modify a shape is to specify how its paths and subpaths are filled. Listing 2-11 shows how simple it is to fill our canopy with a pleasant, green color.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-11">
 <figcaption>Listing 2-11. Using a Fill Style</figcaption>
 <pre><code data-cm-mode="javascript">// Set the fill color to green and fill the canopy
 context.fillStyle = '#339900';
@@ -429,7 +417,7 @@ context.fill();</pre></code>
 <h3>Filling Rectangular Content</h3>
 <p>Every tree deserves a strong foundation. Thankfully, we left space for our tree trunk in the original shape path. Listing 2-12 shows how we can add the simplest rendering of a tree trunk by using the <code>fillRect</code> convenience function.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-12">
 <figcaption>Listing 2-12. Using the fillRect Convenience Function</figcaption>
 <pre><code data-cm-mode="javascript">// Change fill color to brown
 context.fillStyle = '#663300';
@@ -456,7 +444,7 @@ context.fillRect(-5, -50, 10, 50);</pre></code>
 <h3>Drawing Curves</h3>
 <p>The world, particularly the natural world, is not filled with straight lines and rectangles. Fortunately, the canvas provides a variety of functions for creating curves in our paths. We will demonstrate the simplest option&#x2014;a <i>quadratic</i> curve&#x2014;to form a path through our virtual forest. Listing 2-13 demonstrates the addition of two quadratic curves.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-13">
 <figcaption>Listing 2-13. Drawing a Curve</figcaption>
 <pre><code data-cm-mode="javascript">// Save the canvas state and draw the path
 context.save();
@@ -514,7 +502,7 @@ bark.onload = function () {
 
 <p>As you can see, we&#x2019;ve added an <code>onload</code> handler to the <code>bark.jpg</code> image to call the main <code>drawTrails</code> function only when the image loading has completed. This guarantees that the image will be available to the next calls we add to the canvas rendering, as shown in Listing 2-15.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-15">
 <figcaption>Listing 2-15. Drawing an Image on a Canvas</figcaption>
 <pre><code data-cm-mode="javascript">// Draw the bark pattern image where
 //  the filled rectangle was before
@@ -543,7 +531,7 @@ context.drawImage(bark, -5, -50, 10, 50);</pre></code>
 <p>As with other color values, it is possible to supply an alpha (for example, transparency) value as part of the color and make that alpha value transition as well. To do so, you will need to use another textual representation of the color value, such as the CSS <code>rgba</code> function that includes an alpha component.</p>
 <p>Let&#x2019;s see this in more detail with a code sample that applies two gradients to a <code>fillRect</code> representing our final tree trunk, as shown in Listing 2-16.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-16">
 <figcaption>Listing 2-16. Using a Gradient</figcaption>
 <pre><code data-cm-mode="javascript">// Create a 3 stop gradient horizontally across the trunk
 var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
@@ -599,7 +587,7 @@ context.fillRect(-5, -50, 10, 50);
 <p>Direct rendering of images has many uses, but in some cases it is beneficial to use an image as a background tile, similar to the capability available in CSS. We&#x2019;ve already seen how it is possible to set a stroke or fill style to be a solid color. The HTML5 Canvas API also includes an option to set an image as a repeatable pattern for either a path stroke or fill.</p>
 <p>To make our forest trail appear a bit more rugged, we will demonstrate the capability by replacing the previous stroked trail curve with one that uses a background image fill. In doing so, we&#x2019;ll swap out our now-unused bark image for a gravel image that we will put to use here. Listing 2-18 shows we replace the call to <code>drawImage</code> with a call to <code>createPattern</code>.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-18">
 <figcaption>Listing 2-18. Using a Background Pattern</figcaption>
 <pre><code data-cm-mode="javascript">// Replace the bark image with
 // a trail gravel image
@@ -691,7 +679,7 @@ function drawTree(context) {
 
 <p>As you can see, the <code>drawTree</code> function contains all the code we previously created to draw the canopy, trunk, and trunk gradient. Now we will use one of the transformation routines&#x2014; <code>context.scale</code>&#x2014;to draw a second tree at a new location and with a larger size, as shown in Listing 2-20.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-20">
 <figcaption>Listing 2-20. Drawing the Tree Objects</figcaption>
 <pre><code data-cm-mode="javascript">// Draw the first tree at X=130, Y=250
 context.save();
@@ -737,7 +725,7 @@ context.restore();</pre></code>
 
 <p>In Listing 2-22, however, we will show how you can apply an arbitrary transform to the path coordinates to radically alter the display of our existing tree path in order to create a shadow effect.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-22">
 <figcaption>Listing 2-22. Using a Transform</figcaption>
 <pre><code data-cm-mode="javascript">// Create a 3 stop gradient horizontally across the trunk
 // Save the current canvas state for later
