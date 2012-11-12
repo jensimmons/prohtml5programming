@@ -996,18 +996,18 @@ figure.listing figcaption {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003114}}
-.temporary-until-we-get-the-right-markup-here {
+.editor-trigger {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   max-width: 20%;
   float: right;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003118}}
-.temporary-until-we-get-the-right-markup-here a {
+.editor-trigger a {
   float: right;
   color: #444;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003122}}
-.temporary-until-we-get-the-right-markup-here a:hover, .temporary-until-we-get-the-right-markup-here a:focus {
+.editor-trigger a:hover, .editor-trigger a:focus {
   color: #000;
 }
 
