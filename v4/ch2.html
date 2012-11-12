@@ -30,6 +30,7 @@
     <![endif]-->
     <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
     <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jpanelmenu-1.0.0.js"></script>
     <script src="codemirror/lib/codemirror.js"></script>
     <script src="codemirror/mode/xml/xml.js"></script>
     <script src="codemirror/mode/javascript/javascript.js"></script>
@@ -38,7 +39,7 @@
     <script src="js/code_editor.js"></script>
     <script src="js/code_listings_ch2.js"></script>
     <script src="js/toc.js"></script>  
-    <script src="js/persistent_headers.js"></script>
+
     
     <!-- For iPhone 4 -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114-precomposed.png">
@@ -64,8 +65,7 @@
 
   <body>
 
-<div class="persist-area">
-  <div class="menu-link persist-header orig-menu">
+  <div class="menu-link persist-header orig-menu menu-trigger">
     <a class="svg-menu" href="#main-navigation"><img src="images/icon-menu.svg"/><span>Menu</span></a>
   </div>
   
@@ -1209,9 +1209,9 @@ function loopAnimation(currentTime) {
 </article>
 
 <!--====================== END CONTENT ======================-->
-</div> <!-- closing .persist-area-->
+
         
-    <a name="main-navigation" id="main-navigation"/>
+    <a name="main-navigation" id="main-navigation"></a>
     <div class="nav-container"> </div>
   
     <script type="text/javascript" charset="utf-8">
@@ -1220,25 +1220,25 @@ function loopAnimation(currentTime) {
         var h1 = $('h1').eq(0);
         var currentChap = h1.text();
         
-        var output = '<nav role="navigation"><ul>';
-        if(toc) {
-          output += ('<li class="toc"><a href="#" class="link-toc">Table of Contents</a>\n');
-          output += '<ul>';
-          for(var i=0; i < toc.length; i++) {
-            
-            for(var key in toc[i]) {
-              var currentClass = '';
-              if(toc[i].hasOwnProperty(key)) {
-                if (key == currentChap) {
-                  currentClass = 'link-current';
-                }
-                output += ('<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n');
-              }
-            }
-            
-          }
-          output += '</ul></li>';
-        }
+        var output = '<nav role="navigation" id="menu"><ul>';
+        // if(toc) {
+        //   output += ('<li class="toc"><a href="#" class="link-toc">Table of Contents</a>\n');
+        //   output += '<ul>';
+        //   for(var i=0; i < toc.length; i++) {
+        //     
+        //     for(var key in toc[i]) {
+        //       var currentClass = '';
+        //       if(toc[i].hasOwnProperty(key)) {
+        //         if (key == currentChap) {
+        //           currentClass = 'link-current';
+        //         }
+        //         output += ('<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n');
+        //       }
+        //     }
+        //     
+        //   }
+        //   output += '</ul></li>';
+        // }
     
         jQuery('<a name="item_0" />').insertBefore(h1);
         output += ('<li class="current"><a href="#item_0" >' + currentChap + '</a>\n');
@@ -1274,24 +1274,24 @@ function loopAnimation(currentTime) {
         output += '</li></ul></nav>\n';
         jQuery('div.nav-container').append(jQuery(output));
         // console.log(output);
-        jQuery('.link-toc').live('click', function (evt) {
-          evt.stopPropagation();
-          evt.preventDefault();
-          var parent = $(this).parents('li:first');
-          parent.children('ul').show();
-          parent.siblings('.current').hide();
-          // toc click 
-          //   hide sibling .current
-          //   show toc children ul
-          //   
-        });
-        jQuery('.link-current').live('click', function (evt) {
-          evt.stopPropagation();
-          evt.preventDefault();
-          var parent = $(this).parents('li.toc:first');
-          parent.children('ul').hide();
-          parent.siblings('.current').show();
-        });
+        // jQuery('.link-toc').live('click', function (evt) {
+        //   evt.stopPropagation();
+        //   evt.preventDefault();
+        //   var parent = $(this).parents('li:first');
+        //   parent.children('ul').show();
+        //   parent.siblings('.current').hide();
+        //   // toc click 
+        //   //   hide sibling .current
+        //   //   show toc children ul
+        //   //   
+        // });
+        // jQuery('.link-current').live('click', function (evt) {
+        //   evt.stopPropagation();
+        //   evt.preventDefault();
+        //   var parent = $(this).parents('li.toc:first');
+        //   parent.children('ul').hide();
+        //   parent.siblings('.current').show();
+        // });
         // link-current
         //   hide toc children ul
         //   show sibling .current
@@ -1300,6 +1300,9 @@ function loopAnimation(currentTime) {
         }); 
         
         jQuery('.link-current').click();
+        
+        var jPM = $.jPanelMenu();
+        jPM.on();
       });
     </script>
       

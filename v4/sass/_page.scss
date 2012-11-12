@@ -276,3 +276,16 @@ td, th {
 	
 }
 
+.jPanelMenu-panel .nav-container {
+  display: none;
+}
+.jPanelMenu-panel .menu-link {
+  position: fixed;
+  top: 0px;
+}
+
+.menu-link a:hover,
+.menu-link a:focus {
+  color: #fff;
+  position: fixed;
+}

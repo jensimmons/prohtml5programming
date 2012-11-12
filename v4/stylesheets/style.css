@@ -1199,6 +1199,24 @@ td, th {
     content: "Note";
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003279}}
+.jPanelMenu-panel .nav-container {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003282}}
+.jPanelMenu-panel .menu-link {
+  position: fixed;
+  top: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003288}}
+.menu-link a:hover,
+.menu-link a:focus {
+  color: #fff;
+  position: fixed;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\000035}}
 nav {
   width: 100%;
