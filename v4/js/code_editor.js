@@ -43,7 +43,7 @@ function showStaticCodeview() {
         }
       
         var inlineEditors = {
-          'editorContainerTemplate': '<div class="temporary-until-we-get-the-right-markup-here">\n' +
+          'editorContainerTemplate': '<div class="editor-trigger">\n' +
                         '<a href="#inline-code-example" class="show-inline-editor button">Open editor</a>\n' +
                         '<a href="#close-inline-code-example" class="close-inline-editor button">Close editor</a>\n' +
                       '</div>\n\n' +
