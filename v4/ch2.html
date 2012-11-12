@@ -195,13 +195,7 @@
 <p>Not very exciting, but as any artist would tell you, it is full of potential. Now, let&#x2019;s do something with this pristine canvas. As mentioned before, it is not easy to draw a diagonal line on a web page without HTML5 Canvas. Let&#x2019;s see how easy it is now that we <i>can</i> use Canvas. Listing 2-6 shows how, with just a few lines of code, you can draw a diagonal line on the canvas we added to the page earlier.</p>
 
 <figure class="listing" data-listing="2-6">
-  <figcaption>Listing 2-6.</figcaption> 
-  <div class="temporary-until-we-get-the-right-markup-here">
-    <a href="#inline-code-example" class="show-inline-editor button" data-listing="2-6">Open editor</a>
-    <a href="#close-inline-code-example" class="close-inline-editor button" data-listing="2-6">Close editor</a>
-  </div>
-
-<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>
+  <figcaption>Listing 2-6.</figcaption>
 <pre><code data-bold="3,6,7" data-cm-mode="text/html">&#x003C;script&#x003E;
   function drawDiagonal() {
     // Get the canvas element and its drawing context
@@ -803,7 +797,7 @@ context.restore();</pre></code>
 
 <p>All these context properties can be set to alter the context or accessed to query the current values. In Listing 2-23, we will create a large text message with the font face <code>Impact</code> and fill it with the background pattern of our existing bark image. In order to center the text across the top of our canvas, we will declare a maximum width and a <code>center</code> alignment.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-23">
 <figcaption>Listing 2-23. Using Canvas Text</figcaption>
 <pre><code data-cm-mode="javascript">// Draw title text on our canvas
 context.save();
@@ -868,7 +862,7 @@ context.restore();</pre></code>
 
 <p>The shadow effect is triggered on any path, text, or image render if the <code>shadowColor</code> and at least one of the other properties is set to a nondefault value. Listing 2-24 shows how we can apply a shadow to our new trails title text.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-24">
 <figcaption>Listing 2-24. Applying a Shadow</figcaption>
 <pre><code data-cm-mode="javascript">// Set some shadow on our text, black with 20% alpha
 context.shadowColor = 'rgba(0, 0, 0, 0.2)';
@@ -1058,7 +1052,7 @@ canvas.onmousemove = function(e) {
 
 <p>In the <code>addToPoint</code> function&#x2014;which you will recall is accessed every time the mouse moves or hovers over a point&#x2014;a heat value is increased and stored for that particular point on the canvas. Listing 2-31 shows that the maximum point value is 10. Once the current value of heat for a given pixel is found, the appropriate pixel is passed to <code>drawPoint</code> with its corresponding heat/radius value.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="2-31">
 <figcaption>Listing 2-31. The addToPoint Function</figcaption>
 <pre><code data-cm-mode="javascript">function addToPoint(x, y) {
   x = Math.floor(x/SCALE);

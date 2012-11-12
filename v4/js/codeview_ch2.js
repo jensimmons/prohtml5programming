@@ -948,7 +948,340 @@ function showStaticCodeview() {
                     '\n' +
                     '  </scr' + 'ipt>\n' +
                     '</html>\n'
-          }
+          },
+          '2-23': {
+            'title': 'Text example',
+            'code': '<!DOCTYPE html>\n' +
+                    '<html>\n' +
+                    '  <title>Text example</title>\n' +
+                    '\n' +
+                    '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
+                    '  <script>\n' +
+                    '        var gravel = new Image();\n' +
+                    '        gravel.src = "gravel.jpg";\n' +
+                    '        gravel.onload = function () {\n' +
+                    '            drawTrails();\n' +
+                    '        }\n' +
+                    '\n' +
+                    '        function createCanopyPath(context) {\n' +
+                    '            context.beginPath();\n' +
+                    '            context.moveTo(-25, -50);\n' +
+                    '            context.lineTo(-10, -80);\n' +
+                    '            context.lineTo(-20, -80);\n' +
+                    '            context.lineTo(-5, -110);\n' +
+                    '            context.lineTo(-15, -110);\n' +
+                    '\n' +
+                    '            context.lineTo(0, -140);\n' +
+                    '\n' +
+                    '            context.lineTo(15, -110);\n' +
+                    '            context.lineTo(5, -110);\n' +
+                    '            context.lineTo(20, -80);\n' +
+                    '            context.lineTo(10, -80);\n' +
+                    '            context.lineTo(25, -50);\n' +
+                    '            context.closePath();\n' +
+                    '        }\n' +
+                    '\n' +
+                    '        function drawTree(context) {\n' +
+                    '            context.save();\n' +
+                    '            context.transform(1, 0,\n' +
+                    '                              -0.5, 1,\n' +
+                    '                              0, 0);\n' +
+                    '            context.scale(1, 0.6);\n' +
+                    '            context.fillStyle = \'rgba(0, 0, 0, 0.2)\';\n' +
+                    '            context.fillRect(-5, -50, 10, 50);\n' +
+                    '            createCanopyPath(context);\n' +
+                    '            context.fill();\n' +
+                    '            context.restore();\n' +
+                    '\n' +
+                    '            var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);\n' +
+                    '            trunkGradient.addColorStop(0, \'#663300\');\n' +
+                    '            trunkGradient.addColorStop(0.4, \'#996600\');\n' +
+                    '            trunkGradient.addColorStop(1, \'#552200\');\n' +
+                    '            context.fillStyle = trunkGradient;\n' +
+                    '            context.fillRect(-5, -50, 10, 50);\n' +
+                    '\n' +
+                    '            var canopyShadow = context.createLinearGradient(0, -50, 0, 0);\n' +
+                    '            canopyShadow.addColorStop(0, \'rgba(0, 0, 0, 0.5)\');\n' +
+                    '            canopyShadow.addColorStop(0.2, \'rgba(0, 0, 0, 0.0)\');\n' +
+                    '            context.fillStyle = canopyShadow;\n' +
+                    '            context.fillRect(-5, -50, 10, 50);\n' +
+                    '\n' +
+                    '            createCanopyPath(context);\n' +
+                    '\n' +
+                    '            context.lineWidth = 4;\n' +
+                    '            context.lineJoin = \'round\';\n' +
+                    '            context.strokeStyle = \'#663300\';\n' +
+                    '            context.stroke();\n' +
+                    '\n' +
+                    '            context.fillStyle = \'#339900\';\n' +
+                    '            context.fill();\n' +
+                    '        }\n' +
+                    '\n' +
+                    '\n' +
+                    '        function drawTrails() {\n' +
+                    '            var canvas = document.getElementById(\'trails\');\n' +
+                    '            var context = canvas.getContext(\'2d\');\n' +
+                    '\n' +
+                    '            context.save();\n' +
+                    '            context.translate(130, 250);\n' +
+                    '            drawTree(context);\n' +
+                    '            context.restore();\n' +
+                    '\n' +
+                    '            context.save();\n' +
+                    '            context.translate(260, 500);\n' +
+                    '\n' +
+                    '            context.scale(2, 2);\n' +
+                    '            drawTree(context);\n' +
+                    '            context.restore();\n' +
+                    '\n' +
+                    '            context.save();\n' +
+                    '            context.translate(-10, 350);\n' +
+                    '            context.beginPath();\n' +
+                    '            context.moveTo(0, 0);\n' +
+                    '            context.quadraticCurveTo(170, -50, 260, -190);\n' +
+                    '            context.quadraticCurveTo(310, -250, 410,-250);\n' +
+                    '            context.strokeStyle = context.createPattern(gravel, \'repeat\');\n' +
+                    '            context.lineWidth = 20;\n' +
+                    '            context.stroke();\n' +
+                    '            context.restore();\n' +
+                    '\n' +
+                    '            // Draw title text on our canvas\n' +
+                    '            context.save();\n' +
+                    '\n' +
+                    '            // The font will be 60 pixel, Impact face\n' +
+                    '            context.font = "60px impact";\n' +
+                    '\n' +
+                    '            // Use a brown fill for our text\n' +
+                    '            context.fillStyle = \'#996600\';\n' +
+                    '            // Text can be aligned when displayed\n' +
+                    '            context.textAlign = \'center\';\n' +
+                    '\n' +
+                    '            // Draw the text in the middle of the canvas with a max\n' +
+                    '            // width set to center properly\n' +
+                    '            context.fillText(\'Happy Trails!\', 200, 60, 400);\n' +
+                    '            context.restore();\n' +
+                    '        }\n' +
+                    '\n' +
+                    '  </script>\n' +
+                    '</html>\n'
+            },
+            '2-24': {
+              'title': 'Shadow example',
+              'code': '<!DOCTYPE html>\n' +
+                      '<html>\n' +
+                      '  <title>Shadow example</title>\n' +
+                      '\n' +
+                      '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
+                      '  <script>\n' +
+                      '        var gravel = new Image();\n' +
+                      '        gravel.src = "gravel.jpg";\n' +
+                      '        gravel.onload = function () {\n' +
+                      '            drawTrails();\n' +
+                      '        }\n' +
+                      '\n' +
+                      '        function createCanopyPath(context) {\n' +
+                      '            context.beginPath();\n' +
+                      '            context.moveTo(-25, -50);\n' +
+                      '            context.lineTo(-10, -80);\n' +
+                      '            context.lineTo(-20, -80);\n' +
+                      '            context.lineTo(-5, -110);\n' +
+                      '            context.lineTo(-15, -110);\n' +
+                      '\n' +
+                      '            context.lineTo(0, -140);\n' +
+                      '\n' +
+                      '            context.lineTo(15, -110);\n' +
+                      '            context.lineTo(5, -110);\n' +
+                      '            context.lineTo(20, -80);\n' +
+                      '            context.lineTo(10, -80);\n' +
+                      '            context.lineTo(25, -50);\n' +
+                      '            context.closePath();\n' +
+                      '        }\n' +
+                      '\n' +
+                      '        function drawTree(context) {\n' +
+                      '            context.save();\n' +
+                      '            context.transform(1, 0,\n' +
+                      '                              -0.5, 1,\n' +
+                      '                              0, 0);\n' +
+                      '            context.scale(1, 0.6);\n' +
+                      '            context.fillStyle = \'rgba(0, 0, 0, 0.2)\';\n' +
+                      '            context.fillRect(-5, -50, 10, 50);\n' +
+                      '            createCanopyPath(context);\n' +
+                      '            context.fill();\n' +
+                      '            context.restore();\n' +
+                      '\n' +
+                      '            var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);\n' +
+                      '            trunkGradient.addColorStop(0, \'#663300\');\n' +
+                      '            trunkGradient.addColorStop(0.4, \'#996600\');\n' +
+                      '            trunkGradient.addColorStop(1, \'#552200\');\n' +
+                      '            context.fillStyle = trunkGradient;\n' +
+                      '            context.fillRect(-5, -50, 10, 50);\n' +
+                      '\n' +
+                      '            var canopyShadow = context.createLinearGradient(0, -50, 0, 0);\n' +
+                      '            canopyShadow.addColorStop(0, \'rgba(0, 0, 0, 0.5)\');\n' +
+                      '            canopyShadow.addColorStop(0.2, \'rgba(0, 0, 0, 0.0)\');\n' +
+                      '            context.fillStyle = canopyShadow;\n' +
+                      '            context.fillRect(-5, -50, 10, 50);\n' +
+                      '\n' +
+                      '            createCanopyPath(context);\n' +
+                      '\n' +
+                      '            context.lineWidth = 4;\n' +
+                      '            context.lineJoin = \'round\';\n' +
+                      '            context.strokeStyle = \'#663300\';\n' +
+                      '            context.stroke();\n' +
+                      '\n' +
+                      '            context.fillStyle = \'#339900\';\n' +
+                      '            context.fill();\n' +
+                      '        }\n' +
+                      '\n' +
+                      '\n' +
+                      '        function drawTrails() {\n' +
+                      '            var canvas = document.getElementById(\'trails\');\n' +
+                      '            var context = canvas.getContext(\'2d\');\n' +
+                      '\n' +
+                      '            context.save();\n' +
+                      '            context.translate(130, 250);\n' +
+                      '            drawTree(context);\n' +
+                      '            context.restore();\n' +
+                      '\n' +
+                      '            context.save();\n' +
+                      '            context.translate(260, 500);\n' +
+                      '\n' +
+                      '            context.scale(2, 2);\n' +
+                      '            drawTree(context);\n' +
+                      '            context.restore();\n' +
+                      '\n' +
+                      '            context.save();\n' +
+                      '            context.translate(-10, 350);\n' +
+                      '            context.beginPath();\n' +
+                      '            context.moveTo(0, 0);\n' +
+                      '            context.quadraticCurveTo(170, -50, 260, -190);\n' +
+                      '            context.quadraticCurveTo(310, -250, 410,-250);\n' +
+                      '            context.strokeStyle = context.createPattern(gravel, \'repeat\');\n' +
+                      '            context.lineWidth = 20;\n' +
+                      '            context.stroke();\n' +
+                      '            context.restore();\n' +
+                      '\n' +
+                      '            context.save();\n' +
+                      '            context.font = "60px impact";\n' +
+                      '            context.fillStyle = \'#996600\'\n' +
+                      '            context.textAlign = \'center\';\n' +
+                      '\n' +
+                      '            // Set some shadow on our text, black with 20% alpha\n' +
+                      '            context.shadowColor = \'rgba(0, 0, 0, 0.2)\';\n' +
+                      '\n' +
+                      '            // Move the shadow to the right 15 pixels, up 10\n' +
+                      '            context.shadowOffsetX = 15;\n' +
+                      '            context.shadowOffsetY = -10;\n' +
+                      '\n' +
+                      '            // Blur the shadow slightly\n' +
+                      '            context.shadowBlur = 2;\n' +
+                      '\n' +
+                      '            context.fillText(\'Happy Trails!\', 200, 60, 400);\n' +
+                      '            context.restore();\n' +
+                      '        }\n' +
+                      '\n' +
+                      '  </script>\n' +
+                      '</html>\n'
+            },
+            '2-31': {
+              'title': 'Transform example',
+              'code': '<!DOCTYPE html>\n' +
+                      '<html>\n' +
+                      '  <title>HTML5 Canvas Example</title>\n' +
+                      '\n' +
+                      '  <style type="text/css">\n' +
+                      '    @import url("styles.css");\n' +
+                      '    #heatmap {\n' +
+                      '        background-image: url("mapbg.jpg");\n' +
+                      '    }\n' +
+                      '  </style>\n' +
+                      '\n' +
+                      '  <h1>HTML5 Canvas Example</h1>\n' +
+                      '  <p id="support">Your browser supports HTML5 Canvas!</p>\n' +
+                      '  <h2>Heatmap </h2>\n' +
+                      '  <canvas id="heatmap" class="clear" style="border: 1px solid ; " height="300" width="300"> </canvas>\n' +
+                      '    <button id="resetButton">Reset</button>\n' +
+                      '  \n' +
+                      '\n' +
+                      '  <script>\n' +
+                      '\n' +
+                      '    function log() {\n' +
+                      '        console.log(arguments);\n' +
+                      '    }\n' +
+                      '\n' +
+                      '    var points = {};\n' +
+                      '    var SCALE = 3;\n' +
+                      '\n' +
+                      '    var x = -1;\n' +
+                      '    var y = -1;\n' +
+                      '\n' +
+                      '    function loadDemo() {\n' +
+                      '        document.getElementById("resetButton").onclick = reset;\n' +
+                      '\n' +
+                      '        canvas = document.getElementById("heatmap");\n' +
+                      '        context = canvas.getContext(\'2d\');\n' +
+                      '        context.globalAlpha = 0.2;\n' +
+                      '        context.globalCompositeOperation = "lighter";\n' +
+                      '\n' +
+                      '        function sample() {\n' +
+                      '            if (x != -1) {\n' +
+                      '                addToPoint(x,y)\n' +
+                      '            }\n' +
+                      '            setTimeout(sample, 100);\n' +
+                      '        }\n' +
+                      '\n' +
+                      '        canvas.onmousemove = function(e) {\n' +
+                      '            x = e.clientX - e.target.offsetLeft;\n' +
+                      '            y = e.clientY - e.target.offsetTop;\n' +
+                      '            addToPoint(x,y)\n' +
+                      '        }\n' +
+                      '\n' +
+                      '        sample();\n' +
+                      '    }\n' +
+                      '\n' +
+                      '    function reset() {\n' +
+                      '        points = {};\n' +
+                      '        context.clearRect(0,0,300,300);\n' +
+                      '        x = -1;\n' +
+                      '        y = -1;\n' +
+                      '    }\n' +
+                      '\n' +
+                      '\n' +
+                      '    function getColor(intensity) {\n' +
+                      '        var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];\n' +
+                      '        return colors[Math.floor(intensity/2)];\n' +
+                      '    }\n' +
+                      '\n' +
+                      '    function drawPoint(x, y, radius) {\n' +
+                      '            context.fillStyle= getColor(radius);\n' +
+                      '            radius = Math.sqrt(radius)*6;\n' +
+                      '\n' +
+                      '            context.beginPath();\n' +
+                      '            context.arc(x, y, radius, 0, Math.PI*2, true)\n' +
+                      '\n' +
+                      '            context.closePath();\n' +
+                      '            context.fill();\n' +
+                      '    }\n' +
+                      '\n' +
+                      '    function addToPoint(x, y) {\n' +
+                      '        x = Math.floor(x/SCALE);\n' +
+                      '        y= Math.floor(y/SCALE);\n' +
+                      '\n' +
+                      '        if (!points[[x,y]]) {\n' +
+                      '            points[[x,y]] = 1;\n' +
+                      '        } else if (points[[x,y]]==10) {\n' +
+                      'return\n' +
+                      '        } else {\n' +
+                      '            points[[x,y]]++;\n' +
+                      '        }\n' +
+                      '        drawPoint(x*SCALE,y*SCALE, points[[x,y]]);\n' +
+                      '    }\n' +
+                      '\n' +
+                      '\n' +
+                      '    window.addEventListener("load", loadDemo, true);\n' +
+                      '  </script>\n' +
+                      '</html>\n'
+            }
         };
 
         // jQuery(function () {

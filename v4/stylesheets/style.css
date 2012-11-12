@@ -990,7 +990,7 @@ figure.image figcaption {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003109}}
-figure.code-example figcaption {
+figure.listing figcaption {
   width: 80%;
   float: left;
 }
