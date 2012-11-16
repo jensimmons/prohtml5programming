@@ -45,7 +45,7 @@ div.CodeMirror pre {
 // This should get cleaned up!!!
 
 .cm-s-static span.cm-number, .cm-s-elegant span.cm-string, .cm-s-elegant span.cm-atom {color: #762;}
-.cm-s-static span.cm-comment {color: #262; font-style: italic; }
+.cm-s-static span.cm-comment {color: #999; font-style: italic; }
 .cm-s-static span.cm-meta {color: #555; font-style: italic; }
 .cm-s-static span.cm-variable {color: black;}
 .cm-s-static span.cm-variable-2 {color: #b11;}
