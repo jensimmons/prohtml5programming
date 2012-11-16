@@ -292,7 +292,8 @@ td, th {
 .toc-link {
   position: fixed;
   top: 0px;
-  right: 0px;
+  left: 80%;
+  width: 20%;
   font-family: $sourcesans-light;
 
 }

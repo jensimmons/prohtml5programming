@@ -1213,32 +1213,33 @@ td, th {
 .toc-link {
   position: fixed;
   top: 0px;
-  right: 0px;
+  left: 80%;
+  width: 20%;
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003300}}
 .btn-group ul {
   display: none;
   margin: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003303}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003304}}
 .btn-group.open ul {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003307}}
 .btn-group a {
   padding: 3px 8px 0px 10px;
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003311}}
 .toc-link {
   background: #a3a3a3;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003316}}
 .toc-link a,
 .toc-link a:link,
 .toc-link a:hover,
@@ -1246,20 +1247,20 @@ td, th {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003323}}
 .toc-link ul {
   background: #a3a3a3;
   display: none;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003329}}
 .toc-link ul,
 .toc-link ul li {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003332}}
 .toc-link ul li {
   border-bottom: 1px solid #fff;
   padding: 0 0 0 1em;
