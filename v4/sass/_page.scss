@@ -153,7 +153,7 @@ figure.open-editor {
     width: 100%;
   }
   .code-mirror-container {                // left pane, with code
-
+    @include adjust-font-size-to(13px);
   }
   iframe#preview {                        // right pane, with demo
     background: #fff;
@@ -179,11 +179,11 @@ figure.open-editor {
   figure.open-editor {
     .code-mirror-container, 
     iframe#preview { 
-      width: 49.625%;
-      float: left;
+//      width: 49.625%;
+//      float: left;
     }
     .code-mirror-container {                // left pane, with code
-      margin-right: 0.75%;
+//      margin-right: 0.75%;
     }
   }
 }

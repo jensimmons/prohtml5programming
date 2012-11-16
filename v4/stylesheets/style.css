@@ -1047,6 +1047,11 @@ figure.open-editor iframe#preview {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
   width: 100%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003155}}
+figure.open-editor .code-mirror-container {
+  font-size: 0.813em;
+  line-height: 2em;
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003158}}
 figure.open-editor iframe#preview {
   background: #fff;
@@ -1068,18 +1073,6 @@ figure.open-editor .control.reset {
   cursor: pointer;
 }
 
-@media screen and (min-width: 700px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003181}}
-  figure.open-editor .code-mirror-container,
-  figure.open-editor iframe#preview {
-    width: 49.625%;
-    float: left;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003185}}
-  figure.open-editor .code-mirror-container {
-    margin-right: 0.75%;
-  }
-}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003196}}
 video {
   width: 100%    !important;

@@ -50,12 +50,12 @@ var inlineEditors = {
     '<div class="inline-codeview-container" style="width: 100%; float: left; padding-top: 1.5em; "></div>',
   'editorTemplate': '<div id="code-view-source">\n\n' +
       '<div class="code-editor-container">\n' +
+        '<iframe id="preview"></iframe>\n' +
+        '</div>\n\n' + 
         '<div class="code-mirror-container">\n' +
           '<textarea id="code" name="code">\n' +
           '</textarea>\n' +
         '</div>\n' +
-        '<iframe id="preview"></iframe>\n' +
-      '</div>\n\n' + 
       '<div class="control-bar">\n' +
         '<div class="control reset">Reset</div>\n' +
       '</div>\n' +
@@ -73,6 +73,8 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   this.container.html( jQuery(inlineEditors.editorTemplate) );
   this.resetControl = jQuery('.control-bar .control.reset', this.container);
   this.previewFrame = jQuery('#preview', this.container).get(0);
+  this.previewHeight = this.container.parents('.listing:first').data('preview-height') + 'px';
+  console.log(this.previewHeight);
   this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
     mode: 'text/html',
     tabMode: 'indent',
@@ -93,7 +95,8 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
     me.container.html('');
   };
   this.reset();
-  jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
+  // jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
+  jQuery('#preview', this.container).height(this.previewHeight);
 }
         
 inlineEditor.prototype.reset = function () {
