@@ -29,14 +29,17 @@
     <![endif]-->
     <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
     <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/jpanelmenu-1.0.0.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
     <script src="codemirror/lib/codemirror.js"></script>
     <script src="codemirror/mode/xml/xml.js"></script>
     <script src="codemirror/mode/javascript/javascript.js"></script>
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="js/codeview_ch2.js"></script>
+    <script src="js/code_editor.js"></script>
+    <script src="js/code_listings_ch2.js"></script>
     <script src="js/toc.js"></script>  
-    <script src="js/persistent_headers.js"></script>
     
     <!-- For iPhone 4 -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114-precomposed.png">
@@ -62,9 +65,23 @@
 
   <body>
 
-<div class="persist-area">
-  <div class="menu-link persist-header orig-menu">
+
+  <div class="menu-link orig-menu menu-trigger">
     <a class="svg-menu" href="#main-navigation"><img src="images/icon-menu.svg"/><span>Menu</span></a>
+  </div>
+  
+  <div class="btn-group toc-link">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      Table of Contents
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <!-- dropdown menu links -->
+      <li><a href="ch1.html">Chapter 1</a></li>
+      <li><a href="ch2.html">Chapter 2</a></li>
+      <li><a href="ch3.html">Chapter 3</a></li>
+      <li><a href="ch4.html">Chapter 4</a></li>
+    </ul>
   </div>
   
 <!--======================== CONTENT ========================-->
@@ -121,9 +138,16 @@
 
 <p>Qui mcsweeney's ethical, nisi small batch proident wes anderson irony kogi. Seitan elit marfa cosby sweater culpa. Do 3 wolf moon minim, mumblecore VHS wes anderson consectetur occupy echo park iphone shoreditch hella. Cardigan fap consectetur, brooklyn mcsweeney's ullamco do velit voluptate viral officia banh mi cray exercitation. High life duis occupy tofu squid, Austin cosby sweater you probably haven't heard of them aliquip polaroid. Austin labore semiotics VHS ea. Mcsweeney's aesthetic nisi delectus tattooed godard cillum umami.</p>
 
+<h2>Test Nav Header</h2>
+
+<p>Test test test.</p>
+
 </article>
 
 <!--====================== END CONTENT ======================-->
+      
+    <a name="main-navigation" id="main-navigation"></a>
+    <div class="nav-container"> </div>
       
     <script src="js/html5boilerplate.min.js"></script>
     <script src="js/console-fix.min.js"></script>

@@ -287,5 +287,48 @@ td, th {
 .menu-link a:hover,
 .menu-link a:focus {
   color: #fff;
+}
+
+.toc-link {
   position: fixed;
+  top: 0px;
+  right: 0px;
+  font-family: $sourcesans-light;
+
+}
+.btn-group ul {
+  display: none;
+  margin: 0px;
+}
+.btn-group.open ul {
+  display: block;
+}
+.btn-group a {
+  padding: 3px 8px 0px 10px;
+  display: block;
+}
+.toc-link {
+  background: #a3a3a3;
+  a,
+  a:link,
+  a:hover,
+  a:focus {
+    color: #fff;
+  }
+  
+}
+
+
+.toc-link ul {
+  background: #a3a3a3;
+  display: none;
+  padding: 0;
+}
+.toc-link ul,
+.toc-link ul li {
+  list-style:none;
+}
+.toc-link ul li {
+  border-bottom: 1px solid #fff;
+  padding: 0 0 0 1em;
 }
