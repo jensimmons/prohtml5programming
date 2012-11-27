@@ -4,29 +4,43 @@
 //-----------------------------------------------------------------------
 
 article {
-  margin: 0.5em;
-  padding: 1em 1.5em 2.5em;
+  margin: 0 0.25em 0;
+  padding: 1em 0 2.5em;
 }
 aside {
   margin: 1em 0;
-  padding: 0.5em 1.5em;
+  padding: 1em 1.5em;    
 }
-@media screen and (min-width: 400px) { 
+img {
+  max-width: 100%;
+}  
+figure {
+  margin: 2em 0;
+}
+
+@media screen and (min-width: 30em) { // 480px
   article {
     margin: 1em;
-    padding: 1em 2em 2.5em;
+    padding: 1em 0 2.5em;
   }
 }
-@media screen and (min-width: 550px) { 
+@media screen and (min-width: 35em) { // 560px
   article {
-    margin: 1.5em;
-    padding: 1em 2em 2.5em;
+    width: 90%;
+    margin: 1.5em auto;
+    padding: 1em 0 2.5em;
   }
 }
-@media screen and (min-width: 700px) { 
+@media screen and (min-width: 40em) { // 640px
   article {
-    margin: 1.5em;
-    padding: 1em 2.75em 2.5em;
+    width: 85%;
+    margin: 2em auto;
+    padding: 1em 0 2.5em;
+  }
+}
+@media screen and (min-width: 45em) { // 720px
+  article {
+    width: 38.25em; // .85 x 720px converted to ems
   }
   aside {
     float: right;
@@ -34,26 +48,122 @@ aside {
     clear: both;
     margin-left: 5%;
   }
-}
-@media screen and (min-width: 950px) { 
-  article {
-    margin: 2em;
-    padding: 1em 5em 2.5em;
+  figure.open-editor {
+    .code-mirror-container, 
+    .code-editor-container { 
+      width: 49.625%;
+      float: left;
+    }
+    .code-mirror-container { 
+      margin-right: 0.75%;
+      max-height: 700px;
+      overflow: scroll;
+    }
+  }
+  figure {
+    margin: 2em -2em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -2em;
   }
 }
-@media screen and (min-width: 1064px) { // sets max-width of 1000px for the main content
-  article {
-    width: 1000px;
-    margin: 2em auto 2.5em;
+@media screen and (min-width: 50em) { // 800px
+  aside {
+    margin-right: -10%;
+    width: 50%;
   }
-  .inline-codeview-container {
-    width: 1200px;
+  figure {
+    margin: 2em -3em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -4em;
   }
 }
-
-img {
-  max-width: 100%;
+@media screen and (min-width: 55em) { // 880px
+  aside {
+    margin-right: -15%;
+    width: 55%;
+  }
+  figure {
+    margin: 2em -4em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -6em;
+  }
 }
-
-
-// Switch the media queries to ems
+@media screen and (min-width: 60em) { // 960px
+  aside {
+    margin-right: -20%;
+    width: 60%;
+  }
+  figure {
+    margin: 2em -5em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -8em;
+  }
+}
+@media screen and (min-width: 65em) { // 1040px
+  aside {
+    margin-right: -25%;
+    width: 65%;
+  }
+  figure {
+    margin: 2em -6em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -11em;
+  }
+}
+@media screen and (min-width: 70em) { // 1120px
+  aside {
+    margin-right: -30%;
+    width: 70%;
+  }
+  figure {
+    margin: 2em -7em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -14em;
+  }
+}
+@media screen and (min-width: 75em) { // 1200px
+  aside {
+    margin-right: -35%;
+    width: 75%;
+  }
+  figure {
+    margin: 2em -8em;
+  }
+  figure.listing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  figure.open-editor {
+    margin: 2em -18em;
+  }
+}

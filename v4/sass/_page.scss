@@ -3,16 +3,17 @@
 // Whole Page
 //-----------------------------------------------------------------------
 
-html {
-  background: #d7d7d7 url('../images/subtlepatterns/grid.png') repeat center center fixed;
+@media screen and (min-width: 30em) { // 480px  
+  html {
+//    background: #d7d7d7 url('../images/subtlepatterns/grid.png') repeat center center fixed;
+  }
+  
+  article {
+//    background: $page;
+//    @include box-shadow (0 2px 4px rgba(0, 0, 0, 0.3));
+//    box-decoration-break: clone;
+  }
 }
-
-article {
-  background: $page;
-  @include box-shadow (0 2px 4px rgba(0, 0, 0, 0.3));
-  box-decoration-break: clone;
-}
-
 
 
 //-----------------------------------------------------------------------
@@ -42,11 +43,11 @@ hgroup {
 //-----------------------------------------------------------------------
 
 aside {
-  background: #F2F2F2;
-  border: 1px solid #D8DDE0;
+  background: #f7f7f7;
+  border: 1px solid #ebebeb;
   box-decoration-break: clone;
   font-family: $sourcesans;
-  @include adjust-font-size-to(13px);
+  @include adjust-font-size-to(14px);
   line-height: 1.7em;
   h3 {
     margin-top: 0.75em;
@@ -57,8 +58,6 @@ aside {
   }
   p:first-child {
     text-indent: 0;
-  }
-  p:first-child {
     font-size: 200%;
   }
   p code {
@@ -92,7 +91,6 @@ figure {
 }
 figure.image {
   text-align: center;
-  margin: 2em 0;
   figcaption {
     margin-top: 1em;  
   }
@@ -100,6 +98,7 @@ figure.image {
 .listing {
   margin-top: 2em;
 }
+
 
 //-----------------------------------------------------------------------
 // Code Editor
@@ -127,44 +126,40 @@ figure.listing {
 .show-inline-editor {
   float: right;
 }
-
 .inline-codeview-container {
   padding-top: 2px !important; 
   
 } 
-
 figure.open-editor {
-  background: #4E493D;
+  background: #292824;
+  @include border-radius(4px);
   padding: 0.75%;
   figcaption {
     color: #fff;
   }
   .code-editor-container {
     @include clearfix;
-    clear:both;
-    @include adjust-font-size-to(13px);
+    @include adjust-font-size-to(12px);
   } 
-  .code-mirror-container,                 // both panes
-  iframe#preview { 
+  .code-mirror-container, 
+  .code-editor-container { 
     border: 1px solid #292518;
     border-bottom-color: #82827F;
     overflow: hidden;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
-    width: 100%;
   }
   .code-mirror-container {                // left pane, with code
-    @include adjust-font-size-to(13px);
+    @include adjust-font-size-to(12px);
   }
-  iframe#preview {                        // right pane, with demo
+  .code-editor-container {                        // right pane, with demo
     background: #fff;
     padding: 2em;
   }
   .control-bar {
     clear: left;
     float: left;
-    padding: 0.5em 1%;
+    padding: 1px 1% 8px;
     width: 102%;
-    background: #2C2821;
     margin: 4px 0 -1% -1%;
   }
   .control.reset {
@@ -172,19 +167,6 @@ figure.open-editor {
     font-family: $accent-font;
     cursor: pointer;
     @extend button;
-  }
-}
-
-@media screen and (min-width: 700px) { 
-  figure.open-editor {
-    .code-mirror-container, 
-    iframe#preview { 
-//      width: 49.625%;
-//      float: left;
-    }
-    .code-mirror-container {                // left pane, with code
-//      margin-right: 0.75%;
-    }
   }
 }
 
@@ -231,7 +213,7 @@ td, th {
 	text-align: left; 
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 45em) { // 720px
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
