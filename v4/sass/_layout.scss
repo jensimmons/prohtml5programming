@@ -133,6 +133,9 @@ figure {
   }
   figure.open-editor {
     margin: 2em -11em;
+    .code-mirror-container { 
+      max-height: 800px;
+    }
   }
 }
 @media screen and (min-width: 70em) { // 1120px
@@ -163,6 +166,11 @@ figure {
     margin-left: 0;
     margin-right: 0;
   }
+  figure.open-editor {
+    margin: 2em -16em;
+  }
+}
+@media screen and (min-width: 80em) { // 1280px
   figure.open-editor {
     margin: 2em -18em;
   }
