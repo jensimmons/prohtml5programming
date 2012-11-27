@@ -57,9 +57,11 @@ var inlineEditors = {
           '</textarea>\n' +
         '</div>\n' +
       '<div class="control-bar">\n' +
+        '<div class="control save">Save</div>\n' +
         '<div class="control reset">Reset</div>\n' +
       '</div>\n' +
-    '</div>'
+    '</div>',
+  'localStorageSupport': false
 };
         
 var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
@@ -72,9 +74,10 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
   this.container.html( jQuery(inlineEditors.editorTemplate) );
   this.resetControl = jQuery('.control-bar .control.reset', this.container);
+  this.saveControl = jQuery('.control-bar .control.save', this.container);
   this.previewFrame = jQuery('#preview', this.container).get(0);
   this.previewHeight = this.container.parents('.listing:first').data('preview-height') + 'px';
-  console.log(this.previewHeight);
+  // console.log(this.previewHeight);
   this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
     mode: 'text/html',
     tabMode: 'indent',
@@ -89,18 +92,42 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   this.resetControl.bind('click', function (evt) {
     me.reset();
   });
+  this.saveControl.bind('click', function (evt) {
+    me.save();
+  });
   this.removeEditor = function () {
     window.clearTimeout(me.delay);
     me.editor = null;
     me.container.html('');
   };
-  this.reset();
+  this.retrieve();
+  // this.reset();
   // jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
   jQuery('#preview', this.container).height(this.previewHeight);
 }
-        
+
+inlineEditor.prototype.retrieve = function () {
+  if (inlineEditors.localStorageSupport && localStorage[this.listingNumber]) {
+    this.editor.setValue( localStorage[this.listingNumber] );
+  } else {
+    this.reset();
+  }
+}
+inlineEditor.prototype.clearSaved = function () {
+  if (inlineEditors.localStorageSupport && localStorage[this.listingNumber]) {
+    localStorage.removeItem( this.listingNumber );
+  }
+}
+inlineEditor.prototype.save = function () {
+  if( inlineEditors.localStorageSupport ) {
+    localStorage.setItem(this.listingNumber, this.editor.getValue());
+  } else {
+    
+  }
+}        
 inlineEditor.prototype.reset = function () {
   this.editor.setValue(inlineEditors.codeListings[this.listingNumber].code);
+  this.clearSaved();
 }
         
 function initCodeEditors() {
@@ -141,8 +168,16 @@ function initCodeEditors() {
     $figure.removeClass('open-editor');
   });
 }
+
+function checkStorageSupport() {
+  //localStorage
+  if (window.localStorage) {
+    inlineEditors.localStorageSupport = true;
+  } 
+}
         
 jQuery( function () {
+  checkStorageSupport();
   initCodeEditors();
   formatStaticCode();
 });

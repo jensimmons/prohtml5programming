@@ -162,12 +162,14 @@ figure.open-editor {
     width: 102%;
     margin: 4px 0 -1% -1%;
   }
-  .control.reset {
+  .control.reset,
+  .control.save {
     float: right;
     font-family: $accent-font;
     cursor: pointer;
     @extend button;
   }
+  
 }
 
 
