@@ -273,6 +273,7 @@ td, th {
 
 .toc-link {
   position: fixed;
+  z-index: 100;
   top: 0px;
   left: 80%;
   width: 20%;
