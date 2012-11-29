@@ -742,8 +742,8 @@ p.caption {
 a,
 a:link,
 a:visited {
-  color: #d6312f;
-  text-decoration: none;
+  color: #767676;
+  text-decoration: underline;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000374}}
 a:hover, a:focus,
@@ -751,7 +751,7 @@ a:link:hover,
 a:link:focus,
 a:visited:hover,
 a:visited:focus {
-  color: #e78584;
+  color: darkgrey;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000379}}

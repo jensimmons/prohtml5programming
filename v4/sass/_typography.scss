@@ -69,7 +69,7 @@ a,
 a:link,
 a:visited {
   color: $link;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover,
   &:focus {
     color: lighten($link, 20%);
