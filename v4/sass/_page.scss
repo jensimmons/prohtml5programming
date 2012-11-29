@@ -43,8 +43,8 @@ hgroup {
 //-----------------------------------------------------------------------
 
 aside {
-  background: #f7f7f7;
-  border: 1px solid #b4b4b4;
+  background: #fcfcfc;
+  border: 1px solid #d1d1d1;
   box-decoration-break: clone;
   font-family: $sourcesans;
   @include adjust-font-size-to(14px);
@@ -67,7 +67,7 @@ aside {
 
 @media screen and (min-width: 55em) { // 720px
   aside {
-    @include box-shadow (1px 1px 2px rgba(0, 0, 0, 0.3));
+    @include box-shadow (1px 1px 3px rgba(0, 0, 0, 0.2));
     
   }
 }
