@@ -63,12 +63,19 @@ figure {
     .code-mirror-container, 
     .code-editor-container { 
       width: 49.625%;
-      float: left;
+//      float: left;
+			display: table-cell;
+			vertical-align: top;
     }
     .code-mirror-container { 
       margin-right: 0.75%;
       max-height: 700px;
-      overflow: scroll;
+      overflow: hidden;
+			
+			.CodeMirror {
+				overflow-y: auto;
+				max-height: 700px;
+			}
     }
   }
 }
