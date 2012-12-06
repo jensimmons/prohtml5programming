@@ -36,7 +36,7 @@ jQuery(function () {
     jQuery('<a name="item_0_' + j + '" />').insertBefore(jQuery(this));
     output += ('<li><a href="#item_0_' + j + '" >' + key + '</a>\n');
     var section = jQuery(this).parents('section:first');
-    var subSection = jQuery('h3', section);
+    var subSection = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
     // console.log(h3s);
     if (subSection.length) {
       output += '<ul>\n';
