@@ -113,7 +113,7 @@
 
 <p>SVG has been around for a few years. SVG 1.0 was published as a W3C recommendation in 2001. SVG was originally available in browsers with the use of a plugin. Shortly afterward, browsers added native support for SVG images.</p>
 
-<p>Inline SVG in HTML has a shorterScalable vector graphics (SVG)  history. A defining characteristic of SVG is that it is based on XML. HTML, of course, has a different syntax, and you cannot simply embed XML syntax inside of HTML documents. Instead, it has special rules for SVG. Prior to HTML5, it was possible to embed SVG as &#x003C;img&#x003E; elements inside an HTML page or link to self-contained .svg documents. HTML5 introduced inline SVG, in which SVG elements themselves can appear in HTML markup. Of course, in HTML, the syntax rules are more relaxed than in XML. You can have unquoted attributes, mixed capitalization, and so on. You will still need to use self-closing tags when appropriate. For example, you can embed a circle into your HTML document with just a little markup:</p>
+<p>Inline SVG in HTML has a shorter history. A defining characteristic of SVG is that it is based on XML. HTML, of course, has a different syntax, and you cannot simply embed XML syntax inside of HTML documents. Instead, it has special rules for SVG. Prior to HTML5, it was possible to embed SVG as &#x003C;img&#x003E; elements inside an HTML page or link to self-contained .svg documents. HTML5 introduced inline SVG, in which SVG elements themselves can appear in HTML markup. Of course, in HTML, the syntax rules are more relaxed than in XML. You can have unquoted attributes, mixed capitalization, and so on. You will still need to use self-closing tags when appropriate. For example, you can embed a circle into your HTML document with just a little markup:</p>
 
 <p><pre><code>&#x003C;svg height=100 width=100&#x003E;&#x003C;circle cx=50 cy=50 r=50 /&#x003E;&#x003C;/svg&#x003E;</code></pre></p>
 
@@ -127,10 +127,10 @@
 
 <figure class="image">
 <img src="images/ch3/fig3-1.png">
-<figcaption>Figure 3-1. SVG version of Happy Trails! Scalable vector graphics (SVG)</figcaption>
+<figcaption>Figure 3-1. SVG version of Happy Trails!</figcaption>
 </figure>
 
-<p>SVG is closely related to HTML. If you choose, you can define the content of an SVG Scalable vector graphics (SVG) document with markup. HTML is a declarative language for structuring pages. SVG is a complimentary language for creating visual structures. You can interact with both SVG and HTML using DOM APIs. SVG documents are live trees of elements that you can script and style, just like HTML. You can attach event handlers to SVG elements. For example, you can use click event handlers to make SVG buttons or shaped clickable regions. That is essential for building interactive applications that use mouse input.</p>
+<p>SVG is closely related to HTML. If you choose, you can define the content of an SVG document with markup. HTML is a declarative language for structuring pages. SVG is a complimentary language for creating visual structures. You can interact with both SVG and HTML using DOM APIs. SVG documents are live trees of elements that you can script and style, just like HTML. You can attach event handlers to SVG elements. For example, you can use click event handlers to make SVG buttons or shaped clickable regions. That is essential for building interactive applications that use mouse input.</p>
 
 <p>Additionally, you can view and edit the structure of the SVG in your browser&#x2019;s development tool. As you can see in Figure 3-2, inline SVG embeds directly into the HTML DOM. It has a structure you can observe and change at runtime. You can dig into SVG and see its source, unlike an image that is just a grid of pixels.</p>
 
@@ -141,8 +141,7 @@
 
 <p>In Figure 3-2, the highlighted text element contains the following code:</p>
 
-<p><pre><code>&#x003C; text y="60" x="200" font-family="impact" font-size="60px"
-fill="#996600" text-anchor="middle"&#x003E;
+<p><pre><code>&#x003C;text y="60" x="200" font-family="impact" font-size="60px" fill="#996600" text-anchor="middle"&#x003E;
 Happy Trails
 &#x003C;/text&#x003E;</code></pre></p>
 
@@ -164,7 +163,7 @@ Happy Trails
 
 <h3>Scalable Graphics</h3>
 
-<p>When you magnify, rotate, or otherwise transform SVG content, all of the lines making up the image are crisply redrawn. SVG scales without losing quality. The vector information that makes up an SVG document is preserved when it is rendered. Contrast that with pixel graphics. If you magnify a pixel graphic like a canvas or an image, it becomes blurry. That is because the image is composed of pixels that can only be resampled at a higher resolution. The underlying information&#x2014;theScalable vector graphics (SVG)  paths and shapes that went into making the image&#x2014;is lost after drawing (see Figure 3-3).</p>
+<p>When you magnify, rotate, or otherwise transform SVG content, all of the lines making up the image are crisply redrawn. SVG scales without losing quality. The vector information that makes up an SVG document is preserved when it is rendered. Contrast that with pixel graphics. If you magnify a pixel graphic like a canvas or an image, it becomes blurry. That is because the image is composed of pixels that can only be resampled at a higher resolution. The underlying information&#x2014;the paths and shapes that went into making the image&#x2014;is lost after drawing (see Figure 3-3).</p>
 
 <figure class="image">
 <img src="images/ch3/fig3-3.png">
@@ -197,7 +196,7 @@ Happy Trails
 
 <h3>Adding SVG to a Page</h3>
 
-<p>Adding inline SVG to an HTML page is as simple Scalable vector graphics (SVG) as adding any other element.</p>
+<p>Adding inline SVG to an HTML page is as simple as adding any other element.</p>
 
 <p>There are several ways to use SVG on the Web, including as &#x003C;img&#x003E; elements. We will use inline SVG in HTML, because it will integrate into the HTML document. That will let us later write an interactive application that seamlessly combines HTML, JavaScript, and SVG (see Listing 3-1).</p>
 
@@ -252,8 +251,8 @@ Happy Trails
 <figcaption>Listing 3-3. A Rectangle and a Circle</figcaption>
 <pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;svg width="200" height="200"&#x003E;
-&#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
-&#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-width="8" /&#x003E;
+  &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
+  &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-width="8" /&#x003E;
 &#x003C;/svg&#x003E;</code></pre>
 </figure>
 
@@ -268,7 +267,7 @@ Happy Trails
 
 <h3>Transforming SVG Elements</h3>
 
-<p>There are organizational elements in SVG intended to combineScalable vector graphics (SVG)  multiple elements so that they can be transformed or linked to as units. The g element stands for group. Groups can be used to combine multiple related elements. As a group, they can be referred to by a common ID. A group can also be transformed as a unit. If you add a transform attribute to a group, all of that group&#x2019;s contents are transformed. The transform attribute can include commands to rotate (see Listing 3-4 and Figure 3-6), translate, scale, and skew. You can also specify a transformation matrix, just as you can with the canvas API.</p>
+<p>There are organizational elements in SVG intended to combine multiple elements so that they can be transformed or linked to as units. The g element stands for group. Groups can be used to combine multiple related elements. As a group, they can be referred to by a common ID. A group can also be transformed as a unit. If you add a transform attribute to a group, all of that group&#x2019;s contents are transformed. The transform attribute can include commands to rotate (see Listing 3-4 and Figure 3-6), translate, scale, and skew. You can also specify a transformation matrix, just as you can with the canvas API.</p>
   
 
 <figure class="image">
@@ -279,11 +278,10 @@ Happy Trails
 <figure class="listing"  data-listing="3-4" data-preview-height="240">
 <figcaption>Listing 3-4. A Rectangle and a Circle Within a Rotated Group</figcaption>
 <pre><code data-cm-mode="text/html">&#x003C;svg width="200" height="200"&#x003E;
-    &#x003C;g transform="translate(60,0) rotate(30) scale(0.75)" id="ShapeGroup"&#x003E;
-      &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
-      &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-
-width="8" /&#x003E;
-    &#x003C;/g&#x003E;
+  &#x003C;g transform="translate(60,0) rotate(30) scale(0.75)" id="ShapeGroup"&#x003E;
+    &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
+    &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-width="8" /&#x003E;
+  &#x003C;/g&#x003E;
 &#x003C;/svg&#x003E;</code></pre>
 
 </figure>
@@ -294,7 +292,7 @@ width="8" /&#x003E;
 
 <h3>Reusing Content</h3>
 
-<p>SVG has a defs element for Scalable vector graphics (SVG) defining content for future use. It also has an element named &#x201C;use&#x201D; that you can link to your definitions. This lets you reuse the same content multiple times and eliminate redundancy. Figure 3-7 shows a group used three times at different transformed positions and scales. The group has the id &#x201C;ShapeGroup,&#x201D; and it contains a rectangle and a circle. The actual rectangle and circle shapes are just defined the one time inside of the defs element. The defined group is not, by itself, visible. Instead, there are three use elements linked to the shape group, so three rectangles and three circles appear rendered on the page (see Listing 3-5).</p>
+<p>SVG has a defs element for defining content for future use. It also has an element named &#x201C;use&#x201D; that you can link to your definitions. This lets you reuse the same content multiple times and eliminate redundancy. Figure 3-7 shows a group used three times at different transformed positions and scales. The group has the id &#x201C;ShapeGroup,&#x201D; and it contains a rectangle and a circle. The actual rectangle and circle shapes are just defined the one time inside of the defs element. The defined group is not, by itself, visible. Instead, there are three use elements linked to the shape group, so three rectangles and three circles appear rendered on the page (see Listing 3-5).</p>
 
 
 <figure class="image">
@@ -310,8 +308,7 @@ width="8" /&#x003E;
   &#x003C;defs&#x003E;
     &#x003C;g id="ShapeGroup"&#x003E;
       &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
-      &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-
-width="8" /&#x003E;
+      &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-width="8" /&#x003E;
     &#x003C;/g&#x003E;
   &#x003C;/defs&#x003E;
   &#x003C;use xlink:href="#ShapeGroup" transform="translate(60,0) scale(0.5)"/&#x003E;
@@ -327,7 +324,7 @@ width="8" /&#x003E;
 
 <h3>Patterns and Gradients</h3>
 
-<p>The circle and rectangleScalable vector graphics (SVG)  in Figure 3-7 have simple fill and stroke styles. Objects can be painted with more complex styles, including gradients and patterns (see Listing 3-6). Gradients can be linear or radial. Patterns can be made up of pixel graphics or even other SVG elements. Figure 3-8 shows a rectangle with a linear color gradient as well as a circle with a gravel texture. The texture comes from a JPEG image that is linked to from an SVG image element.</p>
+<p>The circle and rectangle in Figure 3-7 have simple fill and stroke styles. Objects can be painted with more complex styles, including gradients and patterns (see Listing 3-6). Gradients can be linear or radial. Patterns can be made up of pixel graphics or even other SVG elements. Figure 3-8 shows a rectangle with a linear color gradient as well as a circle with a gravel texture. The texture comes from a JPEG image that is linked to from an SVG image element.</p>
 
 <figure class="image">
 <img src="images/ch3/fig3-8.png">
@@ -339,22 +336,16 @@ width="8" /&#x003E;
 <pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;svg width="200" height="200"&#x003E;
   &#x003C;defs&#x003E;
-    &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse"
-          x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;
-      &#x003C;image x="0" y="0" width="100" height="67"
-xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
+    &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;
+      &#x003C;image x="0" y="0" width="100" height="67" xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
     &#x003C;/pattern&#x003E;
     &#x003C;linearGradient id="RedBlackGradient"&#x003E;
-        &#x003C;stop offset="0%" stop-color="#000"&#x003E;&#x003C;/stop&#x003E;
-        &#x003C;stop offset="100%" stop-color="#f00"&#x003E;&#x003C;/stop&#x003E;
+      &#x003C;stop offset="0%" stop-color="#000"&#x003E;&#x003C;/stop&#x003E;
+      &#x003C;stop offset="100%" stop-color="#f00"&#x003E;&#x003C;/stop&#x003E;
     &#x003C;/linearGradient&#x003E;
   &#x003C;/defs&#x003E;
-  &#x003C;rect x="10" y="20" width="100" height="80"
-      stroke="red"
-      fill="url(#RedBlackGradient)" /&#x003E;
-  &#x003C;circle cx="120" cy="80" r="40" stroke="#00f"
-      stroke-width="8"
-      fill="url(#GravelPattern)" /&#x003E;
+  &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="url(#RedBlackGradient)" /&#x003E;
+  &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" stroke-width="8" fill="url(#GravelPattern)" /&#x003E;
 &#x003C;/svg&#x003E;</code></pre>
 </figure>
 
@@ -394,14 +385,14 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <figure class="image">
 <img src="images/ch3/fig3-10.png">
-<figcaption>Figure 3-10. An open path containing two quadratic curvesScalable vector graphics (SVG)</figcaption>
+<figcaption>Figure 3-10. An open path containing two quadratic curves</figcaption>
 </figure>
 
 
 <figure class="listing">
 <figcaption>Listing 3-8. SVG Path Defining a Twisting Trail</figcaption>
-<pre><code>&#x003C;g transform="translate(-10, 350)" stroke-width="20" stroke="url(#GravelPa stroke-linejoin="round"&#x003E;<
-      &#x003C;path d="M0,0 Q170,-50 260, -190 Q310, -250 410,-250" fill="none"&#x003E;&#x003C;/path&#x003E;
+<pre><code>&#x003C;g transform="translate(-10, 350)" stroke-width="20" stroke="url(#GravelPattern)" stroke-linejoin="round"&#x003E;
+  &#x003C;path d="M0,0 Q170,-50 260, -190 Q310, -250 410,-250" fill="none"&#x003E;&#x003C;/path&#x003E;
 &#x003C;/g&#x003E;</code></pre>
 </figure>
 
@@ -457,45 +448,45 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 &#x003C;/style&#x003E;
 &#x003C;svg width="400" height="600"&#x003E;
   &#x003C;defs&#x003E;
-        &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;</Para>
-        &#x003C;image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" /&#x003E;
-        &#x003C;/pattern&#x003E;
-        &#x003C;linearGradient id="TrunkGradient"&#x003E;
-        &#x003C;stop offset="0%" stop-color="#663300" /&#x003E;
-        &#x003C;stop offset="40%" stop-color="#996600" /&#x003E;
-        &#x003C;stop offset="100%" stop-color="#552200" /&#x003E;
-        &#x003C;/linearGradient&#x003E;
-        &#x003C;rect x="-5" y="-50" width=10 height=50 id="Trunk" /&#x003E;
-        &#x003C;path d="M-25, -50
-                L-10, -80
-                L-20, -80
-                L-5, -110
-                L-15, -110
-                L0, -140
-                L15, -110
-                L5, -110
-                L20, -80
-                L10, -80
-                L25, -50
-                Z"
-        id="Canopy"
-        /&#x003E;
-        &#x003C;linearGradient id="CanopyShadow" x=0 y=0 x2=0 y2=100%&#x003E;
-        &#x003C;stop offset="0%" stop-color="#000" stop-opacity=".5" /&#x003E;
-        &#x003C;stop offset="20%" stop-color="#000" stop-opacity="0" /&#x003E;
-        &#x003C;/linearGradient&#x003E;
-        &#x003C;g id="Tree"&#x003E;
-        &#x003C;use xlink:href="#Trunk" fill="url(#TrunkGradient)" /&#x003E;
-        &#x003C;use xlink:href="#Trunk" fill="url(#CanopyShadow)" /&#x003E;
-        &#x003C;use xlink:href="#Canopy" fill="none" stroke="#663300"
-        stroke-linejoin="round" stroke-width="4px" /&#x003E;
-        &#x003C;use xlink:href="#Canopy" fill="#339900" stroke="none" /&#x003E;
-        &#x003C;/g&#x003E;
-        &#x003C;g id="TreeShadow"&#x003E;
-        &#x003C;use xlink:href="#Trunk" fill="#000" /&#x003E;
-        &#x003C;use xlink:href="#Canopy" fill="000" stroke="none" /&#x003E;
-        &#x003C;/g&#x003E;
-  &#x003C;/defs&#x003E;
+    &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;
+      &#x003C;image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" /&#x003E;
+      &#x003C;/pattern&#x003E;
+      &#x003C;linearGradient id="TrunkGradient"&#x003E;
+      &#x003C;stop offset="0%" stop-color="#663300" /&#x003E;
+      &#x003C;stop offset="40%" stop-color="#996600" /&#x003E;
+      &#x003C;stop offset="100%" stop-color="#552200" /&#x003E;
+      &#x003C;/linearGradient&#x003E;
+      &#x003C;rect x="-5" y="-50" width=10 height=50 id="Trunk" /&#x003E;
+      &#x003C;path d="M-25, -50
+              L-10, -80
+              L-20, -80
+              L-5, -110
+              L-15, -110
+              L0, -140
+              L15, -110
+              L5, -110
+              L20, -80
+              L10, -80
+              L25, -50
+              Z"
+      id="Canopy"
+      /&#x003E;
+      &#x003C;linearGradient id="CanopyShadow" x=0 y=0 x2=0 y2=100%&#x003E;
+      &#x003C;stop offset="0%" stop-color="#000" stop-opacity=".5" /&#x003E;
+      &#x003C;stop offset="20%" stop-color="#000" stop-opacity="0" /&#x003E;
+      &#x003C;/linearGradient&#x003E;
+      &#x003C;g id="Tree"&#x003E;
+      &#x003C;use xlink:href="#Trunk" fill="url(#TrunkGradient)" /&#x003E;
+      &#x003C;use xlink:href="#Trunk" fill="url(#CanopyShadow)" /&#x003E;
+      &#x003C;use xlink:href="#Canopy" fill="none" stroke="#663300"
+      stroke-linejoin="round" stroke-width="4px" /&#x003E;
+      &#x003C;use xlink:href="#Canopy" fill="#339900" stroke="none" /&#x003E;
+      &#x003C;/g&#x003E;
+      &#x003C;g id="TreeShadow"&#x003E;
+      &#x003C;use xlink:href="#Trunk" fill="#000" /&#x003E;
+      &#x003C;use xlink:href="#Canopy" fill="000" stroke="none" /&#x003E;
+      &#x003C;/g&#x003E;
+    &#x003C;/defs&#x003E;
   &#x003C;g transform="translate(-10, 350)"
         stroke-width="20"
         stroke="url(#GravelPattern)"
@@ -526,7 +517,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 </section>
 
 <section id="Sec15_3">
-<h2>Building an Scalable vector graphics (SVG) Interactive Application with SVG</h2>
+<h2>Building an Interactive Application with SVG</h2>
 <p>In this section, we&#x2019;ll expand on the static example. We will add HTML and JavaScript to make the document interactive. We will take advantage of the capabilities of SVG in an application that would require considerably more code to implement with the canvas API.</p>
 
 <section id="Sec16_3">
@@ -678,8 +669,8 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
             Z"
         id="Canopy"/&#x003E;
     &#x003C;linearGradient id="CanopyShadow" x=0 y=0 x2=0 y2=100%&#x003E;
-        &#x003C;stop offset="0%" stop-color="#000" stop-opacity=".5" /&#x003E;
-        &#x003C;stop offset="20%" stop-color="#000" stop-opacity="0" /&#x003E;
+      &#x003C;stop offset="0%" stop-color="#000" stop-opacity=".5" /&#x003E;
+      &#x003C;stop offset="20%" stop-color="#000" stop-opacity="0" /&#x003E;
     &#x003C;/linearGradient&#x003E;
     &#x003C;g id="Tree"&#x003E;
       &#x003C;use xlink:href="#Trunk" fill="url(#TrunkGradient)" /&#x003E;
@@ -763,7 +754,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <p><strong>Frank says</strong>:</p>
 
-<p>&#x201C;Because of SVG&#x2019;s long history as a standard format for vector graphics, there are many useful toolsScalable vector graphics (SVG)  for working with SVG images. There is even an open-source editor called SVG-edit that runs in the browser. You can embed it in your own applications! On the desktop, Adobe Illustrator and Inkscape are two powerful vector graphics applications that can both import and export SVG. I&#x2019;ve found Inkscape to be very useful for Scalable vector graphics (SVG) creating new graphics (see Figure 3-13).</p>
+<p>&#x201C;Because of SVG&#x2019;s long history as a standard format for vector graphics, there are many useful tools for working with SVG images. There is even an open-source editor called SVG-edit that runs in the browser. You can embed it in your own applications! On the desktop, Adobe Illustrator and Inkscape are two powerful vector graphics applications that can both import and export SVG. I&#x2019;ve found Inkscape to be very useful for creating new graphics (see Figure 3-13).</p>
 
 <p>SVG tools tend to work with standalone .svg files, not SVG embedded in HTML, so you may need to convert between the two formats.&#x201D;</p>
 
@@ -771,7 +762,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <figure class="image">
 <img src="images/ch3/fig3-13.png">
-<figcaption>Figure 3-13. Modifying the stroke of a text element inScalable vector graphics (SVG)  Inkscape</figcaption>
+<figcaption>Figure 3-13. Modifying the stroke of a text element in Inkscape</figcaption>
 </figure>
 
 </section>
