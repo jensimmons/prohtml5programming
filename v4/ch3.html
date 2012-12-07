@@ -39,7 +39,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <script src="js/code_listings_ch2.js"></script>
+    <script src="js/code_listings_ch3.js"></script>
     <script src="js/toc.js"></script>  
 
     
@@ -231,9 +231,9 @@ Happy Trails
 
 
 
-<figure class="listing">
+<figure class="listing" data-listing="3-2" data-preview-height="240">
 <figcaption>Listing 3-2. SVG Containing a Red Rectangle</figcaption>
-<pre><code>&#x003C;!doctype html&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;svg width="200" height="200"&#x003E;
   &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
 &#x003C;/svg&#x003E;</code></pre>
@@ -248,9 +248,9 @@ Happy Trails
 </figure>
 
 
-<figure class="listing">
+<figure class="listing" data-listing="3-3" data-preview-height="240">
 <figcaption>Listing 3-3. A Rectangle and a Circle</figcaption>
-<pre><code>&#x003C;!doctype html&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;svg width="200" height="200"&#x003E;
 &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
 &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-width="8" /&#x003E;
@@ -276,9 +276,9 @@ Happy Trails
 <figcaption>Figure 3-6. A rotated groupScalable vector graphics (SVG)</figcaption>
 </figure>
 
-<figure class="listing">
+<figure class="listing"  data-listing="3-4" data-preview-height="240">
 <figcaption>Listing 3-4. A Rectangle and a Circle Within a Rotated Group</figcaption>
-<pre><code>&#x003C;svg width="200" height="200"&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;svg width="200" height="200"&#x003E;
     &#x003C;g transform="translate(60,0) rotate(30) scale(0.75)" id="ShapeGroup"&#x003E;
       &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
       &#x003C;circle cx="120" cy="80" r="40" stroke="#00f" fill="none" stroke-
@@ -304,9 +304,9 @@ width="8" /&#x003E;
 
 
 
-<figure class="listing">
+<figure class="listing" data-listing="3-5" data-preview-height="240">
 <figcaption>Listing 3-5. Using a Group Three Times</figcaption>
-<pre><code>&#x003C;svg width="200" height="200"&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;svg width="200" height="200"&#x003E;
   &#x003C;defs&#x003E;
     &#x003C;g id="ShapeGroup"&#x003E;
       &#x003C;rect x="10" y="20" width="100" height="80" stroke="red" fill="#ccc" /&#x003E;
@@ -334,9 +334,9 @@ width="8" /&#x003E;
 <figcaption>Figure 3-8. A rectangle with a gradient fill and a circle with a pattern fill</figcaption>
 </figure>
 
-<figure class="listing">
+<figure class="listing" data-listing="3-6" data-preview-height="240">
 <figcaption>Listing 3-6. Texturing the Rectangle and Circle</figcaption>
-<pre><code>&#x003C;!doctype html&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;svg width="200" height="200"&#x003E;
   &#x003C;defs&#x003E;
     &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse"
@@ -422,9 +422,9 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <p>SVG TextScalable vector graphics (SVG)  has attributes that are similar to CSS style rules for HTML. Listing 3-9 shows a text element that has font-weight and font-family attributes. As in CSS, font-family can be a single font-family name like &#x201C;sans-serif&#x201D; or a list of fallbacks like &#x201C;Droid Sans, sans-serif&#x201D; in the order you prefer.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="3-9" data-preview-height="240">
 <figcaption>Listing 3-9. SVG Text</figcaption>
-<pre><code>&#x003C;svg width="600" height="200"&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;svg width="600" height="200"&#x003E;
   &#x003C;text
     x="10" y="80"
     font-family="Droid Sans"
@@ -447,9 +447,9 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <p>Listing 3-10 provides the complete code forScalable vector graphics (SVG)  <code>trails-static.html</code>.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="3-10" data-preview-height="640">
 <figcaption>Listing 3-10. Complete Code for <code>trails-static.html</code></figcaption>
-<pre><code>&#x003C;title&#x003E;Happy Trails in SVG&#x003C;/title&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;title&#x003E;Happy Trails in SVG&#x003C;/title&#x003E;
 &#x003C;style&#x003E;
   svg {
         border: 1px solid black;
@@ -457,7 +457,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 &#x003C;/style&#x003E;
 &#x003C;svg width="400" height="600"&#x003E;
   &#x003C;defs&#x003E;
-        &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" widt height="67" viewBox="0 0 100 67"&#x003E;</Para>
+        &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;</Para>
         &#x003C;image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" /&#x003E;
         &#x003C;/pattern&#x003E;
         &#x003C;linearGradient id="TrunkGradient"&#x003E;
@@ -496,7 +496,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
         &#x003C;use xlink:href="#Canopy" fill="000" stroke="none" /&#x003E;
         &#x003C;/g&#x003E;
   &#x003C;/defs&#x003E;
-  &#x003C;g transform="translate(-10, 350)"Scalable vector graphics
+  &#x003C;g transform="translate(-10, 350)"
         stroke-width="20"
         stroke="url(#GravelPattern)"
         stroke-linejoin="round"&#x003E;
@@ -637,9 +637,9 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 
 <p>For completeness, Listing 3-14 provides the entire <code>trails-dynamic.html</code> file. It contains all of the SVG from the static version as well as the script that makes it interactive.</p>
 
-<figure class="listing">
+<figure class="listing" data-listing="3-14" data-preview-height="660">
 <figcaption>Listing 3-14. The Entire <code>trails-dynamic.html</code> Code</figcaption>
-<pre><code>&#x003C;!doctype html&#x003E;
+<pre><code data-cm-mode="text/html">&#x003C;!doctype html&#x003E;
 &#x003C;title&#x003E;Happy Trails in SVG&#x003C;/title&#x003E;
 &#x003C;style&#x003E;
   svg {
@@ -655,7 +655,7 @@ xlink:href="gravel.jpg"&#x003E;&#x003C;/image&#x003E;
 &#x003C;/div&#x003E;
 &#x003C;svg width="400" height="600"&#x003E;
   &#x003C;defs&#x003E;
-    &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" widt height="67" viewBox="0 0 100 67"&#x003E;</Para>
+    &#x003C;pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67"&#x003E;</Para>
       &#x003C;image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" /&#x003E;
     &#x003C;/pattern&#x003E;
     &#x003C;linearGradient id="TrunkGradient"&#x003E;
