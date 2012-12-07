@@ -136,7 +136,7 @@
 
 <figure class="image">
 <img src="images/ch3/fig3-2.png">
-<figcaption>Figure 3-2. Looking at the SVG elements in ChromeWeb InspectorScalable vector graphics (SVG)</figcaption>
+<figcaption>Figure 3-2. Looking at the SVG elements in ChromeWeb Inspector</figcaption>
 </figure>
 
 <p>In Figure 3-2, the highlighted text element contains the following code:</p>
@@ -174,7 +174,7 @@ Happy Trails
 
 <section id="Sec6_3">
 
-<h3>Creating 2D GraphicsScalable vector graphics (SVG)  with SVG</h3>
+<h3>Creating 2D Graphics  with SVG</h3>
 
 <p>Let&#x2019;s look again at the <em>Happy Trails!</em> image from Figure 3-1.Every visible part of this SVG drawing has some corresponding markup. The complete SVG language is quite extensive, and all of its details and nuances will not fit in this chapter. However, to get a glimpse of the breadth of the SVG vocabulary, here are some of the features used to draw Happy Trails:</p>
 
@@ -221,7 +221,7 @@ Happy Trails
 
 <h3>Simple Shapes</h3>
 
-<p>The SVG language includesScalable vector graphics (SVG)  basic shape elements such as rectangles, circles, and ellipses. The size and position of shape elements are defined with attributes. For rectangles, these are <code>width</code> and <code>height</code>. For circles, there is an <code>r</code> attribute for radius. All of these use the CSS syntax for distances, so they can be pixels, points, ems, and so on. Listing 3-2 is a very short HTML document containing inline SVG. It is just a gray rectangle with a red outline that is 100 pixels by 80 pixels in size, and it is displayed in Figure 3-4.</p>
+<p>The SVG language includes  basic shape elements such as rectangles, circles, and ellipses. The size and position of shape elements are defined with attributes. For rectangles, these are <code>width</code> and <code>height</code>. For circles, there is an <code>r</code> attribute for radius. All of these use the CSS syntax for distances, so they can be pixels, points, ems, and so on. Listing 3-2 is a very short HTML document containing inline SVG. It is just a gray rectangle with a red outline that is 100 pixels by 80 pixels in size, and it is displayed in Figure 3-4.</p>
 
 <figure class="image">
 <img src="images/ch3/fig3-4.png">
@@ -259,7 +259,7 @@ Happy Trails
 
 
 
-<p>Note that the x and y attributes defineScalable vector graphics (SVG)  the position of the top-left corner of the rectangle. The circle, on the other hand, has cx and cy attributes, which are the x and y values for the center of the circle. SVG uses the same coordinate system as the canvas API. The top-left corner of the svg element is position 0,0. See <a href="ch2.html">Chapter 2</a> for the details of the canvas coordinate system.</p>
+<p>Note that the x and y attributes define  the position of the top-left corner of the rectangle. The circle, on the other hand, has cx and cy attributes, which are the x and y values for the center of the circle. SVG uses the same coordinate system as the canvas API. The top-left corner of the svg element is position 0,0. See <a href="ch2.html">Chapter 2</a> for the details of the canvas coordinate system.</p>
 
 </section>
 
@@ -272,7 +272,7 @@ Happy Trails
 
 <figure class="image">
 <img src="images/ch3/fig3-6.png">
-<figcaption>Figure 3-6. A rotated groupScalable vector graphics (SVG)</figcaption>
+<figcaption>Figure 3-6. A rotated group</figcaption>
 </figure>
 
 <figure class="listing"  data-listing="3-4" data-preview-height="240">
@@ -353,13 +353,13 @@ Happy Trails
 
 <section id="Sec12_3">
 
-<h3>SVG PathsScalable vector graphics (SVG) </h3>
+<h3>SVG Paths </h3>
 
 <p>SVG has freeform paths as well as simple shapes. Path elements have d attributes. The d stands for data. Inside the value of the d attribute, you can specify a series of path drawing commands. Each command might take coordinate arguments. Some of the commands are M for moveto, L for lineto, Q for quadratic curve, and Z for closing the path. If these remind you of the canvas drawing API, that is no coincidence. Listing 3-7 uses a path element to draw a closed tree canopy shape using a series of lineto commands.</p>
 
 
 <figure class="listing">
-<figcaption>Listing 3-7. SVG Scalable vector graphics (SVG) Path Defining a Tree Canopy</figcaption>
+<figcaption>Listing 3-7. SVG  Path Defining a Tree Canopy</figcaption>
 <pre><code>&#x003C;path d="M-25, -50
             L-10, -80
             L-20, -80
@@ -411,7 +411,7 @@ Happy Trails
 <figcaption>Figure 3-11. Selecting SVG text</figcaption>
 </figure>
 
-<p>SVG TextScalable vector graphics (SVG)  has attributes that are similar to CSS style rules for HTML. Listing 3-9 shows a text element that has font-weight and font-family attributes. As in CSS, font-family can be a single font-family name like &#x201C;sans-serif&#x201D; or a list of fallbacks like &#x201C;Droid Sans, sans-serif&#x201D; in the order you prefer.</p>
+<p>SVG Text  has attributes that are similar to CSS style rules for HTML. Listing 3-9 shows a text element that has font-weight and font-family attributes. As in CSS, font-family can be a single font-family name like &#x201C;sans-serif&#x201D; or a list of fallbacks like &#x201C;Droid Sans, sans-serif&#x201D; in the order you prefer.</p>
 
 <figure class="listing" data-listing="3-9" data-preview-height="240">
 <figcaption>Listing 3-9. SVG Text</figcaption>
@@ -436,7 +436,7 @@ Happy Trails
 
 <p>We can combine all of the preceding elements to make an image of happy trails. The text is, naturally, a text element. The tree trunks are composed of two rectangles. The tree canopies are two paths. The trees cast shadows, which use the same geometry given a gray fill color and a transformation that skews them down and to the right. The winding path that cuts across the image is another path with an image pattern for texture. There is also a little bit of CSS to give the scene an outline.</p>
 
-<p>Listing 3-10 provides the complete code forScalable vector graphics (SVG)  <code>trails-static.html</code>.</p>
+<p>Listing 3-10 provides the complete code for <code>trails-static.html</code>.</p>
 
 <figure class="listing" data-listing="3-10" data-preview-height="640">
 <figcaption>Listing 3-10. Complete Code for <code>trails-static.html</code></figcaption>
