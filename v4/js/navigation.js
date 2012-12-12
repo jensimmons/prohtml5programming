@@ -1,10 +1,9 @@
-
 var menuObj = [];
 jQuery(function () {
   var h1 = $('h1').eq(0);
   var currentChap = h1.text();
         
-  var output = '<nav role="navigation" id="menu"><ul>';
+  var output = '<a name="main-navigation" id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
   // if(toc) {
   //   output += ('<li class="toc"><a href="#" class="link-toc">Table of Contents</a>\n');
   //   output += '<ul>';
@@ -26,7 +25,7 @@ jQuery(function () {
     
   jQuery('<a name="item_0" />').insertBefore(h1);
   output += ('<li class="current"><a href="#item_0" >' + currentChap + '</a>\n');
-  // console.log(menuObj);
+
   var sections = jQuery('h2');
   var j = 0;
   sections.each(function () {
@@ -37,7 +36,7 @@ jQuery(function () {
     output += ('<li><a href="#item_0_' + j + '" >' + key + '</a>\n');
     var section = jQuery(this).parents('section:first');
     var subSection = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
-    // console.log(h3s);
+
     if (subSection.length) {
       output += '<ul>\n';
     }
@@ -55,35 +54,8 @@ jQuery(function () {
     output += '</li></ul>\n';
     j++;
   });
-  output += '</li></ul></nav>\n';
-  jQuery('div.nav-container').append(jQuery(output));
-  // console.log(output);
-  // jQuery('.link-toc').live('click', function (evt) {
-  //   evt.stopPropagation();
-  //   evt.preventDefault();
-  //   var parent = $(this).parents('li:first');
-  //   parent.children('ul').show();
-  //   parent.siblings('.current').hide();
-  //   // toc click 
-  //   //   hide sibling .current
-  //   //   show toc children ul
-  //   //   
-  // });
-  // jQuery('.link-current').live('click', function (evt) {
-  //   evt.stopPropagation();
-  //   evt.preventDefault();
-  //   var parent = $(this).parents('li.toc:first');
-  //   parent.children('ul').hide();
-  //   parent.siblings('.current').show();
-  // });
-  // link-current
-  //   hide toc children ul
-  //   show sibling .current
-  jQuery('.menu-link').live('click', function (evt) {
-    jQuery('.link-current').click();
-  }); 
-        
-  jQuery('.link-current').click();
+  output += '</li></ul></nav></div>\n';
+  jQuery('body').append(jQuery(output));
         
   var jPM = $.jPanelMenu();
   jPM.on();
