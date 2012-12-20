@@ -72,8 +72,9 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   var me = this;
   this.trigger = el;
           
-  this.delay;
+  this.delay = 0;
   this.listingNumber = el.data('listing'); 
+  this.cacheID = ISBNOnline + '_' + this.listingNumber;
   inlineEditors[this.listingNumber] = this;
   this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
   this.container.html( jQuery(inlineEditors.editorTemplate) );
@@ -82,7 +83,6 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   this.cache = '';
   this.previewFrame = jQuery('#preview', this.container).get(0);
   this.previewHeight = this.container.parents('.listing:first').data('preview-height') + 'px';
-  // console.log(this.previewHeight);
   this.editor = CodeMirror.fromTextArea(jQuery('#code', this.container).get(0), {
     mode: 'text/html',
     tabMode: 'indent',
@@ -112,20 +112,20 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
 }
 
 inlineEditor.prototype.retrieve = function () {
-  if (inlineEditors.localStorageSupport && localStorage[this.listingNumber]) {
-    this.editor.setValue( localStorage[this.listingNumber] );
+  if (inlineEditors.localStorageSupport && localStorage[this.cacheID]) {
+    this.editor.setValue( localStorage[this.cacheID] );
   } else {
     this.reset();
   }
 }
 inlineEditor.prototype.clearSaved = function () {
-  if (inlineEditors.localStorageSupport && localStorage[this.listingNumber]) {
-    localStorage.removeItem( this.listingNumber );
+  if (inlineEditors.localStorageSupport && localStorage[this.cacheID]) {
+    localStorage.removeItem( this.cacheID );
   }
 }
 inlineEditor.prototype.save = function () {
   if( inlineEditors.localStorageSupport ) {
-    localStorage.setItem(this.listingNumber, this.editor.getValue());
+    localStorage.setItem(this.cacheID, this.editor.getValue());
   } else {
     
   }
