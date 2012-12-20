@@ -35,11 +35,15 @@ function formatStaticCode() {
 
 function updatePreview( args ) {
   var iEditor = args[0];
-  var previewFrame = jQuery('#preview', iEditor.container).get(0);
-  var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-  preview.open();
-  preview.write(iEditor.editor.getValue());
-  preview.close();
+  var currentCode = iEditor.editor.getValue();
+  if (iEditor.cache != currentCode) {
+    iEditor.cache = currentCode;
+    var previewFrame = jQuery('#preview', iEditor.container).get(0);
+    var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+    preview.open();
+    preview.write(iEditor.cache);
+    preview.close();
+  }
 }
       
 var inlineEditors = {
@@ -75,6 +79,7 @@ var inlineEditor = function ( el ) { // el = jQuery(this) <a> tag;
   this.container.html( jQuery(inlineEditors.editorTemplate) );
   this.resetControl = jQuery('.control-bar .control.reset', this.container);
   this.saveControl = jQuery('.control-bar .control.save', this.container);
+  this.cache = '';
   this.previewFrame = jQuery('#preview', this.container).get(0);
   this.previewHeight = this.container.parents('.listing:first').data('preview-height') + 'px';
   // console.log(this.previewHeight);
