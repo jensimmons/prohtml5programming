@@ -409,7 +409,7 @@ context.stroke();</code></pre>
 <figcaption>Listing 2-11. Using a Fill Style</figcaption>
 <pre><code data-cm-mode="javascript">// Set the fill color to green and fill the canopy
 context.fillStyle = '#339900';
-context.fill();</pre></code>
+context.fill();</code></pre>
 </figure>
 
 <p>First, we set the <code>fillStyle</code> to the appropriate color. As we will see later, it is also possible to set the fill to be a gradient or an image pattern. Then, we simply call the context&#x2019;s <code>fill</code> function to let the canvas fill all the pixels inside all the closed paths of our current shape, as shown in Figure 2-8.</p>
@@ -430,7 +430,7 @@ context.fill();</pre></code>
 context.fillStyle = '#663300';
 
 // Fill a rectangle for the tree trunk
-context.fillRect(-5, -50, 10, 50);</pre></code>
+context.fillRect(-5, -50, 10, 50);</code></pre>
 </figure>
 
 <p>Here, we once again set a brown fill style. But instead of explicitly drawing the corners of our trunk rectangle using the <code>lineTo</code> ability, we will draw the entire trunk in one step by using <code>fillRect</code>. The <code>fillRect</code> call takes the x and y location, as well as the width and height, and then immediately fills it with the current fill style.</p>
@@ -472,7 +472,7 @@ context.lineWidth = 20;
 context.stroke();
 
 // Restore the previous canvas state
-context.restore();</pre></code>
+context.restore();</code></pre>
 </figure>
 
 <p>As before, one of the first things we will do is save our canvas context state, because we will be modifying the translation and stroke options here. For our forest path, we will start by moving back to the origin and drawing a first quadratic curve up and to the right.</p>
@@ -504,7 +504,7 @@ bark.src = "bark.jpg";
 // Once the image is loaded, draw on the canvas
 bark.onload = function () {
   drawTrails();
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>As you can see, we&#x2019;ve added an <code>onload</code> handler to the <code>bark.jpg</code> image to call the main <code>drawTrails</code> function only when the image loading has completed. This guarantees that the image will be available to the next calls we add to the canvas rendering, as shown in Listing 2-15.</p>
@@ -513,7 +513,7 @@ bark.onload = function () {
 <figcaption>Listing 2-15. Drawing an Image on a Canvas</figcaption>
 <pre><code data-cm-mode="javascript">// Draw the bark pattern image where
 //  the filled rectangle was before
-context.drawImage(bark, -5, -50, 10, 50);</pre></code>
+context.drawImage(bark, -5, -50, 10, 50);</code></pre>
 </figure>
 
 <p>Here, we have replaced the previous call to <code>fillRect</code> with a simple routine to display our bark image as the new trunk for our tree. Although the image is a subtle replacement, it provides more texture to our display. Note that in this call, we are specifying an x, y, width, and height argument in addition to the image itself. This option will scale the image to fit into the 10 &#x00D7; 50 pixel space that we have allocated for our trunk. We could also have passed in source dimensions to have more control over the clipping area of the incoming image to be displayed.</p>
@@ -571,7 +571,7 @@ canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
 // Draw the shadow gradient on top of the trunk gradient
 context.fillStyle = canopyShadow;
 context.fillRect(-5, -50, 10, 50);
-</pre></code>
+</code></pre>
 </figure>
 
 <p>Applying these two gradients creates a nice, smooth light source on our rendered tree as shown in Figure 2-13, making it appear curved and covered by a slight shadow from the canopy above. Let&#x2019;s keep it.</p>
@@ -585,7 +585,7 @@ context.fillRect(-5, -50, 10, 50);
 
 <figure class="listing">
   <figcaption>Listing 2-17. Example of Applying a Radial Gradient</figcaption>
-  <pre><code data-cm-mode="javascript">createRadialGradient(x0, y0, r0, x1, y1, r1)</pre></code>
+  <pre><code data-cm-mode="javascript">createRadialGradient(x0, y0, r0, x1, y1, r1)</code></pre>
 </figure>
 
 <p>In this example, the first three arguments represent a circle centered at (x0, y0) with radius r0, and the last three arguments represent a second circle centered at (x1, y1) with radius r1. The gradient is drawn across the area between the two circles.</p>
@@ -608,7 +608,7 @@ gravel.onload = function () {
 // background pattern
 context.strokeStyle = context.createPattern(gravel, 'repeat');
 context.lineWidth = 20;
-context.stroke();</pre></code>
+context.stroke();</code></pre>
 </figure>
 
 <p>As you can see, we are still calling <code>stroke()</code> for our path. However, this time we have set a <code>strokeStyle</code> property on the context first, passing in the result of a call to <code>context.createPattern</code>. Oh, and once again the image needs to be previously loaded in order for the canvas to perform the operation. The second argument is a repetition pattern that can be one of the choices shown in Table 2-2.</p>
@@ -681,7 +681,7 @@ function drawTree(context) {
 
   context.fillStyle = '#339900';
   context.fill();
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>As you can see, the <code>drawTree</code> function contains all the code we previously created to draw the canopy, trunk, and trunk gradient. Now we will use one of the transformation routines&#x2014; <code>context.scale</code>&#x2014;to draw a second tree at a new location and with a larger size, as shown in Listing 2-20.</p>
@@ -701,7 +701,7 @@ context.translate(260, 500);
 // Scale this tree twice normal in both dimensions
 context.scale(2, 2);
 drawTree(context);
-context.restore();</pre></code>
+context.restore();</code></pre>
 </figure>
 
 <p>The <code>scale</code> function takes two factors for the x and y dimensions as its arguments. Each factor tells the canvas implementation how much larger (or smaller) to make the size in that dimension; an X factor of 2 would make all subsequent draw routines twice as wide, while a Y factor of 0.5 would make all subsequent operations half as tall as before. Using these routines, we now have an easy way to create a second tree in our trails canvas, as shown in Figure 2-15.</p>
@@ -727,7 +727,7 @@ context.restore();</pre></code>
 context.rotate(1.57);
 context.drawImage(myImage, 0, 0, 100, 100);
 
-context.restore();</pre></code>
+context.restore();</code></pre>
 </figure>
 
 <p>In Listing 2-22, however, we will show how you can apply an arbitrary transform to the path coordinates to radically alter the display of our existing tree path in order to create a shadow effect.</p>
@@ -757,7 +757,7 @@ createCanopyPath(context);
 context.fill();
 
 // Restore the canvas state
-context.restore();</pre></code>
+context.restore();</code></pre>
 </figure>
 
 <p>Modifying the context transform directly as we&#x2019;ve done here is something you should attempt only if you are familiar with the matrix mathematics underpinning two-dimensional drawing systems. If you check the math behind this transform, you will see that we are shifting the X values of our drawing by a factor of the corresponding Y values in order to shear the gray tree being used as a shadow. Then, by applying a scale factor of 60%, the sheared tree is decreased in size.</p>
@@ -826,7 +826,7 @@ context.textAlign = 'center';
 // Draw the text in the middle of the canvas with a max
 //  width set to center properly
 context.fillText('Happy Trails!', 200, 60, 400);
-context.restore();</pre></code>
+context.restore();</code></pre>
 </figure>
 
 <p>As you can see from the result in Figure 2-17, the trail drawing just got a whole lot&#x2014;you guessed it&#x2014;happier.</p>
@@ -885,7 +885,7 @@ context.shadowOffsetX = 15;
 context.shadowOffsetY = -10;
 
 // Blur the shadow slightly
-context.shadowBlur = 2;</pre></code>
+context.shadowBlur = 2;</code></pre>
 </figure>
 
 <p>With these simple additions, the canvas renderer will automatically apply shadows until the canvas state is restored or the shadow properties are reset. Figure 2-18 shows the newly applied shadows.</p>
@@ -942,7 +942,7 @@ var canvasData = myCanvas.toDataURL();
 
 // set the data as the source of a new image
 var img = new Image();
-img.src = canvasData;</pre></code>
+img.src = canvasData;</code></pre>
 </figure>
 
 <p>You don&#x2019;t have to use a data URL right away. You could even store the URL in your browser&#x2019;s local storage for later retrieval and manipulation. Browser storage will be covered later in this book.</p>
@@ -985,7 +985,7 @@ img.src = canvasData;</pre></code>
 &#x003C;h2&#x003E;Heatmap &#x003C;/h2&#x003E;
 &#x003C;canvas id="heatmap" class="clear" style="border: 1px solid;"
       height="300" width="300"&#x003E; &#x003C;/canvas&#x003E;
-&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</pre></code>
+&#x003C;button id="resetButton"&#x003E; Reset&#x003C;/button&#x003E;</code></pre>
 </figure>
 
 <p>We also declare some initial variables to be used later in the example.</p>
@@ -1022,7 +1022,7 @@ canvas.onmousemove = function(e) {
 }
 
   sample();
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>If the user clicks <b>Reset</b>, the entire canvas area is cleared and reset to its original state by using the canvas&#x2019; <code>clearRect</code> function, as shown in Listing 2-28.</p>
@@ -1034,7 +1034,7 @@ canvas.onmousemove = function(e) {
   context.clearRect(0,0,300,300);
   x = -1;
   y = -1;
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>Next we create a lookup table of colors to use when drawing heat on the canvas. Listing 2-29 shows how the colors range in brightness from least to greatest, and they will be used to represent varying levels of heat on the display. The greater the value of the <code>intensity</code>, the brighter the returned color.</p>
@@ -1044,7 +1044,7 @@ canvas.onmousemove = function(e) {
 <pre><code data-cm-mode="javascript">function getColor(intensity) {
   var colors = ["#072933", "#2E4045", "#8C593B", "#B2814E", "#FAC268", "#FAD237"];
   return colors[Math.floor(intensity/2)];
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>Whenever the mouse moves or hovers over an area of the canvas, a point is drawn. The point grows in size (and brightness) the longer the mouse stays in the immediate area. As shown in Listing 2-30, we use the <code>context.arc</code> function to draw a circle of a given radius, and we draw a brighter, hotter color for larger radius values by passing the radius to our <code>getColor</code> function.</p>
@@ -1060,7 +1060,7 @@ canvas.onmousemove = function(e) {
 
   context.closePath();
   context.fill();
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>In the <code>addToPoint</code> function&#x2014;which you will recall is accessed every time the mouse moves or hovers over a point&#x2014;a heat value is increased and stored for that particular point on the canvas. Listing 2-31 shows that the maximum point value is 10. Once the current value of heat for a given pixel is found, the appropriate pixel is passed to <code>drawPoint</code> with its corresponding heat/radius value.</p>
@@ -1079,7 +1079,7 @@ canvas.onmousemove = function(e) {
     points[[x,y]]++;
   }
   drawPoint(x*SCALE,y*SCALE, points[[x,y]]);
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>Finally, the initial <code>loadDemo</code> function is registered to be called whenever the window completes loading.</p>
@@ -1198,7 +1198,7 @@ function loopAnimation(currentTime) {
   // After this frame is drawn, let the browser schedule
   // the next one
   window.requestAnimFrame(loopAnimation, canvas);
-}</pre></code>
+}</code></pre>
 </figure>
 
 <p>Once we update our drawing, we can see the animating rain on top of our trail (see Figure 2-22).</p>
