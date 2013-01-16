@@ -131,14 +131,13 @@ nav {
 .menu-link a:focus {
   color: #fff;
 }
-.btn-group ul {
-  display: none;
-  margin: 0px;
-}
-.btn-group.open ul {
-  display: block;
-}
-.btn-group {
+.toc-link {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  font-family: $sourcesans-light;
+  padding: 0 0 0 1em;
   a {
     padding: 5px;
     display: block;
@@ -150,17 +149,6 @@ nav {
     color: $text;
     text-decoration: none;
   }
-  .btn-group .dropdown-menu a {
-    padding: 3px 8px 0px 0;
-  }
-}
-.toc-link {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  font-family: $sourcesans-light;
-  padding: 0 0 0 1em;
   a.btn {
     background: url('../images/book_open.svg') no-repeat  scroll 2px 4px;
     text-indent: -9999px;
@@ -185,6 +173,9 @@ nav {
   ul li {
     list-style:none;
   }
+}
+.toc-link.open ul {
+  display: block;
 }
 
 
