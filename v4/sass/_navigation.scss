@@ -177,6 +177,12 @@ nav {
 .toc-link.open ul {
   display: block;
 }
+@media screen and (min-width: 30em) { // 480px
+  .toc-link ul {
+    width: 25em;
+    float: right;
+  }
+}
 
 
 //-----------------------------------------------------------------------
