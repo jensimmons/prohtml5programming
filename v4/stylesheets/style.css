@@ -1576,7 +1576,7 @@ nav li li li a {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003164}}
 .toc-link a.btn {
-  background: url("../images/book_open.svg") no-repeat scroll 7px 4px;
+  background: url("../images/book_open.svg") no-repeat scroll 2px 4px;
   text-indent: -9999px;
   height: 44px;
   width: 44px;
@@ -1599,7 +1599,7 @@ nav li li li a {
   display: none;
   padding: 1em;
   margin-top: 44px;
-  margin-right: 8px;
+  margin-right: 12px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003185}}
 .toc-link ul li {
