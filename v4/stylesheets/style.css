@@ -1377,176 +1377,14 @@ td, th {
     content: "Note";
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003255}}
-.jPanelMenu-panel .nav-container {
-  display: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003258}}
-.jPanelMenu-panel .menu-link {
-  position: fixed;
-  top: 0px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003264}}
-.menu-link a:hover,
-.menu-link a:focus {
-  color: #fff;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003268}}
-.toc-link {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  left: 80%;
-  width: 20%;
-  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003277}}
-.btn-group ul {
-  display: none;
-  margin: 0px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003281}}
-.btn-group.open ul {
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003284}}
-.btn-group a {
-  padding: 3px 8px 0px 10px;
-  display: block;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003288}}
-.toc-link {
-  background: #a3a3a3;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003293}}
-.toc-link a,
-.toc-link a:link,
-.toc-link a:hover,
-.toc-link a:focus {
-  color: #fff;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003300}}
-.toc-link ul {
-  background: #a3a3a3;
-  display: none;
-  padding: 0;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003306}}
-.toc-link ul,
-.toc-link ul li {
-  list-style: none;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003309}}
-.toc-link ul li {
-  border-bottom: 1px solid #fff;
-  padding: 0 0 0 1em;
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\000035}}
-#jPanelMenu-menu {
-  box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
-  background: url("../images/background.png") repeat;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\000039}}
-nav {
-  width: 100%;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000311}}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000319}}
-nav li li {
-  background: rgba(0, 0, 0, 0.75);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000322}}
-nav li li li {
-  background: rgba(255, 255, 255, 0.25);
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000325}}
-nav a {
-  text-decoration: none;
-  font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
-  font-size: 0.875em;
-  line-height: 1.85714em;
-  line-height: 1.25em;
-  display: block;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.45em 0.5em 0.3em 1em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000334}}
-nav #item_0 {
-  background: #000;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000339}}
-nav li a,
-nav li a:link,
-nav li a:visited {
-  color: #000;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000346}}
-nav li li a,
-nav li li a:link,
-nav li li a:visited {
-  color: white;
-  text-decoration: none;
-  text-transform: none;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000351}}
-nav li li a:hover, nav li li a:focus,
-nav li li a:link:hover,
-nav li li a:link:focus,
-nav li li a:visited:hover,
-nav li li a:visited:focus {
-  color: #d9d9d9;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000355}}
-nav li li li a {
-  padding-left: 2em;
-}
-
-@media screen and (min-width: 380px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000360}}
-  nav {
-    max-width: 360px;
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000363}}
-  .nav-container {
-    margin: 4em 10px;
-  }
-}
-@media screen and (min-width: 1000px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000368}}
-  .nav-container {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000374}}
 .floatingHeader {
   position: fixed;
   top: 0;
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000310}}
 .menu-link {
   float: left;
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
@@ -1554,7 +1392,7 @@ nav li li li a {
   min-width: 86px;
   /* sheesh */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000315}}
 .menu-link a {
   display: block;
   background: #a3a3a3;
@@ -1566,17 +1404,209 @@ nav li li li a {
   width: 44px;
   background: url("../images/icon-menu.svg") no-repeat scroll 10px 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000326}}
 .menu-link img {
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000329}}
 .menu-link span {
   padding-left: 6px;
   display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000334}}
+#jPanelMenu-menu {
+  box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
+  background: url("../images/background.png") repeat;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000338}}
+nav {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000340}}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000348}}
+nav li li {
+  background: rgba(0, 0, 0, 0.75);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000351}}
+nav li li li {
+  background: rgba(255, 255, 255, 0.25);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000354}}
+nav a {
+  text-decoration: none;
+  font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  line-height: 1.25em;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.45em 0.5em 0.3em 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000363}}
+nav #item_0 {
+  background: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000368}}
+nav li a,
+nav li a:link,
+nav li a:visited {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000375}}
+nav li li a,
+nav li li a:link,
+nav li li a:visited {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000380}}
+nav li li a:hover, nav li li a:focus,
+nav li li a:link:hover,
+nav li li a:link:focus,
+nav li li a:visited:hover,
+nav li li a:visited:focus {
+  color: #d9d9d9;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000384}}
+nav li li li a {
+  padding-left: 2em;
+}
+
+@media screen and (min-width: 380px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000389}}
+  nav {
+    max-width: 360px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000392}}
+  .nav-container {
+    margin: 4em 10px;
+  }
+}
+@media screen and (min-width: 1000px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000397}}
+  .nav-container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003109}}
+.menu-link {
+  float: left;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  color: #fff;
+  min-width: 86px;
+  /* sheesh */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003114}}
+.menu-link a {
+  display: block;
+  padding: 3px 8px 0px 10px;
+  text-indent: -9999px;
+  height: 44px;
+  width: 44px;
+  background: url("../images/icon-menu.svg") no-repeat scroll 10px 6px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003123}}
+.jPanelMenu-panel .nav-container {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003126}}
+.jPanelMenu-panel .menu-link {
+  position: fixed;
+  top: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003131}}
+.menu-link a:hover,
+.menu-link a:focus {
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003134}}
+.btn-group ul {
+  display: none;
+  margin: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003138}}
+.btn-group.open ul {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003142}}
+.btn-group a {
+  padding: 5px;
+  display: block;
+  font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003149}}
+.btn-group a,
+.btn-group a:link,
+.btn-group a:visited {
+  color: #1b1d1e;
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003153}}
+.btn-group .btn-group .dropdown-menu a {
+  padding: 3px 8px 0px 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003157}}
+.toc-link {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  padding: 0 0 0 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003164}}
+.toc-link a.btn {
+  background: url("../images/book_open.svg") no-repeat scroll 7px 4px;
+  text-indent: -9999px;
+  height: 44px;
+  width: 44px;
+  position: fixed;
+  right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003172}}
+.toc-link ul {
+  list-style: none;
+  border: 1px solid #ddd;
+  border-color: #ddd #ddd #999999 #999999;
+  box-shadow: -1px 1px 7px -3px rgba(0, 0, 0, 0.6);
+  -webkit-border-radius: 8px 0px 8px 8px;
+  -moz-border-radius: 8px 0px 8px 8px;
+  -ms-border-radius: 8px 0px 8px 8px;
+  -o-border-radius: 8px 0px 8px 8px;
+  border-radius: 8px 0px 8px 8px;
+  background: #fff;
+  background: rgba(250, 250, 250, 0.97);
+  display: none;
+  padding: 1em;
+  margin-top: 44px;
+  margin-right: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003185}}
+.toc-link ul li {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003196}}
 button, figure.open-editor .control.reset,
 figure.open-editor .control.save,
 a.button {
@@ -1614,7 +1644,7 @@ a.button {
   *padding-top: 2px;
   *padding-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003220}}
 button:hover, figure.open-editor .control.reset:hover,
 figure.open-editor .control.save:hover,
 a.button:hover {
@@ -1626,7 +1656,7 @@ a.button:hover {
   border-color: #ddd #c2c2c2 #b3b3b3;
   color: #000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003225}}
 button:active, figure.open-editor .control.reset:active,
 figure.open-editor .control.save:active,
 a.button:active {
@@ -1640,7 +1670,7 @@ a.button:active {
   box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
   border-color: #999 #bbb #ddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003230}}
 button::-moz-focus-inner, figure.open-editor .control.reset::-moz-focus-inner,
 figure.open-editor .control.save::-moz-focus-inner,
 a.button::-moz-focus-inner {

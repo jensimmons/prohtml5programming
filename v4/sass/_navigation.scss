@@ -1,7 +1,36 @@
 //-----------------------------------------------------------------------
-// Menu / Navigation
+// Chapter Contents
 //-----------------------------------------------------------------------
 
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
+.menu-link {
+  float: left;
+  font-family: $sourcesans-light;
+  color: #fff;
+  min-width: 86px; /* sheesh */
+  a {
+    display: block;
+    background: #a3a3a3;
+    padding: 3px 8px 0px 10px;
+    color: #fff;
+    text-decoration: none;
+    text-indent: -9999px;
+    height: 44px;
+    width: 44px;
+    background: url('../images/icon-menu.svg') no-repeat scroll 10px 6px;
+  }
+  img {
+    display: inline-block;
+  }
+  span {
+    padding-left: 6px;
+    display: inline-block;
+  }
+}
 #jPanelMenu-menu {
   box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
   background: url('../images/background.png') repeat;
@@ -71,11 +100,12 @@ nav {
     margin-right: auto;
   }
 }
-.floatingHeader {
-  position: fixed;
-  top: 0;
-  visibility: hidden;
-}
+
+
+//-----------------------------------------------------------------------
+// Table of Contents
+//-----------------------------------------------------------------------
+
 .menu-link {
   float: left;
   font-family: $sourcesans-light;
@@ -83,24 +113,80 @@ nav {
   min-width: 86px; /* sheesh */
   a {
     display: block;
-    background: #a3a3a3;
     padding: 3px 8px 0px 10px;
-    color: #fff;
-    text-decoration: none;
-    
     text-indent: -9999px;
     height: 44px;
     width: 44px;
     background: url('../images/icon-menu.svg') no-repeat scroll 10px 6px;
   }
-  img {
-    display: inline-block;
+}
+.jPanelMenu-panel .nav-container {
+  display: none;
+}
+.jPanelMenu-panel .menu-link {
+  position: fixed;
+  top: 0px;
+}
+.menu-link a:hover,
+.menu-link a:focus {
+  color: #fff;
+}
+.btn-group ul {
+  display: none;
+  margin: 0px;
+}
+.btn-group.open ul {
+  display: block;
+}
+.btn-group {
+  a {
+    padding: 5px;
+    display: block;
+    font-family: $interface-font;
   }
-  span {
-    padding-left: 6px;
-    display: inline-block;
+  a, 
+  a:link, 
+  a:visited {
+    color: $text;
+    text-decoration: none;
+  }
+  .btn-group .dropdown-menu a {
+    padding: 3px 8px 0px 0;
   }
 }
+.toc-link {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  font-family: $sourcesans-light;
+  padding: 0 0 0 1em;
+  a.btn {
+    background: url('../images/book_open.svg') no-repeat  scroll 7px 4px;
+    text-indent: -9999px;
+    height: 44px;
+    width: 44px;
+    position: fixed;
+    right: 0;
+  }
+  ul {
+    list-style:none;
+    border: 1px solid #ddd;
+    border-color: #ddd #ddd #999999 #999999;
+    box-shadow: -1px 1px 7px -3px rgba(0, 0, 0, 0.6);
+    @include border-radius(8px 0px 8px 8px);
+    background: #fff;
+    background: rgba(250,250,250,0.97);
+    display: none;
+    padding: 1em;
+    margin-top: 44px;
+    margin-right: 8px;
+  }
+  ul li {
+    list-style:none;
+  }
+}
+
 
 //-----------------------------------------------------------------------
 // Buttons
