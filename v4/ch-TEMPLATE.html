@@ -21,24 +21,39 @@
     <!-- CSS -->
     <link rel="stylesheet" href="codemirror/lib/codemirror.css">
     <link rel="stylesheet" href="codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="codemirror/theme/static.css">
   	<link rel="stylesheet" href="stylesheets/style.css" />
 
     <!-- JavaScript -->
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="js/selectivizr-min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript" charset="utf-8">
+
+      (function () {
+        "use strict";
+        window.ISBNOnline = '978-1-4302-3865-2';
+        window.chapterID = 3;
+      })();
+
+    </script>
+    
     <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
     <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/jpanelmenu-1.0.0.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
     <script src="codemirror/lib/codemirror.js"></script>
     <script src="codemirror/mode/xml/xml.js"></script>
     <script src="codemirror/mode/javascript/javascript.js"></script>
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
+    <script src="js/code_listings_ch3.js"></script>
     <script src="js/toc.js"></script>  
-    <script src="js/persistent_headers.js"></script>
-    
+
+
     <!-- For iPhone 4 -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114-precomposed.png">
     <!-- For iPad 1-->
@@ -72,18 +87,17 @@
 <!--======================== CONTENT ========================-->
 
 <article role="main">
+<div id="wrapper">
+
 
 <hgroup>
   <h1>Chapter X</h1>
   <h1>Name of the Chapter</h1>
 </hgroup>
 
-<p>Hello world!</p>
+<!--=== CONTENT FROM XML HERE === -->
 
-<footer role="contentinfo">
-  <small>Footer stuff</small>
-</footer>
-
+</div>
 </article>
 
 <!--====================== END CONTENT ======================-->
