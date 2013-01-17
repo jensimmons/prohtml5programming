@@ -5,7 +5,7 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="30px" height="26px" viewBox="2.125 5 30 26" enable-background="new 2.125 5 30 26" xml:space="preserve">
+	 x="0px" y="0px" width="26px" height="23px" viewBox="4.125 5 26 23" enable-background="new 4.125 5 26 23" xml:space="preserve">
 <defs>
 	
 		<pattern  x="9.125" y="25" width="69" height="69" patternUnits="userSpaceOnUse" id="Polka_Dot_Pattern" viewBox="2.125 -70.896 69 69" overflow="visible">
@@ -948,12 +948,12 @@
 		</g>
 	</pattern>
 </defs>
-<g>
+<g display="none">
 	<defs>
 		<rect id="SVGID_6_" width="34.25" height="32"/>
 	</defs>
-	<clipPath id="SVGID_7_">
-		<use xlink:href="#SVGID_6_"  overflow="visible"/>
+	<clipPath id="SVGID_7_" display="inline">
+		<use xlink:href="#SVGID_6_"  display="none" overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_7_)">
 		<g>
@@ -972,20 +972,20 @@
 			<defs>
 				<rect id="SVGID_1_" width="34.25" height="32"/>
 			</defs>
-			<clipPath id="SVGID_8_">
-				<use xlink:href="#SVGID_5_"  overflow="visible"/>
+			<clipPath id="SVGID_8_" display="inline">
+				<use xlink:href="#SVGID_5_"  display="none" overflow="visible"/>
 			</clipPath>
-			<clipPath id="SVGID_9_" clip-path="url(#SVGID_8_)">
-				<use xlink:href="#SVGID_4_"  overflow="visible"/>
+			<clipPath id="SVGID_9_" display="inline" clip-path="url(#SVGID_8_)">
+				<use xlink:href="#SVGID_4_"  display="none" overflow="visible"/>
 			</clipPath>
-			<clipPath id="SVGID_10_" clip-path="url(#SVGID_9_)">
-				<use xlink:href="#SVGID_3_"  overflow="visible"/>
+			<clipPath id="SVGID_10_" display="inline" clip-path="url(#SVGID_9_)">
+				<use xlink:href="#SVGID_3_"  display="none" overflow="visible"/>
 			</clipPath>
-			<clipPath id="SVGID_11_" clip-path="url(#SVGID_10_)">
-				<use xlink:href="#SVGID_2_"  overflow="visible"/>
+			<clipPath id="SVGID_11_" display="inline" clip-path="url(#SVGID_10_)">
+				<use xlink:href="#SVGID_2_"  display="none" overflow="visible"/>
 			</clipPath>
-			<clipPath id="SVGID_12_" clip-path="url(#SVGID_11_)">
-				<use xlink:href="#SVGID_1_"  overflow="visible"/>
+			<clipPath id="SVGID_12_" display="inline" clip-path="url(#SVGID_11_)">
+				<use xlink:href="#SVGID_1_"  display="none" overflow="visible"/>
 			</clipPath>
 			<path clip-path="url(#SVGID_12_)" fill="#939598" d="M18.122,27.001H16.13c-1.428-1.272-4.257-2-7.567-2
 				c-2.509,0-4.841,0.56-6.422,1.446v3c1.581-0.889,3.913-1.446,6.422-1.446c3.257,0,6.045,0.708,7.494,1.942v0.058h2.141v-0.06
@@ -1002,7 +1002,7 @@
 		</g>
 	</g>
 </g>
-<rect x="2.125" y="5" display="none" fill="#939598" width="30" height="5"/>
-<rect x="2.125" y="15.001" display="none" fill="#939598" width="30" height="4.998"/>
-<rect x="2.125" y="25" display="none" fill="#939598" width="30" height="5"/>
+<rect x="4.125" y="5" fill="#939598" width="26" height="5"/>
+<rect x="4.125" y="14.001" fill="#939598" width="26" height="4.998"/>
+<rect x="4.125" y="23" fill="#939598" width="26" height="5"/>
 </svg>

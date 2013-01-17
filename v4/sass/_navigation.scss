@@ -7,6 +7,13 @@
   top: 0;
   visibility: hidden;
 }
+.jPanelMenu-panel .nav-container {
+  display: none;
+}
+.jPanelMenu-panel .menu-link {
+  position: fixed;
+  top: 0px;
+}
 .menu-link {
   float: left;
   font-family: $sourcesans-light;
@@ -14,14 +21,11 @@
   min-width: 86px; /* sheesh */
   a {
     display: block;
-    background: #a3a3a3;
     padding: 3px 8px 0px 10px;
-    color: #fff;
-    text-decoration: none;
     text-indent: -9999px;
     height: 44px;
     width: 44px;
-    background: url('../images/icon-menu.svg') no-repeat scroll 10px 6px;
+    background: url('../images/menu.svg') no-repeat scroll 10px 10px;
   }
   img {
     display: inline-block;
@@ -30,6 +34,9 @@
     padding-left: 6px;
     display: inline-block;
   }
+}
+.ie6-8 .menu-link a {
+  background: url('../images/menu.png') no-repeat scroll 10px 10px; // for old IE, which doesn't support SVG
 }
 #jPanelMenu-menu {
   box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
@@ -106,27 +113,6 @@ nav {
 // Table of Contents
 //-----------------------------------------------------------------------
 
-.menu-link {
-  float: left;
-  font-family: $sourcesans-light;
-  color: #fff;
-  min-width: 86px; /* sheesh */
-  a {
-    display: block;
-    padding: 3px 8px 0px 10px;
-    text-indent: -9999px;
-    height: 44px;
-    width: 44px;
-    background: url('../images/icon-menu.svg') no-repeat scroll 10px 6px;
-  }
-}
-.jPanelMenu-panel .nav-container {
-  display: none;
-}
-.jPanelMenu-panel .menu-link {
-  position: fixed;
-  top: 0px;
-}
 .menu-link a:hover,
 .menu-link a:focus {
   color: #fff;
@@ -150,7 +136,7 @@ nav {
     text-decoration: none;
   }
   a.btn {
-    background: url('../images/book.svg') no-repeat  scroll 2px 4px;
+    background: url('../images/book.svg') no-repeat  scroll 0px 10px;
     text-indent: -9999px;
     height: 44px;
     width: 44px;
@@ -173,6 +159,9 @@ nav {
   ul li {
     list-style:none;
   }
+}
+.ie6-8 .toc-link a.btn {
+  background: url('../images/book.png') no-repeat  scroll 0px 10px; // for old IE, which doesn't support SVG
 }
 .toc-link.open ul {
   display: block;
