@@ -244,9 +244,9 @@ style.css</code></pre>
 <p>FALLBACK entries<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>FALLBACK entries</tertiary></span> allow you to give alternate paths to replace resources that cannot be fetched. The manifest in Listing 12-5 would cause requests to <code>/app/ajax/</code> or subpaths beginning with <code>/app/ajax/</code> to fall back to <code>default.html</code> when <code>/app/ajax/*</code> is unreachable.</p>
 
 <p>NETWORK specifies<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>NETWORK specification</tertiary></span> resources that are always fetched using the network. The difference with simply omitting these files from the manifest is that master entries are cached without being explicitly listed in the manifest file. To ensure that the application requests the file from the server even if the cached resource is cached in the application cache, you can place that file in the NETWORK: section.<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>NETWORK specification</tertiary></span>
-</p>
+</p></section>
 
-</section><section id="sec9_12"><h3>The ApplicationCache API</h3>
+<section id="sec9_12"><h3>The ApplicationCache API</h3>
 <p>The ApplicationCache API is an interface for working with the application cache. A new <code>window.applicationCache</code> object<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>window.applicationCache object</tertiary></span> fires several events related to the state of the cache. The object has a numerical property, <code>window.applicationCache.status</code><span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>window.applicationCache.status</tertiary></span>, which indicates the state of the cache. The six states a cache can have are shown in Table <span class="internal-reference" id="ir_tab1_12">12-1</span>.</p>
 <table id="tab1_12">
 <thead><tr>
@@ -321,9 +321,9 @@ style.css</code></pre>
 <li>
 <p>onprogress</p>
 </li>
-</ul>window.applicationCache has an   update() method<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>update() method</tertiary></span><span class="index-term"><span class="primary">update() method</span></span>. Calling <code>update()</code> requests that the browser update the cache. This includes checking for a new version of the manifest file and downloading new resources if necessary. If there is no cache or if the cache is obsolete, an error will be thrown.
+</ul>window.applicationCache has an   update() method<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>update() method</tertiary></span><span class="index-term"><span class="primary">update() method</span></span>. Calling <code>update()</code> requests that the browser update the cache. This includes checking for a new version of the manifest file and downloading new resources if necessary. If there is no cache or if the cache is obsolete, an error will be thrown.</section>
 
-</section><section id="sec10_12"><h3>Application Cache in Action</h3>
+<section id="sec10_12"><h3>Application Cache in Action</h3>
 <p>Although creating the manifest file and using it in an application is relatively simple, what happens when you update pages on the server is not as intuitive as you might think. The main thing to keep in mind is that once the browser has successfully cached the application’s resources in the application cache, it will <em>always</em> serve those pages from the cache first. After that, the browser will do only one more thing: check if the manifest file has been changed on the server.</p>
 
 <p>To better understand how the process<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>process, manifest file</tertiary></span> works, let’s step through an example scenario, using the manifest file shown in Listing 12-5.</p>
@@ -397,9 +397,9 @@ style.css</code></pre>
 
 
 
+</section>
 
-
-</section><section id="sec12_12"><h3>Creating the HTML Structure and CSS for the UI<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">HTML structure and CSS, UI</span></span>
+<section id="sec12_12"><h3>Creating the HTML Structure and CSS for the UI<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">HTML structure and CSS, UI</span></span>
 </h3>
 <p>This is the basic UI structure of the example. Both <code>tracker.html</code> and <code>html5.css</code> will be cached, so the application will be served from the application cache.</p>
 
@@ -450,9 +450,9 @@ style.css</code></pre>
 
 <p>There are a couple of things to note in this HTML that pertain to this application's offline capabilities. The first is the <code>manifest</code> attribute on the HTML element. Most of the HTML examples in this book omit the <code>&lt;html&gt;</code> element because it is optional in HTML5. However, the ability to cache offline depends on specifying the manifest file there.</p>
 
-<p>The second thing to note is the button. That will give the user control over configuring this application for offline use.</p>
+<p>The second thing to note is the button. That will give the user control over configuring this application for offline use.</p></section>
 
-</section><section id="sec13_12"><h3>Creating the Offline JavaScript<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">offline JavaScript</span></span>
+<section id="sec13_12"><h3>Creating the Offline JavaScript<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">offline JavaScript</span></span>
 </h3>
 <p>For this example, the JavaScript is contained in multiple <code>.js</code> files included with <code>&lt;script&gt;</code> tags. These scripts are cached along with the HTML and CSS.</p>
 
@@ -593,9 +593,9 @@ log = function() {
 
 
 
+</section>
 
-
-</section><section id="sec14_12"><h3>Check for ApplicationCache Support<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">applicationCache support</span></span>
+<section id="sec14_12"><h3>Check for ApplicationCache Support<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">applicationCache support</span></span>
 </h3>
 <p>In addition to the offline application cache, this example uses geolocation and local storage. We ensure that the browser supports all of these features when the page loads.</p>
 
@@ -638,9 +638,9 @@ log = function() {
 
 
 
+</section>
 
-
-</section><section id="sec15_12"><h3>Adding the Update Button Handler<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">update button handler</span></span>
+<section id="sec15_12"><h3>Adding the Update Button Handler<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">update button handler</span></span>
 </h3>
 <p>Next, add an update handler that updates the application cache as follows:</p>
 
@@ -659,9 +659,9 @@ log = function() {
 
 
 
-<p>Clicking this button will explicitly start the cache check that will cause all cache resources to be downloaded if necessary. When available updates have completely downloaded, a message is logged in the UI. At this point, the user knows that the application has successfully installed and can be run in offline mode.</p>
+<p>Clicking this button will explicitly start the cache check that will cause all cache resources to be downloaded if necessary. When available updates have completely downloaded, a message is logged in the UI. At this point, the user knows that the application has successfully installed and can be run in offline mode.</p></section>
 
-</section><section id="sec16_12"><h3>Add Geolocation Tracking Code<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">geolocation tracking code</span></span>
+<section id="sec16_12"><h3>Add Geolocation Tracking Code<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">geolocation tracking code</span></span>
 </h3>
 <p>This code is based on the geolocation code from <span class="external-reference">
 <span class="ref-source">Chapter 4</span>
@@ -714,9 +714,9 @@ navigator.geolocation.watchPosition(handlePositionUpdate,
 
 
 
+</section>
 
-
-</section><section id="sec17_12"><h3>Adding Storage Code<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">storage code</span></span>
+<section id="sec17_12"><h3>Adding Storage Code<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">storage code</span></span>
 </h3>
 <p>Next, add the code that writes updates to <code>localStorage</code> when the application is in offline mode.</p>
 
@@ -740,9 +740,9 @@ navigator.geolocation.watchPosition(handlePositionUpdate,
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_9</span>
 </span>. Local storage is a natural fit for offline-capable applications, because it provides a way to persist data locally in the browser. The data will be available in future sessions. When network connectivity is restored, the application can synchronize with a remote server.</p>
 
-<p>Using storage here has the added benefit of allowing recovery from failed upload requests. If the application experiences a network error for any reason, or if the application is closed (by user action, browser or operating system crash, or page navigation) the data is stored for future transmission.</p>
+<p>Using storage here has the added benefit of allowing recovery from failed upload requests. If the application experiences a network error for any reason, or if the application is closed (by user action, browser or operating system crash, or page navigation) the data is stored for future transmission.</p></section>
 
-</section><section id="sec18_12"><h3>Adding Offline Event Handling<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">offline event handling</span></span>
+<section id="sec18_12"><h3>Adding Offline Event Handling<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">offline event handling</span></span>
 </h3>
 <p>Every time the location update handler runs, it checks the connectivity status. If the application is online, it will store and upload the coordinates. If the application is offline, it will merely store the coordinates. When the application comes back online, it can update the UI to show the online status and upload any data is stored while online.</p>
 
@@ -764,9 +764,9 @@ if(navigator.onLine) {
     uploadLocations();
 }<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">offline event handling</span></span></code></pre>
 
+</section>
 
-
-</section><section id="sec19_12"><h3>Summary</h3>
+<section id="sec19_12"><h3>Summary</h3>
 <p>In this chapter, you have seen how HTML5 Offline Web Applications can be used to create compelling applications that can be used even when there is no Internet connection. You can ensure that all your files are cached by specifying the files that are part of the web application in the cache manifest file and then referencing the files from the main HTML page of the application. Then, by adding event listeners for online and offline status changes, you can make your site behave differently based on whether an Internet connection is available or not.</p>
 
 <p>In the final chapter, we will discuss the future of HTML5 programming.</p>

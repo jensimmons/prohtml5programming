@@ -161,20 +161,20 @@ element.textContent = e.data;</code></pre>
 <p>As a best practice,<em>never</em> evaluate strings received from third parties. Furthermore, avoid using <code>eval</code> with strings originating from your own application. Instead, you can use JSON with <code>window.JSON</code> or the json.org parser. JSON is a data language that is meant to be safely consumed by JavaScript, and the json.org parser is designed to be paranoid.”</p>
 
 </aside></section><section id="sec4_6"><h3>Browser Support for Cross Document Messaging</h3>
-<p>All major browsers, including Internet Explorer 8 and later, support the postMessage API. It is always a good idea to first test if HTML5 Cross Document Messaging is supported, before you use it. The section “Checking for Browser Support” later in<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">browser support for</span></span> this chapter will show you how you can programmatically check for browser support.</p>
+<p>All major browsers, including Internet Explorer 8 and later, support the postMessage API. It is always a good idea to first test if HTML5 Cross Document Messaging is supported, before you use it. The section “Checking for Browser Support” later in<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">browser support for</span></span> this chapter will show you how you can programmatically check for browser support.</p></section>
 
-</section><section id="sec5_6"><h3>Using the postMessage API</h3>
-<p>In this section, we’ll explore<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">using postMessage API</span></span> the use of the HTML5 <code>postMessage</code> API in more detail.</p>
+<section id="sec5_6"><h3>Using the postMessage API</h3>
+<p>In this section, we’ll explore<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">using postMessage API</span></span> the use of the HTML5 <code>postMessage</code> API in more detail.</p></section>
 
-</section><section id="sec6_6"><h3>Checking for Browser Support</h3>
+<section id="sec6_6"><h3>Checking for Browser Support</h3>
 <p>Before you call<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">browser support</span></span> <code>postMessage</code>, it is a good idea to check if the browser supports it. The following example shows one way to check for <code>postMessage</code> support:</p>
 
 <pre><code>if (typeof window.postMessage === “undefined”) {
     // postMessage not supported in this browser
 }</code></pre>
+</section>
 
-
-</section><section id="sec7_6"><h3>Sending Messages</h3>
+<section id="sec7_6"><h3>Sending Messages</h3>
 <p>To send messages, invoke<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">sending messages</span></span> <code>postMessage</code> on the target window object, as shown in the following example:</p>
 
 <pre><code>window.postMessage(“Hello, world”, “portal.example.com”);</code></pre>
@@ -218,9 +218,9 @@ window.addEventListener(“message”, messageHandler, true);</code></pre></figu
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_7</span>
 </span>.</p>
 
-</aside><p>For the sake of illustration, we created a few simple HTML pages: <code>postMessagePortal.html</code> and <code>postMessageWidget.html</code>. The following steps highlight the important parts of building the portal page and the chat widget page. The sample code for the following<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span>examples is located in the <code>code/communication</code> folder.</p>
+</aside><p>For the sake of illustration, we created a few simple HTML pages: <code>postMessagePortal.html</code> and <code>postMessageWidget.html</code>. The following steps highlight the important parts of building the portal page and the chat widget page. The sample code for the following<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span>examples is located in the <code>code/communication</code> folder.</p></section>
 
-</section><section id="sec11_6"><h3>Building the Portal Page</h3>
+<section id="sec11_6"><h3>Building the Portal Page</h3>
 <p>First, add the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>portal page</tertiary></span>chat widget iframe hosted at the different origin:</p>
 
 <pre><code>&lt;iframe id="widget" src="http://chat.example.net:9999/postMessageWidget.html"&gt;&lt;/iframe&lt;/iframe"/&gt;</code></pre>
@@ -246,9 +246,9 @@ function messageHandler(e) {
 <pre><code>function sendString(s) {
     document.getElementById("widget").contentWindow.postMessage(s, targetOrigin);
 }</code></pre>
+</section>
 
-
-</section><section id="sec12_6"><h3>Building the Chat Widget Page</h3>
+<section id="sec12_6"><h3>Building the Chat Widget Page</h3>
 <p>First, add an event<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>chat widget page</tertiary></span><span class="index-term"><span class="primary">chat widgets</span></span> listener <code>messageHandler</code> to listen for message events coming from the portal page. As shown in the following example code, the chat widget listens for incoming status-change messages. To make sure the message comes from the portal page, the message’s origin is verified; if it does not come from <code>http://portal.example.com:9999</code>, the widget simply ignores it.</p>
 
 <pre><code>var trustedOrigin = " http://portal.example.com:9999";
@@ -271,9 +271,9 @@ function messageHandler(e) {
 <pre><code>function sendString(s) {
     window.top.postMessage(s, trustedOrigin);
 }</code></pre>
+</section>
 
-
-</section><section id="sec21_6"><h3>The Final Code</h3>
+<section id="sec21_6"><h3>The Final Code</h3>
 <p>Listing 6-3 shows the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>code</tertiary></span> complete code for the Portal page <code>postMessagePortal.html</code>.</p>
 
 <figure class="listing"><figcaption>Listing 6-3. Contents of postMessagePortal.html</figcaption><pre><code>&lt;!DOCTYPE html&gt;
@@ -490,12 +490,12 @@ Access-Control-Allow-Credentials: true</code></pre></figure></section><section i
 <p>In the XMLHttpRequest Level 2 specification’s description for the <code>readystatechange</code> event<span class="index-term"><span class="primary">readystatechange event</span></span> (maintained for backward compatibility), the <code>readyState</code> attribute<span class="index-term"><span class="primary">readyState attribute</span></span> is described as changing at, get this, “some seemingly arbitrary times for historical reasons.”</p>
 
 </aside></section><section id="sec16_6"><h3>Browser Support for HTML5 XMLHttpRequest Level 2</h3>
-<p>HTML5 XMLHttpRequest is already supported in many browsers at the time of this writing. Due to the varying levels of support, it is a good idea to first test if HTML5 XMLHttpRequest is supported, before you use these elements. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p>
+<p>HTML5 XMLHttpRequest is already supported in many browsers at the time of this writing. Due to the varying levels of support, it is a good idea to first test if HTML5 XMLHttpRequest is supported, before you use these elements. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p></section>
 
-</section><section id="sec17_6"><h3>Using the XMLHttpRequest API</h3>
-<p>In this section, we’ll explore the use of the XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span></span> in more detail. For the sake of illustration, we’ve created a simple HTML page—<code>crossOriginUpload.html</code>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p>
+<section id="sec17_6"><h3>Using the XMLHttpRequest API</h3>
+<p>In this section, we’ll explore the use of the XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span></span> in more detail. For the sake of illustration, we’ve created a simple HTML page—<code>crossOriginUpload.html</code>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p></section>
 
-</section><section id="sec18_6"><h3>Checking for Browser Support</h3>
+<section id="sec18_6"><h3>Checking for Browser Support</h3>
 <p>Before you try to<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">browser support</span></span>use XMLHttpRequest Level 2 functionality—such as cross-origin support—it is a good idea to check if it is supported. You can do this by checking whether the new <code>withCredentials</code> property is available on an XMLHttpRequest object as shown in Listing 6-7.</p>
 
 <figure class="listing"><figcaption>Listing 6-7. Checking if Cross-Origin Support Is Available in XMLHttpRequest</figcaption><pre><code>var xhr = new XMLHttpRequest()
@@ -548,9 +548,9 @@ xhr.send(a.buffer);</code></pre></figure><p>This makes an HTTP POST request with
 
 <p>XMLHttpRequest Level 2 also exposes binary response data. Setting the <code>responseType</code> attribute to “text,” “document,” “arraybuffer,” or “blob” controls the type of object returned by the <code>response</code> property. To see the raw bytes contained by the HTTP response body, set the <code>responseType</code> to “arraybuffer” or “blob.”</p>
 
-<p>In the next chapter, we’ll see how WebSocket can be used to send and receive binary data using the same types.</p>
+<p>In the next chapter, we’ll see how WebSocket can be used to send and receive binary data using the same types.</p></section>
 
-</section><section id="sec22_6"><h3>Building an Application Using XMLHttpRequest</h3>
+<section id="sec22_6"><h3>Building an Application Using XMLHttpRequest</h3>
 <p>In this example, we’ll look at uploading<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>race geolocation coordinates to a web server hosted on a different origin. We use the new progress events to monitor the status of the HTTP request including the upload percentage. Figure <span class="internal-reference" id="ir_fig6_6">6-6</span> shows the application in action.
 </p>
 <figure id="fig6_6" class="image"><img src="images/ch6-6/fig6-6.png"><figcaption>Figure 6-6. A Web Application <span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>That Uploads Geolocation Data</figcaption></figure><p>For the sake of illustration, we’ve created the HTML file <code>crossOrignUpload.html</code>. The following steps highlight the important parts of building the cross-origin upload page shown in Figure <span class="internal-reference" id="ir_fig5_6">6-5</span>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p>
@@ -609,9 +609,9 @@ xhr.open("POST", targetLocation, true);
 geoDataString = dataElement.textContent;
 xhr.send(geoDataString);</code></pre>
 
+</section>
 
-
-</section><section id="sec30_6"><h3>The Final Code</h3>
+<section id="sec30_6"><h3>The Final Code</h3>
 <p>Listing 6-10 shows the<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">code for application</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span> complete application code—the contents of the <code>crossOriginUpload.html</code> file.</p>
 
 <figure class="listing"><figcaption>Listing 6-10. Contents of crossOriginUpload.html</figcaption><pre><code>&lt;!DOCTYPE html&gt;
@@ -708,9 +708,9 @@ geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170
 <section id="sec28_6"><h3>Structured Data</h3>
 <p>Early versions <span class="index-term"><span class="primary">structured data</span></span>of <code>postMessage</code> only supported strings. Later revisions allowed other types of data including JavaScript objects, canvas imageData, and files. Support for different object types will vary by browser as the specification develops.</p>
 
-<p>In some browsers, the limitations on JavaScript objects that can be sent with <code>postMessage</code> are the same as those for JSON data. In particular, data structures with cycles may not be allowed. An example of this is a list containing itself.</p>
+<p>In some browsers, the limitations on JavaScript objects that can be sent with <code>postMessage</code> are the same as those for JSON data. In particular, data structures with cycles may not be allowed. An example of this is a list containing itself.</p></section>
 
-</section><section id="sec29_6"><h3>Framebusting</h3>
+<section id="sec29_6"><h3>Framebusting</h3>
 <p>Framebusting is a<span class="index-term"><span class="primary">framebusting</span></span> technique for ensuring that your content is not loaded in an iframe. An application can detect that its window is not the outermost window (<code>window.top</code>) and subsequently break out of its containing frame, as shown in the following example.</p>
 
 <pre><code>if (window !== window.top) {

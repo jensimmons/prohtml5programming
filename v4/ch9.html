@@ -191,12 +191,12 @@
 </table>
 <p>When the drop completes, the drop handler can query for a list of available data types. From the provided list, the handler can choose which type is most appropriate. A text list drop target may choose to grab the text/plain “flavor” of data to <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">data retrieval</span></span>retrieve the person’s name, while a more advanced control might choose to retrieve and display the person’s PNG image as a result of the drop. And, if the source and target have coordinated on non-standard types, the target could also retrieve the person’s <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">negotiation, data flavors</span></span>age at the time of the drop (see Figure <span class="internal-reference" id="ir_fig2_9">9-2</span>).</p>
 
-<p>It is this negotiation process that allows for drag sources and drop targets to be decoupled. As long as the drag sources provide data in a choice of MIME types, the drop target can choose which format suits its operation the best, even if the two came from different developers. In later sections of this chapter, we’ll explore how even more unusual MIME types, such as files, can be used.</p>
+<p>It is this negotiation process that allows for drag sources and drop targets to be decoupled. As long as the drag sources provide data in a choice of MIME types, the drop target can choose which format suits its operation the best, even if the two came from different developers. In later sections of this chapter, we’ll explore how even more unusual MIME types, such as files, can be used.</p></section>
 
-</section><section id="sec5_9"><h3>Events to Remember</h3>
-<p>Now that we’ve explored the key concepts of the drag-and-drop API, let’s focus on the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">events</span></span>events that can be used throughout the process. As you’ll see, the events operate at a higher level than the mouse events previously utilized to mock up a drag-and-drop system. However, drag-and-drop events extend the DOM mouse event. Therefore, you still have access to the low-level mouse information, such as coordinates, if you need it.</p>
+<section id="sec5_9"><h3>Events to Remember</h3>
+<p>Now that we’ve explored the key concepts of the drag-and-drop API, let’s focus on the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">events</span></span>events that can be used throughout the process. As you’ll see, the events operate at a higher level than the mouse events previously utilized to mock up a drag-and-drop system. However, drag-and-drop events extend the DOM mouse event. Therefore, you still have access to the low-level mouse information, such as coordinates, if you need it.</p></section>
 
-</section><section id="sec6_9"><h3>Propagation and Prevention<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">propagation and prevention</span></span>
+<section id="sec6_9"><h3>Propagation and Prevention<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">propagation and prevention</span></span>
 </h3>
 <p>But before we focus on drag and-drop-itself, let’s refresh on two DOM event functions that have been around since the browsers standardized on DOM Level 3 events: the <span class="index-term"><span class="primary">stopPropagation</span></span><code>stopPropagation</code> and <span class="index-term"><span class="primary">preventDefault</span></span><code>preventDefault</code> functions.</p>
 
@@ -211,9 +211,9 @@
 
 </aside><p>Browsers also have default implementations for how some events will be handled. For example, when a user clicks on a page link, the default behavior is to navigate the browser to the destination specified by the link. Developers can prevent this by intercepting the event in a handler and calling <code>preventDefault</code> on it. This allows code to override the default behaviors of some built-in events. It is also how a developer can cancel a drag-and-drop operation in an event handler.</p>
 
-<p>Both <code>stopPropagation</code><span class="index-term"><span class="primary">stopPropagation</span></span> and <code>preventDefault</code><span class="index-term"><span class="primary">preventDefault</span></span> will be handy in our examples of the drag-and-drop API.</p>
+<p>Both <code>stopPropagation</code><span class="index-term"><span class="primary">stopPropagation</span></span> and <code>preventDefault</code><span class="index-term"><span class="primary">preventDefault</span></span> will be handy in our examples of the drag-and-drop API.</p></section>
 
-</section><section id="sec7_9"><h3>Drag-and-Drop Event Flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
+<section id="sec7_9"><h3>Drag-and-Drop Event Flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
 </h3>
 <p>When a user initiates a drag-and-drop operation in an HTML5-ready browser, a series of events trigger at the start and continue throughout the course of the whole operation. We will examine them in turn here.</p>
 
@@ -254,9 +254,9 @@
 <p>Aside from a few elements—such as text controls—elements in a page are not draggable by default. In order to mark a specific element as draggable, however, all you need to do is add one attribute: draggable.</p>
 
 <pre><code>&lt;div id=”myDragSource” <strong>draggable=”true”</strong>&gt;</code></pre>
-<p>Simply by adding that attribute, you cause the browser to fire the aforementioned events. Then, you only need to add the event handlers to manage them.</p>
+<p>Simply by adding that attribute, you cause the browser to fire the aforementioned events. Then, you only need to add the event handlers to manage them.</p></section>
 
-</section><section id="sec9_9"><h3>Transfer and Control</h3>
+<section id="sec9_9"><h3>Transfer and Control</h3>
 <p>Before we move into our example, let’s assess the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>transfer and control</tertiary></span> <code>dataTransfer</code> object in more detail. The <code>dataTransfer</code> is available from every drag-and-drop event, as shown in Listing 9-1.</p>
 
 <figure class="listing"><figcaption>Listing 9-1. Retrieving the dataTransfer Object</figcaption><pre><code>Function handleDrag(evt) {
@@ -712,9 +712,9 @@
         return false;
     }</code></pre></figure><p>As discussed previously, it is necessary to cancel the event using preventDefault so that the browser’s default drop code is never triggered.</p>
 
-<p>Then, because we have more access to data in the drop handler than during the drag, we can inspect the files attached to the dataTransfer and discover the characteristics of the dropped files. In our example, we will merely display the properties of the files, but with full use of the HTML5 File API, you can read in the contents for local display or upload them to the server powering your application.</p>
+<p>Then, because we have more access to data in the drop handler than during the drag, we can inspect the files attached to the dataTransfer and discover the characteristics of the dropped files. In our example, we will merely display the properties of the files, but with full use of the HTML5 File API, you can read in the contents for local display or upload them to the server powering your application.</p></section>
 
-</section><section id="sec13_9"><h2>Practical Extras</h2>
+<section id="sec13_9"><h2>Practical Extras</h2>
 <p>Sometimes there are techniques that don’t fit into our regular examples but which nonetheless apply to many types of HTML5 applications. We present to you a short, but common, practical extra here.</p>
 
 <section id="sec14_9"><h3>Customizing the Drag Display<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>

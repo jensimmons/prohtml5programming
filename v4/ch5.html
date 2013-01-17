@@ -126,9 +126,9 @@
 <aside><h3>Note</h3>
 <p>When you use the Geolocation API, coordinates are always returned in the decimal format.</p>
 
-</aside><p>In addition to latitude and longitude coordinates, Geolocation always provides the <em>accuracy</em> of the location coordinates. Additional metadata <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>latitude and longitude coordinates</tertiary></span>may also be provided, depending on the device that your browser is running on. These include <em>altitude</em>, <em>altitudeAccuracy</em>, <em>heading</em>, and <em>speed</em>. If this additional metadata is not available it will be returned as a null value.</p>
+</aside><p>In addition to latitude and longitude coordinates, Geolocation always provides the <em>accuracy</em> of the location coordinates. Additional metadata <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>latitude and longitude coordinates</tertiary></span>may also be provided, depending on the device that your browser is running on. These include <em>altitude</em>, <em>altitudeAccuracy</em>, <em>heading</em>, and <em>speed</em>. If this additional metadata is not available it will be returned as a null value.</p></section>
 
-</section><section id="sec4_5"><h3>Where Does Location Information Come From?</h3>
+<section id="sec4_5"><h3>Where Does Location Information Come From?</h3>
 <p>The Geolocation <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>sources of</tertiary></span>API does not specify which underlying technology a device has to use to locate the application's user. Instead, it simply exposes an API for retrieving location information. What is exposed, however, is the level of accuracy with which the location was pinpointed. There is no guarantee that the device's actual location returns an accurate location.</p>
 
 <aside><h3>Location, Location</h3>
@@ -158,9 +158,9 @@
 <p>User defined</p>
 </li>
 </ul>
-<p>Many devices use a combination of one or more sources to ensure an even higher accuracy. Each of these methods has its own pros and cons, <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>sources of</tertiary></span>as explained in the next sections.</p>
+<p>Many devices use a combination of one or more sources to ensure an even higher accuracy. Each of these methods has its own pros and cons, <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>sources of</tertiary></span>as explained in the next sections.</p></section>
 
-</section><section id="sec5_5"><h3>IP Address Geolocation Data</h3>
+<section id="sec5_5"><h3>IP Address Geolocation Data</h3>
 <p>In the past, IP address–based<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>IP address-based</tertiary></span><span class="index-term"><span class="primary">IP address-based geolocation data</span></span> geolocation was the only way to get a possible location, but the returned locations often proved unreliable. IP address–based geolocation works by automatically looking up a user’s IP address and then retrieving the registrant's physical address. Therefore, if you have an ISP that provides you with an IP address, your location is often resolved to the physical address of your service provider that could be miles away. Table <span class="internal-reference" id="ir_tab1_5">5-1</span> shows the pros and cons of IP address–based geolocation data.
 </p>
 <table id="tab1_5">
@@ -179,9 +179,9 @@
 </tr>
 </tbody>
 </table>
-<p>Many websites advertise based on IP address locations. You can see this in action when you travel to another country and suddenly see advertisements for local services (based on the IP address of the country or region you are visiting).</p>
+<p>Many websites advertise based on IP address locations. You can see this in action when you travel to another country and suddenly see advertisements for local services (based on the IP address of the country or region you are visiting).</p></section>
 
-</section><section id="sec6_5"><h3>GPS Geolocation Data</h3>
+<section id="sec6_5"><h3>GPS Geolocation Data</h3>
 <p>As long as you can see <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>GPS data</tertiary></span><span class="index-term"><span class="primary">GPS geolocation data</span></span>the sky, GPS can provide very accurate location results. A GPS fix is acquired by acquiring the signal from multiple GPS satellites that fly around the earth. However, it can take awhile to get a fix, which does not lend itself particularly well for applications that must start up rapidly.</p>
 
 <p>Because it can take a long time to get a GPS location fix, you might want to query for the user’s location asynchronously. To show your application’s users that a fix is being acquired, you can add a status bar. Table <span class="internal-reference" id="ir_tab2_5">5-2</span> shows the pros and cons of GPS–based geolocation data.
@@ -264,9 +264,9 @@
 </table></section></section><section id="sec10_5"><h2>Browser Support for Geolocation</h2>
 <p><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">browser support for</span></span>Geolocation was one of the first HTML5 features to be fully embraced and implemented, and it is available in all the major browsers now. For a complete overview of the current browser support, including mobile support, refer to <code>http://caniuse.com</code> and search for Geolocation.</p>
 
-<p>If you have to support older browsers, it’s always a good idea to first see whether Geolocation is supported before you use the API. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p>
+<p>If you have to support older browsers, it’s always a good idea to first see whether Geolocation is supported before you use the API. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p></section>
 
-</section><section id="sec11_5"><h2>Privacy</h2>
+<section id="sec11_5"><h2>Privacy</h2>
 <p>The Geolocation<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>specification mandates that a mechanism is provided to protect the user's privacy. Furthermore, location information should not be made available unless the application’s users grant their express permission.</p>
 
 <p>This makes sense and addresses the “big brother” concerns users often raise about Geolocation applications. However, as you can see from some of the possible use cases for HTML 5 Geolocation applications, there is usually an incentive for the user to share this information. For example, users might be OK with sharing their location if this could let them know about a rare 50% discount on a pair of running shoes that are ready to be picked up in a store located just a few blocks away from where they happen to be drinking coffee. Let’s take a closer look at the browser and device privacy architecture shown in Figure <span class="internal-reference" id="ir_fig1_5">5-1</span>.
@@ -338,9 +338,9 @@
      document.getElementById("support").innerHTML = "Geolocation is not supported in
                                         your browser.";
     }
-}</code></pre></figure><p>In this example, you test for browser support in the loadDemo function, which might be called when the application’s page is loaded. A call to navigator.geolocation (you can also use Modernizr) will return the Geolocation object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined support element on the page with a suitable message.</p>
+}</code></pre></figure><p>In this example, you test for browser support in the loadDemo function, which might be called when the application’s page is loaded. A call to navigator.geolocation (you can also use Modernizr) will return the Geolocation object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined support element on the page with a suitable message.</p></section>
 
-</section><section id="sec16_5"><h3>Position Requests</h3>
+<section id="sec16_5"><h3>Position Requests</h3>
 <p>There are <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span></span>two types of position requests:</p>
 <ul>
 <li>
@@ -597,9 +597,9 @@ $$d=2{\rm arcsin}\left(\sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\right)+\cos_1\c
 .
 .
  &lt;/body&gt;
-&lt;/html&gt;</code></pre></figure><p>These values are all defaulted<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>writing HTML display</tertiary></span> for now and are populated once data starts flowing into the application.</p>
+&lt;/html&gt;</code></pre></figure><p>These values are all defaulted<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>writing HTML display</tertiary></span> for now and are populated once data starts flowing into the application.</p></section>
 
-</section><section id="sec21_5"><h3>Processing the Geolocation Data</h3>
+<section id="sec21_5"><h3>Processing the Geolocation Data</h3>
 <p>Our first JavaScript <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span>code section should look familiar. We’ve set a handler–<code>loadDemo()</code>–that will execute as soon as the page completes loading. This script will detect if Geolocation is supported in the browser and use a status update functions to change the status message at the top of the page to indicate what it finds. It will then request a watch of the user’s position, as shown in Listing 5-9.</p>
 
 <figure class="listing"><figcaption>Listing 5-9. Adding the loadDemo() and Status Update Functions</figcaption><pre><code>    var totalDistance = 0.0;
@@ -682,9 +682,9 @@ $$d=2{\rm arcsin}\left(\sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\right)+\cos_1\c
       }
       lastLat = latitude;
       lastLong = longitude;
-    }</code></pre></figure><p>That’s it. In fewer than 200 lines of HTML and script, we’ve created a sample application that monitors the viewer’s position over time and demonstrated nearly the entire Geolocation API, complete with error handling. Although this example is inherently less interesting when viewed on a desktop computer, try it out on your favorite geolocation–enabled phone or <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span>device and see how mobile you truly are during the course of a day.</p>
+    }</code></pre></figure><p>That’s it. In fewer than 200 lines of HTML and script, we’ve created a sample application that monitors the viewer’s position over time and demonstrated nearly the entire Geolocation API, complete with error handling. Although this example is inherently less interesting when viewed on a desktop computer, try it out on your favorite geolocation–enabled phone or <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span>device and see how mobile you truly are during the course of a day.</p></section>
 
-</section><section id="sec26_5"><h3>The Final Code</h3>
+<section id="sec26_5"><h3>The Final Code</h3>
 <p>The full code <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>code sample</tertiary></span>sample is shown in Listing 5-14.</p>
 
 <figure class="listing"><figcaption>Listing 5-14. Complete Distance Tracker Code</figcaption><pre><code>&lt;!DOCTYPE html&gt;
@@ -870,9 +870,9 @@ updateStatus(“Requesting location data…”);</code></pre></figure><p>Once ag
 
 <p>This technique works well for<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">status bar</span></span><span class="index-term"><span class="primary">Status bar</span></span> one-shot position lookups because it is easy for the developer to determine when a position lookup request starts. The request starts as soon as the developer calls <code>getCurrentPosition()</code><span class="index-term"><span class="primary">getCurrentPosition() function</span></span>, of course. However, in the case of a repeated position lookup via watchPosition()<span class="index-term"><span class="primary">watchPosition() function</span></span>, the developer is not in control of when each individual position request begins.</p>
 
-<p>Furthermore, the timeout does not begin until the user grants permission for the geolocation service to access position data. For this reason, it is impractical to implement a precise status display because the page is not informed during the instant when the<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">status bar</span></span><span class="index-term"><span class="primary">Status bar</span></span> user grants permission.</p>
+<p>Furthermore, the timeout does not begin until the user grants permission for the geolocation service to access position data. For this reason, it is impractical to implement a precise status display because the page is not informed during the instant when the<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">status bar</span></span><span class="index-term"><span class="primary">Status bar</span></span> user grants permission.</p></section>
 
-</section><section id="sec23_5"><h3>Show Me on a Google Map</h3>
+<section id="sec23_5"><h3>Show Me on a Google Map</h3>
 <p>One very common<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">Google Maps and</span></span><span class="index-term"><span class="primary">Google Maps</span></span> request for geolocation data is to show a user’s position on a map, such as the popular Google Maps service. In fact, this is so popular that Google itself built support for Geolocation into its user interface. Simply press the Show My Location button (see Figure <span class="internal-reference" id="ir_fig6_5">5-6</span>); Google Maps will use the Geolocation API (if it is available) to determine and display your location on the map.
 
 </p>
