@@ -1560,7 +1560,7 @@ nav li li li a {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003152}}
 .toc-link a.btn {
-  background: url("../images/book_open.svg") no-repeat scroll 2px 4px;
+  background: url("../images/book.svg") no-repeat scroll 2px 4px;
   text-indent: -9999px;
   height: 44px;
   width: 44px;
