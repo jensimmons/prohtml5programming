@@ -1,0 +1,772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>This book is about HTML5 Programming. Before you can understand HTML5 programming, however, you need to take a step back and understand what HTML5 is, a bit of the history behind it, and the differences between HTML 4 and HTML5.</p>
+
+<p>In this chapter, we get right to the practical questions to which everyone wants answers. Why HTML5, and why all the excitement just now? What are the new design principles that make HTML5 truly revolutionary—but also highly accommodating? What are the implications of a plugin-free paradigm; what’s in and what’s out? What’s new in HTML, and how does this kick off a whole new era for web developers? Let’s get to it.</p>
+
+<section id="sec2_1"><h2>The Story So Far—The History of HTML5</h2>
+<p>HTML goes back a<span class="index-term"><span class="primary">HTML5</span><span class="secondary">history of</span></span> long way. It was first published as an Internet draft in 1993. The ’90s saw an enormous amount of activity around HTML, with version 2.0, versions 3.2, and 4.0 (in the same year!), and finally, in 1999, version 4.01. In the course of its development, the World Wide Web Consortium (W3C)<span class="index-term"><span class="primary">World Wide Web Consortium (W3C)</span></span> assumed control of the specification.</p>
+
+<p>After the rapid delivery of these four versions though, HTML was widely considered a dead-end; the focus of web standards shifted to XML and XHTML, and HTML was put on the back burner. In the meantime, HTML refused to die, and the majority of content on the web continued to be served as HTML. To enable new web applications and address HTML’s shortcomings, new features and specifications were needed for HTML.</p>
+
+<p>Wanting to take the web platform to a new level, a small group of people started the Web Hypertext Application Working Group (WHATWG)<span class="index-term"><span class="primary">Web Hypertext Application Working Group (WHATWG)</span></span> in 2004. They created the HTML5 specification. They also began working on new features specifically geared to web applications—the area they felt was most lacking. It was around this time that the term Web 2.0<span class="index-term"><span class="primary">Web 2.0</span></span> was coined. And it really <em>was</em> like a second new web, as static web sites gave way to more dynamic and social sites that required more features—a lot more features.</p>
+
+<p>The W3C became involved with HTML again in 2006 and published the first working draft for HTML5 in 2008, and the XHTML 2 working group stopped in 2009. Another two years passed, and that is where we stand today. Because HTML5 solves very practical problems (as you will see later), browser vendors are feverishly implementing its new features, even though the specification has not been completely locked down. Experimentation by the browsers feeds back into and improves the specification. HTML5 is rapidly evolving to address real and practical improvements to the web platform.</p>
+
+<aside><h3>Moments in Html</h3>
+<p><strong>Brian says:</strong> “Hi, I’m Brian, and I’m an HTML curmudgeon.</p>
+
+<p>I authored my first home page back in 1995. At the time, a ‘home page’ was something you created to talk about yourself. It usually consisted of badly scanned pictures, <code>&lt;blink&gt;</code> tags, information about where you lived and what you were reading, and which computer-related project you were currently working on. Myself and most of my fellow ‘World Wide Web developers’ were attending or employed by universities.</p>
+
+<p>At the time, HTML was primitive and tools were unavailable. Web applications hardly existed, other than a few primitive text-processing scripts. Pages were coded by hand using your favorite text editor. They were updated every few weeks or months, if ever.</p>
+
+<p>We’ve come a long way in fifteen years.</p>
+
+<p>Today, it isn’t uncommon for users to update their online profiles many times a day. This type of interaction wouldn’t have been possible if not for the steady, lurching advances in online tools that built on each previous generation.</p>
+
+<p>Keep this in mind as you read this book. The examples we show here may seem simplistic at times, but the potential is limitless. Those of us who first used <code>&lt;img&gt;</code> tags in the mid-1990s probably had no idea that within ten years, many people would be storing and editing their photos online, but we should have predicted it.</p>
+
+<p>We hope the examples we present in this book will inspire you beyond the basics and to create<span class="index-term"><span class="primary">HTML5</span><span class="secondary">history of</span></span> the new foundation of the Web for the next decade.”</p>
+
+</aside></section><section id="sec3_1"><h2>The Myth of 2022 and Why It Doesn’t Matter</h2>
+<p>The HTML5 specification that we see today has been published as a working draft—it is not yet final. So when does it get cast in stone? Here are the key dates that you need to know. The first is 2012, which is the target date for the <em>candidate recommendation</em><span class="index-term"><span class="primary">HTML5</span><span class="secondary">candidate recommendation date</span></span>. The second date is 2022, which is the <em>proposed recommendation</em>. Wait! Not so fast! Don’t close this book to set it aside for ten years before you consider what these two dates actually mean.</p>
+
+<p>The first and nearest date is arguably the most important one, because once we reach that stage, HTML5 will be complete. That’s just around the corner. The significance of the proposed recommendation (which we can all agree is a bit distant) is that there will then be two interoperable implementations. In other words, two browsers equipped with completely interoperable implementations of the entire specifications—a lofty goal that actually makes the 2022 deadline seem ambitious. After all, we haven’t even achieved that in HTML4 and only recently for CSS2!</p>
+
+<p>What <em>is</em> important, right now, is that browser vendors are actively adding support for many very cool new features, and some of those are already in the Final Call for comments phase. Depending on your audience, you can start using many of these features today. Sure, any number of minor changes will need to be made down the road, but that’s a small price to pay for enjoying the benefits of living on the cutting edge. Of course, if your audience uses Internet Explorer 6.0, many of the new features won’t work and will require emulation—but that’s still not a good reason to dismiss HTML5. After all, those users, too, will eventually be jumping to a later version. Many of them will probably move to Internet Explorer 9.0 right away, and that version of IE supports many more HTML5 features. In practice, the combination of new browsers and improving emulation techniques means you can use many HTML5 features today or in the very near future.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">candidate recommendation date</span></span>
+</p>
+
+</section><section id="sec4_1"><h2>Who Is Developing HTML5?</h2>
+<p>We all know that a certain degree of structure is needed, and somebody clearly needs to be in charge of the specification of HTML5. That challenge is the job of three important organizations<span class="index-term"><span class="primary">HTML5</span><span class="secondary">organizations</span></span>:</p>
+<ul>
+<li>
+<p><em>Web Hypertext Application Technology Working Group (WHATWG)</em><span class="index-term"><span class="primary">Web Hypertext Application Technology Working Group (WHATWG)</span></span>: Founded in 2004 by individuals working for browser vendors Apple, Mozilla, Google, and Opera, WHATWG develops HTML and APIs for web application development and provides open collaboration of browser vendors and other interested parties.</p>
+</li>
+<li>
+<p><em>World Wide Web Consortium (W3C)</em><span class="index-term"><span class="primary">World Wide Web Consortium (W3C)</span></span>: The W3C contains the HTML working group that is currently charged with delivering their HTML5 specification.</p>
+</li>
+<li>
+<p><em>Internet Engineering Task Force (IETF)</em><span class="index-term"><span class="primary">Internet Engineering Task Force (IETF)</span></span>: This task force contains the groups responsible for Internet protocols such as HTTP. HTML5 defines a new WebSocket API<span class="index-term"><span class="primary">WebSocket API</span></span> that relies on a new WebSocket protocol, which is under development in an IETF working group.</p>
+</li>
+</ul></section><section id="sec5_1"><h2>A New Vision</h2>
+<p>HTML5 is based on various design principles, spelled out in the WHATWG specification, that truly embody a new vision of possibility and practicality.</p>
+<ul>
+<li>
+<p>Compatibility</p>
+</li>
+<li>
+<p>Utility</p>
+</li>
+<li>
+<p>Interoperability</p>
+</li>
+<li>
+<p>Universal access</p>
+</li>
+</ul>
+<section id="sec6_1"><h3>Compatibility and Paving the Cow Paths<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>compatibility and paving, cow paths</tertiary></span>
+</h3>
+<p>Don’t worry; HTML5 is not an upsetting kind of revolution. In fact, one of its core principles is to keep everything working smoothly. If HTML5 features are not supported, the behavior must degrade gracefully. In addition, since there is about 20 years of HTML content out there, supporting all that existing content is important.</p>
+
+<p>A lot of effort has been put into researching common behavior. For example, Google analyzed millions of pages to discover the common ID and <code>Class</code> names for <code>DIV</code> tags and found a huge amount of repetition. For example, many people used <code>DIV id="header"</code> to mark up header content. HTML5 is all about solving real problems, right? So why not simply create a <code>&lt;header&gt;</code> element?</p>
+
+<p>Although some features of the HTML5 standard are quite revolutionary, the name of the game is evolution not revolution. After all, why reinvent the wheel? (Or, if you must, then at least make a better one!)</p>
+
+</section><section id="sec7_1"><h3>Utility and the Priority of Constituencies<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>utility and the priority of constituencies</tertiary></span>
+</h3>
+<p>The HTML5 specification is written based upon a definite <em>Priority of Constituencies</em><span class="index-term"><span class="primary">Priority of Constituencies</span></span>. And as priorities go, “the user is king.” This means, when in doubt, the specification values users over authors, over implementers (browsers), over specifiers (W3C/WHATWG), and over theoretical purity. As a result, HTML5 is overwhelmingly practical, though in some cases, less than perfect.</p>
+
+<p>Consider this example. The following code snippets are all equally valid in HTML5:</p>
+
+<pre><code>id="prohtml5"
+id=prohtml5
+ID="prohtml5"</code></pre>
+
+
+<p>Sure, some will object to this relaxed syntax, but the bottom line is that the end user doesn’t really care. We’re not suggesting that you start writing sloppy code, but ultimately, it’s the end user who suffers when any of the preceding examples generates errors and doesn’t render the rest of the page.</p>
+
+<p><span class="index-term"><span class="primary">Priority of Constituencies</span></span>HTML5 has also spawned the creation of XHTML5 to enable XML tool chains to generate valid HTML5 code. The serializations of the HTML or the XHTML version should produce the same DOM trees with minimal differences. Obviously, the XHTML syntax is a lot stricter, and the code in the last two examples would not be valid.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>utility and the priority of constituencies</tertiary></span>
+</p>
+
+</section><section id="sec8_1"><h3>Secure<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>security</tertiary></span> by Design</h3>
+<p>A lot of emphasis has been given to making HTML5 secure right out of the starting gate. Each part of the specification has sections on security considerations, and security has been considered up front. HTML5 introduces a new origin-based security model that is not only easy to use but is also used consistently by different APIs. This security model allows us to do things in ways that used to be impossible. For example, it allows us to communicate securely across domains without having to revert to all kinds of clever, creative, but ultimately Non-secure hacks. In that respect, we definitely will not be looking back to the good old days.</p>
+
+</section><section id="sec9_1"><h3>Separation of Presentation and Content<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>presentation and content separation</tertiary></span>
+</h3>
+<p>HTML5 takes a giant step toward the clean separation of presentation and content. HTML5 strives to create this separation wherever possible, and it does so using CSS. In fact, most of the presentational features of earlier versions of HTML are no longer supported, but will still work, thanks to the compatibility design principle mentioned earlier. This idea is not entirely new, though; it was already in the works in HTML4 Transitional and XHTML1.1. Web designers have been using this as a best practice for a long time, but now, it is even more important to cleanly separate the two. The problems with presentational markup are:</p>
+<ul>
+<li>
+<p>Poor accessibility</p>
+</li>
+<li>
+<p>Unnecessary complexity (it’s harder to read your code with all the inline styling)</p>
+</li>
+<li>
+<p>Larger document size (due to repetition of style content), which translates into slower-loading pages</p>
+</li>
+</ul></section><section id="sec10_1"><h3>Interoperability Simplification<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>interoperability simplification</tertiary></span>
+</h3>
+<p>HTML5 is all about simplification and avoiding needless complexity. The HTML5 mantra? “Simple is better. Simplify wherever possible.” Here are some examples of this:</p>
+<ul>
+<li>
+<p>Native browser ability instead of complex JavaScript code</p>
+</li>
+<li>
+<p>A new, simplified <code>DOCTYPE</code></p>
+</li>
+<li>
+<p>A new, simplified character set declaration</p>
+</li>
+<li>
+<p>Powerful yet simple HTML5 APIs</p>
+</li>
+</ul>
+<p>We’ll say more about some of these later.</p>
+
+<p>To achieve all this simplicity, the specification has become much bigger, because it needs to be much more precise—far more precise, in fact, than any previous version of the HTML specification. It specifies a legion of well-defined behaviors in an effort to achieve true browser interoperability by 2022. Vagueness simply will not make that happen.</p>
+
+<p>The HTML5 specification is also more detailed than previous ones to prevent misinterpretation. It aims to define things thoroughly, especially web applications. Small wonder, then, that the specification is over 900 pages long!</p>
+
+<p>HTML5 is also designed to handle errors well, with a variety of improved and ambitious error-handling plans. Quite practically, it prefers graceful error recovery to hard failure, again giving A-1 top priority to the interest of the end user. For example, errors in documents will not result in catastrophic failures in which pages do not display. Instead, error recovery is precisely defined so browsers can display “broken” markup in a standard way.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>interoperability simplification</tertiary></span>
+</p>
+
+</section><section id="sec11_1"><h3>Universal Access<span class="index-term"><span class="primary">HTML5</span><span class="secondary">design principles</span><tertiary>universal Access</tertiary></span>
+</h3>
+<p>This principle is divided into three concepts:</p>
+<ul>
+<li>
+<p><em>Accessibility</em>: To support users with disabilities, HTML5 works closely with a related standard called Web Accessibility Initiative (WAI)<span class="index-term"><span class="primary">Web Accessibility Initiative (WAI)</span></span> Accessible Rich Internet Applications (ARIA)<span class="index-term"><span class="primary">Accessible Rich Internet Applications (ARIA)</span></span>. WAI-ARIA roles, which are supported by screen readers, can be already be added to your HTML elements.</p>
+</li>
+<li>
+<p><em>Media Independence</em>: HTML5 functionality should work across all different devices and platforms if at all possible.</p>
+</li>
+<li>
+<p><em>Support for all world languages</em>: For example, the new <code>&lt;ruby&gt;</code> element supports the Ruby annotations that are used in East Asian typography.</p>
+</li>
+</ul></section></section><section id="sec12_1"><h2>A Plugin–Free Paradigm</h2>
+<p>HTML5 provides native support for many features that used to be possible only with plugins or complex hacks (a native drawing API, native video, native sockets, and so on).</p>
+
+<p>Plugins, of course, present many problems<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>problems</tertiary></span>:</p>
+<ul>
+<li>
+<p>Plugins cannot always be installed.</p>
+</li>
+<li>
+<p>Plugins can be disabled or blocked (for example, the Apple iPad does not ship with a Flash plugin).</p>
+</li>
+<li>
+<p>Plugins are a separate attack vector.</p>
+</li>
+<li>
+<p>Plugins are difficult to integrate with the rest of an HTML document (because of plugin boundaries, clipping, and transparency issues).<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>problems</tertiary></span>
+</p>
+</li>
+</ul>
+<p>Although some plugins have high install rates (Adobe Flash, for example), they are often blocked in controlled corporate environments. In addition, some users choose to disable these plugins due to the unwelcome advertising displays that they empower. However, if users disable your plugin, they also disable the very program you’re relying on to display your content.</p>
+
+<p>Plugins also often have difficulty integrating their displays with the rest of the browser content, which causes clipping or transparency issues with certain site designs. Because plugins use a self-contained rendering model that is different from that of the base web page, developers face difficulties if pop-up menus or other visual elements need to cross the plugin boundaries on a page. This is where HTML5 comes on the scene, smiles, and waves its magic wand of <em>native</em> functionality<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>native functionality</tertiary></span>. You can style elements with CSS and script with JavaScript. In fact, this is where HTML5 flexes its biggest muscle, showing us a power that just didn’t exist in previous versions of HTML. It’s not just that the new elements provide new functionality. It’s also the added native interaction with scripting and styling that enables us to do much more than we could ever do before.</p>
+
+<p>Take the new canvas element, for example. It enables us to do some pretty fundamental things that were not possible before (try drawing a diagonal line in a web page in HTML 4). However, what’s most interesting is the power that we can unlock with the APIs and the styling we can apply with just a few lines of CSS code. Like well-behaved children, the HTML5 elements also play nicely together. For example, you can grab a frame from a video element and display it on a canvas, and the user can just click the canvas to play back the video from the frame you just showed. This is just one example of what a native code has to offer over a plugin. In fact, virtually <em>everything</em> becomes easier when you’re not working with a black box. What this all adds up to is a truly powerful new medium, which is why we decided to write a book about HTML5 <em>programming</em>, and not just about the new elements!</p>
+
+<section id="sec13_1"><h3>What’s In and What’s Out?</h3>
+<p>So, what really <em>is</em> part of HTML5? If you read the specification carefully, you might not find all of the features we describe in this book. For example, you will not find Geolocation and Web Workers in there. So are we just making this stuff up? Is it all hype? No, not at all!</p>
+
+<p>Many pieces of the HTML5 effort were originally part of the HTML5 specification<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>specification</tertiary></span> and were then moved to separate standards documents to keep the specification focused. It was considered smarter to discuss and edit some of these features on a separate track before making them into official specifications. This way, one small contentious markup issue wouldn’t hold up the show of the entire specification.</p>
+
+<p>Experts in specific areas can come together on mailing lists to discuss a given feature without the crossfire of too much chatter. The industry still refers to the original set of features, including Geolocation, and so on as HTML5. Think of HTML5, then, as an umbrella term that covers the core markup, as well as many cool new APIs. At the time of this writing, these features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>features</tertiary></span> are part of HTML5:</p>
+<ul>
+<li>
+<p>Canvas (2D and 3D)</p>
+</li>
+<li>
+<p>Cross-document messaging</p>
+</li>
+<li>
+<p>Geolocation</p>
+</li>
+<li>
+<p>Audio and Video</p>
+</li>
+<li>
+<p>Forms</p>
+</li>
+<li>
+<p>MathML</p>
+</li>
+<li>
+<p>Microdata</p>
+</li>
+<li>
+<p>Server-Sent events</p>
+</li>
+<li>
+<p>Scalable Vector Graphics (SVG)</p>
+</li>
+<li>
+<p>WebSocket API and protocol</p>
+</li>
+<li>
+<p>Web origin concept</p>
+</li>
+<li>
+<p>Web storage</p>
+</li>
+<li>
+<p>Indexed database</p>
+</li>
+<li>
+<p>Application Cache (Offline Web Apps)</p>
+</li>
+<li>
+<p>Web Workers</p>
+</li>
+<li>
+<p>Drag and Drop</p>
+</li>
+<li>
+<p>XMLHttpRequest Level 2</p>
+</li>
+</ul>
+<p>As you can see, a lot of the APIs we cover in this book are on this list. How did we choose which APIs<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>APIs</tertiary></span> to cover? We chose to cover features that were at least somewhat baked. Translation? They’re available in some form in more than one browser. Other (less-baked) features may only work in one special beta version of a browser, while others are still just ideas at this point.</p>
+
+<p>As far as browser support goes, there are some excellent online resources that you can use to check current (and future) browser support. The site <code>www.caniuse.com</code> provides an exhaustive list of features and browser support broken down by browser version and the site <code>www.html5test.com</code> checks the support for HTML5 features in the browser you use to access it.</p>
+
+<p>Furthermore, this book does not focus on providing you with the emulation workarounds to make your HTML5 applications run seamlessly on antique browsers. Instead, we will focus primarily on the specification of HTML5 and how to use it. That said, for each of the APIs we do provide some example code that you can use to detect its availability. Rather than using <em>user agent</em> detection, which is often unreliable, we use <em>feature</em> detection. For that, you can also use <em>Modernizr</em>—a JavaScript library<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary><em>Modernizr</em>—a JavaScript library</tertiary></span> that provides very advanced HTML5 and CSS3 feature detection. We highly recommend you use Modernizr in your applications, because it is hands-down the best tool for this.</p>
+
+<aside><h3>More Moments in HTML</h3>
+<p><strong>Frank says:</strong> “Hi, I’m Frank, and I sometimes paint.</p>
+
+<p>One of the first HTML canvas demonstrations I saw was a basic painting application that mimicked the user interface of Microsoft Paint<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>Microsoft Paint, user interface</tertiary></span>. Although it was decades behind the state of the art in digital painting and, at the time, ran in only a fraction of existing browsers, it got me thinking about the possibilities it represented.</p>
+
+<p>When I paint digitally, I typically use locally installed desktop software. While some of these programs are excellent, they lack the characteristics that make web applications so great. In short, they are disconnected. Sharing digital paintings has, to date, involved exporting an image from a painting application and uploading it to the Web. Collaboration or critiques on a live canvas are out of the question. HTML5 applications can short-circuit the export cycle and make the creative process fit into the online world along with finished images.</p>
+
+<p>The number of applications<span class="index-term"><span class="primary">HTML5</span><span class="secondary">plugin–free paradigm</span><tertiary>applications</tertiary></span> that cannot be implemented with HTML5 is dwindling. For text, the Web is already the ultimate two-way communication medium. Text-based applications are available in entirely web-based forms. Their graphical counterparts, like painting, video editing, and 3D modeling software, are just arriving now.</p>
+
+<p>We can now build great software to create and enjoy images, music, movies, and more. Even better, the software we make will be on and off the Web: a platform that is ubiquitous, empowering, and online.”</p>
+
+</aside></section></section><section id="sec14_1"><h2>What’s New in HTML5?</h2>
+<p>Before we start programming HTML.5, let’s take a quick look at what’s new in HTML5.</p>
+
+<section id="sec15_1"><h3>New DOCTYPE and Character Set<span class="index-term"><span class="primary">HTML5</span><span class="secondary">DOCTYPE and character set</span></span>
+</h3>
+<p>First of all, the <code>DOCTYPE</code><span class="index-term"><span class="primary">DOCTYPE</span></span> for web pages has been greatly simplified. Compare, for example, the following HTML4 <code>DOCTYPE</code> s:</p>
+
+<pre><code>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"↵
+"http://www.w3.org/TR/html4/loose.dtd"&gt;</code></pre>
+
+<p>Who could ever remember any of these? We certainly couldn’t. We would always just copy and paste some lengthy <code>DOCTYPE</code> into the page, always with a worry in the back of our minds, “Are you absolutely sure you pasted the right one?” HTML5 neatly solves this problem as follows:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+<p>Now <em>that’s</em> a <code>DOCTYPE</code> you might just remember. Like the new <code>DOCTYPE</code>, the character set<span class="index-term"><span class="primary">Character set</span></span> declaration has also been abbreviated. It used to be</p>
+
+<pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt; </code></pre>
+<p>Now, it is:</p>
+
+<pre><code>&lt;meta charset="utf-8" &gt; </code></pre>
+<p>You can even leave off the quotation marks around “utf-8” if you want to. Using the new <code>DOCTYPE</code> triggers the browser to display pages in standards mode. For example, Figure <span class="internal-reference" id="ir_fig1_1">1-1</span> shows the information you will see if you open an HTML5 page in Firefox, and you click Tools ä Page Info. In this example, the page is rendered in standards mode.
+</p>
+<figure id="fig1_1" class="image"><img src="images/ch1-1/fig1-1.png"><figcaption>Figure 1-1. A page rendered in standards-compliant mode</figcaption></figure><p>When you use the new HTML5 <code>DOCTYPE</code><span class="index-term"><span class="primary">DOCTYPE</span></span>, it triggers browsers to render the page in standards-compliant mode. As you may know, Web pages can have different rendering modes, such as Quirks<span class="index-term"><span class="primary">Quirks mode</span></span>, Almost Standards<span class="index-term"><span class="primary">Almost Standards mode</span></span>, and Standards (or no-quirks) mode<span class="index-term"><span class="primary">Standards (or no-quirks) mode</span></span>. The <code>DOCTYPE</code> indicates to the browser which mode to use and what rules are used to validate your pages. In Quirks mode, browsers try to avoid breaking pages and render them even if they are not entirely valid. HTML5 introduces new elements and has marked others as obsolete (more on this in the next section). If you use these obsolete elements, your page will not be valid. However, browsers will continue to render them as they used to.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">DOCTYPE and character set</span></span></p>
+
+</section><section id="sec16_1"><h3>New and Deprecated Elements</h3>
+<p>HTML5 introduces many new markup elements<span class="index-term"><span class="primary">HTML5</span><span class="secondary">markup elements</span></span>, which it groups into seven different content types. These are shown below in Table <span class="internal-reference" id="ir_tab1_1">1-1</span>.
+</p>
+<table id="tab1_1">
+<thead><tr>
+<td>Content Type</td>
+<td>Description</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>Embedded</td>
+<td>ContentEmbedded content type that imports other resources into the document, for example audio, video, canvas, and iframe</td>
+</tr>
+<tr>
+<td>FlowFlow content type
+</td>
+<td>Elements used in the body of documents and applications, for example form, h1, and small</td>
+</tr>
+<tr>
+<td>HeadingHeading content type
+</td>
+<td>Section headers, for example h1, h2, and hgroup</td>
+</tr>
+<tr>
+<td>InteractiveInteractive content type
+</td>
+<td>Content that users interact with, for example audio or video controls, button, and textarea</td>
+</tr>
+<tr>
+<td>MetadataMetadata content type
+</td>
+<td>Elements—commonly found in the head section— that set up the presentation or behavior of the rest of the document, for example script, style, and title</td>
+</tr>
+<tr>
+<td>PhrasingPhrasing content type
+</td>
+<td>Text and text markup elements, for example mark, kbd, sub, and sup</td>
+</tr>
+<tr>
+<td>SectioningSectioning content type
+</td>
+<td>Elements that define sections in the document, for example article, aside, and title</td>
+</tr>
+</tbody>
+</table>
+<p>Most of these elements can be styled with CSS. In addition, some of them, such as <code>canvas</code>, <code>audio</code>, and <code>video</code>, can be used by themselves, though they are accompanied by APIs that allow for fine-grained native programmatic control. These APIs will be discussed in much more detail later in this book.</p>
+
+<p>It is beyond the scope of this book to discuss all these new elements, but most of the sectioning elements (discussed in the next section) are new. The <code>canvas</code>, <code>audio</code>, and <code>video</code> elements are also new in HTML5.</p>
+
+<p>Likewise, we’re not going to provide an exhaustive list of all the deprecated tags (there are many good online resources online for this), but many of the elements that performed inline styling have been marked as obsolete in favor of using CSS, such as <code>big</code>, <code>center</code>, <code>font</code>, and <code>basefont</code>.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">markup elements</span></span>
+</p>
+
+</section><section id="sec17_1"><h3>Semantic Markup</h3>
+<p>One content type that contains many new HTML5 elements is the <em>sectioning</em> content type<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>sectioning content type</tertiary></span>. HTML5 defines a new <em>semantic</em> markup to describe an element’s content. Using semantic markup doesn’t provide any immediate benefits to the end user, but it does simplify the design of your HTML pages. What’s more, it will make your pages more machine-readable and accessible. For example, search and syndication engines will definitely be taking advantage of these elements as they crawl and index pages.</p>
+
+<p>As we said before, HTML5 is all about paving the cow paths. Google and Opera millions of pages to discover the common ID names for <code>DIV</code> tags and found a huge amount of repetition. For example, since many people used <code>DIV id="footer"</code> to mark up footer content, HTML5 provides a set of new sectioning elements that you can use in modern browsers right now. Table <span class="internal-reference" id="ir_tab2_1">1-2</span> shows the different semantic markup elements.
+</p>
+<table id="tab2_1">
+<thead><tr>
+<td>Sectioning Element</td>
+<td>Description</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>Header content (for a page or a section of the page)</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>Footer content (for a page or a section of the page)</td>
+</tr>
+<tr>
+<td>section</td>
+<td>A section in a web page</td>
+</tr>
+<tr>
+<td>article</td>
+<td>Independent article content</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>Related content or pull quotes</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>Navigational aids</td>
+</tr>
+</tbody>
+</table>
+<p>All of these elements can be styled with CSS. In fact, as we described in the utility design principle earlier, HTML5 pushes the separation of content and presentation, so you have to style your page using CSS styles in HTML5. Listing 1-1 shows what an HTML5 page<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>HTML5 page, CSS styles</tertiary></span> might look like. It uses the new <code>DOCTYPE</code>, character set, and semantic markup elements—in short, the new sectioning content. The code file ( <code>sample.html</code>) is available in the <code>code/intro</code> folder.</p>
+
+<figure class="listing"><figcaption>Listing 1-1. An Example HTML5 Page</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML5&lt;/title&gt;
+  &lt;link rel="stylesheet" href="html5.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;header&gt;
+     &lt;h1&gt;Header&lt;/h1&gt;
+     &lt;h2&gt;Subtitle&lt;/h2&gt;
+     &lt;h4&gt;HTML5 Rocks!&lt;/h4&gt;
+   &lt;/header&gt;
+    &lt;div id="container"&gt;
+        &lt;nav&gt;
+          &lt;h3&gt;Nav&lt;/h3&gt;
+          &lt;a href="http://www.example.com"&gt;Link 1&lt;/a&gt;
+          &lt;a href="http://www.example.com"&gt;Link 2&lt;/a&gt;
+          &lt;a href="http://www.example.com"&gt;Link 3&lt;/a&gt;
+        &lt;/nav&gt;
+            &lt;section&gt;
+            &lt;article&gt;
+              &lt;header&gt;
+                &lt;h1&gt;Article Header&lt;/h1&gt;
+              &lt;/header&gt;
+              &lt;p&gt;Lorem ipsum dolor HTML5 nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at HTML5semantic markupHTML5 page, CSS styles
+                      est eros, vel fringilla urna.&lt;/p&gt;
+              &lt;p&gt;Per inceptos himenaeos. Quisque feugiat, justo at vehicula pellentesque, turpis
+                     lorem dictum nunc.&lt;/p&gt;
+              &lt;footer&gt;
+                &lt;h2&gt;Article Footer&lt;/h2&gt;
+              &lt;/footer&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+              &lt;header&gt;
+                &lt;h1&gt;Article Header&lt;/h1&gt;
+              &lt;/header&gt;
+              &lt;p&gt;HTML5: "Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio&lt;/p&gt;
+              &lt;footer&gt;
+                &lt;h2&gt;Article Footer&lt;/h2&gt;
+              &lt;/footer&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+        &lt;aside&gt; 
+          &lt;h3&gt;Aside&lt;/h3&gt;
+           &lt;p&gt;HTML5: "Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing
+                   elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio rhoncus&lt;/p&gt;
+        &lt;/aside&gt;
+        &lt;footer&gt;
+           &lt;h2&gt;Footer&lt;/h2&gt;
+        &lt;/footer&gt;
+ &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre></figure><p>Without styles, the page would be pretty dull to look at. Listing 1-2 shows some of the CSS code that can be used to style the content. The code file ( <code>html5.css</code>) is available in the <code>code/intro</code> folder. This style sheet uses some of the new CSS3 features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span>, such as rounded corners ( <code>border-radius</code>) and rotate transformations ( <code>transform: rotate();</code>). CSS3—just like HTML5 itself—is still under development, and it is modularized with subspecifications for easier browser uptake (for example, transformation, animation, and transition are all areas that are in separate subspecifications).</p>
+
+<p>Experimental CSS3 features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span> are prefixed with vendor strings to avoid namespace conflicts should the specifications change. To display rounded corners, gradients, shadows, and transformations, it is currently necessary to use prefixes such as <code>-moz-</code> (for Mozilla), <code>o-</code> (for Opera), <code>-webkit-</code> (for WebKit-based browsers such as Safari and Chrome), and <code>-ms-</code> (for Internet Explorer) in your declarations.</p>
+
+<figure class="listing"><figcaption>Listing 1-2. CSS File for the HTML5 Page</figcaption><pre><code>body {
+        background-color:#CCCCCC;
+        font-family:Geneva,Arial,Helvetica,sans-serif;
+        margin: 0px auto;
+        max-width:900px;
+        border:solid;
+        border-color:#FFFFFF;
+}
+header {
+        background-color: #F47D31;
+        display:block;
+        color:#FFFFFF;
+        text-align:center;
+}
+header h2 {
+        margin: 0px;
+}
+h1 {
+        font-size: 72px;
+        margin: 0px;
+}
+h2 {
+        font-size: 24px;
+        margin: 0px;
+        text-align:center;
+        color: #F47D31;
+}
+h3 {
+        font-size: 18px;
+        margin: 0px;
+        text-align:center;
+        color: #F47D31;
+}
+h4 {
+        color: #F47D31;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 20px #888;
+        -webkit-transform: rotate(-45 deg);
+        -moz-box-shadow: 2px 2px 20px #888;
+        -moz-transform: rotate(-45 deg);
+        position: absolute;
+        padding: 0px 150px;
+        top: 50px;
+        left: -120px;
+        text-align:center;
+}
+nav {
+        display:block;
+        width:25%;
+        float:left;
+}HTML5semantic markupCSS3 features, HTML5 page
+nav a:link, nav a:visited {
+        display: block;
+        border-bottom: 3px solid #fff;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 5px;
+}
+nav a:hover {
+        color: white;
+        background-color: #F47D31;
+}
+nav h3 {
+        margin: 15px;
+        color: white;
+}
+#container {
+        background-color: #888;
+}
+section {
+        display:block;
+        width:50%;
+        float:left;
+}
+article {
+        background-color: #eee;
+        display:block;
+        margin: 10px;
+        padding: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 2px 2px 20px #888;
+        -webkit-transform: rotate(-10 deg);
+        -moz-box-shadow: 2px 2px 20px #888;
+        -moz-transform: rotate(-10 deg);
+}
+article header {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        padding: 5px;
+}
+article footer {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        padding: 5px;
+}
+article h1 {
+        font-size: 18px;
+}
+aside {
+        display:block;
+        width:25%;
+        float:left;
+}HTML5semantic markupCSS3 features, HTML5 page
+
+aside h3 {
+        margin: 15px;
+        color: white;
+}
+aside p {
+        margin: 15px;
+        color: white;
+        font-weight: bold;
+        font-style: italic;
+}
+footer {
+        clear: both;
+        display: block;
+        background-color: #F47D31;
+        color:#FFFFFF;
+        text-align:center;
+        padding: 15px;
+}
+footer h2 {
+        font-size: 14px;
+        color: white;
+}
+/* links */
+a {
+        color: #F47D31;
+}
+a:hover {
+        text-decoration: underline;
+}</code></pre></figure><p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span>Figure <span class="internal-reference" id="ir_fig2_1">1-2</span> <span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span></span>shows an example of the page in Listing 1-1, styled with CSS (and some CSS3) styles. Keep in mind, however, that there is no such thing as a typical HTML5 page. Anything goes, really, and this example uses many of the new tags mainly for purposes of demonstration.
+
+</p>
+<figure id="fig2_1" class="image"><img src="images/ch1-2/fig1-2.png"><figcaption>Figure 1-2. An HTML5 page with all the new <span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span></span>semantic markup elements</figcaption></figure><p>One last thing to keep in mind is that browsers may seem to render things as if they actually understand these new elements. The truth is, however, that these elements could have been renamed <code>foo</code> and <code>bar</code> and then styled, and they would have been rendered the same way (but of course, they would not have any benefits in search engine optimization). The one exception to this is Internet Explorer<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>Internet Explorer</tertiary></span>, which requires that elements be part of the DOM. So, if you want to see these elements in IE, you must programmatically insert them into the DOM and display them as block elements. A handy script that does that for you is html5shiv (<code>http://code.google.com/p/html5shiv/</code>).</p>
+
+</section><section id="sec18_1"><h3>Simplifying Selection Using the Selectors API</h3>
+<p>Along with the new semantic elements, HTML5 also introduces new simple ways to find elements in your page DOM. <span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span><tertiary>JavaScript methods</tertiary></span>Table <span class="internal-reference" id="ir_tab3_1">1-3</span> shows the previous versions of the document object allowed developers to make a few calls to find specific elements in the page.
+</p>
+<table id="tab3_1">
+<thead><tr>
+<td>Function</td>
+<td>Description</td>
+<td>Example</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>getElementById()getElementById() function
+</td>
+<td>Returns the element with the specified id attribute value</td>
+<td>&lt;div id="foo"&gt;  getElementById("foo");</td>
+</tr>
+<tr>
+<td>getElementsByName()getElementsByName() function
+</td>
+<td>Returns all elements whose name attribute has the specified value</td>
+<td>&lt;input type="text" name="foo"&gt;getElementsByName("foo");</td>
+</tr>
+<tr>
+<td>getElementsByTagName()getElementsByTagName() function
+</td>
+<td>Return all elements whose tag name matches the specified value</td>
+<td>&lt;input type="text"&gt;getElementsByTagName("input");</td>
+</tr>
+</tbody>
+</table>
+<p>With the new Selectors API, there are now more precise ways to specify which elements you would like to retrieve without resorting to looping and iterating through a document using standard DOM. The Selectors API exposes the same selector rules present in CSS as a means to find one or more elements in the page. For example, CSS already has handy rules for selecting elements based on their nesting, sibling, and child patterns. The most recent versions of CSS add support for more pseudo-classes—for example, whether an object is enabled, disabled, or checked—and just about any combination of properties and hierarchy you could imagine. To select elements in your DOM using CSS rules, simply utilize one of the functions shown in Table <span class="internal-reference" id="ir_tab4_1">1-4</span>.
+</p>
+<table id="tab4_1">
+<thead><tr>
+<td>Function</td>
+<td>Description</td>
+<td>Example</td>
+<td>Result</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>querySelector()querySelector() function</td>
+<td>Return the first element in the page which matches the specified selector rules(s)</td>
+<td>document.querySelector("input.error");</td>
+<td>Return the first input field with a style class of “error”</td>
+</tr>
+<tr>
+<td>querySelectorAll()querySelectorAll() function</td>
+<td>Returns all elements which match the specified rule or rules</td>
+<td>document.querySelectorAll("#results td");</td>
+<td>Return any table cells inside the element with id results</td>
+</tr>
+</tbody>
+</table>
+<p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span><tertiary>QuerySelector methods</tertiary></span>It is also possible to send more than one selector rule to the Selector API functions, for example:</p>
+
+<pre><code>// select the first element in the document with the
+// style class highClass or the style class lowClass
+var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
+
+
+<p>In the case of <code>querySelector()</code>, the first element that matches either rule is selected. In the case of <code>querySelectorAll()</code>, any element matching any of the listed rules is returned. Multiple rules are comma-separated.</p>
+
+<p>The new Selector API makes it easy to select sections of the document that were painful to track before. Assume, for example, that you wanted the ability to find whichever cell of a table currently had the mouse hovering over it. Listing 1-3 shows how this is trivially easy with a selector. The example files for this ( <code>querySelector.html</code> and <code>querySelectorAll.html</code>) are located in the <code>code/intro</code> directory.</p>
+
+<figure class="listing"><figcaption>Listing 1-3. Using the Selector API <span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span></span></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Query Selector Demo&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    td {
+      border-style: solid;
+      border-width: 1px;
+      font-size: 300%;
+    }
+    td:hover {
+      background-color: cyan;
+    }
+    #hoverResult {
+      color: green;
+      font-size: 200%;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;section&gt;
+    &lt;!-- create a table with a 3 by 3 cell display --&gt;
+   &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;A1&lt;/td&gt; &lt;td&gt;A2&lt;/td&gt; &lt;td&gt;A3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;B1&lt;/td&gt; &lt;td&gt;B2&lt;/td&gt; &lt;td&gt;B3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;C1&lt;/td&gt; &lt;td&gt;C2&lt;/td&gt; &lt;td&gt;C3&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;div&gt;Focus the button, hover over the table cells, and hit Enter to identify them
+    using querySelector('td:hover').&lt;/div&gt;
+&lt;button type="button" id="findHover" autofocus&gt;Find 'td:hover' target&lt;/button&gt;
+    &lt;div id="hoverResult"&gt;&lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+      document.getElementById("findHover").onclick = function() {
+        // find the table cell currently hovered in the page
+        var hovered = document.querySelector("td:hover");
+        if (hovered)
+           document.getElementById("hoverResult").innerHTML = hovered.innerHTML;
+      }
+    &lt;/script&gt;
+  &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></figure><p>As you can see from this example, finding the element a user is hovering over is a one-line exercise using:</p>
+
+<pre><code>var hovered = document.querySelector("td:hover");<span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span></span></code></pre>
+<aside><h3>Note</h3>
+<p>Not only are the Selector APIs handy, but they are often faster than traversing the DOM using the legacy child retrieval APIs. Browsers are highly optimized for selector matching in order to implement fast style sheets.</p>
+
+</aside><p>It should not be too surprising to find that the formal specification<span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span><tertiary>formal specification</tertiary></span> of selectors is separated from the specification for CSS at the W3C. As you’ve seen here, selectors are generally useful outside of styling. The full details of the new selectors are outside the scope of this book, but if you are a developer seeking the optimal ways to manipulate your DOM, you are encouraged to use the new Selectors API to rapidly navigate your application structure.</p>
+
+</section><section id="sec19_1"><h3>JavaScript Logging and Debugging<span class="index-term"><span class="primary">HTML5</span><span class="secondary">JavaScript logging and debugging</span></span>
+</h3>
+<p>Though they’re not technically a feature of HTML5, JavaScript logging and in-browser debugging tools have been improved greatly over the past few years. The first great tool for analyzing web pages and the code running in them was the Firefox add-on, Firebug.</p>
+
+<p>Similar functionality can now be found in all the other browsers’ built-in development tools: Safari’s Web Inspector, Google’s Chrome Developer Tools, Internet Explorer’s Developer Tools, and Opera’s Dragonfly. Figure <span class="internal-reference" id="ir_fig3_1">1-3</span> shows the Google Chrome Developer Tools (use the shortcut key CTRL + Shift + J on Windows or Command + Option + J on Mac to access this) that provide a wealth of information about your web pages; these include a debugging console, an elements View, a resource view, and a script view, to name just a few.
+</p>
+<figure id="fig3_1" class="image"><img src="images/ch1-3/fig1-3.png"><figcaption>Figure 1-3. Developer Tools view in Chrome</figcaption></figure><p>Many of the debugging tools offer a way to set breakpoints to halt code execution and analyze the state of the program and the current state of the variables. The <code>console.log</code> API has become the de facto logging standard for JavaScript developers. Many browsers offer a split-pane view that allows you to see messages logged to the console. Using <code>console.log</code> is much better than making a call to <code>alert()</code>, since it does not halt program execution.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">JavaScript logging and debugging</span></span>
+</p>
+
+</section><section id="sec20_1"><h3>window.JSON<span class="index-term"><span class="primary">HTML5</span><span class="secondary">window.JSON</span></span>
+</h3>
+<p>JSON is a relatively new and increasingly popular way to represent data. It is a subset of JavaScript syntax that represents data as object literals. Due to its simplicity and natural fit in JavaScript programming, JSON has become the de facto standard for data interchange in HTML5 applications. The canonical API for JSON has two functions, <code>parse()</code><span class="index-term"><span class="primary">parse() function</span></span> and <code>stringify()</code><span class="index-term"><span class="primary">stringify() function</span></span> (meaning serialize or convert to string).</p>
+
+<p>To use JSON in older browsers, you need a JavaScript library (several can be found at <code>http://json.org</code>). Parsing and serializing in JavaScript are not always as fast as you would like, so to speed up things, newer browsers now have a native implementation of JSON that can be called from JavaScript. The native JSON object is specified as part of the ECMAScript 5 standard<span class="index-term"><span class="primary">ECMAScript 5 standard</span></span> covering the next generation of the JavaScript language. It is one of the first parts of ECMAScript 5 to be widely implemented. Every modern browser now has <code>window.JSON</code>, and you can expect to see quite a lot of JSON used in HTML5 applications.<span class="index-term"><span class="primary">HTML5</span><span class="secondary">window.JSON</span></span>
+</p>
+
+</section><section id="sec21_1"><h3>DOM Level 3<span class="index-term"><span class="primary">HTML5</span><span class="secondary">DOM Level 3</span></span>
+</h3>
+<p>One of the most maligned parts of web application development has been event handling. While most browsers support standard APIs for events and elements, Internet Explorer differs. Early on, Internet Explorer implemented an event model that differed from the eventual standard. Internet Explorer 9 (IE9) now supports DOM Level 2 and 3 features, so you can finally use the same code for DOM manipulation and event handling in all HTML5 browsers. This includes the ever-important <code>addEventListener()</code><span class="index-term"><span class="primary">addEventListener() method</span></span> and <code>dispatchEvent()</code> methods<span class="index-term"><span class="primary">dispatchEvent() method</span></span>.</p>
+
+</section><section id="sec22_1"><h3>Monkeys, Squirrelfish, and Other Speedy Oddities</h3>
+<p>The latest round of browser innovations isn’t just about new tags and new APIs. One of the most significant recent changes is the rapid evolution of JavaScript/ECMAScript engines<span class="index-term"><span class="primary">JavaScript engine</span></span><span class="index-term"><span class="primary">ECMAScript engine</span></span> in the leading browsers. Just as new APIs open up capabilities that were impossible in last-generation browsers, speedups in the execution of the overall scripting engine benefit both existing web applications and those using the latest HTML5 features. Think your browser can’t handle complex image or data processing, or the editing of lengthy manuscripts? Think again.</p>
+
+<p>For the last few years, browser vendors have been in a virtual arms race to see who could develop the fastest JavaScript engine. While the earliest iterations of JavaScript were purely interpreted, the newest engines compile script code directly to native machine code, offering speedups of orders of magnitude compared to the browsers of the mid-2000s.</p>
+
+<p>The action pretty much began when Adobe donated its just-in-time (JIT) compilation engine<span class="index-term"><span class="primary">Just-in-time (JIT) compilation engine</span></span> and virtual machine for ECMAScript—code named Tamarin—to the Mozilla project in 2006. Although only pieces of the Tamarin technology<span class="index-term"><span class="primary">Tamarin technology</span></span> remain in the latest versions of Mozilla, the donation of Tamarin helped spawn new scripting engines in each of the browsers, with names that are just as intriguing as the performance they claim.
+</p>
+<table id="tab5_1">
+<thead><tr>
+<td>Browser</td>
+<td>Engine Name</td>
+<td>Notes</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>Apple SafariApple Safari
+</td>
+<td>NitroNitro engine (otherwise know as SquirrelFish ExtremeSquirrelFish Extreme engine)</td>
+<td>Released in Safari 4 and refined in version 5, it introduces byte code optimizations and a context-threaded native compiler.</td>
+</tr>
+<tr>
+<td>Google ChromeGoogle Chrome
+</td>
+<td>V8V8 engine
+</td>
+<td>Since Chrome 2, it uses generational garbage collection for high memory scalability without interruptions.</td>
+</tr>
+<tr>
+<td>Microsoft Internet ExplorerMicrosoft Internet Explorer
+</td>
+<td>ChakraChakra engine
+</td>
+<td>Introduced in IE 9, Chakra focuses on background compilation and an efficient type system and demonstrates a tenfold improvement over IE8.</td>
+</tr>
+<tr>
+<td>Mozilla FirefoxMozilla Firefox
+</td>
+<td>JägerMonkeyJägerMonkey engine
+</td>
+<td>Refined from version 3.5, this combines fast interpretation with native compilation from trace trees.</td>
+</tr>
+<tr>
+<td>OperaOpera browser
+</td>
+<td>CarakanCarakan engine
+</td>
+<td>This one uses register-based byte code and selective native compilation and claims improvements of 75% on version 10.50.</td>
+</tr>
+</tbody>
+</table>
+<p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">Web browser JavaScript engines</span></span>All in all, this healthy competition among browser vendors is bringing the performance of JavaScript ever closer to that of native desktop application code.</p>
+
+<aside><h3>Still More Moments in HTML</h3>
+<p><strong>Peter says</strong>: “Speaking of competition, and speedy oddities, my name is Peter and running is my thing—a lot of running.</p>
+
+<p>Ultra running is a great sport where you meet great people. While running the last miles of a 100-mile race or a 165-mile trail run, you really get to know people in a very new way. At that point, you’re really stripped down to your essence, the place where great friendships can happen. There’s still the element of competition, to be sure, but most of all there’s a deep sense of camaraderie. But I digress here.</p>
+
+<p>To keep track of how my friends are doing in races that I can’t attend (for example, when I am writing an HTML5 book), I usually follow along on the race websites. Not surprisingly, the ‘live tracking’ options are often quite unreliable.</p>
+
+<p>A few years ago, I stumbled upon a site for a European race that had all the right ideas. They gave GPS trackers to the front runners and then displayed these racers on a map (we’ll build some similar demonstrations in this book using Geolocation and WebSocket). Despite the fact that it was quite a primitive implementation (users had to actually click “refresh the page” to see updates!), I could instantly see the incredible potential.</p>
+
+<p>Now, just a few years later, HTML5 provides us with tools to build these sorts of live race tracking websites with APIs such as Geolocation for location-aware applications and WebSockets<span class="index-term"><span class="primary">HTML5</span><span class="secondary">location-aware applications and WebSockets</span></span> for real-time updates. There’s no doubt in my mind—HTML5 has crossed the finish line a winner!”</p>
+
+</aside></section></section><section id="sec23_1"><h2>Summary</h2>
+<p>In this chapter, we have given you a general overview of the essentials of HTML5.</p>
+
+<p>We charted the history of its development and some of the important dates coming up. We also outlined the four new design principles behind the HTML5 era that is now dawning: compatibility, utility, interoperability, and universal access. Each one of these principles opens the door to a world of possibilities and closes the door on a host of practices and conventions that are now rendered obsolete. We then introduced HTML5’s startling new plugin-free paradigm, and we reviewed<span class="index-term"><span class="primary">Chapter 1, Overview of HTML5</span></span><span class="index-term"><span class="primary">HTML5</span><span class="secondary">overview end</span></span> what’s new in HTML5, such as a new <code>DOCTYPE</code> and character set, lots of new markup elements, and we discussed the race for JavaScript supremacy.</p>
+
+<p>In the next chapter, we’ll begin by exploring the programming side of HTML5, starting with the Canvas API.</p>
+
+</section>
+</body></html>

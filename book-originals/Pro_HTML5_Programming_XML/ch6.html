@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>In this chapter, we’ll explore what you can do with two of the important building blocks for real-time, cross-origin communication:<em>Cross Document Messaging</em> and<em>XMLHttpRequest Level 2</em> and we’ll show you how they can be used to create compelling applications. Both of these building blocks add new communication options to HTML5 applications and allow applications served from different domains to safely communicate with each other.</p>
+
+<p>First, we’ll discuss the <code>postMessage</code> API and the origin security concept—two key elements of HTML5 communication—and then we’ll show you how the <code>postMessage</code> API can be used to communicate between iframes, tabs, and windows.</p>
+
+<p>Next, we’ll discuss XMLHttpRequest Level 2—an improved version of XMLHttpRequest. We’ll show you in which areas XMLHttpRequest has been improved. Specifically, we’ll show you how you can use XMLHttpRequest to make cross-origin requests and how to use the new progress events.</p>
+
+<section id="sec2_6"><h2>Cross Document Messaging</h2>
+<p>Until recently, communications between frames, tabs, and windows in a running browser was entirely restricted due to security concerns. For instance, while it might be handy for certain sites to share information from inside the browser, it would also open up the possibility for malicious attacks. If browsers granted the ability to programmatically access the content loaded into other frames and tabs, sites would be able to steal whatever information they could get from another site's content using scripting. Wisely, the browser vendors restricted this access; attempting to retrieve or modify content loaded from another source raises a security exception and prevents the operation.</p>
+
+<p>However, there are some legitimate cases for content from different sites to be able to communicate inside the browser. The classic example is the "mashup", a combination of different applications such as mapping, chat, and news from different sites, all combined together to form a new meta-application. In these cases, a well-coordinated set of applications would be served by direct communication channels inside the browser itself.</p>
+
+<p>To meet this need, the browser vendors and standards bodies agreed to introduce a new feature: Cross Document Messaging. Cross Document Messaging<span class="index-term"><span class="primary">Cross Document Messaging</span></span><span class="index-term"><span class="primary">postMessage API</span></span><span class="index-term"><span class="primary">Communication API</span><span class="secondary">postMessage API</span><span class="see-also"><em>See</em> postMessage API</span></span> enables secure cross-origin communication across iframes, tabs, and windows. It defines the <code>postMessage</code> API as a standard way to send messages. As shown in the following example, it is very simple to send a message with the <code>postMessage</code> API.</p>
+
+<pre><code>chatFrame.contentWindow.postMessage('Hello, world', 'http://www.example.com/');</code></pre>
+<p>To receive messages, you just have to add an event handler to your page. When a message arrives, you can check its origin and decide whether or not to do something with the message. Listing 6-1 shows an event listener that passes the message to a <code>messageHandler</code> function.</p>
+
+<figure class="listing"><figcaption>Listing 6-1. An Event Listener <span class="index-term"><span class="primary">postMessage API</span><span class="secondary">event listener for message events</span></span> for Message Events</figcaption><pre><code>window.addEventListener(“message”, messageHandler, true);
+function messageHandler(e) {
+    switch(e.origin) {
+      case “friend.example.com”:
+      // process message
+      processMessage(e.data);
+      break;
+    default:
+      // message origin not recognized
+      // ignoring message
+  }
+}</code></pre></figure><p>A message event is a DOM event<span class="index-term"><span class="primary">Cross Document Messaging</span></span> with <code>data</code> and <code>origin</code> properties. The <code>data</code> property<span class="index-term"><span class="primary">data property</span></span><span class="index-term"><span class="primary">origin property</span></span> is the actual message that the sender passed along and the <code>origin</code> property is the sender’s origin. Using the <code>origin</code> property, it is easy for the receiving side to ignore messages from untrusted sources; the origin can simply be checked against a list of allowed origins.</p>
+
+<p>As shown in Figure <span class="internal-reference" id="ir_fig1_6">6-1</span>, the <code>postMessage</code> API provides a way to communicate between a chat widget<span class="index-term"><span class="primary">iframes</span></span> iframe<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">iframe</span></span> hosted at <code>http://chat.example.net</code> and an HTML page that contains the chat widget iframe hosted at <code>http://portal.example.com</code> (two different origins).
+</p>
+<figure id="fig1_6" class="image"><img src="images/ch6-1/fig6-1.png"><figcaption>Figure 6-1. postMessage communication <span class="index-term"><span class="primary">iframes</span><span class="secondary">communication between HTML page and</span></span>between an iframe and a main HTML page</figcaption></figure><p>In this example, the<span class="index-term"><span class="primary">chat widgets</span></span>chat widget is contained in an iframe from another origin, so it does not have direct access to the parent window. When the chat widget receives a chat message, it can use <code>postMessage</code> to send a message to the main page so that the page can alert the user of the chat widget that<span class="index-term"><span class="primary">Cross Document Messaging</span></span><span class="index-term"><span class="primary">postMessage API</span><span class="secondary">iframe</span></span>a new message has been received. Similarly, the page can send messages about the user’s status to the chat widget. Both the page and the widget can listen for messages from each other by adding the respective origins to a whitelist of allowed origins.</p>
+
+<p>Figure <span class="internal-reference" id="ir_fig2_6">6-2</span> shows a real-life example of using the postMessage API in action. It is an HTML5 Slide viewer application called DZSlides, built by Firefox engineer and HTML5 evangelist Paul Rouget (<code>http://paulrouget.com/dzslides</code>). In this application, the presentation and its container communicate using the postMessage API.
+
+</p>
+<figure id="fig2_6" class="image"><img src="images/ch6-2/fig6-2.png"><figcaption>Figure 6-2. Real-life use of postMessage API in DZSlides application</figcaption></figure><p>Before the introduction of <code>postMessage</code>, communicating<span class="index-term"><span class="primary">iframes</span><span class="secondary">communication between</span></span>between iframes<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">iframes</span></span> could sometimes be accomplished by direct scripting. A script running in one page would attempt to manipulate another document. This might not be allowed due to security restrictions. Instead of direct programmatic access, <code>postMessage</code> provides asynchronous message passing between JavaScript contexts. As shown in Figure <span class="internal-reference" id="ir_fig3_6">6-3</span>, without <code>postMessage</code>, cross origin communication would result in security errors, enforced by browsers to prevent cross-site scripting attacks<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">cross-site scripting attacks</span></span>.
+
+</p>
+<figure id="fig3_6" class="image"><img src="images/ch6-3/fig6-3.png"><figcaption>Figure 6-3. Cross-site scripting <span class="index-term"><span class="primary">cross-site scripting error</span></span>error in earlier version of Firefox and Firebug</figcaption></figure><p>The <code>postMessage</code> API can be used for communicating between documents with the same origin, but it is particularly useful when communication might otherwise be disallowed by the same-domain policy, which is enforced by browsers. However, there are reasons to use <code>postMessage</code> for messaging between same-origin documents as well because it provides a consistent, easy-to-use API. The <code>postMessage</code> API is used whenever there is communication between JavaScript contexts, such as with HTML5 Web Workers.</p>
+
+<section id="sec3_6"><h3>Understanding Origin Security</h3>
+<p>HTML5 clarifies and refines<span class="index-term"><span class="primary">origin security</span></span><span class="index-term"><span class="primary">origins</span><span class="secondary">concept of</span></span> domain security by introducing the concept of an <em>origin</em>. An origin is a subset of an address used for modeling trust relationships on the Web. Origins are made up of a scheme, a host, and a port. For example, a page at <code>https://www.example.com</code> has a different origin than one at <code>http://www.example.com</code> because the scheme differs (<code>https</code> vs. <code>http</code>). The path is not considered in the origin value, so a page at <code>http://www.example.com/index.html</code> has the same origin as a page at <code>http://www.example.com/page2.html</code> because only the paths differ.</p>
+
+<p>HTML5 defines the serialization of<span class="index-term"><span class="primary">origins</span><span class="secondary">serialization of</span></span> origins. In string form, origins can be referred to in APIs and protocols. This is essential for cross-origin HTTP requests using XMLHttpRequest, as well as for WebSockets.</p>
+
+<p>Cross-origin communication<span class="index-term"><span class="primary">Cross-origin communication</span><span class="see-also"><em>See</em> XMLHttpRequest Level 2, postMessage API</span>
+</span> identifies<span class="index-term"><span class="primary">Cross Document Messaging</span></span><span class="index-term"><span class="primary">postMessage API</span><span class="secondary">origin security</span></span> the sender by origin. This allows the receiver to ignore messages from origins it does not trust or does not expect to receive messages from. Furthermore, applications must opt-in to receiving messages by adding an event listener for message events. Because of this, there is no risk of messages interfering with an unsuspecting application.</p>
+
+<p>Security rules for <code>postMessage</code> ensure<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">secuity rules</span></span>that messages cannot be delivered to pages with unexpected—and possibly undesired—origins. When sending a message, the sender specifies the receiver’s origin. If the window on which the sender is calling <code>postMessage</code> does not have that specific origin (for instance, if the user has navigated to another site) the browser will not transmit that message.</p>
+
+<p>Likewise, when receiving a message, the sender’s origin is included as part of the message. The message’s origin is provided by the browser and cannot be spoofed. This allows the receiver to decide which messages to process and which to ignore. You can keep a white<span class="index-term"><span class="primary">origin security</span></span>list and process only messages from documents with trusted origins.</p>
+
+<aside><h3>Be careful with External input</h3>
+<p><strong>Frank says:</strong> “Applications that process<span class="index-term"><span class="primary">External input</span></span> cross-origin messages should always verify the source origin of every message. Furthermore, message data should be treated with caution. Even if a message comes from a trusted source, it should be treated with the same caution as any other external input. The following two examples show a method of injecting content that can lead to trouble, as well as a safer alternative.</p>
+
+<pre><code>// Dangerous: e.data is evaluated as markup!
+element.innerHTML = e.data;
+// Better
+element.textContent = e.data;</code></pre>
+
+
+
+<p>As a best practice,<em>never</em> evaluate strings received from third parties. Furthermore, avoid using <code>eval</code> with strings originating from your own application. Instead, you can use JSON with <code>window.JSON</code> or the json.org parser. JSON is a data language that is meant to be safely consumed by JavaScript, and the json.org parser is designed to be paranoid.”</p>
+
+</aside></section><section id="sec4_6"><h3>Browser Support for Cross Document Messaging</h3>
+<p>All major browsers, including Internet Explorer 8 and later, support the postMessage API. It is always a good idea to first test if HTML5 Cross Document Messaging is supported, before you use it. The section “Checking for Browser Support” later in<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">browser support for</span></span> this chapter will show you how you can programmatically check for browser support.</p>
+
+</section><section id="sec5_6"><h3>Using the postMessage API</h3>
+<p>In this section, we’ll explore<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">using postMessage API</span></span> the use of the HTML5 <code>postMessage</code> API in more detail.</p>
+
+</section><section id="sec6_6"><h3>Checking for Browser Support</h3>
+<p>Before you call<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">browser support</span></span> <code>postMessage</code>, it is a good idea to check if the browser supports it. The following example shows one way to check for <code>postMessage</code> support:</p>
+
+<pre><code>if (typeof window.postMessage === “undefined”) {
+    // postMessage not supported in this browser
+}</code></pre>
+
+
+</section><section id="sec7_6"><h3>Sending Messages</h3>
+<p>To send messages, invoke<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">sending messages</span></span> <code>postMessage</code> on the target window object, as shown in the following example:</p>
+
+<pre><code>window.postMessage(“Hello, world”, “portal.example.com”);</code></pre>
+<p>The first argument contains the data to send, and the second argument contains the intended target. To send messages to iframes, you can invoke <code>postMessage</code> on the iframe’s contentWindow, as shown in the following example:</p>
+
+<pre><code>document.getElementsByTagName(“iframe”)[0].contentWindow.postMessage(“Hello, world”, “chat.example.net”);</code></pre>
+</section><section id="sec9_6"><h3>Listening for Message Events</h3>
+<p>A script receives messages by<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">receiving messages</span></span> listening for events on the window object, as shown in Listing 6-2. In the event listener function, the receiving application can decide to accept or ignore the message.</p>
+
+<figure class="listing"><figcaption>Listing 6-2. Listening for Message Events and <span class="index-term"><span class="primary">origins</span><span class="secondary">comparing against white list</span></span>Comparing Origins Against a Whitelist</figcaption><pre><code>var originWhiteList = [“portal.example.com”, “games.example.com”, “www.example.com”];
+function checkWhiteList(origin) {
+    for (var i=0; i&lt;originWhiteList.length; i++) {
+        if (origin === originWhiteList[i]) {
+          return true;
+        }
+    }
+    return false;
+}
+function messageHandler(e) {
+    if(checkWhiteList(e.origin)) {
+        processMessage(e.data);
+    } else {
+        // ignore messages from unrecognized origins
+    }
+}
+window.addEventListener(“message”, messageHandler, true);</code></pre></figure><aside><h3>Note</h3>
+<p>The MessageEvent interface<span class="index-term"><span class="primary">MessageEvent interface</span></span><span class="index-term"><span class="primary">postMessage API</span><span class="secondary">using</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">using postMessage API</span></span><span class="index-term"><span class="primary">Cross Document Messaging</span><span class="secondary">using postMessage API</span><span class="see-also"><em>See</em> also postMessage API</span>
+</span>defined by HTML5 is also part of HTML5 WebSockets and HTML5 Web Workers. The communication features of HTML5 have consistent APIs for receiving messages. Other communication APIs<span class="index-term"><span class="primary">Communication API</span><span class="secondary">MessageEvent interface and</span></span>, such as the EventSource API and Web Workers, also use MessageEvent to deliver messages.</p>
+
+</aside></section><section id="sec10_6"><h3>Building an Application Using the postMessage API</h3>
+<p>Let’s say that you wanted to build<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span>the aforementioned portal application with its cross-origin chat widget. You can use Cross Document Messaging to communicate<span class="index-term"><span class="primary">Cross Document Messaging</span></span>between the portal page and the chat widget, as shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.
+
+</p>
+<figure id="fig4_6" class="image"><img src="images/ch6-4/fig6-4.png"><figcaption>Figure 6-4. Portal page with cross-origin chat widget iframe</figcaption></figure><p>In this example, we show how a<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span> portal might embed widgets from third parties in iframes. Our example shows a single widget from <code>chat.example.net</code>. The portal page and widget then communicate using <code>postMessage</code>. In this case, the iframe represents a chat widget that wants to notify the user by blinking the title text. This is a common UI technique found in applications that receive events in the background. However, because the widget is isolated in an iframe served from a different origin than the parent page, changing the title would be a security violation. Instead, the widget uses <code>postMessage</code> to request that the parent page perform the notification on its behalf.</p>
+
+<p>The example portal also sends messages to<span class="index-term"><span class="primary">Cross Document Messaging</span></span>the iframe to inform the widget that the user has changed his or her status. Using <code>postMessage</code> in this way allows a portal such as this to coordinate with widgets across the combined application. Of course, because the target origin is checked when the message is sent, and the event origin is checked when it is received, there is no chance that data leaks out accidentally or is spoofed.</p>
+
+<aside><h3>Note</h3>
+<p>In this example application, the chat widget is not connected to a live chat system, and notifications are driven by the application’s users clicking <strong>Send Notification</strong>. A working chat application could use Web Sockets, as described in <span class="external-reference">
+<span class="ref-source">Chapter 7</span>
+<span class="ref-target">DOI::10.1007/978-1-4302-3865-2_7</span>
+</span>.</p>
+
+</aside><p>For the sake of illustration, we created a few simple HTML pages: <code>postMessagePortal.html</code> and <code>postMessageWidget.html</code>. The following steps highlight the important parts of building the portal page and the chat widget page. The sample code for the following<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span></span>examples is located in the <code>code/communication</code> folder.</p>
+
+</section><section id="sec11_6"><h3>Building the Portal Page</h3>
+<p>First, add the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>portal page</tertiary></span>chat widget iframe hosted at the different origin:</p>
+
+<pre><code>&lt;iframe id="widget" src="http://chat.example.net:9999/postMessageWidget.html"&gt;&lt;/iframe&lt;/iframe"/&gt;</code></pre>
+<p>Next, add an event listener <code>messageHandler</code><span class="index-term"><span class="primary">Cross Document Messaging</span></span> to listen for message events coming from the chat widget. As shown in the following example code, the widget will ask the portal to notify the user, which can be done by flashing the title. To make sure the message comes from the chat widget, the message’s origin is verified; if it does not come from <code>http://chat.example.net:9999</code>, the portal page simply ignores it.</p>
+
+<pre><code>var trustedOrigin = "http://chat.example.net:9999";
+function messageHandler(e) {
+    if (e.origin == trustedOrigin) {
+        notify(e.data);
+    } else {
+        // ignore messages from other origins
+    }
+}</code></pre>
+
+
+
+
+
+
+
+<p>Next, add a function to communicate with the chat widget. It uses <code>postMessage</code> to send a status update to the widget iframe contained in the portal page. In a<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>portal page</tertiary></span> live chat application, it could be used to communicate the user’s status (available, away, and so on).</p>
+
+<pre><code>function sendString(s) {
+    document.getElementById("widget").contentWindow.postMessage(s, targetOrigin);
+}</code></pre>
+
+
+</section><section id="sec12_6"><h3>Building the Chat Widget Page</h3>
+<p>First, add an event<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>chat widget page</tertiary></span><span class="index-term"><span class="primary">chat widgets</span></span> listener <code>messageHandler</code> to listen for message events coming from the portal page. As shown in the following example code, the chat widget listens for incoming status-change messages. To make sure the message comes from the portal page, the message’s origin is verified; if it does not come from <code>http://portal.example.com:9999</code>, the widget simply ignores it.</p>
+
+<pre><code>var trustedOrigin = " http://portal.example.com:9999";
+function messageHandler(e) {
+    if (e.origin === trustedOrigin {
+        document.getElementById("status").textContent = e.data;
+    } else {
+        // ignore messages from other origins
+    }
+}</code></pre>
+
+
+
+
+
+
+
+<p>Next, add a function to communicate with<span class="index-term"><span class="primary">Cross Document Messaging</span></span> the portal page. The widget will ask the portal to notify the user on its behalf and uses <code>postMessage</code> to send a message to the portal page when a new chat message is received, as shown in the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>chat widget page</tertiary></span><span class="index-term"><span class="primary">chat widgets</span></span>following example:</p>
+
+<pre><code>function sendString(s) {
+    window.top.postMessage(s, trustedOrigin);
+}</code></pre>
+
+
+</section><section id="sec21_6"><h3>The Final Code</h3>
+<p>Listing 6-3 shows the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>code</tertiary></span> complete code for the Portal page <code>postMessagePortal.html</code>.</p>
+
+<figure class="listing"><figcaption>Listing 6-3. Contents of postMessagePortal.html</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;title&gt; Portal [http://portal.example.com:9999]&lt;/title&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;style&gt;
+    iframe {
+        height: 400px;
+        width: 800px;
+    }
+&lt;/style&gt;
+&lt;link rel="icon" href="http://apress.com/favicon.ico"&gt;
+&lt;script&gt;
+var defaultTitle = "Portal [http://portal.example.com:9999]";
+var notificationTimer = null;
+var trustedOrigin = "http://chat.example.net:9999";
+function messageHandler(e) {
+    if (e.origin == trustedOrigin) {
+        notify(e.data);
+    } else {
+        // ignore messages from other origins
+    }
+}
+function sendString(s) {
+    document.getElementById("widget").contentWindow.postMessage(s, trustedOrigin);
+}
+function notify(message) {
+    stopBlinking();
+    blinkTitle(message, defaultTitle);
+}
+function stopBlinking() {
+    if (notificationTimer !== null) {
+        clearTimeout(notificationTimer);
+    }
+    document.title = defaultTitle;
+}
+function blinkTitle(m1, m2) {
+    document.title = m1;
+    notificationTimer = setTimeout(blinkTitle, 1000, m2, m1)
+}
+function sendStatus() {
+var statusText = document.getElementById("statusText").value;
+            sendString(statusText);
+}
+function loadDemo() {
+    document.getElementById("sendButton").addEventListener("click", sendStatus, true);
+    document.getElementById("stopButton").addEventListener("click", stopBlinking, true);
+    sendStatus();
+}
+window.addEventListener("load", loadDemo, true);
+window.addEventListener("message", messageHandler, true);
+&lt;/script&gt;
+&lt;h1&gt; Cross-Origin Portal&lt;/h1&gt;
+&lt;p&gt; &lt;b&gt; Origin&lt;/b&gt;:http://portal.example.com:9999/p&gt;
+Status &lt; input type="text" id="statusText" value = "Online"&gt;
+&lt;button id="sendButton"&gt; Change Status&lt;/button&gt;
+&lt;p&gt;
+This uses postMessage to send a status update to the widget iframeCross Document Messagingcontained in the portal page.
+&lt;/p&gt;
+&lt;iframe id="widget" src = "http://chat.example.net:9999/postMessageWidget.html"&gt;&lt;/iframe&lt;/iframe"/&gt;
+&lt;p&gt;
+    &lt;button id="stopButton"&gt; Stop Blinking Title&lt;/button&gt;
+&lt;/p&gt;</code></pre></figure><p>Listing 6-4 shows the code for<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>code</tertiary></span> the portal page <code>postMessageWidget.html</code>.</p>
+
+<figure class="listing"><figcaption>Listing 6-4. Contents of <code>postMessageWidget.html</code></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;title&gt; widget&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script&gt;
+var trustedOrigin = "http://portal.example.com:9999";
+function messageHandler(e) {
+    if (e.origin === "http://portal.example.com:9999") {
+        document.getElementById("status").textContent = e.data;
+    } else {
+        // ignore messages from other origins
+    }
+}
+function sendString(s) {
+    window.top.postMessage(s, trustedOrigin);
+}
+function loadDemo() {
+    document.getElementById("actionButton").addEventListener("click",
+        function() {
+            var messageText = document.getElementById("messageText").value;
+            sendString(messageText);
+        }, true);
+}
+window.addEventListener("load", loadDemo, true);
+window.addEventListener("message", messageHandler, true);
+&lt;/script&gt;
+&lt;h1&gt; Widget iframe&lt;/h1&gt;
+&lt;p&gt; &lt;b&gt; Origin&lt;/b&gt;:http://chat.example.net:9999&lt;/p&gt;
+&lt;p&gt; Status set to: &lt;strong id="status"&gt; &lt;/strong&gt; by containing portal. &lt; p&gt;
+&lt;div&gt;
+    &lt;input type="text" id="messageText" value = "Widget notification."&gt;
+    &lt;button id="actionButton"&gt; Send Notification&lt;/button&gt;
+&lt;/div&gt;
+&lt;p&gt;
+This will ask the portal topostMessage APIbuilding application usingcode
+ notify the user. The portal does this by flashing the title. If the message comes from an origin other than http://chat.example.net:9999,Cross Document Messagingthe portal page will ignore it.
+&lt;/p&gt;</code></pre></figure></section><section id="sec13_6"><h3>The Application in Action</h3>
+<p>To see this example<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> in action, there are two prerequisites: the pages have to be served up by a web server and the pages have to be served up from two different domains. If you have access to multiple web servers (for example, two Apache HTTP servers) on separate domains, you can host the example files on those servers and run the demo. Another way to accomplish this on your local machine is to use Python <code>SimpleHTTPServer</code>, as shown in the following steps.</p>
+<ol>
+<li>
+<p>Update the path to the Windows hosts file (<code>C:\Windows\system32\drivers\etc\hosts</code>) and the Linux version (<code>/etc/hosts</code>) by adding two entries pointing to your localhost (IP address 127.0.0.1), as shown in the following example:</p>
+
+<pre><code>127.0.0.1 chat.example.net
+127.0.0.1 portal.example.com</code></pre>
+
+</li>
+</ol>
+<aside><h3>Note</h3>
+<p>You must restart your browser after modifying the host file to ensure that the DNS entriestake effect.</p>
+
+</aside><p></p>
+<ol>
+<li>
+<p>Install Python 2, which includes the lightweight SimpleHTTPServer web server.</p>
+
+</li>
+<li>
+<p>Navigate to the directory that contains the two example files (<code>postMessageParent.html</code> and <code>postMessageWidget.html</code>).</p>
+
+</li>
+<li>
+<p>Start Python as follows:</p>
+
+<pre><code>python -m SimpleHTTPServer 9999</code></pre>
+</li>
+<li>
+<p>Open a browser and navigate to <code>http://portal.example.com:9999/postMessagePortal.html</code>. You<span class="index-term"><span class="primary">Cross Document Messaging</span></span>should<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> now see the page shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.</p>
+</li>
+</ol></section></section><section id="sec14_6"><h2>XMLHttpRequest Level 2</h2>
+<p>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> is the API that made Ajax possible. There are many books about XMLHttpRequest and Ajax. You can read more about XMLHttpRequest programming in John Resig’s<em>Pro JavaScript Techniques</em>, (Apress, 2006).</p>
+
+<p>XMLHttpRequest Level 2<span class="index-term"><span class="primary">Communication API</span><span class="secondary">XMLHttpRequest Level 2</span><span class="see-also"><em>See</em> XMLHttpRequest Level 2</span></span>—the new version of XMLHttpRequest—has been significantly enhanced. In this chapter, we will be covering the improvements introduced in XMLHttpRequest Level 2. These improvements are centered on the following areas:</p>
+<ul>
+<li>
+<p>Cross-origin XMLHttpRequests</p>
+</li>
+<li>
+<p>Progress events</p>
+</li>
+<li>
+<p>Binary Data</p>
+</li>
+</ul>
+<section id="sec15_6"><h3>Cross-Origin XMLHttpRequest</h3>
+<p>In the past, XMLHttpRequest<span class="index-term"><span class="primary">cross-origin XMLHttpRequests</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">cross-origin communication</span></span> was limited to same-origin communication. XMLHttpRequest Level 2 allows for cross-origin XMLHttpRequests using Cross Origin Resource Sharing (CORS)<span class="index-term"><span class="primary">Cross Origin Resource Sharing (CORS)</span></span>, which uses<span class="index-term"><span class="primary">origins</span><span class="secondary">concept of</span></span> the<em>origin</em> concept discussed in the earlier<em>Cross Document Messaging</em> section.</p>
+
+<p>Cross-origin HTTP requests have an <code>Origin</code> header<span class="index-term"><span class="primary">Origin header</span></span>. This header provides the server with the request’s origin. This header is protected by the browser and cannot be changed from application code. In essence, it is the network equivalent of the <code>origin</code> property found on message events used in Cross Document Messaging. The origin header differs from the older referer [<em>sic</em>] header in that the referer is a complete URL including the path. Because the path may contain sensitive information, the referer is sometimes not sent by browsers attempting to protect user privacy. However, the browser will always send the required <code>Origin</code> headers when necessary.</p>
+
+<p>Using cross-origin XMLHttpRequest, you can build web applications that use services hosted on different origins. For example, if you wanted to host a web application that used static content from one origin and Ajax services from another, you could use cross-origin XMLHttpRequest to communicate between the two. Without cross-origin XMLHttpRequest, you would be limited to same-origin communication. This would constrain your deployment options. For example, you might have to deploy the web application on a single domain or set up a subdomain.</p>
+
+<p>As shown in Figure <span class="internal-reference" id="ir_fig5_6">6-5</span>, cross-origin XMLHttpRequest allows you to aggregate content from different origins on the client side. Additionally, you can access secured content with the user’s credentials if the target server allows it, providing users with direct access to personalized data. Server-side aggregation, on the other hand, forces all content to be funneled through a single server-side infrastructure, which can create a bottleneck.
+</p>
+<figure id="fig5_6" class="image"><img src="images/ch6-5/fig6-5.png"><figcaption>Figure 6-5. Difference between client-side and server-side aggregation <span class="index-term">
+<span class="primary">XMLHttpRequest Level 2</span>
+<span class="secondary">client-side vs. server-side aggregation</span>
+</span>
+</figcaption></figure><p>The CORS specification<span class="index-term"><span class="primary">Cross Origin Resource Sharing (CORS)</span></span>dictates that, for sensitive actions—for example, a request with credentials, or a request other than GET or POST—an OPTIONS preflight request must be sent to the server by the browser to see whether the action is supported and allowed. This means that successful communication may require a CORS-capable server. Listings 6-5 and 6-6 show the HTTP headers involved in a cross-origin exchange between a page hosted on <code>www.example.com</code> and a service hosted on <code>www.example.net</code>.</p>
+
+<figure class="listing"><figcaption>Listing 6-5. Example Request Headers</figcaption><pre><code>POST /main HTTP/1.1
+Host: www.example.net
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090910 Ubuntu/9.04 (jaunty) Shiretoko/3.5.3
+Accept: text/html,application/xhtml + xml,application/xml;q = 0.9,*/*;q = 0.8
+Accept-Language: en-us,en;q = 0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q = 0.7,*;q = 0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://www.example.com/
+Origin: http://www.example.com
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Length: 0</code></pre></figure><figure class="listing"><figcaption>Listing 6-6. Example <span class="index-term"><span class="primary">cross-origin XMLHttpRequests</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">cross-origin communication</span></span>Response Headers</figcaption><pre><code>HTTP/1.1 201 Created
+Transfer-Encoding: chunked
+Server: Kaazing Gateway
+Date: Mon, 02 Nov 2009 06:55:08 GMT
+Content-Type: text/plain
+Access-Control-Allow-Origin: http://www.example.com
+Access-Control-Allow-Credentials: true</code></pre></figure></section><section id="sec26_6"><h3>Progress Events</h3>
+<p>One of the<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">progress events</span></span>most important API improvements in XMLHttpRequest has been the changes related to progressive responses. In the previous version of XMLHttpRequest, there was only a single <code>readystatechange</code> event<span class="index-term"><span class="primary">readystatechange event</span></span>. On top of that, it was inconsistently implemented across browsers. For example, <code>readyState</code> 3 (progress) never fires in Internet Explorer. Furthermore, the <code>readyState</code> change event lacked a way to communicate upload progress. Implementing an upload progress bar was not a trivial task and involved server-side participation.</p>
+
+<p>XMLHttpRequest Level 2 introduces progress events with meaningful names. Table 6-2 shows the new progress event names. You can listen for each of these events by setting a callback function for the event handler attribute. For example, when the <code>loadstart</code> event fires, the callback for the <code>onloadstart</code> property is called.
+</p>
+<table id="tab1_6">
+<thead><tr>
+<td>Progress Event Name</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>loadstart</td>
+</tr>
+<tr>
+<td>progress</td>
+</tr>
+<tr>
+<td>abort</td>
+</tr>
+<tr>
+<td>error</td>
+</tr>
+<tr>
+<td>load</td>
+</tr>
+<tr>
+<td>loadend</td>
+</tr>
+</tbody>
+</table>
+<p>The old <code>readyState</code> property<span class="index-term"><span class="primary">readyState property</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">progress events</span></span> and <code>readystatechange</code> events will be retained for backward compatibility.</p>
+
+<aside><h3>“Seemingly Arbitrary” Times</h3>
+<p>In the XMLHttpRequest Level 2 specification’s description for the <code>readystatechange</code> event<span class="index-term"><span class="primary">readystatechange event</span></span> (maintained for backward compatibility), the <code>readyState</code> attribute<span class="index-term"><span class="primary">readyState attribute</span></span> is described as changing at, get this, “some seemingly arbitrary times for historical reasons.”</p>
+
+</aside></section><section id="sec16_6"><h3>Browser Support for HTML5 XMLHttpRequest Level 2</h3>
+<p>HTML5 XMLHttpRequest is already supported in many browsers at the time of this writing. Due to the varying levels of support, it is a good idea to first test if HTML5 XMLHttpRequest is supported, before you use these elements. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p>
+
+</section><section id="sec17_6"><h3>Using the XMLHttpRequest API</h3>
+<p>In this section, we’ll explore the use of the XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span></span> in more detail. For the sake of illustration, we’ve created a simple HTML page—<code>crossOriginUpload.html</code>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p>
+
+</section><section id="sec18_6"><h3>Checking for Browser Support</h3>
+<p>Before you try to<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">browser support</span></span>use XMLHttpRequest Level 2 functionality—such as cross-origin support—it is a good idea to check if it is supported. You can do this by checking whether the new <code>withCredentials</code> property is available on an XMLHttpRequest object as shown in Listing 6-7.</p>
+
+<figure class="listing"><figcaption>Listing 6-7. Checking if Cross-Origin Support Is Available in XMLHttpRequest</figcaption><pre><code>var xhr = new XMLHttpRequest()
+if (typeof xhr.withCredentials === undefined) {
+    document.getElementById("support").innerHTML =
+        "Your browser &lt; strong&gt; does not&lt;/strong&gt; support cross-origin XMLHttpRequest";
+} else {
+    document.getElementById("support").innerHTML =
+        "Your browser &lt; strong&gt; does&lt;/strong&gt; support cross-origin XMLHttpRequest";
+}</code></pre></figure></section><section id="sec19_6"><h3>Making Cross-Origin Requests</h3>
+<p>To make a cross-origin XMLHttpRequest, you<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>making cross-origin requests</tertiary></span> must first create a new XMLHttpRequest object, as shown in the following example.</p>
+
+<pre><code>var crossOriginRequest = new XMLHttpRequest()</code></pre>
+<p>Next, make the cross-origin XMLHttpRequest by specifying an address on a different origin as shown in the following example.</p>
+
+<pre><code>crossOriginRequest.open("GET", " http://www.example.net/stockfeed", true);</code></pre>
+<p>Make sure, you listen for errors. There are many reasons why this request might not succeed. For example, network failure, access denied, and lack of CORS support on the target server.</p>
+
+<aside><h3>Why not Jsonp?</h3>
+<p><strong>Frank says:</strong> “One common way to fetch data from another origin is JSONP (JSON with padding). JSONP involves creating a script tag with the URL of a JSON resource. The URL has a query parameter containing the name of a function to invoke when the script loads. It is up to the remote server to wrap the JSON data with a call to the named function. This has serious security implications! When you use JSONP, you must completely trust the service providing the data. A malicious script could take over your application.</p>
+
+<p>With XMLHttpRequest (XHR) and CORS, you receive data instead of code, which you can parse safely. It’s far safer than evaluating external input.”</p>
+
+</aside></section><section id="sec20_6"><h3>Using Progress Events</h3>
+<p>Instead of numerical states representing<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>progress events</tertiary></span>different stages of the request and response, XMLHttpRequest Level 2 provides named progress events. You can listen for each of these events by setting a callback function for the event handler attribute.</p>
+
+<p>Listing 6-8 shows how callback functions are used to handle progress events. Progress events have fields for the total amount of data to transfer, the amount that has already transferred, and a Boolean value indicating whether the total is known (it may not be in the case of streaming HTTP). <code>XMLHttpRequest.upload</code> dispatches events with the same fields.</p>
+
+<figure class="listing"><figcaption>Listing 6-8. Using the onprogress Event</figcaption><pre><code>crossOriginRequest.onprogress = function(e) {
+    var total = e.total;
+    var loaded = e.loaded;
+    if (e.lengthComputable) {
+        // do something with the progress information
+    }
+}
+crossOriginRequest.upload.onprogress = function(e) {
+    var total = e.total;
+    var loaded = e.loaded;
+    if (e.lengthComputable) {
+        // do something with the progress information
+    }
+}</code></pre></figure></section><section id="sec25_6"><h3>Binary Data</h3>
+<p>Browsers that support new binary APIs such as Typed Array (which is necessary for WebGL and programmable audio) may be able to send binary data<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>binary data</tertiary></span> with XMLHttpRequest. The XMLHttpRequest Level 2 specification includes support for calling the <code>send()</code> method with Blob and ArrayBuffer (aka Typed Array) objects (see Listing 6-9).</p>
+
+<figure class="listing"><figcaption>Listing 6-9. Sending a Typed Array of Bytes</figcaption><pre><code>var a = new Uint8Array([8,6,7,5,3,0,9]);
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "/data/", true)
+console.log(a)
+xhr.send(a.buffer);</code></pre></figure><p>This makes an HTTP POST request with a binary content body. The content length is 7, and the body contains the bytes 8,6,7,5,3,0,9.</p>
+
+<p>XMLHttpRequest Level 2 also exposes binary response data. Setting the <code>responseType</code> attribute to “text,” “document,” “arraybuffer,” or “blob” controls the type of object returned by the <code>response</code> property. To see the raw bytes contained by the HTTP response body, set the <code>responseType</code> to “arraybuffer” or “blob.”</p>
+
+<p>In the next chapter, we’ll see how WebSocket can be used to send and receive binary data using the same types.</p>
+
+</section><section id="sec22_6"><h3>Building an Application Using XMLHttpRequest</h3>
+<p>In this example, we’ll look at uploading<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>race geolocation coordinates to a web server hosted on a different origin. We use the new progress events to monitor the status of the HTTP request including the upload percentage. Figure <span class="internal-reference" id="ir_fig6_6">6-6</span> shows the application in action.
+</p>
+<figure id="fig6_6" class="image"><img src="images/ch6-6/fig6-6.png"><figcaption>Figure 6-6. A Web Application <span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>That Uploads Geolocation Data</figcaption></figure><p>For the sake of illustration, we’ve created the HTML file <code>crossOrignUpload.html</code>. The following steps highlight the important parts of building the cross-origin upload page shown in Figure <span class="internal-reference" id="ir_fig5_6">6-5</span>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p>
+
+<p>First, create a new <code>XMLHttpRequest</code><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span> object, as shown in the following example.</p>
+
+<pre><code>var xhr = new XMLHttpRequest();</code></pre>
+<p>Next, do check if cross-origin XMLHttpRequest is supported in the browser, as shown in the following example.</p>
+
+<pre><code>if (typeof xhr.withCredentials === undefined) {
+  document.getElementById("support").innerHTML =
+           "Your browser &lt; strong&gt; doesnot&lt;/strong&gt; support cross-origin XMLHttpRequest";
+} else {
+    document.getElementById("support").innerHTML =
+             "Your browser &lt; strong&gt; does&lt;/strong&gt; support cross-origin XMLHttpRequest";
+}</code></pre>
+
+
+
+
+
+
+<p>Next, set callback functions to handle the progress events and calculate the uploaded and downloaded ratios.</p>
+
+<pre><code>xhr.upload.onprogress = function(e) {
+  var ratio = e.loaded / e.total;
+  setProgress(ratio + "% uploaded");
+}
+xhr.onprogress = function(e) {
+  var ratio = e.loaded / e.total;
+  setProgress(ratio + "% downloaded");
+}
+xhr.onload = function(e) {
+  setProgress("finished");
+}
+xhr.onerror = function(e) {
+  setProgress("error");
+}</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Finally, open the request and send the string containing the encoded geolocation data. This will be a cross-origin request because the target location is a<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>URL with a different origin than the page.</p>
+
+<pre><code>var targetLocation = "http://geodata.example.net:9999/upload";
+xhr.open("POST", targetLocation, true);
+geoDataString = dataElement.textContent;
+xhr.send(geoDataString);</code></pre>
+
+
+
+</section><section id="sec30_6"><h3>The Final Code</h3>
+<p>Listing 6-10 shows the<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">code for application</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span> complete application code—the contents of the <code>crossOriginUpload.html</code> file.</p>
+
+<figure class="listing"><figcaption>Listing 6-10. Contents of crossOriginUpload.html</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+&lt;title&gt; Upload Geolocation Data&lt;/title&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;link rel="icon" href="http://apress.com/favicon.ico"&gt;
+&lt;script&gt;
+function loadDemo() {
+    var dataElement = document.getElementById("geodata");
+    dataElement.textContent = JSON.stringify(geoData).replace(",", ", ", "g");
+    var xhr = new XMLHttpRequest()
+    if (typeof xhr.withCredentials === undefined) {
+        document.getElementById("support").innerHTML =
+            "Your browser &lt; strong&gt; does not&lt;/strong&gt; support cross-origin XMLHttpRequest";
+    } else {
+        document.getElementById("support").innerHTML =
+            "Your browser &lt; strong&gt; does&lt;/strong&gt; support cross-origin XMLHttpRequest";
+    }
+    var targetLocation = " http://geodata.example.net:9999/upload";
+    function setProgress(s) {
+        document.getElementById("progress").innerHTML = s;
+    }
+    document.getElementById("sendButton").addEventListener("click",
+        function() {
+            xhr.upload.onprogress = function(e) {
+                var ratio = e.loaded / e.total;
+                setProgress(ratio + "% uploaded");
+            }
+            xhr.onprogress = function(e) {
+              var ratio = e.loaded / e.total;
+              setProgress(ratio + "% downloaded");
+            }
+            xhr.onload = function(e) {
+                setProgress("finished");
+            }
+            xhr.onerror = function(e) {
+                setProgress("error");
+            }
+            xhr.open("POST", targetLocation, true);
+            geoDataString = dataElement.textContent;
+            xhr.send(geoDataString);
+        }, true);
+}
+window.addEventListener("load", loadDemo, true);
+&lt;/script&gt;
+&lt;h1&gt; XMLHttpRequest Level 2&lt;/h1&gt;
+&lt;p id="support"&gt; &lt;/p&gt;
+&lt;h4&gt; Geolocation Data to upload:&lt;/h4&gt;
+&lt;textarea id="geodata"&gt;
+&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;button id="sendButton"&gt; Upload&lt;/button&gt;
+&lt;script&gt;
+geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170653000000001, 39.190128000000001, 39.204510999999997, 39.226759000000001, 39.238483000000002, 39.228154000000004, 39.249400000000001, 39.249533, 39.225276999999998, 39.191253000000003, 39.167993000000003, 39.145685999999998, 39.121620999999998, 39.095761000000003, 39.080593, 39.053131999999998, 39.02619, 39.002929000000002, 38.982886000000001, 38.954034999999998, 38.944926000000002, 38.919960000000003, 38.925261999999996, 38.934922999999998, 38.949373000000001, 38.950133999999998, 38.952649000000001, 38.969692000000002, 38.988512999999998, 39.010652, 39.033088999999997, 39.053493000000003, 39.072752999999999], [-120.15724399999999, -120.15818299999999, -120.15600400000001, -120.14564599999999, -120.141285, -120.10889900000001, -120.09528500000002, -120.077596, -120.045428, -120.0119, -119.98897100000002, -119.95124099999998, -119.93270099999998, -119.927131, -119.92685999999999, -119.92636200000001, -119.92844600000001, -119.911036, -119.942834, -119.94413000000002, -119.94555200000001, -119.95411000000001, -119.941327, -119.94605900000001, -119.97527599999999, -119.99445, -120.028998, -120.066335, -120.07867300000001, -120.089985, -120.112227, -120.09790700000001, -120.10881000000001, -120.116692, -120.117847, -120.11727899999998, -120.14398199999999]];
+&lt;/script&gt;
+&lt;p&gt;
+&lt;b&gt; Status: &lt;/b&gt; &lt;span id="progress"&gt; ready&lt;/span&gt;
+&lt;/p&gt;</code></pre></figure></section><section id="sec23_6"><h3>The Application in Action</h3>
+<p>To see this example in action, there<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">application in action</span></span>are two prerequisites: the pages have to be served up from different domains, and the target page has to be served up by a web server that understands CORS headers. A CORS-compliant Python script that can handle incoming cross-origin XMLHttpRequests is included in the example code for this chapter. You can run the demo on your local machine by performing the following steps:</p>
+<ol>
+<li>
+<p>Update your hosts file (C<code>:\Windows\system32\drivers\etc\hosts</code> on Windows or /<code>etc/hosts</code> on Unix/Linux) by adding two entries pointing to your <code>localhost</code> (IP address <code>127.0.0.1</code>) as shown in the following example:</p>
+
+<pre><code>127.0.0.1 geodata.example.net
+127.0.0.1 portal.example.com</code></pre>
+
+</li>
+</ol>
+<aside><h3>Note</h3>
+<p>You must restart your browser after modifying the host file to ensure the DNS entries take effect.</p>
+
+</aside><p></p>
+<ol>
+<li>
+<p>Install Python 2, which includes the lightweight <code>SimpleHTTPServer</code> web server, if you did not do so for the previous example.</p>
+
+</li>
+<li>
+<p>Navigate to the directory that contains the example file (<code>crossOrignUpload.html</code>) and the Python CORS server script (<code>CORSServer.py</code>).</p>
+
+</li>
+<li>
+<p>Start Python in this directory as follows:</p>
+
+<pre><code>python CORSServer.py 9999</code></pre>
+</li>
+<li>
+<p>Open a browser and navigate to <code>http://portal.example.com:9999/crossOriginUpload.html</code>. You should now see the page<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">application in action</span></span> shown in Figure <span class="internal-reference" id="ir_fig6_6">6-6</span>.</p>
+
+</li>
+</ol></section></section><section id="sec24_6"><h2>Practical Extras</h2>
+<p>Sometimes there are techniques that don’t fit into our regular examples, but that nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</p>
+
+<section id="sec28_6"><h3>Structured Data</h3>
+<p>Early versions <span class="index-term"><span class="primary">structured data</span></span>of <code>postMessage</code> only supported strings. Later revisions allowed other types of data including JavaScript objects, canvas imageData, and files. Support for different object types will vary by browser as the specification develops.</p>
+
+<p>In some browsers, the limitations on JavaScript objects that can be sent with <code>postMessage</code> are the same as those for JSON data. In particular, data structures with cycles may not be allowed. An example of this is a list containing itself.</p>
+
+</section><section id="sec29_6"><h3>Framebusting</h3>
+<p>Framebusting is a<span class="index-term"><span class="primary">framebusting</span></span> technique for ensuring that your content is not loaded in an iframe. An application can detect that its window is not the outermost window (<code>window.top</code>) and subsequently break out of its containing frame, as shown in the following example.</p>
+
+<pre><code>if (window !== window.top) {
+    window.top.location = location;
+}</code></pre>
+
+
+<p>Browsers supporting the X-Frame-Options HTTP header will also prevent malicious framing for resources that set that header to DENY or SAMEORIGIN. However, there may be certain partner pages that you want to selectively allow to frame your content. One solution is to use <code>postMessage</code> to handshake between cooperating iframes and containing pages, as shown in the Listing 6-11.</p>
+
+<figure class="listing"><figcaption>Listing 6-11. Using postMessage in an iframe to Handshake with a Trusted Partner Page</figcaption><pre><code>var framebustTimer;
+var timeout = 3000; // 3 second framebust timeout
+if (window !== window.top) {
+    framebustTimer = setTimeout(
+        function() {
+             window.top.location = location;
+        }, timeout);
+}
+window.addEventListener(“message”, function(e) {
+    switch(e.origin) {
+        case trustedFramer:
+            clearTimeout(framebustTimer);
+            break;
+    }
+), true);</code></pre></figure></section></section><section id="sec27_6"><h2>Summary</h2>
+<p>In this chapter, you have seen how HTML5 Cross Document Messaging and XMLHttpRequest Level 2 can be used to create compelling applications that can securely communicate cross-origin.</p>
+
+<p>First, we discussed <code>postMessage</code> and the origin security concept—two key elements of HTML5 communication—and then we showed you how the <code>postMessage</code> API can be used to communicate between iframes, tabs, and windows.</p>
+
+<p>Next, we discussed XMLHttpRequest Level 2—an improved version of XMLHttpRequest. We showed you in which areas XMLHttpRequest has been improved; most importantly in the readystatechange events area. We then showed you how you can use XMLHttpRequest to make cross-origin requests and how to use the new progress events.</p>
+
+<p>Finally, we wrapped up the chapter with a few practical examples. In the next chapter, we’ll demonstrate how HTML5 WebSockets enables you to stream real-time data to an application with incredible simplicity and minimal overhead.</p>
+
+</section>
+</body></html>
