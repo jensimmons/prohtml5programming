@@ -40,7 +40,8 @@ jQuery(function () {
   sections.each(function () {
           
     output += '<ul>';
-    var key = jQuery(this).text();
+    var key = jQuery(this).clone().find('span.index-term').empty().end().text();
+    
     jQuery('<a name="item_0_' + j + '" />').insertBefore(jQuery(this));
     output += ('<li><a href="#item_0_' + j + '" >' + key + '</a>\n');
     var section = jQuery(this).parents('section:first');
@@ -52,7 +53,7 @@ jQuery(function () {
     var k = 0;
     subSection.each(function () {
             
-      var header = jQuery(this).text();
+      var header = jQuery(this).clone().find('span.index-term').empty().end().text();
       jQuery('<a name="item_0_' + j + '_' + k + '" />').insertBefore(jQuery(this));
       output += ('<li><a href="#item_0_' + j + '_' + k + '" >' + header + '</a></li>\n');
       k++;
