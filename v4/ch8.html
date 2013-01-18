@@ -104,17 +104,13 @@
 <section id="sec2_8"><h2>Overview of HTML5 Forms</h2>
 <p>If you are already <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">overview</span></span>familiar with forms in HTML—and we assume you are if you are interested in pro HTML programming—then you will find the new additions in HTML5 to be a comfortable fit on a solid foundation. If you aren’t yet familiar with the basics of form usage, we recommend any of the numerous books and tutorials on creating and handling form values. The topic is well covered at this point, and you will be happy to know that:</p>
 <ul>
-<li>
-<p>Forms should still be encapsulated<span class="index-term"><span class="primary">form%) element</span></span> in a <code>&lt;form&gt;</code> element where the basic submission attributes are set.</p>
+<li>Forms should still be encapsulated<span class="index-term"><span class="primary">form%) element</span></span> in a <code>&lt;form&gt;</code> element where the basic submission attributes are set.</p>
 </li>
-<li>
-<p>Forms still send the values of the controls to the server when the user or the application programmer submits the page.</p>
+<li>Forms still send the values of the controls to the server when the user or the application programmer submits the page.</p>
 </li>
-<li>
-<p>All of the familiar form controls<span class="index-term"><span class="primary">form controls</span></span>—text fields, radio buttons, check boxes, and so on—are still present and working as before (albeit with some new features).</p>
+<li>All of the familiar form controls<span class="index-term"><span class="primary">form controls</span></span>—text fields, radio buttons, check boxes, and so on—are still present and working as before (albeit with some new features).</p>
 </li>
-<li>
-<p>Form controls <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">overview</span></span>are still fully scriptable for those who wish to write their own modifiers and handlers.</p>
+<li>Form controls <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">overview</span></span>are still fully scriptable for those who wish to write their own modifiers and handlers.</p>
 </li>
 </ul>
 <section id="sec3_8"><h3>HTML Forms Versus XForms</h3>
@@ -132,11 +128,9 @@
 
 <p>HTML5 Forms encompasses a great number of new APIs and elements types, and support for them is all over the map now. In order to wrap our heads around all the new functionality, we will address it by breaking it into two categories</p>
 <ul>
-<li>
-<p>New input types</p>
+<li>New input types</p>
 </li>
-<li>
-<p>New functions and attributes</p>
+<li>New functions and attributes</p>
 </li>
 </ul>
 <p>However, before we even start with that, let’s take a quick assessment of how the HTML5 Form specifications are supported in today’s browsers.<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">functional behavior</span></span><span class="index-term"><span class="primary">functional forms</span></span></p></section>
@@ -417,21 +411,16 @@ unspecified
 <section id="sec13_8"><h3>The list Attribute and the datalist Element</h3>
 <p>The <code>list</code> attribute<span class="index-term"><span class="primary">list attribute</span></span><span class="index-term"><span class="primary">datalist element</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">list attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">datalist element</span></span> and <code>datalist</code> element combine to let a developer specify a list of possible values for an input. To use this combination:</p>
 <ol>
-<li>
-<p>Create a <code>datalist</code> element in your document with its <code>id</code> set to a unique value. The datalist can be located anywhere in the document.</p>
+<li>Create a <code>datalist</code> element in your document with its <code>id</code> set to a unique value. The datalist can be located anywhere in the document.</p>
 </li>
-<li>
-<p>Populate the <code>datalist</code> with as many <code>option</code> elements as needed to represent the full set of suggestions for values of a control. For example, a <code>datalist</code> representing e-mail contacts should contain all of the contact e-mail addresses as individual <code>option</code> children.</p>
+<li>Populate the <code>datalist</code> with as many <code>option</code> elements as needed to represent the full set of suggestions for values of a control. For example, a <code>datalist</code> representing e-mail contacts should contain all of the contact e-mail addresses as individual <code>option</code> children.</p>
 </li>
 </ol>
 <pre><code>&lt;datalist id="contactList"&gt;
     &lt;option value="x@example.com" label="Racer X"&gt;
     &lt;option value="peter@example.com" label="Peter"&gt;
 &lt;/datalist&gt;<ol>
-<li>
-<p>Link the input element to the <code>datalist</code> by setting the <code>list</code> attribute to a value which is the <code>id</code> of the associated <code>datalist</code>.</p>
-
-</li>
+<li>Link the input element to the <code>datalist</code> by setting the <code>list</code> attribute to a value which is the <code>id</code> of the associated <code>datalist</code>.</li>
 </ol>
 
 &lt;input type="email" id="contacts" list="contactList"&gt;</code></pre>

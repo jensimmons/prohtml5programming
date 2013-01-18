@@ -395,8 +395,7 @@ This will ask the portal topostMessage APIbuilding application usingcode
 &lt;/p&gt;</code></pre></figure></section><section id="sec13_6"><h3>The Application in Action</h3>
 <p>To see this example<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> in action, there are two prerequisites: the pages have to be served up by a web server and the pages have to be served up from two different domains. If you have access to multiple web servers (for example, two Apache HTTP servers) on separate domains, you can host the example files on those servers and run the demo. Another way to accomplish this on your local machine is to use Python <code>SimpleHTTPServer</code>, as shown in the following steps.</p>
 <ol>
-<li>
-<p>Update the path to the Windows hosts file (<code>C:\Windows\system32\drivers\etc\hosts</code>) and the Linux version (<code>/etc/hosts</code>) by adding two entries pointing to your localhost (IP address 127.0.0.1), as shown in the following example:</p>
+<li>Update the path to the Windows hosts file (<code>C:\Windows\system32\drivers\etc\hosts</code>) and the Linux version (<code>/etc/hosts</code>) by adding two entries pointing to your localhost (IP address 127.0.0.1), as shown in the following example:</p>
 
 <pre><code>127.0.0.1 chat.example.net
 127.0.0.1 portal.example.com</code></pre>
@@ -408,35 +407,24 @@ This will ask the portal topostMessage APIbuilding application usingcode
 
 </aside><p></p>
 <ol>
-<li>
-<p>Install Python 2, which includes the lightweight SimpleHTTPServer web server.</p>
-
-</li>
-<li>
-<p>Navigate to the directory that contains the two example files (<code>postMessageParent.html</code> and <code>postMessageWidget.html</code>).</p>
-
-</li>
-<li>
-<p>Start Python as follows:</p>
+<li>Install Python 2, which includes the lightweight SimpleHTTPServer web server.</li>
+<li>Navigate to the directory that contains the two example files (<code>postMessageParent.html</code> and <code>postMessageWidget.html</code>).</li>
+<li>Start Python as follows:</p>
 
 <pre><code>python -m SimpleHTTPServer 9999</code></pre>
 </li>
-<li>
-<p>Open a browser and navigate to <code>http://portal.example.com:9999/postMessagePortal.html</code>. You<span class="index-term"><span class="primary">Cross Document Messaging</span></span>should<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> now see the page shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.</p>
+<li>Open a browser and navigate to <code>http://portal.example.com:9999/postMessagePortal.html</code>. You<span class="index-term"><span class="primary">Cross Document Messaging</span></span>should<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> now see the page shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.</p>
 </li>
 </ol></section></section><section id="sec14_6"><h2>XMLHttpRequest Level 2</h2>
 <p>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> is the API that made Ajax possible. There are many books about XMLHttpRequest and Ajax. You can read more about XMLHttpRequest programming in John Resig’s<em>Pro JavaScript Techniques</em>, (Apress, 2006).</p>
 
 <p>XMLHttpRequest Level 2<span class="index-term"><span class="primary">Communication API</span><span class="secondary">XMLHttpRequest Level 2</span><span class="see-also"><em>See</em> XMLHttpRequest Level 2</span></span>—the new version of XMLHttpRequest—has been significantly enhanced. In this chapter, we will be covering the improvements introduced in XMLHttpRequest Level 2. These improvements are centered on the following areas:</p>
 <ul>
-<li>
-<p>Cross-origin XMLHttpRequests</p>
+<li>Cross-origin XMLHttpRequests</p>
 </li>
-<li>
-<p>Progress events</p>
+<li>Progress events</p>
 </li>
-<li>
-<p>Binary Data</p>
+<li>Binary Data</p>
 </li>
 </ul>
 <section id="sec15_6"><h3>Cross-Origin XMLHttpRequest</h3>
@@ -695,8 +683,7 @@ geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170
 &lt;/p&gt;</code></pre></figure></section><section id="sec23_6"><h3>The Application in Action</h3>
 <p>To see this example in action, there<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">application in action</span></span>are two prerequisites: the pages have to be served up from different domains, and the target page has to be served up by a web server that understands CORS headers. A CORS-compliant Python script that can handle incoming cross-origin XMLHttpRequests is included in the example code for this chapter. You can run the demo on your local machine by performing the following steps:</p>
 <ol>
-<li>
-<p>Update your hosts file (C<code>:\Windows\system32\drivers\etc\hosts</code> on Windows or /<code>etc/hosts</code> on Unix/Linux) by adding two entries pointing to your <code>localhost</code> (IP address <code>127.0.0.1</code>) as shown in the following example:</p>
+<li>Update your hosts file (C<code>:\Windows\system32\drivers\etc\hosts</code> on Windows or /<code>etc/hosts</code> on Unix/Linux) by adding two entries pointing to your <code>localhost</code> (IP address <code>127.0.0.1</code>) as shown in the following example:</p>
 
 <pre><code>127.0.0.1 geodata.example.net
 127.0.0.1 portal.example.com</code></pre>
@@ -708,23 +695,13 @@ geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170
 
 </aside><p></p>
 <ol>
-<li>
-<p>Install Python 2, which includes the lightweight <code>SimpleHTTPServer</code> web server, if you did not do so for the previous example.</p>
-
-</li>
-<li>
-<p>Navigate to the directory that contains the example file (<code>crossOrignUpload.html</code>) and the Python CORS server script (<code>CORSServer.py</code>).</p>
-
-</li>
-<li>
-<p>Start Python in this directory as follows:</p>
+<li>Install Python 2, which includes the lightweight <code>SimpleHTTPServer</code> web server, if you did not do so for the previous example.</li>
+<li>Navigate to the directory that contains the example file (<code>crossOrignUpload.html</code>) and the Python CORS server script (<code>CORSServer.py</code>).</li>
+<li>Start Python in this directory as follows:</p>
 
 <pre><code>python CORSServer.py 9999</code></pre>
 </li>
-<li>
-<p>Open a browser and navigate to <code>http://portal.example.com:9999/crossOriginUpload.html</code>. You should now see the page<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">application in action</span></span> shown in Figure <span class="internal-reference" id="ir_fig6_6">6-6</span>.</p>
-
-</li>
+<li>Open a browser and navigate to <code>http://portal.example.com:9999/crossOriginUpload.html</code>. You should now see the page<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">application in action</span></span> shown in Figure <span class="internal-reference" id="ir_fig6_6">6-6</span>.</li>
 </ol></section></section><section id="sec24_6"><h2>Practical Extras</h2>
 <p>Sometimes there are techniques that don’t fit into our regular examples, but that nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</p>
 

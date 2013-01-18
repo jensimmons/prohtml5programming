@@ -234,42 +234,24 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 
 <p>So, what happens when you deploy this application to a large number of users? Let’s take a look at the network overhead for just the HTTP request<span class="index-term"><span class="primary">HTTP request header</span></span><span class="index-term"><span class="primary">HTTP response header</span></span> and response header data associated with this <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>polling</tertiary></span>polling application in three different use cases.</p>
 <ul>
-<li>
-<p><strong>Use case A</strong>: 1,000 clients polling every second: Network traffic is (871 × 1,000) = 871,000 bytes = 6,968,000 bits per second (6.6 Mbps)</p>
-
-</li>
-<li>
-<p><strong>Use case B</strong>: 10,000 clients polling every second: Network traffic is (871 × 10,000) = 8,710,000 bytes = 69,680,000 bits per second (66 Mbps)</p>
-
-</li>
-<li>
-<p><strong>Use case C</strong>: 100,000 clients polling every 1 second: Network traffic is</p>
+<li><strong>Use case A</strong>: 1,000 clients polling every second: Network traffic is (871 × 1,000) = 871,000 bytes = 6,968,000 bits per second (6.6 Mbps)</li>
+<li><strong>Use case B</strong>: 10,000 clients polling every second: Network traffic is (871 × 10,000) = 8,710,000 bytes = 69,680,000 bits per second (66 Mbps)</li>
+<li><strong>Use case C</strong>: 100,000 clients polling every 1 second: Network traffic is</p>
 
 <p>(871 × 100,000) = 87,100,000 bytes = 696,800,000 bits per second (665 Mbps)<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>polling</tertiary></span>
-</p>
-
 </li>
 </ul>
 <p>That’s an enormous amount of unnecessary network overhead. Consider if we rebuilt the application to use WebSocket, adding an event handler to the web page to asynchronously listen for stock update messages from the message broker (more on that in just a little bit). Each of these messages is a WebSocket frame that has as little as two bytes of overhead (instead of 871). Take a look at how that affects the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>network overhead</tertiary></span>network overhead in our three use cases.</p>
 <ul>
-<li>
-<p><strong>Use case A</strong>: 1,000 clients receive 1 message per second: Network traffic is</p>
+<li><strong>Use case A</strong>: 1,000 clients receive 1 message per second: Network traffic is</p>
 
-<p>(2 × 1,000) = 2,000 bytes = 16,000 bits per second (0.015 Mbps)</p>
+<p>(2 × 1,000) = 2,000 bytes = 16,000 bits per second (0.015 Mbps)</li>
+<li><strong>Use case B</strong>: 10,000 clients receive 1 message per second: Network traffic is</p>
 
-</li>
-<li>
-<p><strong>Use case B</strong>: 10,000 clients receive 1 message per second: Network traffic is</p>
+<p>(2 × 10,000) = 20,000 bytes = 160,000 bits per second (0.153 Mbps)</li>
+<li><strong>Use case C:</strong> 100,000 clients receive 1 message per second: Network traffic is</p>
 
-<p>(2 × 10,000) = 20,000 bytes = 160,000 bits per second (0.153 Mbps)</p>
-
-</li>
-<li>
-<p><strong>Use case C:</strong> 100,000 clients receive 1 message per second: Network traffic is</p>
-
-<p>(2 × 100,000) = 200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</p>
-
-</li>
+<p>(2 × 100,000) = 200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</li>
 </ul>
 <p>As you can see in <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>vs. polling solution</tertiary></span>Figure <span class="internal-reference" id="ir_fig4_7">7-4</span>, WebSocket provides a dramatic reduction of unnecessary network traffic compared to the polling solution.
 
@@ -288,22 +270,10 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 <aside><h3>Websocket Servers</h3>
 <p>There are lots of WebSocket server implementations<span class="index-term"><span class="primary">WebSocket server implementations</span></span> out there already and even more under development. The following are just a few of the existing WebSocket servers:</p>
 <ul>
-<li>
-<p><strong>Kaazing WebSocket Gateway</strong><span class="index-term"><span class="primary">Kaazing WebSocket Gateway</span></span>—a Java-based WebSocket Gateway</p>
-
-</li>
-<li>
-<p><strong>mod_pywebsocket</strong><span class="index-term"><span class="primary">mod_pywebsocket</span></span>—a Python-based extension for the Apache HTTP Server</p>
-
-</li>
-<li>
-<p><strong>Netty</strong>—a Java network framework which includes WebSocket support</p>
-
-</li>
-<li>
-<p><strong>node.js</strong>—a server-side JavaScript framework on which multiple WebSocket servers have been written</p>
-
-</li>
+<li><strong>Kaazing WebSocket Gateway</strong><span class="index-term"><span class="primary">Kaazing WebSocket Gateway</span></span>—a Java-based WebSocket Gateway</li>
+<li><strong>mod_pywebsocket</strong><span class="index-term"><span class="primary">mod_pywebsocket</span></span>—a Python-based extension for the Apache HTTP Server</li>
+<li><strong>Netty</strong>—a Java network framework which includes WebSocket support</li>
+<li><strong>node.js</strong>—a server-side JavaScript framework on which multiple WebSocket servers have been written</li>
 </ul>
 <p>Kaazing’s WebSocket Gateway includes full client-side WebSocket emulation support for browsers without native implementation of WebSocket, which allows you to code against the WebSocket API today and have your code work in all browsers.</p>
 
@@ -856,18 +826,9 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 
 <p>The meat of this application is once again accomplished via the script code. First, we will establish a few variables:</p>
 <ul>
-<li>
-<p>A global reference to our <code>socket</code> so that any function can access it later.</p>
-
-</li>
-<li>
-<p>A random <code>myId</code> number between 0 and 100,000 to identify our location data online. This number is merely used to correlate changes in location over time back to the same source without using more personal information such as names. A sufficiently large pool of numbers makes it unlikely that more than one user will have the same identifier.</p>
-
-</li>
-<li>
-<p>A <code>rowCount</code> which holds how many unique users have transmitted their location data to us. This is largely used for visual formatting.</p>
-
-</li>
+<li>A global reference to our <code>socket</code> so that any function can access it later.</li>
+<li>A random <code>myId</code> number between 0 and 100,000 to identify our location data online. This number is merely used to correlate changes in location over time back to the same source without using more personal information such as names. A sufficiently large pool of numbers makes it unlikely that more than one user will have the same identifier.</li>
+<li>A <code>rowCount</code> which holds how many unique users have transmitted their location data to us. This is largely used for visual formatting.</li>
 </ul>
 <p>The next two functions should look familiar. As in other example applications, we’ve provided utilities to help us update our status message. This time, there are two status messages to update.</p>
 

@@ -105,58 +105,25 @@
 </p>
 <figure id="fig1_4" class="image"><img src="images/ch4-1/fig4-1.png"><figcaption>Figure 4-1. Overview of the video container</figcaption></figure><p>Some of the popular video container<span class="index-term"><span class="primary">audio</span><span class="secondary">containers</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">containers</span></span> formats include the following:</p>
 <ul>
-<li>
-<p>Audio Video Interleave (.avi)</p>
-
-</li>
-<li>
-<p>Flash Video (.flv)</p>
-
-</li>
-<li>
-<p>MPEG 4 (.mp4)</p>
-
-</li>
-<li>
-<p>Matroska (.mkv)</p>
-
-</li>
-<li>
-<p>Ogg (.ogv)</p>
-
-</li>
+<li>Audio Video Interleave (.avi)</li>
+<li>Flash Video (.flv)</li>
+<li>MPEG 4 (.mp4)</li>
+<li>Matroska (.mkv)</li>
+<li>Ogg (.ogv)</li>
 </ul></section><section id="sec4_4"><h3>Audio and Video Codecs</h3>
 <p>Audio and video <em>coders/decoders</em> (<em>codecs</em>) are<span class="index-term"><span class="primary">audio</span><span class="secondary">codecs</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">codecs</span></span> algorithms used to encode and decode a particular audio or video stream so that they can be played back. Raw media files are enormous, so without encoding, a video or audio clip would consist of tremendous amounts of data that could be too large to transmit across the Internet in a reasonable amount of time. Without a decoder, the recipient would not be able to reconstitute the original media source from the encoded form. A codec is able to understand a specific container format and decodes the audio and video tracks that it contains.</p>
 
 <p>Some example audio codecs are the following:</p>
 <ul>
-<li>
-<p>AAC</p>
-
-</li>
-<li>
-<p>MPEG-3</p>
-
-</li>
-<li>
-<p>Ogg Vorbis</p>
-
-</li>
+<li>AAC</li>
+<li>MPEG-3</li>
+<li>Ogg Vorbis</li>
 </ul>
 <p>Example video codecs are <span class="index-term"><span class="primary">audio</span><span class="secondary">codecs</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">codecs</span></span>the following:</p>
 <ul>
-<li>
-<p>H.264</p>
-
-</li>
-<li>
-<p>VP8</p>
-
-</li>
-<li>
-<p>Ogg Theora</p>
-
-</li>
+<li>H.264</li>
+<li>VP8</li>
+<li>Ogg Theora</li>
 </ul></section><section id="sec5_4"><h3>The Codec Wars and the Tentative Truce</h3>
 <p>Some of the codecs are patent-encumbered, while others are freely available. For example, the Vorbis audio codec<span class="index-term"><span class="primary">Vorbis audio codec</span></span> and the Theora video codec<span class="index-term"><span class="primary">Theora video codec</span></span> are freely available, while the use of the MPEG-4 and H.264 codecs are subject to license fees.</p>
 
@@ -172,19 +139,12 @@
 </aside></section><section id="sec6_4"><h3>Audio and Video Restrictions</h3>
 <p>There are a few things<span class="index-term"><span class="primary">audio</span><span class="secondary">unsupported</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">unsupported</span></span> that are not supported in the Audio and video specification:</p>
 <ul>
-<li>
-<p><em>Streaming</em> audio and video. That<span class="index-term"><span class="primary">video</span><span class="secondary">streaming</span></span><span class="index-term"><span class="primary">audio</span><span class="secondary">streaming</span></span> <span class="index-term"><span class="primary">media streaming</span></span>is, there is currently no standard for bitrate switching in HTML5 video; only full media files are supported by current implementations. However, there are aspects of the spec that are designed to support streaming media in the future once the formats are supported.</p>
-
-</li>
-<li>
-<p>Media is restricted by HTTP cross-origin resource sharing<span class="index-term"><span class="primary">cross-origin resource sharing</span></span>. See <span class="external-reference">
+<li><em>Streaming</em> audio and video. That<span class="index-term"><span class="primary">video</span><span class="secondary">streaming</span></span><span class="index-term"><span class="primary">audio</span><span class="secondary">streaming</span></span> <span class="index-term"><span class="primary">media streaming</span></span>is, there is currently no standard for bitrate switching in HTML5 video; only full media files are supported by current implementations. However, there are aspects of the spec that are designed to support streaming media in the future once the formats are supported.</li>
+<li>Media is restricted by HTTP cross-origin resource sharing<span class="index-term"><span class="primary">cross-origin resource sharing</span></span>. See <span class="external-reference">
 <span class="ref-source">Chapter 6</span>
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_6</span>
-</span> for more information about cross-origin resource sharing (CORS).</p>
-
-</li>
-<li>
-<p>Full-screen video is not <span class="index-term"><span class="primary">full-screen video</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">full-screen</span></span>scriptable because it could be considered a security violation to let a scriptable element take over the full screen. However, browsers have the option of letting users choose to view videos in full screen through additional controls.</p>
+</span> for more information about cross-origin resource sharing (CORS).</li>
+<li>Full-screen video is not <span class="index-term"><span class="primary">full-screen video</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">full-screen</span></span>scriptable because it could be considered a security violation to let a scriptable element take over the full screen. However, browsers have the option of letting users choose to view videos in full screen through additional controls.</p>
 </li>
 </ul></section><section id="sec7_4"><h3>Browser Support for Audio and Video</h3>
 <p>Due to the fractured codec support, simply knowing which browsers support the new <code>audio</code><span class="index-term"><span class="primary">audio element</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">browser support for</span></span> and <code>video</code> elements is not enough; you also need to know which codecs are supported. Table <span class="internal-reference" id="ir_tab1_4">4-1</span> shows which browsers support which codecs at the time of this writing.
@@ -222,14 +182,8 @@
 </section></section><section id="sec8_4"><h2>Using the Audio and Video API</h2>
 <p>In this section, we’ll explore<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> the use of the audio and video in your applications. There are two main benefits to using the new media tags over previous video-embedding techniques—usually videos are embedded using the Flash, QuickTime, or Windows Media plugins—that aim to make life easier for users and developers:</p>
 <ul>
-<li>
-<p><em>The new audio and video tags remove deployment hurdles by being part of the native browser environment.</em> Although some plugins<span class="index-term"><span class="primary">plugins</span></span> have high install rates, they are often blocked in controlled corporate environments. Some users choose to disable these plugins due to the… ostentatious… advertising displays those plugins are also capable of, which also removes their capability to be used for media playback. Plugins are also separate vectors of attack for security issues. And plugins often have difficulty integrating their displays with the rest of browser content, causing clipping or transparency issues with certain site designs. Because plugins use a self-contained rendering model that is different from that of the base web page, developers face difficulties if elements such as popup menus or other visual elements need to cross plugin boundaries in a page.</p>
-
-</li>
-<li>
-<p><em>The media elements expose a common, integrated, and scriptable API to the document.</em> As a developer, your use of the new media elements allows very simple ways to script the control and playback of content. We will see multiple examples of this later in the chapter.</p>
-
-</li>
+<li><em>The new audio and video tags remove deployment hurdles by being part of the native browser environment.</em> Although some plugins<span class="index-term"><span class="primary">plugins</span></span> have high install rates, they are often blocked in controlled corporate environments. Some users choose to disable these plugins due to the… ostentatious… advertising displays those plugins are also capable of, which also removes their capability to be used for media playback. Plugins are also separate vectors of attack for security issues. And plugins often have difficulty integrating their displays with the rest of browser content, causing clipping or transparency issues with certain site designs. Because plugins use a self-contained rendering model that is different from that of the base web page, developers face difficulties if elements such as popup menus or other visual elements need to cross plugin boundaries in a page.</li>
+<li><em>The media elements expose a common, integrated, and scriptable API to the document.</em> As a developer, your use of the new media elements allows very simple ways to script the control and playback of content. We will see multiple examples of this later in the chapter.</li>
 </ul>
 <p>Of course, there is one primary drawback to using the media tags: lack of common codec support, as discussed in the earlier sections of this chapter. However, we expect that support for codecs will increase and converge over time, making the choice of common media types easy and ubiquitous. Plus, the media tags have a built-in mechanism for switching to the most appropriate type of content for the browser to display, as you will soon see.</p>
 
