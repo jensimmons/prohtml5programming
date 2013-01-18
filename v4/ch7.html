@@ -123,7 +123,8 @@
 <p>Ultimately, all of <span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span>these methods for providing real-time data involve HTTP request<span class="index-term"><span class="primary">HTTP request headers</span></span><span class="index-term"><span class="primary">HTTP response headers</span></span> and <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>request and response headers</tertiary></span>response headers, which contain lots of additional, unnecessary header data and introduce latency. On top of that, full-duplex connectivity requires more than just the downstream connection from server to client. In an effort to simulate full-duplex communication over half-duplex HTTP, many of today’s solutions use two connections: one for the downstream and one for the upstream. The maintenance and coordination of these two connections introduces significant overhead in terms of resource consumption and adds lots of <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>complexity applications</tertiary></span>complexity. Simply put, HTTP wasn’t designed for real-time, full-duplex communication as you can see in the Figure <span class="internal-reference" id="ir_fig1_7">7-1</span>, which shows the complexities associated with building a web application that displays real-time data from a back-end data source using a publish/subscribe model over half-duplex HTTP.
 </p>
 <figure id="fig1_7" class="image"><img src="images/ch7-1/fig7-1.png"><figcaption>Figure 7-1. The complexity of real-time HTTP <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>complexity applications</tertiary></span>applications<span class="index-term"><span class="primary">Comet applications</span></span>
-</figcaption></figure><p>It gets even worse when you try to scale out those solutions. Simulating bidirectional browser communication over HTTP is error-prone and complex and all that complexity does not scale. Even though your end users might be enjoying something that looks like a real-time web application, this “real-time” experience has a high price tag. It’s a price that you will pay in additional<span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span> latency, unnecessary network traffic and a drag on CPU performance.</p></section>
+</figcaption></figure><p>It gets even worse when you try to scale out those solutions. Simulating bidirectional browser communication over HTTP is error-prone and complex and all that complexity does not scale. Even though your end users might be enjoying something that looks like a real-time web application, this “real-time” experience has a high price tag. It’s a price that you will pay in additional<span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span> latency, unnecessary network traffic and a drag on CPU performance.</p>
+</section>
 
 <section id="sec4_7">
 <h3>Understanding WebSocket</h3>
@@ -137,7 +138,10 @@
 
 <p>At that time, Ian added TCPConnection to the HTML5 specification, he was working on a program to control a model train set from a browser and he was using the prevalent pre-WebSocket “hanging GET” and XHR techniques to achieve browser to train communication. The train-controller program would have been a lot easier to build if there was a way to have socket communication in a browser—much like traditional asynchronous client/server communication model that is found in “fat” clients. So, inspired by what <em>could</em> be possible, the (train) wheels had been set in motion and the WebSocket train had left the station. Next stop: the real-time web.”</p>
 
-</aside></section><section id="sec5_7">
+</aside>
+</section>
+
+<section id="sec5_7">
 <h3>The WebSocket Handshake</h3>
 <p>To establish a WebSocket<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">protocol</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">handshake</span></span> connection, the client and server upgrade from the HTTP protocol to the WebSocket protocol during their initial handshake, as shown in Figure <span class="internal-reference" id="ir_fig2_7">7-2</span>. Note that this connection description represents draft 17 of the protocol.
 
@@ -170,7 +174,8 @@ WebSocket-Protocol: sample</code></pre>
 
 
 
-<p>Once established, WebSocket messages can be sent back and forth between the client and the server in full-duplex mode. This means that text-based messages can be sent full-duplex, in either direction at the same time. On the network each message starts with a <code>0x00</code> byte, ends with a <code>0xFF</code> byte, and <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">protocol</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">handshake</span></span>contains UTF-8 data in between.</p></section>
+<p>Once established, WebSocket messages can be sent back and forth between the client and the server in full-duplex mode. This means that text-based messages can be sent full-duplex, in either direction at the same time. On the network each message starts with a <code>0x00</code> byte, ends with a <code>0xFF</code> byte, and <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">protocol</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">handshake</span></span>contains UTF-8 data in between.</p>
+</section>
 
 <section id="sec6_7">
 <h3>The WebSocket Interface</h3>
@@ -271,7 +276,10 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 
 <p>WebSocket provides an enormous step forward in the scalability of the real-time web. As you have seen in this chapter, WebSocket can provide a 500:1 or—depending on the size of the HTTP headers—even a 1000:1 reduction in unnecessary HTTP header traffic and 3:1 reduction in latency.</p>
 
-</section></section><section id="sec8_7">
+</section>
+</section>
+
+<section id="sec8_7">
 <h2>Writing a Simple Echo WebSocket Server</h2>
 <p>Before you can use the<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">echo server</span></span> WebSocket API, you need a server that supports WebSocket. In this section we’ll take a look at how a simple WebSocket “echo” server is written. To run the examples for this chapter, we have included a simple WebSocket server written in Python. The sample code for the following examples is located in the WebSocket section of the book web site.</p>
 
@@ -604,7 +612,10 @@ if __name__ == "__main__":WebSocket APIframingbroadcast.py code
     WebSocketServer(port=8080, handlers={"/broadcast": BroadcastHandler})
 asyncore.loop()</code></pre></figure><p>Now that we’ve got a working echo server, we need to write the client side. The web browsers implement the connecting half of the WebSocket Protocol. We can use the API from JavaScript to<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">framing</span><tertiary>server communication</tertiary></span> communicate with our simple server.</p>
 
-</section></section><section id="sec10_7">
+</section>
+</section>
+
+<section id="sec10_7">
 <h2>Using the WebSocket API</h2>
 <p>In this section, we’ll <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">using begin</span></span>explore the use of WebSocket in more detail.</p>
 
@@ -625,9 +636,13 @@ asyncore.loop()</code></pre></figure><p>Now that we’ve got a working echo serv
 <p>Another way to see if WebSocket is supported in your browser, is to use the browser’s console (Firebug or Chrome Developer Tools for example). Figure <span class="internal-reference" id="ir_fig7_7">7-7</span> shows how you can test whether WebSocket is supported natively in Google Chrome (if it is not, <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">browser support</span><span class="secondary">for WebSocket API</span></span>the <code>window.WebSocket</code> command<span class="index-term"><span class="primary">window.WebSocket command</span></span> returns “undefined.”)
 
 </p>
-<figure id="fig7_7" class="image"><img src="images/ch7-7/fig7-7.png"><figcaption>Figure 7-7. Testing WebSocket support in Google Chrome Developer Tools</figcaption></figure></section><section id="sec12_7">
+<figure id="fig7_7" class="image"><img src="images/ch7-7/fig7-7.png"><figcaption>Figure 7-7. Testing WebSocket support in Google Chrome Developer Tools</figcaption></figure>
+</section>
+
+<section id="sec12_7">
 <h3>Basic API Usage</h3>
-<p>The sample code for the following examples is located on the book web site in the WebSocket section. This folder contains a websocket.html file and a broadcast.html file (and a tracker.html file used in the following section) as well as the WebSocket server code shown previously that can be run in Python.</p></section>
+<p>The sample code for the following examples is located on the book web site in the WebSocket section. This folder contains a websocket.html file and a broadcast.html file (and a tracker.html file used in the following section) as well as the WebSocket server code shown previously that can be run in Python.</p>
+</section>
 
 <section id="sec13_7">
 <h3>Creating a WebSocket object and Connecting to a WebSocket Server</h3>
@@ -653,7 +668,8 @@ w = new WebSocket(url);</code></pre>
 
 <p>Protocols you might use include Extensible Messaging and Presence Protocol (XMPP, or Jabber), Advanced Message Queuing Protocol (AMQP), Remote Frame Buffer (RFB, or VNC) and Streaming Text Oriented Messaging Protocol (STOMP). These are real-world protocols spoken by many clients and servers. Using a standard protocol ensures interoperability between web applications and servers from different organizations. It also opens the door for public WebSocket services. You can speak to a server using a known protocol. Client applications that understand the same protocol can then connect and participate.</p>
 
-<p>This example does not use a standard protocol. We aren’t introducing external dependencies or taking the space to implement a complete standard protocol. As an example, it uses the WebSocket API directly, just as you would if you were starting to write code for a new protocol.</p></section>
+<p>This example does not use a standard protocol. We aren’t introducing external dependencies or taking the space to implement a complete standard protocol. As an example, it uses the WebSocket API directly, just as you would if you were starting to write code for a new protocol.</p>
+</section>
 
 <section id="sec14_7">
 <h3>Adding Event Listeners</h3>
@@ -792,7 +808,10 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </p>
 <figure id="fig9_7" class="image"><img src="images/ch7-9/fig7-9.png"><figcaption>Figure 7-9. <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">applications</span><tertiary>sending messages</tertiary></span>
 <em>broadcast.html</em><span class="index-term"><span class="primary">Broadcast.html</span></span> <em>in action in two browsers</em>
-</figcaption></figure></section></section><section id="sec16_7">
+</figcaption></figure>
+</section></section>
+
+<section id="sec16_7">
 <h2>Building a WebSocket Application</h2>
 <p>Now that we’ve seen the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>location tracker</tertiary></span>basics of WebSocket, it’s time to tackle something a little more substantial. Previously, we used the HTML5 Geolocation API to build an application that allowed us to calculate distance traveled directly inside our web page. We can utilize those same Geolocation techniques, mixed together with our new support for WebSocket, and <span class="index-term"><span class="primary">Location tracker</span></span>create a simple application that keeps multiple participants connected: a location tracker.</p>
 
@@ -944,7 +963,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 
 <p>Once that is verified, we make a connection to the remote broadcast server using the connect string format described above. The connection is stored in our globally declared <code>socket</code> variable.</p>
 
-<p>Finally, we declare two handlers to take action when our WebSocket receives updates. The <code>onopen</code> handler<span class="index-term"><span class="primary">onopen handler</span></span> will merely update the status message to let the user know that we made a successful connection. The <code>onmessage</code><span class="index-term"><span class="primary">onmessage handler</span></span> will similarly update the status to let the user know that a message has arrived. It will also call our upcoming <code>dataReturned</code> function<span class="index-term"><span class="primary">dataReturned function</span></span> to show <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>adding WebSocket code</tertiary></span>the arriving data in the page, but we’ll tackle that later.</p></section>
+<p>Finally, we declare two handlers to take action when our WebSocket receives updates. The <code>onopen</code> handler<span class="index-term"><span class="primary">onopen handler</span></span> will merely update the status message to let the user know that we made a successful connection. The <code>onmessage</code><span class="index-term"><span class="primary">onmessage handler</span></span> will similarly update the status to let the user know that a message has arrived. It will also call our upcoming <code>dataReturned</code> function<span class="index-term"><span class="primary">dataReturned function</span></span> to show <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>adding WebSocket code</tertiary></span>the arriving data in the page, but we’ll tackle that later.</p>
+</section>
 
 <section id="sec19_7">
 <h3>Adding the Geolocation Code</h3>
@@ -996,7 +1016,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 <p>This section is similar to, <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>adding Geolocation code</tertiary></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location tracker application and</span></span>but simpler than, the same handler in <span class="external-reference">
 <span class="ref-source">Chapter 5</span>
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_5</span>
-</span>. Here, we grab the latitude, longitude, and timestamp from the position provided by the browser. Then, we update the status message to indicate that a new value has arrived.</p></section>
+</span>. Here, we grab the latitude, longitude, and timestamp from the position provided by the browser. Then, we update the status message to indicate that a new value has arrived.</p>
+</section>
 
 <section id="sec20_7">
 <h3>Putting It All Together</h3>
@@ -1077,7 +1098,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 
 <p>In our case, we will separate the user text name from the latitude and longitude values using a backslash (properly escaped, of course). Finally, the display name is returned to the calling function for updating the status row.</p>
 
-<p>Our simple WebSocket and Geolocation mashup is now complete. Try it out, but keep in mind that unless there are multiple browsers accessing the application at the same time, you won’t see many updates. As an exercise to the reader, consider updating this example to display the incoming locations on a global Google Map to get an idea of where HTML5 interest is flourishing at this very moment.</p></section>
+<p>Our simple WebSocket and Geolocation mashup is now complete. Try it out, but keep in mind that unless there are multiple browsers accessing the application at the same time, you won’t see many updates. As an exercise to the reader, consider updating this example to display the incoming locations on a global Google Map to get an idea of where HTML5 interest is flourishing at this very moment.</p>
+</section>
 
 <section id="sec21_7">
 <h3>The Final Code</h3>
@@ -1198,7 +1220,10 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre></figure></section></section><section id="sec22_7">
+&lt;/html&gt;</code></pre></figure>
+</section></section>
+
+<section id="sec22_7">
 <h2>Summary</h2>
 <p>In this chapter, you have seen how WebSocket provides a simple, yet powerful mechanism for creating compelling, real-time applications.</p>
 

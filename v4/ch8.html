@@ -118,7 +118,8 @@
 <h3>HTML Forms Versus XForms</h3>
 <p>You may have heard <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">vs. XForms</span></span><span class="index-term"><span class="primary">XForms</span></span>references to XForms in the last few years, long before the HTML5 effort gained much traction. XForms is an XML-centric, powerful, and somewhat complex, standard for specifying client-side form behavior that has been developed in its own W3C working group for nearly ten years. XForms harnesses the full power<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">overview</span></span> of XML Schema to define precise rules for validation and formatting. Unfortunately, no current major browser supports XForms without additional plug-ins.</p>
 
-<p>HTML5 Forms are not XForms.</p></section>
+<p>HTML5 Forms are not XForms.</p>
+</section>
 
 <section id="sec4_8">
 <h3>Functional Forms</h3>
@@ -137,7 +138,8 @@
 <li>New functions and attributes</p>
 </li>
 </ul>
-<p>However, before we even start with that, let’s take a quick assessment of how the HTML5 Form specifications are supported in today’s browsers.<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">functional behavior</span></span><span class="index-term"><span class="primary">functional forms</span></span></p></section>
+<p>However, before we even start with that, let’s take a quick assessment of how the HTML5 Form specifications are supported in today’s browsers.<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">functional behavior</span></span><span class="index-term"><span class="primary">functional forms</span></span></p>
+</section>
 
 <section id="sec5_8">
 <h3>Browser Support for HTML5 Forms</h3>
@@ -145,7 +147,8 @@
 
 <p>Checking for browser support is less useful in the context of the new Forms, as they have been designed to degrade gracefully in older browsers. Largely, this means that it is safe for you to use the new elements today, because older browsers will fall back to simple text field displays for any input types that they do not understand. However, as we’ll see later in this chapter, this raises the importance of multi-tier form validation, as it is not sufficient to rely on the presence of browser validators to enforce the data types for your form controls, even if you assume full modern-browser support.</p>
 
-<p>Now that we have surveyed the browser landscape, let’s take a look at the new form controls added in<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">browser support</span></span> the HTML5 specification.</p></section>
+<p>Now that we have surveyed the browser landscape, let’s take a look at the new form controls added in<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">browser support</span></span> the HTML5 specification.</p>
+</section>
 
 <section id="sec6_8">
 <h3>An Input Catalog</h3>
@@ -303,13 +306,17 @@ Month
 <p>Although some early<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new elements in</span></span> implementations of these elements are beginning to appear in leading edge browsers (for example, the datetime display in Opera as shown in Figure <span class="internal-reference" id="ir_fig3_8">8-3</span>), we won’t focus on them in this chapter as they are likely to undergo significant change. Stay tuned to future revisions!
 
 </p>
-<figure id="fig3_8" class="image"><img src="images/ch8-3/fig8-3.png"><figcaption>Figure 8-3. Display for an input of type datetime</figcaption></figure></section></section><section id="sec7_8">
+<figure id="fig3_8" class="image"><img src="images/ch8-3/fig8-3.png"><figcaption>Figure 8-3. Display for an input of type datetime</figcaption></figure>
+</section></section>
+
+<section id="sec7_8">
 <h2>Using the HTML5 Forms APIs</h2>
 <p>Now that we’ve <span class="index-term"><span class="primary">Forms API</span></span>spent some time familiarizing ourselves with the new form element types, let’s turn to the attributes and APIs that are present on both the old and new form controls. Many of them are designed to reduce the amount of scripting needed to create a powerful web application user interface. You may find that the new attributes give you the power to enhance your user interface in ways that you had not considered. Or, at the very least, you may be able to remove blocks of script in your existing pages.</p>
 
 <section id="sec8_8">
 <h3>New Form Attributes and Functions</h3>
-<p>First, we’ll consider <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new attributes and functions</span></span>new attributes, functions, and a few elements that did not previously exist in earlier versions of HTML. Like the new input types, it is generally safe to use these attributes today, whether or not your target browser supports them. This is because the attributes will be safely ignored by any browser on the market today if the browser does not understand them.</p></section>
+<p>First, we’ll consider <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new attributes and functions</span></span>new attributes, functions, and a few elements that did not previously exist in earlier versions of HTML. Like the new input types, it is generally safe to use these attributes today, whether or not your target browser supports them. This is because the attributes will be safely ignored by any browser on the market today if the browser does not understand them.</p>
+</section>
 
 <section id="sec9_8">
 <h3>The placeholder Attribute</h3>
@@ -326,7 +333,8 @@ Month
 <inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figf_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p>
 
 <p>Similarly, whenever a value is<span class="index-term"><span class="primary">Forms API</span><span class="secondary">placeholder attribute</span></span><span class="index-term"><span class="primary">placeholder attribute</span></span> entered in the field, the placeholder text will not appear.
-<inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figg_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p></section>
+<inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figg_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p>
+</section>
 
 <section id="sec10_8">
 <h3>The autocomplete Attribute</h3>
@@ -396,7 +404,10 @@ unspecified
 <td>Form elements that are not marked as required fall into this pseudo-class. Only form elements fit this category.</td>
 </tr>
 </tbody>
-</table></section><section id="sec11_8">
+</table>
+</section>
+
+<section id="sec11_8">
 <h3>The autofocus Attribute</h3>
 <p>The <code>autofocus</code> attribute<span class="index-term"><span class="primary">autofocus attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">autofocus attribute</span></span> lets a developer specify that a given form element should take input focus immediately when the page loads. Only one attribute per page should specify the <code>autofocus</code> attribute. Behavior is undefined if more than one control is set to autofocus.</p>
 
@@ -414,7 +425,10 @@ unspecified
 <h3>Note</h3>
 <p>Autofocus can annoy users if they are not expecting a focus change. Many users utilize keystrokes for navigation, and switching focus to a form control subverts that ability. Use it only when it is a given that a form <span class="index-term"><span class="primary">autofocus attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">autofocus attribute</span></span>control should take all default keys.</p>
 
-</aside></section><section id="sec12_8">
+</aside>
+</section>
+
+<section id="sec12_8">
 <h3>The spellcheck Attribute</h3>
 <p>The <code>spellcheck</code> attribute<span class="index-term"><span class="primary">spellcheck attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">spellcheck attribute</span></span> can be set on input controls with text content, as well as the <code>textarea</code>. When set, it suggests to the browser whether or not spelling feedback should be given. A normal representation of this element is to draw a red dotted line under text that does not map any entry in the currently set dictionary. This hints to the user to double-check the spelling or to get a suggestion from the browser itself.</p>
 
@@ -422,7 +436,8 @@ unspecified
 
 <pre><code>&lt;textarea id=”myTextArea” spellcheck=”true”&gt;</code></pre>
 <p>Also note that most browsers will default to leaving the spellcheck on, so unless the element (or one of its parent elements) turns off spellchecking, it will display by default.<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new attributes and functions</span></span>
-</p></section>
+</p>
+</section>
 
 <section id="sec13_8">
 <h3>The list Attribute and the datalist Element</h3>
@@ -446,14 +461,16 @@ unspecified
 
 
 <p>On a supporting browser this produces a customized list control like the following:
-<inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figh_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p></section>
+<inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figh_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p>
+</section>
 
 <section id="sec14_8">
 <h3>The min and max Attributes</h3>
 <p>As seen before in<span class="index-term"><span class="primary">min attribute</span></span><span class="index-term"><span class="primary">max attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">min attribute</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">max attribute</span></span> our example for <code>&lt;input type="range"&gt;</code>, the <code>min</code> and <code>max</code> attributes allow a numerical input to be constrained to minimum and maximum values. One, both, or neither of these attributes can be provided as necessary, and the input control should adjust accordingly to increase or decrease the range of acceptable values. For example, to create a range control representing a level of confidence in ability from zero% to 100%, the following code could be used as follows:</p>
 
 <pre><code>&lt;input id="confidence" name="level" type="range" min="0" max="100" value="0"&gt;</code></pre>
-<p>This would create a range control with a minimum zero value and maximum of 100, which, coincidentally, are the default values for the same.</p></section>
+<p>This would create a range control with a minimum zero value and maximum of 100, which, coincidentally, are the default values for the same.</p>
+</section>
 
 <section id="sec15_8">
 <h3>The step Attribute</h3>
@@ -465,7 +482,8 @@ unspecified
 
 <p>The default <code>step</code> value is dependent on the type of control to which it is applied. For a <code>range</code> input, the default step is one. To accompany the <code>step</code> attribute, HTML5 introduces two functions on the input element that allow the value to be controlled: <code>stepUp</code> and <code>stepDown</code>.</p>
 
-<p>As you might expect, these functions increment or decrement the current value, respectively. As you might also expect, the amount by which the value is increased or decreased is the value of the step. As such, the value of a numeric input control can be tweaked without direct input from the user.</p></section>
+<p>As you might expect, these functions increment or decrement the current value, respectively. As you might also expect, the amount by which the value is increased or decreased is the value of the step. As such, the value of a numeric input control can be tweaked without direct input from the user.</p>
+</section>
 
 <section id="sec16_8">
 <h3>The valueAsNumber Function</h3>
@@ -474,7 +492,8 @@ unspecified
 <p>The <code>valueAsNumber</code> can also be used to set the value of an input to a numeric type. For example, our confidence range could be set using a call such as:</p>
 
 <pre><code>document.getElementById("confidence").valueAsNumber(65);</code></pre>
-<p>Make sure the number meets the requirements of the <code>min</code>, <code>max</code>, and <code>step</code>, or an error will be thrown.</p></section>
+<p>Make sure the number meets the requirements of the <code>min</code>, <code>max</code>, and <code>step</code>, or an error will be thrown.</p>
+</section>
 
 <section id="sec17_8">
 <h3>The required Attribute</h3>
@@ -482,7 +501,8 @@ unspecified
 
 <pre><code>&lt;input type="text" id="firstname" name="first" required&gt;</code></pre>
 <p>If no value is set on this field, either programmatically or by the user, the ability to submit this form is blocked. The <code>required</code> attribute is the simplest type of form validation, but the capabilities of validation are vast. Let’s discuss form validation in more detail now.<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new attributes and functions</span></span>
-</p></section>
+</p>
+</section>
 
 <section id="sec18_8">
 <h3>Checking Forms with Validation</h3>
@@ -612,7 +632,8 @@ unspecified
 <p><strong>Details</strong>: For those <span class="index-term"><span class="primary">customError constraint</span></span>cases where the built-in validity checks don’t apply, the custom validity errors<span class="index-term"><span class="primary">custom validity errors</span></span> can suffice. Application code should set a custom validity message whenever a field does not conform to semantic rules.</p>
 
 <p>One common use case for custom validity is when consistency between controls is not achieved, for example if password confirmation fields don’t match. (We’ll delve into this specific example in the “Practical Extras” section.) Whenever a custom validity message is set, the control will be invalid and return the <code>customError</code> constraint as <code>true</code>. To clear the error, simply call <code>setCustomValidity("")</code> on the control with an empty string value.<span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>checking</tertiary></span>
-</p></section>
+</p>
+</section>
 
 <section id="sec19_8">
 <h3>Validation Fields and Functions</h3>
@@ -634,7 +655,10 @@ unspecified
 <h3>The validationMessage Attribute</h3>
 <p>This attribute isn’t yet supported by any current browser versions, but it might be by the time you read this. The <code>validationMessage</code> attribute<span class="index-term"><span class="primary">validationMessage attribute</span></span> lets you query programmatically a localized error message that the browser would display based on the current state of validation. For example, if a <code>required</code> field has no value, the browser might present an error message to the user that “This field requires a value.” Once supported, this is the text string that would be returned by the <code>validationMessage</code> field, and it would adjust according<span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>validation fields and functions</tertiary></span> to the current state of validation on the control.</p>
 
-</section3></section><section id="sec23_8">
+</section3>
+</section>
+
+<section id="sec23_8">
 <h3>Validation Feedback</h3>
 <p>On the subject of <span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>validation feedback</tertiary></span>validation feedback… one topic we’ve avoided thus far is how and when the browser should present the user with feedback on a validation error. The specification does not dictate the terms of how the user interface is updated to present an error message, and existing implementations differ fairly significantly. Consider the case for Opera. In Opera 10.5, the browser indicates that a validation error has occurred by marking the field in error with a popup message and a flashing red field:
 <inlinemediaobject><imageobject fileref="978-1-4302-3865-2_8_Figi_HTML.gif" format="GIF" color="BlackWhite" type="Linedraw" rendition="HTML"></imageobject></inlinemediaobject></p>
@@ -668,7 +692,8 @@ myField.addEventListener("invalid", invalidHandler, false);</code></pre></figure
 
 <p>Once we’ve told the user what the error is and how to correct it, we need to decide if we want the browser itself to display its built-in feedback. By default, the browser will do just that. To prevent the browser from showing its own error message, we can call <code>evt.preventDefault()</code><span class="index-term"><span class="primary">evt.preventDefault()</span></span> to stop the default handling and take care of the matter entirely ourselves.</p>
 
-<p>Once again, the choice here is yours. The HTML5 Forms API provides you with the flexibility to achieve a <span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>validation feedback</tertiary></span><span class="index-term"><span class="primary">event handlers for invalid events</span></span>customized API or to fall back to default browser behavior.</p></section>
+<p>Once again, the choice here is yours. The HTML5 Forms API provides you with the flexibility to achieve a <span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>validation feedback</tertiary></span><span class="index-term"><span class="primary">event handlers for invalid events</span></span>customized API or to fall back to default browser behavior.</p>
+</section>
 
 <section id="sec24_8">
 <h3>Turning Off Validation</h3>
@@ -685,7 +710,10 @@ myField.addEventListener("invalid", invalidHandler, false);</code></pre></figure
 
 <p>This snippet will create a two normal looking submit buttons. The second will submit the form, as usual. However, the first button is marked with the <code>noValidate</code> attribute, causing all validation to be bypassed when it is used. This allows the data to be submitted to the server without checking for correctness. Of course, your server will need to be set up to handle unvalidated data, but best practices dictate that this <span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>turning off</tertiary></span>should be the case at all times.</p>
 
-</section></section><section id="sec25_8">
+</section>
+</section>
+
+<section id="sec25_8">
 <h2>Building an Application with HTML5 Forms</h2>
 <p>Now, let’s use the <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">building application with</span></span>tools we’ve described in this chapter to create a simple signup page which showcases new features in HTML5 Forms. Turning back to our familiar Happy Trails Running Club, we’ll create a page for race registration that incorporates new form elements and validation.</p>
 
@@ -869,7 +897,8 @@ evt.preventDefault();</code></pre>
 
 <section id="sec26_8">
 <h3>Practical Extras</h3>
-<p>Sometimes there are techniques that don’t fit into our regular examples, but which nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</p></section>
+<p>Sometimes there are techniques that don’t fit into our regular examples, but which nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</p>
+</section>
 
 <section id="sec27_8">
 <h3>The Password Is: Validation!</h3>
@@ -911,7 +940,8 @@ evt.preventDefault();</code></pre>
 
 <p>Here is one way to handle the password matching. Simply grab the values of the two password fields, and if they do not match, set a custom error. For the sake of a validation routine, it is probably acceptable just to set the error on one of the two password fields. If they do match, set the empty string as the custom error to clear it; this is the specified way for removing a custom error.</p>
 
-<p>Once you’ve got the<span class="index-term"><span class="primary">password validation</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>passwords</tertiary></span><span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">building application</span></span> error set on the field, you can use the approaches described earlier in this chapter to show feedback to the user and let her change the passwords to match, as expected.</p></section>
+<p>Once you’ve got the<span class="index-term"><span class="primary">password validation</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">form validation</span><tertiary>passwords</tertiary></span><span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">building application</span></span> error set on the field, you can use the approaches described earlier in this chapter to show feedback to the user and let her change the passwords to match, as expected.</p>
+</section>
 
 <section id="sec28_8">
 <h3>Forms Are Stylin’</h3>
@@ -926,7 +956,10 @@ evt.preventDefault();</code></pre>
 
 <p>These pseudo-classes will adjust automatically as the user enters input. No code is required!<span class="index-term"><span class="primary">CSS Pseudoclasses</span></span><span class="index-term"><span class="primary">Forms API</span><span class="secondary">CSS Pseudoclasses</span></span></p>
 
-</section></section><section id="sec29_8">
+</section>
+</section>
+
+<section id="sec29_8">
 <h2>Summary</h2>
 <p>In this chapter, you have seen how to take something old—HTML forms—and make it into something new by using new elements, attributes, and APIs available in HTML5. We’ve seen new controls for advanced input types, with even more to come. We’ve seen how client validation can be integrated directly into form controls in order to prevent unnecessary server round trips to process bad data. Overall, we’ve seen ways to reduce the amount of scripting you need to create full-featured applications user interfaces.</p>
 

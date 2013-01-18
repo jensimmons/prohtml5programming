@@ -103,21 +103,23 @@
 
 <p>Today, many developers still struggle to develop consistent web applications that work with older browsers. Internet Explorer 6 represents the harshest of the legacy browsers in common use on the Internet today But even IE6 has a limited lifetime, as it becomes harder and harder to procure any operating system that supports it. In time, there will be close to zero users browsing the Web with IE6. More and more users of Internet Explorer are being upgraded to the latest versions. There will always be an oldest browser to contend with, but that bar rises as time passes; at the time of this writing, the market share of Internet Explorer 6 is under 10% and falling. Most users who upgrade go straight to a modern replacement. In time, the lowest common denominator will include HTML5 Video, Canvas, WebSocket, and whatever other features you may have to emulate today to reach a wider audience.</p>
 
-<p>In this book, we covered features that are largely stable and shipping in multiple browsers. There are additional extensions to HTML and APIs currently in earlier stages of development. In this chapter, we will look at some of the upcoming features. Some are in early experimental stages, while others may see eventual standardization and wide availability with only minor<span class="index-term"><span class="primary">HTML5</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">browser support</span><span class="secondary">for HTML5</span></span> changes from their current state.</p></section>
+<p>In this book, we covered features that are largely stable and shipping in multiple browsers. There are additional extensions to HTML and APIs currently in earlier stages of development. In this chapter, we will look at some of the upcoming features. Some are in early experimental stages, while others may see eventual standardization and wide availability with only minor<span class="index-term"><span class="primary">HTML5</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">browser support</span><span class="secondary">for HTML5</span></span> changes from their current state.</p>
+</section>
 
 <section id="sec2_13">
 <h2>HTML Evolves</h2>
 <p>In this section, we’ll explore several exciting features that may appear in browsers in the near future. You probably won’t need to wait until 2022 for these, either. There will probably not be a formalized HTML6; the WHATWG has hinted that future development will simply be<span class="index-term"><span class="primary">HTML5</span><span class="secondary">HTML definition</span></span> referred to as “HTML.” Development will be incremental, with specific features and their specifications evolving individually, rather than as a consolidated effort. Browsers will take up features as they gain consensus, and the upcoming features might even be widely available in browsers well before HTML5 is set in stone. The community responsible for driving the Web forward is committed to evolving the platform to meet the needs of users and developers.</p>
 
 <section id="sec3_13">
-<h3>WebGL<span class="index-term"><span class="primary">HTML5</span><span class="secondary">WebGL</span></span>
-</h3>
+<h3>WebGL<span class="index-term"><span class="primary">HTML5</span><span class="secondary">WebGL</span></span></h3>
+
 <p>WebGL<span class="index-term"><span class="primary">WebGL</span></span> is an API for 3D graphics<span class="index-term"><span class="primary">3D graphics</span></span> on the Web. Historically, several browser vendors including Mozilla, Opera, and Google have worked on separate experimental 3D APIs for JavaScript. Today, WebGL is progressing along a path toward standardization and wide availability across HTML5 browsers. The standardization process is taking place with browser vendors and The Khronos Group, the body responsible for OpenGL, a cross-platform 3D drawing standard created in 1992. OpenGL, currently at specification version 4.0, is widely used in gaming and computer-aided design applications as a counterpart and competitor to Microsoft’s Direct3D.</p>
 
 <p>As you saw in <span class="external-reference">
 <span class="ref-source">Chapter 2</span>
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_2</span>
-</span>, you get a 2D drawing context from a <code>canvas</code> element<span class="index-term"><span class="primary">canvas element</span></span> by calling <code>getContext("2d")</code> on the element. Unsurprisingly, this leaves the door open for additional types of drawing contexts. WebGL also uses the <code>canvas</code> element, but through a 3D context. Current implementations use experimental vendor prefixes (<code>moz-webgl</code>, <code>webkit-3d</code>, etc.) as the arguments to the <code>getContext()</code> <span class="index-term"><span class="primary">getContext() function</span></span> call. In a WebGL-enabled build of Firefox, for example, you can get a 3D context by calling <code>getContext("moz-webgl")</code> on a <code>canvas</code> element. The API of the object returned by such a call to <code>getContext()</code> is different from the 2D canvas equivalent, as this one provides OpenGL bindings instead of drawing operations. Rather than making calls to draw lines and fill shapes, the WebGL version of the canvas context manages textures and vertex buffers.</p></section>
+</span>, you get a 2D drawing context from a <code>canvas</code> element<span class="index-term"><span class="primary">canvas element</span></span> by calling <code>getContext("2d")</code> on the element. Unsurprisingly, this leaves the door open for additional types of drawing contexts. WebGL also uses the <code>canvas</code> element, but through a 3D context. Current implementations use experimental vendor prefixes (<code>moz-webgl</code>, <code>webkit-3d</code>, etc.) as the arguments to the <code>getContext()</code> <span class="index-term"><span class="primary">getContext() function</span></span> call. In a WebGL-enabled build of Firefox, for example, you can get a 3D context by calling <code>getContext("moz-webgl")</code> on a <code>canvas</code> element. The API of the object returned by such a call to <code>getContext()</code> is different from the 2D canvas equivalent, as this one provides OpenGL bindings instead of drawing operations. Rather than making calls to draw lines and fill shapes, the WebGL version of the canvas context manages textures and vertex buffers.</p>
+</section>
 
 <section id="sec4_13">
 <h3>HTML in Three Dimensions<span class="index-term"><span class="primary">HTML5</span><span class="secondary">three dimensions</span></span>
@@ -125,20 +127,26 @@
 <p>WebGL, like the rest of HTML5, will be an integral part of the web platform. Because WebGL renders to a <code>canvas</code> element<span class="index-term"><span class="primary">canvas element</span></span>, it is part of the document. You can position and transform 3D <code>canvas</code> elements, just as you can place images or 2D canvases on a page. In fact, you can do anything you can do with any other <code>canvas</code> element, including overlaying text and video and performing animations. Combining other document elements and a 3D canvas will make heads-up displays (HUDs)<span class="index-term"><span class="primary">heads-up displays (HUDs)</span></span> and mixed 2D and 3D interfaces much simpler to develop when compared to pure 3D display technologies. Imagine taking a 3D scene and using HTML markup to overlay a simple web user interface on it. Quite unlike the nonnative menus and controls found in many OpenGL applications, WebGL software will incorporate nicely styled HTML5 form elements with ease.</p>
 
 <p>The existing<span class="index-term"><span class="primary">HTML5</span><span class="secondary">three dimensions</span></span> network architecture of the Web will also complement WebGL. WebGL applications will be able to fetch resources such as textures and models from URLs. Multiplayer games can communicate with WebSocket. For example, Figure <span class="internal-reference" id="ir_fig1_13">13-1</span> shows an example of this in action. Google recently ported the classic 3D game Quake II<span class="index-term"><span class="primary">Quake II</span></span> to the Web using HTML5 WebSocket, Audio, and WebGL, complete with multiplayer competition. Game logic and graphics were implemented in JavaScript, making calls to a WebGL canvas for rendering. Communication to the server to coordinate player movement was achieved using a persistent<span class="index-term"><span class="primary">WebGL</span></span><span class="index-term"><span class="primary">3D graphics</span></span> WebSocket connection.
-
 </p>
+
 <figure id="fig1_13" class="image"><img src="images/ch13-1/fig13-1.png"><figcaption>Figure 13-1. Quake II <span class="index-term"><span class="primary">Quake II game</span></span>
-</figcaption></figure></section><section id="sec5_13">
+</figcaption></figure>
+</section>
+
+<section id="sec5_13">
 <h3>3D Shaders <span class="index-term"><span class="primary">HTML5</span><span class="secondary">3D shaders</span></span>
 </h3>
 <p>WebGL is a binding<span class="index-term"><span class="primary">3D shaders</span></span> for OpenGL ES 2<span class="index-term"><span class="primary">OpenGL ES 2</span></span> in JavaScript, so it uses the programmable graphics pipeline that is standardized in OpenGL, including shaders. Shaders allow highly flexible rendering effects to be applied to a 3D scene, increasing the realism of the display. WebGL shaders are written in GL Shading Language (GLSL)<span class="index-term"><span class="primary">GL Shading Language (GLSL)</span></span>. This adds yet another single-purpose language to the web stack. An HTML5 application with WebGL consists of HTML for structure, CSS for style, JavaScript for logic, and GLSL for shaders. Developers can transfer their knowledge of OpenGL shaders<span class="index-term"><span class="primary">OpenGL shaders</span></span> to a similar API in a web environment.</p>
 
 <p>WebGL is likely to be a <span class="index-term"><span class="primary">WebGL</span></span>foundational layer for 3D graphics on the Web. Just as JavaScript libraries have abstracted over DOM and provided powerful high-level constructs, there are libraries providing additional functionality on top of WebGL. Libraries are currently under development for scene graphs, <span class="index-term"><span class="primary">HTML5</span><span class="secondary">3D shaders</span></span>3D file formats such as COLLADA, and complete engines for game development. Figure <span class="internal-reference" id="ir_fig1_13">13-2</span> shows Shader Toy—a WebGL shader workbench built by Inigo Quilez that comes with shaders by nine other demoscene artists. This particular screenshot shows Leizex by Rgba. We can expect an explosion of high-level rendering libraries that bring 3D scene creation power to novice Web programmers in the near future.
-
 </p>
-<figure id="fig2_13" class="image"><img src="images/ch13-2/fig13-2.png"><figcaption>Figure 13-2. Shader Toy is a WebGL shader workbench</figcaption></figure></section><section id="sec6_13">
+<figure id="fig2_13" class="image"><img src="images/ch13-2/fig13-2.png"><figcaption>Figure 13-2. Shader Toy is a WebGL shader workbench</figcaption></figure>
+</section>
+
+<section id="sec6_13">
 <h3>Devices</h3>
-<p>Web <span class="index-term"><span class="primary">HTML5</span><span class="secondary">device elements</span></span>applications will need <span class="index-term"><span class="primary">Devices</span></span><span class="index-term"><span class="primary">Device element</span></span>access to multimedia hardware such as webcams, microphones, or attached storage devices. For this, there is already a proposed <code>device</code> element to give web applications access to data streams from attached hardware. Of course, there are serious privacy implications, so not every script will be able to use your webcam at will. We will probably see a UI pattern of prompting for user permission as seen in the Geolocation and Storage APIs when an application requests elevated privileges. The obvious application for<span class="index-term"><span class="primary">HTML5</span><span class="secondary">device elements</span></span> webcams is video conferencing, but there are many other amazing possibilities for computer vision in web applications including augmented reality and head tracking.</p></section>
+<p>Web <span class="index-term"><span class="primary">HTML5</span><span class="secondary">device elements</span></span>applications will need <span class="index-term"><span class="primary">Devices</span></span><span class="index-term"><span class="primary">Device element</span></span>access to multimedia hardware such as webcams, microphones, or attached storage devices. For this, there is already a proposed <code>device</code> element to give web applications access to data streams from attached hardware. Of course, there are serious privacy implications, so not every script will be able to use your webcam at will. We will probably see a UI pattern of prompting for user permission as seen in the Geolocation and Storage APIs when an application requests elevated privileges. The obvious application for<span class="index-term"><span class="primary">HTML5</span><span class="secondary">device elements</span></span> webcams is video conferencing, but there are many other amazing possibilities for computer vision in web applications including augmented reality and head tracking.</p>
+</section>
 
 <section id="sec7_13">
 <h3>Audio Data API</h3>
@@ -148,12 +156,14 @@
 
 <p>We can expect the standard audio API to work well with microphone input from the data element as well as files included with audio tags. With <code>&lt;device&gt;</code> and an audio data API, you may be able to make an HTML5 application that allows users to record and edit sound from within a page. Audio clips will be able to be stored in local browser storage and reused and combined with <code>canvas</code> -based editing tools.</p>
 
-<p>Presently, Mozilla<span class="index-term"><span class="primary">Mozilla</span><span class="secondary">audio data API</span></span> has an experimental implementation available in nightly builds. The Mozilla audio data API could act as a starting point for standard cross-browser audio programming capabilities.</p></section>
+<p>Presently, Mozilla<span class="index-term"><span class="primary">Mozilla</span><span class="secondary">audio data API</span></span> has an experimental implementation available in nightly builds. The Mozilla audio data API could act as a starting point for standard cross-browser audio programming capabilities.</p>
+</section>
 
 <section id="sec8_13">
 <h3>Touchscreen Device Events<span class="index-term"><span class="primary">HTML5</span><span class="secondary">touchscreen device events</span></span>
 </h3>
-<p>As Web access shifts ever more from desktops and laptops to mobile phones and tablets, HTML5 is also continuing to adapt with changes in interaction handling<span class="index-term"><span class="primary">Interaction handling</span></span><span class="index-term"><span class="primary">Touchscreen device events</span></span>. When Apple introduced the iPhone, it also introduced into its browser a set of special events that could be used to handle multitouch inputs and device rotation. Although these events have not yet been standardized, they are being picked up by other vendors of mobile devices. Learning them today will allow you to optimize your web applications for the most popular devices now.</p></section>
+<p>As Web access shifts ever more from desktops and laptops to mobile phones and tablets, HTML5 is also continuing to adapt with changes in interaction handling<span class="index-term"><span class="primary">Interaction handling</span></span><span class="index-term"><span class="primary">Touchscreen device events</span></span>. When Apple introduced the iPhone, it also introduced into its browser a set of special events that could be used to handle multitouch inputs and device rotation. Although these events have not yet been standardized, they are being picked up by other vendors of mobile devices. Learning them today will allow you to optimize your web applications for the most popular devices now.</p>
+</section>
 
 <section id="sec9_13">
 <h3>Orientation</h3>
@@ -186,7 +196,8 @@
 </tr>
 </tbody>
 </table>
-<p>Once the orientation is<span class="index-term"><span class="primary">Orientation event</span></span> known, you can choose to adjust the content accordingly.</p></section>
+<p>Once the orientation is<span class="index-term"><span class="primary">Orientation event</span></span> known, you can choose to adjust the content accordingly.</p>
+</section>
 
 <section id="sec10_13">
 <h3>Gestures</h3>
@@ -228,7 +239,8 @@ var rotation = event.rotation;
   // Update the display based on the rotation.
 }
 // register our gesture change listener on a document node
-node.addEventListener("gesturechange", gestureChange, false);</code></pre></figure><p>Gesture events are particularly<span class="index-term"><span class="primary">Gestures</span></span><span class="index-term"><span class="primary">Event handlers</span><span class="secondary">for gestures</span></span> appropriate in applications that need to manipulate objects or displays, such as in diagramming tools or navigation tools.</p></section>
+node.addEventListener("gesturechange", gestureChange, false);</code></pre></figure><p>Gesture events are particularly<span class="index-term"><span class="primary">Gestures</span></span><span class="index-term"><span class="primary">Event handlers</span><span class="secondary">for gestures</span></span> appropriate in applications that need to manipulate objects or displays, such as in diagramming tools or navigation tools.</p>
+</section>
 
 <section id="sec11_13">
 <h3>Touches</h3>
@@ -279,7 +291,8 @@ varfirstTouchY = firstTouch.pageY;
 node.addEventListener("touchmove", touchMove, false);</code></pre></figure><p>You may find that the device’s native event handling interferes with your handling of the <span class="index-term"><span class="primary">HTML5</span><span class="secondary">touch events</span></span>touch and gesture events. In those cases, you should make the following call:</p>
 
 <pre><code>event.preventDefault();</code></pre>
-<p>This overrides the behavior of the default browser interface and handles the event yourself. Until the mobile events are standardized, it is recommended that you consult the documentation of the <span class="index-term"><span class="primary">Touch events</span></span>devices you are targeting with your application.</p></section>
+<p>This overrides the behavior of the default browser interface and handles the event yourself. Until the mobile events are standardized, it is recommended that you consult the documentation of the <span class="index-term"><span class="primary">Touch events</span></span>devices you are targeting with your application.</p>
+</section>
 
 <section id="sec12_13">
 <h3>Peer-to-Peer Networking<span class="index-term"><span class="primary">HTML5</span><span class="secondary">peer-to-peer networking</span></span>
@@ -290,7 +303,8 @@ node.addEventListener("touchmove", touchMove, false);</code></pre></figure><p>Yo
 
 <p>Browser vendors are already experimenting with P2P networking, such as Opera’s Unite technology, which hosts a simplified web server directly in the browser. Opera Unite lets users create and expose services to their peers for chatting, file sharing, and document collaboration.</p>
 
-<p>Of course, P2P networking <span class="index-term"><span class="primary">Peer-to-peer (P2P) networking</span></span>for the web will require a protocol that takes security and network intermediaries into consideration as well as an API for developers to program against.</p></section>
+<p>Of course, P2P networking <span class="index-term"><span class="primary">Peer-to-peer (P2P) networking</span></span>for the web will require a protocol that takes security and network intermediaries into consideration as well as an API for developers to program against.</p>
+</section>
 
 <section id="sec13_13">
 <h3>Ultimate Direction</h3>
@@ -298,7 +312,8 @@ node.addEventListener("touchmove", touchMove, false);</code></pre></figure><p>Yo
 
 <p>You’ve seen how the development tools in all the modern browsers are exposing information about HTML5 features like storage, as well as critically important JavaScript debugging, profiling, and command-line evaluation. HTML5 development will trend toward simplicity, declarative code, and lightweight tools within the browsers or web applications themselves.</p>
 
-<p>Google feels confident enough about the continuing evolution of HTML that it has announced the imminent release of the<span class="index-term"><span class="primary">HTML5</span><span class="secondary">Google Chrome</span></span> Google Chrome operating system, a streamlined operating system built around a browser and media player. Google’s operating system aims to include enough functionality using HTML APIs to provide a compelling user experience where applications are delivered using the standardized web infrastructure. Similarly, Microsoft has announced that Windows 8 will not support any plugins in the new Metro mode, including the company’s own Silverlight plugin.</p></section>
+<p>Google feels confident enough about the continuing evolution of HTML that it has announced the imminent release of the<span class="index-term"><span class="primary">HTML5</span><span class="secondary">Google Chrome</span></span> Google Chrome operating system, a streamlined operating system built around a browser and media player. Google’s operating system aims to include enough functionality using HTML APIs to provide a compelling user experience where applications are delivered using the standardized web infrastructure. Similarly, Microsoft has announced that Windows 8 will not support any plugins in the new Metro mode, including the company’s own Silverlight plugin.</p>
+</section>
 
 <section id="sec14_13">
 <h3>Summary</h3>
@@ -312,7 +327,8 @@ node.addEventListener("touchmove", touchMove, false);</code></pre></figure><p>Yo
 
 <p>We hope you have enjoyed this <span class="index-term"><span class="primary">HTML5</span><span class="secondary">future of end</span></span>exploration of web development, and we hope it has inspired your creativity. We look forward to writing about the innovations you create using HTML5 a decade from now.</p>
 
-</section></section>
+</section>
+</section>
 
 </div>
 </article>

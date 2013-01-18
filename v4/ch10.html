@@ -107,7 +107,8 @@
 
 <section id="sec2_10">
 <h2>Browser Support for Web Workers</h2>
-<p><span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">browser support for</span></span>The majority of the modern web browsers support Web Workers. Check the web site <code>http://caniuse.com</code> (search for Web Workers) for the most up-to-date support matrix. While there are polyfill (emulation) libraries available for most other APIs—for example, for HTML5 Canvas there are libraries such as <code>excanvas.js</code> and <code>flashcanvas.js</code> that provide an emulation of the Canvas APIs (using Flash under the covers)—an emulation for Web Workers does not make a lot of sense, however. You can either call your worker code as a worker, or run the same code inline in your page, blocking the UI thread. The improved responsiveness of the worker-based page may just be enough to have people upgrade to a more modern browser (at least we hope it will).</p></section>
+<p><span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">browser support for</span></span>The majority of the modern web browsers support Web Workers. Check the web site <code>http://caniuse.com</code> (search for Web Workers) for the most up-to-date support matrix. While there are polyfill (emulation) libraries available for most other APIs—for example, for HTML5 Canvas there are libraries such as <code>excanvas.js</code> and <code>flashcanvas.js</code> that provide an emulation of the Canvas APIs (using Flash under the covers)—an emulation for Web Workers does not make a lot of sense, however. You can either call your worker code as a worker, or run the same code inline in your page, blocking the UI thread. The improved responsiveness of the worker-based page may just be enough to have people upgrade to a more modern browser (at least we hope it will).</p>
+</section>
 
 <section id="sec3_10">
 <h2>Using the Web Workers API</h2>
@@ -125,17 +126,23 @@
 }</code></pre></figure><p>In this example, you test for browser support in the <code>loadDemo</code> function, which might be called when the page is loaded. A call to <code>typeof(Worker)</code> will return the window’s global <code>Worker</code> property, which will be undefined if the browser doesn’t support the Web Workers API. In this example, the page is updated to reflect whether there is browser support by updating a previously defined <code>support</code> element on the page with a suitable message, as shown at the top of Figure <span class="internal-reference" id="ir_fig2_10">10-2</span>.
 
 </p>
-<figure id="fig2_10" class="image"><img src="images/ch10-2/fig10-2.png"><figcaption>Figure 10-2. Example of showing <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">checking for browser support</span></span>whether Web Workers is supported</figcaption></figure></section><section id="sec5_10">
+<figure id="fig2_10" class="image"><img src="images/ch10-2/fig10-2.png"><figcaption>Figure 10-2. Example of showing <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">checking for browser support</span></span>whether Web Workers is supported</figcaption></figure>
+</section>
+
+<section id="sec5_10">
 <h3>Creating Web Workers</h3>
 <p>Web Workers<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">creating Web Workers</span></span> are initialized with the URL of a JavaScript file, which contains the code the worker will execute. This code sets event listeners and communicates with the script that spawned it. The URL for the JavaScript file can be a relative or absolute URL with the same origin (the same scheme, host, and port) as the main page:</p>
 
 <pre><code>worker = new Worker("echoWorker.js");</code></pre>
-</section><section id="sec6_10">
+</section>
+
+<section id="sec6_10">
 <h3>Inline Workers</h3>
 <p><span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">creating Web Workers</span><tertiary>inline workers</tertiary></span>To start a worker you need to point to a file. You may have seen some examples of script elements that have the type <code>javascript/worker</code>, as shown in the following example:</p>
 
 <pre><code> &lt;script id="myWorker" type="javascript/worker"&gt;</code></pre>
-<p>Don’t let this fool you into thinking that you can simply set the type of a script element to run the JavaScript code as a Web Worker. In this case, the type information is used to signal the browser and its JavaScript engine <em>not</em> to parse and run the script. In fact, the type may as well have been <em>anything</em> other than <code>text/javascript</code>. The script example shown is a building block for <em>inline Web Workers</em>—a feature that can be used only if your browser also supports the File System API (Blob Builder or File Writer). In that case you can programmatically find the script block (in the previous case, the element with the <code>myWorker</code> id) and write the Web Worker JavaScript file to disk. After that, you can call the inline Web Worker<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">creating Web Workers</span><tertiary>inline workers</tertiary></span> in your code.</p></section>
+<p>Don’t let this fool you into thinking that you can simply set the type of a script element to run the JavaScript code as a Web Worker. In this case, the type information is used to signal the browser and its JavaScript engine <em>not</em> to parse and run the script. In fact, the type may as well have been <em>anything</em> other than <code>text/javascript</code>. The script example shown is a building block for <em>inline Web Workers</em>—a feature that can be used only if your browser also supports the File System API (Blob Builder or File Writer). In that case you can programmatically find the script block (in the previous case, the element with the <code>myWorker</code> id) and write the Web Worker JavaScript file to disk. After that, you can call the inline Web Worker<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">creating Web Workers</span><tertiary>inline workers</tertiary></span> in your code.</p>
+</section>
 
 <section id="sec7_10">
 <h3>Shared Workers</h3>
@@ -144,7 +151,9 @@
 <p>The syntax for starting a shared Web Worker is as follows:</p>
 
 <pre><code>sharedWorker = new SharedWorker(sharedEchoWorker.js');</code></pre>
-</section><section id="sec8_10">
+</section>
+
+<section id="sec8_10">
 <h3>Loading and Executing Additional JavaScript</h3>
 <p>An application composed <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">loading and executing JavaScript</span></span>of several JavaScript files can contain <code>&lt;script&gt;</code> elements that synchronously load JavaScript files as the page loads. However, because Web Workers do not have access to the <code>document</code> object, there is an alternative mechanism for synchronously importing additional JavaScript files from within workers– <code>importScripts</code>:</p>
 
@@ -152,7 +161,9 @@
 <p>Importing a JavaScript file simply loads and executes JavaScript into an existing worker. Multiple scripts can be imported by the same call to <code>importScripts</code>. They are executed in the order specified:</p>
 
 <pre><code>importScripts("helper.js", "anotherHelper.js");</code></pre>
-</section><section id="sec9_10">
+</section>
+
+<section id="sec9_10">
 <h3>Communicating with Web Workers</h3>
 <p>Once the Web Worker<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">communicating with web workers</span></span> is spawned, you can use the <code>postMessage</code> API to send data to and from Web Workers. This is the same <code>postMessage</code> API<span class="index-term"><span class="primary">postMessage API</span></span> that is used for cross-frame and cross-window communication. <code> postMessage</code> can be used to send most JavaScript objects, but not functions or objects with cyclic references.</p>
 
@@ -160,7 +171,10 @@
 </p>
 <figure id="fig3_10" class="image"><img src="images/ch10-3/fig10-3.png"><figcaption>Figure 10-3. A simple web page that uses Web Workers</figcaption></figure><p>To set up proper communication with your Web Worker, code has to be added to the <em>main page</em> (the page that calls the Web Worker) as<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">communicating with web workers</span></span> well as the worker JavaScript file.</p>
 
-</section></section><section id="sec10_10">
+</section>
+</section>
+
+<section id="sec10_10">
 <h2>Coding the Main Page</h2>
 <p>To communicate from the page to the Web Worker, you call <code>postMessage</code> to pass in the required data. To listen to incoming messages and errors that are sent by the Web Worker to the page, you set up an event listener.</p>
 
@@ -201,7 +215,8 @@ function messageHandler(e) {
 <pre><code>sharedWorker.port.addEventListener("message", messageHandler, true);
 sharedWorker.port.postMessage("Hello HTML5");</code></pre>
 
-<p>In addition, the worker can listen to a <code>connect</code> event for incoming connections. You can use this to count active connections.</p></section>
+<p>In addition, the worker can listen to a <code>connect</code> event for incoming connections. You can use this to count active connections.</p>
+</section>
 
 <section id="sec12_10">
 <h3>Handling Errors</h3>
@@ -221,7 +236,9 @@ worker.addEventListener("error", errorHandler, true);</code></pre>
 <figure id="fig4_10" class="image"><img src="images/ch10-4/fig10-4.png"><figcaption>Figure 10-4. Web Worker debugging options in Chrome Developer ToolsStopping Web Workers</figcaption></figure><p>Web Workers don’t <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">stopping Web Workers</span></span>stop by themselves; but the page that started them can stop them. If the page is closed, Web Workers will be garbage-collected, so rest assured you won’t have any zombie workers hanging around performing background tasks. However, you may want to reclaim resources when a Web Worker is no longer needed―perhaps when the main page is notified that the Web Worker has finished its tasks. You may also wish to cancel a long-running task in response to user actions. Calling <code>terminate</code> stops the Web Worker. A terminated Web Worker will no longer respond to messages or perform any additional computations. You cannot restart a worker; instead, you can create a new worker using the same URL.</p>
 
 <pre><code>worker.terminate();</code></pre>
-</section><section id="sec13_10">
+</section>
+
+<section id="sec13_10">
 <h3>Using Web Workers within Web Workers</h3>
 <p>The Worker API can be <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">within Web Workers</span></span>used inside Web Worker scripts to create subworkers:</p>
 
@@ -230,12 +247,17 @@ worker.addEventListener("error", errorHandler, true);</code></pre>
 <h3>Lots of Workers</h3>
 <p><strong>Peter says</strong>: “If you spawn a Worker that <em>recursively</em> spawns subworker with the same JavaScript source file, you will see some interesting results, to say the least.”</p>
 
-</aside></section><section id="sec16_10">
+</aside>
+</section>
+
+<section id="sec16_10">
 <h3>Using Timers</h3>
 <p>Although Web <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">timers</span></span>Workers cannot access the <code>window</code> object, they can make use of the full JavaScript timing API, typically found on the global window:</p>
 
 <pre><code>var t = setTimeout(postMessage, 2000, "delayed message");</code></pre>
-</section><section id="sec17_10">
+</section>
+
+<section id="sec17_10">
 <h3>Example Code</h3>
 <p>For completeness, Listings 10-2 and 10-3 <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">example code</span></span>show the code for the simple page and the Web Worker JavaScript file.</p>
 
@@ -272,7 +294,10 @@ window.addEventListener("load", loadDemo, true);
 &lt;/script&gt;</code></pre></figure><figure class="listing"><figcaption>Listing 10-3. Simple Web Worker JavaScript File</figcaption><pre><code>function messageHandler(e) {
     postMessage("worker says: " + e.data + " too");</code></pre></figure><p>}</p>
 
-</section></section><section id="sec18_10">
+</section>
+</section>
+
+<section id="sec18_10">
 <h2>
 <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">example code</span></span>addEventListener("message", messageHandler, true);Building an Application with Web Workers</h2>
 <p>So far, we’ve focused on using <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>the different Web Worker APIs. Let’s see how powerful the Web Workers API can really be by building an application: a web page with an image-blurring filter, parallelized to run on multiple Web Workers. Figure <span class="internal-reference" id="ir_fig5_10">10-5</span> shows what this application looks like when you start it. 
@@ -317,7 +342,8 @@ function boxBlur(imageData, width, height) {
         data[i] = val;
     }
     return data;
-}</code></pre></figure><p>In brief, this algorithm blurs an image by averaging nearby pixel values. For a large image with millions of pixels, this takes a substantial amount of time. It is very undesirable to run a loop such as this in the UI thread. Even if a slow-script warning did not appear, the page UI would be unresponsive until the loop terminated. For this reason, it makes a good example of<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>coding blur.js helper script</tertiary></span> background computation in Web Workers.</p></section>
+}</code></pre></figure><p>In brief, this algorithm blurs an image by averaging nearby pixel values. For a large image with millions of pixels, this takes a substantial amount of time. It is very undesirable to run a loop such as this in the UI thread. Even if a slow-script warning did not appear, the page UI would be unresponsive until the loop terminated. For this reason, it makes a good example of<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>coding blur.js helper script</tertiary></span> background computation in Web Workers.</p>
+</section>
 
 <section id="sec20_10">
 <h3>Coding the blur.html Application Page</h3>
@@ -391,7 +417,10 @@ function messageHandler(e) {
     }
 }
 addEventListener("message", messageHandler, true);Web Workers APIbuilding application withcoding blurWorker.js Web Worker script
-</code></pre></figure></section><section id="sec21_10">
+</code></pre></figure>
+</section>
+
+<section id="sec21_10">
 <h3>Communicating with the Web Workers</h3>
 <p>In the file <code>blur.html</code>, we can<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>communicating with Web Workers</tertiary></span> use our workers by sending them some data and arguments that represent a blur task. This is done by using <code>postMessage</code> to send a JavaScript object containing the Array of RGBA image data, the <span class="index-term"><span class="primary">image data</span></span><span class="index-term"><span class="primary">Canvas image data</span></span><span class="index-term"><span class="primary">images processing</span></span>dimensions of the source image, and the range of pixels for which the worker is responsible. Each worker processes a different section of the image based on the message it receives:</p>
 
@@ -427,7 +456,10 @@ addEventListener("message", messageHandler, true);Web Workers APIbuilding applic
 </aside><p>On the HTML page side, a message<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>communicating with Web Workers</tertiary></span> handler consumes this data and uses it to update the canvas with the new pixel values. As processed image data comes in, the result is immediately visible. We now have a sample application that can process images while potentially taking advantage of multiple CPU cores. Moreover, we didn’t lock up the UI and make it unresponsive while the Web Workers were active. Figure <span class="internal-reference" id="ir_fig7_10">10-7</span> shows the application in action.
 
 </p>
-<figure id="fig7_10" class="image"><img src="images/ch10-7/fig10-7.png"><figcaption>Figure 10-7. The blur application in action</figcaption></figure></section><section id="sec22_10">
+<figure id="fig7_10" class="image"><img src="images/ch10-7/fig10-7.png"><figcaption>Figure 10-7. The blur application in action</figcaption></figure>
+</section>
+
+<section id="sec22_10">
 <h3>The Application in Action</h3>
 <p>To see this example<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>application in action</tertiary></span> in action, the page <code>blur.html</code> has to be served up by a web server (for example, Apache or Python’s SimpleHTTPServer). To following steps show how you can use Python SimpleHTTPServer to run the application:</p>
 <ol>
@@ -448,7 +480,10 @@ addEventListener("message", messageHandler, true);Web Workers APIbuilding applic
 <p>If you leave it running for a while, you will see the different quadrants of the image blur slowly. The number of quadrants that blur at the same time depends on the number of workers you started.<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>application in action</tertiary></span>
 </p>
 </li>
-</ol></section><section id="sec23_10">
+</ol>
+</section>
+
+<section id="sec23_10">
 <h3>Example Code</h3>
 <p>For <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>example code</tertiary></span>completeness, Listings 10-7, 10-8, and 10-9 contain the full code for the example application.</p>
 
@@ -637,7 +672,8 @@ function boxBlur(imageData, width, height) {
 
 <p>In this chapter, you have<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>example code</tertiary></span> seen how Web Workers can be used to create web applications with background processing. This chapter showed you how Web Workers (and inline and shared Web Workers) work. We discussed how you can use the APIs to create new workers and how you communicate between a worker and the context that spawned it. Finally, we showed you how you can build an application with Web Workers. In the next chapter, we’ll demonstrate more ways that HTML5 lets you keep local copies of data and reduce the amount of network overhead in your applications.</p>
 
-</section></section>
+</section>
+</section>
 
 </div>
 </article>
