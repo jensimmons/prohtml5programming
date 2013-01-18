@@ -231,7 +231,8 @@
 <p>Let&#x2019;s examine the JavaScript code used to create the diagonal line. It is a simple example, but it captures the essential flow of working with the Canvas API:</p>
 <p>You first gain access to the canvas object by referencing a particular canvas&#x2019;s ID value. In this example, the ID is <code>diagonal</code>. Next, you create a context variable and you call the canvas object&#x2019;s <code>getContext</code> method, passing in the type of canvas you are looking for. You pass in the string &#x201C;<code>2d</code>&#x201D; to get a two-dimensional context&#x2014;the only available context type at this time.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>Much work has already been completed on a three-dimensional version of the Canvas context. Version 1.0 of the WebGL specification, a joint effort from browser vendors and the Khronos Group, was released in early 2011. WebGL is based on the same concepts and designs as the popular OpenGL library, bringing a similar API to JavaScript and HTML5. To create a three-dimensional drawing context in a supporting browser, you simply use the string " <code>webgl</code> " as the argument to <code>getContext</code>. The resulting context has an entirely new set of drawing APIs: capabilities that are thorough and complex enough for their own book. Although some browsers are shipping implementations of WebGL today, not all vendors are on board. However, the potential of three-dimensional rendering on the Web is compelling enough that we expect rapid uptake of support in the next few years. For more information, consult the WebGL site at the Khronos Group (<a href="http://www.khronos.org/webgl">khronos.org/webgl</a>).</p>
 </aside>
 

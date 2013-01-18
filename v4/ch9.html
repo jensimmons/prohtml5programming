@@ -99,7 +99,8 @@
 
 <p>And yet, HTML has not had drag-and-drop as a core feature in its first 15 years of existence. Although some developers have used the built-in ability to handle low-level mouse events as a way to hack up primitive drag-and-drop, those efforts paled in comparison to the type of drag-and-drop features that have been available in desktop applications for decades. With the arrival of a well-specified set of drag-and-drop functionality, HTML applications have advanced one step closer to matching the capabilities of their desktop counterparts.</p>
 
-<section id="sec2_9"><h2>Web <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">Web</span></span>Drag-and-Drop: The Story So Far</h2>
+<section id="sec2_9">
+<h2>Web <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">Web</span></span>Drag-and-Drop: The Story So Far</h2>
 <p>You may have seen examples of drag-and-drop on the Web already and are wondering if these are uses of HTML5 drag-and-drop. The answer? Probably not.</p>
 
 <p>The reason is that HTML and DOM have exposed low-level mouse events since the early days of DOM events, and that has been sufficient for creative developers to craft a rudimentary drag-and-drop capability. When coupled with CSS positioning, it is possible to approximate a drag-and-drop system through the creation of complex JavaScript libraries and a firm knowledge of DOM events.</p>
@@ -128,13 +129,16 @@
 
 <p>The new HTML5 drag-and-drop API has been designed to address these limitations, borrowing from the way drag-and-drop has been provided in other user interface frameworks.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>Even when properly implemented, beware of the limitations of drag-and-drop in any application. Mobile devices that use drag gestures to navigate might not function correctly if drag behavior is overridden. Also, drag-and-drop can interfere with drag selection. Take care to use it sparingly and appropriately.</p>
 
-</aside></section><section id="sec3_9"><h2>Overview of HTML5 Drag-and-Drop</h2>
+</aside></section><section id="sec3_9">
+<h2>Overview of HTML5 Drag-and-Drop</h2>
 <p>If you have used the drag-and-drop APIs in programming technologies such as Java or Microsoft MFC, then you’re in luck. The new HTML5 drag-and-drop API is closely modeled on the concepts of these environments. Getting started is easy, but mastering the new functionality means that you will need to become acquainted with a new set of DOM events, though this time at a higher level of abstraction.</p>
 
-<section id="sec4_9"><h3>The Big Picture</h3>
+<section id="sec4_9">
+<h3>The Big Picture</h3>
 <p>The easiest way to learn the new API is to map it to the concepts with which you are already familiar. If you are reading a book on pro HTML5 programming, we’ll make a bold assumption that you are experienced with using drag-and-drop in your day-to-day computing. Nonetheless, we can start by putting some standard terms on the major concepts.</p>
 
 <p>As shown in Figure <span class="internal-reference" id="ir_fig1_9">9-1</span>, when you (as a user) start a drag-and-drop operation, you start by clicking and dragging the pointer. The item or region where you began the drag is known as the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary"><strong>drag source</strong></span></span> <strong>drag source</strong>. When you release the pointer and complete the operation, the region or item you are targeting at the end is known as the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary"><strong>drop target</strong></span></span> <strong>drop target</strong>. As the mouse moves across the page, you may traverse a series of drop targets before you actually release the mouse.
@@ -157,7 +161,8 @@
 
 <p>Regarding the data itself, the <code>dataTransfer</code> mechanism for completing the drop directly addresses one of the limitations of the old ad hoc drag-and-drop techniques described previously. Instead of forcing all drag sources and drop targets to be aware of each other, the data transfer mechanism works similar to a network protocol negotiation. In this case, the negotiation is performed via<span class="index-term"><span class="primary">Multipurpose Internet Mail Exchange (MIME)</span></span> Multipurpose Internet Mail Exchange <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">MIME types</span></span>(MIME) types.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>MIME types are the same types used to attach files to e-mail. They are an Internet standard that is used pervasively in all types of Web traffic, and they are very common in HTML5. In short, MIME types are standardized text strings used to classify the type of unknown content, such as “text/plain” for plain text and “image/png” for PNG images.</p>
 
 </aside><p>The purpose of using MIME types is to allow the source and target to negotiate on which format best suits the needs of the drop target. As shown in Figure <span class="internal-reference" id="ir_fig2_9">9-2</span>, during a drag start, the <code>dataTransfer</code> object is loaded up with data representing all reasonable types, or “flavors,” by which the data can be transferred. Then, when the drop completes, the drop handler code can scan the available types of data and decide which MIME type format best suits its needs.
@@ -193,10 +198,12 @@
 
 <p>It is this negotiation process that allows for drag sources and drop targets to be decoupled. As long as the drag sources provide data in a choice of MIME types, the drop target can choose which format suits its operation the best, even if the two came from different developers. In later sections of this chapter, we’ll explore how even more unusual MIME types, such as files, can be used.</p></section>
 
-<section id="sec5_9"><h3>Events to Remember</h3>
+<section id="sec5_9">
+<h3>Events to Remember</h3>
 <p>Now that we’ve explored the key concepts of the drag-and-drop API, let’s focus on the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">events</span></span>events that can be used throughout the process. As you’ll see, the events operate at a higher level than the mouse events previously utilized to mock up a drag-and-drop system. However, drag-and-drop events extend the DOM mouse event. Therefore, you still have access to the low-level mouse information, such as coordinates, if you need it.</p></section>
 
-<section id="sec6_9"><h3>Propagation and Prevention<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">propagation and prevention</span></span>
+<section id="sec6_9">
+<h3>Propagation and Prevention<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">propagation and prevention</span></span>
 </h3>
 <p>But before we focus on drag and-drop-itself, let’s refresh on two DOM event functions that have been around since the browsers standardized on DOM Level 3 events: the <span class="index-term"><span class="primary">stopPropagation</span></span><code>stopPropagation</code> and <span class="index-term"><span class="primary">preventDefault</span></span><code>preventDefault</code> functions.</p>
 
@@ -206,48 +213,59 @@
 
 <p>However, at any time a handler can call the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">propagation and prevention</span></span><code>stopPropagation</code> function on the event, which will stop it from further traversing down the event capture chain or up through the bubbling phase.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>Microsoft has provided a great interactive demo of event models at <code>http://ie.microsoft.com/testdrive/HTML5/ComparingEventModels</code>.</p>
 
 </aside><p>Browsers also have default implementations for how some events will be handled. For example, when a user clicks on a page link, the default behavior is to navigate the browser to the destination specified by the link. Developers can prevent this by intercepting the event in a handler and calling <code>preventDefault</code> on it. This allows code to override the default behaviors of some built-in events. It is also how a developer can cancel a drag-and-drop operation in an event handler.</p>
 
 <p>Both <code>stopPropagation</code><span class="index-term"><span class="primary">stopPropagation</span></span> and <code>preventDefault</code><span class="index-term"><span class="primary">preventDefault</span></span> will be handy in our examples of the drag-and-drop API.</p></section>
 
-<section id="sec7_9"><h3>Drag-and-Drop Event Flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
+<section id="sec7_9">
+<h3>Drag-and-Drop Event Flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
 </h3>
 <p>When a user initiates a drag-and-drop operation in an HTML5-ready browser, a series of events trigger at the start and continue throughout the course of the whole operation. We will examine them in turn here.</p>
 
-<section3 id="Sec27_9"><h3>dragstart</h3>
+<section3 id="Sec27_9">
+<h3>dragstart</h3>
 <p>The <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragstart</tertiary></span><code>dragstart</code> event is fired on an element in the page when the user begins to drag on it. In other words, once the mouse is down and the user moves the mouse, the <code>dragstart</code> is initiated. The <code>dragstart</code> event is of key importance, as it is the only event where the <code>dataTransfer</code> can have data set on it using the <code>setData</code> call. This means that in a <code>dragStart</code> handler, the possible data types need to be set up so that they can be queried at the end of the drop, as described previously.</p>
 
-<aside><h3>Interception!</h3>
+<aside>
+<h3>Interception!</h3>
 <p><strong>Brian says</strong>: “If you are wondering why the data types can only be set during the <code>dragStart</code> event, there’s actually a very good reason for that.</p>
 
 <p>Because drag-and-drop has been designed to work across windows and across content from various sources, it would be a security risk if <code>drag</code> event listeners were able to insert or replace data when the drag passed over them. Imagine a malicious section of code event listeners inserted that queried and replaced drag data of any drag travelling by. This would misrepresent the intentions of the drag source, and as such any data replacements after the start are forbidden.”</p>
 
-</aside></section3><section3 id="Sec28_9"><h3>drag</h3>
+</aside></section3><section3 id="Sec28_9">
+<h3>drag</h3>
 <p>The <code>drag</code> event can be thought of as the continuous event of a drag operation. As the user moves the mouse cursor around the page, the <code>drag</code> event is called repeatedly on the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>drag</tertiary></span>drag <em>source</em>. The <code>drag</code> event will fire a few times each second during the operation. Although the visuals of the drag feedback can be modified during a <code>drag</code> event, the data on the <code>dataTransfer</code> is off-limits.</p>
 
-</section3><section3 id="Sec29_9"><h3>dragenter</h3>
+</section3><section3 id="Sec29_9">
+<h3>dragenter</h3>
 <p>When the drag crosses into a new element on the page, a <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragenter</tertiary></span><code>dragenter</code> event fires on that element. This event is a good time to set drop feedback on the element based on whether or not it can receive the drop.</p>
 
-</section3><section3 id="Sec30_9"><h3>dragleave</h3>
+</section3><section3 id="Sec30_9">
+<h3>dragleave</h3>
 <p>Conversely, the browser will fire a <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragleave</tertiary></span><code>dragleave</code> event whenever the user moves the drag out of the element where dragenter was previously called. Drop feedback can be restored at this time, as the mouse is no longer<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragleave</tertiary></span> over this target.</p>
 
-</section3><section3 id="Sec31_9"><h3>dragover</h3>
+</section3><section3 id="Sec31_9">
+<h3>dragover</h3>
 <p>The <code>dragover</code><span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragover</tertiary></span> event is called at frequent intervals as the mouse moves over an element during a drag operation. Unlike its counterpart <code>drag</code> event, which is called on the drag source, this event is called on the current target of the mouse.</p>
 
-</section3><section3 id="Sec32_9"><h3>drop</h3>
+</section3><section3 id="Sec32_9">
+<h3>drop</h3>
 <p>The <code>drop</code> event<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>drop</tertiary></span> is called on the current mouse target when the user releases the mouse. Based on the result of the <code>dataTransfer</code> object, this is where the code to handle the drop should be executed.</p>
 
-</section3><section3 id="Sec33_9"><h3>dragend</h3>
+</section3><section3 id="Sec33_9">
+<h3>dragend</h3>
 <p>The final event in the chain, <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>dragend fire</tertiary></span><code>dragend</code> fires on the drag source, indicating that the drag completed. It is particularly suitable for cleaning up the state used during the drag, as it is called regardless of whether or not the drop completes.</p>
 
 <p>Altogether, there are plenty of ways for you to intercept the drag-and-drop operations and take action. The drag-and-drop event chain is summarized in Figure <span class="internal-reference" id="ir_fig3_9">9-3</span>.
 
 </p>
 <figure id="fig3_9" class="image"><img src="images/ch9-3/fig9-3.png"><figcaption>Figure 9-3. Drag-and-drop event flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
-</figcaption></figure></section3></section><section id="sec8_9"><h3>Drag Participation<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>drag participation</tertiary></span>
+</figcaption></figure></section3></section><section id="sec8_9">
+<h3>Drag Participation<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>drag participation</tertiary></span>
 </h3>
 <p>Now that you’ve seen the different events that can be triggered during a drag-and-drop operation, you might be wondering what it takes to mark elements in your web application as draggable. That’s easy!</p>
 
@@ -256,7 +274,8 @@
 <pre><code>&lt;div id=”myDragSource” <strong>draggable=”true”</strong>&gt;</code></pre>
 <p>Simply by adding that attribute, you cause the browser to fire the aforementioned events. Then, you only need to add the event handlers to manage them.</p></section>
 
-<section id="sec9_9"><h3>Transfer and Control</h3>
+<section id="sec9_9">
+<h3>Transfer and Control</h3>
 <p>Before we move into our example, let’s assess the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>transfer and control</tertiary></span> <code>dataTransfer</code> object in more detail. The <code>dataTransfer</code> is available from every drag-and-drop event, as shown in Listing 9-1.</p>
 
 <figure class="listing"><figcaption>Listing 9-1. Retrieving the dataTransfer Object</figcaption><pre><code>Function handleDrag(evt) {
@@ -303,7 +322,8 @@
 </ul>
 <p>Together, these operations give a fine level of <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>transfer and control</tertiary></span>control over drag-and-drop. Now, let’s see them in action.</p>
 
-</section></section><section id="sec10_9"><h2>Building an Application with Drag-and-Drop</h2>
+</section></section><section id="sec10_9">
+<h2>Building an Application with Drag-and-Drop</h2>
 <p>Using the concepts we’ve already learned, we’ll build a simple drag-and-drop page in the theme of our Happy Trails Running Club. This page lets the club race organizers drag members of the club into one of two lists: racers and volunteers. In order to sort them into competitive groups, racers will be sorted by their age. Volunteers, on the other hand, are only sorted by their names, as their ages don’t matter when they are not competing.</p>
 
 <p>The sorting<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">racers sorted</span></span> of the lists is done automatically. The application itself will show feedback indicating where proper drop areas are for members into the two lists as shown in Figure <span class="internal-reference" id="ir_fig4_9">9-4</span>.
@@ -405,7 +425,8 @@
 
 <p>As mentioned previously, we are also adding dragover handlers on the fieldsets surrounding the target lists. Why do we do this? To make it easier to detect when a drag has exited our target lists. Although it is easy for us to detect that a user has dragged an item over our list, it is not so easy to determine when the user has dragged an item <em>out</em> of our list. This is because the dragleave events fire both when an item is dragged out of our list <em>and</em> when the item is dragged over a child already in the destination list. Essentially, when you drag from a parent element over one of its contained children, the drag exits the parent and enters the child. Although this provides a lot of information, it actually makes it tricky to know when a drag is leaving the outer boundaries of a parent element. Therefore, we will use a notification<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">notification</span></span> that we are dragging over an element <em>surrounding</em> our list to inform us that we have exited the list. More information on this will be provided later.</p>
 
-<aside><h3>This Way to the eGRESS</h3>
+<aside>
+<h3>This Way to the eGRESS</h3>
 <p><strong>Brian says</strong>: “One of the more counter-intuitive aspects of the drag-and-drop specification is the order of events. Although you might expect that a dragged item would exit one target before it entered another, you’d be wrong!</p>
 
 <p>The order of events fired during a drag from element A into element B is that a dragenter event is fired on element B before the dragleave is fired on element A. This maintains consistency with the HTML mouse event specification, but it is one of the odder aspects of the design. There are more of these quirks ahead, to be sure.”</p>
@@ -549,14 +570,16 @@
         return false;
     }HTML5 drag-and-dropclean up process</code></pre></figure><p>A dragend handler is called at the end of the drag, whether or not a drop actually occurred. If the user canceled the drag or completed it, the dragend handler is still called. This gives us a good place to clean up any state we changed at the beginning of the process. Not surprisingly, we reset the CSS classes of our lists to their default, unstyled state.</p>
 
-<aside><h3>Sharing Is Caring</h3>
+<aside>
+<h3>Sharing Is Caring</h3>
 <p><strong>Brian says</strong>: “If you are wondering whether or not the drag-and-drop functionality is worth all of the event handler code, don’t forget one of the key benefits of the API: sharing drags across windows and even across browsers.</p>
 
 <p>Because the design of HTML5 drag-and-drop was built to mirror that of desktop capabilities, it is not surprising that it also supports sharing across applications. You can try this out by loading our example in multiple browser windows and dragging members from one source list to the racers and volunteers lists of another window. Although our simple highlighting feedback was not designed for this case, the actual drop capability works across windows and even across browsers if they support the API.”</p>
 
 </aside><p>Our drag-and-drop example is a simple one, but it illustrates the full capability of the API.</p>
 
-<section id="sec11_9"><h3>Getting Into the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dropzone</span></span>dropzone</h3>
+<section id="sec11_9">
+<h3>Getting Into the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dropzone</span></span>dropzone</h3>
 <p>If you’re thinking that handling all of the drag-and-drop events is complicated, you’re not alone. The authors of the specification have designed an alternative, shorthand mechanism to support drop events: the dropzone attribute.</p>
 
 <p>The dropzone provides developers with a compact way to register that an element is willing to accept drops without coding up lengthy event handlers. The attribute consists of a few space-separated patterns that, when provided, allow the browser to automatically wire up the drop behavior for you (see Table <span class="internal-reference" id="ir_tab2_9">9-2</span>).
@@ -588,18 +611,21 @@
 
 <p>The dropzone is not supported by most major browser vendors at the time of writing, but support for it is likely forthcoming.</p>
 
-</section></section><section id="sec12_9"><h2>Handling Drag-and-Drop for Files<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span></span>
+</section></section><section id="sec12_9">
+<h2>Handling Drag-and-Drop for Files<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span></span>
 </h2>
 <p>If you’ve ever wanted an easier way to add files to your web application, or you’ve wondered how some of the newest sites allow you to drag files directly into a page and upload them, the answer is the HTML5 File API. Although the size and status of the entire <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>W3C file API</tertiary></span>W3C File API is out of scope for this discussion, many browsers already support a subset of the standard, which allows files to be dragged into an application.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>The W3C File API is documented online at <code>www.w3.org/TR/FileAPI</code>.</p>
 
 </aside><p>The File API contains functionality for asynchronously reading files in a web page, uploading them to servers while tracking process, and turning files into page elements. However, affiliated specifications such as drag-and-drop use a subset of the File API, and that is the area where we will focus our attention in this chapter.</p>
 
 <p>Recall that we’ve already alluded to file drag-and-drop twice in this chapter. First, the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>dataTransfer object</tertiary></span>dataTransfer object contains a property named files, which will contain a list of files attached to the drag, if appropriate. For example, if a user drags a file or set of files in from the desktop into your application’s web page, the browser will fire drag-and-drop events where the dataTransfer.files object has a value. Additionally, browsers that support the previously mentioned dropzone attribute allow files of specific MIME types to be valid drops on an element by using the f: MIME type prefix.</p>
 
-<aside><h3>Note</h3>
+<aside>
+<h3>Note</h3>
 <p>Currently, the Safari browser <em>only</em> supports drag-and-drop operations for files. Drags initiated inside a page will fire most drag-and-drop events, but drop events only occur if the type of drag is a file.</p>
 
 </aside><p>As usual, you cannot access the files during most drag-and-drop events, because they are protected for security reasons. Although some browsers might let you get access to the list of files during drag events, no browser will let you get access to the file data. In addition, the dragstart, drag, and dragend events that are fired at the drag source element are not triggered in a file drag-and-drop, as the source is the file system itself.</p>
@@ -714,10 +740,12 @@
 
 <p>Then, because we have more access to data in the drop handler than during the drag, we can inspect the files attached to the dataTransfer and discover the characteristics of the dropped files. In our example, we will merely display the properties of the files, but with full use of the HTML5 File API, you can read in the contents for local display or upload them to the server powering your application.</p></section>
 
-<section id="sec13_9"><h2>Practical Extras</h2>
+<section id="sec13_9">
+<h2>Practical Extras</h2>
 <p>Sometimes there are techniques that don’t fit into our regular examples but which nonetheless apply to many types of HTML5 applications. We present to you a short, but common, practical extra here.</p>
 
-<section id="sec14_9"><h3>Customizing the Drag Display<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>
+<section id="sec14_9">
+<h3>Customizing the Drag Display<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>
 </h3>
 <p>Usually, the browser will default the visual cursor indicator for a drag operation. An image or link will move with the cursor (sometimes sized down for practical viewing), or a ghosted image of the dragged element will hover at the drag position.</p>
 
@@ -731,7 +759,8 @@
 </p>
 <figure id="fig6_9" class="image"><img src="images/ch9-6/fig9-6.png"><figcaption>Figure 9-6. Demo page with a drag image set to the Happy Trails logo</figcaption></figure><p>The drag image does not need to be an image, <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>however. Any element can be set as the drag image; if it is not an image, the browser will create a visual snapshot of it to serve as the cursor display.</p>
 
-</section></section><section id="sec15_9"><h2>Summary</h2>
+</section></section><section id="sec15_9">
+<h2>Summary</h2>
 <p>The drag-and-drop API can be a tricky one to master. It involves the correct handling of many events, some of which may be hard to manage if your drop target layout is complex. However, if you are looking for drag operations that cross windows or browsers, or even interact with the desktop, you will need to learn the subtleties of the API. By design, it combines the power of native application drag-and-drop while still working inside the security restrictions of an environment where data must be protected from third-party code.</p>
 
 <p>For more information on using dropped files as application data, make sure to check out the W3C File API. In the next chapter, we will examine the Web Workers API, which will allow you to spawn background scripts outside of your main page to speed up execution and improve the user experience.</p>
