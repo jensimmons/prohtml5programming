@@ -115,14 +115,14 @@
 
 <figure class="listing"><figcaption>Listing 6-1. An Event Listener <span class="index-term"><span class="primary">postMessage API</span><span class="secondary">event listener for message events</span></span> for Message Events</figcaption><pre><code>window.addEventListener(“message”, messageHandler, true);
 function messageHandler(e) {
-    switch(e.origin) {
-      case “friend.example.com”:
-      // process message
-      processMessage(e.data);
-      break;
-    default:
-      // message origin not recognized
-      // ignoring message
+  switch(e.origin) {
+    case “friend.example.com”:
+    // process message
+    processMessage(e.data);
+    break;
+  default:
+    // message origin not recognized
+    // ignoring message
   }
 }</code></pre></figure>
 
@@ -188,7 +188,7 @@ element.textContent = e.data;</code></pre>
 <p>Before you call<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">browser support</span></span> <code>postMessage</code>, it is a good idea to check if the browser supports it. The following example shows one way to check for <code>postMessage</code> support:</p>
 
 <pre><code>if (typeof window.postMessage === “undefined”) {
-    // postMessage not supported in this browser
+  // postMessage not supported in this browser
 }</code></pre>
 </section>
 
@@ -257,7 +257,7 @@ window.addEventListener(“message”, messageHandler, true);</code></pre></figu
 
 <section id="sec11_6">
 <h3>Building the Portal Page</h3>
-<p>First, add the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>portal page</tertiary></span>chat widget iframe hosted at the different origin:</p>
+<p>First, add the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">portal page</span></span>chat widget iframe hosted at the different origin:</p>
 
 <pre><code>&lt;iframe id="widget" src="http://chat.example.net:9999/postMessageWidget.html"&gt;&lt;/iframe&gt;</code></pre>
 <p>Next, add an event listener <code>messageHandler</code><span class="index-term"><span class="primary">Cross Document Messaging</span></span> to listen for message events coming from the chat widget. As shown in the following example code, the widget will ask the portal to notify the user, which can be done by flashing the title. To make sure the message comes from the chat widget, the message’s origin is verified; if it does not come from <code>http://chat.example.net:9999</code>, the portal page simply ignores it.</p>
@@ -277,7 +277,7 @@ function messageHandler(e) {
 
 
 
-<p>Next, add a function to communicate with the chat widget. It uses <code>postMessage</code> to send a status update to the widget iframe contained in the portal page. In a<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>portal page</tertiary></span> live chat application, it could be used to communicate the user’s status (available, away, and so on).</p>
+<p>Next, add a function to communicate with the chat widget. It uses <code>postMessage</code> to send a status update to the widget iframe contained in the portal page. In a<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">portal page</span></span> live chat application, it could be used to communicate the user’s status (available, away, and so on).</p>
 
 <pre><code>function sendString(s) {
   document.getElementById("widget").contentWindow.postMessage(s, targetOrigin);
@@ -286,7 +286,7 @@ function messageHandler(e) {
 
 <section id="sec12_6">
 <h3>Building the Chat Widget Page</h3>
-<p>First, add an event<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>chat widget page</tertiary></span><span class="index-term"><span class="primary">chat widgets</span></span> listener <code>messageHandler</code> to listen for message events coming from the portal page. As shown in the following example code, the chat widget listens for incoming status-change messages. To make sure the message comes from the portal page, the message’s origin is verified; if it does not come from <code>http://portal.example.com:9999</code>, the widget simply ignores it.</p>
+<p>First, add an event<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">chat widget page</span></span><span class="index-term"><span class="primary">chat widgets</span></span> listener <code>messageHandler</code> to listen for message events coming from the portal page. As shown in the following example code, the chat widget listens for incoming status-change messages. To make sure the message comes from the portal page, the message’s origin is verified; if it does not come from <code>http://portal.example.com:9999</code>, the widget simply ignores it.</p>
 
 <pre><code>var trustedOrigin = " http://portal.example.com:9999";
 function messageHandler(e) {
@@ -303,7 +303,7 @@ function messageHandler(e) {
 
 
 
-<p>Next, add a function to communicate with<span class="index-term"><span class="primary">Cross Document Messaging</span></span> the portal page. The widget will ask the portal to notify the user on its behalf and uses <code>postMessage</code> to send a message to the portal page when a new chat message is received, as shown in the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>chat widget page</tertiary></span><span class="index-term"><span class="primary">chat widgets</span></span>following example:</p>
+<p>Next, add a function to communicate with<span class="index-term"><span class="primary">Cross Document Messaging</span></span> the portal page. The widget will ask the portal to notify the user on its behalf and uses <code>postMessage</code> to send a message to the portal page when a new chat message is received, as shown in the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">chat widget page</span></span><span class="index-term"><span class="primary">chat widgets</span></span>following example:</p>
 
 <pre><code>function sendString(s) {
     window.top.postMessage(s, trustedOrigin);
@@ -312,7 +312,7 @@ function messageHandler(e) {
 
 <section id="sec21_6">
 <h3>The Final Code</h3>
-<p>Listing 6-3 shows the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>code</tertiary></span> complete code for the Portal page <code>postMessagePortal.html</code>.</p>
+<p>Listing 6-3 shows the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">code</span></span> complete code for the Portal page <code>postMessagePortal.html</code>.</p>
 
 <figure class="listing"><figcaption>Listing 6-3. Contents of postMessagePortal.html</figcaption><pre><code class="">&lt;!DOCTYPE html&gt;
 &lt;title&gt; Portal [http://portal.example.com:9999]&lt;/title&gt;
@@ -325,9 +325,12 @@ function messageHandler(e) {
 &lt;/style&gt;
 &lt;link rel="icon" href="http://apress.com/favicon.ico"&gt;
 &lt;script&gt;
+
 var defaultTitle = "Portal [http://portal.example.com:9999]";
 var notificationTimer = null;
+
 var trustedOrigin = "http://chat.example.net:9999";
+
 function messageHandler(e) {
   if (e.origin == trustedOrigin) {
     notify(e.data);
@@ -335,27 +338,33 @@ function messageHandler(e) {
     // ignore messages from other origins
   }
 }
+
 function sendString(s) {
   document.getElementById("widget").contentWindow.postMessage(s, trustedOrigin);
 }
+
 function notify(message) {
   stopBlinking();
   blinkTitle(message, defaultTitle);
 }
+
 function stopBlinking() {
   if (notificationTimer !== null) {
     clearTimeout(notificationTimer);
   }
   document.title = defaultTitle;
 }
+
 function blinkTitle(m1, m2) {
   document.title = m1;
   notificationTimer = setTimeout(blinkTitle, 1000, m2, m1)
 }
+
 function sendStatus() {
   var statusText = document.getElementById("statusText").value;
   sendString(statusText);
 }
+
 function loadDemo() {
   document.getElementById("sendButton").addEventListener("click", sendStatus, true);
   document.getElementById("stopButton").addEventListener("click", stopBlinking, true);
@@ -363,11 +372,13 @@ function loadDemo() {
 }
 window.addEventListener("load", loadDemo, true);
 window.addEventListener("message", messageHandler, true);
+
 &lt;/script&gt;
-&lt;h1&gt; Cross-Origin Portal&lt;/h1&gt;
-&lt;p&gt; &lt;b&gt; Origin&lt;/b&gt;:http://portal.example.com:9999 &lt;/p&gt;
-Status &lt; input type="text" id="statusText" value = "Online" &gt;
-&lt;button id="sendButton"&gt; Change Status&lt;/button&gt;
+
+&lt;h1&gt;Cross-Origin Portal&lt;/h1&gt;
+&lt;p&gt;&lt;b&gt;Origin&lt;/b&gt;: http://portal.example.com:9999&lt;/p&gt;
+Status &lt;input type="text" id="statusText" value="Online"&gt;
+&lt;button id="sendButton"&gt;Change Status&lt;/button&gt;
 &lt;p&gt;
 This uses postMessage to send a status update to the widget iframeCross Document Messagingcontained in the portal page.
 &lt;/p&gt;
@@ -376,13 +387,15 @@ This uses postMessage to send a status update to the widget iframeCross Document
   &lt;button id="stopButton"&gt; Stop Blinking Title&lt;/button&gt;
 &lt;/p&gt;</code></pre></figure>
 
-<p>Listing 6-4 shows the code for<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>code</tertiary></span> the portal page <code>postMessageWidget.html</code>.</p>
+<p>Listing 6-4 shows the code for<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">code</span></span> the portal page <code>postMessageWidget.html</code>.</p>
 
 <figure class="listing"><figcaption>Listing 6-4. Contents of <code>postMessageWidget.html</code></figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;title&gt;widget&lt;/title&gt;
 &lt;link rel="stylesheet" href="styles.css"&gt;
 &#x003C;script&#x003E;
+
 var trustedOrigin = "http://portal.example.com:9999";
+
 function messageHandler(e) {
   if (e.origin === "http://portal.example.com:9999") {
     document.getElementById("status").textContent = e.data;
@@ -390,9 +403,11 @@ function messageHandler(e) {
     // ignore messages from other origins
   }
 }
+
 function sendString(s) {
   window.top.postMessage(s, trustedOrigin);
 }
+
 function loadDemo() {
   document.getElementById("actionButton").addEventListener("click",
     function() {
@@ -402,14 +417,17 @@ function loadDemo() {
 }
 window.addEventListener("load", loadDemo, true);
 window.addEventListener("message", messageHandler, true);
+
 &#x003C;/script&#x003E;
 &lt;h1&gt;Widget iframe&lt;/h1&gt;
-&lt;p&gt;&lt;b&gt;Origin&lt;/b&gt;:http://chat.example.net:9999&lt;/p&gt;
-&lt;p&gt; Status set to: &lt;strong id="status"&gt; &lt;/strong&gt; by containing portal. &lt; p&gt;
+&lt;p&gt;&lt;b&gt;Origin&lt;/b&gt;: http://chat.example.net:9999&lt;/p&gt;
+&lt;p&gt;Status set to: &lt;strong id="status"&gt; &lt;/strong&gt; by containing portal.&lt;p&gt;
+
 &lt;div&gt;
-  &lt;input type="text" id="messageText" value = "Widget notification."&gt;
+  &lt;input type="text" id="messageText" value="Widget notification."&gt;
   &lt;button id="actionButton"&gt; Send Notification&lt;/button&gt;
 &lt;/div&gt;
+
 &lt;p&gt;
 This will ask the portal topostMessage APIbuilding application usingcode
  notify the user. The portal does this by flashing the title. If the message comes from an origin other than http://chat.example.net:9999,Cross Document Messagingthe portal page will ignore it.
@@ -418,7 +436,7 @@ This will ask the portal topostMessage APIbuilding application usingcode
 
 <section id="sec13_6">
 <h3>The Application in Action</h3>
-<p>To see this example<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> in action, there are two prerequisites: the pages have to be served up by a web server and the pages have to be served up from two different domains. If you have access to multiple web servers (for example, two Apache HTTP servers) on separate domains, you can host the example files on those servers and run the demo. Another way to accomplish this on your local machine is to use Python <code>SimpleHTTPServer</code>, as shown in the following steps.</p>
+<p>To see this example<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">application in action</span></span> in action, there are two prerequisites: the pages have to be served up by a web server and the pages have to be served up from two different domains. If you have access to multiple web servers (for example, two Apache HTTP servers) on separate domains, you can host the example files on those servers and run the demo. Another way to accomplish this on your local machine is to use Python <code>SimpleHTTPServer</code>, as shown in the following steps.</p>
 <ol>
 <li>Update the path to the Windows hosts file (<code>C:\Windows\system32\drivers\etc\hosts</code>) and the Linux version (<code>/etc/hosts</code>) by adding two entries pointing to your localhost (IP address 127.0.0.1), as shown in the following example:</p>
 
@@ -439,7 +457,7 @@ This will ask the portal topostMessage APIbuilding application usingcode
 
 <pre><code>python -m SimpleHTTPServer 9999</code></pre>
 </li>
-<li>Open a browser and navigate to <code>http://portal.example.com:9999/postMessagePortal.html</code>. You<span class="index-term"><span class="primary">Cross Document Messaging</span></span>should<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><tertiary>application in action</tertiary></span> now see the page shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.</p>
+<li>Open a browser and navigate to <code>http://portal.example.com:9999/postMessagePortal.html</code>. You<span class="index-term"><span class="primary">Cross Document Messaging</span></span>should<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">application in action</span></span> now see the page shown in Figure <span class="internal-reference" id="ir_fig4_6">6-4</span>.</p>
 </li>
 </ol>
 </section>
@@ -447,7 +465,7 @@ This will ask the portal topostMessage APIbuilding application usingcode
 
 <section id="sec14_6">
 <h2>XMLHttpRequest Level 2</h2>
-<p>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> is the API that made Ajax possible. There are many books about XMLHttpRequest and Ajax. You can read more about XMLHttpRequest programming in John Resig’s<em>Pro JavaScript Techniques</em>, (Apress, 2006).</p>
+<p>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> is the API that made Ajax possible. There are many books about XMLHttpRequest and Ajax. You can read more about XMLHttpRequest programming in John Resig’s <em>Pro JavaScript Techniques</em>, (Apress, 2006).</p>
 
 <p>XMLHttpRequest Level 2<span class="index-term"><span class="primary">Communication API</span><span class="secondary">XMLHttpRequest Level 2</span><span class="see-also"><em>See</em> XMLHttpRequest Level 2</span></span>—the new version of XMLHttpRequest—has been significantly enhanced. In this chapter, we will be covering the improvements introduced in XMLHttpRequest Level 2. These improvements are centered on the following areas:</p>
 <ul>
@@ -474,7 +492,7 @@ This will ask the portal topostMessage APIbuilding application usingcode
 </span>
 </figcaption></figure><p>The CORS specification<span class="index-term"><span class="primary">Cross Origin Resource Sharing (CORS)</span></span>dictates that, for sensitive actions—for example, a request with credentials, or a request other than GET or POST—an OPTIONS preflight request must be sent to the server by the browser to see whether the action is supported and allowed. This means that successful communication may require a CORS-capable server. Listings 6-5 and 6-6 show the HTTP headers involved in a cross-origin exchange between a page hosted on <code>www.example.com</code> and a service hosted on <code>www.example.net</code>.</p>
 
-<figure class="listing"><figcaption>Listing 6-5. Example Request Headers</figcaption><pre><code>POST /main HTTP/1.1
+<figure class="listing"><figcaption>Listing 6-5. Example Request Headers</figcaption><pre><code data-cm-mode="message/http">POST /main HTTP/1.1
 Host: www.example.net
 User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.1.3) Gecko/20090910 Ubuntu/9.04 (jaunty) Shiretoko/3.5.3
 Accept: text/html,application/xhtml + xml,application/xml;q = 0.9,*/*;q = 0.8
@@ -487,7 +505,7 @@ Referer: http://www.example.com/
 Origin: http://www.example.com
 Pragma: no-cache
 Cache-Control: no-cache
-Content-Length: 0</code></pre></figure><figure class="listing"><figcaption>Listing 6-6. Example <span class="index-term"><span class="primary">cross-origin XMLHttpRequests</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">cross-origin communication</span></span>Response Headers</figcaption><pre><code>HTTP/1.1 201 Created
+Content-Length: 0</code></pre></figure><figure class="listing"><figcaption>Listing 6-6. Example <span class="index-term"><span class="primary">cross-origin XMLHttpRequests</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">cross-origin communication</span></span>Response Headers</figcaption><pre><code data-cm-mode="message/http">HTTP/1.1 201 Created
 Transfer-Encoding: chunked
 Server: Kaazing Gateway
 Date: Mon, 02 Nov 2009 06:55:08 GMT
@@ -562,7 +580,7 @@ if (typeof xhr.withCredentials === undefined) {
 
 <section id="sec19_6">
 <h3>Making Cross-Origin Requests</h3>
-<p>To make a cross-origin XMLHttpRequest, you<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>making cross-origin requests</tertiary></span> must first create a new XMLHttpRequest object, as shown in the following example.</p>
+<p>To make a cross-origin XMLHttpRequest, you<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">making cross-origin requests</span></span> must first create a new XMLHttpRequest object, as shown in the following example.</p>
 
 <pre><code>var crossOriginRequest = new XMLHttpRequest()</code></pre>
 <p>Next, make the cross-origin XMLHttpRequest by specifying an address on a different origin as shown in the following example.</p>
@@ -581,7 +599,7 @@ if (typeof xhr.withCredentials === undefined) {
 
 <section id="sec20_6">
 <h3>Using Progress Events</h3>
-<p>Instead of numerical states representing<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>progress events</tertiary></span>different stages of the request and response, XMLHttpRequest Level 2 provides named progress events. You can listen for each of these events by setting a callback function for the event handler attribute.</p>
+<p>Instead of numerical states representing<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">progress events</span></span>different stages of the request and response, XMLHttpRequest Level 2 provides named progress events. You can listen for each of these events by setting a callback function for the event handler attribute.</p>
 
 <p>Listing 6-8 shows how callback functions are used to handle progress events. Progress events have fields for the total amount of data to transfer, the amount that has already transferred, and a Boolean value indicating whether the total is known (it may not be in the case of streaming HTTP). <code>XMLHttpRequest.upload</code> dispatches events with the same fields.</p>
 
@@ -603,7 +621,7 @@ crossOriginRequest.upload.onprogress = function(e) {
 
 <section id="sec25_6">
 <h3>Binary Data</h3>
-<p>Browsers that support new binary APIs such as Typed Array (which is necessary for WebGL and programmable audio) may be able to send binary data<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>binary data</tertiary></span> with XMLHttpRequest. The XMLHttpRequest Level 2 specification includes support for calling the <code>send()</code> method with Blob and ArrayBuffer (aka Typed Array) objects (see Listing 6-9).</p>
+<p>Browsers that support new binary APIs such as Typed Array (which is necessary for WebGL and programmable audio) may be able to send binary data<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">binary data</span></span> with XMLHttpRequest. The XMLHttpRequest Level 2 specification includes support for calling the <code>send()</code> method with Blob and ArrayBuffer (aka Typed Array) objects (see Listing 6-9).</p>
 
 <figure class="listing"><figcaption>Listing 6-9. Sending a Typed Array of Bytes</figcaption><pre><code>var a = new Uint8Array([8,6,7,5,3,0,9]);
 var xhr = new XMLHttpRequest();
@@ -620,13 +638,13 @@ xhr.send(a.buffer);</code></pre></figure>
 
 <section id="sec22_6">
 <h3>Building an Application Using XMLHttpRequest</h3>
-<p>In this example, we’ll look at uploading<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>race geolocation coordinates to a web server hosted on a different origin. We use the new progress events to monitor the status of the HTTP request including the upload percentage. Figure <span class="internal-reference" id="ir_fig6_6">6-6</span> shows the application in action.
+<p>In this example, we’ll look at uploading<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">building application</span></span>race geolocation coordinates to a web server hosted on a different origin. We use the new progress events to monitor the status of the HTTP request including the upload percentage. Figure <span class="internal-reference" id="ir_fig6_6">6-6</span> shows the application in action.
 </p>
-<figure id="fig6_6" class="image"><img src="images/ch6/fig6-6.gif"><figcaption>Figure 6-6. A Web Application <span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>That Uploads Geolocation Data</figcaption></figure>
+<figure id="fig6_6" class="image"><img src="images/ch6/fig6-6.gif"><figcaption>Figure 6-6. A Web Application <span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">building application</span></span>That Uploads Geolocation Data</figcaption></figure>
 
 <p>For the sake of illustration, we’ve created the HTML file <code>crossOrignUpload.html</code>. The following steps highlight the important parts of building the cross-origin upload page shown in Figure <span class="internal-reference" id="ir_fig5_6">6-5</span>. The sample code for the following examples is located in the <code>code/communication</code> folder.</p>
 
-<p>First, create a new <code>XMLHttpRequest</code><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span> object, as shown in the following example.</p>
+<p>First, create a new <code>XMLHttpRequest</code><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">building application</span></span> object, as shown in the following example.</p>
 
 <pre><code>var xhr = new XMLHttpRequest();</code></pre>
 <p>Next, do check if cross-origin XMLHttpRequest is supported in the browser, as shown in the following example.</p>
@@ -650,13 +668,16 @@ xhr.send(a.buffer);</code></pre></figure>
   var ratio = e.loaded / e.total;
   setProgress(ratio + "% uploaded");
 }
+
 xhr.onprogress = function(e) {
   var ratio = e.loaded / e.total;
   setProgress(ratio + "% downloaded");
 }
+
 xhr.onload = function(e) {
   setProgress("finished");
 }
+
 xhr.onerror = function(e) {
   setProgress("error");
 }</code></pre>
@@ -673,7 +694,7 @@ xhr.onerror = function(e) {
 
 
 
-<p>Finally, open the request and send the string containing the encoded geolocation data. This will be a cross-origin request because the target location is a<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span>URL with a different origin than the page.</p>
+<p>Finally, open the request and send the string containing the encoded geolocation data. This will be a cross-origin request because the target location is a<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">building application</span></span>URL with a different origin than the page.</p>
 
 <pre><code>var targetLocation = "http://geodata.example.net:9999/upload";
 xhr.open("POST", targetLocation, true);
@@ -684,16 +705,18 @@ xhr.send(geoDataString);</code></pre>
 
 <section id="sec30_6">
 <h3>The Final Code</h3>
-<p>Listing 6-10 shows the<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">code for application</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><tertiary>building application</tertiary></span> complete application code—the contents of the <code>crossOriginUpload.html</code> file.</p>
+<p>Listing 6-10 shows the<span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">code for application</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">using</span><span class="tertiary">building application</span></span> complete application code—the contents of the <code>crossOriginUpload.html</code> file.</p>
 
-<figure class="listing"><figcaption>Listing 6-10. Contents of crossOriginUpload.html</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing"><figcaption>Listing 6-10. Contents of crossOriginUpload.html</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;title&gt; Upload Geolocation Data&lt;/title&gt;
 &lt;link rel="stylesheet" href="styles.css"&gt;
 &lt;link rel="icon" href="http://apress.com/favicon.ico"&gt;
 &lt;script&gt;
+
 function loadDemo() {
   var dataElement = document.getElementById("geodata");
   dataElement.textContent = JSON.stringify(geoData).replace(",", ", ", "g");
+  
   var xhr = new XMLHttpRequest()
   if (typeof xhr.withCredentials === undefined) {
     document.getElementById("support").innerHTML =
@@ -702,45 +725,58 @@ function loadDemo() {
     document.getElementById("support").innerHTML =
       "Your browser &lt; strong&gt; does&lt;/strong&gt; support cross-origin XMLHttpRequest";
   }
+  
   var targetLocation = " http://geodata.example.net:9999/upload";
+  
   function setProgress(s) {
     document.getElementById("progress").innerHTML = s;
   }
+  
   document.getElementById("sendButton").addEventListener("click",
     function() {
       xhr.upload.onprogress = function(e) {
         var ratio = e.loaded / e.total;
         setProgress(ratio + "% uploaded");
       }
+      
       xhr.onprogress = function(e) {
         var ratio = e.loaded / e.total;
         setProgress(ratio + "% downloaded");
       }
+      
       xhr.onload = function(e) {
         setProgress("finished");
       }
+      
       xhr.onerror = function(e) {
         setProgress("error");
       }
+      
       xhr.open("POST", targetLocation, true);
+      
       geoDataString = dataElement.textContent;
       xhr.send(geoDataString);
     }, true);
 }
 window.addEventListener("load", loadDemo, true);
+
 &lt;/script&gt;
-&lt;h1&gt; XMLHttpRequest Level 2&lt;/h1&gt;
-&lt;p id="support"&gt; &lt;/p&gt;
-&lt;h4&gt; Geolocation Data to upload:&lt;/h4&gt;
+
+&lt;h1&gt;XMLHttpRequest Level 2&lt;/h1&gt;
+&lt;p id="support"&gt;&lt;/p&gt;
+
+&lt;h4&gt;Geolocation Data to upload:&lt;/h4&gt;
 &lt;textarea id="geodata"&gt;
 &lt;/textarea&gt;
 &lt;/div&gt;
-&lt;button id="sendButton"&gt; Upload&lt;/button&gt;
+
+&lt;button id="sendButton"&gt;Upload&lt;/button&gt;
+
 &lt;script&gt;
 geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170653000000001, 39.190128000000001, 39.204510999999997, 39.226759000000001, 39.238483000000002, 39.228154000000004, 39.249400000000001, 39.249533, 39.225276999999998, 39.191253000000003, 39.167993000000003, 39.145685999999998, 39.121620999999998, 39.095761000000003, 39.080593, 39.053131999999998, 39.02619, 39.002929000000002, 38.982886000000001, 38.954034999999998, 38.944926000000002, 38.919960000000003, 38.925261999999996, 38.934922999999998, 38.949373000000001, 38.950133999999998, 38.952649000000001, 38.969692000000002, 38.988512999999998, 39.010652, 39.033088999999997, 39.053493000000003, 39.072752999999999], [-120.15724399999999, -120.15818299999999, -120.15600400000001, -120.14564599999999, -120.141285, -120.10889900000001, -120.09528500000002, -120.077596, -120.045428, -120.0119, -119.98897100000002, -119.95124099999998, -119.93270099999998, -119.927131, -119.92685999999999, -119.92636200000001, -119.92844600000001, -119.911036, -119.942834, -119.94413000000002, -119.94555200000001, -119.95411000000001, -119.941327, -119.94605900000001, -119.97527599999999, -119.99445, -120.028998, -120.066335, -120.07867300000001, -120.089985, -120.112227, -120.09790700000001, -120.10881000000001, -120.116692, -120.117847, -120.11727899999998, -120.14398199999999]];
 &lt;/script&gt;
 &lt;p&gt;
-&lt;b&gt; Status: &lt;/b&gt; &lt;span id="progress"&gt; ready&lt;/span&gt;
+  &lt;b&gt;Status: &lt;/b&gt; &lt;span id="progress"&gt;ready&lt;/span&gt;
 &lt;/p&gt;</code></pre></figure>
 </section>
 
@@ -788,7 +824,7 @@ geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170
 <p>Framebusting is a<span class="index-term"><span class="primary">framebusting</span></span> technique for ensuring that your content is not loaded in an iframe. An application can detect that its window is not the outermost window (<code>window.top</code>) and subsequently break out of its containing frame, as shown in the following example.</p>
 
 <pre><code>if (window !== window.top) {
-    window.top.location = location;
+  window.top.location = location;
 }</code></pre>
 
 
@@ -799,7 +835,7 @@ var timeout = 3000; // 3 second framebust timeout
 if (window !== window.top) {
   framebustTimer = setTimeout(
     function() {
-         window.top.location = location;
+      window.top.location = location;
     }, timeout);
 }
 window.addEventListener(“message”, function(e) {
