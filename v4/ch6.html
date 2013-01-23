@@ -288,7 +288,7 @@ function messageHandler(e) {
 <h3>Building the Chat Widget Page</h3>
 <p>First, add an event<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">chat widget page</span></span><span class="index-term"><span class="primary">chat widgets</span></span> listener <code>messageHandler</code> to listen for message events coming from the portal page. As shown in the following example code, the chat widget listens for incoming status-change messages. To make sure the message comes from the portal page, the message’s origin is verified; if it does not come from <code>http://portal.example.com:9999</code>, the widget simply ignores it.</p>
 
-<pre><code>var trustedOrigin = " http://portal.example.com:9999";
+<pre><code>var trustedOrigin = "http://portal.example.com:9999";
 function messageHandler(e) {
   if (e.origin === trustedOrigin {
     document.getElementById("status").textContent = e.data;
@@ -314,8 +314,8 @@ function messageHandler(e) {
 <h3>The Final Code</h3>
 <p>Listing 6-3 shows the<span class="index-term"><span class="primary">postMessage API</span><span class="secondary">building application using</span><span class="tertiary">code</span></span> complete code for the Portal page <code>postMessagePortal.html</code>.</p>
 
-<figure class="listing"><figcaption>Listing 6-3. Contents of postMessagePortal.html</figcaption><pre><code class="">&lt;!DOCTYPE html&gt;
-&lt;title&gt; Portal [http://portal.example.com:9999]&lt;/title&gt;
+<figure class="listing"><figcaption>Listing 6-3. Contents of postMessagePortal.html</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+&lt;title&gt;Portal [http://portal.example.com:9999]&lt;/title&gt;
 &lt;link rel="stylesheet" href="styles.css"&gt;
 &lt;style&gt;
   iframe {
@@ -429,8 +429,7 @@ window.addEventListener("message", messageHandler, true);
 &lt;/div&gt;
 
 &lt;p&gt;
-This will ask the portal topostMessage APIbuilding application usingcode
- notify the user. The portal does this by flashing the title. If the message comes from an origin other than http://chat.example.net:9999,Cross Document Messagingthe portal page will ignore it.
+This will ask the portal to notify the user. The portal does this by flashing the title. If the message comes from an origin other than http://chat.example.net:9999, the portal page will ignore it.
 &lt;/p&gt;</code></pre></figure>
 </section>
 
