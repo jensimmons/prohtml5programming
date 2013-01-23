@@ -80,6 +80,7 @@ p code {
 
 figure {
   @include clearfix;
+  clear: both;
 }
 figure.image {
   text-align: center;
