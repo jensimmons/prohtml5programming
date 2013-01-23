@@ -79,8 +79,8 @@ p code {
 //-----------------------------------------------------------------------
 
 figure {
-  @include clearfix;
   clear: both;
+  @include clearfix;
 }
 figure.image {
   text-align: center;
