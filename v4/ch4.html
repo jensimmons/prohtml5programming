@@ -104,7 +104,7 @@
 <h3>Video Containers</h3>
 <p>An audio or <span class="index-term"><span class="primary">audio</span><span class="secondary">containers</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">containers</span></span>video file is really just a <em>container</em> file, similar to a ZIP archive file that contains a number of files. Figure <span class="internal-reference" id="ir_fig1_4">4-1</span> shows how a video file (a video container) contains audio tracks, video tracks, and additional metadata. The audio and video tracks are combined at runtime to play the video. The metadata contains information about the video such as cover art, title and subtitle, captioning information, and so on.</p>
 
-<figure id="fig1_4" class="image"><img src="images/ch4-1/fig4-1.png"><figcaption>Figure 4-1. Overview of the video container</figcaption></figure>
+<figure id="fig1_4" class="image"><img src="images/ch4/fig4-1.png"><figcaption>Figure 4-1. Overview of the video container</figcaption></figure>
 
 <p>Some of the popular video container<span class="index-term"><span class="primary">audio</span><span class="secondary">containers</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">containers</span></span> formats include the following:
 <ul>
@@ -293,7 +293,7 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 &lt;/html&gt;</code></pre></figure><p>This clip assumes that the HTML document and the audio file—in this case, <code>johann_sebastian_bach_air.ogg</code> —are served from the same directory. As shown in Figure <span class="internal-reference" id="ir_fig2_4">4-2</span>, viewing this in a browser supporting the <code>audio</code> tag will show a simple control and play bar representing<span class="index-term"><span class="primary">audio element</span><span class="secondary">declaring</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">declaring</span></span> the audio to play. When the user clicks the play button, the audio track starts as expected.
 
 </p>
-<figure id="fig2_4" class="image"><img src="images/ch4-2/fig4-2.png"><figcaption>Figure 4-2. Simple<span class="index-term"><span class="primary">
+<figure id="fig2_4" class="image"><img src="images/ch4/fig4-2.gif"><figcaption>Figure 4-2. Simple<span class="index-term"><span class="primary">
 <em>audio</em>
 </span><span class="secondary">
 <em>controls</em>
@@ -614,9 +614,12 @@ videoWidth, videoHeight
 <p>In this more complex<span class="index-term"><span class="primary">video element</span><span class="secondary">creating video timeline browser</span></span> example, we’ll show how a <code>video</code> element can have its frames grabbed and displayed in a dynamic canvas. To demonstrate this capability, we’ll build a simple video timeline viewer. While the video plays, periodic image frames from its display will be drawn onto a nearby canvas. When the user clicks any frame displayed in the canvas, we’ll jump the playback of the video to that precise moment in time. With only a few lines of code, we can create a timeline browser that users can use to jump around inside a lengthy video.</p>
 
 <p>Our sample video clip is the tempting <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>concession advert from the mid-20th century movie theaters, so let’s all go to the lobby to get ourselves a treat (see Figure <span class="internal-reference" id="ir_fig3_4">4-3</span>).
-
 </p>
-<figure id="fig3_4" class="image"><img src="images/ch4-3/fig4-3.png"><figcaption>Figure 4-3. The video timeline application</figcaption></figure>
+
+<figure id="fig3_4" class="image">
+  <img src="images/ch4/fig4-3.gif">
+  <figcaption>Figure 4-3. The video timeline application</figcaption>
+</figure>
 </section>
 
 <section id="sec19_4">
@@ -745,14 +748,6 @@ var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;</code></pre>
         updateFrame();
         intervalId = setInterval(updateFrame, updateInterval);</code></pre>
 
-
-
-
-
-
-
-
-
 <p>Recall that the <code>startVideo()</code> function is triggered as soon as the video has loaded enough to begin playing. First, we make sure that we are going to handle the <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>video start only once per page load, just in case the video is restarted:</p>
 
 <pre><code>    // only set up the timer the first time the
@@ -760,9 +755,6 @@ var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;</code></pre>
     if (videoStarted)
         return;
         videoStarted = true;</code></pre>
-
-
-
 
 <p>When the video starts, we will capture our first frame. Then, we will start an interval timer—a timer that repeats continuously at the specified<span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span> update interval—which will regularly call our <code>updateFrame()</code> function. The end <span class="index-term"><span class="primary">startVideo function</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">startVideo function, adding</span></span>result is that a new frame will be captured every five seconds:</p>
 
@@ -1003,7 +995,7 @@ onended="stopTimeline()" autobuffer="true"
 &lt;/html&gt;</code></pre></figure><p>As you can see, playing a looping <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>background sound is as easy as declaring a single <code>audio</code> tag with the <code>autoplay</code> <span class="index-term"><span class="primary">audio element</span><span class="secondary">background noise in a page</span></span><span class="index-term"><span class="primary">autoplay attribute</span></span><span class="index-term"><span class="primary">loop attribute</span></span>and <code>loop</code> attributes set (see Figure <span class="internal-reference" id="ir_fig4_4">4-4</span>).
 
 </p>
-<figure id="fig4_4" class="image"><img src="images/ch4-4/fig4-4.png"><figcaption>Figure 4-4. Using autoplay to play music when a page loads</figcaption></figure><aside>
+<figure id="fig4_4" class="image"><img src="images/ch4/fig4-4.gif"><figcaption>Figure 4-4. Using autoplay to play music when a page loads</figcaption></figure><aside>
 <h3>Losing Viewers in The &lt;Blink&gt; of an Eye</h3>
 <p><strong>Brian says</strong>: “With great power comes great responsibility, and just because you <em>can</em>, doesn’t mean you <em>should</em>. If you want an example, just remember the <code>&lt;blink&gt;</code> tag!”</p>
 
@@ -1030,7 +1022,7 @@ onended="stopTimeline()" autobuffer="true"
 &lt;/html&gt;</code></pre></figure><p>By simply setting a few extra attributes, the preview playback can trigger when a user points at the video, as shown in Figure <span class="internal-reference" id="ir_fig5_4">4-5</span>.
 
 </p>
-<figure id="fig5_4" class="image"><img src="images/ch4-5/fig4-5.png"><figcaption>Figure 4-5. Mouseover<span class="index-term"><span class="primary">
+<figure id="fig5_4" class="image"><img src="images/ch4/fig4-5.gif"><figcaption>Figure 4-5. Mouseover<span class="index-term"><span class="primary">
 <em>mouseover video playback</em>
 </span></span><span class="index-term"><span class="primary">
 <em>video element</em>
