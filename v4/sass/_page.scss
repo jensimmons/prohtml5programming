@@ -262,3 +262,11 @@ td, th {
 	td:nth-of-type(3):before { content: "Note"; }
 	
 }
+
+//-----------------------------------------------------------------------
+// Image (inlinemediaobjects)
+//-----------------------------------------------------------------------
+img.inlinemediaobject {
+  display: block;
+  margin: 0.65em 0;
+}
