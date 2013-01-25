@@ -1205,8 +1205,8 @@ function loopAnimation(currentTime) {
 <p>Once we update our drawing, we can see the animating rain on top of our trail (see Figure 2-22).</p>
 
 <figure class="image">
-<code>[Insert example here]</code>
-<figcaption>Figure 2-22. Still shot of canvas with rain animation</figcaption>
+  <img src="images/ch2/fig2-22.png">
+  <figcaption>Figure 2-22. Still shot of canvas with rain animation</figcaption>
 </figure>
 
 <p>It is up to the browser to decide how often to call the animation frame callback. Pages in the background will be called less frequently, and the browser may clip the rendering to the element provided to the <code>requestAnimationFrame</code> call (&#x201C;<code>canvas</code>&#x201D; in our example) to optimize drawing resources. You aren&#x2019;t guaranteed a frame rate, but you are spared the work of scheduling for different environments!</p>
