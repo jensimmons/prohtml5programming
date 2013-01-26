@@ -34,7 +34,7 @@
       (function () {
         "use strict";
         window.ISBNOnline = '978-1-4302-3865-2';
-        window.chapterID = x;
+        window.chapterID = 9;
       })();
 
     </script>
@@ -50,7 +50,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <script src="js/code_listings_ch3.js"></script>
+    <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
     <script src="js/toc.js"></script>  
 
 
@@ -146,7 +146,10 @@
 
 <p>As shown in Figure <span class="internal-reference" id="ir_fig1_9">9-1</span>, when you (as a user) start a drag-and-drop operation, you start by clicking and dragging the pointer. The item or region where you began the drag is known as the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary"><strong>drag source</strong></span></span> <strong>drag source</strong>. When you release the pointer and complete the operation, the region or item you are targeting at the end is known as the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary"><strong>drop target</strong></span></span> <strong>drop target</strong>. As the mouse moves across the page, you may traverse a series of drop targets before you actually release the mouse.
 </p>
-<figure id="fig1_9" class="image"><img src="images/ch9-1/fig9-1.png"><figcaption>Figure 9-1. Drag sources and drop targets</figcaption></figure><p>So far, so good. But simply holding down the mouse and moving it to another part of an application is not what constitutes a drag-and-drop. Rather, it is the feedback during the operation that makes for a <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">successful interaction</span></span>successful interaction. Consider your own uses of drag-and-drop in past experiences; the ones that are the most intuitive are those where the system is giving constant updates to let you know what will happen if you release at this point in time:</p>
+
+<figure id="fig1_9" class="image"><img src="images/ch9/fig9-1.jpg"><figcaption>Figure 9-1. Drag sources and drop targets</figcaption></figure>
+
+<p>So far, so good. But simply holding down the mouse and moving it to another part of an application is not what constitutes a drag-and-drop. Rather, it is the feedback during the operation that makes for a <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">successful interaction</span></span>successful interaction. Consider your own uses of drag-and-drop in past experiences; the ones that are the most intuitive are those where the system is giving constant updates to let you know what will happen if you release at this point in time:</p>
 <ul>
 <li>
 <p>Does the cursor indicate that the current position is a valid drop target, or does it imply a rejection with a “forbidden” cursor indicator?</p>
@@ -171,32 +174,39 @@
 </aside><p>The purpose of using MIME types is to allow the source and target to negotiate on which format best suits the needs of the drop target. As shown in Figure <span class="internal-reference" id="ir_fig2_9">9-2</span>, during a drag start, the <code>dataTransfer</code> object is loaded up with data representing all reasonable types, or “flavors,” by which the data can be transferred. Then, when the drop completes, the drop handler code can scan the available types of data and decide which MIME type format best suits its needs.
 
 </p>
-<figure id="fig2_9" class="image"><img src="images/ch9-2/fig9-2.png"><figcaption>Figure 9-2. Drag and drop<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">negotiation, data flavors</span></span> negotiation of data “flavors”</figcaption></figure><p>For example, imagine a list item in a web page representing a person. There are many different ways to represent the data for a person; some are standard, some are not. When a drag starts on a particular person’s list item, the drag start handler can declare that the person’s data is available in a few formats, as shown in Table <span class="internal-reference" id="ir_tab1_9">9-1</span>.
+<figure id="fig2_9" class="image"><img src="images/ch9/fig9-2.jpg"><figcaption>Figure 9-2. Drag and drop<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">negotiation, data flavors</span></span> negotiation of data “flavors”</figcaption></figure><p>For example, imagine a list item in a web page representing a person. There are many different ways to represent the data for a person; some are standard, some are not. When a drag starts on a particular person’s list item, the drag start handler can declare that the person’s data is available in a few formats, as shown in Table <span class="internal-reference" id="ir_tab1_9">9-1</span>.
 </p>
-<table id="tab1_9">
-<thead><tr>
-<td>MIME Type</td>
-<td>Result</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>text/plain</td>
-<td>A standard MIME type for unformatted text. We can use it as the most common representation, such as the person’s name.</td>
-</tr>
-<tr>
-<td>image/png</td>
-<td>A standard MIME type for PNG images. Here, it could represent the person’s picture in PNG format.</td>
-</tr>
-<tr>
-<td>image/jpeg</td>
-<td>The standard MIME type for JPEG images. It could be used to transfer the person’s picture in that format.</td>
-</tr>
-<tr>
-<td>text/x-age</td>
-<td>A non-standard MIME type (as indicated by the x- prefix). We could use this format to transfer our own types of information, such as the person’s age.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 9-1. Examples of MIME Types in Data Transfer of a Person</figcaption>
+  <table id="tab1_9">
+  <thead><tr>
+  <th>MIME Type</th>
+  <th>Result</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>text/plain</td>
+  <td>A standard MIME type for unformatted text. We can use it as the most common representation, such as the person’s name.</td>
+  </tr>
+  <tr>
+  <td>image/png</td>
+  <td>A standard MIME type for PNG images. Here, it could represent the person’s picture in PNG format.</td>
+  </tr>
+  <tr>
+  <td>image/jpeg</td>
+  <td>The standard MIME type for JPEG images. It could be used to transfer the person’s picture in that format.</td>
+  </tr>
+  <tr>
+  <td>text/x-age</td>
+  <td>A non-standard MIME type (as indicated by the x- prefix). We could use this format to transfer our own types of information, such as the person’s age.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+
+
 <p>When the drop completes, the drop handler can query for a list of available data types. From the provided list, the handler can choose which type is most appropriate. A text list drop target may choose to grab the text/plain “flavor” of data to <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">data retrieval</span></span>retrieve the person’s name, while a more advanced control might choose to retrieve and display the person’s PNG image as a result of the drop. And, if the source and target have coordinated on non-standard types, the target could also retrieve the person’s <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">negotiation, data flavors</span></span>age at the time of the drop (see Figure <span class="internal-reference" id="ir_fig2_9">9-2</span>).</p>
 
 <p>It is this negotiation process that allows for drag sources and drop targets to be decoupled. As long as the drag sources provide data in a choice of MIME types, the drop target can choose which format suits its operation the best, even if the two came from different developers. In later sections of this chapter, we’ll explore how even more unusual MIME types, such as files, can be used.</p>
@@ -242,7 +252,10 @@
 
 <p>Because drag-and-drop has been designed to work across windows and across content from various sources, it would be a security risk if <code>drag</code> event listeners were able to insert or replace data when the drag passed over them. Imagine a malicious section of code event listeners inserted that queried and replaced drag data of any drag travelling by. This would misrepresent the intentions of the drag source, and as such any data replacements after the start are forbidden.”</p>
 
-</aside></section3><section3 id="Sec28_9">
+</aside>
+</section3>
+
+<section3 id="Sec28_9">
 <h3>drag</h3>
 <p>The <code>drag</code> event can be thought of as the continuous event of a drag operation. As the user moves the mouse cursor around the page, the <code>drag</code> event is called repeatedly on the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>drag</tertiary></span>drag <em>source</em>. The <code>drag</code> event will fire a few times each second during the operation. Although the visuals of the drag feedback can be modified during a <code>drag</code> event, the data on the <code>dataTransfer</code> is off-limits.</p>
 
@@ -269,8 +282,10 @@
 <p>Altogether, there are plenty of ways for you to intercept the drag-and-drop operations and take action. The drag-and-drop event chain is summarized in Figure <span class="internal-reference" id="ir_fig3_9">9-3</span>.
 
 </p>
-<figure id="fig3_9" class="image"><img src="images/ch9-3/fig9-3.png"><figcaption>Figure 9-3. Drag-and-drop event flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
-</figcaption></figure></section3>
+<figure id="fig3_9" class="image"><img src="images/ch9/fig9-3.jpg"><figcaption>Figure 9-3. Drag-and-drop event flow<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span></span>
+</figcaption></figure>
+
+</section3>
 </section>
 
 <section id="sec8_9">
@@ -291,7 +306,9 @@
 <figure class="listing"><figcaption>Listing 9-1. Retrieving the dataTransfer Object</figcaption><pre><code>Function handleDrag(evt) {
     var transfer = evt.dataTransfer;
     // …
-}</code></pre></figure><p>As discussed in Listing 9-1, the <code>dataTransfer</code> is used to get and set the actual drop data during the negotiation between source and target. This is done using the following functions and properties:</p>
+}</code></pre></figure>
+
+<p>As discussed in Listing 9-1, the <code>dataTransfer</code> is used to get and set the actual drop data during the negotiation between source and target. This is done using the following functions and properties:</p>
 <ul>
 <li>
 <p><code>setData(format, data)</code>: Calling this function during <code>dragStart</code> allows you to register one transfer item under a MIME type format.</p>
@@ -342,7 +359,9 @@
 <p>The sorting<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">racers sorted</span></span> of the lists is done automatically. The application itself will show feedback indicating where proper drop areas are for members into the two lists as shown in Figure <span class="internal-reference" id="ir_fig4_9">9-4</span>.
 
 </p>
-<figure id="fig4_9" class="image"><img src="images/ch9-4/fig9-4.png"><figcaption>Figure 9-4. Example page showing <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">racers sorted</span></span>racers sorted into lists</figcaption></figure><p>All of the code for this example is included with the book’s samples. We’ll step through the page and explain how it works in practice.</p>
+<figure id="fig4_9" class="image"><img src="images/ch9/fig9-4.png"><figcaption>Figure 9-4. Example page showing <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">racers sorted</span></span>racers sorted into lists</figcaption></figure>
+
+<p>All of the code for this example is included with the book’s samples. We’ll step through the page and explain how it works in practice.</p>
 
 <p>First, let’s look at the markup for the page. At the top, we’ve declared the data on our club members (see Listing 9-2).</p>
 
@@ -373,7 +392,9 @@
 &lt;legend&gt;Volunteers (by Name):&lt;/legend&gt;
 &lt;ul id="volunteers"&gt;&lt;/ul&gt;
 &lt;/fieldset&gt;
-&lt;/div&gt;</code></pre></figure><p>The unordered lists identified as racers and volunteers are the ultimate destinations where our members will be inserted. The fieldsets surrounding them serve as functional equivalents of a moat around a castle. When the user drags into the fieldset, we’ll know that they have exited the contained list and we’ll update our visual feedback accordingly.</p>
+&lt;/div&gt;</code></pre></figure>
+
+<p>The unordered lists identified as racers and volunteers are the ultimate destinations where our members will be inserted. The fieldsets surrounding them serve as functional equivalents of a moat around a castle. When the user drags into the fieldset, we’ll know that they have exited the contained list and we’ll update our visual feedback accordingly.</p>
 
 <p>Speaking of feedback, there are a few CSS styles in our page that are important to note (see Listing 9-4).</p>
 
@@ -385,7 +406,9 @@
 }
 .validtarget {
     background-color: lightblue;
-}</code></pre></figure><p>First, we make sure that every member in our source list shows a move cursor. This gives a hint to the user that the items are draggable.</p>
+}</code></pre></figure>
+
+<p>First, we make sure that every member in our source list shows a move cursor. This gives a hint to the user that the items are draggable.</p>
 
 <p>Next, we define two style classes: highlighted and validtarget. These are used to draw background colors on our lists as the drag-and-drop is in progress. The validtarget background will be displayed on our destination lists during the entire drag to hint that they are valid drop targets. When the user actually moves a member over a target list it will change to the highlighted style, indicating that the user is actually over a drop target.</p>
 
@@ -398,7 +421,9 @@
     // these variables store references to the visible
     // elements for displaying who is a racer or volunteer
     var racersList;
-    var volunteersList;</code></pre></figure><p>The first two variables will serve as internal arrays, which keep track of which members are in the racers and volunteers lists.</p>
+    var volunteersList;</code></pre></figure>
+    
+    <p>The first two variables will serve as internal arrays, which keep track of which members are in the racers and volunteers lists.</p>
 
 <p>The second two variables are only going to be used as handy references to the unordered lists containing the visual display of members in the respective lists.</p>
 
@@ -432,7 +457,9 @@
            member.addEventListener("dragend", handleDragEnd, false);
        });
     }
-    window.addEventListener("load", loadDemo, false);</code></pre></figure><p>When the window initially loads, we call a loadDemo function to set up all of our drag-and-drop event handlers. Most of them don’t need event capture, and we will set the capture argument accordingly.</p>
+    window.addEventListener("load", loadDemo, false);</code></pre></figure>
+    
+<p>When the window initially loads, we call a loadDemo function to set up all of our drag-and-drop event handlers. Most of them don’t need event capture, and we will set the capture argument accordingly.</p>
 
 <p>Both the racersList and the volunteersList will receive handlers for dragenter, dragleave, and drop events, as these are fired on drop targets. Each list will receive a separate dragover event listener, as that will allow us to easily update the drag feedback based on the target the user is currently dragging over.</p>
 
@@ -444,7 +471,9 @@
 
 <p>The order of events fired during a drag from element A into element B is that a dragenter event is fired on element B before the dragleave is fired on element A. This maintains consistency with the HTML mouse event specification, but it is one of the odder aspects of the design. There are more of these quirks ahead, to be sure.”</p>
 
-</aside><p>Our final set of handlers registers dragstart and dragend listeners on every draggable club member in our initial list. We will use them to initialize and clean up any drag. You might notice that we don’t add handlers for the drag event, which fires periodically on the drag source. As we will not be updating the appearance of the dragged item, it will be unnecessary for our example.</p>
+</aside>
+
+<p>Our final set of handlers registers dragstart and dragend listeners on every draggable club member in our initial list. We will use them to initialize and clean up any drag. You might notice that we don’t add handlers for the drag event, which fires periodically on the drag source. As we will not be updating the appearance of the dragged item, it will be unnecessary for our example.</p>
 
 <p>Now, we’ll go through the actual event handlers in turn, based on the order in which they generally fire (see Listing 9-7).</p>
 
@@ -460,7 +489,9 @@
         racersList.className = "validtarget";
         volunteersList.className = "validtarget";
         return true;
-    }</code></pre></figure><p>The handler for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragstart handler</span></span>dragstart is called on the draggable item where the users begin the operation. It is a somewhat special handler, as it sets up the capabilities of the entire process. First, we set the effectAllowed, which tells the browser that only copies are allowed when dragging from this element—no moves or links.</p>
+    }</code></pre></figure>
+    
+    <p>The handler for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragstart handler</span></span>dragstart is called on the draggable item where the users begin the operation. It is a somewhat special handler, as it sets up the capabilities of the entire process. First, we set the effectAllowed, which tells the browser that only copies are allowed when dragging from this element—no moves or links.</p>
 
 <p>Next, we preload all of the possible flavors of data that might be requested at the end of a successful drop. Naturally, we want to support a text version of our element, so we set the MIME type text/plain to return the text inside our draggable node, (i.e., the club member’s name).</p>
 
@@ -481,7 +512,9 @@
     }
     function handleDragLeave(evt) {
         return false;
-    }</code></pre></figure><p>The <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragleave and dragenter</span></span>dragleave event is not used by our demo, and we handle it purely for illustrative purposes.</p>
+    }</code></pre></figure>
+    
+<p>The <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragleave and dragenter</span></span>dragleave event is not used by our demo, and we handle it purely for illustrative purposes.</p>
 
 <p>The dragenter event, however, can be handled and canceled by calling preventDefault on it when it is fired over a valid drop target. This informs the browser that the current target is a valid drop target, as the <em>default</em> behavior is to assume that any target is not a valid drop target.</p>
 
@@ -500,7 +533,9 @@
           volunteersList.className = "validtarget";
         evt.stopPropagation();
         return false;
-    }</code></pre></figure><p>Our first of three dragover handlers will be used only to adjust the drag feedback. Recall that it is difficult to detect when a drag has left a target, such as our intended racers and volunteers lists. Therefore, we use a drag movement over the fieldsets surrounding the lists to indicate that the drag has exited the vicinity of the lists. This allows us to turn off the drop highlighting on the lists accordingly.</p>
+    }</code></pre></figure>
+    
+<p>Our first of three dragover handlers will be used only to adjust the drag feedback. Recall that it is difficult to detect when a drag has left a target, such as our intended racers and volunteers lists. Therefore, we use a drag movement over the fieldsets surrounding the lists to indicate that the drag has exited the vicinity of the lists. This allows us to turn off the drop highlighting on the lists accordingly.</p>
 
 <p>Note that our simple code, as listed, will change the CSS className repeatedly if the user hovers in the fieldset area. For optimization purposes, it is good practice to only change the className once, as it may cause the browser to do more work than necessary.</p>
 
@@ -521,7 +556,9 @@
         evt.preventDefault();
         volunteersList.className = "highlighted";
         return false;
-    }</code></pre></figure><p>These two handlers, while somewhat verbose, are listed in full to clarify our demo. The first handles dragover events in the racers list, and the second handles dragover events identically in the volunteers list.</p>
+    }</code></pre></figure>
+    
+<p>These two handlers, while somewhat verbose, are listed in full to clarify our demo. The first handles dragover events in the racers list, and the second handles dragover events identically in the volunteers list.</p>
 
 <p>The first action we take is to set the dropEffect to indicate that only copies are allowed on this node, not moves or links. This is a good practice, even though our original dragstart handler already limited the drag-and-drop operation to be copy-only.</p>
 
@@ -565,7 +602,9 @@
         }
         return false;HTML5 drag-and-dropdrop handler
 
-    }</code></pre></figure><p>Once again, we start by preventing the default drop behavior and preventing the control from propagating to other handlers. The default drop event depends on the location and type of element dropped. For example, dropping an image dragged in from another source displays it in the browser window, and dropping a link into a window navigates to it by default. We want total control of drop behavior in our demo, so we cancel any default behaviors.</p>
+    }</code></pre></figure>
+    
+<p>Once again, we start by preventing the default drop behavior and preventing the control from propagating to other handlers. The default drop event depends on the location and type of element dropped. For example, dropping an image dragged in from another source displays it in the browser window, and dropping a link into a window navigates to it by default. We want total control of drop behavior in our demo, so we cancel any default behaviors.</p>
 
 <p>Recall that our demo shows how multiple data flavors set up in the dragstart can be retrieved from a dropped element. Here, we see how that retrieval completes. By default, we get the plain text data representing the club member’s name by using the text/plain MIME format. If the user drops into the volunteers list, this is sufficient.</p>
 
@@ -581,7 +620,9 @@
         racersList.className = null;
         volunteersList.className = null;
         return false;
-    }HTML5 drag-and-dropclean up process</code></pre></figure><p>A dragend handler is called at the end of the drag, whether or not a drop actually occurred. If the user canceled the drag or completed it, the dragend handler is still called. This gives us a good place to clean up any state we changed at the beginning of the process. Not surprisingly, we reset the CSS classes of our lists to their default, unstyled state.</p>
+    }HTML5 drag-and-dropclean up process</code></pre></figure>
+    
+<p>A dragend handler is called at the end of the drag, whether or not a drop actually occurred. If the user canceled the drag or completed it, the dragend handler is still called. This gives us a good place to clean up any state we changed at the beginning of the process. Not surprisingly, we reset the CSS classes of our lists to their default, unstyled state.</p>
 
 <aside>
 <h3>Sharing Is Caring</h3>
@@ -589,7 +630,8 @@
 
 <p>Because the design of HTML5 drag-and-drop was built to mirror that of desktop capabilities, it is not surprising that it also supports sharing across applications. You can try this out by loading our example in multiple browser windows and dragging members from one source list to the racers and volunteers lists of another window. Although our simple highlighting feedback was not designed for this case, the actual drop capability works across windows and even across browsers if they support the API.”</p>
 
-</aside><p>Our drag-and-drop example is a simple one, but it illustrates the full capability of the API.</p>
+</aside>
+<p>Our drag-and-drop example is a simple one, but it illustrates the full capability of the API.</p>
 
 <section id="sec11_9">
 <h3>Getting Into the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dropzone</span></span>dropzone</h3>
@@ -597,26 +639,31 @@
 
 <p>The dropzone provides developers with a compact way to register that an element is willing to accept drops without coding up lengthy event handlers. The attribute consists of a few space-separated patterns that, when provided, allow the browser to automatically wire up the drop behavior for you (see Table <span class="internal-reference" id="ir_tab2_9">9-2</span>).
 </p>
-<table id="tab2_9">
-<thead><tr>
-<td>Token</td>
-<td>Result</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>copy, move, link</td>
-<td>Only one of the three operation types is allowed. If none is specified, copy is assumed.</td>
-</tr>
-<tr>
-<td>s:&lt;mime&gt;</td>
-<td>Using the characters s: followed by a MIME type indicates that data of that MIME type is allowed to be dropped on the element.</td>
-</tr>
-<tr>
-<td>f:&lt;mime&gt;</td>
-<td>Using the characters f: followed by a MIME type indicates that files of that MIME type are allowed to be dropped on the element.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 9-2. Tokens of the dropzone Attribute</figcaption>
+  <table id="tab2_9">
+  <thead><tr>
+  <th>Token</th>
+  <th>Result</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>copy, move, link</td>
+  <td>Only one of the three operation types is allowed. If none is specified, copy is assumed.</td>
+  </tr>
+  <tr>
+  <td>s:&lt;mime&gt;</td>
+  <td>Using the characters s: followed by a MIME type indicates that data of that MIME type is allowed to be dropped on the element.</td>
+  </tr>
+  <tr>
+  <td>f:&lt;mime&gt;</td>
+  <td>Using the characters f: followed by a MIME type indicates that files of that MIME type are allowed to be dropped on the element.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Borrowing from our example application, the racers list element could be specified as having the following attribute:</p>
 
 <pre><code>&lt;ul id="racers" dropzone=”copy s:text/plain s:text/html” <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dropzone</span></span>ondrop=”handleDrop(event)”&gt;</code></pre>
@@ -664,7 +711,7 @@
 <p>Let’s walk through a simple example of file drag-and-drop where we will show the characteristics of any file dropped onto our page, shown in Figure <span class="internal-reference" id="ir_fig5_9">9-5</span>. This code is contained in the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>fileDrag.html</tertiary></span>fileDrag.html example included with the book.
 
 </p>
-<figure id="fig5_9" class="image"><img src="images/ch9-5/fig9-5.png"><figcaption>Figure 9-5. Demo page displaying the characteristics <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>fileDrag.html</tertiary></span> of dropped files</figcaption></figure><p>The HTML for our demo is actually quite simple (see Listing 9-13).</p>
+<figure id="fig5_9" class="image"><img src="images/ch9/fig9-5.png"><figcaption>Figure 9-5. Demo page displaying the characteristics <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>fileDrag.html</tertiary></span> of dropped files</figcaption></figure><p>The HTML for our demo is actually quite simple (see Listing 9-13).</p>
 
 <figure class="listing"><figcaption>Listing 9-13. Markup for File Drop Demo</figcaption><pre><code>&lt;div id="droptarget"&gt;
 &lt;body&gt;
@@ -690,7 +737,9 @@
         setStatus("Drag files into this area.");
     }
     window.addEventListener("load", loadDemo, false);HTML5 drag-and-dropfile handlingfile drop demo
-</code></pre></figure><p>This time, the drop target receives all of the event handlers. Only a subset of handlers is needed, and we can ignore events that take place at the drag source.</p>
+</code></pre></figure>
+
+<p>This time, the drop target receives all of the event handlers. Only a subset of handlers is needed, and we can ignore events that take place at the drag source.</p>
 
 <p>When the user drags files into our drop target, we will display what we know about the drop candidates (see Listing 9-15).</p>
 
@@ -709,7 +758,9 @@
         evt.stopPropagation();
         evt.preventDefault();
         return false;
-    }</code></pre></figure><p>Although some browsers allow access to the dataTransfer files mid-drag, we will handle the case where that information is off-limits. When the count is known, we will display it in the status.</p>
+    }</code></pre></figure>
+    
+<p>Although some browsers allow access to the dataTransfer files mid-drag, we will handle the case where that information is off-limits. When the count is known, we will display it in the status.</p>
 
 <p>Handling dragover and dragleave events is straightforward (see Listing 9-16).</p>
 
@@ -725,7 +776,9 @@
         setStatus("Drag files into this area.");
         droptarget.className = "validtarget";
         return false;
-    }</code></pre></figure><p>As always, we must cancel<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>dragover and dragleave handler</tertiary></span> dragover events to allow drops to be handled by our own code rather than the browser’s default behavior, which is usually to display them inline.</p>
+    }</code></pre></figure>
+    
+<p>As always, we must cancel<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>dragover and dragleave handler</tertiary></span> dragover events to allow drops to be handled by our own code rather than the browser’s default behavior, which is usually to display them inline.</p>
 
 <p>For a dragleave, we only set the status text and style to indicate that drops are no longer valid when the mouse leaves.</p>
 
@@ -752,7 +805,9 @@
         setStatus(message);
         droptarget.className = "validtarget";
         return false;
-    }</code></pre></figure><p>As discussed previously, it is necessary to cancel the event using preventDefault so that the browser’s default drop code is never triggered.</p>
+    }</code></pre></figure>
+
+<p>As discussed previously, it is necessary to cancel the event using preventDefault so that the browser’s default drop code is never triggered.</p>
 
 <p>Then, because we have more access to data in the drop handler than during the drag, we can inspect the files attached to the dataTransfer and discover the characteristics of the dropped files. In our example, we will merely display the properties of the files, but with full use of the HTML5 File API, you can read in the contents for local display or upload them to the server powering your application.</p>
 </section>
@@ -768,13 +823,15 @@
 
 <p>However, if you need to change the default drag image display, the API provides you with a simple API for doing just that. It is only possible to change the drag image during the dragstart handler—once again due to security concerns—but you can do so easily by simply passing the element that represents the appearance of the cursor to the dataTransfer.</p>
 
-<pre><code>        var dragImage = document.getElementById("happyTrails");
-        evt.dataTransfer.setDragImage(dragImage, 5, 10);</code></pre>
+<pre><code>var dragImage = document.getElementById("happyTrails");
+evt.dataTransfer.setDragImage(dragImage, 5, 10);</code></pre>
 
 <p>Note the offset coordinates passed to the setDragImage call. These x and y coordinates tell the browser which pixel inside the image to use as the point underneath the mouse cursor. For example, by passing in the values 5 and 10 for x and y, respectively, the image will be positioned such that the cursor is 5 pixels from the left and 10 pixels from the top, as shown in Figure <span class="internal-reference" id="ir_fig6_9">9-6</span>.
 
 </p>
-<figure id="fig6_9" class="image"><img src="images/ch9-6/fig9-6.png"><figcaption>Figure 9-6. Demo page with a drag image set to the Happy Trails logo</figcaption></figure><p>The drag image does not need to be an image, <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>however. Any element can be set as the drag image; if it is not an image, the browser will create a visual snapshot of it to serve as the cursor display.</p>
+<figure id="fig6_9" class="image"><img src="images/ch9/fig9-6.png"><figcaption>Figure 9-6. Demo page with a drag image set to the Happy Trails logo</figcaption></figure>
+
+<p>The drag image does not need to be an image, <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dispaly customization</span></span>however. Any element can be set as the drag image; if it is not an image, the browser will create a visual snapshot of it to serve as the cursor display.</p>
 
 </section>
 </section>
