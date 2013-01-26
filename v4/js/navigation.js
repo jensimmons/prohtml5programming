@@ -67,6 +67,6 @@ jQuery(function () {
   output += '</li></ul></nav></div>\n';
   jQuery('body').append(jQuery(output));
         
-  var jPM = $.jPanelMenu();
+  var jPM = $.jPanelMenu( {'keyboardShortcuts': false});
   jPM.on();
 });
