@@ -158,38 +158,43 @@
 </p>
 
 <p>This page denotes all the current and future elements in an HTML page. New and changed elements are noted in the catalog list. However, “new” in this list only means that the element has been added since the HTML4 specification—not that the element is implemented in browsers or in a final specification yet. With that warning in place, let’s take a look at the new form elements<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new elements in</span></span> arriving with HTML5, starting with the ones that are being implemented today. Table <span class="internal-reference" id="ir_tab1_8">8-1</span> lists the new <code>type</code> attributes. For example, many HTML developers will be intimately familiar with <code>&lt;input type="text"&gt;</code> and <code>&lt;input type="checkbox"&gt;</code>. The new input types follow a similar model to the existing ones.</p>
-<table id="tab1_8">
-<thead><tr>
-<td>Type</td>
-<td>Purpose</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Tel</td>
-<td>Telephone number</td>
-</tr>
-<tr>
-<td>Email</td>
-<td>Email address text field</td>
-</tr>
-<tr>
-<td>url</td>
-<td>Web location URL</td>
-</tr>
-<tr>
-<td>Search</td>
-<td>Term to supply to a search engine. For example, the search bar atop a browser.</td>
-</tr>
-<tr>
-<td>Range</td>
-<td>Numeric selector within a range of values, typically visualized as a slider</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>A field containing a numeric value only</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 8-1. New HTML5 Form Elements Appearing in Browsers</figcaption>
+  <table id="tab1_8">
+  <thead><tr>
+  <th>Type</th>
+  <th>Purpose</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Tel</td>
+  <td>Telephone number</td>
+  </tr>
+  <tr>
+  <td>Email</td>
+  <td>Email address text field</td>
+  </tr>
+  <tr>
+  <td>url</td>
+  <td>Web location URL</td>
+  </tr>
+  <tr>
+  <td>Search</td>
+  <td>Term to supply to a search engine. For example, the search bar atop a browser.</td>
+  </tr>
+  <tr>
+  <td>Range</td>
+  <td>Numeric selector within a range of values, typically visualized as a slider</td>
+  </tr>
+  <tr>
+  <td>Number</td>
+  <td>A field containing a numeric value only</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>What do these new <span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">overview</span></span>input types provide? In terms of programmatic APIs… not a lot. In fact, in the case of the types for <code>tel</code>, <code>email</code>, <code>url</code>, and <code>search</code>, there are no attributes distinguishing them from the simplest input type of <code>text</code>.</p>
 
 <p>So, what do you get exactly by specifying that an input is of a specialized type? You get specialized input controls. (Restrictions may apply. Offer void in many desktop browsers.)</p>
@@ -265,57 +270,62 @@
 <p>Additional form elements<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new elements in</span></span> that are planned but not widely supported yet include the ones listed in Table <span class="internal-reference" id="ir_tab2_8">
 8-2</span>.
 </p>
-<table id="tab2_8">
-<thead><tr>
-<td>Type</td>
-<td>Purpose</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>
-Color
-</td>
-<td>Color selector, which could be represented by a wheel or swatch picker</td>
-</tr>
-<tr>
-<td>
-Datetime
-</td>
-<td>Full date and time display, including a time zone, as shown in Figure 8-3
-</td>
-</tr>
-<tr>
-<td>
-datetime-local
-</td>
-<td>Date and time display, with no setting or indication for time zones</td>
-</tr>
-<tr>
-<td>
-Time
-</td>
-<td>Time indicator and selector, with no time zone information</td>
-</tr>
-<tr>
-<td>
-Date
-</td>
-<td>Selector for calendar date</td>
-</tr>
-<tr>
-<td>
-Week
-</td>
-<td>Selector for a week within a given year</td>
-</tr>
-<tr>
-<td>
-Month
-</td>
-<td>Selector for a month within a given year</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 8-2. Future HTML5 Form Elements</figcaption>
+  <table id="tab2_8">
+  <thead><tr>
+  <th>Type</th>
+  <th>Purpose</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>
+  Color
+  </td>
+  <td>Color selector, which could be represented by a wheel or swatch picker</td>
+  </tr>
+  <tr>
+  <td>
+  Datetime
+  </td>
+  <td>Full date and time display, including a time zone, as shown in Figure 8-3
+  </td>
+  </tr>
+  <tr>
+  <td>
+  datetime-local
+  </td>
+  <td>Date and time display, with no setting or indication for time zones</td>
+  </tr>
+  <tr>
+  <td>
+  Time
+  </td>
+  <td>Time indicator and selector, with no time zone information</td>
+  </tr>
+  <tr>
+  <td>
+  Date
+  </td>
+  <td>Selector for calendar date</td>
+  </tr>
+  <tr>
+  <td>
+  Week
+  </td>
+  <td>Selector for a week within a given year</td>
+  </tr>
+  <tr>
+  <td>
+  Month
+  </td>
+  <td>Selector for a month within a given year</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Although some early<span class="index-term"><span class="primary">HTML5 Forms</span><span class="secondary">new elements in</span></span> implementations of these elements are beginning to appear in leading edge browsers (for example, the datetime display in Opera as shown in Figure <span class="internal-reference" id="ir_fig3_8">8-3</span>), we won’t focus on them in this chapter as they are likely to undergo significant change. Stay tuned to future revisions!
 
 </p>
@@ -360,14 +370,12 @@ Month
 <p>The <code>autocomplete</code> attribute should be used to protect sensitive user data from insecure storage in the local browser files. Table <span class="internal-reference" id="ir_tab3_8">8-3</span> shows the different behavior types.
 </p>
 
-<figure>
+<figure class="table">
   <figcaption>Table 8-3. Autocomplete Behavior in Input Controls</figcaption>
   <table id="tab3_8">
   <thead><tr>
-  <td>
-  Type
-  </td>
-  <td>Purpose</td>
+  <th>Type</th>
+  <th>Purpose</th>
   </tr></thead>
   <tbody>
   <tr>
@@ -905,40 +913,44 @@ evt.preventDefault();</code></pre>
 <h3>Forms Are Stylin’</h3>
 <p>In order to help developers distinguish among form controls that have specific validation characteristics, the developers of CSS have helpfully added a set of pseudo-classes that can be used to set styles on form controls based on the state of their validity. In other words, if you desire form elements on your page to change style automatically based on whether or not they are currently complying with validation (or not), you can set these style pseudo-classes in your rules. These functions are very similar to long-standing pseudo classes such as <code>:visited</code> and <code>:hover</code> on links. The following new pseudo-classes proposed for the CSS Selectors Level 4 specification can be used to select form elements:</p>
 
-Table 8-4. CSS Pseudoclasses for HTML5 Form Validation
+<figure class="table">
+  <figcaption>Table 8-4. CSS Pseudoclasses for HTML5 Form Validation</figcaption>
+  <table id="tab4_8">
+  <thead><tr>
+  <th>Type</th>
+  <th>Purpose</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>valid</td>
+  <td>This pseudo-class selects any form element that passes all validity rules. In other words, this form element has state that is ready to be submitted.</td>
+  </tr>
+  <tr>
+  <td>invalid</td>
+  <td>This pseudo-class selects any form element that has errors or problems preventing it from being submitted. Selectors with this class are useful for showing users errors on the page.</td>
+  </tr>
+  <tr>
+  <td>in-range</td>
+  <td>This pseudo-class only selects elements such as inputs of type range where the current value is safely between the minimum and maximum values.</td>
+  </tr>
+  <tr>
+  <td>out-of-range</td>
+  <td>This pseudo-class selects elements with inputs that have values outside of the accepted range.</td>
+  </tr>
+  <tr>
+  <td>required</td>
+  <td>Any elements that have been marked as required will be selected by this pseudo-class.</td>
+  </tr>
+  <tr>
+  <td>optional</td>
+  <td>Form elements that are not marked as required fall into this pseudo-class. Only form elements fit this category.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
 
-<table id="tab4_8">
-<thead><tr>
-<td>Type</td>
-<td>Purpose</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>valid</td>
-<td>This pseudo-class selects any form element that passes all validity rules. In other words, this form element has state that is ready to be submitted.</td>
-</tr>
-<tr>
-<td>invalid</td>
-<td>This pseudo-class selects any form element that has errors or problems preventing it from being submitted. Selectors with this class are useful for showing users errors on the page.</td>
-</tr>
-<tr>
-<td>in-range</td>
-<td>This pseudo-class only selects elements such as inputs of type range where the current value is safely between the minimum and maximum values.</td>
-</tr>
-<tr>
-<td>out-of-range</td>
-<td>This pseudo-class selects elements with inputs that have values outside of the accepted range.</td>
-</tr>
-<tr>
-<td>required</td>
-<td>Any elements that have been marked as required will be selected by this pseudo-class.</td>
-</tr>
-<tr>
-<td>optional</td>
-<td>Form elements that are not marked as required fall into this pseudo-class. Only form elements fit this category.</td>
-</tr>
-</tbody>
-</table>
+
+
 
 <p>With these pseudo-classes, it is easy to mark form controls in a page with visual styling that changes as the form elements themselves adjust. For example, to show all invalid form elements with a red background, you can simply use the CSS rule:</p>
 
