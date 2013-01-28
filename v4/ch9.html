@@ -50,7 +50,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
+    <script src="js/code_listings_ch9.js" type="text/javascript"></script>
     <script src="js/toc.js"></script>  
 
 
@@ -303,7 +303,7 @@
 <h3>Transfer and Control</h3>
 <p>Before we move into our example, let’s assess the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>transfer and control</tertiary></span> <code>dataTransfer</code> object in more detail. The <code>dataTransfer</code> is available from every drag-and-drop event, as shown in Listing 9-1.</p>
 
-<figure class="listing"><figcaption>Listing 9-1. Retrieving the dataTransfer Object</figcaption><pre><code>Function handleDrag(evt) {
+<figure class="listing"><figcaption>Listing 9-1. Retrieving the dataTransfer Object</figcaption><pre><code data-cm-mode="text/javascript">Function handleDrag(evt) {
     var transfer = evt.dataTransfer;
     // …
 }</code></pre></figure>
@@ -365,23 +365,24 @@
 
 <p>First, let’s look at the markup for the page. At the top, we’ve declared the data on our club members (see Listing 9-2).</p>
 
-<figure class="listing"><figcaption>Listing 9-2. Markup Displaying <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">draggable member names and ages</span></span> Draggable Member Names and Ages</figcaption><pre><code>&lt;p&gt;Drag members to either the Racers or Volunteers list.&lt;/p&gt;
+<figure class="listing"><figcaption>Listing 9-2. Markup Displaying <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">draggable member names and ages</span></span> Draggable Member Names and Ages</figcaption><pre><code data-cm-mode="text/html">&lt;p&gt;Drag members to either the Racers or Volunteers list.&lt;/p&gt;
+  
 &lt;ul id="members"&gt;
-&lt;li draggable="true" data-age="38"&gt;Brian Albers&lt;/li&gt;
-&lt;li draggable="true" data-age="25"&gt;Frank Salim&lt;/li&gt;
-&lt;li draggable="true" data-age="47"&gt;Jennifer Clark&lt;/li&gt;
-&lt;li draggable="true" data-age="18"&gt;John Kemble&lt;/li&gt;
-&lt;li draggable="true" data-age="20"&gt;Lorraine Gaunce&lt;/li&gt;
-&lt;li draggable="true" data-age="30"&gt;Mark Wang&lt;/li&gt;
-&lt;li draggable="true" data-age="41"&gt;Morgan Stephen&lt;/li&gt;
-&lt;li draggable="true" data-age="39"&gt;Peter Lubbers&lt;/li&gt;
-&lt;li draggable="true" data-age="33"&gt;Vanessa Combs&lt;/li&gt;
-&lt;li draggable="true" data-age="54"&gt;Vivian Lopez&lt;/li&gt;
+  &lt;li draggable="true" data-age="38"&gt;Brian Albers&lt;/li&gt;
+  &lt;li draggable="true" data-age="25"&gt;Frank Salim&lt;/li&gt;
+  &lt;li draggable="true" data-age="47"&gt;Jennifer Clark&lt;/li&gt;
+  &lt;li draggable="true" data-age="18"&gt;John Kemble&lt;/li&gt;
+  &lt;li draggable="true" data-age="20"&gt;Lorraine Gaunce&lt;/li&gt;
+  &lt;li draggable="true" data-age="30"&gt;Mark Wang&lt;/li&gt;
+  &lt;li draggable="true" data-age="41"&gt;Morgan Stephen&lt;/li&gt;
+  &lt;li draggable="true" data-age="39"&gt;Peter Lubbers&lt;/li&gt;
+  &lt;li draggable="true" data-age="33"&gt;Vanessa Combs&lt;/li&gt;
+  &lt;li draggable="true" data-age="54"&gt;Vivian Lopez&lt;/li&gt;
 &lt;/ul&gt;</code></pre></figure><p>As you can see, each of the<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">draggable member names and ages</span></span> member list elements is marked as <code>draggable</code>. This tells the browser to let drags start on each of them. The next thing you’ll notice is that the age of a given member is encoded as a data attribute. The data- notation is a standard way to store non-standard attributes on an HTML element.</p>
 
 <p>Our next section contains the target lists (see Listing 9-3).</p>
 
-<figure class="listing"><figcaption>Listing 9-3. Markup for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">drop list target</span></span> Drop List Targets</figcaption><pre><code>&lt;div class="dropList"&gt;
+<figure class="listing"><figcaption>Listing 9-3. Markup for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">drop list target</span></span> Drop List Targets</figcaption><pre><code data-cm-mode="text/html">&lt;div class="dropList"&gt;
 &lt;fieldset id="racersField"&gt;
 &lt;legend&gt;Racers (by Age):&lt;/legend&gt;
 &lt;ul id="racers"&gt;&lt;/ul&gt;
@@ -398,14 +399,14 @@
 
 <p>Speaking of feedback, there are a few CSS styles in our page that are important to note (see Listing 9-4).</p>
 
-<figure class="listing"><figcaption>Listing 9-4. Styles for Drag-and-Drop <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">demo, styles for</span></span> Demo</figcaption><pre><code>#members li {
-    cursor: move;
+<figure class="listing"><figcaption>Listing 9-4. Styles for Drag-and-Drop <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">demo, styles for</span></span> Demo</figcaption><pre><code data-cm-mode="text/css">#members li {
+  cursor: move;
 }
 .highlighted {
-    background-color: yellow;
+  background-color: yellow;
 }
 .validtarget {
-    background-color: lightblue;
+  background-color: lightblue;
 }</code></pre></figure>
 
 <p>First, we make sure that every member in our source list shows a move cursor. This gives a hint to the user that the items are draggable.</p>
@@ -414,14 +415,15 @@
 
 <p>To keep track of the state on our page, we’ll declare a few variables (see Listing 9-5).</p>
 
-<figure class="listing"><figcaption>Listing 9-5. List Item <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">variable declaration</span></span> Declarations</figcaption><pre><code>    // these arrays hold the names of the members who are
-    // chosen to be racers and volunteers, respectively
-    var racers = [];
-    var volunteers = [];
-    // these variables store references to the visible
-    // elements for displaying who is a racer or volunteer
-    var racersList;
-    var volunteersList;</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-5. List Item <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">variable declaration</span></span> Declarations</figcaption><pre><code data-cm-mode="text/javascript">// these arrays hold the names of the members who are
+// chosen to be racers and volunteers, respectively
+var racers = [];
+var volunteers = [];
+
+// these variables store references to the visible
+// elements for displaying who is a racer or volunteer
+var racersList;
+var volunteersList;</code></pre></figure>
     
     <p>The first two variables will serve as internal arrays, which keep track of which members are in the racers and volunteers lists.</p>
 
@@ -430,34 +432,38 @@
 <p>Now, let’s set all of our page items up to handle drag-and-drop (see Listing 9-6).</p>
 
 <figure class="listing"><figcaption>Listing 9-6. Event Handler Registration <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event handler registration</span></span>
-</figcaption><pre><code>    function loadDemo() {
-       racersList = document.getElementById("racers");
-       volunteersList = document.getElementById("volunteers");
-       // our target lists get handlers for drag enter, leave, and drop
-       var lists = [racersList, volunteersList];
-       [].forEach.call(lists, function(list) {
-           list.addEventListener("dragenter", handleDragEnter, false);
-           list.addEventListener("dragleave", handleDragLeave, false);
-           list.addEventListener("drop", handleDrop, false);
-       });
-       // each target list gets a particular dragover handler
-       racersList.addEventListener("dragover", handleDragOverRacers, false);
-       volunteersList.addEventListener("dragover", handleDragOverVolunteers, false);
-       // the fieldsets around our lists serve as buffers for resetting
-       // the style during drag over
-       var fieldsets = document.querySelectorAll("#racersField, #volunteersField");
-       [].forEach.call(fieldsets, function(fieldset) {
-           fieldset.addEventListener("dragover", handleDragOverOuter, false);
-       });
-       // each draggable member gets a handler for drag start and end
-       var members = document.querySelectorAll("#members li");
-       [].forEach.call(members, function(member) {HTML5 drag-and-dropevent handler registration
+</figcaption><pre><code>function loadDemo() {
+  racersList = document.getElementById("racers");
+  volunteersList = document.getElementById("volunteers");
+  
+  // our target lists get handlers for drag enter, leave, and drop
+  var lists = [racersList, volunteersList];
+  [].forEach.call(lists, function(list) {
+    list.addEventListener("dragenter", handleDragEnter, false);
+    list.addEventListener("dragleave", handleDragLeave, false);
+    list.addEventListener("drop", handleDrop, false);
+  });
+  
+  // each target list gets a particular dragover handler
+  racersList.addEventListener("dragover", handleDragOverRacers, false);
+  volunteersList.addEventListener("dragover", handleDragOverVolunteers, false);
+  
+  // the fieldsets around our lists serve as buffers for resetting
+  // the style during drag over
+  var fieldsets = document.querySelectorAll("#racersField, #volunteersField");
+  [].forEach.call(fieldsets, function(fieldset) {
+    fieldset.addEventListener("dragover", handleDragOverOuter, false);
+  });
+  
+  // each draggable member gets a handler for drag start and end
+  var members = document.querySelectorAll("#members li");
+  [].forEach.call(members, function(member) {HTML5 drag-and-dropevent handler registration
+    member.addEventListener("dragstart", handleDragStart, false);
+    member.addEventListener("dragend", handleDragEnd, false);
+  });
+}
 
-           member.addEventListener("dragstart", handleDragStart, false);
-           member.addEventListener("dragend", handleDragEnd, false);
-       });
-    }
-    window.addEventListener("load", loadDemo, false);</code></pre></figure>
+window.addEventListener("load", loadDemo, false);</code></pre></figure>
     
 <p>When the window initially loads, we call a loadDemo function to set up all of our drag-and-drop event handlers. Most of them don’t need event capture, and we will set the capture argument accordingly.</p>
 
@@ -477,21 +483,25 @@
 
 <p>Now, we’ll go through the actual event handlers in turn, based on the order in which they generally fire (see Listing 9-7).</p>
 
-<figure class="listing"><figcaption>Listing 9-7. dragstart Event Handler</figcaption><pre><code>    // called at the beginning of any drag
-    function handleDragStart(evt) {
-        // our drag only allows copy operations
-        evt.effectAllowed = "copy";
-        // the target of a drag start is one of our members
-        // the data for a member is either their name or age
-        evt.dataTransfer.setData("text/plain", evt.target.textContent);
-        evt.dataTransfer.setData("text/html", evt.target.dataset.age);
-        // highlight the potential drop targets
-        racersList.className = "validtarget";
-        volunteersList.className = "validtarget";
-        return true;
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-7. dragstart Event Handler</figcaption><pre><code>// called at the beginning of any drag
+function handleDragStart(evt) {
+  
+  // our drag only allows copy operations
+  evt.effectAllowed = "copy";
+  
+  // the target of a drag start is one of our members
+  // the data for a member is either their name or age
+  evt.dataTransfer.setData("text/plain", evt.target.textContent);
+  evt.dataTransfer.setData("text/html", evt.target.dataset.age);
+  
+  // highlight the potential drop targets
+  racersList.className = "validtarget";
+  volunteersList.className = "validtarget";
+  
+  return true;
+}</code></pre></figure>
     
-    <p>The handler for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragstart handler</span></span>dragstart is called on the draggable item where the users begin the operation. It is a somewhat special handler, as it sets up the capabilities of the entire process. First, we set the effectAllowed, which tells the browser that only copies are allowed when dragging from this element—no moves or links.</p>
+<p>The handler for <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragstart handler</span></span>dragstart is called on the draggable item where the users begin the operation. It is a somewhat special handler, as it sets up the capabilities of the entire process. First, we set the effectAllowed, which tells the browser that only copies are allowed when dragging from this element—no moves or links.</p>
 
 <p>Next, we preload all of the possible flavors of data that might be requested at the end of a successful drop. Naturally, we want to support a text version of our element, so we set the MIME type text/plain to return the text inside our draggable node, (i.e., the club member’s name).</p>
 
@@ -503,16 +513,17 @@
 
 <p>Our next handlers will process events as the dragged item enters and leaves elements on the page (see Listing 9-8).</p>
 
-<figure class="listing"><figcaption>Listing 9-8. dragenter and dragleave Event Handlers</figcaption><pre><code>    // stop propagation and prevent default drag behavior
-    // to show that our target lists are valid drop targets
-    function handleDragEnter(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        return false;
-    }
-    function handleDragLeave(evt) {
-        return false;
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-8. dragenter and dragleave Event Handlers</figcaption><pre><code>// stop propagation and prevent default drag behavior
+// to show that our target lists are valid drop targets
+function handleDragEnter(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  return false;
+}
+
+function handleDragLeave(evt) {
+  return false;
+}</code></pre></figure>
     
 <p>The <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragleave and dragenter</span></span>dragleave event is not used by our demo, and we handle it purely for illustrative purposes.</p>
 
@@ -520,20 +531,23 @@
 
 <p>Next, we will look at the dragover handlers (see Listing 9-9). Recall that these fire at regular intervals whenever the drag hovers over the elements in question.</p>
 
-<figure class="listing"><figcaption>Listing 9-9. dragover Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragover Handler</span></span> for Outer Container</figcaption><pre><code>    // for better drop feedback, we use an event for dragging
-    // over the surrounding control as a flag to turn off
-    // drop highlighting
-    function handleDragOverOuter(evt) {
-        // due to Mozilla firing drag over events to
-        // parents from nested children, we check the id
-        // before handling
-        if (evt.target.id == "racersField")
-          racersList.className = "validtarget";
-        else if (evt.target.id == "volunteersField")
-          volunteersList.className = "validtarget";
-        evt.stopPropagation();
-        return false;
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-9. dragover Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragover Handler</span></span> for Outer Container</figcaption><pre><code data-cm-mode="text/javascript">// for better drop feedback, we use an event for dragging
+// over the surrounding control as a flag to turn off
+// drop highlighting
+function handleDragOverOuter(evt) {
+  
+  // due to Mozilla firing drag over events to
+  // parents from nested children, we check the id
+  // before handling
+  if (evt.target.id == "racersField")
+    racersList.className = "validtarget";
+    
+  else if (evt.target.id == "volunteersField")
+    volunteersList.className = "validtarget";
+    
+  evt.stopPropagation();
+  return false;
+}</code></pre></figure>
     
 <p>Our first of three dragover handlers will be used only to adjust the drag feedback. Recall that it is difficult to detect when a drag has left a target, such as our intended racers and volunteers lists. Therefore, we use a drag movement over the fieldsets surrounding the lists to indicate that the drag has exited the vicinity of the lists. This allows us to turn off the drop highlighting on the lists accordingly.</p>
 
@@ -541,22 +555,25 @@
 
 <p>Finally, we stop propagation of the event to any other handlers in the page. We don’t want any other handlers to override our logic. In the next two dragover handlers, we take a different approach (see Listing 9-10).</p>
 
-<figure class="listing"><figcaption>Listing 9-10. dragover Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragover Handler</span></span> for Target Lists</figcaption><pre><code>    // if the user drags over our list, show
-    // that it allows copy and highlight for better feedback
-    function handleDragOverRacers(evt) {
-        evt.dataTransfer.dropEffect = "copy";
-        evt.stopPropagation();
-        evt.preventDefault();
-        racersList.className = "highlighted";
-        return false;
-    }
-    function handleDragOverVolunteers(evt) {
-        evt.dataTransfer.dropEffect = "copy";
-        evt.stopPropagation();
-        evt.preventDefault();
-        volunteersList.className = "highlighted";
-        return false;
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-10. dragover Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">dragover Handler</span></span> for Target Lists</figcaption><pre><code data-cm-mode="text/javascript">// if the user drags over our list, show
+// that it allows copy and highlight for better feedback
+function handleDragOverRacers(evt) {
+  evt.dataTransfer.dropEffect = "copy";
+  evt.stopPropagation();
+  evt.preventDefault();
+  
+  racersList.className = "highlighted";
+  return false;
+}
+
+function handleDragOverVolunteers(evt) {
+  evt.dataTransfer.dropEffect = "copy";
+  evt.stopPropagation();
+  evt.preventDefault();
+  
+  volunteersList.className = "highlighted";
+  return false;
+}</code></pre></figure>
     
 <p>These two handlers, while somewhat verbose, are listed in full to clarify our demo. The first handles dragover events in the racers list, and the second handles dragover events identically in the volunteers list.</p>
 
@@ -568,41 +585,48 @@
 
 <p>The main work of the drag-and-drop is done in the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">drop handler</span></span>drop handler, which we examine next in Listing 9-11.</p>
 
-<figure class="listing"><figcaption>Listing 9-11. Drop Handler for Target Lists</figcaption><pre><code>    // when the user drops on a target list, transfer the data
-    function handleDrop(evt) {
-        evt.preventDefault();
-        evt.stopPropagation();
-        var dropTarget = evt.target;
-        // use the text flavor to get the name of the dragged item
-        var text = evt.dataTransfer.getData("text/plain");
-        var group = volunteers;
-        var list = volunteersList;
-        // if the drop target list was the racer list, grab an extra
-        // flavor of data representing the member age and prepend it
-        if ((dropTarget.id != "volunteers") &amp;&amp;
-            (dropTarget.parentNode.id != "volunteers")) {
-            text = evt.dataTransfer.getData("text/html") + ": " + text;
-            group = racers;
-            list = racersList;
-        }
-        // for simplicity, fully clear the old list and reset it
-        if (group.indexOf(text) == -1) {
-            group.push(text);
-            group.sort();
-            // remove all old children
-            while (list.hasChildNodes()) {
-                list.removeChild(list.lastChild);
-            }
-            // push in all new children
-            [].forEach.call(group, function(person) {
-                var newChild = document.createElement("li");
-                newChild.textContent = person;
-                list.appendChild(newChild);
-            });
-        }
-        return false;HTML5 drag-and-dropdrop handler
-
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-11. Drop Handler for Target Lists</figcaption><pre><code>// when the user drops on a target list, transfer the data
+function handleDrop(evt) {
+  evt.preventDefault();
+  evt.stopPropagation();
+  
+  var dropTarget = evt.target;
+  
+  // use the text flavor to get the name of the dragged item
+  var text = evt.dataTransfer.getData("text/plain");
+  
+  var group = volunteers;
+  var list = volunteersList;
+  
+  // if the drop target list was the racer list, grab an extra
+  // flavor of data representing the member age and prepend it
+  if ((dropTarget.id != "volunteers") &amp;&amp;
+    (dropTarget.parentNode.id != "volunteers")) {
+    text = evt.dataTransfer.getData("text/html") + ": " + text;
+    group = racers;
+    list = racersList;
+  }
+  
+  // for simplicity, fully clear the old list and reset it
+  if (group.indexOf(text) == -1) {
+    group.push(text);
+    group.sort();
+    
+    // remove all old children
+    while (list.hasChildNodes()) {
+        list.removeChild(list.lastChild);
+    }
+    
+    // push in all new children
+    [].forEach.call(group, function(person) {
+        var newChild = document.createElement("li");
+        newChild.textContent = person;
+        list.appendChild(newChild);
+    });
+  }
+  
+  return false;
+}</code></pre></figure>
     
 <p>Once again, we start by preventing the default drop behavior and preventing the control from propagating to other handlers. The default drop event depends on the location and type of element dropped. For example, dropping an image dragged in from another source displays it in the browser window, and dropping a link into a window navigates to it by default. We want total control of drop behavior in our demo, so we cancel any default behaviors.</p>
 
@@ -614,13 +638,14 @@
 
 <p>Regardless of whether or not the user completed the drag-and-drop, we need a dragend handler to clean up (see Listing 9-12).</p>
 
-<figure class="listing"><figcaption>Listing 9-12. dragend Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">clean up process</span></span> for Clean Up</figcaption><pre><code>    // make sure to clean up any drag operation
-    function handleDragEnd(evt) {
-        // restore the potential drop target styles
-        racersList.className = null;
-        volunteersList.className = null;
-        return false;
-    }HTML5 drag-and-dropclean up process</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-12. dragend Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">clean up process</span></span> for Clean Up</figcaption><pre><code data-cm-mode="text/javascript">    // make sure to clean up any drag operation
+function handleDragEnd(evt) {
+      
+  // restore the potential drop target styles
+  racersList.className = null;
+  volunteersList.className = null;
+  return false;
+}</code></pre></figure>
     
 <p>A dragend handler is called at the end of the drag, whether or not a drop actually occurred. If the user canceled the drag or completed it, the dragend handler is still called. This gives us a good place to clean up any state we changed at the beginning of the process. Not surprisingly, we reset the CSS classes of our lists to their default, unstyled state.</p>
 
@@ -713,30 +738,30 @@
 </p>
 <figure id="fig5_9" class="image"><img src="images/ch9/fig9-5.png"><figcaption>Figure 9-5. Demo page displaying the characteristics <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>fileDrag.html</tertiary></span> of dropped files</figcaption></figure><p>The HTML for our demo is actually quite simple (see Listing 9-13).</p>
 
-<figure class="listing"><figcaption>Listing 9-13. Markup for File Drop Demo</figcaption><pre><code>&lt;div id="droptarget"&gt;
-&lt;body&gt;
+<figure class="listing"><figcaption>Listing 9-13. Markup for File Drop Demo</figcaption><pre><code data-cm-mode="text/html">&lt;body&gt;
+&lt;div id="droptarget"&gt;
 &lt;div id="status"&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/body&gt;</code></pre></figure><p>We have only two elements in the page. A drop target where files will be dropped and a status display area.</p>
 
 <p>As with our last example, we will register drag-and-drop event handlers during page load (see Listing 9-14).</p>
 
-<figure class="listing"><figcaption>Listing 9-14. Loading and Initialization <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>file drop demo</tertiary></span> Code for File Drop Demo</figcaption><pre><code>    var droptarget;
-    // set the status text in our display
-    function setStatus(text) {
-        document.getElementById("status").innerHTML = text;
-    }
-    // …
-    function loadDemo() {
-        droptarget = document.getElementById("droptarget");
-        droptarget.className = "validtarget";
-        droptarget.addEventListener("dragenter", handleDragEnter, false);
-        droptarget.addEventListener("dragover", handleDragOver, false);
-        droptarget.addEventListener("dragleave", handleDragLeave, false);
-        droptarget.addEventListener("drop", handleDrop, false);
-        setStatus("Drag files into this area.");
-    }
-    window.addEventListener("load", loadDemo, false);HTML5 drag-and-dropfile handlingfile drop demo
+<figure class="listing"><figcaption>Listing 9-14. Loading and Initialization <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>file drop demo</tertiary></span> Code for File Drop Demo</figcaption><pre><code data-cm-mode="text/javascript">var droptarget;
+// set the status text in our display
+function setStatus(text) {
+  document.getElementById("status").innerHTML = text;
+}
+// …
+function loadDemo() {
+  droptarget = document.getElementById("droptarget");
+  droptarget.className = "validtarget";
+  droptarget.addEventListener("dragenter", handleDragEnter, false);
+  droptarget.addEventListener("dragover", handleDragOver, false);
+  droptarget.addEventListener("dragleave", handleDragLeave, false);
+  droptarget.addEventListener("drop", handleDrop, false);
+  setStatus("Drag files into this area.");
+}
+window.addEventListener("load", loadDemo, false);
 </code></pre></figure>
 
 <p>This time, the drop target receives all of the event handlers. Only a subset of handlers is needed, and we can ignore events that take place at the drag source.</p>
@@ -744,39 +769,39 @@
 <p>When the user drags files into our drop target, we will display what we know about the drop candidates (see Listing 9-15).</p>
 
 <figure class="listing"><figcaption>Listing 9-15. File Drop Drag Enter Handler <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>file drop drag</tertiary></span>
-</figcaption><pre><code>    // handle drag events in the drop target
-    function handleDragEnter(evt) {
-        // if the browser supports accessing the file
-        // list during drag, we display the file count
-        var files = evt.dataTransfer.files;
-        if (files)
-            setStatus("There are " + evt.dataTransfer.files.length +
-                " files in this drag.");
-        else
-            setStatus("There are unknown items in this drag.");
-        droptarget.className = "highlighted";
-        evt.stopPropagation();
-        evt.preventDefault();
-        return false;
-    }</code></pre></figure>
+</figcaption><pre><code>// handle drag events in the drop target
+function handleDragEnter(evt) {
+  // if the browser supports accessing the file
+  // list during drag, we display the file count
+  var files = evt.dataTransfer.files;
+  if (files)
+    setStatus("There are " + evt.dataTransfer.files.length + 
+          " files in this drag.");
+  else
+    setStatus("There are unknown items in this drag.");
+  droptarget.className = "highlighted";
+  evt.stopPropagation();
+  evt.preventDefault();
+  return false;
+}</code></pre></figure>
     
 <p>Although some browsers allow access to the dataTransfer files mid-drag, we will handle the case where that information is off-limits. When the count is known, we will display it in the status.</p>
 
 <p>Handling dragover and dragleave events is straightforward (see Listing 9-16).</p>
 
-<figure class="listing"><figcaption>Listing 9-16. File Drop dragover and dragleave Handlers</figcaption><pre><code>    // preventing the default dragover behavior
-    // is necessary for successful drops
-    function handleDragOver(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        return false;
-    }
-    // reset the text and status when drags leave
-    function handleDragLeave(evt) {
-        setStatus("Drag files into this area.");
-        droptarget.className = "validtarget";
-        return false;
-    }</code></pre></figure>
+<figure class="listing"><figcaption>Listing 9-16. File Drop dragover and dragleave Handlers</figcaption><pre><code data-cm-mode="text/javascript">// preventing the default dragover behavior
+// is necessary for successful drops
+function handleDragOver(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  return false;
+}
+// reset the text and status when drags leave
+function handleDragLeave(evt) {
+  setStatus("Drag files into this area.");
+  droptarget.className = "validtarget";
+  return false;
+}</code></pre></figure>
     
 <p>As always, we must cancel<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>dragover and dragleave handler</tertiary></span> dragover events to allow drops to be handled by our own code rather than the browser’s default behavior, which is usually to display them inline.</p>
 
@@ -784,28 +809,28 @@
 
 <p>The bulk of our work is done in the drop handler (see Listing 9-17).</p>
 
-<figure class="listing"><figcaption>Listing 9-17. File Drop Handler</figcaption><pre><code>    // handle the drop of files
-    function handleDrop(evt) {
-        // cancel the event to prevent viewing the file
-        evt.preventDefault();
-        evt.stopPropagation();
-        var filelist = evt.dataTransfer.files;
-        var message = "There were " + filelist.length + " files dropped.";
-        // show a detail list for each file in the drag
-        message += "&lt;ol&gt;";
-        [].forEach.call(filelist, function(file) {
-            message += "&lt;li&gt;";
-            message += "&lt;strong&gt;" + file.name + "&lt;/strong&gt; ";
-            message += "(&lt;em&gt;" + file.type + "&lt;/em&gt;) : ";
-            message += "size: " + file.size + " bytes - ";
-            message += "modified: " + file.lastModifiedDate;
-            message += "&lt;/li&gt;";
-        });
-        message += "&lt;/ol&gt;";
-        setStatus(message);
-        droptarget.className = "validtarget";
-        return false;
-    }</code></pre></figure>
+<figure class="listing" data-listing="9-17" data-preview-height="300"><figcaption>Listing 9-17. File Drop Handler</figcaption><pre><code data-cm-mode="text/html">// handle the drop of files
+function handleDrop(evt) {
+  // cancel the event to prevent viewing the file
+  evt.preventDefault();
+  evt.stopPropagation();
+  var filelist = evt.dataTransfer.files;
+  var message = "There were " + filelist.length + " files dropped.";
+  // show a detail list for each file in the drag
+  message += "&lt;ol&gt;";
+  [].forEach.call(filelist, function(file) {
+    message += "&lt;li&gt;";
+    message += "&lt;strong&gt;" + file.name + "&lt;/strong&gt; ";
+    message += "(&lt;em&gt;" + file.type + "&lt;/em&gt;) : ";
+    message += "size: " + file.size + " bytes - ";
+    message += "modified: " + file.lastModifiedDate;
+    message += "&lt;/li&gt;";
+  });
+  message += "&lt;/ol&gt;";
+  setStatus(message);
+  droptarget.className = "validtarget";
+  return false;
+}</code></pre></figure>
 
 <p>As discussed previously, it is necessary to cancel the event using preventDefault so that the browser’s default drop code is never triggered.</p>
 
