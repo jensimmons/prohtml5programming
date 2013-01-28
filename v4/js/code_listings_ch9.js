@@ -1,7 +1,7 @@
 inlineEditors = inlineEditors || {};
 inlineEditors.codeListings = {
   '9-17': {
-    'title': 'Diagonal line example',
+    'title': 'Drag and Drop File Example',
     'code': '<!DOCTYPE html>\n' +
             '<html>\n' +
             '<head>\n' +

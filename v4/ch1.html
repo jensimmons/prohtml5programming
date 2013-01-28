@@ -34,7 +34,7 @@
       (function () {
         "use strict";
         window.ISBNOnline = '978-1-4302-3865-2';
-        window.chapterID = x;
+        window.chapterID = 1;
       })();
 
     </script>
@@ -50,7 +50,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <script src="js/code_listings_ch3.js"></script>
+    <script src="js/code_listings_ch1.js"></script>
     <script src="js/toc.js"></script>  
 
 
@@ -403,48 +403,53 @@ ID="prohtml5"</code></pre>
 <h3>New and Deprecated Elements</h3>
 <p>HTML5 introduces many new markup elements<span class="index-term"><span class="primary">HTML5</span><span class="secondary">markup elements</span></span>, which it groups into seven different content types. These are shown below in Table <span class="internal-reference" id="ir_tab1_1">1-1</span>.
 </p>
-<table id="tab1_1">
-<thead><tr>
-<td>Content Type</td>
-<td>Description</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Embedded</td>
-<td>ContentEmbedded content type that imports other resources into the document, for example audio, video, canvas, and iframe</td>
-</tr>
-<tr>
-<td>FlowFlow content type
-</td>
-<td>Elements used in the body of documents and applications, for example form, h1, and small</td>
-</tr>
-<tr>
-<td>HeadingHeading content type
-</td>
-<td>Section headers, for example h1, h2, and hgroup</td>
-</tr>
-<tr>
-<td>InteractiveInteractive content type
-</td>
-<td>Content that users interact with, for example audio or video controls, button, and textarea</td>
-</tr>
-<tr>
-<td>MetadataMetadata content type
-</td>
-<td>Elements—commonly found in the head section— that set up the presentation or behavior of the rest of the document, for example script, style, and title</td>
-</tr>
-<tr>
-<td>PhrasingPhrasing content type
-</td>
-<td>Text and text markup elements, for example mark, kbd, sub, and sup</td>
-</tr>
-<tr>
-<td>SectioningSectioning content type
-</td>
-<td>Elements that define sections in the document, for example article, aside, and title</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 1-1. HTML5 Content Types</figcaption>
+  <table id="tab1_1">
+  <thead><tr>
+  <th>Content Type</th>
+  <th>Description</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Embedded</td>
+  <td>ContentEmbedded content type that imports other resources into the document, for example audio, video, canvas, and iframe</td>
+  </tr>
+  <tr>
+  <td>FlowF
+  </td>
+  <td>Elements used in the body of documents and applications, for example form, h1, and small</td>
+  </tr>
+  <tr>
+  <td>Heading
+  </td>
+  <td>Section headers, for example h1, h2, and hgroup</td>
+  </tr>
+  <tr>
+  <td>Interactive
+  </td>
+  <td>Content that users interact with, for example audio or video controls, button, and textarea</td>
+  </tr>
+  <tr>
+  <td>Metadata
+  </td>
+  <td>Elements—commonly found in the head section— that set up the presentation or behavior of the rest of the document, for example script, style, and title</td>
+  </tr>
+  <tr>
+  <td>Phrasing
+  </td>
+  <td>Text and text markup elements, for example mark, kbd, sub, and sup</td>
+  </tr>
+  <tr>
+  <td>Sectioning
+  </td>
+  <td>Elements that define sections in the document, for example article, aside, and title</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Most of these elements can be styled with CSS. In addition, some of them, such as <code>canvas</code>, <code>audio</code>, and <code>video</code>, can be used by themselves, though they are accompanied by APIs that allow for fine-grained native programmatic control. These APIs will be discussed in much more detail later in this book.</p>
 
 <p>It is beyond the scope of this book to discuss all these new elements, but most of the sectioning elements (discussed in the next section) are new. The <code>canvas</code>, <code>audio</code>, and <code>video</code> elements are also new in HTML5.</p>
@@ -459,53 +464,61 @@ ID="prohtml5"</code></pre>
 
 <p>As we said before, HTML5 is all about paving the cow paths. Google and Opera millions of pages to discover the common ID names for <code>DIV</code> tags and found a huge amount of repetition. For example, since many people used <code>DIV id="footer"</code> to mark up footer content, HTML5 provides a set of new sectioning elements that you can use in modern browsers right now. Table <span class="internal-reference" id="ir_tab2_1">1-2</span> shows the different semantic markup elements.
 </p>
-<table id="tab2_1">
-<thead><tr>
-<td>Sectioning Element</td>
-<td>Description</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>header</td>
-<td>Header content (for a page or a section of the page)</td>
-</tr>
-<tr>
-<td>footer</td>
-<td>Footer content (for a page or a section of the page)</td>
-</tr>
-<tr>
-<td>section</td>
-<td>A section in a web page</td>
-</tr>
-<tr>
-<td>article</td>
-<td>Independent article content</td>
-</tr>
-<tr>
-<td>aside</td>
-<td>Related content or pull quotes</td>
-</tr>
-<tr>
-<td>nav</td>
-<td>Navigational aids</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 1-2. New Sectioning HTML5 Elements</figcaption>
+  <table id="tab2_1">
+  <thead><tr>
+  <th>Sectioning Element</th>
+  <th>Description</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>header</td>
+  <td>Header content (for a page or a section of the page)</td>
+  </tr>
+  <tr>
+  <td>footer</td>
+  <td>Footer content (for a page or a section of the page)</td>
+  </tr>
+  <tr>
+  <td>section</td>
+  <td>A section in a web page</td>
+  </tr>
+  <tr>
+  <td>article</td>
+  <td>Independent article content</td>
+  </tr>
+  <tr>
+  <td>aside</td>
+  <td>Related content or pull quotes</td>
+  </tr>
+  <tr>
+  <td>nav</td>
+  <td>Navigational aids</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>All of these elements can be styled with CSS. In fact, as we described in the utility design principle earlier, HTML5 pushes the separation of content and presentation, so you have to style your page using CSS styles in HTML5. Listing 1-1 shows what an HTML5 page<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>HTML5 page, CSS styles</tertiary></span> might look like. It uses the new <code>DOCTYPE</code>, character set, and semantic markup elements—in short, the new sectioning content. The code file ( <code>sample.html</code>) is available in the <code>code/intro</code> folder.</p>
 
-<figure class="listing"><figcaption>Listing 1-1. An Example HTML5 Page</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing"><figcaption>Listing 1-1. An Example HTML5 Page</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
+
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
   &lt;title&gt;HTML5&lt;/title&gt;
   &lt;link rel="stylesheet" href="html5.css"&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
    &lt;header&gt;
      &lt;h1&gt;Header&lt;/h1&gt;
      &lt;h2&gt;Subtitle&lt;/h2&gt;
      &lt;h4&gt;HTML5 Rocks!&lt;/h4&gt;
    &lt;/header&gt;
+   
     &lt;div id="container"&gt;
         &lt;nav&gt;
           &lt;h3&gt;Nav&lt;/h3&gt;
@@ -546,147 +559,171 @@ ID="prohtml5"</code></pre>
         &lt;/footer&gt;
  &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt; </code></pre></figure><p>Without styles, the page would be pretty dull to look at. Listing 1-2 shows some of the CSS code that can be used to style the content. The code file ( <code>html5.css</code>) is available in the <code>code/intro</code> folder. This style sheet uses some of the new CSS3 features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span>, such as rounded corners ( <code>border-radius</code>) and rotate transformations ( <code>transform: rotate();</code>). CSS3—just like HTML5 itself—is still under development, and it is modularized with subspecifications for easier browser uptake (for example, transformation, animation, and transition are all areas that are in separate subspecifications).</p>
+&lt;/html&gt; </code></pre></figure>
+
+<p>Without styles, the page would be pretty dull to look at. Listing 1-2 shows some of the CSS code that can be used to style the content. The code file ( <code>html5.css</code>) is available in the <code>code/intro</code> folder. This style sheet uses some of the new CSS3 features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span>, such as rounded corners ( <code>border-radius</code>) and rotate transformations ( <code>transform: rotate();</code>). CSS3—just like HTML5 itself—is still under development, and it is modularized with subspecifications for easier browser uptake (for example, transformation, animation, and transition are all areas that are in separate subspecifications).</p>
 
 <p>Experimental CSS3 features<span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span> are prefixed with vendor strings to avoid namespace conflicts should the specifications change. To display rounded corners, gradients, shadows, and transformations, it is currently necessary to use prefixes such as <code>-moz-</code> (for Mozilla), <code>o-</code> (for Opera), <code>-webkit-</code> (for WebKit-based browsers such as Safari and Chrome), and <code>-ms-</code> (for Internet Explorer) in your declarations.</p>
 
-<figure class="listing"><figcaption>Listing 1-2. CSS File for the HTML5 Page</figcaption><pre><code>body {
-        background-color:#CCCCCC;
-        font-family:Geneva,Arial,Helvetica,sans-serif;
-        margin: 0px auto;
-        max-width:900px;
-        border:solid;
-        border-color:#FFFFFF;
+<figure class="listing" data-listing="1-2" data-preview-height="600"><figcaption>Listing 1-2. CSS File for the HTML5 Page</figcaption><pre><code data-cm-mode="text/css">body {
+  background-color:#CCCCCC;
+  font-family:Geneva,Arial,Helvetica,sans-serif;
+  margin: 0px auto;
+  max-width:900px;
+  border:solid;
+  border-color:#FFFFFF;
 }
+
 header {
-        background-color: #F47D31;
-        display:block;
-        color:#FFFFFF;
-        text-align:center;
+  background-color: #F47D31;
+  display:block;
+  color:#FFFFFF;
+  text-align:center;
 }
+
 header h2 {
-        margin: 0px;
+  margin: 0px;
 }
+
 h1 {
-        font-size: 72px;
-        margin: 0px;
+  font-size: 72px;
+  margin: 0px;
 }
+
 h2 {
-        font-size: 24px;
-        margin: 0px;
-        text-align:center;
-        color: #F47D31;
+  font-size: 24px;
+  margin: 0px;
+  text-align:center;
+  color: #F47D31;
 }
+
 h3 {
-        font-size: 18px;
-        margin: 0px;
-        text-align:center;
-        color: #F47D31;
+  font-size: 18px;
+  margin: 0px;
+  text-align:center;
+  color: #F47D31;
 }
+
 h4 {
-        color: #F47D31;
-        background-color: #fff;
-        -webkit-box-shadow: 2px 2px 20px #888;
-        -webkit-transform: rotate(-45 deg);
-        -moz-box-shadow: 2px 2px 20px #888;
-        -moz-transform: rotate(-45 deg);
-        position: absolute;
-        padding: 0px 150px;
-        top: 50px;
-        left: -120px;
-        text-align:center;
+  color: #F47D31;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 20px #888;
+  -webkit-transform: rotate(-45 deg);
+  -moz-box-shadow: 2px 2px 20px #888;
+  -moz-transform: rotate(-45 deg);
+  position: absolute;
+  padding: 0px 150px;
+  top: 50px;
+  left: -120px;
+  text-align:center;
 }
+
 nav {
-        display:block;
-        width:25%;
-        float:left;
-}HTML5semantic markupCSS3 features, HTML5 page
+  display:block;
+  width:25%;
+  float:left;
+}
+
 nav a:link, nav a:visited {
-        display: block;
-        border-bottom: 3px solid #fff;
-        padding: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 5px;
+  display: block;
+  border-bottom: 3px solid #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
 }
+
 nav a:hover {
-        color: white;
-        background-color: #F47D31;
+  color: white;
+  background-color: #F47D31;
 }
+
 nav h3 {
-        margin: 15px;
-        color: white;
+  margin: 15px;
+  color: white;
 }
+
 #container {
-        background-color: #888;
+  background-color: #888;
 }
+
 section {
-        display:block;
-        width:50%;
-        float:left;
+  display:block;
+  width:50%;
+  float:left;
 }
+
 article {
-        background-color: #eee;
-        display:block;
-        margin: 10px;
-        padding: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: 2px 2px 20px #888;
-        -webkit-transform: rotate(-10 deg);
-        -moz-box-shadow: 2px 2px 20px #888;
-        -moz-transform: rotate(-10 deg);
+  background-color: #eee;
+  display:block;
+  margin: 10px;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 20px #888;
+  -webkit-transform: rotate(-10 deg);
+  -moz-box-shadow: 2px 2px 20px #888;
+  -moz-transform: rotate(-10 deg);
 }
+
 article header {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        padding: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px;
 }
+
 article footer {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        padding: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px;
 }
+
 article h1 {
-        font-size: 18px;
+  font-size: 18px;
 }
+
 aside {
-        display:block;
-        width:25%;
-        float:left;
-}HTML5semantic markupCSS3 features, HTML5 page
+  display:block;
+  width:25%;
+  float:left;
+}
 
 aside h3 {
-        margin: 15px;
-        color: white;
+  margin: 15px;
+  color: white;
 }
+
 aside p {
-        margin: 15px;
-        color: white;
-        font-weight: bold;
-        font-style: italic;
+  margin: 15px;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
 }
+
 footer {
-        clear: both;
-        display: block;
-        background-color: #F47D31;
-        color:#FFFFFF;
-        text-align:center;
-        padding: 15px;
+  clear: both;
+  display: block;
+  background-color: #F47D31;
+  color:#FFFFFF;
+  text-align:center;
+  padding: 15px;
 }
+
 footer h2 {
-        font-size: 14px;
-        color: white;
+  font-size: 14px;
+  color: white;
 }
+
 /* links */
 a {
-        color: #F47D31;
+  color: #F47D31;
 }
+
 a:hover {
-        text-decoration: underline;
+  text-decoration: underline;
 }</code></pre></figure><p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span><tertiary>CSS3 features, HTML5 page</tertiary></span>Figure <span class="internal-reference" id="ir_fig2_1">1-2</span> <span class="index-term"><span class="primary">HTML5</span><span class="secondary">semantic markup</span></span>shows an example of the page in Listing 1-1, styled with CSS (and some CSS3) styles. Keep in mind, however, that there is no such thing as a typical HTML5 page. Anything goes, really, and this example uses many of the new tags mainly for purposes of demonstration.
 
 </p>
@@ -697,57 +734,67 @@ a:hover {
 <h3>Simplifying Selection Using the Selectors API</h3>
 <p>Along with the new semantic elements, HTML5 also introduces new simple ways to find elements in your page DOM. <span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span><tertiary>JavaScript methods</tertiary></span>Table <span class="internal-reference" id="ir_tab3_1">1-3</span> shows the previous versions of the document object allowed developers to make a few calls to find specific elements in the page.
 </p>
-<table id="tab3_1">
-<thead><tr>
-<td>Function</td>
-<td>Description</td>
-<td>Example</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>getElementById()getElementById() function
-</td>
-<td>Returns the element with the specified id attribute value</td>
-<td>&lt;div id="foo"&gt;  getElementById("foo");</td>
-</tr>
-<tr>
-<td>getElementsByName()getElementsByName() function
-</td>
-<td>Returns all elements whose name attribute has the specified value</td>
-<td>&lt;input type="text" name="foo"&gt;getElementsByName("foo");</td>
-</tr>
-<tr>
-<td>getElementsByTagName()getElementsByTagName() function
-</td>
-<td>Return all elements whose tag name matches the specified value</td>
-<td>&lt;input type="text"&gt;getElementsByTagName("input");</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 1-3. Previous JavaScript Methods to Find Elements</figcaption>
+  <table id="tab3_1">
+  <thead><tr>
+  <th>Function</th>
+  <th>Description</th>
+  <th>Example</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>getElementById()
+  </td>
+  <td>Returns the element with the specified id attribute value</td>
+  <td>&lt;div id="foo"&gt;  getElementById("foo");</td>
+  </tr>
+  <tr>
+  <td>getElementsByName()
+  </td>
+  <td>Returns all elements whose name attribute has the specified value</td>
+  <td>&lt;input type="text" name="foo"&gt;getElementsByName("foo");</td>
+  </tr>
+  <tr>
+  <td>getElementsByTagName()
+  </td>
+  <td>Return all elements whose tag name matches the specified value</td>
+  <td>&lt;input type="text"&gt;getElementsByTagName("input");</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>With the new Selectors API, there are now more precise ways to specify which elements you would like to retrieve without resorting to looping and iterating through a document using standard DOM. The Selectors API exposes the same selector rules present in CSS as a means to find one or more elements in the page. For example, CSS already has handy rules for selecting elements based on their nesting, sibling, and child patterns. The most recent versions of CSS add support for more pseudo-classes—for example, whether an object is enabled, disabled, or checked—and just about any combination of properties and hierarchy you could imagine. To select elements in your DOM using CSS rules, simply utilize one of the functions shown in Table <span class="internal-reference" id="ir_tab4_1">1-4</span>.
 </p>
-<table id="tab4_1">
-<thead><tr>
-<td>Function</td>
-<td>Description</td>
-<td>Example</td>
-<td>Result</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>querySelector()querySelector() function</td>
-<td>Return the first element in the page which matches the specified selector rules(s)</td>
-<td>document.querySelector("input.error");</td>
-<td>Return the first input field with a style class of “error”</td>
-</tr>
-<tr>
-<td>querySelectorAll()querySelectorAll() function</td>
-<td>Returns all elements which match the specified rule or rules</td>
-<td>document.querySelectorAll("#results td");</td>
-<td>Return any table cells inside the element with id results</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 1-4. New QuerySelector Methods</figcaption>
+  <table id="tab4_1">
+  <thead><tr>
+  <th>Function</th>
+  <th>Description</th>
+  <th>Example</th>
+  <th>Result</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>querySelector()</td>
+  <td>Return the first element in the page which matches the specified selector rules(s)</td>
+  <td>document.querySelector("input.error");</td>
+  <td>Return the first input field with a style class of “error”</td>
+  </tr>
+  <tr>
+  <td>querySelectorAll()</td>
+  <td>Returns all elements which match the specified rule or rules</td>
+  <td>document.querySelectorAll("#results td");</td>
+  <td>Return any table cells inside the element with id results</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span><tertiary>QuerySelector methods</tertiary></span>It is also possible to send more than one selector rule to the Selector API functions, for example:</p>
 
 <pre><code>// select the first element in the document with the
@@ -759,8 +806,9 @@ var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
 
 <p>The new Selector API makes it easy to select sections of the document that were painful to track before. Assume, for example, that you wanted the ability to find whichever cell of a table currently had the mouse hovering over it. Listing 1-3 shows how this is trivially easy with a selector. The example files for this ( <code>querySelector.html</code> and <code>querySelectorAll.html</code>) are located in the <code>code/intro</code> directory.</p>
 
-<figure class="listing"><figcaption>Listing 1-3. Using the Selector API <span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span></span></figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="1-3" data-preview-height="400"><figcaption>Listing 1-3. Using the Selector API <span class="index-term"><span class="primary">HTML5</span><span class="secondary">API selector</span></span></figcaption><pre><code data-cm-mode="text/html" data-bold="44,45">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
+
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
   &lt;title&gt;Query Selector Demo&lt;/title&gt;
@@ -770,15 +818,18 @@ var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
       border-width: 1px;
       font-size: 300%;
     }
+    
     td:hover {
       background-color: cyan;
     }
+    
     #hoverResult {
       color: green;
       font-size: 200%;
     }
   &lt;/style&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
   &lt;section&gt;
     &lt;!-- create a table with a 3 by 3 cell display --&gt;
@@ -802,7 +853,7 @@ var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
         // find the table cell currently hovered in the page
         var hovered = document.querySelector("td:hover");
         if (hovered)
-           document.getElementById("hoverResult").innerHTML = hovered.innerHTML;
+          document.getElementById("hoverResult").innerHTML = hovered.innerHTML;
       }
     &lt;/script&gt;
   &lt;/section&gt;
@@ -851,49 +902,54 @@ var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
 
 <p>The action pretty much began when Adobe donated its just-in-time (JIT) compilation engine<span class="index-term"><span class="primary">Just-in-time (JIT) compilation engine</span></span> and virtual machine for ECMAScript—code named Tamarin—to the Mozilla project in 2006. Although only pieces of the Tamarin technology<span class="index-term"><span class="primary">Tamarin technology</span></span> remain in the latest versions of Mozilla, the donation of Tamarin helped spawn new scripting engines in each of the browsers, with names that are just as intriguing as the performance they claim.
 </p>
-<table id="tab5_1">
-<thead><tr>
-<td>Browser</td>
-<td>Engine Name</td>
-<td>Notes</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Apple SafariApple Safari
-</td>
-<td>NitroNitro engine (otherwise know as SquirrelFish ExtremeSquirrelFish Extreme engine)</td>
-<td>Released in Safari 4 and refined in version 5, it introduces byte code optimizations and a context-threaded native compiler.</td>
-</tr>
-<tr>
-<td>Google ChromeGoogle Chrome
-</td>
-<td>V8V8 engine
-</td>
-<td>Since Chrome 2, it uses generational garbage collection for high memory scalability without interruptions.</td>
-</tr>
-<tr>
-<td>Microsoft Internet ExplorerMicrosoft Internet Explorer
-</td>
-<td>ChakraChakra engine
-</td>
-<td>Introduced in IE 9, Chakra focuses on background compilation and an efficient type system and demonstrates a tenfold improvement over IE8.</td>
-</tr>
-<tr>
-<td>Mozilla FirefoxMozilla Firefox
-</td>
-<td>JägerMonkeyJägerMonkey engine
-</td>
-<td>Refined from version 3.5, this combines fast interpretation with native compilation from trace trees.</td>
-</tr>
-<tr>
-<td>OperaOpera browser
-</td>
-<td>CarakanCarakan engine
-</td>
-<td>This one uses register-based byte code and selective native compilation and claims improvements of 75% on version 10.50.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 1-5. Web Browser JavaScript Engines</figcaption>
+  <table id="tab5_1">
+  <thead><tr>
+  <th>Browser</th>
+  <th>Engine Name</th>
+  <th>Notes</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Apple Safari
+  </td>
+  <td>Nitro (otherwise know as SquirrelFish Extreme)</td>
+  <td>Released in Safari 4 and refined in version 5, it introduces byte code optimizations and a context-threaded native compiler.</td>
+  </tr>
+  <tr>
+  <td>Google Chrome
+  </td>
+  <td>V8
+  </td>
+  <td>Since Chrome 2, it uses generational garbage collection for high memory scalability without interruptions.</td>
+  </tr>
+  <tr>
+  <td>Microsoft Internet Explorer
+  </td>
+  <td>Chakra
+  </td>
+  <td>Introduced in IE 9, Chakra focuses on background compilation and an efficient type system and demonstrates a tenfold improvement over IE8.</td>
+  </tr>
+  <tr>
+  <td>Mozilla Firefox
+  </td>
+  <td>JägerMonkey
+  </td>
+  <td>Refined from version 3.5, this combines fast interpretation with native compilation from trace trees.</td>
+  </tr>
+  <tr>
+  <td>Opera
+  </td>
+  <td>Carakan
+  </td>
+  <td>This one uses register-based byte code and selective native compilation and claims improvements of 75% on version 10.50.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p><span class="index-term"><span class="primary">HTML5</span><span class="secondary">Web browser JavaScript engines</span></span>All in all, this healthy competition among browser vendors is bringing the performance of JavaScript ever closer to that of native desktop application code.</p>
 
 <aside>
