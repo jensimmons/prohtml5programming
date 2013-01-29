@@ -34,7 +34,7 @@
       (function () {
         "use strict";
         window.ISBNOnline = '978-1-4302-3865-2';
-        window.chapterID = x;
+        window.chapterID = 5;
       })();
 
     </script>
@@ -50,7 +50,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <script src="js/code_listings_ch3.js"></script>
+    <script src="js/code_listings_ch5.js"></script>
     <script src="js/toc.js"></script>  
 
 
@@ -125,11 +125,13 @@
 <p>Degree Minute Second (DMS) format (for example, 39° 10' 20')</p>
 </li>
 </ul>
+
 <aside>
 <h3>Note</h3>
 <p>When you use the Geolocation API, coordinates are always returned in the decimal format.</p>
+</aside>
 
-</aside><p>In addition to latitude and longitude coordinates, Geolocation always provides the <em>accuracy</em> of the location coordinates. Additional metadata <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>latitude and longitude coordinates</tertiary></span>may also be provided, depending on the device that your browser is running on. These include <em>altitude</em>, <em>altitudeAccuracy</em>, <em>heading</em>, and <em>speed</em>. If this additional metadata is not available it will be returned as a null value.</p></section>
+<p>In addition to latitude and longitude coordinates, Geolocation always provides the <em>accuracy</em> of the location coordinates. Additional metadata <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>latitude and longitude coordinates</tertiary></span>may also be provided, depending on the device that your browser is running on. These include <em>altitude</em>, <em>altitudeAccuracy</em>, <em>heading</em>, and <em>speed</em>. If this additional metadata is not available it will be returned as a null value.</p></section>
 
 <section id="sec4_5">
 <h3>Where Does Location Information Come From?</h3>
@@ -141,7 +143,9 @@
 
 <p>Then, I asked my sons, Sean and Rocky, to browse to the same page on their iPhones (using the same Wi-Fi network). In Safari, it looked like they were located in Marysville, California—a town that is located 30 miles from Sacramento. Go figure!”</p>
 
-</aside><p>A device can use any of the following sources:
+</aside>
+
+<p>A device can use any of the following sources:
 </p>
 <ul>
 <li>
@@ -169,22 +173,27 @@
 <h3>IP Address Geolocation Data</h3>
 <p>In the past, IP address–based<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>IP address-based</tertiary></span><span class="index-term"><span class="primary">IP address-based geolocation data</span></span> geolocation was the only way to get a possible location, but the returned locations often proved unreliable. IP address–based geolocation works by automatically looking up a user’s IP address and then retrieving the registrant's physical address. Therefore, if you have an ISP that provides you with an IP address, your location is often resolved to the physical address of your service provider that could be miles away. Table <span class="internal-reference" id="ir_tab1_5">5-1</span> shows the pros and cons of IP address–based geolocation data.
 </p>
-<table id="tab1_5">
-<thead><tr>
-<td>Pros</td>
-<td>Cons</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Available everywhere</td>
-<td>Not very accurate (wrong many times, but also accurate only to the city level)</td>
-</tr>
-<tr>
-<td>Processed on the server side</td>
-<td>Can be a costly operation</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 5-1. Pros and Cons of IP Address–based Geolocation Data</figcaption>
+  <table id="tab1_5">
+  <thead><tr>
+  <th>Pros</th>
+  <th>Cons</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Available everywhere</td>
+  <td>Not very accurate (wrong many times, but also accurate only to the city level)</td>
+  </tr>
+  <tr>
+  <td>Processed on the server side</td>
+  <td>Can be a costly operation</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Many websites advertise based on IP address locations. You can see this in action when you travel to another country and suddenly see advertisements for local services (based on the IP address of the country or region you are visiting).</p></section>
 
 <section id="sec6_5">
@@ -193,85 +202,117 @@
 
 <p>Because it can take a long time to get a GPS location fix, you might want to query for the user’s location asynchronously. To show your application’s users that a fix is being acquired, you can add a status bar. Table <span class="internal-reference" id="ir_tab2_5">5-2</span> shows the pros and cons of GPS–based geolocation data.
 </p>
-<table id="tab2_5">
-<thead><tr>
-<td>Pros</td>
-<td>Cons</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Very accurate</td>
-<td>It can take a long time getting a location fix, which can drain a user’s device’s batteries</td>
-</tr>
-<tr>
-<td></td>
-<td>Does not work well indoors</td>
-</tr>
-<tr>
-<td></td>
-<td>May require additional hardware</td>
-</tr>
-</tbody>
-</table></section><section id="sec7_5">
+
+<figure class="table">
+  <figcaption>Table 5-2. Pros and Cons of GPS–based Geolocation Data</figcaption>
+  <table id="tab2_5">
+  <thead><tr>
+  <th>Pros</th>
+  <th>Cons</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Very accurate</td>
+  <td>It can take a long time getting a location fix, which can drain a user’s device’s batteries</td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>Does not work well indoors</td>
+  </tr>
+  <tr>
+  <td></td>
+  <td>May require additional hardware</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+</section><section id="sec7_5">
 <h3>Wi-Fi Geolocation Data</h3>
 <p>Wi-Fi–based geolocation<span class="index-term"><span class="primary">Wi-Fi geolocation data</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">Wi-Fi–based geolocation data</span></span> information is acquired by triangulating the location based on the user's distance from a number of known Wi-Fi access points, mostly in urban areas. Unlike GPS, Wi-Fi is very accurate indoors as well as in urban areas. Table <span class="internal-reference" id="ir_tab3_5">5-3</span> shows the pros and cons of Wi-Fi–based geolocation data.
 </p>
-<table id="tab3_5">
-<thead><tr>
-<td>Pros</td>
-<td>Cons</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Accurate</td>
-<td>Not good in rural areas with few wireless access points</td>
-</tr>
-<tr>
-<td>Works indoors</td>
-<td></td>
-</tr>
-<tr>
-<td>Can get fix quickly and cheaply</td>
-<td></td>
-</tr>
-</tbody>
-</table></section><section id="sec8_5">
+
+<figure class="table">
+  <figcaption>Table 5-3. Pros and Cons of Wi-Fi–based Geolocation Data</figcaption>
+  <table id="tab3_5">
+  <thead><tr>
+  <th>Pros</th>
+  <th>Cons</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Accurate</td>
+  <td>Not good in rural areas with few wireless access points</td>
+  </tr>
+  <tr>
+  <td>Works indoors</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>Can get fix quickly and cheaply</td>
+  <td></td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+</section><section id="sec8_5">
 <h3>Cell Phone Geolocation Data</h3>
 <p>Cell phone–based geolocation<span class="index-term"><span class="primary">Cell phone geolocation data</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>cell phone data</tertiary></span> information is acquired by triangulating the location based on the user's distance from a number of cell phone towers. This method provides a general location result that is fairly accurate. This method is often used in combination with Wi-Fi– and GPS–based geolocation information. Table <span class="internal-reference" id="ir_tab4_5">5-4</span> shows the pros and cons of cell phone–based geolocation data.
 </p>
-<table id="tab4_5">
-<thead><tr>
-<td>Pros</td>
-<td>Cons</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Fairly accurate</td>
-<td>Requires a device with access to a cell phone or cell modem</td>
-</tr>
-<tr>
-<td>Works indoors</td>
-<td>Not good in rural areas with fewer cell phone towers</td>
-</tr>
-<tr>
-<td>Can get fix quickly and cheaply</td>
-<td></td>
-</tr>
-</tbody>
-</table></section><section id="sec9_5">
+
+<figure class="table">
+  <figcaption>Table 5-4. Pros and Cons of Cell Phone–based Geolocation Data</figcaption>
+  <table id="tab4_5">
+  <thead><tr>
+  <th>Pros</th>
+  <th>Cons</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Fairly accurate</td>
+  <td>Requires a device with access to a cell phone or cell modem</td>
+  </tr>
+  <tr>
+  <td>Works indoors</td>
+  <td>Not good in rural areas with fewer cell phone towers</td>
+  </tr>
+  <tr>
+  <td>Can get fix quickly and cheaply</td>
+  <td></td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+</section><section id="sec9_5">
 <h3>User–Defined Geolocation Data</h3>
 <p>Instead of programmatically<span class="index-term"><span class="primary">User-defined geolocation data</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>user-defined data</tertiary></span> figuring out where the user is, you can also allow users to define their location themselves. An application may allow users to enter their address, ZIP code, or some other details; your application can then use that information to provide location-aware services. Table <span class="internal-reference" id="ir_tab5_5">5-5</span> shows the pros and cons of user–defined geolocation data.
 </p>
-<table id="tab5_5">
-<thead><tr>
-<td>Pros</td>
-<td>Cons</td>
-</tr></thead>
-<tbody><tr>
-<td>Users may have more accurate location data than programmatic services Allows geolocation services for alternate locations User entry might be faster than detection</td>
-<td>Can also be very inaccurate, especially if the location changes</td>
-</tr></tbody>
-</table></section></section><section id="sec10_5">
+
+<figure class="table">
+  <figcaption>Table 5-5. Pros and Cons of User–defined Geolocation Data</figcaption>
+  <table id="tab5_5">
+  <thead><tr>
+  <th>Pros</th>
+  <th>Cons</th>
+  </tr></thead>
+  <tbody><tr>
+  <td>Users may have more accurate location data than programmatic services</td>
+  <td>Can also be very inaccurate, especially if the location changes</td>
+  </tr>
+  <tr>
+  <td>Allows geolocation services for alternate locations</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>User entry might be faster than detection</td>
+  <td></td>
+  </tr></tbody>
+  </table>
+</figure>
+
+</section></section><section id="sec10_5">
 <h2>Browser Support for Geolocation</h2>
 <p><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">browser support for</span></span>Geolocation was one of the first HTML5 features to be fully embraced and implemented, and it is available in all the major browsers now. For a complete overview of the current browser support, including mobile support, refer to <code>http://caniuse.com</code> and search for Geolocation.</p>
 
@@ -283,7 +324,9 @@
 
 <p>This makes sense and addresses the “big brother” concerns users often raise about Geolocation applications. However, as you can see from some of the possible use cases for HTML 5 Geolocation applications, there is usually an incentive for the user to share this information. For example, users might be OK with sharing their location if this could let them know about a rare 50% discount on a pair of running shoes that are ready to be picked up in a store located just a few blocks away from where they happen to be drinking coffee. Let’s take a closer look at the browser and device privacy architecture shown in Figure <span class="internal-reference" id="ir_fig1_5">5-1</span>.
 </p>
-<figure id="fig1_5" class="image"><img src="images/ch5/fig5-1.jpg"><figcaption>Figure 5-1. Geolocation browser and device privacy architecture</figcaption></figure><p>The following steps are shown in the diagram:</p>
+<figure id="fig1_5" class="image"><img src="images/ch5/fig5-1.jpg"><figcaption>Figure 5-1. Geolocation browser and device privacy architecture</figcaption></figure>
+
+<p>The following steps are shown in the diagram:</p>
 <ol>
 <li>
 <p>A user navigates to a location-aware application in the browser.</p>
@@ -298,20 +341,27 @@
 <p>The browser sends these coordinates to a trusted external location service, which returns location coordinates that can now <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>be sent back to the host of the Geolocation application.</p>
 </li>
 </ol>
+
 <aside>
-<h3>n Important</h3>
+<h3>Important</h3>
 <p>The application does <em>not</em> have direct access to the device; it can only query the browser to access the device on its behalf.</p>
 
-</aside><section id="sec12_5">
+</aside>
+
+<section id="sec12_5">
 <h3>Triggering the Privacy Protection Mechanism</h3>
 <p>When you access a web page that<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>privacy protection mechanism</tertiary></span> uses the Geolocation API, the privacy protection mechanism should kick in. Figure <span class="internal-reference" id="ir_fig2_5">5-2</span> shows what this looks like in Firefox.
 
 </p>
 <figure id="fig2_5" class="image"><img src="images/ch5/fig5-2.png"><figcaption>Figure 5-2. The notification bar is triggered in Firefox when the Geolocation API is used.
-</figcaption></figure><p>The mechanism is triggered when the Geolocation code is executed. Simply adding Geolocation code that is not called anywhere (for example, in an onload method) does not do anything. If, however, the Geolocation code is executed, for example, in a call to navigator.geolocation.getCurrentPosition (explained in more detail later on), the user is prompted to share their location with the application. Figure <span class="internal-reference" id="ir_fig3_5">5-3</span> shows what happens on Safari, running on an iPhone.
+</figcaption></figure>
+
+<p>The mechanism is triggered when the Geolocation code is executed. Simply adding Geolocation code that is not called anywhere (for example, in an onload method) does not do anything. If, however, the Geolocation code is executed, for example, in a call to navigator.geolocation.getCurrentPosition (explained in more detail later on), the user is prompted to share their location with the application. Figure <span class="internal-reference" id="ir_fig3_5">5-3</span> shows what happens on Safari, running on an iPhone.
 
 </p>
-<figure id="fig3_5" class="image"><img src="images/ch5/fig5-3.png"><figcaption>Figure 5-3. The notification dialog box is triggered in Safari when the Geolocation API is used.</figcaption></figure><p>Apart from providing the necessary mechanism to request permission to share your location, some implementations (Firefox, for example) also allow you to remember the permission granted to the site for the next time you enter. This is similar to how<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>privacy protection mechanism</tertiary></span> you can remember passwords for certain sites in your browser.</p>
+<figure id="fig3_5" class="image"><img src="images/ch5/fig5-3.png"><figcaption>Figure 5-3. The notification dialog box is triggered in Safari when the Geolocation API is used.</figcaption></figure>
+
+<p>Apart from providing the necessary mechanism to request permission to share your location, some implementations (Firefox, for example) also allow you to remember the permission granted to the site for the next time you enter. This is similar to how<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>privacy protection mechanism</tertiary></span> you can remember passwords for certain sites in your browser.</p>
 
 <aside>
 <h3>Note</h3>
@@ -353,10 +403,12 @@
   if(navigator.geolocation) {
     document.getElementById("support").innerHTML = "Geolocation supported.";
 } else {
-     document.getElementById("support").innerHTML = "Geolocation is not supported in
+    document.getElementById("support").innerHTML = "Geolocation is not supported in
                                         your browser.";
-    }
-}</code></pre></figure><p>In this example, you test for browser support in the loadDemo function, which might be called when the application’s page is loaded. A call to navigator.geolocation (you can also use Modernizr) will return the Geolocation object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined support element on the page with a suitable message.</p></section>
+  }
+}</code></pre></figure>
+
+<p>In this example, you test for browser support in the loadDemo function, which might be called when the application’s page is loaded. A call to navigator.geolocation (you can also use Modernizr) will return the Geolocation object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined support element on the page with a suitable message.</p></section>
 
 <section id="sec16_5">
 <h3>Position Requests</h3>
@@ -374,7 +426,9 @@
 
 <figure class="listing"><figcaption>Listing 5-2. One-Shot Position Request</figcaption><pre><code>void getCurrentPosition(in PositionCallback successCallback,
                  in optional PositionErrorCallback errorCallback,
-                 in optional PositionOptions options);</code></pre></figure><p>Let’s take a look at this core function call in more detail.</p>
+                 in optional PositionOptions options);</code></pre></figure>
+                 
+<p>Let’s take a look at this core function call in more detail.</p>
 
 <p>First, this is a function that is available on the navigator.geolocation object, so you will need to have already retrieved this object in your script. As noted previously, make sure that you have a good fallback handler if your browser does not support Geolocation.</p>
 
