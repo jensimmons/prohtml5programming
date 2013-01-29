@@ -50,7 +50,7 @@
     <script src="codemirror/mode/css/css.js"></script>
     <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script src="js/code_editor.js"></script>
-    <script src="js/code_listings_ch2.js"></script>
+    <script src="js/code_listings_ch4.js"></script>
     <script src="js/toc.js"></script> 
     
     <!-- For iPhone 4 -->
@@ -174,34 +174,39 @@
 <h3>Browser Support for Audio and Video</h3>
 <p>Due to the fractured codec support, simply knowing which browsers support the new <code>audio</code><span class="index-term"><span class="primary">audio element</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">browser support for</span></span> and <code>video</code> elements is not enough; you also need to know which codecs are supported. Table <span class="internal-reference" id="ir_tab1_4">4-1</span> shows which browsers support which codecs at the time of this writing.
 </p>
-<table id="tab1_4">
-<thead><tr>
-<td>Browser</td>
-<td>Codec and Container Support</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Chrome</td>
-<td>Ogg (Theora and Vorbis)WebM (VP8 and Vorbis)MPEG 4 (H.264 and AAC)</td>
-</tr>
-<tr>
-<td>Firefox</td>
-<td>Ogg (Theora and Vorbis)WebM (VP8 and Vorbis)</td>
-</tr>
-<tr>
-<td>Internet Explorer</td>
-<td>MPEG 4 (H.264 and AAC)</td>
-</tr>
-<tr>
-<td>Opera</td>
-<td>Ogg (Theora and Vorbis)WebM (VP8 and Vorbis)</td>
-</tr>
-<tr>
-<td>Safari</td>
-<td>MPEG 4 (H.264 and AAC)</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-1. Audio and Video Codec and Container Support</figcaption>
+  <table id="tab1_4">
+  <thead><tr>
+  <th>Browser</th>
+  <th>Codec and Container Support</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Chrome</td>
+  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)<br />MPEG 4 (H.264 and AAC)</td>
+  </tr>
+  <tr>
+  <td>Firefox</td>
+  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
+  </tr>
+  <tr>
+  <td>Internet Explorer</td>
+  <td>MPEG 4 (H.264 and AAC)</td>
+  </tr>
+  <tr>
+  <td>Opera</td>
+  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
+  </tr>
+  <tr>
+  <td>Safari</td>
+  <td>MPEG 4 (H.264 and AAC)</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Note also that Google announced it will drop support for the MP4 format, but that has not happened yet. Also, there is a plugin that can be used to play WebM in Internet Explorer 9. It is always good idea to first test whether audio and video are supported. The section “Checking for Browser Support” later in this chapter will show you how you can programmatically check for browser support.</p>
 
 </section>
@@ -228,16 +233,20 @@
 
 <p>Alternatively, you can choose to include alternate content between your <code>audio</code> or <code>video</code> tags, and the alternate content will display in place of the unsupported tag. This alternate content can be used for a Flash plugin to display the same video if the browser doesn’t support the HTML5 tags. If you merely wish to display a text message for nonsupporting browsers, it is quite easy to add content inside the <code>video</code> or <code>audio</code> elements as shown in Listing 4-1.</p>
 
-<figure class="listing"><figcaption>Listing 4-1. Simple Video Element</figcaption><pre><code>&lt;video src="video.webm" controls&gt;
+<figure class="listing"><figcaption>Listing 4-1. Simple Video Element</figcaption><pre><code data-cm-mode="text/html">&lt;video src="video.webm" controls&gt;
   Your browser does not support HTML5 video.
-&lt;/video&gt;</code></pre></figure><p>However, if you choose to use an alternative method to render video for browsers without HTML5 media support, you can use the same element content section to provide a reference to an external plugin displaying the same media as shown in Listing 4-2.</p>
+&lt;/video&gt;</code></pre></figure>
 
-<figure class="listing"><figcaption>Listing 4-2. Video Element with Flash Fallback</figcaption><pre><code>&lt;video src="video.webm" controls&gt;
+<p>However, if you choose to use an alternative method to render video for browsers without HTML5 media support, you can use the same element content section to provide a reference to an external plugin displaying the same media as shown in Listing 4-2.</p>
+
+<figure class="listing"><figcaption>Listing 4-2. Video Element with Flash Fallback</figcaption><pre><code data-cm-mode="text/html">&lt;video src="video.webm" controls&gt;
   &lt;object data="videoplayer.swf" type="application/x-shockwave-flash"&gt;
     &lt;param name="movie" value="video.swf"/&gt;
   &lt;/object&gt;
   Your browser does not support HTML5 video.
-&lt;/video&gt;</code></pre></figure><p>By embedding an <code>object</code> element that displays a Flash video<span class="index-term"><span class="primary">Flash video</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Flash</span></span> inside the <code>video</code> element, the HTML5 video will be preferred if it is available, and the Flash video will be used as a fallback. Unfortunately, this requires multiple versions of the video to be served up<span class="index-term"><span class="primary">audio element</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">browser support for</span></span> until HTML5 support is ubiquitous.</p>
+&lt;/video&gt;</code></pre></figure>
+
+<p>By embedding an <code>object</code> element that displays a Flash video<span class="index-term"><span class="primary">Flash video</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Flash</span></span> inside the <code>video</code> element, the HTML5 video will be preferred if it is available, and the Flash video will be used as a fallback. Unfortunately, this requires multiple versions of the video to be served up<span class="index-term"><span class="primary">audio element</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">browser support for</span></span> until HTML5 support is ubiquitous.</p>
 </section>
 
 <section id="sec10_4">
@@ -247,12 +256,16 @@
 <p>The emerging standard for video accessibility<span class="index-term"><span class="primary">video</span><span class="secondary">accessibility</span></span> is Web Video Text Tracks (WebVTT)<span class="index-term"><span class="primary">Web Video Text Tracks (WebVTT)</span></span>, formerly known as Web SubRip Text (WebSRT) format. At the time of this writing, it is only just starting to appear in some early builds of browsers. WebVTT uses a simple text file (<code>*.vtt</code>) that starts with the word <code>WEBVTT</code> on the first line. The <code>vtt</code> file must be served up with the mime type <code>text/vtt</code>. Listing 4-3 shows the contents of an example <code>vtt</code> file.</p>
 
 <figure class="listing"><figcaption>Listing 4-3. WebVTT File</figcaption><pre><code>WEBVTT
+  
 1
 00:00:01,000 --&gt; 00:00:03,000
 What do you think about HTML5 Video and WebVTT?…
+
 2
 00:00:04,000 --&gt; 00:00:08,000
-I think it’s great. I can’t wait for all the browsers to support it!</code></pre></figure><p>To use the vtt file in your video element, add the track element pointing to the vtt file as shown in the following example:</p>
+I think it’s great. I can’t wait for all the browsers to support it!</code></pre></figure>
+
+<p>To use the vtt file in your video element, add the track element pointing to the vtt file as shown in the following example:</p>
 
 <pre><code>&lt;video src="video.webm" controls&gt;
   &lt;track label="English" kind="subtitles" srclang="en" src="subtitles_en.vtt" default&gt;
@@ -263,11 +276,13 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 
 <p>You can add multiple track elements. Listing 4-4 shows how you can support English and Dutch subtitles using track elements pointing to a <code>vtt</code> file.</p>
 
-<figure class="listing"><figcaption>Listing 4-4. Using WebVTT Tracks in a Video Element</figcaption><pre><code>&lt;video src="video.ogg" controls&gt;
+<figure class="listing"><figcaption>Listing 4-4. Using WebVTT Tracks in a Video Element</figcaption><pre><code data-cm-mode="text/html">&lt;video src="video.ogg" controls&gt;
   &lt;track label="English" kind="subtitles" srclang="en" src="subtitles_en.vtt"&gt;
   &lt;track label="Dutch" kind="subtitles" srclang="nl" src="subtitles_nl.vtt"&gt;
   Your browser does not support HTML5 video.
-&lt;/video&gt;</code></pre></figure><p><span class="index-term"><span class="primary">video</span><span class="secondary">accessibility</span></span>The WebVTT standard <span class="index-term"><span class="primary">Web Video Text Tracks (WebVTT)</span></span>supports more than just subtitles. It also allows for captions and cue settings (instructions for how text is rendered). The full WebVTT syntax is beyond the scope of this book. See the WHATWG specification at <code>www.whatwg.org/specs/web-apps/current-work/webvtt.html</code> for more details.</p>
+&lt;/video&gt;</code></pre></figure>
+
+<p><span class="index-term"><span class="primary">video</span><span class="secondary">accessibility</span></span>The WebVTT standard <span class="index-term"><span class="primary">Web Video Text Tracks (WebVTT)</span></span>supports more than just subtitles. It also allows for captions and cue settings (instructions for how text is rendered). The full WebVTT syntax is beyond the scope of this book. See the WHATWG specification at <code>www.whatwg.org/specs/web-apps/current-work/webvtt.html</code> for more details.</p>
 </section>
 
 <section id="sec11_4">
@@ -285,20 +300,24 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 
 <p>For the very simplest example (the example file <code>audio.html</code>), let’s create a page that shows an audio player for a soothing, satisfying, and very public domain audio clip: Johann Sebastian Bach’s “Air” (shown in Listing 4-5).</p>
 
-<figure class="listing"><figcaption>Listing 4-5. HTML Page with an Audio Element</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-5"><figcaption>Listing 4-5. HTML Page with an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;title&gt; HTML5 Audio &lt;/title&gt;
- &lt;audio controls src="johann_sebastian_bach_air.ogg"&gt;
+  &lt;audio controls src="johann_sebastian_bach_air.ogg"&gt;
            An audio clip from Johann Sebastian Bach.
   &lt;/audio&gt;
-&lt;/html&gt;</code></pre></figure><p>This clip assumes that the HTML document and the audio file—in this case, <code>johann_sebastian_bach_air.ogg</code> —are served from the same directory. As shown in Figure <span class="internal-reference" id="ir_fig2_4">4-2</span>, viewing this in a browser supporting the <code>audio</code> tag will show a simple control and play bar representing<span class="index-term"><span class="primary">audio element</span><span class="secondary">declaring</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">declaring</span></span> the audio to play. When the user clicks the play button, the audio track starts as expected.
+&lt;/html&gt;</code></pre></figure>
+
+<p>This clip assumes that the HTML document and the audio file—in this case, <code>johann_sebastian_bach_air.ogg</code> —are served from the same directory. As shown in Figure <span class="internal-reference" id="ir_fig2_4">4-2</span>, viewing this in a browser supporting the <code>audio</code> tag will show a simple control and play bar representing<span class="index-term"><span class="primary">audio element</span><span class="secondary">declaring</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">declaring</span></span> the audio to play. When the user clicks the play button, the audio track starts as expected.
 
 </p>
 <figure id="fig2_4" class="image"><img src="images/ch4/fig4-2.gif"><figcaption>Figure 4-2. Simple<span class="index-term"><span class="primary">
 <em>audio</em>
 </span><span class="secondary">
 <em>controls</em>
-</span></span> audio controls</figcaption></figure><p>The <code>controls</code> attribute<span class="index-term"><span class="primary">controls attribute</span></span> tells the browser to display common user controls for starting, stopping, and seeking in the media clip, as well as volume control. Leaving out the <code>controls</code> attribute hides them, and leaves the clip with no way for the user to start playing.</p>
+</span></span> audio controls</figcaption></figure>
+
+<p>The <code>controls</code> attribute<span class="index-term"><span class="primary">controls attribute</span></span> tells the browser to display common user controls for starting, stopping, and seeking in the media clip, as well as volume control. Leaving out the <code>controls</code> attribute hides them, and leaves the clip with no way for the user to start playing.</p>
 
 <p>The content between the <code>audio</code> tags is <span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span>text representation of what the browser will display if it does not support the media tag. This is what you and your users will see if they are running an older browser. It also gives the opportunity to include an alternate renderer for the media, such as a Flash player plugin or a direct link to the media file.</p>
 </section>
@@ -307,10 +326,10 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 <h3>Using the Source</h3>
 <p>Finally, we<span class="index-term"><span class="primary">media source files</span></span> come<span class="index-term"><span class="primary">audio element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">src attribute</span></span> to the most important<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> attribute: <code>src</code>. In the simplest setup, a single <code>src</code> attribute points to the file containing the media clip. But what if the browser in question does not support that container or codec (in this case, Ogg and Vorbis)? Then, an alternate declaration is shown in Listing 4-6; it includes multiple sources from which the browser can choose (see the example file <code>audio_multisource.html</code>).</p>
 
-<figure class="listing"><figcaption>Listing 4-6. An Audio Element with Multiple Source Elements</figcaption><pre><code>&lt;audio controls&gt;
-    &lt;source src="johann_sebastian_bach_air.ogg"&gt;
-    &lt;source src="johann_sebastian_bach_air.mp3"&gt;
-    An audio clip from Johann Sebastian Bach.
+<figure class="listing" data-listing="4-6"><figcaption>Listing 4-6. An Audio Element with Multiple Source Elements</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
+  &lt;source src="johann_sebastian_bach_air.ogg"&gt;
+  &lt;source src="johann_sebastian_bach_air.mp3"&gt;
+  An audio clip from Johann Sebastian Bach.
 &lt;/audio&gt;</code></pre></figure><p>In this case, we include two new <code>source</code> elements instead of the <code>src</code> attribute on the <code>audio</code> tag. This allows the browser to choose which source best suits the playback capabilities it has and use the best fit as the actual media clip. Sources are processed in order, so a browser that can play multiple listed source types will use the first one it encounters.</p>
 
 <aside>
@@ -321,96 +340,110 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 
 <p>However, there is another way to give the browser hints about which media source to use. Recall that a container for media can support many different codec types, and you will understand that a browser may be misled into which types it does or does not support based on the extension of the declared source file. If you specify a type attribute that does not match your source, the browser may refuse to play the media. It may be wise to include the type only if you know it with certainty. Otherwise, it is better to omit this attribute and let the browser detect the encoding as shown in Listing 4-7 (in the example file <code>audio_type.html</code>). Also note that the WebM format allows only one audio codec and one video codec. That means the <code>.webm</code> extension or the video/webm content-type tells you everything you need to know about the file. If a browser can play .webm, it should be able to play any valid <code>.webm</code> file.</p>
 
-<figure class="listing"><figcaption>Listing 4-7. Including Type and Codec Information in an Audio Element</figcaption><pre><code>&lt;audio controls&gt;
-    &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
-    &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
-    An audio clip from Johann Sebastian Bach.
-&lt;/audio&gt;</code></pre></figure><p>As you can see, the <code>type</code> attribute can declare both the container and codec type. The values here represent Ogg Vorbis and MP3, respectively. The<span class="index-term"><span class="primary">audio element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">src attribute</span></span> full list is governed by RFC 4281, a document maintained by the Internet Engineering Task Force (IETF), but <span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span>some<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> common combinations are listed in Table <span class="internal-reference" id="ir_tab2_4">4-2</span>.
+<figure class="listing" data-listing="4-7"><figcaption>Listing 4-7. Including Type and Codec Information in an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
+  &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
+  &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
+  An audio clip from Johann Sebastian Bach.
+&lt;/audio&gt;</code></pre></figure>
+
+<p>As you can see, the <code>type</code> attribute can declare both the container and codec type. The values here represent Ogg Vorbis and MP3, respectively. The<span class="index-term"><span class="primary">audio element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">src attribute</span></span> full list is governed by RFC 4281, a document maintained by the Internet Engineering Task Force (IETF), but <span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span>some<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> common combinations are listed in Table <span class="internal-reference" id="ir_tab2_4">4-2</span>.
 </p>
-<table id="tab2_4">
-<thead><tr>
-<td>Type</td>
-<td>Attribute Value</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>Theora video and Vorbis audio in an Ogg container</td>
-<td>
-type='video/ogg; codecs="theora, vorbis"'
-</td>
-</tr>
-<tr>
-<td>Vorbis audio in an Ogg container</td>
-<td>
-type='audio/ogg; codecs=vorbis'
-</td>
-</tr>
-<tr>
-<td>WebM video in a Matroska container</td>
-<td>
-type='video/webm; codecs="vp8, vorbis"'
-</td>
-</tr>
-<tr>
-<td>Simple baseline H.264 video and low complexity AAC audio in an MP4 container</td>
-<td>
-type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-</td>
-</tr>
-<tr>
-<td>MPEG-4 visual simple profile and low media source filescomplexity AAC audio in an MP4 container</td>
-<td>
-type='video/mp4; codecs="mp4v.20.8, mp4a.40.2"'
-</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-2. Media Types and Attribute Values</figcaption>
+  <table id="tab2_4">
+  <thead><tr>
+  <th>Type</th>
+  <th>Attribute Value</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Theora video and Vorbis audio in an Ogg container</td>
+  <td>
+  type='video/ogg; codecs="theora, vorbis"'
+  </td>
+  </tr>
+  <tr>
+  <td>Vorbis audio in an Ogg container</td>
+  <td>
+  type='audio/ogg; codecs=vorbis'
+  </td>
+  </tr>
+  <tr>
+  <td>WebM video in a Matroska container</td>
+  <td>
+  type='video/webm; codecs="vp8, vorbis"'
+  </td>
+  </tr>
+  <tr>
+  <td>Simple baseline H.264 video and low complexity AAC audio in an MP4 container</td>
+  <td>
+  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+  </td>
+  </tr>
+  <tr>
+  <td>MPEG-4 visual simple profile and low media source filescomplexity AAC audio in an MP4 container</td>
+  <td>
+  type='video/mp4; codecs="mp4v.20.8, mp4a.40.2"'
+  </td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 </section>
 
 <section id="sec14_4">
 <h3>Taking Control</h3>
 <p>You’ve already seen that the <span class="index-term"><span class="primary">media controls</span></span><span class="index-term"><span class="primary">audio element</span><span class="secondary">playback controls</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">playback controls</span></span>default playback controls can be displayed by using the <code>controls</code> attribute<span class="index-term"><span class="primary">controls attribute</span></span> in the <code>video</code> or <code>audio</code> tag. As you might expect, leaving out this attribute will not display controls when the media is displayed, but it will also not show anything at all in the case of <em>audio</em> files, as the only visual representation of an audio element is its controls. (A video without controls still displays the video content.) Leaving out the <code>controls</code> attribute should not display any content that affects the normal rendering of the page. One way to cause the media to play is to set another attribute in<span class="index-term"><span class="primary">autoplay attribute</span></span> the tag: <code>autoplay</code> (see Listing 4-8 and the example file <code>audio_no_control.html</code>).</p>
 
-<figure class="listing"><figcaption>Listing 4-8. Using the Autoplay Attribute</figcaption><pre><code>&lt;audio autoplay&gt;
-    &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
-    &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
-    An audio clip from Johann Sebastian Bach.
-&lt;/audio&gt;</code></pre></figure><p>By including the <code>autoplay</code> attribute, the media file will play as soon as it is loaded, without any user interaction. (Note that autoplay is not supported everywhere. For example, it is disabled on iOS.) However, most users will find this highly annoying, so use <code>autoplay</code> with caution. Playing audio without prompting may be intended to create an atmospheric effect or, worse, to force an advertisement on the user. But it also interferes with other audio playing on the user’s machine, and can be quite detrimental to users who rely on audible screen readers to navigate web content. Note also that some devices, like the iPad, prevent autoplay and even automatically playing a media file (triggered by a page load event, for example).</p>
+<figure class="listing" data-listing="4-8"><figcaption>Listing 4-8. Using the Autoplay Attribute</figcaption><pre><code data-cm-mode="text/html">&lt;audio autoplay&gt;
+  &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
+  &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
+  An audio clip from Johann Sebastian Bach.
+&lt;/audio&gt;</code></pre></figure>
+
+<p>By including the <code>autoplay</code> attribute, the media file will play as soon as it is loaded, without any user interaction. (Note that autoplay is not supported everywhere. For example, it is disabled on iOS.) However, most users will find this highly annoying, so use <code>autoplay</code> with caution. Playing audio without prompting may be intended to create an atmospheric effect or, worse, to force an advertisement on the user. But it also interferes with other audio playing on the user’s machine, and can be quite detrimental to users who rely on audible screen readers to navigate web content. Note also that some devices, like the iPad, prevent autoplay and even automatically playing a media file (triggered by a page load event, for example).</p>
 
 <p>If the built-in controls do not suit the<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> layout of your user interface, or if you need to control the media element using calculations or behaviors that are not exposed in the default controls, there are many<span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span> built-in JavaScript functions and attributes to help you, too. Table <span class="internal-reference" id="ir_tab3_4">4-3</span> lists some of the most common functions.
 </p>
-<table id="tab3_4">
-<thead><tr>
-<td>Function</td>
-<td>Behavior</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>
-load()
-</td>
-<td>Loads theload() function media file and prepares it for playback. Normally does not need to be called unless the element itself is dynamically created. Useful for loading in advance of actual playback.</td>
-</tr>
-<tr>
-<td>
-play()
-</td>
-<td>Loads (if necessary) andplay() function plays the media file. Plays from the beginning unless the media is already paused at another position.</td>
-</tr>
-<tr>
-<td>
-pause()
-</td>
-<td>Pausespause() function playback if currently active.</td>
-</tr>
-<tr>
-<td>
-canPlayType(type)
-</td>
-<td>Tests to see canPlayType() functionwhether the video element can play a hypothetical file of the given MIME type.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-3. Common Control Functions</figcaption>
+  <table id="tab3_4">
+  <thead><tr>
+  <th>Function</th>
+  <th>Behavior</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>
+  load()
+  </td>
+  <td>Loads the media file and prepares it for playback. Normally does not need to be called unless the element itself is dynamically created. Useful for loading in advance of actual playback.</td>
+  </tr>
+  <tr>
+  <td>
+  play()
+  </td>
+  <td>Loads (if necessary) and plays the media file. Plays from the beginning unless the media is already paused at another position.</td>
+  </tr>
+  <tr>
+  <td>
+  pause()
+  </td>
+  <td>Pauses playback if currently active.</td>
+  </tr>
+  <tr>
+  <td>
+  canPlayType(type)
+  </td>
+  <td>Tests to see whether the video element can play a hypothetical file of the given MIME type.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>The <code>canPlayType(type)</code> method has a non-obvious use case: by passing in a MIME type of an arbitrary video clip to a dynamically created <code>video</code> element, you can use a simple script to determine whether the current browser supports that type. For example, the following code provides a quick way to determine whether the current browser can support playing videos with MIME type <span class="index-term"><span class="primary">media controls</span></span><span class="index-term"><span class="primary">audio element</span><span class="secondary">playback controls</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">playback controls</span></span>of <code>fooType</code> without displaying any visible content in the browser window:</p>
 
 <pre><code>var supportsFooVideo = !!(document.createElement('video').canPlayType(‘fooType’));
@@ -418,103 +451,112 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
 
 <p>Table <span class="internal-reference" id="ir_tab4_4">4-4</span> shows a few of the<span class="index-term"><span class="primary">read-only media attributes</span></span> read-only attributes on media elements.
 </p>
-<table id="tab4_4">
-<thead><tr>
-<td>Read-only Attribute</td>
-<td>Value</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>
-duration
-</td>
-<td>Theduration attribute duration of the full media clip, in seconds. If the full duration is not known, NaN is returned.</td>
-</tr>
-<tr>
-<td>
-paused
-</td>
-<td>Returns truepaused attribute if the media clip is currently paused. Defaults to true if the clip has not started playing.</td>
-</tr>
-<tr>
-<td>
-ended
-</td>
-<td>Returns ended attribute
-true if the media clip has finished playing.</td>
-</tr>
-<tr>
-<td>
-startTime
-</td>
-<td>ReturnsstartTime attribute the earliest possible value for playback start time. This will usually be 0.0 unless the media clip is streamed and earlier content has left the buffer.</td>
-</tr>
-<tr>
-<td>
-error
-</td>
-<td>An errorerror attribute code, if an error has occurred.</td>
-</tr>
-<tr>
-<td>
-currentSrc
-</td>
-<td>ReturnscurrentSrc attribute the string representing the file that is currently being displayed or loaded. This will match the source element selected by the browser.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-4. Read-only Media Attributes</figcaption>
+  <table id="tab4_4">
+  <thead><tr>
+  <th>Read-only Attribute</th>
+  <th>Value</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>
+  duration
+  </td>
+  <td>The duration of the full media clip, in seconds. If the full duration is not known, NaN is returned.</td>
+  </tr>
+  <tr>
+  <td>
+  paused
+  </td>
+  <td>Returns true if the media clip is currently paused. Defaults to true if the clip has not started playing.</td>
+  </tr>
+  <tr>
+  <td>
+  ended
+  </td>
+  <td>Returns true if the media clip has finished playing.</td>
+  </tr>
+  <tr>
+  <td>
+  startTime
+  </td>
+  <td>Returns the earliest possible value for playback start time. This will usually be 0.0 unless the media clip is streamed and earlier content has left the buffer.</td>
+  </tr>
+  <tr>
+  <td>
+  error
+  </td>
+  <td>An error code, if an error has occurred.</td>
+  </tr>
+  <tr>
+  <td>
+  currentSrc
+  </td>
+  <td>Returns the string representing the file that is currently being displayed or loaded. This will match the source element selected by the browser.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Table <span class="internal-reference" id="ir_tab5_4">4-5</span> shows some of the attributes on the media elements that allow scripts to modify them and affect the playback directly. As such, <span class="index-term"><span class="primary">scriptable media attributes</span></span>they <span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span>behave<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> similar to functions.
 </p>
-<table id="tab5_4">
-<thead><tr>
-<td>Attribute</td>
-<td>Value</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>
-autoplayautoplay attribute
-</td>
-<td>Sets the media clip to play upon creation or query whether it is set to autoplay.</td>
-</tr>
-<tr>
-<td>
-loop
-</td>
-<td>Returnsloop attribute true if the clip will restart upon ending or sets the clip to loop (or not loop).</td>
-</tr>
-<tr>
-<td>
-currentTime
-</td>
-<td>Returns the currentTime attributecurrent time in seconds that has elapsed since the beginning of the playback. Sets currentTime to seek to a specific position in the clip playback.</td>
-</tr>
-<tr>
-<td>
-controls
-</td>
-<td>Shows orcontrols attribute hides the user controls, or queries whether they are currently visible.</td>
-</tr>
-<tr>
-<td>
-volume
-</td>
-<td>Sets the audio volume attributevolume to a relative value between 0.0 and 1.0, or queries the value of the same.</td>
-</tr>
-<tr>
-<td>
-muted
-</td>
-<td>Mutes ormuted attribute unmutes the audio, or determines the current mute state.</td>
-</tr>
-<tr>
-<td>
-autobuffer
-</td>
-<td>Tells the playerautobuffer attribute whether or not to attempt to load the media file before playback is initiated. If the media is set for auto-playback, this attribute is ignored.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-5. Scriptable Attribute Values</figcaption>
+  <table id="tab5_4">
+  <thead><tr>
+  <th>Attribute</th>
+  <th>Value</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>
+  autoplay
+  </td>
+  <td>Sets the media clip to play upon creation or query whether it is set to autoplay.</td>
+  </tr>
+  <tr>
+  <td>
+  loop
+  </td>
+  <td>Returns true if the clip will restart upon ending or sets the clip to loop (or not loop).</td>
+  </tr>
+  <tr>
+  <td>
+  currentTime
+  </td>
+  <td>Returns the current time in seconds that has elapsed since the beginning of the playback. Sets currentTime to seek to a specific position in the clip playback.</td>
+  </tr>
+  <tr>
+  <td>
+  controls
+  </td>
+  <td>Shows or hides the user controls, or queries whether they are currently visible.</td>
+  </tr>
+  <tr>
+  <td>
+  volume
+  </td>
+  <td>Sets the audio volume to a relative value between 0.0 and 1.0, or queries the value of the same.</td>
+  </tr>
+  <tr>
+  <td>
+  muted
+  </td>
+  <td>Mutes or unmutes the audio, or determines the current mute state.</td>
+  </tr>
+  <tr>
+  <td>
+  autobuffer
+  </td>
+  <td>Tells the player whether or not to attempt to load the media file before playback is initiated. If the media is set for auto-playback, this attribute is ignored.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>Between the various functions and attributes, it is possible for a developer to create any media playback user interface and use it to control<span class="index-term"><span class="primary">media controls</span></span><span class="index-term"><span class="primary">audio element</span><span class="secondary">playback controls</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">playback controls</span></span> <span class="index-term"><span class="primary">audio element</span><span class="secondary">understanding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">understanding</span></span>any audio or video clip that is supported by the browser.</p>
 </section>
 
@@ -527,27 +569,30 @@ autobuffer
 <h3>Audio Activation</h3>
 <p>If your user interface<span class="index-term"><span class="primary">audio</span><span class="secondary">activation</span></span> needs to play <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>an audio clip for users, but you don’t want to affect the display with a playback timeline or controls, you can create an invisible <code>audio</code> element—one with the <code>controls</code> attribute unset or set to <code>false</code> —and present your own controls for audio playback. Consider the simple code in Listing 4-9, also available in the sample code file <code>audioCue.html</code>.</p>
 
-<figure class="listing"><figcaption>Listing 4-9. Adding Your Own Play Button to Control Audio</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-9"><figcaption>Listing 4-9. Adding Your Own Play Button to Control Audio</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Audio cue&lt;/title&gt;
+  
   &lt;audio id="clickSound"&gt;
-   &lt;source src="johann_sebastian_bach_air.ogg"&gt;
-   &lt;source src="johann_sebastian_bach_air.mp3"&gt;
+    &lt;source src="johann_sebastian_bach_air.ogg"&gt;
+    &lt;source src="johann_sebastian_bach_air.mp3"&gt;
   &lt;/audio&gt;
+  
   &lt;button id="toggle" onclick="toggleSound()"&gt; Play&lt;/button&gt;
+  
   &lt;script type="text/javascript"&gt;
     function toggleSound() {
-        var music = document.getElementById("clickSound");
-        var toggle = document.getElementById("toggle");
-        if (music.paused) {
-          music.play();
-          toggle.innerHTML = "Pause";
-        }
-        else {
-          music.pause();
-          toggle.innerHTML = "Play";
-        }
+      var music = document.getElementById("clickSound");
+      var toggle = document.getElementById("toggle");
+      if (music.paused) {
+        music.play();
+        toggle.innerHTML = "Pause";
+      }
+      else {
+        music.pause();
+        toggle.innerHTML = "Play";
+      }
     }
   &lt;/script&gt;
 &lt;/html&gt;</code></pre></figure><p>Once again, we are using an <code>audio</code> element to play our favorite Bach tune. However, in this example we hide user controls and don’t set the clip to<span class="index-term"><span class="primary">audio</span><span class="secondary">activation</span></span> autoplay on load. Instead, we have created a toggle button to control the audio playback with script:</p>
@@ -556,8 +601,8 @@ autobuffer
 <p>Our simple button is initialized to inform the user that clicking it will start playback. And each time the button is pressed, the <code>toggleSound()</code> function<span class="index-term"><span class="primary">toggleSound() function</span></span> is triggered. Inside the <code>toggleSound()</code> function, we first gain access to the <code>audio</code> and <code>button</code> elements in the DOM:</p>
 
 <pre><code>if (music.paused) {
-music.play();
-toggle.innerHTML = "Pause";
+  music.play();
+  toggle.innerHTML = "Pause";
 }</code></pre>
 
 
@@ -565,8 +610,8 @@ toggle.innerHTML = "Pause";
 <p>By accessing the <code>paused</code> <span class="index-term"><span class="primary">audio</span><span class="secondary">working with</span></span>attribute on the <code>audio</code> element, we can check to see whether the user has already paused playback. The attribute defaults to <code>true</code> if no playback is initiated, so this condition will be met on the first click. In that case, we call the <code>play()</code> function<span class="index-term"><span class="primary">play() function</span></span> on the clip and change the text of the button to indicate that the next click will pause the clip:</p>
 
 <pre><code>else {
-music.pause();
-toggle.innerHTML = "Play";
+  music.pause();
+  toggle.innerHTML = "Play";
 }</code></pre>
 
 
@@ -578,32 +623,37 @@ toggle.innerHTML = "Play";
 <h3>Working with Video</h3>
 <p>Enough with <span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span>simplicity. Let’s try something more complicated. The HTML5 <code>video</code> element is very similar to the <code>audio</code> element, but with a few extra attributes thrown in. Table <span class="internal-reference" id="ir_tab6_4">4-6</span> shows some of these attributes.
 </p>
-<table id="tab6_4">
-<thead><tr>
-<td>Attribute</td>
-<td>Value</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>
-poster
-</td>
-<td>The URL of anposter attribute image file used to represent the video content before it has loaded. Think “movie poster.” This attribute can be read or altered to change the poster.</td>
-</tr>
-<tr>
-<td>
-width, height
-</td>
-<td>Read or set the visual width attributeheight attributedisplay size. This may cause centering, letterboxing, or pillaring if the set width does not match the size of the video itself.</td>
-</tr>
-<tr>
-<td>
-videoWidth, videoHeight
-</td>
-<td>Return the intrinsic videoWidth attributevideoHeight attributeor natural width and height of the video. They cannot be set.</td>
-</tr>
-</tbody>
-</table>
+
+<figure class="table">
+  <figcaption>Table 4-6. Additional Video Attributes</figcaption>
+  <table id="tab6_4">
+  <thead><tr>
+  <th>Attribute</th>
+  <th>Value</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>
+  poster
+  </td>
+  <td>The URL of an image file used to represent the video content before it has loaded. Think “movie poster.” This attribute can be read or altered to change the poster.</td>
+  </tr>
+  <tr>
+  <td>
+  width, height
+  </td>
+  <td>Read or set the visual display size. This may cause centering, letterboxing, or pillaring if the set width does not match the size of the video itself.</td>
+  </tr>
+  <tr>
+  <td>
+  videoWidth, videoHeight
+  </td>
+  <td>Return the intrinsic or natural width and height of the video. They cannot be set.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
 <p>The <code>video</code> element has one other key feature that is not applicable to the <code>audio</code> element: it can be provided to many functions of the HTML5 Canvas (see <span class="external-reference">
 <span class="ref-source">Chapter 2</span>
 <span class="ref-target">DOI::10.1007/978-1-4302-3865-2_2</span>
@@ -628,8 +678,8 @@ videoWidth, videoHeight
 <p>We start with a simple declaration <span class="index-term"><span class="primary">video element</span><span class="secondary">adding</span></span><span class="index-term"><span class="primary">canvas element</span><span class="secondary">adding</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">creating video timeline browser</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span>to display our video clip:</p>
 
 <pre><code>&lt;video id="movies" autoplay oncanplay="startVideo()" onended="stopTimeline()" autobuffer="true" width="400px" height="300px"&gt;
-    &lt;source src="Intermission-Walk-in.ogv"&gt;
-    &lt;source src="Intermission-Walk-in_512kb.mp4"&gt;
+  &lt;source src="Intermission-Walk-in.ogv"&gt;
+  &lt;source src="Intermission-Walk-in_512kb.mp4"&gt;
 &lt;/video&gt;</code></pre>
 
 
@@ -652,6 +702,7 @@ var updateInterval = 5000;
 // size of the timeline frames
 var frameWidth = 100;
 var frameHeight = 75;
+
 // number of timeline frames
 var frameRows = 4;
 var frameColumns = 4;
@@ -668,8 +719,10 @@ var frameGrid = frameRows * frameColumns;</code></pre>
 
 <pre><code>// current frame
 var frameCount = 0;
+
 // to cancel the timer at end of play
 var intervalId;
+
 var videoStarted = false;</code></pre>
 
 
@@ -684,27 +737,21 @@ var videoStarted = false;</code></pre>
 
 <pre><code>// paint a representation of the video frame into our canvas
 function updateFrame() {
-    var video = document.getElementById("movies");
-    var timeline = document.getElementById("timeline");
-    var ctx = timeline.getContext("2d");
-    // calculate out the current position based on frame
-    // count, then draw the image there using the video
-    // as a source
-    var framePosition = frameCount % frameGrid;
-    var frameX = (framePosition % frameColumns) * frameWidth;
-    var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
-    ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);
-    frameCount++;
+  var video = document.getElementById("movies");
+  var timeline = document.getElementById("timeline");
+  
+  var ctx = timeline.getContext("2d");
+  
+  // calculate out the current position based on frame
+  // count, then draw the image there using the video
+  // as a source
+  var framePosition = frameCount % frameGrid;
+  var frameX = (framePosition % frameColumns) * frameWidth;
+  var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
+  ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);
+  
+  frameCount++;
 }</code></pre>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -725,6 +772,8 @@ var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;</code></pre>
 <p>Finally, we reach the key call to<span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span> draw an image onto the canvas. We’ve seen the position and scaling arguments before in our canvas demos, but instead of passing an image to the <code>drawImage</code> routine, we here pass the video object itself:</p>
 
 <pre><code>ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);</code></pre>
+
+
 <p>Canvas drawing routines can<span class="index-term"><span class="primary">updateFrame function</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">updateFrame function, adding</span></span> take video sources as images or patterns, which gives you a handy way to modify the video and redisplay it in another location.</p>
 
 <aside>
@@ -739,30 +788,32 @@ var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;</code></pre>
 <p>Finally, we update<span class="index-term"><span class="primary">startVideo function</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">startVideo function, adding</span></span> <code>frameCount</code> to<span class="index-term"><span class="primary">video element</span><span class="secondary">creating video timeline browser</span></span> reflect that we’ve taken a new snapshot for our timeline. Now, all we need is a routine to regularly update our timeline frames:</p>
 
 <pre><code>function startVideo() {
-    // only set up the timer the first time the
-    // video is started
-    if (videoStarted)
-        return;
-        videoStarted = true;
-        // calculate an initial frame, then create
-        // additional frames on a regular timer
-        updateFrame();
-        intervalId = setInterval(updateFrame, updateInterval);</code></pre>
+  // only set up the timer the first time the
+  // video is started
+  if (videoStarted)
+    return;
+      
+    videoStarted = true;
+      
+    // calculate an initial frame, then create
+    // additional frames on a regular timer
+    updateFrame();
+    intervalId = setInterval(updateFrame, updateInterval);</code></pre>
 
 <p>Recall that the <code>startVideo()</code> function is triggered as soon as the video has loaded enough to begin playing. First, we make sure that we are going to handle the <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>video start only once per page load, just in case the video is restarted:</p>
 
-<pre><code>    // only set up the timer the first time the
-    // video is started
-    if (videoStarted)
-        return;
-        videoStarted = true;</code></pre>
+<pre><code>// only set up the timer the first time the
+// video is started
+if (videoStarted)
+  return;
+videoStarted = true;</code></pre>
 
 <p>When the video starts, we will capture our first frame. Then, we will start an interval timer—a timer that repeats continuously at the specified<span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span> update interval—which will regularly call our <code>updateFrame()</code> function. The end <span class="index-term"><span class="primary">startVideo function</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">startVideo function, adding</span></span>result is that a new frame will be captured every five seconds:</p>
 
-<pre><code>        // calculate an initial frame, then create
-        // additional frames on a regular timer
-        updateFrame();
-        intervalId = setInterval(updateFrame, updateInterval);</code></pre>
+<pre><code>// calculate an initial frame, then create
+// additional frames on a regular timer
+updateFrame();
+intervalId = setInterval(updateFrame, updateInterval);</code></pre>
 
 </section>
 
@@ -774,35 +825,26 @@ var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;</code></pre>
 // is clicked
 var timeline = document.getElementById("timeline");
 timeline.onclick = function(evt) {
-    var offX = evt.layerX - timeline.offsetLeft;
-    var offY = evt.layerY - timeline.offsetTop;
-    // calculate which frame in the grid was clicked
-    // from a zero-based index
-    var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
-    clickedFrame +=Math.floor(offX / frameWidth);
-    // find the actual frame since the video started
-    var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
-                                frameGrid) + clickedFrame);
-    // if the user clicked ahead of the current frame
-    // then assume it was the last round of frames
-    if (clickedFrame&gt; (frameCount % 16))
-        seekedFrame -=frameGrid;
-        // can't seek before the video
-        if (seekedFrame &lt; 0)
-            return;</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  var offX = evt.layerX - timeline.offsetLeft;
+  var offY = evt.layerY - timeline.offsetTop;
+  
+  // calculate which frame in the grid was clicked
+  // from a zero-based index
+  var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
+  clickedFrame +=Math.floor(offX / frameWidth);
+  
+  // find the actual frame since the video started
+  var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
+                              frameGrid) + clickedFrame);
+                              
+  // if the user clicked ahead of the current frame
+  // then assume it was the last round of frames
+  if (clickedFrame&gt; (frameCount % 16))
+    seekedFrame -=frameGrid;
+    
+    // can't seek before the video
+    if (seekedFrame &lt; 0)
+      return;</code></pre>
 
 
 
@@ -811,52 +853,53 @@ timeline.onclick = function(evt) {
 
 <p>Things get a little more<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> complicated here. We retrieve the timeline canvas and set a click-handling function <span class="index-term"><span class="primary">video element</span><span class="secondary">using input, handling</span></span>on it. The handler will use the event to determine which X and Y coordinates were clicked by the user:</p>
 
-<pre><code>    var timeline = document.getElementById("timeline");
-    timeline.onclick=function(evt) {
-        var offX = evt.layerX - timeline.offsetLeft;
-        var offY = evt.layerY - timeline.offsetTop;</code></pre>
+<pre><code>var timeline = document.getElementById("timeline");
+timeline.onclick=function(evt) {
+  var offX = evt.layerX - timeline.offsetLeft;
+  var offY = evt.layerY - timeline.offsetTop;</code></pre>
 
 
 
 <p>We then use the frame dimensions to figure out which of the 16 frames was clicked by the user:</p>
 
-<pre><code>            // calculate which frame in the grid was clicked
-            // from a zero-based index
-            var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
-            clickedFrame +=Math.floor(offX / frameWidth);</code></pre>
+<pre><code>// calculate which frame in the grid was clicked
+// from a zero-based index
+var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
+clickedFrame +=Math.floor(offX / frameWidth);</code></pre>
 
 
 
 <p>The clicked frame should be only one of the most recent video frames, so determine the most recent frame that corresponds to that grid index:</p>
 
-<pre><code>   // find the actual frame since the video started
-    var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
+<pre><code>// find the actual frame since the video started
+var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
                                                frameGrid) + clickedFrame);</code></pre>
 
 
 <p>If the user clicks ahead of the <span class="index-term"><span class="primary">video element</span><span class="secondary">working with</span></span>current frame, jump back one complete cycle of grid frames to find the actual time:</p>
 
-<pre><code>    // if the user clicked ahead of the current frame
-    // then assume it was the last round of frames
-    if (clickedFrame&gt; (frameCount % 16))
-        seekedFrame -=frameGrid;</code></pre>
+<pre><code>// if the user clicked ahead of the current frame
+// then assume it was the last round of frames
+if (clickedFrame&gt; (frameCount % 16))
+  seekedFrame -=frameGrid;</code></pre>
 
 
 
 <p>And finally, we have to <span class="index-term"><span class="primary">video element</span><span class="secondary">creating video timeline browser</span></span>safeguard against any case in which the user clicks a frame that would be<span class="index-term"><span class="primary">video element</span><span class="secondary">using input, handling</span></span> before the start of the video clip:</p>
 
-<pre><code>    // can't seek before the video
-    if (seekedFrame &lt; 0)
-        return;</code></pre>
+<pre><code>// can't seek before the video
+if (seekedFrame &lt; 0)
+  return;</code></pre>
 
 
 <p>Now that we know what point in time the user wants to seek out, we can use that knowledge to change the current playback time. Although this is the key demo function, the routine itself is quite simple:</p>
 
-<pre><code>    // seek the video to that frame (in seconds)
-    var video = document.getElementById("movies");
-    video.currentTime = seekedFrame * updateInterval / 1000;
-    // then set the frame count to our destination
-    frameCount = seekedFrame;</code></pre>
+<pre><code>// seek the video to that frame (in seconds)
+var video = document.getElementById("movies");
+video.currentTime = seekedFrame * updateInterval / 1000;
+
+// then set the frame count to our destination
+frameCount = seekedFrame;</code></pre>
 
 
 
@@ -876,7 +919,7 @@ timeline.onclick = function(evt) {
 
 <pre><code>// stop gathering the timeline frames
 function stopTimeline() {
-    clearInterval(intervalId);
+  clearInterval(intervalId);
 }</code></pre>
 
 
@@ -890,86 +933,109 @@ function stopTimeline() {
 <h3>The Final Code</h3>
 <p>Listing 4-10 shows the complete code for the video timeline page<span class="index-term"><span class="primary">video element</span><span class="secondary">timeline code</span></span>.</p>
 
-<figure class="listing"><figcaption>Listing 4-10. The Complete Video Timeline Code</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-10" data-preview-height="700"><figcaption>Listing 4-10. The Complete Video Timeline Code</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Video Timeline&lt;/title&gt;
+  
   &lt;video id="movies" autoplay oncanplay="startVideo()"
 onended="stopTimeline()" autobuffer="true"
     width="400px" height="300px"&gt;
     &lt;source src="Intermission-Walk-in.ogv"&gt;
     &lt;source src="Intermission-Walk-in_512kb.mp4"&gt;
   &lt;/video&gt;
+  
   &lt;canvas id="timeline" width="400px" height="300px"&gt;
+  
   &lt;script type="text/javascript"&gt;
+  
     // # of milliseconds between timeline frame updates
     var updateInterval = 5000;
+    
     // size of the timeline frames
     var frameWidth = 100;
     var frameHeight = 75;
+    
     // number of timeline frames
     var frameRows = 4;
     var frameColumns = 4;
     var frameGrid = frameRows * frameColumns;
+    
     // current frame
     var frameCount = 0;
+    
     // to cancel the timer at end of play
     var intervalId;
     var videoStarted = false;
     function startVideo() {
-        // only set up the timer the first time the
-        // video is started
-        if (videoStarted)
-        return;
-        videoStarted = true;
-        // calculate an initial frame, then create
-        // additional frames on a regular timer
-        updateFrame();
-        intervalId = setInterval(updateFrame, updateInterval);
-        // set up a handler to seek the video when a frame
-        // is clicked
-        var timeline = document.getElementById("timeline");
-        timeline.onclick = function(evt) {
-            var offX = evt.layerX - timeline.offsetLeft;
-            var offY = evt.layerY - timeline.offsetTop;
-            // calculate which frame in the grid was clicked
-            // from a zero-based index
-            var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
-            clickedFrame +=Math.floor(offX / frameWidth);
-            // find the actual frame since the video started
-            var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
-                                frameGrid) + clickedFrame);
-            // if the user clicked ahead of the current frame
-            // then assume it was the last round of frames
-            if (clickedFrame&gt; (frameCount % 16))
-                seekedFrame -=frameGrid;
-            // can't seek before the video
-            if (seekedFrame &lt; 0)
-              return;
-            // seek the video to that frame (in seconds)
-            var video = document.getElementById("movies");
-            video.currentTime = seekedFrame * updateInterval / 1000;
-            // then set the frame count to our destination
-            frameCount = seekedFrame;
-        }
+      
+      // only set up the timer the first time the
+      // video is started
+      if (videoStarted)
+      return;
+      
+      videoStarted = true;
+      
+      // calculate an initial frame, then create
+      // additional frames on a regular timer
+      updateFrame();
+      intervalId = setInterval(updateFrame, updateInterval);
+      
+      // set up a handler to seek the video when a frame
+      // is clicked
+      var timeline = document.getElementById("timeline");
+      timeline.onclick = function(evt) {
+        var offX = evt.layerX - timeline.offsetLeft;
+        var offY = evt.layerY - timeline.offsetTop;
+        
+        // calculate which frame in the grid was clicked
+        // from a zero-based index
+        var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
+        clickedFrame +=Math.floor(offX / frameWidth);
+        
+        // find the actual frame since the video started
+        var seekedFrame = (((Math.floor(frameCount / frameGrid)) *
+                            frameGrid) + clickedFrame);
+                            
+        // if the user clicked ahead of the current frame
+        // then assume it was the last round of frames
+        if (clickedFrame&gt; (frameCount % 16))
+          seekedFrame -=frameGrid;
+            
+        // can't seek before the video
+        if (seekedFrame &lt; 0)
+          return;
+          
+        // seek the video to that frame (in seconds)
+        var video = document.getElementById("movies");
+        video.currentTime = seekedFrame * updateInterval / 1000;
+        
+        // then set the frame count to our destination
+        frameCount = seekedFrame;
+      }
     }
+    
     // paint a representation of the video frame into our canvas
     function updateFrame() {
-        var video = document.getElementById("movies");
-        var timeline = document.getElementById("timeline");
-        var ctx = timeline.getContext("2d");
-        // calculate out the current position based on frame
-        // count, then draw the image there using the video
-        // as a source
-        var framePosition = frameCount % frameGrid;
-        var frameX = (framePosition % frameColumns) * frameWidth;
-        var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
-        ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);
-        frameCount++;
+      var video = document.getElementById("movies");
+      var timeline = document.getElementById("timeline");
+      
+      var ctx = timeline.getContext("2d");
+      
+      // calculate out the current position based on frame
+      // count, then draw the image there using the video
+      // as a source
+      var framePosition = frameCount % frameGrid;
+      var frameX = (framePosition % frameColumns) * frameWidth;
+      var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
+      ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);
+      
+      frameCount++;
     }
+    
     // stop gathering the timeline frames
     function stopTimeline() {
-        clearInterval(intervalId);
+      clearInterval(intervalId);
     }
   &lt;/script&gt;
 &lt;/html&gt;</code></pre></figure>
@@ -984,13 +1050,13 @@ onended="stopTimeline()" autobuffer="true"
 <h3>Background Noise in a Page</h3>
 <p>Many a web site has <span class="index-term"><span class="primary">audio element</span><span class="secondary">background noise in a page</span></span>attempted to entertain its viewers by playing audio by default for any visitors. While we don’t condone this practice, Audio support makes it quite easy to achieve this, as shown in Listing 4-11.</p>
 
-<figure class="listing"><figcaption>Listing 4-11. Using the Loop and Autoplay Attributes</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-11"><figcaption>Listing 4-11. Using the Loop and Autoplay Attributes</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Background Music&lt;/title&gt;
   &lt;audio autoplay loop&gt;
-      &lt;source src="johann_sebastian_bach_air.ogg"&gt;
-      &lt;source src="johann_sebastian_bach_air.mp3"&gt;
+    &lt;source src="johann_sebastian_bach_air.ogg"&gt;
+    &lt;source src="johann_sebastian_bach_air.mp3"&gt;
   &lt;/audio
   &lt;h1&gt; You're hooked on Bach!&lt;/h1&gt;
 &lt;/html&gt;</code></pre></figure><p>As you can see, playing a looping <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>background sound is as easy as declaring a single <code>audio</code> tag with the <code>autoplay</code> <span class="index-term"><span class="primary">audio element</span><span class="secondary">background noise in a page</span></span><span class="index-term"><span class="primary">autoplay attribute</span></span><span class="index-term"><span class="primary">loop attribute</span></span>and <code>loop</code> attributes set (see Figure <span class="internal-reference" id="ir_fig4_4">4-4</span>).
@@ -1009,7 +1075,7 @@ onended="stopTimeline()" autobuffer="true"
 <h3>Mouseover Video Playback</h3>
 <p>Another way to use<span class="index-term"><span class="primary">mouseover video playback</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">mouseover video playback</span></span> simple scripting effectively with video clips is to trigger the <code>play</code> and <code>pause</code> routines, based on mouse movement over the video. This could be useful in a site that needs to display many video clips and let the user choose which ones to play. The video gallery can display short preview clips on when a user moves the mouse over them and a full video display when the<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> user clicks. It is quite easy to achieve this affect using a code sample similar to Listing 4-12 (see the example file <code>mouseoverVideo.html</code>).</p>
 
-<figure class="listing"><figcaption>Listing 4-12. Mouse Detection on a Video Element</figcaption><pre><code>&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-12" data-preview-height="500"><figcaption>Listing 4-12. Mouse Detection on a Video Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Mouseover Video&lt;/title&gt;
@@ -1020,7 +1086,9 @@ onended="stopTimeline()" autobuffer="true"
     &lt;source src="Intermission-Walk-in_512kb.mp4" type='video/mp4; codecs="avc1.42E01E,
                  mp4a.40.2"'&gt;
   &lt;/video&gt;
-&lt;/html&gt;</code></pre></figure><p>By simply setting a few extra attributes, the preview playback can trigger when a user points at the video, as shown in Figure <span class="internal-reference" id="ir_fig5_4">4-5</span>.
+&lt;/html&gt;</code></pre></figure>
+
+<p>By simply setting a few extra attributes, the preview playback can trigger when a user points at the video, as shown in Figure <span class="internal-reference" id="ir_fig5_4">4-5</span>.
 
 </p>
 <figure id="fig5_4" class="image"><img src="images/ch4/fig4-5.gif"><figcaption>Figure 4-5. Mouseover<span class="index-term"><span class="primary">
