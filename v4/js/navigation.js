@@ -2,12 +2,7 @@ var menuObj = [];
 jQuery(function () {
   // toc
   if(toc) {
-    var tocOutput = '<div class="btn-group toc-link">\n' +
-    '  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">\n' +
-    '    Table of Contents\n' +
-    '    <span class="caret"></span>\n' +
-    '  </a>\n' +
-    '<ul class="dropdown-menu">\n';
+    var tocOutput = '<ul class="dropdown-menu">\n';
     
     for(var i=0, tocL = toc.length; i < tocL; i++) {
       
@@ -22,8 +17,8 @@ jQuery(function () {
       }
     }
     
-    tocOutput += '</ul>\n</div>\n';
-    jQuery('.menu-trigger').after(jQuery(tocOutput));
+    tocOutput += '</ul>\n';
+    jQuery('#toc').append(jQuery(tocOutput));
   }  
   
   
