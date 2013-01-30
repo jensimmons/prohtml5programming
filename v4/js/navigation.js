@@ -25,11 +25,11 @@ jQuery(function () {
   var h1 = $('h1').eq(0);
   var currentChap = h1.text();
         
-  var output = '<a name="main-navigation" id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
+  var output = '<a id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
     
-  jQuery('<a class="section-anchor" name="sec_0" />').insertBefore(h1);
-  output += ('<li class="current"><a href="#sec_0" >' + currentChap + '</a>\n');
-
+  jQuery('<a class="section-anchor" id="chapter_title" />').insertBefore(h1);
+  output += ('<li class="current"><a href="#chapter_title" >' + currentChap + '</a>\n');
+  
   var sections = jQuery('h2');
   var j = 0;
   sections.each(function () {
@@ -37,12 +37,14 @@ jQuery(function () {
     output += '<ul>';
     var key = jQuery(this).clone().find('span.index-term').empty().end().text();
     var section = jQuery(this).parents('section:first').attr('id');
-    
-    jQuery('<a class="section-anchor" name="#' + section + '" />').insertBefore(jQuery(this));
-    output += ('<li><a href="#' + section + '" >' + key + '</a>\n');
+    if (section == undefined) {
+      section = 'sec' + j;
+    }
+    jQuery('<a class="section-anchor" name="#hdr_' + section + '" />').insertBefore(jQuery(this));
+    output += ('<li><a href="#hdr_' + section + '" >' + key + '</a>\n');
     var section = jQuery(this).parents('section:first');
     var subSections = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
-
+  
     if (subSections.length) {
       output += '<ul>\n';
     }
@@ -51,8 +53,11 @@ jQuery(function () {
             
       var header = jQuery(this).clone().find('span.index-term').empty().end().text();
       var subsection = jQuery(this).parents('section:first').attr('id');
-      jQuery('<a class="section-anchor" name="' + subsection + '" />').insertBefore(jQuery(this));
-      output += ('<li><a href="#' + subsection + '" >' + header + '</a></li>\n');
+      if (subsection == undefined) {
+        subsection = 'sec' + j + '_' + k; 
+      }
+      jQuery('<a class="section-anchor" name="hdr_' + subsection + '" />').insertBefore(jQuery(this));
+      output += ('<li><a href="#hdr_' + subsection + '" >' + header + '</a></li>\n');
       k++;
     });
     if (subSections.length) {
