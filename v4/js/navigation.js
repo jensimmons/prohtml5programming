@@ -1,6 +1,6 @@
 var menuObj = [];
 jQuery(function () {
-  // toc
+  // toc list creation
   if(toc) {
     var tocOutput = '<ul class="dropdown-menu">\n';
     
@@ -21,14 +21,14 @@ jQuery(function () {
     jQuery('#toc').append(jQuery(tocOutput));
   }  
   
-  
+  // chapter navigation list creation
   var h1 = $('h1').eq(0);
   var currentChap = h1.text();
         
   var output = '<a name="main-navigation" id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
     
-  jQuery('<a name="item_0" />').insertBefore(h1);
-  output += ('<li class="current"><a href="#item_0" >' + currentChap + '</a>\n');
+  jQuery('<a class="section-anchor" name="sec_0" />').insertBefore(h1);
+  output += ('<li class="current"><a href="#sec_0" >' + currentChap + '</a>\n');
 
   var sections = jQuery('h2');
   var j = 0;
@@ -36,24 +36,26 @@ jQuery(function () {
           
     output += '<ul>';
     var key = jQuery(this).clone().find('span.index-term').empty().end().text();
+    var section = jQuery(this).parents('section:first').attr('id');
     
-    jQuery('<a name="item_0_' + j + '" />').insertBefore(jQuery(this));
-    output += ('<li><a href="#item_0_' + j + '" >' + key + '</a>\n');
+    jQuery('<a class="section-anchor" name="#' + section + '" />').insertBefore(jQuery(this));
+    output += ('<li><a href="#' + section + '" >' + key + '</a>\n');
     var section = jQuery(this).parents('section:first');
-    var subSection = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
+    var subSections = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
 
-    if (subSection.length) {
+    if (subSections.length) {
       output += '<ul>\n';
     }
     var k = 0;
-    subSection.each(function () {
+    subSections.each(function () {
             
       var header = jQuery(this).clone().find('span.index-term').empty().end().text();
-      jQuery('<a name="item_0_' + j + '_' + k + '" />').insertBefore(jQuery(this));
-      output += ('<li><a href="#item_0_' + j + '_' + k + '" >' + header + '</a></li>\n');
+      var subsection = jQuery(this).parents('section:first').attr('id');
+      jQuery('<a class="section-anchor" name="' + subsection + '" />').insertBefore(jQuery(this));
+      output += ('<li><a href="#' + subsection + '" >' + header + '</a></li>\n');
       k++;
     });
-    if (subSection.length) {
+    if (subSections.length) {
       output += '</ul>\n';
     }
     output += '</li></ul>\n';
@@ -61,7 +63,17 @@ jQuery(function () {
   });
   output += '</li></ul></nav></div>\n';
   jQuery('body').append(jQuery(output));
-        
-  var jPM = $.jPanelMenu( {'keyboardShortcuts': false});
-  jPM.on();
+  
+  
+    // jPanelMenu initiation  
+    var jPM = $.jPanelMenu( {'keyboardShortcuts': false} );
+    jPM.on();
+    // close menu post click?
+  jQuery(document).on('click', jPM.menu + ' li a', function (e) {
+    if ( jPM.isOpen() && $(e.target).attr('href').substring(0,1) == '#' ) { jPM.close(); }
+  });
+    
+    // remove hidden nav if jPanel is good to go (do we need checks here (like, for silk browser?))
+    jQuery('.jPanelMenu-panel > .nav-container').remove();
+    jQuery('.jPanelMenu-panel > #main-navigation').remove();
 });
