@@ -95,6 +95,7 @@
 <div id="wrapper">
 
 <hgroup>
+  <a id="chapter_title" class="section-anchor"></a>
   <h1>Chapter 2</h1>
   <h1>Using the Canvas API</h1>
 </hgroup>
@@ -103,10 +104,16 @@
 <p>This chapter presumes only a minimal amount of graphics expertise, so don&#x2019;t be afraid to jump in and try out one of the most powerful features of HTML5.</p>
 
 <section id="sec2_2">
+<a id="hdr_sec2_2" class="section-anchor"></a>
+
+
 <h2>Overview of HTML5 Canvas</h2>
 <p>An entire book could be written about the use of the Canvas API (and it wouldn&#x2019;t be a small book). Because we have only a chapter, we&#x2019;re going to cover (what we think is) the most commonly used functionality in this very extensive API.</p>
 
 <section id="sec3_2">
+<a id="hdr_sec3_2" class="section-anchor"></a>
+
+
 <h3>History</h3>
 <p>The canvas concept was originally introduced by Apple to be used in Mac OS X WebKit to create <i>dashboard widgets</i>. Before the arrival of canvas, you could only use drawing APIs in a browser through plug-ins such as Adobe plug-ins for Flash and Scalable Vector Graphics (SVG), Vector Markup Language (VML) only in Internet Explorer, or other clever JavaScript hacks.</p>
 <p>Try, for example, to draw a simple diagonal line without a <code>canvas</code> element&#x2014;it sounds easy, but it is a fairly complex task if you do not have a simple two-dimensional drawing API at your disposal. Canvas provides just that, and because it is an extremely useful thing to have in the browser, it was added to the HTML5 specification.</p>
@@ -120,6 +127,9 @@
 </section>
 
 <section id="sec4_2">
+<a id="hdr_sec4_2" class="section-anchor"></a>
+
+
 <h3>What Is a Canvas?</h3>
 <p>When you use a <code>canvas</code> element in your web page, it creates a rectangular area on the page. By default, this rectangular area is 300 pixels wide and 150 pixels high, but you can specify the exact size and set other attributes for your <code>canvas</code> element. Listing 2-1 shows the most basic <code>canvas</code> element that can be added to an HTML page.</p>
 
@@ -134,6 +144,8 @@
 </section>
 
 <section id="sec5_2">
+<a id="hdr_sec5_2" class="section-anchor"></a>
+
 
 <h3>Canvas Coordinates</h3>
 <p>As shown in Figure 2-1, coordinates in a canvas start at <code>x=0,y=0</code> in the upper-left corner&#x2014;which we will refer to as the <i>origin</i>&#x2014;and increase (in pixels) horizontally over the x-axis and vertically over the y-axis.</p>
@@ -145,12 +157,16 @@
 
 </section>
 <section id="sec6_2">
+<a id="hdr_sec6_2" class="section-anchor"></a>
+
 
 <h3>When Not to Use Canvas</h3>
 <p>Although the <code>canvas</code> element is great and very useful, you should <em>not</em> use the <code>canvas</code> element when another element will suffice. For example, it would not be a good idea to dynamically draw all the different h3s for an HTML document on a canvas instead of simply using h3 styles (H1, H2, and so on) that are meant for that purpose.</p>
 
 </section>
 <section id="sec7_2">
+<a id="hdr_sec7_2" class="section-anchor"></a>
+
 
 <h3>Fallback Content</h3>
 <p>In case your web page is accessed by a browser that does not support the <code>canvas</code> element or a subset of the Canvas API features, it is a good idea to provide an alternate source. For example, you can provide an alternate image or just some text that explains what the user could be enjoying if they actually used a modern browser. Listing 2-2 shows how alternate text can be specified inside a <code>canvas</code> element. Browsers that do not support the <code>canvas</code> element will simply render this fallback content.</p>
@@ -174,6 +190,8 @@
 
 </section>
 <section id="sec8_2">
+<a id="hdr_sec8_2" class="section-anchor"></a>
+
 
 <h3>CSS and Canvas</h3>
 <p>As with most HTML elements, CSS can be applied to the <code>canvas</code> element itself to add borders, padding, margins, etc. Additionally, some CSS values are inherited by the contents of the <code>canvas</code>; fonts are a good example, as fonts drawn into a <code>canvas</code> default to the settings of the <code>canvas</code> element itself.</p>
@@ -182,17 +200,23 @@
 
 </section>
 <section id="sec9_2">
+<a id="hdr_sec9_2" class="section-anchor"></a>
+
 
 <h3>Browser Support for HTML5 Canvas</h3>
 <p>With the arrival of Internet Explorer 9, all browser vendors now provide support for HTML5 Canvas, and it is already in the hands of a majority of users. This is a major milestone in web development, allowing 2D drawing to thrive on the modern Web.</p>
 <p>In spite of the dwindling market share of previous versions of Internet Explorer, it is still a good idea to first test whether HTML5 Canvas is supported before you use the APIs. The section &#x201C;Checking for Browser Support&#x201D; later in this chapter will show you how you can programmatically check for browser support.</p>
 </section>
 <section id="sec10_2">
+<a id="hdr_sec10_2" class="section-anchor"></a>
+
 <h2>Using the HTML5 Canvas APIs</h2>
 <p>In this section, we&#x2019;ll explore the use of the Canvas APIs in more detail. For the sake of illustration&#x2014;no pun intended&#x2014;we will use the various Canvas APIs to build a logo-like display of a forest scene with trees and a beautiful trail-running path suitable for a long-distance race event. Although our example will not win any awards for graphical design, it should serve to illustrate the various capabilities of HTML5 Canvas in a reasonable order.</p>
 
 </section>
 <section id="sec11_2">
+<a id="hdr_sec11_2" class="section-anchor"></a>
+
 
 <h3>Checking for Browser Support</h3>
 <p>Before you use the <code>canvas</code> element, you will want to make sure there is support in the browser. This way, you can provide some alternate text in case there is no support in their antique browser. Listing 2-3 shows one way you can use to test for browser support.</p>
@@ -214,6 +238,8 @@
 
 </section>
 <section id="sec12_2">
+<a id="hdr_sec12_2" class="section-anchor"></a>
+
 
 <h3>Adding a Canvas to a Page</h3>
 <p>Adding a <code>canvas</code> element in an HTML page is pretty straight-forward. Listing 2-4 shows the <code>canvas</code> element that can be added to an HTML page.</p>
@@ -283,6 +309,8 @@
 
 </section>
 <section id="sec13_2">
+<a id="hdr_sec13_2" class="section-anchor"></a>
+
 
 <h3>Applying Transformations to Drawings</h3>
 <p>Now let&#x2019;s look at another way to draw on the canvas using <i>transformation</i>. In the following example, the result is identical to the previous example, but the code used to draw the diagonal line is different. For this simple example, you could argue that the use of transformation adds unnecessary complexity. However, you can think of using transformation as a best practice for more complex canvas operations. You&#x2019;ll see that we&#x2019;ll use it a lot throughout the remaining examples, and it is critical to understanding the Canvas API&#x2019;s complex capabilities.</p>
@@ -345,6 +373,8 @@
 
 </section>
 <section id="sec14_2">
+<a id="hdr_sec14_2" class="section-anchor"></a>
+
 
 <h3>Working with Paths</h3>
 <p>Although we could offer many more exciting examples for drawing lines, we are ready now to progress to something a bit more complex: <i>paths</i>. Paths in the HTML5 Canvas API represent any shape you care to render. Our original line example was a path, as you might have gathered from the conspicuous <code>beginPath</code> call used to start it off. But paths can be as complicated as you desire, with multiple line and curve segments and even subpaths. If you are looking to draw almost any shape on a canvas, the path API will be your focus point.</p>
@@ -415,6 +445,8 @@
 
 </section>
 <section id="sec15_2">
+<a id="hdr_sec15_2" class="section-anchor"></a>
+
 
 <h3>Working with Stroke Styles</h3>
 <p>The Canvas API wouldn&#x2019;t be powerful or popular if developers were stuck using simple stick drawings and black lines. Let&#x2019;s use the stroke styling capabilities to make our canopy a little more tree-like. Listing 2-10 shows some basic commands that can modify the properties of the context in order to make the stroked shape look more appealing.</p>
@@ -447,6 +479,8 @@ context.stroke();</code></pre>
 
 </section>
 <section id="sec16_2">
+<a id="hdr_sec16_2" class="section-anchor"></a>
+
 
 <h3>Working with Fill Styles</h3>
 <p>As you might expect, stroking is not the only way to affect the appearance of canvas shapes. The next common way to modify a shape is to specify how its paths and subpaths are filled. Listing 2-11 shows how simple it is to fill our canopy with a pleasant, green color.</p>
@@ -469,6 +503,8 @@ context.fill();</code></pre>
 
 </section>
 <section id="sec17_2">
+<a id="hdr_sec17_2" class="section-anchor"></a>
+
 
 <h3>Filling Rectangular Content</h3>
 <p>Every tree deserves a strong foundation. Thankfully, we left space for our tree trunk in the original shape path. Listing 2-12 shows how we can add the simplest rendering of a tree trunk by using the <code>fillRect</code> convenience function.</p>
@@ -499,6 +535,8 @@ context.fillRect(-5, -50, 10, 50);</code></pre>
 
 </section>
 <section id="sec18_2">
+<a id="hdr_sec18_2" class="section-anchor"></a>
+
 
 <h3>Drawing Curves</h3>
 <p>The world, particularly the natural world, is not filled with straight lines and rectangles. Fortunately, the canvas provides a variety of functions for creating curves in our paths. We will demonstrate the simplest option&#x2014;a <i>quadratic</i> curve&#x2014;to form a path through our virtual forest. Listing 2-13 demonstrates the addition of two quadratic curves.</p>
@@ -544,6 +582,8 @@ context.restore();</code></pre>
 
 </section>
 <section id="sec19_2">
+<a id="hdr_sec19_2" class="section-anchor"></a>
+
 
 <h3>Inserting Images into a Canvas</h3>
 <p>Images can be extremely handy to display inside a canvas. They can be stamped, stretched, modified with transformations, and often be the focus of the entire canvas. Thankfully, the Canvas API includes a few simple commands for adding image content to the canvas.</p>
@@ -581,6 +621,8 @@ context.drawImage(bark, -5, -50, 10, 50);</code></pre>
 
 </section>
 <section id="sec20_2">
+<a id="hdr_sec20_2" class="section-anchor"></a>
+
 
 <h3>Using Gradients</h3>
 <p>Not satisfied with the tree trunk? Well, neither are we. Let&#x2019;s take another approach to drawing our tree trunk that uses a little more finesse: gradients. Gradients allow you to apply a gradual algorithmic sampling of colors as either a stroke or fill style, just like the patterns were applied in the last section. Creating gradients requires a three-step process:</p>
@@ -650,6 +692,8 @@ context.fillRect(-5, -50, 10, 50);
 
 </section>
 <section id="sec21_2">
+<a id="hdr_sec21_2" class="section-anchor"></a>
+
 
 <h3>Using Background Patterns</h3>
 <p>Direct rendering of images has many uses, but in some cases it is beneficial to use an image as a background tile, similar to the capability available in CSS. We&#x2019;ve already seen how it is possible to set a stroke or fill style to be a solid color. The HTML5 Canvas API also includes an option to set an image as a repeatable pattern for either a path stroke or fill.</p>
@@ -715,6 +759,8 @@ context.stroke();</code></pre>
 
 </section>
 <section id="sec22_2">
+<a id="hdr_sec22_2" class="section-anchor"></a>
+
 
 <h3>Scaling Canvas Objects</h3>
 <p>What kind of forest has only one tree? Let&#x2019;s fix that right away. To make this a little easier, we will adjust our code sample to isolate the tree drawing operations to a single routine, called <code>drawTree</code>, as shown in Listing 2-19.</p>
@@ -783,6 +829,8 @@ context.restore();</code></pre>
 
 </section>
 <section id="sec23_2">
+<a id="hdr_sec23_2" class="section-anchor"></a>
+
 
 <h3>Using Canvas Transforms</h3>
 <p>Transform operations are not limited to scales and translates. It is also possible to rotate the drawing context using the <code>context.rotate(angle)</code> function or even to modify the underlying transform directly for more advanced operations such as shearing of the rendered paths. If you wanted to rotate the display of an image, you would merely need to call the series of operations shown in Listing 2-21.</p>
@@ -837,6 +885,8 @@ context.restore();</code></pre>
 
 </section>
 <section id="sec24_2">
+<a id="hdr_sec24_2" class="section-anchor"></a>
+
 
 <h3>Using Canvas Text</h3>
 <p>As we approach the end of our trail creation, let&#x2019;s demonstrate the power of the Canvas API text functions by adding a fancy title to the top of our display. It is important to note that text rendering on a canvas is treated the same way as any other path object: text can be stroked or filled, and all rendering transformations and styles can apply to text just as they do to any other shape.</p>
@@ -908,6 +958,8 @@ context.restore();</code></pre>
 
 </section>
 <section id="sec25_2">
+<a id="hdr_sec25_2" class="section-anchor"></a>
+
 
 <h3>Applying Shadows</h3>
 <p>Finally, we will use the built-in canvas shadow API to add a blurred shadow effect to our new text display. Like many graphical effects, shadows are best applied in moderation, even though the Canvas API allows you to apply shadows to any operation we have already covered.</p>
@@ -972,6 +1024,8 @@ context.shadowBlur = 2;</code></pre>
 
 </section>
 <section id="sec26_2">
+<a id="hdr_sec26_2" class="section-anchor"></a>
+
 
 <h3>Working with Pixel Data</h3>
 <p>One of the most useful&#x2014;albeit nonobvious&#x2014;aspects of the Canvas API is the ability for developers to easily get access to the underlying pixels in the canvas. This access works in both directions: it is trivial to get access to the pixel values as a numerical array, and it is equally easy to modify those values and apply them back to the canvas. In fact, it is entirely possible to manipulate the canvas entirely through the pixel value calls and forgo the rendering calls we&#x2019;ve discussed in this chapter. This is made possible by the existence of three functions on the <code>context</code> API.</p>
@@ -1025,6 +1079,8 @@ img.src = canvasData;</code></pre>
 
 </section>
 <section id="sec27_2">
+<a id="hdr_sec27_2" class="section-anchor"></a>
+
 
 <h3>Implementing Canvas Security</h3>
 <p>There is an important caveat to using pixel manipulation, as described in the previous section. Although most developers would use pixel manipulation for legitimate means, it is quite possible that the ability to fetch and update data from a canvas could be used for nefarious purposes. For this reason, the concept of an <i>origin-clean</i> canvas was specified, so that canvases that are <i>tainted</i> with images from origins other than the source of the containing page cannot have their data retrieved.</p>
@@ -1041,6 +1097,8 @@ img.src = canvasData;</code></pre>
 </section>
 </section>
 <section id="sec28_2">
+<a id="hdr_sec28_2" class="section-anchor"></a>
+
 <h2>Building an Application with HTML5 Canvas</h2>
 <p>There are many different application possibilities for using the Canvas API: graphs, charts, image editing, and so on. However, one of the most intriguing uses for the canvas is to modify or overlay existing content. One popular type of overlay is known as a heatmap. Although the name implies a temperature measurement, the heat in this case can refer to any level of measurable activity. Areas on the map with high levels of activity are colored as hot (for example, red, yellow, or white). Areas with less activity show no color change at all, or minimal blacks and grays.</p>
 <p>For example, a heatmap can be used to indicate traffic on a city map, or storm activity on a global map. And situations such as these are easy to implement in HTML5 by combining a canvas display with an underlying map source. Essentially, the canvas can be used to overlay the map and draw the heat levels based on the appropriate activity data.</p>
@@ -1166,6 +1224,8 @@ canvas.onmousemove = function(e) {
 <p>Together, these one hundred or so lines of code illustrate how much you can do with the Canvas API in a short amount of time, without using any plug-ins or external rendering technology. With an infinite number of data sources available it is easy to see how they can be visualized simply and effectively.</p>
 
 <section id="sec29_2">
+<a id="hdr_sec29_2" class="section-anchor"></a>
+
 
 <h3>Practical Extra: Full Page Glass Pane</h3>
 <p>In the example application, you saw how you can apply a canvas on top of a graphic. You can also apply a canvas on top of the entire browser window or portions of the same&#x2014;a technique commonly referred to as glass pane. Once you have positioned the glass pane canvas on top of a web page, you can do all kinds of cool and handy things with it.</p>
@@ -1180,6 +1240,8 @@ canvas.onmousemove = function(e) {
 
 </section>
 <section id="sec30_2">
+<a id="hdr_sec30_2" class="section-anchor"></a>
+
 
 <h3>Practical Extra: Timing Your Canvas Animation</h3>
 
@@ -1299,6 +1361,8 @@ function loopAnimation(currentTime) {
 </section>
 
 <section id="sec31_2">
+<a id="hdr_sec31_2" class="section-anchor"></a>
+
   <h2>Summary</h2>
   <p>As you can see, the Canvas API provides a very powerful way to modify the appearance of your web application without resorting to odd document hacks. Images, gradients, and complex paths can be combined to create nearly any type of display you may be looking to present. Keep in mind that you generally need to draw at the origin, load any images you want to display before attempting to draw them, and be mindful of tainting your canvas with foreign image sources. However, if you learn to harness the power of the canvas, you can create applications that were never possible in a web page before.</p>
 </section>
@@ -1307,6 +1371,66 @@ function loopAnimation(currentTime) {
 </article>
 
 <!--====================== END CONTENT ======================-->
+
+<a id="main-navigation"></a>
+<div class="nav-container">
+<nav id="menu" role="navigation">
+  <ul>
+    <li class="current">
+      <a href="#chapter_title">Chapter 2</a>
+      <ul>
+        <li>
+          <a href="#hdr_sec2_2">Overview of HTML5 Canvas</a>
+          <ul>
+            <li><a href="#hdr_sec3_2">History</a></li>
+            <li><a href="#hdr_sec4_2">What Is a Canvas?</a></li>
+            <li><a href="#hdr_sec5_2">Canvas Coordinates</a></li>
+            <li><a href="#hdr_sec6_2">When Not to Use Canvas</a></li>
+            <li><a href="#hdr_sec7_2">Fallback Content</a></li>
+            <li><a href="#hdr_sec8_2">CSS and Canvas</a></li>
+            <li><a href="#hdr_sec9_2">Browser Support for HTML5 Canvas</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#hdr_sec10_2">Using the HTML5 Canvas APIs</a>
+          <ul>   
+            <li><a href="#hdr_sec11_2">Checking for Browser Support</a></li>
+            <li><a href="#hdr_sec12_2">Adding a Canvas to a Page</a></li>
+            <li><a href="#hdr_sec13_2">Applying Transformations to Drawings</a></li>
+            <li><a href="#hdr_sec14_2">Working with Paths</a></li>
+            <li><a href="#hdr_sec15_2">Working with Stroke Styles</a></li>
+            <li><a href="#hdr_sec16_2">Working with Fill Styles</a></li>
+            <li><a href="#hdr_sec17_2">Filling Rectangular Content</a></li>
+            <li><a href="#hdr_sec18_2">Drawing Curves</a></li>
+            <li><a href="#hdr_sec19_2">Inserting Images into a Canvas</a></li>
+            <li><a href="#hdr_sec20_2">Using Gradients</a></li>
+            <li><a href="#hdr_sec21_2">Using Background Patterns</a></li>
+            <li><a href="#hdr_sec22_2">Scaling Canvas Objects</a></li>
+            <li><a href="#hdr_sec23_2">Using Canvas Transforms</a></li>
+            <li><a href="#hdr_sec24_2">Using Canvas Text</a></li>
+            <li><a href="#hdr_sec25_2">Applying Shadows</a></li>
+            <li><a href="#hdr_sec26_2">Working with Pixel Data</a></li>
+            <li><a href="#hdr_sec27_2">Implementing Canvas Security</a></li>
+          </ul>
+        </li>
+      </ul>  
+      <ul>
+        <li>
+          <a href="#hdr_sec28_2">Building an Application with HTML5 Canvas</a>
+          <ul>
+            <li><a href="#hdr_sec29_2">Practical Extra: Full Page Glass Pane</a></li>
+            <li><a href="#hdr_sec30_2">Practical Extra: Timing Your Canvas Animation</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#hdr_sec31_2">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
 
 
   </body>
