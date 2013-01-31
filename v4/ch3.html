@@ -103,7 +103,7 @@
 
 <p>In this chapter, we&#x2019;ll explore what you can do with another graphics feature in HTML5: <em>Scalable Vector Graphics</em>. Scalable Vector Graphics, or SVG, is an expressive language for two dimensional graphics.</p>
 
-<section id="Sec2_3">
+<section id="sec2_3">
 
 <h2>Overview of SVG</h2>
 
@@ -113,7 +113,7 @@
 
 <p>Vector graphics are quite different. Vector graphics represent images with mathematical descriptions of geometry. A vector image contains all of the information needed to draw an image from high-level geometric objects such as lines and shapes. As you can tell by the name, SVG is an example of vector graphics. Like HTML, SVG is a file format that also has an API. SVG combined with the DOM APIs form a vector graphics API. It is possible to embed raster graphics such as PNG images inside of SVG, but SVG is primarily a vector format.</p>
 
-<section id="Sec3_3">
+<section id="sec3_3">
 
 <h3>History</h3>
 
@@ -125,7 +125,7 @@
 
 </section>
 
-<section id="Sec4_3">
+<section id="sec4_3">
 
 <h3>Understanding SVG</h3>
 
@@ -165,7 +165,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec5_3">
+<section id="sec5_3">
 
 <h3>Scalable Graphics</h3>
 
@@ -178,7 +178,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec6_3">
+<section id="sec6_3">
 
 <h3>Creating 2D Graphics  with SVG</h3>
 
@@ -198,7 +198,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec7_3">
+<section id="sec7_3">
 
 <h3>Adding SVG to a Page</h3>
 
@@ -223,7 +223,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec8_3">
+<section id="sec8_3">
 
 <h3>Simple Shapes</h3>
 
@@ -269,7 +269,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec9_3">
+<section id="sec9_3">
 
 <h3>Transforming SVG Elements</h3>
 
@@ -294,7 +294,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec10_3">
+<section id="sec10_3">
 
 <h3>Reusing Content</h3>
 
@@ -326,7 +326,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec11_3">
+<section id="sec11_3">
 
 <h3>Patterns and Gradients</h3>
 
@@ -357,7 +357,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec12_3">
+<section id="sec12_3">
 
 <h3>SVG Paths </h3>
 
@@ -405,7 +405,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec13_3">
+<section id="sec13_3">
 
 <h3>Using SVG Text</h3>
 
@@ -436,7 +436,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec14_3">
+<section id="sec14_3">
 
 <h3>Putting the Scene Together</h3>
 
@@ -522,11 +522,11 @@ Happy Trails
 
 </section>
 
-<section id="Sec15_3">
+<section id="sec15_3">
 <h2>Building an Interactive Application with SVG</h2>
 <p>In this section, we&#x2019;ll expand on the static example. We will add HTML and JavaScript to make the document interactive. We will take advantage of the capabilities of SVG in an application that would require considerably more code to implement with the canvas API.</p>
 
-<section id="Sec16_3">
+<section id="sec16_3">
 <h3>Adding Trees</h3>
 <p>We need just a single button element in this interactive application. The click handler for the button adds a new tree at a random location within the 600x400 pixel SVG region. The new tree is also randomly scaled by an amount between 50% and 150%. Each new tree is actually a use element referencing the &#x201C;Tree&#x201D; group containing multiple paths. The code uses the namespaced <code>document.createElementNS()</code> call to create a <code>use</code> element. It links it with the <code>xlink:href</code> attribute to the previously defined Tree group. It then appends the new element to the SVG element tree (see Listing 3-11).</p>
 
@@ -550,7 +550,7 @@ Happy Trails
 <p>This function ends with a call to <code>updateTrees()</code>, which we will see next.</p>
 
 </section>
-<section id="Sec25_3">
+<section id="sec25_3">
 <h3>Adding the updateTrees Function</h3>
 <p>The <code>updateTrees</code> function runs when the document initially loads as well as any time trees are added or removed. It is responsible for updating the text that displays the number of trees in the forest. It also attaches a click handler function to each tree (see Listing 3-12).</p>
 
@@ -576,7 +576,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec26_3">
+<section id="sec26_3">
 <h3>Adding the removeTree Function</h3>
 <p>Now, let&#x2019;s add the function that removes trees when they are clicked (see Listing 3-13).</p>
 
@@ -599,7 +599,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec17_3">
+<section id="sec17_3">
 <h3>Adding the CSS Styles</h3>
 
 <p>To make the interaction more discoverable, we will add some CSS that changes the appearance of the tree beneath the mouse cursor:</p>
@@ -628,7 +628,7 @@ Happy Trails
 
 </section>
 
-<section id="Sec111_3">
+<section id="sec111_3">
 
 <h3>The Final Code</h3>
 
@@ -772,7 +772,7 @@ Happy Trails
 </figure>
 
 </section>
-<section id="Sec18_3">
+<section id="sec18_3">
 <h3>Summary</h3>
 <p>In this chapter, you have seen how SVG in HTML5 provides a powerful way to create applications with interactive two dimensional graphics.</p>
 <p>First we looked at a scene drawn using SVG embedded in an HTML5 document. We examined the elements and attributes that made up the drawing. We saw how you can define and reuse content definitions, group and transform elements, and draw with shapes, paths, and text.</p>
