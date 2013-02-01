@@ -97,6 +97,7 @@
 <div id="wrapper">
 
   <hgroup>
+    <a id="chapter_title" class="section-anchor"></a>
     <h1>Chapter 11</h1>
     <h1>Using the Web Storage API</h1>
   </hgroup>
@@ -104,6 +105,8 @@
   <p>In this chapter, we will explore what you can do with HTML5 Web Storage&#x2014;sometimes referred to as DOMStorage&#x2014;an API that makes it easy to retain data across web requests. Before the Web Storage API, remote web servers needed to store any data that persisted by sending it back and forth from client to server. With the advent of the Web Storage API, developers can now store data directly on the client side in the browser for repeated access across requests or to be retrieved long after you completely close the browser, thus reducing network traffic.</p>
   <p>We&#x2019;ll first look at how Web Storage differs from cookies and then explore how you can store and retrieve data. Next, we will look at the differences between <code>localStorage</code> and <code>sessionStorage</code>, the attributes and functions that the storage interface provides, and how you can handle Web Storage events. We wrap up with a look at Web SQL Database API and a few practical extras.</p>
   <section id="sec2_11">
+<a id="hdr_sec2_11" class="section-anchor"></a>
+
   <h2>Overview of Web Storage</h2>
   <p>To explain the Web Storage API, it is best to review its predecessor, the intriguingly named cookie. Browser cookies&#x2014;named after an age-old programming technique for passing small data values between programs&#x2014;are a built-in way of sending text values back and forth from server to browser. Servers can use the values they put into these cookies to track user information across web pages. Cookie values are then transmitted back and forth every time a user visits a domain. For example, cookies can store a session identifier that allows a web server to know which shopping cart belongs to a user by storing a unique ID in a browser cookie that matches the server&#x2019;s own shopping cart database. Then, as a user moves from page to page, the shopping cart can be updated consistently. Another use for cookies is to store local values into an application so that these values can be used on subsequent page loads.</p>
   <p>Cookie values can also be used for operations that are slightly less desirable to users, such as tracking which pages a user visits for the sake of targeted advertising. As such, some users have demanded that browsers include functionality to allow them to block or remove cookies either all of the time or for specific sites.</p>
@@ -117,14 +120,20 @@
   <p>In many cases, the same results could be achieved without involving a network or remote server. This is where the HTML5 Web Storage API comes in. By using this simple API, developers can store values in easily retrievable JavaScript objects that persist across page loads. By using either <code>sessionStorage</code> or <code>localStorage</code>, developers can choose to let those values survive either across page loads in a single window or tab or across browser restarts, respectively. Stored data is not transmitted across the network, and is easily accessed on return visits to a page. Furthermore, larger values can be persisted using the Web Storage API values as high as a few megabytes. This makes Web Storage suitable for document and file data that would quickly blow out the size limit of a cookie.</p>
   </section>
   <section id="sec3_11">
+<a id="hdr_sec3_11" class="section-anchor"></a>
+
   <h2>Browser Support for Web Storage</h2>
   <p>Web Storage is one of the most widely adopted features of HTML5. In fact, since the arrival of Internet Explorer 8 in 2009 all currently shipping browser versions support Web Storage in some capacity. At the time of this publication, the market share of browsers that do not support storage is dwindling down into single digit percentages.</p>
   <p>Web Storage is one of the safest new APIs to use in your web applications today because of its widespread support. As usual, though, it is a good idea to first test if Web Storage is supported before you use it. The subsequent section &#x201C;Checking for Browser Support&#x201D; will show you how you can programmatically check if Web Storage is supported.</p>
   </section>
   <section id="sec4_11">
+<a id="hdr_sec4_11" class="section-anchor"></a>
+
   <h2>Using the Web Storage API</h2>
   <p>The Web Storage API is surprisingly simple to use. We&#x2019;ll start by covering basic storage and retrieval of values and then move on to the differences between <code>sessionStorage</code> and <code>localStorage</code>. Finally, we&#x2019;ll look at the more advanced aspects of the API, such as event notification when values change.</p>
   <section id="sec5_11">
+<a id="hdr_sec5_11" class="section-anchor"></a>
+
   <h3>Checking for Browser Support</h3>
   <p>The storage database for a given domain is accessed directly from the <code>window</code> object. Therefore, determining if a user&#x2019;s browser supports the Web Storage API is as easy as checking for the existence of <code>window.sessionStorage</code> or <code>window.localStorage</code>. Listing 11-1 shows a routine that checks for storage support and displays a message about the browser&#x2019;s support for the Web Storage API. Instead of using this code, you can also use the JavaScript utility library Modernizr, which handles some cases that may result in a false positive.</p>
 
@@ -168,6 +177,8 @@
 
   </section>
   <section id="sec6_11">
+<a id="hdr_sec6_11" class="section-anchor"></a>
+
   <h3>Setting and Retrieving Values</h3>
   <p>To begin, we&#x2019;ll focus on the session storage capability as you learn to set and retrieve simple values in a page. Setting a value can easily be done in a single statement, which we&#x2019;ll initially write using the long-hand notation:</p>
   <p>sessionStorage.setItem(&#x2018;myFirstKey&#x2019;, &#x2018;myFirstValue&#x2019;);</p>
@@ -196,6 +207,8 @@
   <p>That&#x2019;s it for the basics. You now have all the knowledge you need to use session storage in your application. However, you might be wondering what&#x2019;s so special about this <code>sessionStorage</code> object. After all, JavaScript allows you to set and get properties on nearly any object. The difference is in the scope. What you may not have realized is that our example set and get calls do not need to occur in the same web page. As long as pages are served from the same origin&#x2014;the combination of scheme, host, and port&#x2014;then values set on <code>sessionStorage</code> can be retrieved from other pages using the same keys. This also applies to subsequent loads of the same page. As a developer, you are probably used to the idea that changes made in script will disappear whenever a page is reloaded. That is no longer true for values that are set in the Web Storage API; they will continue to exist across page loads.</p>
   </section>
   <section id="sec7_11">
+<a id="hdr_sec7_11" class="section-anchor"></a>
+
   <h3>Plugging Data Leaks</h3>
   <p>How long do the values persist? For objects set into <code>sessionStorage</code>, they will persist as long as the browser window (or tab) is not closed. As soon as a user closes the window&#x2014;or browser, for that matter&#x2014;the <code>sessionStorage</code> values are cleared out. It is useful to consider a <code>sessionStorage</code> value to be somewhat like a sticky note reminder. Values put into <code>sessionStorage</code> won&#x2019;t last long, and you should not put anything truly valuable into them, as the values are not guaranteed to be around whenever you are looking for them.</p>
   <p>Why, then, would you choose to use the session storage area in your web application? Session storage is perfect for short-lived processes that would normally be represented in wizards or dialogs. If you have data to store over the course of a few pages, that you would not be keen to have resurface the next time a user visits your application, feel free to store them in the session storage area. In the past, these types of values might be submitted by forms and cookies and transmitted back and forth on every page load. Using storage eliminates that overhead.</p>
@@ -210,6 +223,8 @@
   <p>Using <code>sessionStorage</code>, on the other hand, allows temporary values like a departure date to be saved across pages that access the application but not leak into other windows where the user is also browsing for flights. Therefore, those preferences will be isolated to each window where the corresponding flights are booked.</p>
   </section>
   <section id="sec8_11">
+<a id="hdr_sec8_11" class="section-anchor"></a>
+
   <h3>Local Versus Session Storage</h3>
   <p>Sometimes, an application needs values that persist beyond the life of a single tab or window or need to be shared across multiple views. In these cases, it is more appropriate to use a different Web Storage implementation: <code>localStorage</code>. The good news is that you already know how to use <code>localStorage</code>. The only programmatic difference between <code>sessionStorage</code> and <code>localStorage</code> is the name by which each is accessed&#x2014;through the <code>sessionStorage</code> and <code>localStorage</code> objects, respectively. The primary behavioral differences are how long the values persist and how they are shared. Table 11-1 shows the differences between the two types of storage.</p>
   
@@ -237,6 +252,8 @@
   <p>Keep in mind that browsers sometimes redefine the lifespan of a tab or window. For example, some browsers will save and restore the current session when a browser crashes, or when a user shuts down the display with many open tabs. In these cases, the browser may choose to keep the <code>sessionStorage</code> around when the browser restarts or resumes. So, in effect, <code>sessionStorage</code> may live longer than you think!</p>
   </section>
   <section id="sec9_11">
+<a id="hdr_sec9_11" class="section-anchor"></a>
+
   <h3>Other Web Storage API Attributes and Functions</h3>
   <p>The Web Storage API is one of the simplest in the HTML5 set. We have already looked at both explicit and implicit ways to set and retrieve data from the session and local storage areas. Let&#x2019;s complete our survey of the API by looking at the full set of available attributes and function calls.</p>
   <p>The <code>sessionStorage</code> and <code>localStorage</code> objects can be retrieved from the <code>window</code> object of the document in which they are being used. Other than their names and the duration of their values, they are identical in functionality. Both implement the <code>Storage</code> interface, which is shown in Listing 11-2.</p>
@@ -293,6 +310,8 @@
 
   </section>
   <section id="sec10_11">
+<a id="hdr_sec10_11" class="section-anchor"></a>
+
   <h3>Communicating Web Storage Updates</h3>
   <p>Sometimes, things get a little more complicated, and storage needs to be accessed by more than one page, browser tab, or worker. Perhaps your application needs to trigger many operations in succession whenever a storage value is changed. For just these cases, the Web Storage API includes an event mechanism to allow notifications of data updates to be communicated to interested listeners. Web Storage events are fired on the window object for every window of the same origin as the storage operation, regardless of whether or not the listening window is doing any storage operations itself.</p>
 
@@ -344,6 +363,8 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
 
   </section>
   <section id="sec11_11">
+<a id="hdr_sec11_11" class="section-anchor"></a>
+
   <h3>Exploring Web Storage</h3>
   <p>Since Web Storage is very similar in function to cookies, it is not too surprising that the most advanced browsers are treating them in a very similar manner. Values that are stored into <code>localStorage</code> or <code>sessionStorage</code> can be browsed similar to cookies in the latest browsers, as shown in Figure 11-5.</p>
   
@@ -374,6 +395,8 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
   </section>
   </section>
   <section id="sec12_11">
+<a id="hdr_sec12_11" class="section-anchor"></a>
+
   <h2>Building an Application with Web Storage</h2>
   <p>Now, let&#x2019;s put together what you&#x2019;ve learned by integrating storage into a web application. As applications grow more complex, it becomes increasingly important to manage as much data as possible without server interaction. Keeping data local to the client reduces network traffic and increases responsiveness by fetching data from a local machine instead of a remote location.</p>
   <p>One common problem developers grapple with is how to manage data as users move from page to page within an application. Traditionally, web applications achieve this by storing data on a server and moving it back and forth while the user navigates pages. Alternatively, the application may attempt to keep the user in a single page and update everything dynamically. However, users are prone to wander, and getting data back into the display quickly when a user returns to your application&#x2019;s page is a great way to enhance the user experience.</p>
@@ -712,9 +735,13 @@ if (window.WebSocket) {
 
   </section>
   <section id="sec13_11">
+<a id="hdr_sec13_11" class="section-anchor"></a>
+
   <h2>The Future of Browser Database Storage</h2>
   <p>The key-value Storage API is great for persisting data, but what about indexed storage that can be queried? HTML5 applications will eventually have access to indexed databases as well. The exact details of the database APIs are still solidifying, and there are two primary proposals.</p>
   <section id="sec14_11">
+<a id="hdr_sec14_11" class="section-anchor"></a>
+
   <h3>The Web SQL Database</h3>
   <p>One of the proposals, Web SQL Database, has been implemented in Safari, Chrome, and Opera. Table 11-2 shows the browser support for Web SQL Database.</p>
   
@@ -828,6 +855,8 @@ autoincrement, name)');
 
   </section>
   <section id="sec15_11">
+<a id="hdr_sec15_11" class="section-anchor"></a>
+
   <h3>The Indexed Database API</h3>
   <p>A second proposal for browser database storage gained prominence in 2010. The Indexed Database API is supported by Microsoft and Mozilla and is seen as a counter to the Web SQL Database. Where the Web SQL Database looks to bring the established SQL language into browsers, the Indexed Database aims to bring low-level indexed storage capabilities, with the hope that more developer-friendly libraries will be built on top of the indexed core.</p>
   <p>While the Web SQL API supports using query languages to issue SQL statements against tables of data, the Indexed DB API issues synchronous or asynchronous function calls directly against a tree-like object storage engine. Unlike Web SQL, the Indexed DB does not work with tables and columns.</p>
@@ -883,9 +912,13 @@ autoincrement, name)');
   </section>
   </section>
   <section id="sec16_11">
+<a id="hdr_sec16_11" class="section-anchor"></a>
+
   <h2>Practical Extras</h2>
   <p>Sometimes, there are techniques that don&#x2019;t fit into our regular examples but nonetheless apply to many types of HTML5 applications. We present to you some short, but common, practical extras here.</p>
   <section id="sec17_11">
+<a id="hdr_sec17_11" class="section-anchor"></a>
+
   <h3>JSON Object Storage</h3>
   <p>Although the specification for Web Storage allows for objects of any type to be stored as key-value pairs, in current implementations, some browsers limit values to be text string data types. There is a practical workaround, however, due to the fact that modern versions of browsers contain built-in support for JavaScript Object Notation (JSON).</p>
   <p>JSON is a standard for data-interchange that can represent objects as strings and vice-versa. JSON has been used for over a decade to transmit objects from browser clients to servers over HTTP. Now, we can use it to serialize complex objects in and out of Web Storage in order to persist complex data types. Consider the script block in Listing 11-14.</p>
@@ -916,6 +949,8 @@ autoincrement, name)');
   <p>The practical result of these two functions is that any object we wish to track in storage, no matter if it is a complex object type, can be stored and reloaded as users navigate in and out of the application. This allows developers to extend the techniques we have already shown to nontext data.</p>
   </section>
   <section id="sec18_11">
+<a id="hdr_sec18_11" class="section-anchor"></a>
+
   <h3>A Window into Sharing</h3>
   <p>As alluded to in an earlier section, the ability for Web Storage events to fire in any window browsing the same origin has some powerful implications. It means that storage can be used to send messages from window to window, even if they are not all using the storage object itself. This, in turn implies that we can now share data across windows that have the same origin.</p>
   <p>Let&#x2019;s see how this works using some code samples. To listen to cross-window messages, a simple script needs only to register a handler for storage events. Let&#x2019;s assume that a page running at <code>http://www.example.com/storageLog.html</code> contains the code shown in Listing 11-15 (the sample file <code>storageLog.html</code> for this example is also located in the <code>code/storage</code> folder).</p>
@@ -947,6 +982,8 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
   </section>
   </section>
   <section id="sec19_11">
+<a id="hdr_sec19_11" class="section-anchor"></a>
+
   <h2>Summary</h2>
   <p>In this chapter, we showed how Web Storage can be used as an alternative to browser cookies for keeping local copies of data across windows, tabs, and (with <code>localStorage</code>) even across browser restarts. You&#x2019;ve seen that data can be appropriately segregated between windows by using <code>sessionStorage</code>, and shared&#x2014;even across windows&#x2014;by using storage events. In our full-fledged example, we showed a practical way to use storage to track data from page to page as users navigate a website, which could just as easily be applied to other data types. We even demonstrated how nontext data types can be stored when a page loads or unloads to save and restore the state of a page across visits.</p>
   <p>In the next chapter, we&#x2019;ll show you how HTML5 lets you create offline applications.</p>
@@ -958,7 +995,48 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
 
 <!--====================== END CONTENT ======================-->
       
-
+<a id="main-navigation"></a>
+<div class="nav-container">
+<nav id="menu" role="navigation">
+  <ul>
+    <li class="current">
+      <a href="#chapter_title">Chapter 11</a>
+      <ul>
+        <li><a href="#hdr_sec2_11">Overview of Web Storage</a></li>
+        <li><a href="#hdr_sec3_11">Browser Support for Web Storage</a></li>
+        <li>
+          <a href="#hdr_sec4_11">Using the Web Storage API</a>
+          <ul>
+            <li><a href="#hdr_sec5_11">Checking for Browser Support</a></li>
+            <li><a href="#hdr_sec6_11">Setting and Retrieving Values</a></li>
+            <li><a href="#hdr_sec7_11">Plugging Data Leaks</a></li>
+            <li><a href="#hdr_sec8_11">Local Versus Session Storage</a></li>
+            <li><a href="#hdr_sec9_11">Other Web Storage API Attributes and Functions</a></li>
+            <li><a href="#hdr_sec10_11">Communicating Web Storage Updates</a></li>
+            <li><a href="#hdr_sec11_11">Exploring Web Storage</a></li>
+          </ul>
+        </li>
+        <li><a href="#hdr_sec12_11">Building an Application with Web Storage</a></li>
+        <li>
+          <a href="#hdr_sec13_11">The Future of Browser Database Storage</a>
+          <ul>
+            <li><a href="#hdr_sec14_11">The Web SQL Database</a></li>
+            <li><a href="#hdr_sec15_11">The Indexed Database API</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#hdr_sec16_11">Practical Extras</a>
+          <ul>
+            <li><a href="#hdr_sec17_11">JSON Object Storage</a></li>
+            <li><a href="#hdr_sec18_11">A Window into Sharing</a></li>
+          </ul>
+        </li>
+        <li><a href="#hdr_sec19_11">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
 
   </body>
 

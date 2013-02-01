@@ -21,53 +21,53 @@ jQuery(function () {
     jQuery('#toc').append(jQuery(tocOutput));
   }  
   
-  // chapter navigation list creation
-  var h1 = $('h1').eq(0);
-  var currentChap = h1.text();
-        
-  var output = '<a id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
-    
-  jQuery('<a class="section-anchor" id="chapter_title" />').insertBefore(h1);
-  output += ('<li class="current"><a href="#chapter_title" >' + currentChap + '</a>\n');
-  
-  var sections = jQuery('h2');
-  var j = 0;
-  sections.each(function () {
-          
-    output += '<ul>';
-    var key = jQuery(this).clone().find('span.index-term').empty().end().text();
-    var section = jQuery(this).parents('section:first').attr('id');
-    if (section == undefined) {
-      section = 'sec' + j;
-    }
-    jQuery('<a class="section-anchor" name="#hdr_' + section + '" />').insertBefore(jQuery(this));
-    output += ('<li><a href="#hdr_' + section + '" >' + key + '</a>\n');
-    var section = jQuery(this).parents('section:first');
-    var subSections = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
-  
-    if (subSections.length) {
-      output += '<ul>\n';
-    }
-    var k = 0;
-    subSections.each(function () {
-            
-      var header = jQuery(this).clone().find('span.index-term').empty().end().text();
-      var subsection = jQuery(this).parents('section:first').attr('id');
-      if (subsection == undefined) {
-        subsection = 'sec' + j + '_' + k; 
-      }
-      jQuery('<a class="section-anchor" name="hdr_' + subsection + '" />').insertBefore(jQuery(this));
-      output += ('<li><a href="#hdr_' + subsection + '" >' + header + '</a></li>\n');
-      k++;
-    });
-    if (subSections.length) {
-      output += '</ul>\n';
-    }
-    output += '</li></ul>\n';
-    j++;
-  });
-  output += '</li></ul></nav></div>\n';
-  jQuery('body').append(jQuery(output));
+  // // chapter navigation list creation
+  // var h1 = $('h1').eq(0);
+  // var currentChap = h1.text();
+  //       
+  // var output = '<a id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
+  //   
+  // jQuery('<a class="section-anchor" id="chapter_title" />').insertBefore(h1);
+  // output += ('<li class="current"><a href="#chapter_title" >' + currentChap + '</a>\n');
+  // 
+  // var sections = jQuery('h2');
+  // var j = 0;
+  // sections.each(function () {
+  //         
+  //   output += '<ul>';
+  //   var key = jQuery(this).clone().find('span.index-term').empty().end().text();
+  //   var section = jQuery(this).parents('section:first').attr('id');
+  //   if (section == undefined) {
+  //     section = 'sec' + j;
+  //   }
+  //   jQuery('<a class="section-anchor" id="hdr_' + section + '" />').insertBefore(jQuery(this));
+  //   output += ('<li><a href="#hdr_' + section + '" >' + key + '</a>\n');
+  //   var section = jQuery(this).parents('section:first');
+  //   var subSections = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
+  //     
+  //   if (subSections.length) {
+  //     output += '<ul>\n';
+  //   }
+  //   var k = 0;
+  //   subSections.each(function () {
+  //           
+  //     var header = jQuery(this).clone().find('span.index-term').empty().end().text();
+  //     var subsection = jQuery(this).parents('section:first').attr('id');
+  //     if (subsection == undefined) {
+  //       subsection = 'sec' + j + '_' + k; 
+  //     }
+  //     jQuery('<a class="section-anchor" id="hdr_' + subsection + '" />').insertBefore(jQuery(this));
+  //     output += ('<li><a href="#hdr_' + subsection + '" >' + header + '</a></li>\n');
+  //     k++;
+  //   });
+  //   if (subSections.length) {
+  //     output += '</ul>\n';
+  //   }
+  //   output += '</li></ul>\n';
+  //   j++;
+  // });
+  // output += '</li></ul></nav></div>\n';
+  // jQuery('body').append(jQuery(output));
   
   
     // jPanelMenu initiation  
