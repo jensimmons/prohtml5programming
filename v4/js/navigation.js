@@ -10,8 +10,9 @@ function textResize(direction) {
     var newSize = currentSize + (direction * fontSizeMultiplier) + 'px';
     baseEl.css('font-size', newSize );
   }
-  // save user preference
-  // $.cookie('fontsize_pref', newSize, { expires: 14, path: '/' });
+  if (window.localStorage) {
+    localStorage['font_size_pref'] = newSize;
+  } 
 }
 
 jQuery(function () {
@@ -97,21 +98,26 @@ jQuery(function () {
     jQuery('.jPanelMenu-panel > .nav-container').remove();
     jQuery('.jPanelMenu-panel > #main-navigation').remove();
     
-    // font-size controls
-    jQuery('.btn.fs-smaller').bind('click', function () {
-       textResize(-1);
+    // initialize font-size controls
+    jQuery('.btn.fs-smaller').bind('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      textResize(-1);
     });
-    jQuery('.btn.fs-default').bind('click', function () {
-       textResize(0);
+    jQuery('.btn.fs-default').bind('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      textResize(0);
     });
-    jQuery('.btn.fs-larger').bind('click', function () {
-       textResize(1);
+    jQuery('.btn.fs-larger').bind('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      textResize(1);
     });
     
     // pick up fontSize from cookie if exists
-    // var fontsize_pref = $.cookie('fontsize_pref'); // => undefined
-    // if (fontsize_pref !== undefined) {
-    //   $('html').css('font-size', fontsize_pref );
-    // }
+    if (window.localStorage && localStorage['font_size_pref'] !== undefined) {
+      $('html').css('font-size', localStorage['font_size_pref'] );
+    }
 
 });
