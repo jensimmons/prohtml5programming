@@ -1,4 +1,19 @@
-var menuObj = [];
+// var menuObj = [];
+
+function textResize(direction) {
+  var baseEl = $('html');
+  if (direction === 0) { // reset to 16px
+    baseEl.css('font-size', '16px');
+  } else {
+    var currentSize = parseFloat(baseEl.css('font-size'));
+    var fontSizeMultiplier = 1.2; 
+    var newSize = currentSize + (direction * fontSizeMultiplier) + 'px';
+    baseEl.css('font-size', newSize );
+  }
+  // save user preference
+  // $.cookie('fontsize_pref', newSize, { expires: 14, path: '/' });
+}
+
 jQuery(function () {
   // toc list creation
   if(toc) {
@@ -81,4 +96,22 @@ jQuery(function () {
     // remove hidden nav if jPanel is good to go (do we need checks here (like, for silk browser?))
     jQuery('.jPanelMenu-panel > .nav-container').remove();
     jQuery('.jPanelMenu-panel > #main-navigation').remove();
+    
+    // font-size controls
+    jQuery('.btn.fs-smaller').bind('click', function () {
+       textResize(-1);
+    });
+    jQuery('.btn.fs-default').bind('click', function () {
+       textResize(0);
+    });
+    jQuery('.btn.fs-larger').bind('click', function () {
+       textResize(1);
+    });
+    
+    // pick up fontSize from cookie if exists
+    // var fontsize_pref = $.cookie('fontsize_pref'); // => undefined
+    // if (fontsize_pref !== undefined) {
+    //   $('html').css('font-size', fontsize_pref );
+    // }
+
 });
