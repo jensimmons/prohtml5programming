@@ -100,6 +100,7 @@
 
 
 <hgroup>
+  <a id="chapter_title" class="section-anchor"></a>
   <h1>Chapter 7</h1>
   <h1>Using the WebSocket API</h1>
 </hgroup>
@@ -114,10 +115,14 @@
 <p>We’ll show you in detail just why WebSocket provides such a dramatic improvement, and you’ll see how—in one fell swoop—WebSocket makes all the old Comet and Ajax polling, long-polling, and streaming solutions obsolete.</p>
 
 <section id="sec2_7">
+<a id="hdr_sec2_7" class="section-anchor"></a>
+
 <h2>Overview of WebSocket</h2>
 <p>Let’s take a look at how WebSocket can offer a reduction of unnecessary network traffic and latency by comparing HTTP solutions to full duplex “real time” browser communication with WebSocket.</p>
 
 <section id="sec3_7">
+<a id="hdr_sec3_7" class="section-anchor"></a>
+
 <h3>Real-Time and HTTP</h3>
 <p>Normally when a browser<span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span> visits a web page, an HTTP request is sent to the web server that hosts that page. The <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>web server</tertiary></span>web server acknowledges this request and sends back the response. In many cases—for example, for stock prices, news reports, ticket sales, traffic patterns, medical device readings, and so on—the response could be stale by the time the browser renders the page. If you want to get the most up-to-date real-time information, you can constantly refresh that page manually, but that’s obviously not a great solution.</p>
 
@@ -136,6 +141,8 @@
 </section>
 
 <section id="sec4_7">
+<a id="hdr_sec4_7" class="section-anchor"></a>
+
 <h3>Understanding WebSocket</h3>
 <p>WebSocket was first <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">definition, webSocket</span></span>defined <span class="index-term"><span class="primary">TCPConnection</span></span>as “TCPConnection” in the Communications section of the HTML5 specification by Ian Hickson<span class="index-term"><span class="primary">Hickson, Ian</span></span> (lead writer of the HTML5 specification). The specification evolved and changed to WebSocket, which is now an independent specification (just like Geolocation, Web Workers and so on), to keep the discussion focused.</p>
 
@@ -151,6 +158,8 @@
 </section>
 
 <section id="sec5_7">
+<a id="hdr_sec5_7" class="section-anchor"></a>
+
 <h3>The WebSocket Handshake</h3>
 <p>To establish a WebSocket<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">protocol</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">handshake</span></span> connection, the client and server upgrade from the HTTP protocol to the WebSocket protocol during their initial handshake, as shown in Figure <span class="internal-reference" id="ir_fig2_7">7-2</span>. Note that this connection description represents draft 17 of the protocol.
 
@@ -187,6 +196,8 @@ WebSocket-Protocol: sample</code></pre>
 </section>
 
 <section id="sec6_7">
+<a id="hdr_sec6_7" class="section-anchor"></a>
+
 <h3>The WebSocket Interface</h3>
 <p>Along with the definition of the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">interface</span></span>WebSocket protocol, the specification also defines the WebSocket interface for use in JavaScript applications. Listing 7-2 shows the <code>WebSocket</code> interface.</p>
 
@@ -225,6 +236,8 @@ myWebSocket.onclose = function(evt) { alert("Connection closed."); };</code></pr
 </section>
 
 <section id="sec7_7">
+<a id="hdr_sec7_7" class="section-anchor"></a>
+
 <h3>A Dramatic Reduction in Unnecessary Network Traffic and Latency</h3>
 <p>So how efficient can WebSocket be? Let’s compare a polling application and a WebSocket application side by side. To illustrate polling, we will examine a web application in which a web page requests real-time stock data from a web server using a traditional polling model. It does this by <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>polling</tertiary></span>polling a Java Servlet that is hosted on a web server. A message broker receives data from a fictitious stock price feed with continuously updating prices. The web page connects and subscribes to a specific stock channel (a topic on the message broker) and uses an <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>XMLHTTPRequest</tertiary></span>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> to poll for updates once per second. When updates are received, some calculations are performed and the stock data is displayed as shown in Figure <span class="internal-reference" id="ir_fig3_7">7-3</span>.
 
@@ -289,6 +302,8 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 </section>
 
 <section id="sec8_7">
+<a id="hdr_sec8_7" class="section-anchor"></a>
+
 <h2>Writing a Simple Echo WebSocket Server</h2>
 <p>Before you can use the<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">echo server</span></span> WebSocket API, you need a server that supports WebSocket. In this section we’ll take a look at how a simple WebSocket “echo” server is written. To run the examples for this chapter, we have included a simple WebSocket server written in Python. The sample code for the following examples is located in the WebSocket section of the book web site.</p>
 
@@ -337,6 +352,8 @@ if "Sec-WebSocket-Protocol" in headers:
 
 
 <section id="sec9_7">
+<a id="hdr_sec9_7" class="section-anchor"></a>
+
 <h3>WebSocket Framing</h3>
 <p>After the handshake, <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">echo server</span></span>the client and server can send messages at any time. Each connection is represented in this server by a <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">framing</span><tertiary>components</tertiary></span><code>WebSocketConnection</code> instance<span class="index-term"><span class="primary">WebSocketConnection instance</span></span>. The WebSocketConnection’s <code>send</code> function, shown in Figure <span class="internal-reference" id="ir_fig6_7">7-6</span>, writes out a message according to the WebSocket protocol. The bytes preceding the data payload mark the frame length and type. Text frames are UTF-8 encoded. In this server, each WebSocket connection is an <code>asyncore.dispatcher_with_send</code>, which is an asynchronous socket wrapper with support for buffered sends.
 
@@ -625,10 +642,14 @@ asyncore.loop()</code></pre></figure><p>Now that we’ve got a working echo serv
 </section>
 
 <section id="sec10_7">
+<a id="hdr_sec10_7" class="section-anchor"></a>
+
 <h2>Using the WebSocket API</h2>
 <p>In this section, we’ll <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">using begin</span></span>explore the use of WebSocket in more detail.</p>
 
 <section id="sec11_7">
+<a id="hdr_sec11_7" class="section-anchor"></a>
+
 <h3>Checking for Browser Support</h3>
 <p>Before you use the WebSocket API<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">browser support</span><span class="secondary">for WebSocket API</span></span>, you will want to make sure there is support in the browser for what you’re about to do. This way, you can provide some alternate text, prompting the users of your application to upgrade to a more up-to-date browser. Listing 7-7 shows one way you can test for browser support.</p>
 
@@ -649,11 +670,15 @@ asyncore.loop()</code></pre></figure><p>Now that we’ve got a working echo serv
 </section>
 
 <section id="sec12_7">
+<a id="hdr_sec12_7" class="section-anchor"></a>
+
 <h3>Basic API Usage</h3>
 <p>The sample code for the following examples is located on the book web site in the WebSocket section. This folder contains a websocket.html file and a broadcast.html file (and a tracker.html file used in the following section) as well as the WebSocket server code shown previously that can be run in Python.</p>
 </section>
 
 <section id="sec13_7">
+<a id="hdr_sec13_7" class="section-anchor"></a>
+
 <h3>Creating a WebSocket object and Connecting to a WebSocket Server</h3>
 <p>Using the<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">using</span><tertiary>creating WebSocket object and connecting to WebSocket server</tertiary></span> WebSocket interface is straight-forward. To connect to an end-point, just create a new WebSocket instance, providing the new object with a URL that represents the end-point to which you wish to connect. You can use the <code>ws://</code> and <code>wss://</code> prefixes to indicate a WebSocket and a WebSocket Secure connection, respectively.</p>
 
@@ -681,6 +706,8 @@ w = new WebSocket(url);</code></pre>
 </section>
 
 <section id="sec14_7">
+<a id="hdr_sec14_7" class="section-anchor"></a>
+
 <h3>Adding Event Listeners</h3>
 <p>WebSocket programming<span class="index-term"><span class="primary">Event listeners</span><span class="secondary">adding, to WebSocket</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">applications</span><tertiary>adding event listeners</tertiary></span> follows an asynchronous programming model; once you have an open socket, you simply wait for events. You don’t have to actively poll the server anymore. To do this, you add callback functions to the <code>WebSocket</code> object to listen for events.</p>
 
@@ -724,6 +751,8 @@ w.onmessage = function(e) {
 </section>
 
 <section id="sec15_7">
+<a id="hdr_sec15_7" class="section-anchor"></a>
+
 <h3>Sending Messages</h3>
 <p>While the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">applications</span><tertiary>sending messages</tertiary></span>socket is open (that is, after the <code>onopen</code> listener is called and before the <code>onclose</code> listener is called), you can use the send function to <code>send</code> messages. After sending one or more messages, you can also call <code>close</code> to terminate the connection, or you can also leave the connection open.</p>
 
@@ -821,6 +850,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section></section>
 
 <section id="sec16_7">
+<a id="hdr_sec16_7" class="section-anchor"></a>
+
 <h2>Building a WebSocket Application</h2>
 <p>Now that we’ve seen the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>location tracker</tertiary></span>basics of WebSocket, it’s time to tackle something a little more substantial. Previously, we used the HTML5 Geolocation API to build an application that allowed us to calculate distance traveled directly inside our web page. We can utilize those same Geolocation techniques, mixed together with our new support for WebSocket, and <span class="index-term"><span class="primary">Location tracker</span></span>create a simple application that keeps multiple participants connected: a location tracker.</p>
 
@@ -841,7 +872,11 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </aside><p>But that’s enough warnings… Let’s dig into the code. As always, the entire code sample is located online for your perusal. We’ll focus on the most important parts here. The finished <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>location tracker</tertiary></span>application will look like Figure <span class="internal-reference" id="ir_fig10_7">7-10</span>. Although ideally, this would be enhanced by overlaying it on a map.
 
 </p>
-<figure id="fig10_7" class="image"><img src="images/ch7/fig7-10.png"><figcaption>Figure 7-10. The Location <span class="index-term"><span class="primary">Location tracker</span></span>Tracker application</figcaption></figure><section id="sec17_7">
+<figure id="fig10_7" class="image"><img src="images/ch7/fig7-10.png"><figcaption>Figure 7-10. The Location <span class="index-term"><span class="primary">Location tracker</span></span>Tracker application</figcaption></figure>
+
+<section id="sec17_7">
+<a id="hdr_sec17_7" class="section-anchor"></a>
+
 <h3>Coding the HTML File</h3>
 <p>The HTML markup <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>coding HTML file</tertiary></span>for this application will be kept deliberately simple so that we can focus on the data at hand. How simple?</p>
 
@@ -940,6 +975,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section>
 
 <section id="sec18_7">
+<a id="hdr_sec18_7" class="section-anchor"></a>
+
 <h3>Adding the WebSocket Code</h3>
 <p>Now, let’s <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>adding WebSocket code</tertiary></span>examine something more substantial. The <code>loadDemo</code> function<span class="index-term"><span class="primary">loadDemo function</span></span> is called on the initial load of our page, making it the starting point of the application.</p>
 
@@ -976,6 +1013,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section>
 
 <section id="sec19_7">
+<a id="hdr_sec19_7" class="section-anchor"></a>
+
 <h3>Adding the Geolocation Code</h3>
 <p>The next section<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">building application</span><tertiary>adding Geolocation code</tertiary></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location tracker application and</span></span> should be familiar to you from <span class="external-reference">
 <span class="ref-source">Chapter 5</span>
@@ -1029,6 +1068,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section>
 
 <section id="sec20_7">
+<a id="hdr_sec20_7" class="section-anchor"></a>
+
 <h3>Putting It All Together</h3>
 <p>The final section calculates a message string to send to the remote broadcast WebSocket server. The string here will be JSON encoded:</p>
 
@@ -1111,6 +1152,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section>
 
 <section id="sec21_7">
+<a id="hdr_sec21_7" class="section-anchor"></a>
+
 <h3>The Final Code</h3>
 <p>For completeness, the Listing 7-9 provides the entire <code>tracker.html</code> file.</p>
 
@@ -1233,6 +1276,8 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </section></section>
 
 <section id="sec22_7">
+<a id="hdr_sec22_7" class="section-anchor"></a>
+
 <h2>Summary</h2>
 <p>In this chapter, you have seen how WebSocket provides a simple, yet powerful mechanism for creating compelling, real-time applications.</p>
 
@@ -1250,6 +1295,56 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 </article>
 
 <!--====================== END CONTENT ======================-->
+
+<a id="main-navigation"></a>
+<div class="nav-container">
+  <nav id="menu" role="navigation">
+    <ul>
+      <li class="current">
+        <a href="#chapter_title">Chapter 7</a>
+        <ul>
+          <li>
+            <a href="#hdr_sec2_7">Overview of WebSocket</a>
+            <ul>
+              <li><a href="#hdr_sec3_7">Real-Time and HTTP</a></li>
+              <li><a href="#hdr_sec4_7">Understanding WebSocket</a></li>
+              <li><a href="#hdr_sec5_7">The WebSocket Handshake</a></li>
+              <li><a href="#hdr_sec6_7">The WebSocket Interface</a></li>
+              <li><a href="#hdr_sec7_7">A Dramatic Reduction in Unnecessary Network Traffic and Latency</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#hdr_sec8_7">Writing a Simple Echo WebSocket Server</a>
+            <ul>
+              <li><a href="#hdr_sec9_7">WebSocket Framing</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#hdr_sec10_7">Using the WebSocket API</a>
+            <ul>
+              <li><a href="#hdr_sec11_7">Checking for Browser Support</a></li>
+              <li><a href="#hdr_sec12_7">Basic API Usage</a></li>
+              <li><a href="#hdr_sec13_7">Creating a WebSocket object and Connecting to a WebSocket Server</a></li>
+              <li><a href="#hdr_sec14_7">Adding Event Listeners</a></li>
+              <li><a href="#hdr_sec15_7">Sending Messages</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#hdr_sec16_7">Building a WebSocket Application</a>
+            <ul>
+              <li><a href="#hdr_sec17_7">Coding the HTML File</a></li>
+              <li><a href="#hdr_sec18_7">Adding the WebSocket Code</a></li>
+              <li><a href="#hdr_sec19_7">Adding the Geolocation Code</a></li>
+              <li><a href="#hdr_sec20_7">Putting It All Together</a></li>
+              <li><a href="#hdr_sec21_7">The Final Code</a></li>
+            </ul>
+          </li>
+          <li><a href="#hdr_sec22_7">Summary</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
 
   </body>
 
