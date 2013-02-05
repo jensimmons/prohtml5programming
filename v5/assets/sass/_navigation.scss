@@ -194,7 +194,7 @@ a.button {
   -webkit-appearance: none;
   @include border-radius(4px);
   @include background-clip(padding-box);
-  background: #dddddd url('../images/button.png?1298351022') repeat-x;
+  background: #ddd;
   @include background-image(linear-gradient(#f9f9f9, #efefef));
   border: 1px solid;
   border-color: #ddd #ccc #bebebe;
