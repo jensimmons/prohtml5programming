@@ -1,0 +1,272 @@
+
+//-----------------------------------------------------------------------
+// Whole Page
+//-----------------------------------------------------------------------
+
+html {
+  background: #fff;
+}
+
+
+//-----------------------------------------------------------------------
+// Header
+//-----------------------------------------------------------------------
+
+hgroup {
+  text-align: center;
+  border-bottom: 1px solid #000;
+  clear: both;
+  @include trailer(2, $h1-font-size);
+  h1 {
+    @include adjust-font-size-to(28px);
+    @include leader(0.2, $h1-font-size);
+    @include trailer(0, $h1-font-size);
+  }
+  h1:last-child {
+    @include adjust-font-size-to(42px);
+    @include leader(0.1, $h1-font-size);
+    @include trailer(0.3, $h1-font-size);  
+  }
+}
+
+
+//-----------------------------------------------------------------------
+// Asides
+//-----------------------------------------------------------------------
+
+aside {
+  background: #fcfcfc;
+  border: 1px solid #d1d1d1;
+  box-decoration-break: clone;
+  font-family: $sourcesans;
+  @include adjust-font-size-to(14px);
+  line-height: 1.7em;
+  h3 {
+    margin-top: 0.75em;
+    text-align: center;
+  }
+  p {
+    text-indent: $indent-amount*.75;
+  }
+  p:first-child {
+    text-indent: 0;
+    font-size: 200%;
+  }
+  p code {
+    padding: 0;
+  }
+}
+
+
+//-----------------------------------------------------------------------
+// Pre and Code
+//-----------------------------------------------------------------------
+
+.code-example pre {
+  clear: both;
+}
+pre code {
+  line-height: 0.7em;
+}
+p code {
+  font-size: 1em;
+  padding: 0 0.5em;
+}
+
+
+//-----------------------------------------------------------------------
+// Figures
+//-----------------------------------------------------------------------
+
+figure {
+  clear: both;
+  @include clearfix;
+}
+figure.image {
+  text-align: center;
+  figcaption {
+    margin-top: 1em;  
+  }
+}
+.listing {
+  margin-top: 2em;
+}
+
+
+//-----------------------------------------------------------------------
+// Code Editor
+//-----------------------------------------------------------------------
+
+figure.listing {
+  figcaption {
+    width: 80%;
+    float: left;
+  }
+}
+.editor-trigger { // buttons for opening and closing code examples
+  font-family: $accent-font;
+  max-width: 20%;
+  float: right;
+  a {
+    float: right;
+    color: #444;
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+}
+.show-inline-editor {
+  float: right;
+}
+.inline-codeview-container {
+  padding-top: 2px !important; 
+  
+} 
+figure.open-editor {
+  background: #292824;
+  @include border-radius(4px);
+  padding: 0.75%;
+  figcaption {
+    color: #fff;
+  }
+  .code-editor-container {
+    @include clearfix;
+    @include adjust-font-size-to(12px);
+  } 
+  .code-mirror-container, 
+  .code-editor-container { 
+    border: 1px solid #292518;
+    border-bottom-color: #82827F;
+//    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+  }
+  .code-mirror-container {                // left pane, with code
+    @include adjust-font-size-to(12px);
+  }
+  .code-editor-container {                        // right pane, with demo
+    background: #fff;
+    padding: 2em;
+  }
+  .control-bar {
+    clear: left;
+    float: left;
+    padding: 1px 1% 8px;
+    width: 102%;
+    margin: 4px 0 -1% -1%;
+  }
+  .control.reset,
+  .control.save {
+    float: right;
+    font-family: $accent-font;
+    cursor: pointer;
+    @extend button;
+  }
+  
+}
+
+
+//-----------------------------------------------------------------------
+// Index Terms
+//-----------------------------------------------------------------------
+
+.index-term, 
+.ref-target { 
+  display: none; 
+}
+
+
+//-----------------------------------------------------------------------
+// Video
+//-----------------------------------------------------------------------
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  margin: 1em 0;
+}
+
+
+//-----------------------------------------------------------------------
+// Tables
+//-----------------------------------------------------------------------
+
+table { 
+  font-family: $alt-font;  
+  @include adjust-font-size-to(13px);
+	width: 100%; 
+	border-collapse: collapse; 
+	margin: 0.3em 0 1.5em;
+}
+table code {
+  @include adjust-font-size-to(14px);
+}
+tr:nth-of-type(odd) { 
+	background: #eee; 
+}
+th { 
+	background: #858585; 
+  border: 1px solid #aaa; 
+	color: white; 
+	font-weight: normal; 
+}
+td {
+	border: 1px solid #ccc; 
+}
+td, th { 
+	padding: 7px 8px 3px; 
+	text-align: left; 
+}
+
+@media only screen and (max-width: 45em) { // 720px
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	table {
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc; 
+	}
+	thead {
+  	tr { 
+  	   @include element-invisible();
+  	}
+  }
+	tr { 
+    border-left: 1px solid #ccc; 
+    border-right: 1px solid #ccc; 
+  }
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 30%; 
+	}
+  tr:nth-of-type(odd) td { 
+		border-bottom: 1px solid #f8f8f8; 
+  }
+  tr:last-child td:last-child { 
+		border-bottom: none; 
+  }
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*	Label the data */
+	td:nth-of-type(1):before { content: "Property"; }
+	td:nth-of-type(2):before { content: "Value"; }
+	td:nth-of-type(3):before { content: "Note"; }
+	
+}
+
+//-----------------------------------------------------------------------
+// Image (inlinemediaobjects)
+//-----------------------------------------------------------------------
+img.inlinemediaobject {
+  display: block;
+  margin: 0.65em 0;
+}
