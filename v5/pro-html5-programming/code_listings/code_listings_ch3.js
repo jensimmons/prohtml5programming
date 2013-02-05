@@ -44,7 +44,7 @@ inlineEditors.codeListings = {
     '<svg width="200" height="200">\n' +
     '  <defs>\n' +
     '    <pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67">\n' +
-    '      <image x="0" y="0" width="100" height="67" xlink:href="gravel.jpg"></image>\n' +
+    '      <image x="0" y="0" width="100" height="67" xlink:href="code_listings/gravel.jpg"></image>\n' +
     '    </pattern>\n' +
     '    <linearGradient id="RedBlackGradient">\n' +
     '      <stop offset="0%" stop-color="#000"></stop>\n' +
@@ -81,7 +81,7 @@ inlineEditors.codeListings = {
             '<svg width="400" height="600">\n' +
             '  <defs>\n' +
             '    <pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67">\n' +
-            '      <image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" />\n' +
+            '      <image x=0 y=0 width=100 height=67 xlink:href="code_listings/gravel.jpg" />\n' +
             '    </pattern>\n' +
             '    <linearGradient id="TrunkGradient">\n' +
             '      <stop offset="0%" stop-color="#663300" />\n' +
@@ -162,7 +162,7 @@ inlineEditors.codeListings = {
             '<svg width="400" height="600">\n' +
             '  <defs>\n' +
             '    <pattern id="GravelPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="67" viewBox="0 0 100 67">\n' +
-            '      <image x=0 y=0 width=100 height=67 xlink:href="gravel.jpg" />\n' +
+            '      <image x=0 y=0 width=100 height=67 xlink:href="code_listings/gravel.jpg" />\n' +
             '    </pattern>\n' +
             '    <linearGradient id="TrunkGradient">\n' +
             '        <stop offset="0%" stop-color="#663300" />\n' +

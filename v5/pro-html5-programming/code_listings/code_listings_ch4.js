@@ -5,7 +5,7 @@ inlineEditors.codeListings = {
     'code': '<!DOCTYPE html>\n' +
             '<html>\n' +
             '  <title>HTML5 Audio</title>\n' +
-            '  <audio controls src=\"johann_sebastian_bach_air.ogg\">\n' +
+            '  <audio controls src=\"code_listings/johann_sebastian_bach_air.ogg\">\n' +
             '    An audio clip from Johann Sebastian Bach.\n' +
             '  </audio>\n' +
             '</html>\n'
@@ -16,8 +16,8 @@ inlineEditors.codeListings = {
             '<html>\n' +
             '  <title>HTML5 Audio</title>\n' +
             '  <audio controls>\n' +
-            '    <source src=\"johann_sebastian_bach_air.ogg\">\n' +
-            '    <source src=\"johann_sebastian_bach_air.mp3\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.ogg\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.mp3\">\n' +
             '    An audio clip from Johann Sebastian Bach.\n' +
             '  </audio>\n' +
             '</html>\n'
@@ -28,8 +28,8 @@ inlineEditors.codeListings = {
             '<html>\n' +
             '  <title>HTML5 Audio</title>\n' +
             '  <audio controls>\n' +
-            '    <source src=\"johann_sebastian_bach_air.ogg\" type=\"audio/ogg; codecs=vorbis\">\n' +
-            '    <source src=\"johann_sebastian_bach_air.mp3\" type=\"audio/mpeg\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.ogg\" type=\"audio/ogg; codecs=vorbis\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.mp3\" type=\"audio/mpeg\">\n' +
             '    An audio clip from Johann Sebastian Bach.\n' +
             '  </audio>\n' +
             '</html>\n'
@@ -40,8 +40,8 @@ inlineEditors.codeListings = {
             '<html>\n' +
             '  <title>HTML5 Audio </title>\n' +
             '  <audio autoplay>\n' +
-            '    <source src=\"johann_sebastian_bach_air.ogg\" type=\"audio/ogg; codecs=vorbis\">\n' +
-            '    <source src=\"johann_sebastian_bach_air.mp3\" type=\"audio/mpeg\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.ogg\" type=\"audio/ogg; codecs=vorbis\">\n' +
+            '    <source src=\"code_listings/johann_sebastian_bach_air.mp3\" type=\"audio/mpeg\">\n' +
             '    An audio clip from Johann Sebastian Bach.\n' +
             '  </audio>\n' +
             '</html>\n'
@@ -53,8 +53,8 @@ inlineEditors.codeListings = {
             '  <title>Audio cue</title>\n' + 
             '\n' + 
             '  <audio id=\"clickSound\">\n' + 
-            '    <source src=\"johann_sebastian_bach_air.ogg\">\n' + 
-            '    <source src=\"johann_sebastian_bach_air.mp3\">\n' + 
+            '    <source src=\"code_listings/johann_sebastian_bach_air.ogg\">\n' + 
+            '    <source src=\"code_listings/johann_sebastian_bach_air.mp3\">\n' + 
             '  </audio>\n' + 
             '\n' + 
             '  <button id=\"toggle\" onclick=\"toggleSound()\">Play</button>\n' + 
@@ -85,8 +85,8 @@ inlineEditors.codeListings = {
             '\n' +
             '  <video id=\"movies\" autoplay oncanplay=\"startVideo()\" onended=\"stopTimeline()\" autobuffer=\"true\"\n' +
             '    width=\"400px\" height=\"300px\">\n' +
-            '    <source src=\"Intermission-Walk-in.ogv\" type=\'video/ogg; codecs=\"theora, vorbis\"\'>\n' +
-            '    <source src=\"Intermission-Walk-in_512kb.mp4\" type=\'video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"\'>\n' +
+            '    <source src=\"code_listings/Intermission-Walk-in.ogv\" type=\'video/ogg; codecs=\"theora, vorbis\"\'>\n' +
+            '    <source src=\"code_listings/Intermission-Walk-in_512kb.mp4\" type=\'video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"\'>\n' +
             '  </video>\n' +
             '\n' +
             '  <canvas id=\"timeline\" width=\"400px\" height=\"300px\">\n' +
@@ -195,8 +195,8 @@ inlineEditors.codeListings = {
             '  <title>Background Music</title>\n' +
             '\n' +
             '  <audio autoplay loop>\n' +
-            '      <source src=\"johann_sebastian_bach_air.ogg\">\n' +
-            '      <source src=\"johann_sebastian_bach_air.mp3\">\n' +
+            '      <source src=\"code_listings/johann_sebastian_bach_air.ogg\">\n' +
+            '      <source src=\"code_listings/johann_sebastian_bach_air.mp3\">\n' +
             '  </audio\n' +
             '\n' +
             '  <h1>You\'re hooked on Bach!</h1>\n' +
@@ -211,8 +211,8 @@ inlineEditors.codeListings = {
             '\n' +
             '  <video id=\"movies\" onmouseover=\"this.play()\" onmouseout=\"this.pause()\" autobuffer=\"true\"\n' +
             '    width=\"400px\" height=\"300px\">\n' +
-            '    <source src=\"Intermission-Walk-in.ogv\" type=\'video/ogg; codecs=\"theora, vorbis\"\'>\n' +
-            '    <source src=\"Intermission-Walk-in_512kb.mp4\" type=\'video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"\'>\n' +
+            '    <source src=\"code_listings/Intermission-Walk-in.ogv\" type=\'video/ogg; codecs=\"theora, vorbis\"\'>\n' +
+            '    <source src=\"code_listings/Intermission-Walk-in_512kb.mp4\" type=\'video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"\'>\n' +
             '  </video>\n' +
             '\n' +
             '  <h1>Point at the video to play it!</h1>\n' +

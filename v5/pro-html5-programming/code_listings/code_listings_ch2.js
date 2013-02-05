@@ -351,7 +351,7 @@ inlineEditors.codeListings = {
             '  <script>\n' +
             '    // Load the bark image\n' +
             '    var bark = new Image();\n' +
-            '    bark.src = "bark.jpg";\n' +
+            '    bark.src = "code_listings/bark.jpg";\n' +
             '\n' +
             '    // Once the image is loaded, draw on the canvas\n' +
             '    bark.onload = function () {\n' +
@@ -423,7 +423,7 @@ inlineEditors.codeListings = {
             '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
             '  <script>\n' +
             '    var gravel = new Image();\n' +
-            '    gravel.src = "gravel.jpg";\n' +
+            '    gravel.src = "code_listings/gravel.jpg";\n' +
             '    gravel.onload = function () {\n' +
             '      drawTrails();\n' +
             '    }\n' +
@@ -524,7 +524,7 @@ inlineEditors.codeListings = {
             '    // Replace the bark image with\n' +
             '    // a trail gravel image\n' +
             '    var gravel = new Image();\n' +
-            '    gravel.src = "gravel.jpg";\n' +
+            '    gravel.src = "code_listings/gravel.jpg";\n' +
             '    gravel.onload = function () {\n' +
             '      drawTrails();\n' +
             '    }\n' +
@@ -608,7 +608,7 @@ inlineEditors.codeListings = {
             '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
             '  <script>\n' +
             '    var gravel = new Image();\n' +
-            '    gravel.src = "gravel.jpg";\n' +
+            '    gravel.src = "code_listings/gravel.jpg";\n' +
             '    gravel.onload = function () {\n' +
             '      drawTrails();\n' +
             '    }\n' +
@@ -701,7 +701,7 @@ inlineEditors.codeListings = {
             '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
             '  <script>\n' +
             '    var gravel = new Image();\n' +
-            '    gravel.src = "gravel.jpg";\n' +
+            '    gravel.src = "code_listings/gravel.jpg";\n' +
             '    gravel.onload = function () {\n' +
             '      drawTrails();\n' +
             '    }\n' +
@@ -814,7 +814,7 @@ inlineEditors.codeListings = {
             '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
             '  <script>\n' +
             '        var gravel = new Image();\n' +
-            '        gravel.src = "gravel.jpg";\n' +
+            '        gravel.src = "code_listings/gravel.jpg";\n' +
             '        gravel.onload = function () {\n' +
             '            drawTrails();\n' +
             '        }\n' +
@@ -930,7 +930,7 @@ inlineEditors.codeListings = {
               '  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>\n' +
               '  <script>\n' +
               '        var gravel = new Image();\n' +
-              '        gravel.src = "gravel.jpg";\n' +
+              '        gravel.src = "code_listings/gravel.jpg";\n' +
               '        gravel.onload = function () {\n' +
               '            drawTrails();\n' +
               '        }\n' +
@@ -1048,7 +1048,7 @@ inlineEditors.codeListings = {
               '  <style type="text/css">\n' +
               '    @import url("styles.css");\n' +
               '    #heatmap {\n' +
-              '        background-image: url("mapbg.jpg");\n' +
+              '        background-image: url("code_listings/mapbg.jpg");\n' +
               '    }\n' +
               '  </style>\n' +
               '\n' +

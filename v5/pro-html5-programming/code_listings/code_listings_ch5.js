@@ -75,7 +75,6 @@ inlineEditors.codeListings = {
             '<head>\n' +
             '  <meta charset=\"utf-8\">\n' +
             '  <title>HTML5 Geolocation Odometer</title>\n' +
-            '  <link rel=\"stylesheet\" href=\"styles.css\">\n' +
             '</head>\n' +
             '\n' +
             '<body onload=\"loadDemo()\">\n' +

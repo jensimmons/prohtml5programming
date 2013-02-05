@@ -8,7 +8,6 @@ inlineEditors.codeListings = {
             '<head>\n' +
             '  <meta charset="utf-8" />\n' +
             '  <title>HTML5</title>\n' +
-            '  <link rel="stylesheet" href="html5.css">\n' +
             '  <style>\n' +
             '  body {\n' +
             '  	background-color:#CCCCCC;\n' +
