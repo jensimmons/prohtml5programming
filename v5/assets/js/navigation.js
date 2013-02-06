@@ -6,7 +6,7 @@ function textResize(direction) {
     baseEl.css('font-size', '16px');
   } else {
     var currentSize = parseFloat(baseEl.css('font-size'));
-    var fontSizeMultiplier = 1.2; 
+    var fontSizeMultiplier = 2.0; 
     var newSize = currentSize + (direction * fontSizeMultiplier) + 'px';
     baseEl.css('font-size', newSize );
   }
