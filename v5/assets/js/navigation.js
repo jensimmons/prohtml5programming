@@ -24,11 +24,17 @@ jQuery(function () {
       
       for(var key in toc[i]) {
         var currentClass = '';
+        var tocEntry;
         if(toc[i].hasOwnProperty(key)) {
+          if (toc[i][key] === '') {
+            tocEntry = '<li class="chap"><span class="unavailable">' + key + '</span></li>\n'
+          } else {
+            tocEntry = '<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n'
+          }
           // if (key == currentChap) {
           //   currentClass = 'link-current';
           // }
-          tocOutput += ('<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n');
+          tocOutput += tocEntry;
         }
       }
     }
