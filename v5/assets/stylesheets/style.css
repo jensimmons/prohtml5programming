@@ -5,7 +5,7 @@
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000321}}
 article,
 aside,
 details,
@@ -23,7 +23,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000331}}
 audio,
 canvas,
 video {
@@ -36,7 +36,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000342}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -47,7 +47,7 @@ audio:not([controls]) {
  * and Safari 4.
  * Known issue: no IE 6 support.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000353}}
 [hidden] {
   display: none;
 }
@@ -61,7 +61,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000368}}
 html {
   font-size: 100%;
   /* 1 */
@@ -75,7 +75,7 @@ html {
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000383}}
 html,
 button,
 figure.open-editor .control.reset,
@@ -89,7 +89,7 @@ textarea {
 /*
  * Addresses margins handled incorrectly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000391}}
 body {
   margin: 0;
 }
@@ -100,7 +100,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003103}}
 a:focus {
   outline: thin dotted;
 }
@@ -108,7 +108,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003112}}
 a:active,
 a:hover {
   outline: 0;
@@ -122,37 +122,37 @@ a:hover {
  * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
  * and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003126}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003131}}
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003136}}
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003141}}
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003146}}
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003151}}
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
@@ -161,7 +161,7 @@ h6 {
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003160}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -169,13 +169,13 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003169}}
 b,
 strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003173}}
 blockquote {
   margin: 1em 40px;
 }
@@ -183,7 +183,7 @@ blockquote {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003181}}
 dfn {
   font-style: italic;
 }
@@ -191,7 +191,7 @@ dfn {
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003189}}
 mark {
   background: #ff0;
   color: #000;
@@ -200,7 +200,7 @@ mark {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003199}}
 p,
 pre {
   margin: 1em 0;
@@ -209,7 +209,7 @@ pre {
 /*
  * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003210}}
 code,
 kbd,
 pre,
@@ -222,7 +222,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003220}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -232,7 +232,7 @@ pre {
 /*
  * Addresses CSS quotes not supported in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003230}}
 q {
   quotes: none;
 }
@@ -240,7 +240,7 @@ q {
 /*
  * Addresses `quotes` property not supported in Safari 4.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003239}}
 q:before,
 q:after {
   content: '';
@@ -250,7 +250,7 @@ q:after {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003248}}
 small {
   font-size: 80%;
 }
@@ -258,7 +258,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003257}}
 sub,
 sup {
   font-size: 75%;
@@ -267,12 +267,12 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003264}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003268}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003268}}
 sub {
   bottom: -0.25em;
 }
@@ -283,7 +283,7 @@ sub {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003283}}
 dl,
 menu,
 ol,
@@ -291,7 +291,7 @@ ul {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003287}}
 dd {
   margin: 0 0 0 40px;
 }
@@ -299,7 +299,7 @@ dd {
 /*
  * Addresses paddings set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003297}}
 menu,
 ol,
 ul {
@@ -309,7 +309,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE 7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003306}}
 nav ul,
 nav ol {
   list-style: none;
@@ -323,7 +323,7 @@ nav ol {
  * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
  * 2. Improves image quality when scaled in IE 7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003320}}
 img {
   border: 0;
   /* 1 */
@@ -334,7 +334,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003329}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -345,7 +345,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003341}}
 figure {
   margin: 0;
 }
@@ -356,7 +356,7 @@ figure {
 /*
  * Corrects margin displayed oddly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003353}}
 form {
   margin: 0;
 }
@@ -364,7 +364,7 @@ form {
 /*
  * Define consistent border, margin, and padding.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003361}}
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -376,7 +376,7 @@ fieldset {
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003373}}
 legend {
   border: 0;
   /* 1 */
@@ -393,7 +393,7 @@ legend {
  *    and Chrome.
  * 3. Improves appearance and consistency in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003390}}
 button, figure.open-editor .control.reset,
 figure.open-editor .control.save,
 input,
@@ -413,7 +413,7 @@ textarea {
  * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003403}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003403}}
 button, figure.open-editor .control.reset,
 figure.open-editor .control.save,
 input {
@@ -429,7 +429,7 @@ input {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003420}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003420}}
 button, figure.open-editor .control.reset,
 figure.open-editor .control.save,
 html input[type="button"],
@@ -446,7 +446,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003431}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003431}}
 button[disabled], figure.open-editor [disabled].control.reset,
 figure.open-editor [disabled].control.save,
 input[disabled] {
@@ -459,7 +459,7 @@ input[disabled] {
  * 3. Removes excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003443}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003443}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -477,7 +477,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003456}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -491,7 +491,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003469}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -500,7 +500,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003478}}
 button::-moz-focus-inner, figure.open-editor .control.reset::-moz-focus-inner,
 figure.open-editor .control.save::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -512,7 +512,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003488}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003488}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -526,13 +526,13 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_normalize\.scss}line{font-family:\00003501}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003501}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/style\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/style\.scss}line{font-family:\0000310}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -655,30 +655,30 @@ html {
    for our block level elements and to set the line heights of any fonts.
    For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000311}}
 body {
   font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
   color: #1b1d1e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000316}}
 h1, h2, h3, h4, h5, h6 {
   font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-weight: 500;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000320}}
 h1 {
   font-size: 2em;
   line-height: 1.625em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000323}}
 h1 + h1 {
   margin-top: 0em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000326}}
 h2 {
   font-size: 1.85em;
   line-height: 1.75676em;
@@ -687,7 +687,7 @@ h2 {
   line-height: 1.05405em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000332}}
 h3 {
   font-size: 1.3em;
   line-height: 1.25em;
@@ -696,7 +696,7 @@ h3 {
   line-height: 1.05405em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000338}}
 h4 {
   font-size: 1.2em;
   line-height: 1.35417em;
@@ -704,7 +704,7 @@ h4 {
   margin-bottom: 0em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000343}}
 h5 {
   font-size: 1em;
   line-height: 1.625em;
@@ -712,7 +712,7 @@ h5 {
   margin-bottom: 0em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000348}}
 h6 {
   font-size: 0.83em;
   line-height: 1.95783em;
@@ -720,32 +720,32 @@ h6 {
   margin-bottom: 0em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000354}}
 p {
   margin: 0.65em 0;
   text-indent: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000357}}
 p.noindent, p.caption p {
   text-indent: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000360}}
 p.caption {
   text-align: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000362}}
 .lightbox p.caption {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000370}}
 a,
 a:link,
 a:visited {
   color: #767676;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000374}}
 a:hover, a:focus,
 a:link:hover,
 a:link:focus,
@@ -754,7 +754,7 @@ a:visited:focus {
   color: darkgrey;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000379}}
 figcaption {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 0.875em;
@@ -762,23 +762,23 @@ figcaption {
   color: #4b5154;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000385}}
 blockquote {
   margin: 0.8125em 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000389}}
 canvas {
   background: #fff;
   margin: 1.625em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000394}}
 pre {
   margin: 0.5em 0 1em 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000397}}
 .static-code-container {
   margin: 0.5em 0 1em 24px;
   margin: 1.625em 0;
@@ -788,7 +788,7 @@ pre {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003107}}
 code,
 kbd,
 samp {
@@ -798,7 +798,7 @@ samp {
   line-height: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003117}}
 dl,
 menu,
 ol,
@@ -807,17 +807,17 @@ ul,
   margin: 1.625em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003120}}
 ul {
   padding-left: 38.4px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003123}}
 ol {
   padding-left: 45.6px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_typography\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003127}}
 hr {
   height: 1px;
   border: 1px solid #666666;
@@ -825,37 +825,37 @@ hr {
   margin: 1.625em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\000036}}
 article {
   margin: 0 0.25em 0;
   padding: 1em 0 2.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000310}}
 aside {
   margin: 1em 0;
   padding: 1em 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000314}}
 img {
   max-width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000317}}
 figure {
   margin: 2em 0;
 }
 
 @media screen and (min-width: 30em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000322}}
   article {
     margin: 1em;
     padding: 1em 0 2.5em;
   }
 }
 @media screen and (min-width: 35em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000328}}
   article {
     width: 90%;
     margin: 1.5em auto;
@@ -863,7 +863,7 @@ figure {
   }
 }
 @media screen and (min-width: 40em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000335}}
   article {
     width: 85%;
     margin: 2em auto;
@@ -871,13 +871,13 @@ figure {
   }
 }
 @media screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000342}}
   article {
     width: 40em;
     padding: 2em 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000346}}
   aside {
     float: right;
     width: 45%;
@@ -885,221 +885,221 @@ figure {
     margin-left: 5%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000352}}
   figure {
     margin: 2em -2em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000355}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000359}}
   figure.open-editor {
     margin: 2em -2em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000364}}
   figure.open-editor .code-mirror-container,
   figure.open-editor .code-editor-container {
     width: 49.625%;
     display: table-cell;
     vertical-align: top;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000369}}
   figure.open-editor .code-mirror-container {
     margin-right: 0.75%;
     max-height: 700px;
     overflow: hidden;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000375}}
-  figure.open-editor .code-mirror-container .CodeMirror {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000374}}
+  figure.open-editor .code-mirror-container .code-mirror-scroll-wrap {
     overflow-y: auto;
     max-height: 700px;
   }
 }
 @media screen and (min-width: 50em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000383}}
   aside {
     margin-right: -10%;
     width: 50%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000387}}
   figure {
     margin: 2em -3em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000390}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000394}}
   figure.open-editor {
     margin: 2em -4em;
   }
 }
 @media screen and (min-width: 55em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000399}}
   aside {
     margin-right: -15%;
     width: 55%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003103}}
   figure {
     margin: 2em -4em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003106}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003110}}
   figure.open-editor {
     margin: 2em -6em;
   }
 }
 @media screen and (min-width: 60em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003115}}
   aside {
     margin-right: -20%;
     width: 60%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003119}}
   figure {
     margin: 2em -5em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003122}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003126}}
   figure.open-editor {
     margin: 2em -8em;
   }
 }
 @media screen and (min-width: 65em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003131}}
   aside {
     margin-right: -25%;
     width: 65%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003135}}
   figure {
     margin: 2em -6em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003138}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003142}}
   figure.open-editor {
     margin: 2em -11em;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003144}}
   figure.open-editor .code-mirror-container {
     max-height: 800px;
   }
 }
 @media screen and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003150}}
   aside {
     margin-right: -30%;
     width: 70%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003154}}
   figure {
     margin: 2em -7em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003157}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003161}}
   figure.open-editor {
     margin: 2em -14em;
   }
 }
 @media screen and (min-width: 75em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003166}}
   aside {
     margin-right: -35%;
     width: 75%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003170}}
   figure {
     margin: 2em -8em;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003173}}
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003177}}
   figure.open-editor {
     margin: 2em -16em;
   }
 }
 @media screen and (min-width: 80em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003182}}
   figure.open-editor {
     margin: 2em -18em;
   }
 }
 @media screen and (min-width: 85em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003187}}
   figure.open-editor {
     margin: 2em -20em;
   }
 }
 @media screen and (min-width: 90em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_layout\.scss}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003192}}
   figure.open-editor {
     margin: 2em -22em;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\000036}}
 html {
   background: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000315}}
 hgroup {
   text-align: center;
   border-bottom: 1px solid black;
   clear: both;
   margin-bottom: 1.625em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000320}}
 hgroup h1 {
   font-size: 1.75em;
   line-height: 1.85714em;
   margin-top: 0.1625em;
   margin-bottom: 0em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000325}}
 hgroup h1:last-child {
   font-size: 2.625em;
   line-height: 1.2381em;
@@ -1107,7 +1107,7 @@ hgroup h1:last-child {
   margin-bottom: 0.24375em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000337}}
 aside {
   background: #fcfcfc;
   border: 1px solid #d1d1d1;
@@ -1117,95 +1117,95 @@ aside {
   line-height: 1.85714em;
   line-height: 1.7em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000344}}
 aside h3 {
   margin-top: 0.75em;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000348}}
 aside p {
   text-indent: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000351}}
 aside p:first-child {
   text-indent: 0;
   font-size: 200%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000355}}
 aside p code {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000365}}
 .code-example pre {
   clear: both;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000368}}
 pre code {
   line-height: 0.7em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000371}}
 p code {
   font-size: 1em;
   padding: 0 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000381}}
 figure {
   clear: both;
   overflow: hidden;
   *zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000385}}
 figure.image {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000387}}
 figure.image figcaption {
   margin-top: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\0000391}}
 .listing {
   margin-top: 2em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003101}}
 figure.listing figcaption {
   width: 80%;
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003106}}
 .editor-trigger {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   max-width: 20%;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003110}}
 .editor-trigger a {
   float: right;
   color: #444;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003114}}
 .editor-trigger a:hover, .editor-trigger a:focus {
   color: #000;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003119}}
 .show-inline-editor {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003122}}
 .inline-codeview-container {
   padding-top: 2px !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003126}}
 figure.open-editor {
   background: #292824;
   -webkit-border-radius: 4px;
@@ -1215,35 +1215,35 @@ figure.open-editor {
   border-radius: 4px;
   padding: 0.75%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003130}}
 figure.open-editor figcaption {
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003133}}
 figure.open-editor .code-editor-container {
   overflow: hidden;
   *zoom: 1;
   font-size: 0.75em;
   line-height: 2.16667em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003138}}
 figure.open-editor .code-mirror-container,
 figure.open-editor .code-editor-container {
   border: 1px solid #292518;
   border-bottom-color: #82827F;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003144}}
 figure.open-editor .code-mirror-container {
   font-size: 0.75em;
   line-height: 2.16667em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003147}}
 figure.open-editor .code-editor-container {
   background: #fff;
   padding: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003151}}
 figure.open-editor .control-bar {
   clear: left;
   float: left;
@@ -1251,7 +1251,7 @@ figure.open-editor .control-bar {
   width: 102%;
   margin: 4px 0 -1% -1%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003159}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003159}}
 figure.open-editor .control.reset,
 figure.open-editor .control.save {
   float: right;
@@ -1259,20 +1259,20 @@ figure.open-editor .control.save {
   cursor: pointer;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003174}}
 .index-term,
 .ref-target {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003183}}
 video {
   width: 100% !important;
   height: auto !important;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003194}}
 table {
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 0.8125em;
@@ -1282,18 +1282,18 @@ table {
   margin: 0.3em 0 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003201}}
 table code {
   font-size: 0.875em;
   line-height: 1.85714em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003204}}
 tr:nth-of-type(odd) {
   background: #eee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003207}}
 th {
   background: #858585;
   border: 1px solid #aaaaaa;
@@ -1301,30 +1301,30 @@ th {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003213}}
 td {
   border: 1px solid #cccccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003216}}
 td, th {
   padding: 7px 8px 3px;
   text-align: left;
 }
 
 @media only screen and (max-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003222}}
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003225}}
   table {
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003230}}
   thead tr {
     position: absolute !important;
     height: 1px;
@@ -1334,13 +1334,13 @@ td, th {
     clip: rect(1px, 1px, 1px, 1px);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003234}}
   tr {
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003238}}
   td {
     border: none;
     border-bottom: 1px solid #eeeeee;
@@ -1348,17 +1348,17 @@ td, th {
     padding-left: 30%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003244}}
   tr:nth-of-type(odd) td {
     border-bottom: 1px solid #f8f8f8;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003247}}
   tr:last-child td:last-child {
     border-bottom: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003250}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003250}}
   td:before {
     position: absolute;
     top: 6px;
@@ -1369,40 +1369,40 @@ td, th {
   }
 
   /*	Label the data */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003260}}
   td:nth-of-type(1):before {
     content: "Property";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003261}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003261}}
   td:nth-of-type(2):before {
     content: "Value";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003262}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003262}}
   td:nth-of-type(3):before {
     content: "Note";
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_page\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003269}}
 img.inlinemediaobject {
   display: block;
   margin: 0.65em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\000035}}
 .floatingHeader {
   position: fixed;
   top: 0;
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000310}}
 .jPanelMenu-panel .nav-container {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000316}}
 .menu-link {
   position: fixed;
   top: 0px;
@@ -1412,7 +1412,7 @@ img.inlinemediaobject {
   min-width: 86px;
   /* sheesh */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000323}}
 .menu-link a {
   display: block;
   padding: 3px 8px 0px 10px;
@@ -1421,46 +1421,46 @@ img.inlinemediaobject {
   width: 44px;
   background: url("../images/menu.svg") no-repeat scroll 10px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000331}}
 .menu-link img {
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000334}}
 .menu-link span {
   padding-left: 6px;
   display: inline-block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000339}}
 .ie6-8 .menu-link a {
   background: url("../images/menu.png") no-repeat scroll 10px 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000342}}
 #jPanelMenu-menu {
   box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
   background: url("../images/background.png") repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000346}}
 nav {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000348}}
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000356}}
 nav li li {
   background: rgba(0, 0, 0, 0.75);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000359}}
 nav li li li {
   background: rgba(255, 255, 255, 0.25);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000362}}
 nav a {
   text-decoration: none;
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
@@ -1471,11 +1471,11 @@ nav a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0.45em 0.5em 0.3em 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000371}}
 nav #item_0 {
   background: #000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000376}}
 nav li a,
 nav li a:link,
 nav li a:visited {
@@ -1483,7 +1483,7 @@ nav li a:visited {
   text-transform: uppercase;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000383}}
 nav li li a,
 nav li li a:link,
 nav li li a:visited {
@@ -1491,7 +1491,7 @@ nav li li a:visited {
   text-decoration: none;
   text-transform: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000388}}
 nav li li a:hover, nav li li a:focus,
 nav li li a:link:hover,
 nav li li a:link:focus,
@@ -1499,42 +1499,42 @@ nav li li a:visited:hover,
 nav li li a:visited:focus {
   color: #d9d9d9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000392}}
 nav li li li a {
   padding-left: 2em;
 }
 
 @media screen and (min-width: 380px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000397}}
   nav {
     max-width: 360px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003100}}
   .nav-container {
     margin: 4em 10px;
   }
 }
 @media screen and (min-width: 1000px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003105}}
   .nav-container {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003117}}
 .font-size-controls a {
   cursor: default;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003128}}
 .menu-link a:hover,
 .menu-link a:focus {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003131}}
 .toc-link {
   position: fixed;
   z-index: 100;
@@ -1543,20 +1543,20 @@ nav li li li a {
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   padding: 0 0 0 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003138}}
 .toc-link a {
   padding: 5px;
   display: block;
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003145}}
 .toc-link a,
 .toc-link a:link,
 .toc-link a:visited {
   color: #1b1d1e;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003149}}
 .toc-link a.btn {
   background: url("../images/book.svg") no-repeat scroll 0px 10px;
   text-indent: -9999px;
@@ -1565,7 +1565,7 @@ nav li li li a {
   position: fixed;
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003157}}
 .toc-link ul {
   list-style: none;
   border: 1px solid #dddddd;
@@ -1583,29 +1583,29 @@ nav li li li a {
   margin-top: 44px;
   margin-right: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003170}}
 .toc-link ul li {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003174}}
 .ie6-8 .toc-link a.btn {
   background: url("../images/book.png") no-repeat scroll 0px 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003177}}
 .toc-link.open ul {
   display: block;
 }
 
 @media screen and (min-width: 30em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003181}}
   .toc-link ul {
     width: 25em;
     float: right;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003193}}
 button, figure.open-editor .control.reset,
 figure.open-editor .control.save,
 a.button {
@@ -1618,7 +1618,7 @@ a.button {
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  background: #dddddd url("../images/button.png?1298351022") repeat-x;
+  background: #ddd;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #efefef));
   background-image: -webkit-linear-gradient(#f9f9f9, #efefef);
   background-image: -moz-linear-gradient(#f9f9f9, #efefef);
@@ -1643,7 +1643,7 @@ a.button {
   *padding-top: 2px;
   *padding-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003217}}
 button:hover, figure.open-editor .control.reset:hover,
 figure.open-editor .control.save:hover,
 a.button:hover {
@@ -1655,7 +1655,7 @@ a.button:hover {
   border-color: #dddddd #c2c2c2 #b3b3b3;
   color: #000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003222}}
 button:active, figure.open-editor .control.reset:active,
 figure.open-editor .control.save:active,
 a.button:active {
@@ -1669,7 +1669,7 @@ a.button:active {
   box-shadow: inset rgba(0, 0, 0, 0.25) 0 1px 2px 0;
   border-color: #999999 #bbbbbb #dddddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_navigation\.scss}line{font-family:\00003227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003227}}
 button::-moz-focus-inner, figure.open-editor .control.reset::-moz-focus-inner,
 figure.open-editor .control.save::-moz-focus-inner,
 a.button::-moz-focus-inner {
@@ -1677,24 +1677,24 @@ a.button::-moz-focus-inner {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000032}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\000032}}
 figure .show-inline-editor {
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\000035}}
 figure .close-inline-editor {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\0000310}}
 figure.open-editor .show-inline-editor {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\0000313}}
 figure.open-editor .close-inline-editor {
   display: inline-block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/_code\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\0000316}}
 figure.open-editor #preview {
   border: none medium;
   width: 100%;

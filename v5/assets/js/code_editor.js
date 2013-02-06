@@ -57,8 +57,10 @@ var inlineEditors = {
         '<iframe id="preview"></iframe>\n' +
         '</div>\n\n' + 
         '<div class="code-mirror-container">\n' +
-          '<textarea id="code" name="code">\n' +
-          '</textarea>\n' +
+          '<div class="code-mirror-scroll-wrap">\n' +
+            '<textarea id="code" name="code">\n' +
+            '</textarea>\n' +
+          '</div>\n' +  
         '</div>\n' +
       '<div class="control-bar">\n' +
         '<div class="control save">Save</div>\n' +
