@@ -1,5 +1,5 @@
 var toc = [
-  {'Cover': 'ch-cover.html'},
+  {'Cover': ''},
   {'Introduction': ''},
   {'Chapter 1: CSS3 Fundamentals': ''},
   {'Chapter 2: CSS3 Transforms & Transitions': 'ch2.html'},
