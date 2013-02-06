@@ -76,15 +76,15 @@
 
   <body>
 
-
-    <div class="controls-bar">
+    <header class="controls-bar">
+      <h1 class="book-title">Pro HTML5 Programming</h1>
+      
       <div class="menu-link orig-menu menu-trigger">
         <a class="svg-menu" href="#main-navigation">Chapter Contents</a>
       </div>
-
-      <div class="font-size-controls" style="position: fixed; top: 0px; left: 200px;">
+      
+      <div class="font-size-controls">
         <a href="#" class="btn btn-fs fs-smaller">Smaller</a>
-        <a href="#" class="btn btn-fs fs-default">Default</a>
         <a href="#" class="btn btn-fs fs-larger">Larger</a>
       </div>
     
@@ -94,9 +94,8 @@
           <span class="caret"></span>
         </a>
       </div>
-    </div>
-
-
+    
+    </header>
   
 <!--======================== CONTENT ========================-->
 
@@ -114,9 +113,9 @@
 
 <p>WebSocket provides such an improvement from the old, convoluted “hacks” that are used to simulate a full-duplex connection in a browser that it prompted Google’s Ian Hickson—the HTML5 specification lead—to say:</p>
 
-<p>“Reducing kilobytes of data to 2 bytes…and reducing latency from 150 ms to 50 ms is far more than marginal. In fact, these two factors alone are enough to make WebSocket seriously interesting to Google.”</p>
+<blockquote>“Reducing kilobytes of data to 2 bytes…and reducing latency from 150 ms to 50 ms is far more than marginal. In fact, these two factors alone are enough to make WebSocket seriously interesting to Google.” <br><cite>– www.ietf.org/mail-archive/web/hybi/current/msg00784.html</cite></blockquote>
 
-<pre><code>– www.ietf.org/mail-archive/web/hybi/current/msg00784.html</code></pre>
+
 <p>We’ll show you in detail just why WebSocket provides such a dramatic improvement, and you’ll see how—in one fell swoop—WebSocket makes all the old Comet and Ajax polling, long-polling, and streaming solutions obsolete.</p>
 
 <section id="sec2_7">

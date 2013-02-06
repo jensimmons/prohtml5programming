@@ -85,6 +85,12 @@ figcaption {
 blockquote {
   margin: rhythm(0.5) $indent-amount;
 }
+cite {
+  margin: rhythm(0.5) $indent-amount;
+  @include adjust-font-size-to(12px);
+  color: lighten($text, 30%);
+  font-style: normal;
+}
 
 canvas {
   background: #fff;
