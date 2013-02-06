@@ -1534,25 +1534,21 @@ nav li li li a {
   padding-left: 2em;
 }
 
-@media screen and (min-width: 380px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003119}}
+/*@media screen and (min-width: 380px) {
   nav {
     max-width: 360px;
   }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003122}}
   .nav-container {
     margin: 4em 10px;
   }
 }
 @media screen and (min-width: 1000px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003127}}
   .nav-container {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
   }
-}
+}*/
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003139}}
 .font-size-controls {
   position: fixed;
