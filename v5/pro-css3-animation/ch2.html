@@ -1,0 +1,844 @@
+<!doctype html>
+
+<!--[if lt IE 7]>      <html class="ie6 ie6-7 ie6-8"> <![endif]-->
+<!--[if IE 7]>         <html class="ie7 ie6-7 ie7-8 ie6-8"> <![endif]-->
+<!--[if IE 8]>         <html class="ie8 ie7-8 ie6-8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Pro CSS3 Animation: Chapter 2 | CSS3 Transforms</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/libraries/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/static.css">
+  	<link rel="stylesheet" href="../assets/stylesheets/style.css" />
+
+    <!-- JavaScript -->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="js/selectivizr-min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" charset="utf-8">
+      (function () {
+        "use strict";
+        window.ISBNOnline = '978-1-4302-4722-7';
+      })();
+    </script>
+    
+    <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
+    <script src="../assets/js/jquery-1.8.0.min.js"></script>
+    <script src="../assets/js/modernizr-latest.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
+    <script src="../assets/libraries/codemirror/mode/xml/xml.js"></script>
+    <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
+    <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
+    <script src="../assets/libraries/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../assets/js/code_editor.js"></script>
+    <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
+    <script src="toc.js"></script>  
+
+
+    <!-- For iPhone 4 -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPad 1-->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72-precomposed.png">
+    <!-- For the new iPad -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPhone 3G, iPod Touch and Android -->
+    <link rel="apple-touch-icon-precomposed" href="images/icons/apple-touch-icon-precomposed.png">
+    <!-- For Nokia -->
+    <link rel="shortcut icon" href="images/icons/apple-touch-icon.png">
+    <!-- For everything else -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="images/cover/cover.jpg">
+    
+    <meta http-equiv="cleartype" content="on">
+
+  </head>
+
+  <body>
+
+
+  <div class="menu-link orig-menu menu-trigger">
+    <a class="svg-menu" href="#main-navigation">Chapter Contents</a>
+  </div>
+
+  
+<!--======================== CONTENT ========================-->
+
+<article role="main">
+<div id="wrapper">
+
+<hgroup>
+  <a id="chapter_title" class="section-anchor"></a>
+  <h1>Chapter 2</h1>
+  <h1>CSS3 Transforms</h1>
+</hgroup>
+
+<!--=== CONTENT FROM XML HERE === -->
+
+<p>While CSS Animations can be used to alter almost every aspect of an HTML element (with the exception of the properties listed in the previous chapter), some of the most powerful means of manipulating the presentation of web pages lie in the CSS Transforms and Transitions modules, which are entirely new in CSS3.</p>
+
+<p>CSS Transitions are the very simplest form of animation: a movement between two states. Once you master the fundamental syntax for transitions described in this chapter, you will be able to apply simple, effective animations to images (described in Chapter 3) and user interface elements (described in Chapter 4), and then begin to create more complex keyframed animations (described in Chapter 5 and beyond).</p>
+
+<section id="sec1">
+  
+  <a id="hdr_sec1" class="section-anchor"></a>
+<h2>CSS Transforms<span class="index-term"><span class="primary">Transformation, CSS</span></span></h2>
+
+<p>There are four main <span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">description</span></span>CSS translation functions: <code>translate</code>, <code>rotate</code>, <code>scale</code>, and <code>skew</code>. The functions are combined in the <code>matrix</code> transformation function. You’ll apply these transformations to a standard web page layout of an image floated next to a paragraph of text as shown in Listing 2-1.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-1. HTML5 Code for a Floated Image</figcaption>
+<pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title  &gt;
+Simple CSS3 Transformation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;  &lt;img src="dudley-storey-statuette.jpg" alt="Student-made statuette of Dudley Storey" style="width: 300px; height: 300px; float: left; margin: 0 2em 1.4em 0;"  &gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu mi tellus. Vestibulum tortor erat, facilisis in auctor semper, pharetra quis mi...&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</figure>
+
+
+
+
+
+
+
+<p>The code shown in Listing 2-1 will produce the layout shown in Figure <span class="internal-reference" id="ir_fig1">2-1</span>.</p>
+
+<figure id="fig1" class="image">
+  <img src="images/ch2/fig2-1.png">
+  <figcaption>Figure 2-1. An image floated with paragraph text</figcaption>
+</figure>
+  
+<p>With this basic page in place, you can start to apply transforms to the image element.</p>
+
+<section id="sec2">
+  <a id="hdr_sec2" class="section-anchor"></a>
+  <h3>Rotate<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">rotation transformation</span></span></h3>
+
+<p>First, you’ll transform <span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">rotation transformation</span><span class="tertiary">description</span></span>the image by rotating it (see Listing 2-2). Values for CSS3 rotation transformations can be specified in degrees, gradians, turns or radians, using positive or negative floating-point values to create clockwise or anticlockwise rotation. You must include vendor prefixes to cover all browsers.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-2. Inline CSS to Rotate an Image</figcaption>
+<pre><code data-cm-mode="text/html">&lt;img src=
+"dudley-storey-statuette.jpg" alt=
+"Statuette of Dudley Storey" style=
+"width: 300px; height: 300px; float: left; margin: 0 2em 1.4em 0; -moz-transform: rotate(7.5deg); -ms-transform: rotate(7.5deg); -o-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg); transform: rotate(7.5deg); "&gt;</code></pre>
+</figure>
+
+
+
+<p>The result of the code in Listing 2-2 is shown in Figure <span class="internal-reference" id="ir_fig2">2-2</span>.</p>
+
+<figure id="fig2" class="image">
+  <img src="images/ch2/fig2-2.png">
+  <figcaption>Figure 2-2. A floated image with a CSS rotate transformation</figcaption>
+</figure>
+
+<p>While measuring rotation in degrees is the most common approach when writing CSS transformations, CSS3 allows a variety of units, shown in Table <span class="internal-reference" id="ir_tab1">2-1</span>:</p>
+
+<figure class="table">
+  <figcaption>Table 2-1. Possible unit systems for the CSS angle data type</figcaption>
+  <table id="tab1">
+  <thead><tr>
+  <th>Unit</th>
+  <th>CSS</th>
+  <th>Description</th>
+  <th>Example</th>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>Degrees</td>
+  <td>deg</td>
+  <td>360 degrees in a circle</td>
+  <td>rotate(90deg)</td>
+  </tr>
+  <tr>
+  <td>Gradians</td>
+  <td>grad</td>
+  <td>Also known as “gons” or “grades”. 400 gradians in a circle, making for easier calculations.</td>
+  <td>rotate(100grad)</td>
+  </tr>
+  <tr>
+  <td>Radians</td>
+  <td>rad</td>
+  <td>2π radians in a full circle, equal to 6.2831853rad.</td>
+  <td>rotate(1.57rad)</td>
+  </tr>
+  <tr>
+  <td>Turns</td>
+  <td>turn</td>
+  <td>A complete rotation  =  1 full turn.</td>
+  <td>rotate(.25turn)</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+<p>There are a few things to note when floating an image using <code>rotate</code>:<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">rotation transformation</span><span class="tertiary">floating an image</span></span>
+</p>
+<ul>
+<li>
+<p>Other HTML content on the page is not affected by transformations: the layout of the paragraphs does not change in response to the image rotation; further rotation of the image would cause it to overlap the text. (Content that reacts to transforms is supported in the CSS Regions Module).</p>
+</li>
+<li>
+<p>The Document Object Model (DOM)<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">DOM</span></span><span class="index-term"><span class="primary">Document Object Model (DOM)</span></span> is similarly unaffected; the value of properties for the transformed element such as <code>offsetWidth</code> will also be unchanged.</p>
+</li>
+<li>
+<p>CSS transformations essentially impose a state of relative positioning on the affected element; the original space used by the element is retained.</p>
+</li>
+<li>
+<p>If the value of the <code>overflow</code> property is <code>scroll</code> or <code>auto</code>, scrollbars will appear as needed to enable you to view content that is transformed outside the visible area.</p>
+</li>
+<li>
+<p>The rotation occurs from the computed <em>center</em> of the element, the <code>transform-origin</code>.</p>
+</li>
+<li>
+<p>Other CSS appearance rules applied to the element, such as <code>box-shadow</code>, are applied <em>before</em> the transformation, so they will be rotated with the effect.</p>
+</li>
+<li>
+<p>Rotating the image by 180 degrees will not flip or mirror it; that can be achieved using a hack of the <code>scale</code> transformation, discussed later in this chapter, or a 3D rotation, discussed in Chapter 9.</p>
+</li>
+<li>
+<p>You can rotate any HTML content you wish, but from a design perspective it is not recommended that you rotate text: doing so reduces legibility and induces a painful crick in the neck for your readers.</p>
+</li>
+<li>
+<p>The unit of measurement needs to be present, even if the amount of rotation is 0. In most CSS measurements, 0 is 0 for any unit, (i.e., <code>width: 0</code> works as an alternative to <code>width: 0px</code>.) But when rotating to 0, you must specify <code>transform: rotate(0deg)</code>; <code>transform: rotate(0)</code> will not work.</p>
+</li>
+</ul>
+<p>As you can see, inline styles for transformations can be lengthy due to the requirement to include vendor prefixes. It is much more common to create transformations separately, as a <code>class</code> or <code>id</code> in an embedded or linked stylesheet (see Listing 2-3).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-3. An Embedded CSS Stylesheet for Transforming an Image</figcaption>
+<pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;
+  Simple CSS3 Transformation&lt;/title&gt;
+  &lt;style&gt;
+  img.tilt {
+    width: 300px; height: 300px; float: left;
+    -moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);
+    -ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);
+    transform: rotate(7.5deg);
+    }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;
+    &lt;img src=
+    "dudley-storey-statuette.jpg" alt=
+    "Statuette of Dudley Storey" style=
+    "margin: 0 2em 1.4em 0; class=
+    "tilt" &gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu mi tellus. Vestibulum tortor erat, facilisis in auctor semper, pharetra quis mi...&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+</figure>
+
+
+
+
+<p>To rotate the image as if it were pinned at its top-right corner, you must move the element’s <code>transform-origin</code> to that location, as shown in Listing 2-4.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-4. Rotating an Image from a Corner</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transform-origin: right top;</code><code>-o-transform-origin: right top; -ms-transform-origin: right top;</code><code>-webkit-transform-origin: right top; transform-origin: right top;</code><code>-moz-transform: rotate(−10deg); -o-transform: rotate(−10deg);</code><code>-ms-transform: rotate(−10deg); -webkit-transform: rotate(−10deg);</code><code>transform: rotate(−10deg);</code><code>}</code></code></pre>
+</figure>
+
+
+
+
+<p>The code in Listing 2-4 will create the result shown in Figure <span class="internal-reference" id="ir_fig3">2-3</span>; note that I’ve had to change the image’s inline style slightly to provide it with more space for the margin on the right-hand side to compensate for the new angle of the image.</p>
+
+<figure id="fig3" class="image">
+  <img src="images/ch2/fig2-3.png">
+  <figcaption>Figure 2-3. Rotated, floated image with paragraph text</figcaption>
+</figure>
+
+<p><code>transform-origin</code> takes values the same way <code>background-position</code> and other properties that combine a horizontal and vertical offset do. The values are specified as the horizontal position of the origin point followed by the vertical position, <em>relative to the element itself.</em> The values can be specified as keywords (<code>top</code>, <code>center</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>), numerically, or as a combination of the two. They can also be outside the area of the element itself (for example, to create a transformation origin axis above or below the element, as shown in the “card fan” image gallery example in Chapter 3).</p>
+
+</section>
+<section id="sec3">
+  <a id="hdr_sec3" class="section-anchor"></a>
+  <h3>The Webkit CSS3 Transform Aliasing Issue<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">webkit CSS3 transform aliasing issue</span></span>
+</h3>
+
+<p>Early versions of Chrome and Safari (up to version 5.1) contain a rendering bug: when transforming some elements, the browsers will not antialias the edges of rotated or skewed HTML content, resulting in so-called “jaggies” or “staircasing” on the edges of images, as shown in Figure <span class="internal-reference" id="ir_fig4">2-4</span>.</p>
+
+
+<figure id="fig4" class="image">
+  <img src="images/ch2/fig2-4.png">
+  <figcaption>Figure 2-4. Zoomed image, showing aliasing of edges on an image rotated with CSS transform</figcaption>
+</figure>
+
+  <p>There are various techniques for getting around this bug :
+</p>
+
+<ul>
+<li>
+<p>Apply a 1-pixel white border around the element.</p>
+</li>
+<li>
+<p>Apply <code>webkit-backface-visibility: hidden;</code> to the element.</p>
+</li>
+<li>
+<p>Add another transformation to the element, such as <code>-webkit-transform: rotate(−10deg) translateZ(0);</code>.</p>
+</li>
+</ul>
+
+<p>There is no single technique that best addresses the rendering bug in all circumstances, however; the effectiveness of each technique depends on the context of the element being rendered.</p>
+
+</section>
+<section id="sec4">
+  <a id="hdr_sec4" class="section-anchor"></a>
+  <h3>Scale<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">scale transform</span></span>
+</h3>
+
+<p>The <code>scale</code> transform is something of an oddity when applied to images: given that changing an image’s <code>height</code> and <code>width</code> will have much the same visual result, it might not seem useful. The difference is that <code>scale</code> can be applied to <em>any</em> HTML element: changing the <code>width</code> of a paragraph will reflow the text content, but altering its <code>scale</code> will make the text physically larger or smaller.</p>
+
+<p>The value for <code>scale</code> is a multiplier: <code>scale(2)</code> applied to an element will make it appear twice as wide and twice as high (in other words, four times its normal size), while <code>scale (.5)</code> will result in an image that is one-fourth its original size. <code>scale</code> will transform the element equally in all directions. You can also apply <code>scale</code> to ordinal directions: X (horizontal), Y (vertical), and Z (depth).</p>
+
+<section id="sec5">
+  <a id="hdr_sec5" class="section-anchor"></a>
+  <h4>Flipping Images with scaleX</h4>
+  
+  
+<p>You can use the <code>scale</code> CSS transformation to effectively mirror HTML elements (usually images, although in principle this technique could be applied to any element). If <code>scale</code> starts at <code>1</code>, as shown on the left side of the diagram in Figure <span class="internal-reference" id="ir_fig5">2-5</span>, the affected element will grow smaller as you lower the value of <code>scale</code> until you reach 0, when the image disappears. If you push the value into negative territory, the image will begin to grow again, but will appear flipped horizontally, as shown on the right side of Figure <span class="internal-reference" id="ir_fig5">2-5</span>.</p>
+
+
+<figure id="fig5" class="image">
+  <img src="images/ch2/fig2-5.png">
+  <figcaption>Figure 2-5. Effect of using small and negative values of scaleX()</figcaption>
+</figure>
+
+<p>You can use <code>scale</code> to quickly flip an image on a page, rather than processing it through an application such as Adobe PhotoShop to generate a new copy. Listing 2-5 shows how the transformation could be applied to reverse an image of Abraham Lincoln.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-5. Flipping an Image with an Inline Transform Style</figcaption>
+<pre><code data-cm-mode="text/html">&lt;img src="lincoln.jpg" alt="Abraham Lincoln, 1863" style="width: 389px; height: 480px; -moz-transform: scaleX(−1); -o-transform: scaleX(−1);  -ms-transform: scaleX(−1); -webkit-transform: scaleX(−1); transform: scaleX(−1);"&gt;</code></pre>
+</figure>
+
+
+
+<p>Figure <span class="internal-reference" id="ir_fig6">2-6</span> shows the outcome of the code in Listing 2-5.</p>
+
+<figure id="fig6" class="image">
+  <img src="images/ch2/fig2-6.png">
+  <figcaption>Figure 2-6. Original photograph of Abraham Lincoln (left) flipped using CSS3 scale transform (right)</figcaption></figure>
+
+<p>Using CSS techniques like this, you can adjust images on the fly instead of having to return to PhotoShop, make the changes, then save and upload the file to the site, and without having to modify any HTML code.</p>
+
+</section>
+</section>
+
+<section id="sec6">
+  <a id="hdr_sec6" class="section-anchor"></a>
+  <h3>Translate<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">translate modifier</span></span>
+</h3>
+
+
+<p>Like <code>scale</code>, the <code>translate</code> modifier might seem a bit redundant at first: it uses the same coordinate system (and visually, produces the same result) as applying <code>top</code>, <code>left</code>, <code>bottom</code>, and <code>right</code> properties to a relatively positioned element. However, as you will see, <code>translate</code> can make it easier to animate HTML content.</p>
+
+<p><code>translate(x,y)</code> moves the element in horizontal and vertical directions by using positive or negative values. <code>translateX()</code> moves the element in the horizontal plane, while translateY() moves it vertically.</p>
+
+<p>For example, if you wanted to move the statuette image shown in Figure <span class="internal-reference" id="ir_fig4">2-4</span> up <code>4em</code> and to the right by <code>50px</code>, you’d use the code shown in Listing 2-6.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-6. CSS Code for Translating an Image</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt {
+  width: 300px; height: 300px; float: left;
+  -moz-transform: translate(50px, -4em); -o-transform: translate(50px, -4em);
+  -ms-transform: translate(50px, -4em); -webkit-transform: translate(50px, -4em);
+  transform: translate(50px, -4em);
+}</code></pre>
+</figure>
+
+
+</section>
+<section id="sec7">
+  <a id="hdr_sec7" class="section-anchor"></a>
+  <h3>Skew<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">skew</span></span>
+</h3>
+
+
+<p>Applying <code>skew</code> to an element “shears” it horizontally or vertically and can be useful for imparting an extra sense of speed or motion to an element. Imagine taking the opposite sides of a rectangle (the top and bottom edges, for example, or the left and right sides) and pulling them in different directions, while ensuring that they remain parallel.</p>
+
+<p>The values entered for <code>skew</code> refer to the angle that the <em>other</em> sides will be set to. For example, “leaning” an image to the right is a <code>skewX</code> transformation. <code>transform: skewX(21deg)</code> will mean that the left and right edges of the image will be set to 21 degrees from the vertical (see Listing 2-7). Leaning the image to the left still uses <code>skewX</code>, but with a negative value: <code>skewX(−21deg)</code>, for example, will set the same edges negative 21 degrees (that is, left) from the vertical. <code>skewY</code> takes the <em>left</em> and <em>right</em> sides of an element’s box and shifts them up and down.</p>
+
+
+<figure class="listing">
+<figcaption>Listing 2-7. CSS Code for Skewing an Image</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transform: skewX(21deg); -o-transform: skewX(21deg);</code><code>-ms-transform: skewX(21deg); -webkit-transform: skewX(21deg);</code><code>transform: skewX(21deg);</code><code>}</code></code></pre>
+</figure>
+
+
+<p>You can see the outcome of Listing 2-7 in Figure <span class="internal-reference" id="ir_fig7">2-7</span>.</p>
+
+<figure id="fig7" class="image">
+  <img src="images/ch2/fig2-7.png">
+  <figcaption>Figure 2-7. A rectangular element skewed with CSS</figcaption>
+</figure>
+
+<p>A combination of both horizontal and vertical skew with appropriate values while translating the element in the corresponding directions can provide the impression that the element forms one side of a box, as shown in Listing 2-8.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-8. CSS Code to Transform an Image into One Side of an Isometric Box</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transform: skewY(30deg); -o-transform: skewY(30deg);</code><code>-ms-transform: skewY(30deg);  -webkit-transform skewY(30deg);</code><code>transform: skewY(30deg);</code><code>}</code></code></pre>
+</figure>
+
+
+<p>Combining individual transformations together (for example, a rotation and translation) provides much more power to your CSS and gives you many more possibilities for animation.</p>
+
+</section>
+<section id="sec8">
+  <a id="hdr_sec8" class="section-anchor"></a>
+  <h3>Combining Transformations<span class="index-term"><span class="primary">Transformation, CSS</span><span class="secondary">merging</span></span>
+</h3>
+
+<p>You can merge transformations for an element in one of two ways: as space-separated values of a transform property, or as values for a matrix property.</p>
+
+<p>To merge transformations as space-separated values of a <code>transform</code> property, use the code shown in Listing 2-9.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-9. Multiple Transforms in a Single CSS Declaration</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt { width: 300px; height: 300px; float: left;</code><code>-moz-transform: translate(50px, -4em) rotate(15deg);</code><code>-webkit-transform: translate(50px, -4em) rotate(15deg);</code><code>-o-transform: translate(50px, -4em) rotate(15deg);</code><code>-ms-transform: translate(50px, -4em) rotate(15deg);</code><code>transform: translate(50px, -4em) rotate(15deg); }</code></code></pre>
+</figure>
+
+
+<p>The process for merging transformations as values for a <code>matrix</code> property is significantly more complicated. Matrix transformations are a little beyond the scope of this book; it’s easiest to use a tool to generate the code. The Useragentman Matrix Construction Set (<span class="external-reference"><span class="ref-source">www.useragentman.com/matrix/</span><span class="ref-target">URL::http://www.useragentman.com/matrix/</span></span>) and CSS3 Transform Matrix Calculator (<span class="external-reference"><span class="ref-source">www.leeourand.com/test/transform/test/transform.html</span><span class="ref-target">URL::http://www.leeourand.com/test/transform/test/transform.html</span></span>) offer two ways of doing so. An explanation of matrix transformations can be found at The CSS Matrix Transform for the Mathematically Challenged (<span class="external-reference"><span class="ref-source">www.useragentman.com/blog/2011/01/07/css3-matrix-transform-for-the-mathematically-challenged/</span><span class="ref-target">URL::http://www.useragentman.com/blog/2011/01/07/css3-matrix-transform-for-the-mathematically-challenged/</span></span>) and at the Opera Web Developer site (<span class="external-reference"><span class="ref-source">http://dev.opera.com/articles/view/understanding-the-css-transforms-matrix</span><span class="ref-target">URL::http://dev.opera.com/articles/view/understanding-the-css-transforms-matrix</span></span>). While they have the advantage of being shorter and more efficient, matrix transforms are not human-readable, so I won’t use them for the examples in this book.</p>
+
+<aside type="Important">
+  <h3>Note</h3>
+<p>Writing separate transforms will <em>not</em> work to create a combined transformation.</p>
+
+<pre><code>img.tilt { width: 300px; height: 300px; float: left;
+  transform: translate(50px, -4em);
+  transform: rotate(15deg);
+  -webkit-transform: translate(50px, -4em);
+  -webkit-transform: rotate(15deg); }
+</code></pre>
+
+
+
+
+<p>With the above CSS the browser will follow the <em>last</em> applicable line of code; that is, the image will be rotated, but not translated.</p>
+</aside>
+
+</section>
+</section>
+
+<section id="sec9">
+  <a id="hdr_sec9" class="section-anchor"></a>
+  <h2>CSS Transitions<span class="index-term"><span class="primary">Transitions, CSS</span></span>
+</h2>
+
+<p>CSS Transitions <span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">description</span></span>are exactly that: a transition from one visual state to another, most often initated by some user event, such as a mouseover on an element. Transitions, in other words, are point-to-point. If you need to animate between more than one state and another you will find that CSS Keyframes are better suited for the job. (CSS Keyframes will be discussed in Chapter 5. )</p>
+
+<p>Note that for the examples in this chapter I’ll be using <code>:hover</code> to initiate transitions, but technically <em>any</em> modification to the value of an element’s property will trigger a transition for that property.</p>
+
+<p>Let’s return to the first example and create a simple rotation transition for the image on the page. When the user places their mouse over the image, you want to rotate the element by 7.5 degrees. You’ll do this by adding a <code>:hover</code> pseudo class to the <code>.tilt</code> selector <code>(:hover</code> can be applied to every element, not just links), as shown in Listing 2-10.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-10. CSS Transform on Hover, no Transition</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+
+<p>The code shown in Listing 2-10 will work, but if you try viewing the page in a browser you’ll see that there’s no animation on mouseover, just an instantaneous flick between one state and the other. You’ll create an animation between these states by using the <code>transition</code> property (see Listing 2-11).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-11. Smoothing a CSS Transform by Using a Transition</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>-moz-transition: 2s all; -webkit-transition: 2s all;</code><code>-o-transition: 2s all; transition: 2s all;</code><code>}</code></code></pre>
+</figure>
+
+
+
+<p>The code shown in Listing 2-11 is far more successful: when you mouse over the image you’ll see that it now rotates smoothly to its new position. The syntax, repeated with multiple vendor prefixes, is easy to understand, too. The element is rotated over two seconds, and all of its properties can be altered during the transition. Note that the order of the values doesn’t matter: you can use <code>2s all</code> or <code>all 2s</code>.</p>
+
+<p>If you are animating elements over time periods that include fractions of seconds, you can specify the time period as either floating-point values in seconds, or as milliseconds (thousandths of a second), as shown in Listing 2-12.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-12. A CSS Transition Measured in Seconds</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>-moz-transition: 2.35s all; -webkit-transition: 2.35s all;</code><code>-o-transition: 2.35s all; transition: 2.35s all;</code><code>}</code></code></pre>
+</figure>
+
+
+<p>This could also be expressed as shown in Listing 2-13.</p>
+
+<figure class="listing">
+<figcaption>Listing 2-13. A CSS Transition Measured in Milliseconds</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>-moz-transition: 2350ms all;</code><code>-webkit-transition: 2350ms all; -o-transition: 2350ms all;</code><code>transition: 2350ms all;</code><code>}</code></code></pre>
+</figure>
+
+
+<p>While animation timing<span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">timing</span></span> in milliseconds allows greater precision, the two declarations above achieve the same result—using milliseconds does not create a smoother animation sequence. Very few animations will require accuracy down to one-thousandth of a second, and specifying time in milliseconds usually requires more typing, so I stick with the more familiar seconds format (even for values of less than one second: <code>transition: .35s all</code>, for example). You should use whichever system you feel more comfortable with.</p>
+
+<aside type="Important">
+  <h3>Note</h3>
+<p>If you’ve animated with JavaScript, note the difference here: CSS3 can use floating-point values in seconds <em>or</em> milliseconds for timing animations. JavaScript uses milliseconds exclusively, although many JavaScript frameworks used to create animations can use time intervals measured in seconds.</p>
+</aside>
+
+<p>There is just one more improvement to make. You’ll notice that after the element has been rotated, moving your mouse off the image returns it instantaneously to its initial state. While that may be the visual effect you seek for web page elements in some circumstances, in most cases it is better to show the element returning to its initial orientation just as smoothly as it arrived in its rotated state.</p>
+
+<p>The solution is slightly counterintuitive: move the <code>transition</code> portion of the CSS code from the <code>:hover</code> declaration to the <em>default</em> state for the image, keeping only the <code>transform</code> on the <code>:hover</code> declaration (see Listing 2-14).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-14. Creating a Smooth Transition to and from a Default State</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transition: 2s all; -webkit-transition: 2s all;</code><code>-o-transition: 2s all; transition: 2s all;</code><code>}</code><code>img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+
+<p>The idea is simple: placing the <code>transition</code> property on the class declaration implies that any transition is in effect both <em>from</em> and <em>back to</em> this state. The previous example placed the transition on the <code>:hover</code> declaration, meaning that it was only effective on mouse hover, not during the return to the normal state.</p>
+
+<p>You’ll also notice that the transition can be interrupted if you move your mouse to and from the area of the image; its motion will be reversed smoothly. You can shortcut the code further by only specifying the time for the transition (see Listing 2-15).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-15. Timed Rotation in a CSS Transformation</figcaption>
+<pre><code data-cm-mode="text/css">img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transition: 2s;</code><code>-webkit-transition: 2s; -o-transition: 2s;</code><code>transition: 2s; }</code><code>img.tilt:hover {</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>}</code></code></pre>
+</figure>
+
+
+
+
+
+
+<p>As you’ve seen, creating a smooth and simple animation is easy with CSS3 Transitions. You can modify and animate almost every aspect of an element’s appearance that CSS properties provide access to. The transitions I’ve shown you so far have changed only one aspect of an element at a time, and always in the same fashion. To create richer animations you can combine multiple property transitions for the same element that occur at different times and speeds.</p>
+
+</section>
+
+<section id="sec10">
+  <a id="hdr_sec10" class="section-anchor"></a>
+  <h2>Delaying and Combining Transition Effects<span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">delaying and combining effects</span></span>
+</h2>
+
+<p>A transition event <span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">delaying and combining effects</span><span class="tertiary">description</span></span>can be delayed by adding a <code>transition-delay</code>, either as a separate property or appended to the values for <code>transform</code>:</p>
+
+<pre><code>
+  -moz-transition: 2s 4s;
+  -webkit-transition: 2s 4s; -o-transition: 2s 4s; transition: 2s 4s;
+</code></pre>
+
+<p>Note that the delay takes effect at both the start of the animation and the start of the element’s reversal to its beginning point. The animation will not begin until four seconds after the cursor has been held over the image; once it is fully rotated, the element will stay in place for four seconds before returning to its default orientation. (Also note that the animation will not begin until the mouse has been held over the image for <em>at least</em> four seconds).</p>
+
+<p>You can animate several CSS properties at the same time by adding them to the <code>:hover</code> state (see Listing 2-16).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-16. Several CSS Properties Transitioned Simultaneosly</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transition: 2s;</code><code>-ms-transition: 2s;</code><code>-o-transition: 2s;</code><code>-webkit-transition: 2s;</code><code>transition: 2s;</code><code>}</code><code>img.tilt:hover {</code><code>-moz-transform: rotate(15deg);</code><code>-o-transform: rotate(15deg); -ms-transform: rotate(15deg);</code><code>-webkit-transform: rotate(15deg); transform: rotate(15deg);</code><code>opacity: .3;</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+<p>The properties<span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">delaying and combining effects</span><tertiary>properties</tertiary></span> can be given separate timings in the animation by stating <code>transition-duration</code> as a separate property with comma-separated values. Let’s say you wanted to move the image to the right on hover, and fade it out at the same time, but with the fade taking half the time that the movement does (see Listing 2-17).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-17. </figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt {</code><code>width: 300px; height: 300px; float: left; position: relative;</code><code>-moz-transition-property: opacity, left;</code><code>-o-transition-property: opacity, left;</code><code>-webkit-transition-property: opacity, left;</code><code>transition-property: opacity, left;</code><code>-moz-transition-duration: 2s, 4s;</code><code>-o-transition-duration: 2s, 4s;</code><code>-webkit-transition-duration: 2s, 4s;</code><code>transition-duration: 2s, 4s;</code><code>}</code><code>img.tilt:hover {</code><code>opacity: .2; left: 60px;</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+<p>I’ve added <code>position: relative</code> in order to be able to move the element by changing the value of its <code>left</code>, and improved the efficiency of the animation by clearly stating the properties to be animated. (Obviously you don’t have to prefix properties that are well-supported across all browsers, such as <code>opacity</code>.) You’ll notice that the left-to-right animation may not be particularly smooth in some browsers. Let’s change the animated property to <code>translate</code>, as shown in Listing 2-18.</p>
+
+
+<figure class="listing">
+<figcaption>Listing 2-18. A CSS3 Translation Transition</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transition-property: opacity, translateX;-o-transition-property: opacity, translateX;</code><code>-webkit-transition-property: opacity, translateX;</code><code>transition-property: opacity, translateX;</code><code>-moz-transition-duration: 2s, 4s;</code><code>-o-transition-duration: 2s, 4s;</code><code>-webkit-transition-duration: 2s, 4s;</code><code>transition-duration: 2s, 4s;</code><code>}</code><code>img.tilt:hover {</code><code>opacity: .2;</code><code>-webkit-transform: translateX(60px);</code><code>-moz-transform: translateX(60px); -ms-transform: translateX(60px);</code><code>-o-transform: translateX(60px); transform: translateX(60px);</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+<p>You may find that the movement is now smoother; <code>translate</code> is a good alternative for animating the movement of HTML elements via manipulation of <code>absolute</code> or <code>relative</code> positioning.</p>
+
+<section id="sec11">
+  
+  <a id="hdr_sec11" class="section-anchor"></a>
+  <h3>Introducing Easing Functions<span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">delaying and combining effects</span><span class="tertiary">easing functions</span></span>
+</h3>
+
+<p>Observe closely the movement of the image on mouseover in the animations you have created so far: there’s something a little special about it (lengthening the time value for the animation may help make this clearer). The motion of the image is not mechanical, but organic: from its default position, the picture speeds up as it rotates, reaches a constant speed for a moment, then slows down before it comes to rest.</p>
+
+<p>In animation, this kind of motion is referred to as <em>ease in/ease out</em>. It is the motion of objects in the everyday world. For example, no car, no matter how powerful, can attain a 0–60 speed record of 0 seconds. Every moving object accelerates to a certain velocity; at the end of its travel (outside of an extreme situation, such as a car crashing into a brick wall at top speed) the object will slow down before coming to a stop.</p>
+
+<p>In CSS3 animation, <em>ease</em> transitions are the default; there’s no need to state that you are using them. If you want to use animation with a more “mechanical” feel to it, you can start by specifying a <code>linear</code> transition (see Listing 2-19).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-19. CSS for a Linear Rotation Transition</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>img.tilt {</code><code>width: 300px; height: 300px; float: left;</code><code>-moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);</code><code>-ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);</code><code>transform: rotate(7.5deg);</code><code>-moz-transition: 2s transform linear;</code><code>webkit-transition: 2s transform linear; -o-transition: 2s transform linear;</code><code>transition: 2s transform linear;</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+<p>You’ll see that the motion of the image on mouseover is now far more mechanical.</p>
+</section>
+<section id="sec12">
+  <a id="hdr_sec12" class="section-anchor"></a>
+  <h3>Transition Timing Functions and Bezier Curves<span class="index-term"><span class="primary">Bezier curves</span></span><span class="index-term"><span class="primary">Transitions, CSS</span><span class="secondary">delaying and combining effects</span><span class="tertiary">transition timing functions</span></span>
+</h3>
+
+<p><code>linear</code> and <code>ease</code> are just two forms of what are referred to as <em>timing functions</em><span class="index-term"><span class="primary"><em>Bezier curves</em></span><span class="secondary">timing functions</span></span>, that is, descriptions of the way in which an object gets from A to B in a straight line. These timing functions may be graphed in a mathematical expression known as Bezier curves.</p>
+
+<p>For example, if you graphed the motion of an element during its transition from 0 to 15 degrees under linear conditions, with time assigned to the horizontal axis and the angle of the image assigned to the vertical, the graph for linear animation would look like Figure <span class="internal-reference" id="ir_fig8">2-8</span>. As time progresses, the angle of rotation increases in lockstep with the passing seconds, creating a constant rate of motion.</p>
+
+<figure id="fig8" class="image">
+  <img src="images/ch2/fig2-8.png">
+  <figcaption>Figure 2-8. Graph for linear animation<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">linear animation graph</span></span>: time on x (horizontal) axis, distance/angle on y (vertical) axis. Note the direct relationship</figcaption>
+</figure>
+
+<section id="sec13">
+  <a id="hdr_sec13" class="section-anchor"></a>
+<p>Removing the <code>linear</code> keyword from the declaration returns the animation to its natural easing state, which when plotted on the same axes would look more like Figure <span class="internal-reference" id="ir_fig9">2-9</span>.</p>
+
+<figure id="fig9" class="image">
+  <img src="images/ch2/fig2-9.png">
+  <figcaption>Figure 2-9. Easing timing function<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">easing timing function</span></span><span class="index-term"><span class="primary">Easing timing function</span></span>: time on x axis, distance on y axis</figcaption>
+</figure>
+
+<p>As you can see, the angle of rotation changes slowly in the first moments of the eased animation; toward the middle of the transition, the rate of change increases markedly, reaches a “terminal velocity”, then slows down until the sequence reaches its conclusion.</p>
+
+<p>There are several keywords that can be used as a shortcut for common transition motions (see Table <span class="internal-reference" id="ir_tab2">2-2</span>).</p>
+
+<figure class="table">
+  <figcaption>Table 2-2. Keyword Alternatives to Common Cubic-Bezier Timing Functions</figcaption>
+  <table id="tab2">
+  <thead><tr>
+  <td align="center">Keyword</td>
+  <td align="center">Graph</td>
+  <td align="center">Cubic-Bezier</td>
+  <td align="center">Description</td>
+  </tr></thead>
+  <tbody>
+  <tr>
+  <td>linear</td>
+  <td></td>
+  <td>0, 0, 1, 1</td>
+  <td>Instant start and stop; constant velocity through the range of motion.</td>
+  </tr>
+  <tr>
+  <td>ease</td>
+  <td></td>
+  <td>0.25, 0.1, 0.25, 1</td>
+  <td>Swift start, accelerating quickly; slow transition to stop at end.</td>
+  </tr>
+  <tr>
+  <td>ease-in</td>
+  <td></td>
+  <td>0.42, 0, 1, 1</td>
+  <td>Slow start, acceleration climbing to a sudden stop.</td>
+  </tr>
+  <tr>
+  <td>ease-out</td>
+  <td></td>
+  <td>0, 0, 0.58, 1</td>
+  <td>Instant start to animation, motion slows down towards end.</td>
+  </tr>
+  <tr>
+  <td>ease-in-out</td>
+  <td></td>
+  <td>0.42, 0, 0.58, 1</td>
+  <td>Element is eased in and out during animation: a slow, smooth start briefly attaining a constant velocity during the middle of the transition before slowing to a stop.</td>
+  </tr>
+  </tbody>
+  </table>
+</figure>
+
+<p>As you can see, all easing curves have a mathematical equivalent in the form of a cubic-bezier expression: a number pair in which each set of floating-point digits describes a point in coordinate space, forming a line that creates a transition curve. (Note that the points at the termination of the curve on either end cannot be moved or defined).</p>
+
+<p>For an ease-in-out curve, the points look like Figure <span class="internal-reference" id="ir_fig10">2-10</span>.</p>
+
+<figure id="fig10" class="image">
+  <img src="images/ch2/fig2-10.png">
+  <figcaption>Figure 2-10. Bezier curve for an ease-in-out animation effect<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">ease-in-out animation effect</span></span></figcaption>
+</figure>
+
+<p>Expressed in CSS, Figure <span class="internal-reference" id="ir_fig10">2-10</span> looks like this:</p>
+
+<pre><code>transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);</code></pre>
+
+<p>Understanding the cubic-bezier function allows you to create an almost infinite variety of custom easing curves for your CSS animations. It is even possible to give the points negative values or values greater than 1 to create extreme easing curves, which you can see in Figure <span class="internal-reference" id="ir_fig11">2-11</span>.</p>
+
+<figure id="fig11" class="image">
+  <img src="images/ch2/fig2-11.png">
+  <figcaption>Figure 2-11. Bezier curve with negative and greater-than-1 values, creating a “push-pull” animation effect<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">push-pull animation effect</span></span></figcaption>
+</figure>
+
+<p>In CSS, Figure <span class="internal-reference" id="ir_fig11">2-11</span> looks like this:</p>
+
+<pre><code>transition: all 2000ms cubic-bezier(0.280, -0.315, 0.685, 1.390);</code></pre>
+
+<p>The use of such values creates animations with a “spring” or “bounce” to them, also known as <em>push-pull</em> animations. I will explore the uses of such animations in Chapter 4.</p>
+
+<aside type="Important">
+  <h3>Tip</h3>
+<p>Ceaser (<span class="external-reference"><span class="ref-source">http://matthewlein.com/ceaser/</span><span class="ref-target">URL::http://matthewlein.com/ceaser/</span></span>), and Cubic (<span class="external-reference"><span class="ref-source">http://cssglue.com/cubic</span><span class="ref-target">URL::http://cssglue.com/cubic</span></span>) are excellent tools for generating CSS easing code from graphically manipulated cubic-bezier curves. Both include a testing service to allow you to see the visual result of changes. Peter Beverloo’s resource (<span class="external-reference"><span class="ref-source">http://peter.sh/experiments/css3-transition-timing-functions/</span><span class="ref-target">URL::http://peter.sh/experiments/css3-transition-timing-functions/</span></span>) is also useful, especially in visualizing the step function.</p>
+</aside>
+
+</section>
+
+<section id="sec14">
+  <a id="hdr_sec14" class="section-anchor"></a>
+  <h4>Animating in Steps<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">animation, in steps</span></span>
+</h4>
+
+<p>It’s also possible to animate an element in steps, rather than as a smooth transition. (Think of the sudden, incremental motion of the second hand on a clock). These are created through the <code>steps</code> function and variants. Here I’ll economize the code by showing just the CSS3 code for standard properties, Firefox and Webkit.</p>
+
+<p>Let’s say that you have an <code>h1</code> you want to animate on mouseover (see Listing 2-20).</p>
+
+<figure class="listing">
+<figcaption>Listing 2-20. Transition Sequence in Steps for a Heading</figcaption>
+<pre><code data-cm-mode="text/html">&lt;style&gt;</code><code>h1 {</code><code>font-family: Futura; "Arial Black", Arial, sans-serif;</code><code>text-align: center;</code><code>}</code><code>h1:hover {</code><code>-moz-transition: 4s all steps(3, end);</code><code>-webkit-transition: 4s all steps(3, end);</code><code>transition: 4s all steps(3, end);</code><code>-moz-transform: translateX(400px);</code><code>-webkit-transform: translateX(400px);</code><code>transform: translateX(400px);</code><code>}</code><code>&lt;/style&gt;</code></code></pre>
+</figure>
+
+
+
+
+<p>The code in Listing 2-20 will animate all <code>h1</code> elements in a series of three “jumps” over four seconds after a two-second delay, with no visible motion between each step. Other variations are possible, as shown in Table <span class="internal-reference" id="ir_tab3">2-3</span>.</p>
+
+<figure class="table">
+  <figcaption>Table 2-3. Step Values for CSS3 Transitions</figcaption>
+<table id="tab3">
+<thead><tr>
+<td align="center">Function</td>
+<td align="center">Graph</td>
+<td align="center">Description</td>
+</tr></thead>
+<tbody>
+<tr>
+<td>steps(3)</td>
+<td></td>
+<td>Animation over x number of steps, (steps(3) is illustrated in the graph). Pauses at start. Equivalent to steps(x, end).</td>
+</tr>
+<tr>
+<td>steps(3), end</td>
+<td></td>
+<td>Element is still at start, paused at the end.</td>
+</tr>
+<tr>
+<td>steps(x), start</td>
+<td></td>
+<td>Instant start to animation, element is paused at the end.</td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+</section>
+
+<section id="sec15">
+  <a id="hdr_sec15" class="section-anchor"></a>
+  <h4>Adding Support for Mobile Devices in CSS3 Transitions<span class="index-term"><span class="primary">Bezier curves</span><span class="secondary">mobile devices support</span></span>
+</h4>
+
+<p>So far you’ve only activated transforms on <code>:hover</code>. That is by far the most common pseudo-class with which to start a transition, but it is not the only one, as you’ll see in Chapter 3.</p>
+
+<p>:<code>hover</code> can pose two issues for browsers installed on mobile devices:
+</p>
+
+<ul>
+<li>
+<p>The user’s fingertip may obscure animations, particularly on smaller screens.</p>
+</li>
+<li>
+<p>Some devices do not support <code>:hover</code> (which makes sense as, strictly speaking, all current mobile platforms rely on direct touch). Instead, they cover simple user interaction with <code>:focus.</code></p>
+</li>
+</ul>
+
+<p>If you choose to use <code>:hover</code>, you should cover the possibility of <code>:focus</code>-only mobile platforms by using a grouped selector, as shown in the following code:</p>
+
+<pre><code>img.tilt:hover, img.tilt:focus {
+  -moz-transform: rotate(7.5deg); -o-transform: rotate(7.5deg);
+  -ms-transform: rotate(7.5deg); -webkit-transform: rotate(7.5deg);
+  transform: rotate(7.5deg);
+  }
+</code></pre>
+
+
+
+</section>
+
+</section>
+</section>
+
+<section id="sec16">
+  <a id="hdr_sec16" class="section-anchor"></a>
+  <h2>Summary</h2>
+  
+<p>In this chapter you’ve learned the syntax for CSS3 transforms: <code>scale</code>, <code>rotate</code>, <code>skew</code>, and <code>translate</code>, including how to flip images and combine transformations. I also covered the code for the simplest form of animation, CSS3 Transitions, showing you how to create transitions, how to modify their timing and delays, and two common ways to initiate them.</p>
+
+<p>The movement and timing of transitions is most commonly controlled through Bezier curves, although it is also possible to use the <code>steps</code> function and keyword shortcuts.</p>
+
+<p>In the next chapter, we’ll be exploring how to apply these animation techniques to image elements.</p>
+
+</section>
+
+<a id="main-navigation"></a> 
+<div class="nav-container">     
+<nav id="menu" role="navigation">
+  <ul>
+    <li class="current">
+      <a href="#chapter_title">Chapter 2</a>
+      <ul>
+        <li>
+          <a href="#hdr_sec1">CSS Transforms</a>
+          <ul>
+            <li><a href="#hdr_sec2">Rotate</a></li>
+            <li><a href="#hdr_sec3">The Webkit CSS3 Transform Aliasing Issue</a></li>
+            <li><a href="#hdr_sec4">Scale</a></li>
+            <li><a href="#hdr_sec6">Translate</a></li>
+            <li><a href="#hdr_sec7">Skew</a></li>
+            <li><a href="#hdr_sec8">Combining Transformations</a></li>
+          </ul>
+        </li>
+        <li><a href="#hdr_sec9">CSS Transitions</a></li>
+        <li>
+          <a href="#hdr_sec10">Delaying and Combining Transition Effects</a>
+          <ul>
+            <li><a href="#hdr_sec11">Introducing Easing Functions</a></li>
+            <li><a href="#hdr_sec12">Transition Timing Functions and Bezier Curves</a></li>
+          </ul>
+        </li>
+        <li><a href="#hdr_sec16">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+</div>
+</article>
+
+<!--====================== END CONTENT ======================-->
+
+
+
+  </body>
+
+</html>
