@@ -1553,7 +1553,7 @@ nav li li li a {
 .font-size-controls {
   position: fixed;
   top: 0px;
-  right: 66px;
+  right: 60px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003143}}
 .font-size-controls a {
@@ -1567,7 +1567,7 @@ nav li li li a {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003152}}
 a.fs-smaller {
-  background: url("../images/littleA.png") no-repeat scroll 17px 16px;
+  background: url("../images/littleA.png") no-repeat scroll 21px 16px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003155}}
