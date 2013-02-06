@@ -8,9 +8,9 @@
   width: 100%;
   height: 44px;
   background: #fff;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0 0 5px -1px rgba(0,0,0,0.5);
+  box-shadow: 0 0 6px -1px rgba(0,0,0,0.5);
   z-index: 1;
+  padding-top: 2px;
 }
 
 h1.book-title {
@@ -18,7 +18,14 @@ h1.book-title {
   text-align: center;
   font-style: italic;  
   font-family: $sourcesans-light;
+  display: none;
 }
+@media screen and (min-width: 30em) { // 480px
+  h1.book-title {
+    display: block;
+  }
+}
+
 
 //-----------------------------------------------------------------------
 // Chapter Contents
@@ -150,11 +157,27 @@ nav {
   }
 }
 a.fs-smaller {
-  background: url('../images/littleA.png') no-repeat  scroll 21px 16px;
+  background: url('../images/littleA.svg') no-repeat  scroll 21px 16px;
 }
 a.fs-larger {
-  background: url('../images/bigA.png') no-repeat  scroll 0px 10px;
+  background: url('../images/bigA.svg') no-repeat  scroll 0px 10px;
 }
+.ie6-8 a.fs-smaller {
+  background: url('../images/littleA.png') no-repeat  scroll 21px 16px; // for old IE, which doesn't support SVG
+}
+.ie6-8 a.fs-larger {
+  background: url('../images/bigA.png') no-repeat  scroll 0px 10px; // for old IE, which doesn't support SVG
+}
+@media screen and (min-width: 40em) { // 640px
+  .font-size-controls {
+    right: 60px;
+    a {
+      height: 44px;
+      width: 44px;
+    }
+  }
+}
+
 
 //-----------------------------------------------------------------------
 // Table of Contents

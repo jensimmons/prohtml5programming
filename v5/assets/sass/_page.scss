@@ -18,12 +18,12 @@ hgroup {
   clear: both;
   @include trailer(2, $h1-font-size);
   h1 {
-    @include adjust-font-size-to(28px);
+    @include adjust-font-size-to(24px);
     @include leader(0.2, $h1-font-size);
     @include trailer(0, $h1-font-size);
   }
   h1:last-child {
-    @include adjust-font-size-to(42px);
+    @include adjust-font-size-to(38px);
     @include leader(0.1, $h1-font-size);
     @include trailer(0.3, $h1-font-size);  
   }
