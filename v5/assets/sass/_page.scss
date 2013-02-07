@@ -215,6 +215,9 @@ table {
 	width: 100%; 
 	border-collapse: collapse; 
 	margin: 0.3em 0 1.5em;
+	img {
+  	width: 100px;
+	}
 }
 table code {
   @include adjust-font-size-to(14px);
