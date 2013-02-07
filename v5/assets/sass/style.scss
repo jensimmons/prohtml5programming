@@ -17,10 +17,12 @@
 // Import fonts
 @import "fontface";
 
-// Import CSS for this project
+// Import CSS for the books
 @import "typography";
 @import "layout";
 @import "page";
 @import "navigation";
 @import "code";
 
+// Import CSS for the Dashboard
+@import "dashboard";
