@@ -14,7 +14,7 @@ html {
 
 hgroup {
   text-align: center;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $line-color;
   clear: both;
   @include trailer(2, $h1-font-size);
   h1 {
@@ -188,6 +188,23 @@ video {
 
 
 //-----------------------------------------------------------------------
+// Link to next chapter
+//-----------------------------------------------------------------------
+
+.next-chapter {
+  border-top: 1px solid $line-color;
+  margin-top: 2em;
+  padding-top:0.5em;
+  text-align: right;
+  font-family: $accent-font;
+  @include adjust-font-size-to(14px);
+  a {
+    text-decoration: none;
+    color: $text;
+  }
+}
+
+//-----------------------------------------------------------------------
 // Tables
 //-----------------------------------------------------------------------
 
@@ -263,10 +280,13 @@ td, th {
 	
 }
 
+
 //-----------------------------------------------------------------------
 // Image (inlinemediaobjects)
 //-----------------------------------------------------------------------
+
 img.inlinemediaobject {
   display: block;
   margin: 0.65em 0;
 }
+
