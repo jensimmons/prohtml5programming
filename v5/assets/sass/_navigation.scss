@@ -118,6 +118,10 @@ nav {
   li.current > a {
     background: rgba(0,0,0,0.75);
     color: #fff;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
   }
 }
 
