@@ -1,7 +1,7 @@
 var toc = {
   'header': {
-    'image':'path/to/image.jpg',
-    'title':'Pro Html5 Programming',
+    'image':'images/cover/cover_250.jpg',
+    'title':'Pro HTML5 Programming',
     'dek':'by Peter Lubbers, Brian Albers, and Frank Salim'
   },
   'chapters': [
