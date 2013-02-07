@@ -1283,6 +1283,7 @@ video {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003194}}
 .next-chapter {
+  clear: both;
   border-top: 1px solid #555555;
   margin-top: 2em;
   padding-top: 0.5em;
@@ -1291,13 +1292,13 @@ video {
   font-size: 0.875em;
   line-height: 1.85714em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003202}}
 .next-chapter a {
   text-decoration: none;
   color: #1b1d1e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003212}}
 table {
   font-family: SourceSansProRegular, Verdana, Tahoma, "DejaVu Sans", sans-serif;
   font-size: 0.8125em;
@@ -1307,18 +1308,18 @@ table {
   margin: 0.3em 0 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003219}}
 table code {
   font-size: 0.875em;
   line-height: 1.85714em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003221}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003222}}
 tr:nth-of-type(odd) {
   background: #eee;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003225}}
 th {
   background: #858585;
   border: 1px solid #aaa;
@@ -1326,30 +1327,30 @@ th {
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003231}}
 td {
   border: 1px solid #ccc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003234}}
 td, th {
   padding: 7px 8px 3px;
   text-align: left;
 }
 
 @media only screen and (max-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003240}}
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003243}}
   table {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003248}}
   thead tr {
     position: absolute !important;
     height: 1px;
@@ -1359,13 +1360,13 @@ td, th {
     clip: rect(1px, 1px, 1px, 1px);
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003252}}
   tr {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003256}}
   td {
     border: none;
     border-bottom: 1px solid #eee;
@@ -1373,17 +1374,17 @@ td, th {
     padding-left: 30%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003261}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003262}}
   tr:nth-of-type(odd) td {
     border-bottom: 1px solid #f8f8f8;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003265}}
   tr:last-child td:last-child {
     border-bottom: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003268}}
   td:before {
     position: absolute;
     top: 6px;
@@ -1394,22 +1395,22 @@ td, th {
   }
 
   /*	Label the data */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003277}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003278}}
   td:nth-of-type(1):before {
     content: "Property";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003279}}
   td:nth-of-type(2):before {
     content: "Value";
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003280}}
   td:nth-of-type(3):before {
     content: "Note";
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\00003289}}
 img.inlinemediaobject {
   display: block;
   margin: 0.65em 0;
@@ -1492,7 +1493,7 @@ h1.book-title {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000371}}
 #jPanelMenu-menu {
   box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
-  background: url("../images/background.png") #333333 repeat;
+  background: url("../images/background.png") #333333 repeat scroll;
   width: 100%;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000375}}
