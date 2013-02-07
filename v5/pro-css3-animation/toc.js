@@ -1,7 +1,7 @@
 var toc = {
   'header': {
     'image':'images/cover/cover_250.jpg',
-    'title':'Pro CSS Animation',
+    'title':'Pro CSS3 Animation',
     'dek':'by Dudley Storey'
   },
   'chapters': [

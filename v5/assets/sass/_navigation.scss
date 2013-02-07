@@ -233,23 +233,7 @@ a.fs-larger {
     list-style: none;
   }
   .hdr {
-    color: $text;
-    font-family: $interface-font;
-    @include clearfix;
-    margin-bottom: 1em;
-  }
-  .cover img {
-    height: 125px;
-    float: left;
-    margin-right: 1em;
-  }
-  .title {
-    font-size: 1.5em;
-    line-height: 1.28em;
-    margin: 0.25em 0 0.1em;
-  }
-  .dek {
-    
+    display: none;
   }
   .dashboard-link {
     margin-top: 1em;
@@ -264,9 +248,28 @@ a.fs-larger {
   display: block;
 }
 @media screen and (min-width: 30em) { // 480px
-  .toc-link ul {
-    width: 25em;
-    float: right;
+  .toc-link {
+    ul {
+      width: 25em;
+      float: right;
+    }
+    .hdr {
+      display: block;
+      color: $text;
+      font-family: $interface-font;
+      @include clearfix;
+      margin-bottom: 1em;
+    }
+    .cover img {
+      height: 125px;
+      float: left;
+      margin-right: 1em;
+    }
+    .title {
+      font-size: 1.5em;
+      line-height: 1.28em;
+      margin: 0.25em 0 0.1em;
+    }
   }
 }
 
