@@ -47,7 +47,7 @@ jQuery(function () {
         }
       }
     }
-    tocOutput += '<li class="dashboard-link"><a href="../index.html">Return to My Apress Library</a></li>';
+    tocOutput += '<li class="dashboard-link"><a href="../index.html">My Apress Library</a></li>';
     tocOutput += '</ul>\n';
     jQuery('#toc').append(jQuery(tocOutput));
   }  

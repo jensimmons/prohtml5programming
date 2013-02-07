@@ -233,17 +233,20 @@ a.fs-larger {
     list-style: none;
   }
   .hdr {
-    padding-bottom: 1em;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 1em;
     color: $text;
     font-family: $interface-font;
+    @include clearfix;
+    margin-bottom: 1em;
   }
-  .cover {
-    
+  .cover img {
+    height: 125px;
+    float: left;
+    margin-right: 1em;
   }
   .title {
-    @include adjust-font-size-to(16px);
+    font-size: 1.5em;
+    line-height: 1.28em;
+    margin: 0.25em 0 0.1em;
   }
   .dek {
     
