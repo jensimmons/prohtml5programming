@@ -21,7 +21,7 @@ jQuery(function () {
     var tocOutput = '<ul class="dropdown-menu">\n';
     if (toc['header'] !== undefined) {
       tocOutput += '<li class="hdr">' +
-        '<div class="cover"><img src="' + toc['header']['cover'] + '" /></div>' +
+        '<div class="cover"><img src="' + toc['header']['image'] + '" /></div>' +
         '<div class="title">' + toc['header']['title'] + '</div>' +
         '<div class="dek">' + toc['header']['dek'] + '</div>' +
       '</li>';
