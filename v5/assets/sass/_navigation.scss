@@ -79,14 +79,11 @@ nav {
     margin: 0;
     padding: 0;
   }
-  li {
-//    background: rgba(0,0,0,0.3);
-  }
   li li {
-    background: rgba(0,0,0,0.75);
+    background: rgba(0,0,0,0.2);
   }
   li li li {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
   }
   a {
     text-decoration: none;
@@ -94,49 +91,35 @@ nav {
     @include adjust-font-size-to(14px);
     line-height: 1.25em;
     display: block;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255,255,255,0.11);
     padding: 0.45em 0.5em 0.3em 1em;
-  }
-  #item_0 {
-    background: #000;
   }
   li a,
   li a:link,
   li a:visited {
-    color: #000;
+    color: #eee;
     text-transform: uppercase;
     text-decoration: none;
   }
   li li a,
   li li a:link,
   li li a:visited {
-    color: $menu-link;
     text-decoration: none;
     text-transform: none;
     &:hover,
     &:focus {
-      color: darken($menu-link, 15%);
+      color: darken($menu-link, 20%);
     }
   }
   li li li a {
     padding-left: 2em;
   }
-}
-/*@media screen and (min-width: 380px) {
-  nav {
-    max-width: 360px;
-  }
-  .nav-container {
-    margin: 4em 10px;
+  li.current > a {
+    background: rgba(0,0,0,0.75);
+    color: #fff;
   }
 }
-@media screen and (min-width: 1000px) {
-  .nav-container {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}*/
 
 
 //-----------------------------------------------------------------------
