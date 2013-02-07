@@ -19,26 +19,35 @@ jQuery(function () {
   // toc list creation
   if(toc) {
     var tocOutput = '<ul class="dropdown-menu">\n';
-    
-    for(var i=0, tocL = toc.length; i < tocL; i++) {
-      
-      for(var key in toc[i]) {
-        var currentClass = '';
-        var tocEntry;
-        if(toc[i].hasOwnProperty(key)) {
-          if (toc[i][key] === '') {
-            tocEntry = '<li class="chap"><span class="unavailable">' + key + '</span></li>\n'
-          } else {
-            tocEntry = '<li class="chap"><a href="' + toc[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n'
+    if (toc['header'] !== undefined) {
+      tocOutput += '<li class="hdr">' +
+        '<div class="cover"><img src="' + toc['header']['cover'] + '" /></div>' +
+        '<div class="title">' + toc['header']['title'] + '</div>' +
+        '<div class="dek">' + toc['header']['dek'] + '</div>' +
+      '</li>';
+    }
+    if (toc['chapters'] !== undefined) {
+      var chapters = toc['chapters'];
+      for(var i=0, tocL = chapters.length; i < tocL; i++) {
+  
+        for(var key in chapters[i]) {
+          var currentClass = '';
+          var tocEntry;
+          if(chapters[i].hasOwnProperty(key)) {
+            if (chapters[i][key] === '') {
+              tocEntry = '<li class="chap"><span class="unavailable">' + key + '</span></li>\n';
+            } else {
+              tocEntry = '<li class="chap"><a href="' + chapters[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n';
+            }
+            // if (key == currentChap) {
+            //   currentClass = 'link-current';
+            // }
+            tocOutput += tocEntry;
           }
-          // if (key == currentChap) {
-          //   currentClass = 'link-current';
-          // }
-          tocOutput += tocEntry;
         }
       }
     }
-    
+    tocOutput += '<li class="dashboard-link"><a href="../index.html">return to my apress library</a></li>';
     tocOutput += '</ul>\n';
     jQuery('#toc').append(jQuery(tocOutput));
   }  
