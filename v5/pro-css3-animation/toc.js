@@ -5,7 +5,7 @@ var toc = {
     'dek':'by Dudley Storey'
   },
   'chapters': [
-    {'Cover': ''},
+    {'Cover': 'ch-cover.html'},
     {'Introduction': ''},
     {'Chapter 1: CSS3 Fundamentals': ''},
     {'Chapter 2: CSS3 Transforms & Transitions': 'ch2.html'},
