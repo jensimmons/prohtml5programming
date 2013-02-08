@@ -178,7 +178,7 @@ function initCodeEditors() {
 
 function checkStorageSupport() {
   //localStorage
-  if (window.localStorage) {
+  if (Modernizr.localstorage) {
     inlineEditors.localStorageSupport = true;
   } 
 }

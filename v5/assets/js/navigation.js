@@ -6,11 +6,11 @@ function textResize(direction) {
     baseEl.css('font-size', '16px');
   } else {
     var currentSize = parseFloat(baseEl.css('font-size'));
-    var fontSizeMultiplier = 2.0; 
-    var newSize = currentSize + (direction * fontSizeMultiplier) + 'px';
+    var fontResizeDelta = 2.0; 
+    var newSize = currentSize + (direction * fontResizeDelta) + 'px';
     baseEl.css('font-size', newSize );
   }
-  if (window.localStorage) {
+  if (Modernizr.localstorage) {
     localStorage['font_size_pref'] = newSize;
   } 
 }
@@ -131,7 +131,7 @@ jQuery(function () {
     });
     
     // pick up fontSize from cookie if exists
-    if (window.localStorage && localStorage['font_size_pref'] !== undefined) {
+    if (Modernizr.localstorage && localStorage['font_size_pref'] !== undefined) {
       $('html').css('font-size', localStorage['font_size_pref'] );
     }
 
