@@ -68,7 +68,8 @@ h1.book-title {
 .ie6-8 .menu-link a {
   background: url('../images/menu.png') no-repeat scroll 10px 10px; // for old IE, which doesn't support SVG
 }
-#jPanelMenu-menu {
+nav#jPanelMenu-menu,
+nav#menu {
   box-shadow: -24px 0 12px -10px rgba(0, 0, 0, 0.8) inset;
   background: url('../images/background.png') #333 repeat scroll;
   width: 100%;
