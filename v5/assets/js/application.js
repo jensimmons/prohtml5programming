@@ -91,7 +91,7 @@ APRI.UI = { // APRess Interactive
  }
 };
 
-APRI.IED = {
+APRI.CME = { // CodeMirror editors
  'localStorageSupport': false,
  'templates': {
    'editorContainerTemplate': '<div class="editor-trigger">\n' +
@@ -130,13 +130,12 @@ APRI.IED = {
  inlineEditor: function ( el ) { // el = jQuery(this) <a> tag;
    var me = this;
    this.trigger = el;
-          
    this.delay = 0;
    this.listingNumber = el.data('listing'); 
    this.cacheID = APRI.ISBNOnline + '_' + this.listingNumber;
-   APRI.IED[this.listingNumber] = this;
+   APRI.CME[this.listingNumber] = this;
    this.container = this.trigger.parents('.listing:first').find('.inline-codeview-container');
-   this.container.html( jQuery(APRI.IED.templates.editorTemplate) );
+   this.container.html( jQuery(APRI.CME.templates.editorTemplate) );
    this.resetControl = jQuery('.control-bar .control.reset', this.container);
    this.saveControl = jQuery('.control-bar .control.save', this.container);
    this.cache = '';
@@ -150,7 +149,7 @@ APRI.IED = {
      lineNumbers: true,
      onChange: function () {
        window.clearTimeout(me.delay);
-       me.delay = window.setTimeout(APRI.IED.updatePreview, 300, [me]);
+       me.delay = window.setTimeout(APRI.CME.updatePreview, 300, [me]);
      }
    });
    this.resetControl.bind('click', function (evt) {
@@ -180,7 +179,7 @@ APRI.IED = {
      // ensure we have a code listing for this figure.listing
             
      // append the editor container template
-     jQuery('figcaption:first', $thisFigure).after(jQuery(APRI.IED.templates.editorContainerTemplate));
+     jQuery('figcaption:first', $thisFigure).after(jQuery(APRI.CME.templates.editorContainerTemplate));
      // set the data-listing on the triggers
      jQuery('.button', $thisFigure).data('listing', thisListing);
             
@@ -194,7 +193,7 @@ APRI.IED = {
      var listing = jQuery(this).data('listing');
      $this.addClass('open');
      $figure.addClass('open-editor');
-     APRI.IED[listing] = new APRI.IED.inlineEditor($this);
+     APRI.CME[listing] = new APRI.CME.inlineEditor($this);
      jQuery('.static-code-container:first', $figure).hide();
    });
    jQuery('.close-inline-editor').bind('click', function (evt) {
@@ -203,8 +202,8 @@ APRI.IED = {
      var $this = jQuery(this);
      var $figure = $this.parents('figure:first');
      var listing = jQuery(this).data('listing');
-     APRI.IED[listing].removeEditor();
-     APRI.IED[listing] = null;
+     APRI.CME[listing].removeEditor();
+     APRI.CME[listing] = null;
      jQuery('.static-code-container:first', $figure).show();
      $this.siblings('.show-inline-editor:first').removeClass('open');
      $figure.removeClass('open-editor');
@@ -212,32 +211,32 @@ APRI.IED = {
  }
 };
 
-APRI.IED.inlineEditor.prototype.retrieve = function () {
- if (APRI.IED.localStorageSupport && localStorage[this.cacheID]) {
+APRI.CME.inlineEditor.prototype.retrieve = function () {
+ if (APRI.CME.localStorageSupport && localStorage[this.cacheID]) {
    this.editor.setValue( localStorage[this.cacheID] );
  } else {
    this.reset();
  }
 };
-APRI.IED.inlineEditor.prototype.clearSaved = function () {
- if (APRI.IED.localStorageSupport && localStorage[this.cacheID]) {
+APRI.CME.inlineEditor.prototype.clearSaved = function () {
+ if (APRI.CME.localStorageSupport && localStorage[this.cacheID]) {
    localStorage.removeItem( this.cacheID );
  }
 };
-APRI.IED.inlineEditor.prototype.save = function () {
- if(APRI.IED.localStorageSupport) {
+APRI.CME.inlineEditor.prototype.save = function () {
+ if(APRI.CME.localStorageSupport) {
    localStorage.setItem(this.cacheID, this.editor.getValue());
  } 
 };
-APRI.IED.inlineEditor.prototype.reset = function () {
- this.editor.setValue(APRI.IED.codeListings[this.listingNumber].code);
+APRI.CME.inlineEditor.prototype.reset = function () {
+ this.editor.setValue(APRI.CME.codeListings[this.listingNumber].code);
  this.clearSaved();
 };
 
 APRI.UTILS = {
  checkStorageSupport: function () {
    if (Modernizr.localstorage) {
-     APRI.IED.localStorageSupport = true;
+     APRI.CME.localStorageSupport = true;
    } 
  },
  /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
@@ -283,7 +282,7 @@ jQuery(function () {
  APRI.UI.initTextResizeHandler();
 
  APRI.UTILS.checkStorageSupport();
- APRI.IED.initCodeEditors();
+ APRI.CME.initCodeEditors();
  APRI.UTILS.formatStaticCode();
 
 });
