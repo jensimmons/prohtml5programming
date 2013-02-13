@@ -56,6 +56,7 @@ h1.book-title {
     height: 44px;
     width: 44px;
     background: url('../images/menu.svg') no-repeat scroll 10px 10px;
+    outline: none;
   }
   img {
     display: inline-block;
@@ -140,6 +141,7 @@ nav#menu {
     text-indent: -9999px;
     display: block;
     float: left;
+    outline: none;
   }
 }
 a.fs-smaller {
@@ -187,6 +189,7 @@ a.fs-larger {
   a {
     display: block;
     font-family: $interface-font;
+    outline: none;
   }
   a, 
   a:link, 
@@ -305,3 +308,15 @@ a.button {
   }
 }
 
+body[data-menu-position="open"] {
+  .font-size-controls,
+  .toc-link {
+    display: none;
+  }
+}
+body[data-menu-position="closed"] {
+  .font-size-controls,
+  .toc-link {
+    display: block;
+  }
+}
