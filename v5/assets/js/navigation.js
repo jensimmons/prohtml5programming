@@ -1,138 +1,102 @@
-// var menuObj = [];
+   "use strict";
 
-function textResize(direction) {
-  var baseEl = $('html');
-  if (direction === 0) { // reset to 16px
-    baseEl.css('font-size', '16px');
-  } else {
-    var currentSize = parseFloat(baseEl.css('font-size'));
-    var fontResizeDelta = 2.0; 
-    var newSize = currentSize + (direction * fontResizeDelta) + 'px';
-    baseEl.css('font-size', newSize );
-  }
-  if (Modernizr.localstorage) {
-    localStorage['font_size_pref'] = newSize;
-  } 
-}
+   APRI.UI = { // APRess Interactive
+     textResize: function (direction) {
+       var $baseEl = $('html'),
+           currentSize,
+           newSize,
+           fontResizeDelta = 2.0;
+       if (direction === 0) { // reset to 16px
+         $baseEl.css('font-size', '16px');
+       } else {
+         currentSize = parseFloat($baseEl.css('font-size'));
+         newSize = currentSize + (direction * fontResizeDelta) + 'px';
+         $baseEl.css('font-size', newSize );
+       }
+       if (Modernizr.localstorage) {
+         localStorage.font_size_pref = newSize;
+       }
+     },
+     // create TOC & append to toc link
+     initTOC: function () {
+       if(toc) {
+         var tocOutput = '<ul class="dropdown-menu">\n',
+             chapters, i, tocL, key, currentClass, tocEntry;
+         if (toc.header !== undefined) {
+           tocOutput += '<li class="hdr">' +
+             '<div class="cover"><img src="' + toc.header.image + '" /></div>' +
+             '<div class="title">' + toc.header.title + '</div>' +
+             '<div class="dek">' + toc.header.dek + '</div>' +
+           '</li>';
+         }
+         if (toc.chapters !== undefined) {
+           chapters = toc.chapters;
+           for(i=0, tocL = chapters.length; i < tocL; i++) {
+             for(key in chapters[i]) {
+               if(chapters[i].hasOwnProperty(key)) {
+                 currentClass = '';
+                 if (chapters[i][key] === '') {
+                   tocEntry = '<li class="chap"><span class="unavailable">' + key + '</span></li>\n';
+                 } else {
+                   tocEntry = '<li class="chap"><a href="' + chapters[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n';
+                 }
+                 // if (key == currentChap) {
+                 //   currentClass = 'link-current';
+                 // }
+                 tocOutput += tocEntry;
+               }
+             }
+           }
+         }
+         tocOutput += '<li class="dashboard-link"><a href="../index.html">My Apress Library</a></li>';
+         tocOutput += '</ul>\n';
+         jQuery('#toc').append(jQuery(tocOutput));
+       } 
+     },
+     // jPanelMenu initiation
+     initPanelNavigation: function () {
+       var jPM = $.jPanelMenu( {'keyboardShortcuts': false } );
+       jPM.on();
+       // close menu post click
+       jQuery(document).on('click', jPM.menu + ' li a', function (e) {
+         if ( jPM.isOpen() && jQuery(e.target).attr('href').substring(0,1) === '#' ) { jPM.close(); }
+       });
+       // remove hidden nav if jPanel is good to go (do we need checks here (like, for silk browser?))
+       jQuery('.jPanelMenu-panel > .nav-container').remove();
+       jQuery('.jPanelMenu-panel > #main-navigation').remove();
+     },
+     // initialize font-size controls
+     initTextResizeHandler: function () {
+       var me = this;
+       jQuery('.btn.fs-smaller').bind('click', function (e) {
+         e.stopPropagation();
+         e.preventDefault();
+         me.textResize(-1);
+       });
+       jQuery('.btn.fs-default').bind('click', function (e) {
+         e.stopPropagation();
+         e.preventDefault();
+         me.textResize(0);
+       });
+       jQuery('.btn.fs-larger').bind('click', function (e) {
+         e.stopPropagation();
+         e.preventDefault();
+         me.textResize(1);
+       });
 
-jQuery(function () {
-  // toc list creation
-  if(toc) {
-    var tocOutput = '<ul class="dropdown-menu">\n';
-    if (toc['header'] !== undefined) {
-      tocOutput += '<li class="hdr">' +
-        '<div class="cover"><img src="' + toc['header']['image'] + '" /></div>' +
-        '<div class="title">' + toc['header']['title'] + '</div>' +
-        '<div class="dek">' + toc['header']['dek'] + '</div>' +
-      '</li>';
-    }
-    if (toc['chapters'] !== undefined) {
-      var chapters = toc['chapters'];
-      for(var i=0, tocL = chapters.length; i < tocL; i++) {
-  
-        for(var key in chapters[i]) {
-          var currentClass = '';
-          var tocEntry;
-          if(chapters[i].hasOwnProperty(key)) {
-            if (chapters[i][key] === '') {
-              tocEntry = '<li class="chap"><span class="unavailable">' + key + '</span></li>\n';
-            } else {
-              tocEntry = '<li class="chap"><a href="' + chapters[i][key] + '" class="' + currentClass + '">' + key + '</a></li>\n';
-            }
-            // if (key == currentChap) {
-            //   currentClass = 'link-current';
-            // }
-            tocOutput += tocEntry;
-          }
-        }
-      }
-    }
-    tocOutput += '<li class="dashboard-link"><a href="../index.html">My Apress Library</a></li>';
-    tocOutput += '</ul>\n';
-    jQuery('#toc').append(jQuery(tocOutput));
-  }  
-  
-  // // chapter navigation list creation
-  // var h1 = $('h1').eq(0);
-  // var currentChap = h1.text();
-  //       
-  // var output = '<a id="main-navigation"></a><div class="nav-container"><nav role="navigation" id="menu"><ul>';
-  //   
-  // jQuery('<a class="section-anchor" id="chapter_title" />').insertBefore(h1);
-  // output += ('<li class="current"><a href="#chapter_title" >' + currentChap + '</a>\n');
-  // 
-  // var sections = jQuery('h2');
-  // var j = 0;
-  // sections.each(function () {
-  //         
-  //   output += '<ul>';
-  //   var key = jQuery(this).clone().find('span.index-term').empty().end().text();
-  //   var section = jQuery(this).parents('section:first').attr('id');
-  //   if (section == undefined) {
-  //     section = 'sec' + j;
-  //   }
-  //   jQuery('<a class="section-anchor" id="hdr_' + section + '" />').insertBefore(jQuery(this));
-  //   output += ('<li><a href="#hdr_' + section + '" >' + key + '</a>\n');
-  //   var section = jQuery(this).parents('section:first');
-  //   var subSections = jQuery('h3', section).not('aside h3'); // leave the asides out of the nav
-  //     
-  //   if (subSections.length) {
-  //     output += '<ul>\n';
-  //   }
-  //   var k = 0;
-  //   subSections.each(function () {
-  //           
-  //     var header = jQuery(this).clone().find('span.index-term').empty().end().text();
-  //     var subsection = jQuery(this).parents('section:first').attr('id');
-  //     if (subsection == undefined) {
-  //       subsection = 'sec' + j + '_' + k; 
-  //     }
-  //     jQuery('<a class="section-anchor" id="hdr_' + subsection + '" />').insertBefore(jQuery(this));
-  //     output += ('<li><a href="#hdr_' + subsection + '" >' + header + '</a></li>\n');
-  //     k++;
-  //   });
-  //   if (subSections.length) {
-  //     output += '</ul>\n';
-  //   }
-  //   output += '</li></ul>\n';
-  //   j++;
-  // });
-  // output += '</li></ul></nav></div>\n';
-  // jQuery('body').append(jQuery(output));
-  
-  
-    // jPanelMenu initiation  
-    var jPM = $.jPanelMenu( {'keyboardShortcuts': false} );
-    jPM.on();
-    // close menu post click?
-  jQuery(document).on('click', jPM.menu + ' li a', function (e) {
-    if ( jPM.isOpen() && $(e.target).attr('href').substring(0,1) == '#' ) { jPM.close(); }
-  });
-    
-    // remove hidden nav if jPanel is good to go (do we need checks here (like, for silk browser?))
-    jQuery('.jPanelMenu-panel > .nav-container').remove();
-    jQuery('.jPanelMenu-panel > #main-navigation').remove();
-    
-    // initialize font-size controls
-    jQuery('.btn.fs-smaller').bind('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      textResize(-1);
-    });
-    jQuery('.btn.fs-default').bind('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      textResize(0);
-    });
-    jQuery('.btn.fs-larger').bind('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      textResize(1);
-    });
-    
-    // pick up fontSize from cookie if exists
-    if (Modernizr.localstorage && localStorage['font_size_pref'] !== undefined) {
-      $('html').css('font-size', localStorage['font_size_pref'] );
-    }
+       // pick up fontSize from cookie if exists
+       if (Modernizr.localstorage && localStorage.font_size_pref !== undefined) {
+         $('html').css('font-size', localStorage.font_size_pref );
+       }
+     }
+   };
 
-});
+   jQuery(function () {
+
+     APRI.UI.initTOC();
+     APRI.UI.initPanelNavigation();
+     APRI.UI.initTextResizeHandler();
+
+   });
+   
+

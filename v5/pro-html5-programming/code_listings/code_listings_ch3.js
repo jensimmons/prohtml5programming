@@ -1,5 +1,4 @@
-inlineEditors = inlineEditors || {};
-inlineEditors.codeListings = {
+APRI.IED.codeListings = {
   '3-2': {
     'title': 'SVG Containing a Red Rectangle',
     'code': '<!doctype html>\n' +
