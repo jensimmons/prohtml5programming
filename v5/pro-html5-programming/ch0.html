@@ -37,18 +37,10 @@
     <!--[if (lt IE 9) & (!IEMobile)]>
     <script src="js/selectivizr-min.js"></script>
     <![endif]-->
-    
-    <script type="text/javascript" charset="utf-8">
-      (function () {
-        "use strict";
-        window.ISBNOnline = '978-1-4302-3865-2';
-      })();
-    </script>
-    
-    <!-- MOD: LOAD JQUERY + COLORBOX SUPPORT FOR CODE VIEW -->
+
+    <!-- THIRD-PARTY JS: JPANELMENU + BOOTSTRAP (NAV), CODEMIRROR (CODE EDITOR) //-->
     <script src="../assets/js/jquery-1.8.0.min.js"></script>
     <script src="../assets/js/modernizr-latest.js"></script>
-    <script src="../assets/js/navigation.js"></script>
     <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
     <script src="../assets/js/bootstrap-dropdown.js"></script>
     <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
@@ -56,9 +48,17 @@
     <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
     <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
     <script src="../assets/libraries/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="../assets/js/code_editor.js"></script>
+    <!-- APP JS //-->
+    <script type="text/javascript" charset="utf-8">
+      "use strict";
+      var APRI = { // APRess Interactive
+        ISBNOnline: '978-1-4302-3865-2'
+      };
+    </script>
+    <script src="../assets/js/application.js"></script>
     <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
-    <script src="toc.js"></script>  
+    <script src="toc.js"></script>
+
 
   </head>
 

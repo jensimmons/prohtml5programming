@@ -1,5 +1,4 @@
-inlineEditors = inlineEditors || {};
-inlineEditors.codeListings = {
+APRI.CME.codeListings = {
   '4-5': {
     'title': 'HTML Page with an Audio Element',
     'code': '<!DOCTYPE html>\n' +

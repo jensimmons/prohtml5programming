@@ -1,5 +1,4 @@
-inlineEditors = inlineEditors || {};
-inlineEditors.codeListings = {
+APRI.CME.codeListings = {
   '5-3': {
     'title': 'HTML5 Geolocation',
     'code': '<!DOCTYPE html>\n' +

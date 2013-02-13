@@ -1,5 +1,4 @@
-inlineEditors = inlineEditors || {};
-inlineEditors.codeListings = {
+APRI.CME.codeListings = {
   '9-17': {
     'title': 'Drag and Drop File Example',
     'code': '<!DOCTYPE html>\n' +

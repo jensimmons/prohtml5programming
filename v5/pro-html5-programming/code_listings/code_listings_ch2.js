@@ -1,5 +1,4 @@
-inlineEditors = inlineEditors || {};
-inlineEditors.codeListings = {
+APRI.CME.codeListings = {
   '2-6': {
     'title': 'Diagonal line example',
     'code': '<!DOCTYPE html>\n' +

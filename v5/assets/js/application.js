@@ -1,6 +1,6 @@
 "use strict";
-
-APRI.UI = { // APRess Interactive
+// UI functions
+APRI.UI = {
  textResize: function (direction) {
    var $baseEl = $('html'),
        currentSize,
@@ -176,7 +176,7 @@ APRI.CME = { // CodeMirror editors
    jQuery("figure.listing[data-listing]").each(function () {
      var $thisFigure = jQuery(this);
      var thisListing = $thisFigure.data('listing');
-     // ensure we have a code listing for this figure.listing
+     // TODO: ensure we have a code listing for this figure.listing
             
      // append the editor container template
      jQuery('figcaption:first', $thisFigure).after(jQuery(APRI.CME.templates.editorContainerTemplate));

@@ -1,4 +1,4 @@
-var toc = {
+APRI.toc = {
   'header': {
     'image':'images/cover/cover_250.jpg',
     'title':'Pro CSS3 Animation',
