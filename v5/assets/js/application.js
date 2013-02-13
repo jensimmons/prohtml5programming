@@ -55,7 +55,7 @@ APRI.UI = {
  },
  // jPanelMenu initiation
  initPanelNavigation: function () {
-   var jPM = $.jPanelMenu( {'keyboardShortcuts': false } );
+   var jPM = $.jPanelMenu( {'keyboardShortcuts': false, duration: 125 } );
    jPM.on();
    // close menu post click
    jQuery(document).on('click', jPM.menu + ' li a', function (e) {

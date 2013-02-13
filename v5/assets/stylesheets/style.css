@@ -1824,16 +1824,21 @@ a.button::-moz-focus-inner {
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003317}}
 body[data-menu-position="open"] .font-size-controls,
 body[data-menu-position="open"] .toc-link {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003323}}
 body[data-menu-position="closed"] .font-size-controls,
 body[data-menu-position="closed"] .toc-link {
   display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\00003331}}
+.jPanelMenu-panel {
+  background-color: #fff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_code\.scss}line{font-family:\000032}}

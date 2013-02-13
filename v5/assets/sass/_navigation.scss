@@ -308,6 +308,10 @@ a.button {
   }
 }
 
+//-----------------------------------------------------------------------
+// Hide controls when left-hand nav is open
+//-----------------------------------------------------------------------
+
 body[data-menu-position="open"] {
   .font-size-controls,
   .toc-link {
@@ -319,4 +323,11 @@ body[data-menu-position="closed"] {
   .toc-link {
     display: block;
   }
+}
+
+//-----------------------------------------------------------------------
+// Give JPanelMenu Panel a background color so that transition is visible
+//-----------------------------------------------------------------------
+.jPanelMenu-panel {
+  background-color: #fff;
 }
