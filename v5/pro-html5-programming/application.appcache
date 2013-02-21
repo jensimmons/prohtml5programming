@@ -1,0 +1,60 @@
+CACHE MANIFEST
+# version 0.0.15
+
+
+# files to cache
+CACHE:
+ch-cover.html
+ch0.html
+ch1.html
+ch2.html
+ch3.html
+ch4.html
+ch5.html
+ch6.html
+ch7.html
+ch8.html
+ch9.html
+ch10.html
+ch11.html
+ch12.html
+ch13.html
+
+../assets/libraries/codemirror/lib/codemirror.css
+../assets/libraries/codemirror/theme/ambiance.css
+../assets/libraries/codemirror/theme/static.css
+../assets/stylesheets/style.css
+
+../assets/js/jquery-1.8.0.min.js
+../assets/js/modernizr-latest.js
+../assets/js/jpanelmenu-1.0.0.js
+../assets/js/bootstrap-dropdown.js
+../assets/libraries/codemirror/lib/codemirror.js
+../assets/libraries/codemirror/mode/xml/xml.js
+../assets/libraries/codemirror/mode/javascript/javascript.js
+../assets/libraries/codemirror/mode/css/css.js
+../assets/libraries/codemirror/mode/htmlmixed/htmlmixed.js
+
+../assets/js/application.js
+toc.js
+
+# ui images
+images/cover/cover_250.jpg
+../assets/images/menu.svg
+../assets/images/book.svg
+../assets/images/background.png
+../assets/images/littleA.svg
+../assets/images/bigA.svg
+
+
+
+images/ch1/fig1-1.jpg
+images/ch1/fig1-2.png
+images/ch1/fig1-3.jpg
+
+
+# fonts
+../assets/fonts/source-sans/SourceSansPro-Semibold-webfont.woff
+
+NETWORK:
+*
