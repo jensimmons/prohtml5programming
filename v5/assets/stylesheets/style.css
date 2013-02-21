@@ -1864,10 +1864,36 @@ figure.open-editor #preview {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\000036}}
+.cover-page {
+  background: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\000038}}
+.cover-page .jPanelMenu-panel {
+  background-color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\0000311}}
+.cover-page .controls-bar {
+  background: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\0000315}}
+.cover-page h1.book-title {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\0000318}}
 .cover-page img {
   border: 1px solid #282626;
-  box-shadow: 0 0 100px 50px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 100px 50px rgba(255, 255, 255, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_cover\.scss}line{font-family:\0000322}}
+.cover-page .cover-contents {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_dashboard\.scss}line{font-family:\000033}}
