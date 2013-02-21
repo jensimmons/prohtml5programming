@@ -56,14 +56,9 @@ APRI.CME.codeListings = {
   },
   '3-9': {
     'title': 'SVG Text',
-    'code': '<svg width="600" height="200">\n' +
-    '  <text \n' +
-    '    x="10" y="80"\n' +
-    '    font-family="Droid Sans"\n' +
-    '    stroke="#00f"\n' +
-    '    fill="#0ff"\n' +
-    '    font-size="40px"\n' +
-    '    font-weight="bold">\n' +
+    'code': '<!doctype html>\n' +
+    '<svg width="300" height="200">\n' +
+    '  <text x="10" y="80" font-family="Droid Sans, sans-serif" stroke="#00f" fill="#0ff" font-size="40px" font-weight="bold">\n' +
     '    Select this text!\n' +
     '  </text>\n' +
     '</svg>\n'
