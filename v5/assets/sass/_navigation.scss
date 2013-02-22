@@ -183,9 +183,6 @@ a.fs-larger {
   font-family: $sourcesans-light;
   color: lighten($text, 50%);
   padding: 0 0 0 1em;
-  li {
-    padding: 5px;
-  }
   a {
     display: block;
     font-family: $interface-font;
@@ -205,21 +202,34 @@ a.fs-larger {
     position: fixed;
     right: 0;
   }
-  ul {
+}
+ul.toc-dropdown {
+  list-style: none;
+  border: 1px solid #ddd;
+  border-color: #ddd #ddd #999999 #999999;
+  box-shadow: -1px 1px 7px -3px rgba(0, 0, 0, 0.6);
+  @include border-radius(8px 0px 8px 8px);
+  background: #fff;
+  background: rgba(250,250,250,0.97);
+  display: none;
+  padding: 1em;
+  margin-top: 44px;
+  margin-right: 12px;
+  
+  li {
+    padding: 5px;
     list-style: none;
-    border: 1px solid #ddd;
-    border-color: #ddd #ddd #999999 #999999;
-    box-shadow: -1px 1px 7px -3px rgba(0, 0, 0, 0.6);
-    @include border-radius(8px 0px 8px 8px);
-    background: #fff;
-    background: rgba(250,250,250,0.97);
-    display: none;
-    padding: 1em;
-    margin-top: 44px;
-    margin-right: 12px;
   }
-  ul li {
-    list-style: none;
+  a {
+    display: block;
+    font-family: $interface-font;
+    outline: none;
+  }
+  a, 
+  a:link, 
+  a:visited {
+    color: $text;
+    text-decoration: none;
   }
   .hdr {
     display: none;
@@ -229,6 +239,7 @@ a.fs-larger {
     padding-top: 1em;
     border-top: 1px solid #ccc;
   }
+
 }
 .ie6-8 .toc-link a.btn {
   background: url('../images/book.png') no-repeat  scroll 0px 10px; // for old IE, which doesn't support SVG
@@ -237,11 +248,9 @@ a.fs-larger {
   display: block;
 }
 @media screen and (min-width: 30em) { // 480px
-  .toc-link {
-    ul {
-      width: 25em;
-      float: right;
-    }
+  ul.toc-dropdown {
+    width: 25em;
+    float: right;
     .hdr {
       display: block;
       color: $text;

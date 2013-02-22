@@ -20,7 +20,7 @@ APRI.UI = {
  // create TOC & append to toc link
  initTOC: function () {
    if(APRI.toc) {
-     var tocOutput = '<ul class="dropdown-menu">\n',
+     var tocOutput = '<ul class="dropdown-menu toc-dropdown">\n',
          chapters, i, tocL, key, currentClass, tocEntry;
      if (APRI.toc.header !== undefined) {
        tocOutput += '<li class="hdr">' +
