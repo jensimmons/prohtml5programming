@@ -3,6 +3,24 @@
 // Introduction
 //-----------------------------------------------------------------------
 
+p.indented {
+  text-indent: 0;
+  margin-left: 30px;
+}
+@media screen and (min-width: 35em) {
+  p.indented {
+    margin-left: 60px;
+  }
+}
+@media screen and (min-width: 50em) {
+  p.indented {
+    margin-left: 100px;
+  }
+}
+p.small {
+  @include adjust-font-size-to(14px);  
+  line-height: 1.5em;
+}
 .dedication {
   width: 60%;
   margin: 0 auto;
@@ -17,5 +35,22 @@
   }
   a.section-anchor {
     padding: 0;
+  }
+}
+.bios {
+  h3 {
+    margin-top: 1em;
+  }
+  img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 25em) {
+  .bios {
+    img {
+      float: left;
+      width: auto;
+      margin: 0 1.5em 0.5em 0;
+    }
   }
 }
