@@ -24,7 +24,7 @@ APRI.UI = {
          chapters, i, tocL, key, currentClass, tocEntry;
      if (APRI.toc.header !== undefined) {
        tocOutput += '<li class="hdr">' +
-         '<div class="cover"><img src="' + APRI.toc.header.image + '" /></div>' +
+         '<div class="cover"><a href="' + APRI.toc.header.cover_url + '" class="cover-link"><img src="' + APRI.toc.header.image + '" /></a></div>' +
          '<div class="title">' + APRI.toc.header.title + '</div>' +
          '<div class="dek">' + APRI.toc.header.dek + '</div>' +
        '</li>';

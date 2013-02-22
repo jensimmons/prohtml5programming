@@ -1,6 +1,7 @@
 APRI.toc = {
   'header': {
     'image':'images/cover/cover_250.jpg',
+    'cover_url':'cover.html',
     'title':'Pro HTML5 Programming',
     'dek':'by Peter Lubbers, Brian Albers, and Frank Salim'
   },
