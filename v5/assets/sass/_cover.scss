@@ -25,5 +25,8 @@
   .cover-contents {
     @include element-invisible;
   }
+  .toc-link ul {
+    background: rgba(250, 250, 250, 0.93);
+  }
 }
 
