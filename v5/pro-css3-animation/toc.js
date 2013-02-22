@@ -17,7 +17,8 @@ APRI.toc = {
     {'Chapter 7: Integrating CSS3 Animations with SVG & Filters': ''},
     {'Chapter 8: Animated Responsive Web Design': ''},
     {'Chapter 9: CSS 3D & Parallax Effects': ''},
-    {'Chapter 10: Tools & Technologies': ''}
+    {'Chapter 10: Tools & Technologies': ''},
+    {'Book Information': ''}
   ]
 };
 
