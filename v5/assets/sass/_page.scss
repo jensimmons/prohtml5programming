@@ -34,18 +34,20 @@ hgroup {
 //-----------------------------------------------------------------------
 
 aside {
-  background: #fcfcfc;
-  border: 1px solid #d1d1d1;
+  background: url("../images/honeycomb.jpg") repeat #fcfcfc;
+  @include box-shadow (0 0 8px 2px rgba(0, 0, 0, 0.1));
+  border: 1px solid #ddd;
   box-decoration-break: clone;
   font-family: $sourcesans;
-  @include adjust-font-size-to(14px);
-  line-height: 1.7em;
+  @include adjust-font-size-to(14.5px);
+  line-height: 1.6em;
   h3 {
     margin-top: 0.75em;
     text-align: center;
   }
   p {
-    text-indent: $indent-amount*.75;
+    text-indent: 0;
+    margin: rhythm(0.6) 0;
   }
   p:first-child {
     text-indent: 0;
@@ -55,7 +57,13 @@ aside {
     padding: 0;
   }
 }
-
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+  aside {
+    background: url("../images/honeycomb_@2X.jpg") repeat #fcfcfc;
+  }
+}
 
 //-----------------------------------------------------------------------
 // Pre and Code
