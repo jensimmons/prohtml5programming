@@ -1932,6 +1932,27 @@ figure.open-editor #preview {
   background: rgba(250, 250, 250, 0.93);
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_introduction\.scss}line{font-family:\000036}}
+.dedication {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  line-height: 0;
+  font-size: 0.8125em;
+  line-height: 2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_introduction\.scss}line{font-family:\0000313}}
+.dedication p {
+  text-indent: 0;
+  margin: 1.2em 0;
+  line-height: 1.6em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_introduction\.scss}line{font-family:\0000318}}
+.dedication a.section-anchor {
+  padding: 0;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_dashboard\.scss}line{font-family:\000033}}
 .dashboard h1 {
   display: none;

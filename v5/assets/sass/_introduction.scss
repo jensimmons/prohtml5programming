@@ -1,0 +1,21 @@
+
+//-----------------------------------------------------------------------
+// Introduction
+//-----------------------------------------------------------------------
+
+.dedication {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  line-height: 0;
+  @include adjust-font-size-to(13px);
+  p {
+    text-indent: 0;
+    margin: 1.2em 0;
+    line-height: 1.6em;
+  }
+  a.section-anchor {
+    padding: 0;
+  }
+}

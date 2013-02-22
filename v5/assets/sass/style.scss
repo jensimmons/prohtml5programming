@@ -17,13 +17,16 @@
 // Import fonts
 @import "fontface";
 
-// Import CSS for the books
+// General Book Styling
 @import "typography";
 @import "layout";
 @import "page";
 @import "navigation";
 @import "code";
+
+// Specific Content Styling
 @import "cover";
+@import "introduction";
 
 // Import CSS for the Dashboard
 @import "dashboard";
