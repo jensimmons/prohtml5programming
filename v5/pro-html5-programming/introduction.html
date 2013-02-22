@@ -1,0 +1,243 @@
+<!doctype html>
+
+<!--[if lt IE 7]>      <html class="ie6 ie6-7 ie6-8"> <![endif]-->
+<!--[if IE 7]>         <html class="ie7 ie6-7 ie7-8 ie6-8"> <![endif]-->
+<!--[if IE 8]>         <html class="ie8 ie7-8 ie6-8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Pro HTML5 Programming | Introduction</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    
+    <meta name="apple-mobile-web-app-title" content="Pro HTML5">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="apple-touch-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#da2f1e">
+
+    <link rel="shortcut icon" href="favicon.ico">    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/libraries/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/static.css">
+  	<link rel="stylesheet" href="../assets/stylesheets/style.css" />
+
+    <!-- JavaScript -->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="js/selectivizr-min.js"></script>
+    <![endif]-->
+
+    <!-- THIRD-PARTY JS: JPANELMENU + BOOTSTRAP (NAV), CODEMIRROR (CODE EDITOR) //-->
+    <script src="../assets/js/jquery-1.8.0.min.js"></script>
+    <script src="../assets/js/modernizr-latest.js"></script>
+    <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
+    <script src="../assets/libraries/codemirror/mode/xml/xml.js"></script>
+    <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
+    <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
+    <script src="../assets/libraries/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <!-- APP JS //-->
+    <script type="text/javascript" charset="utf-8">
+      "use strict";
+      var APRI = { // APRess Interactive
+        ISBNOnline: '978-1-4302-3865-2'
+      };
+    </script>
+    <script src="../assets/js/application.js"></script>
+    <!-- ADD CHAPTER CODE LISTINGS JS FILE HERE //-->
+    <script src="toc.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <header class="controls-bar">
+      <h1 class="book-title">Pro HTML5 Programming</h1>
+      
+      <div class="menu-link orig-menu menu-trigger">
+        <a class="svg-menu" href="#main-navigation">Chapter Contents</a>
+      </div>
+      
+      <div class="font-size-controls">
+        <a href="#" class="btn btn-fs fs-smaller">Smaller</a>
+        <a href="#" class="btn btn-fs fs-larger">Larger</a>
+      </div>
+    
+      <div class="btn-group toc-link" id="toc">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          Table of Contents
+          <span class="caret"></span>
+        </a>
+      </div>
+    
+    </header>
+  
+<!--======================== CONTENT ========================-->
+
+<article role="main">
+<div id="wrapper">
+
+
+<hgroup>
+  <a id="chapter_title" class="section-anchor"></a>
+  <h1>Introduction</h1>
+</hgroup>
+
+<section id="sec1_fm2">
+  <a id="hdr_sec1_fm2" class="section-anchor"></a>
+  <div class="dedication">
+    <p><a id="page_iii"></a><i>For my beautiful wife, Vittoria,</i></p>
+    <p><i>and for my sons, Sean and Rocky. I am so proud of you!</i><br />
+    <i>And to our cat&#8212;Cornelius&#8212;may you rest (and</i><br />
+    <i>hunt) in peace.</i></p>
+    <p><i>&#8212;Peter Lubbers</i><br /><br /></p>
+    <p><i>For John. You make it all worthwhile.</i></p>
+    <p><i>&#8212;Brian Albers</i><br /><br /></p>
+    <p><i>For people who still read books.</i></p>
+    <p><i>&#8212;Frank Salim</i></p>
+  </div>
+</section>
+
+<section id="sec2_fm2">
+<a id="hdr_sec2_fm2" class="section-anchor"></a> 
+<h2>Forward</h2>
+
+<p>In June 2004, representatives from the semantic web community, major browser vendors, and the W3C met in San Jose, California to discuss the standards body’s response to the rise of web applications. At the end of the second day, a vote was held to decide whether the W3C should augment HTML and the DOM to address the new requirements of web applications. Minutes from the event record the anonymous and curious result, “8 for, 14 against.”</p>
+
+<p>This schism lead to a divergence in effort: two days later, the WHATWG was formed from the major browser vendors to solve emerging issues. Meanwhile, the W3C pushed forward with the XHTML2 specification, only to drop it five years later to focus on an aligned HTML5 effort with the WHATWG.</p>
+
+<p>Now, seven years since, we stand to benefit greatly from the passionate minds that have designed HTML5. The features both codify de facto standards that have been in use for years and lay the groundwork for next-generation web applications. Putting them to use means a more engaging and responsive web experience for your users and, oftentimes, far less code for you.</p>
+
+<p>In this book, you'll find a well-designed learning curve bringing you up to speed on the features within HTML5 and its associated specifications. You'll learn best practices of feature detection, appropriate use cases, and a lot of the whys that you won’t find in the specifications. The code examples are not plain, trivial uses of each API but instead lead you through building actual web applications. I hope this book is able to serve you well, and I hope you’ll be as excited about the next generation of the web as I am.</p>
+<p>Paul Irish<br>
+Google Chrome Developer Advocate,<br>
+Modernizr & HTML5 Boilerplate</p>
+</section>
+
+<section id="sec3_fm2">
+<a id="hdr_sec3_fm2" class="section-anchor"></a>
+<h2>Introduction</h2>
+
+<p>HTML5 is brand new. Indeed, it isn&#x2019;t even completely finished yet. And if you listen to some ornery pundits, they&#x2019;ll tell you that HTML5 won&#x2019;t be ready for ten years or more!</p>
+<p>Why, then, would anyone think that now&#x2019;s the time for a book called <Emphasis Type="Italic">Pro HTML5 Programming</Emphasis>? That&#x2019;s easy. Because for anyone who&#x2019;s looking for an extra edge to make your web application stand above the rest, the time for HTML5 is right now. The authors of this book have been working with, developing, and teaching HTML5 technologies for more than two years now and can claim with certainty that adoption of the new standards is accelerating at dizzying speeds. Even over the course of writing this book, we&#x2019;ve been forced to continually update chapters and reevaluate our assumptions about what is ready to use.</p>
+<p>Most users don&#x2019;t really understand the power that&#x2019;s available in the browsers they are now using. Yes, they might notice some minor interface enhancement after their favorite browser has automatically updated. But they might have no idea that this new browser version just introduced a free-form drawing canvas or real-time network communication, or any number of other potential upgrades.</p>
+<p>With this book, we aim to help you unlock the power HTML5.</p>
+
+<section id="sec4_fm2">
+  <a id="hdr_sec4_fm2" class="section-anchor"></a>
+  <h3>Who This Book Is For</h3>
+  <p>The content in this book is intended for the experienced web application developer who is familiar with JavaScript programming. In other words, we won&#x2019;t be covering the basics of web development in this text. There are many existing resources to get you up to speed in the fundamentals of web programming. That said, if you see yourself in any of the following bullets, this book will likely provide you with useful insight and information you are looking for:<UnorderedList Mark="Bullet"><ItemContent><p>You sometimes find yourself thinking, &#x201C;If only my browser could...&#x201D;</p></ItemContent><ItemContent><p>You find yourself using page source and developer tools to dissect a particularly impressive website.</p></ItemContent><ItemContent><p>You enjoy reading the release notes of the latest browser updates to find out what&#x2019;s new.</p></ItemContent><ItemContent><p>You are looking for ways to optimize or streamline your applications.</p></ItemContent><ItemContent><p>You are willing to tailor your website to provide the best possible experience for users on relatively recent browsers.</p></ItemContent></UnorderedList></p>
+  <p>If any of these apply to you, this book may be a good fit with your interests.</p>
+  <p>While we take care to point out the limitations of browser support where appropriate, our aim is not to give you elaborate workarounds to make your HTML5 application run seamlessly on a ten-year-old browser. Experience has shown that the workarounds and baseline browser support are evolving so rapidly that a book like this is not the best vehicle for such information. Instead, we will focus on the specification of HTML5 and how to use it. Detailed workarounds can be found on the Internet and will become less necessary over time.</p>
+</section>
+
+<section id="sec5_fm2">
+  <a id="hdr_sec5_fm2" class="section-anchor"></a>
+<h3>An Overview of This Book</h3>
+<p>The thirteen chapters of this book cover a selection of popular, useful, and powerful HTML5 APIs. In some cases, we have built on the capabilities introduced in earlier chapters to provide you with richer demonstrations.</p>
+<p>Chapter 1, &#x201C;Introduction to HTML5,&#x201D; starts off with the background of past and current versions of the HTML specification. The new high-level semantic tags are presented, along with basic changes and the rationale behind all the recent developments in HTML5. It&#x2019;s good to know this terrain.</p>
+<p>Chapter 2, &#x201C;Using the Canvas API&#x201D;, Chapter 3, &#x201C;Working with SVG,&#x201D; and Chapter 4, &#x201C;Working with Audio and Video,&#x201D; describe the new visual and media elements. In these chapters, the focus is on finding simpler ways to spruce up your user interface without plugins or server-side interaction.</p>
+<p>Chapter 5, &#x201C;Using the Geolocation API,&#x201D; introduces a truly new feature that was not easily emulated before now&#x2014;the ability for an application to identify the user&#x2019;s current location and use that to customize the experience. Privacy is important here, so we cover some of the caveats, as well.</p>
+<p>The next two chapters, &#x201C;Using the Communication APIs&#x201D; and &#x201C;Using the WebSocket API,&#x201D; present increasingly powerful ways that HTML5 lets you communicate with other websites and stream real-time data to an application with both simplicity and minimal overhead. The techniques in these chapters will enable you to simplify the many overly complex architectures deployed on the Web today.</p>
+<p>Chapter 8, &#x201C;Using the Forms API,&#x201D; presents you with minimal tweaks you can make to your desktop or mobile web applications today to increase usability, as well as more fundamental changes you can make to detect page entry errors in very common usage scenarios. Chapter 9, &#x201C;Using the Drag and Drop API,&#x201D; elaborates on the new Drag and Drop API features and shows how you can use them.</p>
+<p>Chapters 10, 11, and 12&#x2014;&#x201C;Using the Web Workers API,&#x201D; &#x201C;Using the Storage API,&#x201D; and &#x201C;Creating Offline Web Applications&#x201D;&#x2014;deal with the internal plumbing of your applications. Here, you will find ways to optimize the existing functionality to obtain better performance and better data management.</p>
+<p>Finally, Chapter 13, &#x201C;The Future of HTML5,&#x201D; will give you a tasty preview of what&#x2019;s still to come.</p>
+</section>
+<section id="sec6_fm2">
+  <a id="hdr_sec6_fm2" class="section-anchor"></a>
+<h3>Example Code and Companion Web Site</h3>
+<p>The code for the examples shown in this book is available online in the Source Code section of the Apress web site. Visit <Literal>www.apress.com</Literal>, click Source Code, and look for this book&#x2019;s title. You can download the source code from this book&#x2019;s home page. In addition, we are hosting a companion site for the book at <Literal>www.prohtml5.com</Literal>, from which you can also download the sample code and some practical extras.</p>
+</section>
+<section id="sec7_fm2">
+  <a id="hdr_sec7_fm2" class="section-anchor"></a>
+<h3>Contacting the Authors</h3>
+<p>Thank you for buying this book. We hope you enjoy reading it and that you find it a valuable resource. Despite our best effort to avoid errors, we realize that things sometimes slip through the cracks, and we&#x2019;d like to express, in advance, our regrets for any such slip-ups. We welcome your personal feedback, questions, and comments regarding this book&#x2019;s content and source code. You can contact us by sending us e-mail at <Literal>prohtml5@gmail.com</Literal>.</p>
+</section>
+</section>
+
+<section id="sec8_fm2">
+<a id="hdr_sec8_fm2" class="section-anchor"></a> 
+<h2>About The Authors</h2>
+
+<h3>Peter Lubbers</h3>
+<img src="images/cover/peter_lubbers.jpg" />
+<p>Peter Lubbers is the senior director of technical communication at Kaazing. An HTML5 and WebSockets enthusiast, Peter is a frequent speaker at international events and teaches HTML5 training courses worldwide. Prior to joining Kaazing, Peter worked for almost ten years as an information architect at Oracle, where he wrote award-winning books and developed patent-pending software solutions. A native of the Netherlands, Peter served as a Special Forces commando in the Royal Dutch Green Berets. Peter lives on the edge of the Tahoe National Forest in California, and in his spare time, he bungee jumps and runs ultramarathons. And, yes, he owns the original HTML5 license plate. You can follow Peter on Twitter (<a href="http://twitter.com/peterlubbers">@peterlubbers</a>).</p>
+<p>
+
+<h3>Brian Albers</h3>
+<img src="images/cover/brian_albers.jpg" />
+<p>Brian Albers is the vice president of research and development at Kaazing. His career in web development spans a decade and a half, including his most recent position as a senior development manager at Oracle. Brian is a regular speaker at conferences, such as Web 2.0 Expo, AJAXWorld Expo, and JavaOne, where he focuses on Web and user interface technologies. A native Texan and current California resident, Brian spends as much time as possible escaping to Hawaii. When he cannot relax on the beach, Brian can be found frequenting a variety of virtual worlds in his spare time.</p>
+
+<h3>Frank Salim</h3>
+<img src="images/cover/frank_salim.jpg" />
+<p>Frank Salim is one of the original engineers at Kaazing who helped craft the WebSockets gateway and client strategy. Frank is a San Diego native currently residing in Mountain View, California. He holds a degree in computer science from Pomona College. When he is not programming, Frank enjoys reading, painting, and inline skating.</p>
+
+</section>
+
+<section id="sec9_fm2">
+<a id="hdr_sec9_fm2" class="section-anchor"></a> 
+<h2>About the Technical Reviewer</h2>
+
+<h3>Tony Pye</h3>
+
+<img src="images/cover/tony_pye.jpg" />
+<p>Tony Pye</Emphasis> has a background in software consultancy, web development, and engineering. However, instead of taking his technical expertise into manufacturing, he took the path to geekdom and in 2003 became a partner and Head of Development at INK Digital Agency, one of the UK&#x2019;s top 100 creative agencies*</p>
+<p>As well as having an extensive knowledge of current software and coding standards, Tony keeps a sharp eye to the future, watching for emerging technologies, thus ensuring his development team remains at the forefront of an ever-changing digital landscape. Although businesses face many challenges, Tony has the underpinning knowledge and experience to define their technical problems and produce innovative digital solutions for a range of commercial environments. While he is particularly proud of his mobile application development and a self-service touchscreen kiosk web application, which was a first for the fitness industry, he is very coy when it comes to talking about his development work on multi-million pound e-commerce web sites. Generally, though, Tony is a &#x201C;thoroughly good egg,&#x201D; and for anyone that has a digital dilemma he is the man that can find a solution. If you&#x2019;d like to talk to Tony about digital development or anything else for that matter; drop him a line: tony@inkdigitalagency.com.</p>
+<small>*Recognized by the 2010 Recommended Agencies Register survey</small>
+
+</section>
+
+
+<footer class="next-chapter">
+  <p><a href="ch1.html">Go to Chapter 1</a></p>
+</footer>
+
+</div>
+</article>
+
+<!--====================== END CONTENT ======================-->
+
+<a id="main-navigation" class="nav-anchor"></a>
+<div class="nav-container">
+  <nav role="navigation" id="menu">
+    <ul>
+      <li class="current">
+        <ul>
+          <li><a href="#hdr_sec1_fm2">Dedication</a></li>
+          <li><a href="#hdr_sec2_fm2">Forward</a></li>
+          
+          <li><a href="#hdr_sec3_fm2">Introduction</a>
+            <ul>
+              <li><a href="#hdr_sec4_fm2">Who This Book Is For</a></li>
+              <li><a href="#hdr_sec5_fm2">An Overview of This Book</a></li>
+              <li><a href="#hdr_sec6_fm2">Example Code and Companion Web Site</a></li>
+              <li><a href="#hdr_sec7_fm2">Contact the Authors</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#hdr_sec8_fm2">About The Authors</a></li>
+          <li><a href="#hdr_sec9_fm2">About the Technical Reviewer</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+  </body>
+
+</html>
