@@ -80,6 +80,18 @@ a.section-anchor {
   padding-top: 55px;
 }
 
+::-moz-selection {
+    background: #ffee98;
+    text-shadow: none;
+}
+::selection {
+    background: #ffee98;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
 figcaption {
   font-family: $accent-font;
   @include adjust-font-size-to(14px);
@@ -125,7 +137,7 @@ menu,
 ol,
 ul,
 .item-list ul {
-  margin: rhythm(1) 0;
+  margin: 0.8em 0;
 }
 ul {
   padding-left: $indent-amount*1.6;
@@ -140,3 +152,4 @@ hr {
   padding-bottom: -1px;
   margin: rhythm(1) 0;
 }
+
