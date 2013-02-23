@@ -230,17 +230,20 @@ table {
 table code {
   @include adjust-font-size-to(14px);
 }
+tr {
+  background: #ededed;
+}
 tr:nth-of-type(odd) { 
-	background: #eee; 
+	background: #ffeca0; 
 }
 th { 
-	background: #858585; 
-  border: 1px solid #aaa; 
+	background: #d74f2d; 
+  border: 4px solid #fff; 
 	color: white; 
 	font-weight: normal; 
 }
 td {
-	border: 1px solid #ccc; 
+  border: 4px solid #fff; 
 }
 td, th { 
 	padding: 7px 8px 3px; 
