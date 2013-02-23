@@ -1,12 +1,12 @@
 APRI.toc = {
   'header': {
     'image':'images/cover/cover_250.jpg',
-    'cover_url':'ch-cover.html',
+    'cover_url':'cover.html',
     'title':'Pro CSS3 Animation',
     'dek':'by Dudley Storey'
   },
   'chapters': [
-    {'Cover': 'ch-cover.html'},
+    {'Cover': 'cover.html'},
     {'Introduction': ''},
     {'Chapter 1: CSS3 Fundamentals': ''},
     {'Chapter 2: CSS3 Transforms & Transitions': 'ch2.html'},
