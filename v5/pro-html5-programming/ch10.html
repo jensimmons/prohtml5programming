@@ -98,7 +98,9 @@
 
 <p>JavaScript is single-threaded. As a result, long-lasting computations (not necessarily due to poorly written code) will block the UI thread and make it impossible to add text to text boxes, click buttons, use CSS effects, and, in most browsers, open new tabs until control has returned. As an answer to that problem, HTML5 Web Workers provide background-processing capabilities to web applications and typically run on separate threads so that JavaScript applications using Web Workers can take advantage of multicore CPUs. Separating long-running tasks into Web Workers also avoids the dreaded slow-script warnings<span class="index-term"><span class="primary">slow-script warnings</span></span>, shown in Figure <span class="internal-reference" id="ir_fig1_10">10-1</span>, that display when JavaScript loops continue for several seconds.
 </p>
-<figure id="fig1_10" class="image"><img src="images/ch10/fig10-1.png"><figcaption>Figure 10-1. Slow script warning in Firefox</figcaption></figure><p>As powerful as Web Workers are, there are also certain things they cannot do. For example, when a script is executing inside a Web Worker it cannot access the web page’s <code>window</code> object (<code> window.document</code>), which means that Web Workers don’t have direct access to the web page and the DOM API. Although Web Workers cannot block the browser UI, they can still consume CPU cycles and make the system less responsive.</p>
+<figure id="fig1_10" class="image">
+<img src="images/ch10/fig10-1.jpg">
+<figcaption>Figure 10-1. Slow script warning in Firefox</figcaption></figure><p>As powerful as Web Workers are, there are also certain things they cannot do. For example, when a script is executing inside a Web Worker it cannot access the web page’s <code>window</code> object (<code> window.document</code>), which means that Web Workers don’t have direct access to the web page and the DOM API. Although Web Workers cannot block the browser UI, they can still consume CPU cycles and make the system less responsive.</p>
 
 <p>Let’s say you want to create a web application that has to perform some background number crunching, but you do not want those tasks to interfere with the interactivity of the web page itself. Using Web Workers, you can spawn a Web Worker to perform the tasks and add an event listener to listen to messages from the Web Worker as they are sent.</p>
 
@@ -133,7 +135,9 @@
 }</code></pre></figure><p>In this example, you test for browser support in the <code>loadDemo</code> function, which might be called when the page is loaded. A call to <code>typeof(Worker)</code> will return the window’s global <code>Worker</code> property, which will be undefined if the browser doesn’t support the Web Workers API. In this example, the page is updated to reflect whether there is browser support by updating a previously defined <code>support</code> element on the page with a suitable message, as shown at the top of Figure <span class="internal-reference" id="ir_fig2_10">10-2</span>.
 
 </p>
-<figure id="fig2_10" class="image"><img src="images/ch10/fig10-2.png"><figcaption>Figure 10-2. Example of showing <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">checking for browser support</span></span>whether Web Workers is supported</figcaption></figure>
+<figure id="fig2_10" class="image">
+<img src="images/ch10/fig10-2.jpg">
+<figcaption>Figure 10-2. Example of showing <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">checking for browser support</span></span>whether Web Workers is supported</figcaption></figure>
 </section>
 
 <section id="sec5_10">
@@ -186,7 +190,7 @@
 
 <p>Let’s say that you want to build a simple Web Worker example that allows users to send a message to a worker, which in turn echoes back the message. This example may not be very useful in real life, but it’s useful enough to explain the concepts you need to build more complex examples. Figure <span class="internal-reference" id="ir_fig3_10">10-3</span> shows this example web page and its Web Worker in action. The code for this simple page is listed at the end of this section. 
 </p>
-<figure id="fig3_10" class="image"><img src="images/ch10/fig10-3.png"><figcaption>Figure 10-3. A simple web page that uses Web Workers</figcaption></figure><p>To set up proper communication with your Web Worker, code has to be added to the <em>main page</em> (the page that calls the Web Worker) as<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">communicating with web workers</span></span> well as the worker JavaScript file.</p>
+<figure id="fig3_10" class="image"><img src="images/ch10/fig10-3.jpg"><figcaption>Figure 10-3. A simple web page that uses Web Workers</figcaption></figure><p>To set up proper communication with your Web Worker, code has to be added to the <em>main page</em> (the page that calls the Web Worker) as<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">communicating with web workers</span></span> well as the worker JavaScript file.</p>
 
 </section>
 </section>
@@ -335,9 +339,9 @@ addEventListener("message", messageHandler, true);</code></pre></figure>
 <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">example code</span></span>Building an Application with Web Workers</h2>
 <p>So far, we’ve focused on using <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>the different Web Worker APIs. Let’s see how powerful the Web Workers API can really be by building an application: a web page with an image-blurring filter, parallelized to run on multiple Web Workers. Figure <span class="internal-reference" id="ir_fig5_10">10-5</span> shows what this application looks like when you start it. 
 </p>
-<figure id="fig5_10" class="image"><img src="images/ch10/fig10-5.png"><figcaption>Figure 10-5. Web Worker–based web page with image-blurring filter</figcaption></figure><p>This application sends <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>image data from a canvas to several Web Workers (you can specify how many). The Web Workers then process the image with a simple box-blur filter. This may take several seconds, depending on the size of the image and the computational resources available (even machines with fast CPUs may have load from other processes, causing JavaScript execution to take more wall-clock time to complete). Figure <span class="internal-reference" id="ir_fig6_10">10-6</span> shows the same page after running the blur filtering process for a while. 
+<figure id="fig5_10" class="image"><img src="images/ch10/fig10-5.jpg"><figcaption>Figure 10-5. Web Worker–based web page with image-blurring filter</figcaption></figure><p>This application sends <span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>image data from a canvas to several Web Workers (you can specify how many). The Web Workers then process the image with a simple box-blur filter. This may take several seconds, depending on the size of the image and the computational resources available (even machines with fast CPUs may have load from other processes, causing JavaScript execution to take more wall-clock time to complete). Figure <span class="internal-reference" id="ir_fig6_10">10-6</span> shows the same page after running the blur filtering process for a while. 
 </p>
-<figure id="fig6_10" class="image"><img src="images/ch10/fig10-6.png"><figcaption>Figure 10-6. Image-Blurring web page after running for a while</figcaption></figure><p>However, because the heavy lifting takes place in Web Workers, there is no danger of slow-script warnings and, therefore, no need to manually partition the task into scheduled slices—something you would have to consider if you could not use Web Workers.<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>
+<figure id="fig6_10" class="image"><img src="images/ch10/fig10-6.jpg"><figcaption>Figure 10-6. Image-Blurring web page after running for a while</figcaption></figure><p>However, because the heavy lifting takes place in Web Workers, there is no danger of slow-script warnings and, therefore, no need to manually partition the task into scheduled slices—something you would have to consider if you could not use Web Workers.<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span></span>
 </p>
 
 <section id="sec19_10">
@@ -497,7 +501,7 @@ addEventListener("message", messageHandler, true);Web Workers APIbuilding applic
 </aside><p>On the HTML page side, a message<span class="index-term"><span class="primary">Web Workers API</span><span class="secondary">building application with</span><tertiary>communicating with Web Workers</tertiary></span> handler consumes this data and uses it to update the canvas with the new pixel values. As processed image data comes in, the result is immediately visible. We now have a sample application that can process images while potentially taking advantage of multiple CPU cores. Moreover, we didn’t lock up the UI and make it unresponsive while the Web Workers were active. Figure <span class="internal-reference" id="ir_fig7_10">10-7</span> shows the application in action.
 
 </p>
-<figure id="fig7_10" class="image"><img src="images/ch10/fig10-7.png"><figcaption>Figure 10-7. The blur application in action</figcaption></figure>
+<figure id="fig7_10" class="image"><img src="images/ch10/fig10-7.jpg"><figcaption>Figure 10-7. The blur application in action</figcaption></figure>
 </section>
 
 <section id="sec22_10">

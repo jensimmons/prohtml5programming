@@ -51,7 +51,7 @@
     <!-- APP JS //-->
     <script type="text/javascript" charset="utf-8">
       "use strict";
-      var APRI = { // APRess Interactive
+      var APRI = { // Apress Interactive
         ISBNOnline: '978-1-4302-3865-2'
       };
     </script>
@@ -667,10 +667,10 @@ navigator.geolocation.clearWatch(watchId);</code></pre></figure>
 
 <p>This sample works by using<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span> the watchPosition()<span class="index-term"><span class="primary">watchPosition() function</span></span> capability we discussed in the last section. Every time a new position is sent to us, we will compare it to the last known position and calculate the distance traveled. This is accomplished using a well-known calculation known as the Haversine formula, which allows us to calculate distance between two longitude and latitude positions on a sphere. Listing 5-6 displays what the Haversine formula tells us.</p>
 
-<figure class="listing"><figcaption>Listing 5-6. The Haversine Formula
-<equation id="Equ1_6"><equationsource format="TEX">
-$$d=2{\rm arcsin}\left(\sqrt{\sin^2\left(\frac{\phi_2-\phi_1}{2}\right)+\cos_1\cos_2\sin^2\left(\frac{\lambda_2-\lambda_1}{2}\right)}\right)$$
-</equationsource></equation></figcaption><pre><code></code></pre></figure>
+<figure class="listing">
+<figcaption>Listing 5-6. The Haversine Formula</figcaption>
+<img src="images/ch5/list5-6.jpg">
+</figure>
 
 <p>If you're hoping to learn how the Haversine formula works, you’ll be sorely disappointed. Instead, we’ll present you a JavaScript implementation of the<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span> formula, which allows anyone to use it to calculate the distance between two positions (see Listing 5-7).</p>
 
