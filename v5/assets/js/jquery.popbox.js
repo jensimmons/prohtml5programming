@@ -35,10 +35,33 @@
           box.css({'display': 'block', 'top': triggerTop, 'left': triggerLeft });
           
           $(window).on('scroll.popbox.box' + increment, function (e) {
+            var boxOuterHeight = box.outerHeight(true),
+            windowOuterHeight = $(window).outerHeight(true),
+            triggerOuterHeight = trigger.outerHeight(true),
+            triggerOffsetTop = trigger.offset().top,
+            windowScrollTop = $(window).scrollTop(),
+            boxOffsetTop = box.offset().top,
+            panelTop = jQuery('.jPanelMenu-panel').offset().top;
+            
+            
+            
             // if box height < window height - trigger.outerHeight, keep at top of screen
-            if (box.outerHeight(true) <= $(window).outerHeight() - trigger.outerHeight()) {
-              // box.css({'top': trigger.offset().top + trigger.outerHeight() });
+            if (box.outerHeight(true) <= $(window).outerHeight() - trigger.outerHeight(true)) {
+              box.css({'top': trigger.offset().top + trigger.outerHeight() });
             } else { // box height > window height - trigger.outerHeight
+              // if windowScrollTop + windowOuterHeight > boxOffsetTop + boxOuterHeight => glue to bottom of window
+              if ((windowScrollTop  + windowOuterHeight) > (boxOffsetTop + boxOuterHeight)) {
+                // console.log('glue to bottom');
+                box.css({'top': windowScrollTop + windowOuterHeight - boxOuterHeight - panelTop });
+              } else if ( windowScrollTop + triggerOuterHeight < boxOffsetTop ) { 
+                // console.log('glue to top');
+                // if window.scrollTop() + trigger.outHeight() > box.offset().top => glue to usual top position
+                box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
+              } else {
+                // console.log('let scroll');
+                
+              }
+              
               
             }
             
