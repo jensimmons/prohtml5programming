@@ -42,27 +42,18 @@
             windowScrollTop = $(window).scrollTop(),
             boxOffsetTop = box.offset().top,
             panelTop = jQuery('.jPanelMenu-panel').offset().top;
-            
-            
-            
+
             // if box height < window height - trigger.outerHeight, keep at top of screen
-            if (box.outerHeight(true) <= $(window).outerHeight() - trigger.outerHeight(true)) {
-              box.css({'top': trigger.offset().top + trigger.outerHeight() });
-            } else { // box height > window height - trigger.outerHeight
-              // if windowScrollTop + windowOuterHeight > boxOffsetTop + boxOuterHeight => glue to bottom of window
+            if (boxOuterHeight <= windowOuterHeight - triggerOuterHeight) {
+              box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
+            } else { // box height > window height - trigger.outerHeight (box is greater than remaining window height)
+              // if windowScrollTop + windowOuterHeight > boxOffsetTop + boxOuterHeight => ( if we've scrolled past bottom of box, glue to bottom of window)
               if ((windowScrollTop  + windowOuterHeight) > (boxOffsetTop + boxOuterHeight)) {
-                // console.log('glue to bottom');
                 box.css({'top': windowScrollTop + windowOuterHeight - boxOuterHeight - panelTop });
               } else if ( windowScrollTop + triggerOuterHeight < boxOffsetTop ) { 
-                // console.log('glue to top');
-                // if window.scrollTop() + trigger.outHeight() > box.offset().top => glue to usual top position
+                // if window.scrollTop() + trigger.outHeight() > box.offset().top => (if we've scrolled before top of box, glue to bottom of trigger)
                 box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
-              } else {
-                // console.log('let scroll');
-                
               }
-              
-              
             }
             
           });
