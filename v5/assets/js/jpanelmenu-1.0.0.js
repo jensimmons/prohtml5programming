@@ -418,7 +418,7 @@
 			},
 
 			initiateClickListeners: function() {
-				$(document).on('click',jP.options.trigger,function(){ jP.triggerMenu(jP.options.animated); return false; });
+				$(document).on('click',jP.options.trigger,function(event){ jP.triggerMenu(jP.options.animated); event.preventDefault(); });
 			},
 
 			destroyClickListeners: function() {

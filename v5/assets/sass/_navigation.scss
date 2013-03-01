@@ -203,6 +203,14 @@ a.fs-larger {
     right: 0;
   }
 }
+.collapse {
+  position: relative;
+}
+.box {
+  display:block;
+  display:none;
+  position:absolute;
+}
 ul.toc-dropdown {
   list-style: none;
   border: 1px solid #ddd;
@@ -211,10 +219,9 @@ ul.toc-dropdown {
   @include border-radius(8px 0px 8px 8px);
   background: #fff;
   background: rgba(250,250,250,0.97);
-  display: none;
   padding: 1em;
-  margin-top: 44px;
-  margin-right: 12px;
+  margin-top: 1px;
+  z-index: 2;
   
   li {
     padding: 5px;
@@ -252,9 +259,9 @@ ul.toc-dropdown {
 .ie6-8 .toc-link a.btn {
   background: url('../images/book.png') no-repeat  scroll 0px 10px; // for old IE, which doesn't support SVG
 }
-.toc-link.open ul {
-  display: block;
-}
+//.toc-link.open ul {
+//  display: block;
+//}
 @media screen and (min-width: 30em) { // 480px
   ul.toc-dropdown {
     width: 25em;

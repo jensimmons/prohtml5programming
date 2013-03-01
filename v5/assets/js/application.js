@@ -20,7 +20,7 @@ APRI.UI = {
  // create TOC & append to toc link
  initTOC: function () {
    if(APRI.toc) {
-     var tocOutput = '<ul class="dropdown-menu toc-dropdown">\n',
+     var tocOutput = '<ul class="toc-dropdown box">\n',
          chapters, i, tocL, key, currentClass, tocEntry;
      if (APRI.toc.header !== undefined) {
        tocOutput += '<li class="hdr">' +
@@ -50,7 +50,8 @@ APRI.UI = {
      }
      tocOutput += '<li class="dashboard-link"><a href="../index.html">My Apress Library</a></li>';
      tocOutput += '</ul>\n';
-     jQuery('#toc').append(jQuery(tocOutput));
+     // jQuery('.jPanelMenu-panel').append(jQuery(tocOutput));
+     jQuery('article').before(jQuery(tocOutput));
    } 
  },
  // jPanelMenu initiation
@@ -277,9 +278,12 @@ APRI.UTILS = {
 
 jQuery(function () {
 
- APRI.UI.initTOC();
+
  APRI.UI.initPanelNavigation();
  APRI.UI.initTextResizeHandler();
+
+ APRI.UI.initTOC();
+ $('.popbox').popbox();
 
  APRI.UTILS.checkStorageSupport();
  APRI.CME.initCodeEditors();
