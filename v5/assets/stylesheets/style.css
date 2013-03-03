@@ -419,8 +419,7 @@ html {
 
 @font-face {
   font-family: 'SourceSansProRegular';
-  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot");
-  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.svg#SourceSansProRegular") format("svg");
+  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -1533,8 +1532,8 @@ ul.toc-dropdown {
   -ms-border-radius: 8px 0px 8px 8px;
   -o-border-radius: 8px 0px 8px 8px;
   border-radius: 8px 0px 8px 8px;
-  background: #fff;
-  background: rgba(250, 250, 250, 0.97);
+  background: white fixed;
+  background: rgba(250, 250, 250, 0.97) fixed;
   padding: 1em;
   margin-top: 1px;
   margin-bottom: 0px;
