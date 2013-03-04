@@ -287,66 +287,69 @@ style.css</code></pre>
 <h3>The ApplicationCache API</h3>
 <p>The ApplicationCache API is an interface for working with the application cache. A new <code>window.applicationCache</code> object<span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>window.applicationCache object</tertiary></span> fires several events related to the state of the cache. The object has a numerical property, <code>window.applicationCache.status</code><span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>window.applicationCache.status</tertiary></span>, which indicates the state of the cache. The six states a cache can have are shown in Table <span class="internal-reference" id="ir_tab1_12">12-1</span>.</p>
 <table id="tab1_12">
-<thead><tr>
-<td>Numerical Property</td>
-<td>Cache Status</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>UNCACHED</td>
-</tr>
-<tr>
-<td>1</td>
-<td>IDLE</td>
-</tr>
-<tr>
-<td>2</td>
-<td>CHECKING</td>
-</tr>
-<tr>
-<td>3</td>
-<td>DOWNLOADING</td>
-</tr>
-<tr>
-<td>4</td>
-<td>UPDATEREADY</td>
-</tr>
-<tr>
-<td>5</td>
-<td>OBSOLETE</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Numerical Property</th>
+      <th>Cache Status</th>
+    </tr></thead>
+  <tbody>
+    <tr>
+      <td data-label="Numerical Property">0</td>
+      <td data-label="Cache Status">UNCACHED</td>
+    </tr>
+    <tr>
+      <td data-label="Numerical Property">1</td>
+      <td data-label="Cache Status">IDLE</td>
+    </tr>
+    <tr>
+      <td data-label="Numerical Property">2</td>
+      <td data-label="Cache Status">CHECKING</td>
+    </tr>
+    <tr>
+      <td data-label="Numerical Property">3</td>
+      <td data-label="Cache Status">DOWNLOADING</td>
+    </tr>
+    <tr>
+      <td data-label="Numerical Property">4</td>
+      <td data-label="Cache Status">UPDATEREADY</td>
+    </tr>
+    <tr>
+      <td data-label="Numerical Property">5</td>
+      <td data-label="Cache Status">OBSOLETE</td>
+    </tr>
+  </tbody>
 </table>
 <p>Most pages on the Web today do not specify cache manifests and are uncached. Idle is the typical state for an application with a cache manifest. An application in the idle state has all its resources stored by the browser with no updates in progress. A cache enters the obsolete state if there was at one point a valid cache but the manifest is now missing. There are events (and callback attributes) in the API that correspond to some of these states. For instance, when the cache enters the idle state after an update, the cached event fires. At that time, an application might notify the user that they can disconnect from the network and still expect the application to be available in offline mode. Table <span class="internal-reference" id="ir_tab2_12">12-2</span> shows some common events and their associated caches states.
 </p>
 <table id="tab2_12">
-<thead><tr>
-<td>Event</td>
-<td>Associated Cache State</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>onchecking</td>
-<td>CHECKING</td>
-</tr>
-<tr>
-<td>ondownloading</td>
-<td>DOWNLOADING</td>
-</tr>
-<tr>
-<td>onupdateready</td>
-<td>UPDATEREADY</td>
-</tr>
-<tr>
-<td>onobsolete</td>
-<td>OBSOLETE</td>
-</tr>
-<tr>
-<td>oncached</td>
-<td>IDLE</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Associated Cache State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Event">onchecking</td>
+      <td data-label="Associated Cache State">CHECKING</td>
+    </tr>
+    <tr>
+      <td data-label="Event">ondownloading</td>
+      <td data-label="Associated Cache State">DOWNLOADING</td>
+    </tr>
+    <tr>
+      <td data-label="Event">onupdateready</td>
+      <td data-label="Associated Cache State">UPDATEREADY</td>
+    </tr>
+    <tr>
+      <td data-label="Event">onobsolete</td>
+      <td data-label="Associated Cache State">OBSOLETE</td>
+    </tr>
+    <tr>
+      <td data-label="Event">oncached</td>
+      <td data-label="Associated Cache State">IDLE</td>
+    </tr>
+  </tbody>
 </table>
 <p><span class="index-term"><span class="primary">HTML5 offline web applications</span><span class="secondary">application cache API</span><tertiary>common events</tertiary></span>Additionally, there are events indicating update progress, when no update is available, or when an error has occurred:</p>
 <ul>

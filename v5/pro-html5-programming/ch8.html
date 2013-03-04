@@ -174,33 +174,33 @@
   <figcaption>Table 8-1. New HTML5 Form Elements Appearing in Browsers</figcaption>
   <table id="tab1_8">
   <thead><tr>
-  <th>Type</th>
-  <th>Purpose</th>
+    <th>Type</th>
+    <th>Purpose</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>Tel</td>
-  <td>Telephone number</td>
+    <td data-label="Type">Tel</td>
+    <td data-label="Purpose">Telephone number</td>
   </tr>
   <tr>
-  <td>Email</td>
-  <td>Email address text field</td>
+    <td data-label="Type">Email</td>
+    <td data-label="Purpose">Email address text field</td>
   </tr>
   <tr>
-  <td>url</td>
-  <td>Web location URL</td>
+    <td data-label="Type">url</td>
+    <td data-label="Purpose">Web location URL</td>
   </tr>
   <tr>
-  <td>Search</td>
-  <td>Term to supply to a search engine. For example, the search bar atop a browser.</td>
+    <td data-label="Type">Search</td>
+    <td data-label="Purpose">Term to supply to a search engine. For example, the search bar atop a browser.</td>
   </tr>
   <tr>
-  <td>Range</td>
-  <td>Numeric selector within a range of values, typically visualized as a slider</td>
+    <td data-label="Type">Range</td>
+    <td data-label="Purpose">Numeric selector within a range of values, typically visualized as a slider</td>
   </tr>
   <tr>
-  <td>Number</td>
-  <td>A field containing a numeric value only</td>
+    <td data-label="Type">Number</td>
+    <td data-label="Purpose">A field containing a numeric value only</td>
   </tr>
   </tbody>
   </table>
@@ -286,52 +286,38 @@
   <figcaption>Table 8-2. Future HTML5 Form Elements</figcaption>
   <table id="tab2_8">
   <thead><tr>
-  <th>Type</th>
-  <th>Purpose</th>
+    <th>Type</th>
+    <th>Purpose</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>
-  Color
-  </td>
-  <td>Color selector, which could be represented by a wheel or swatch picker</td>
+    <td data-label="Type">Color</td>
+    <td data-label="Purpose">Color selector, which could be represented by a wheel or swatch picker</td>
   </tr>
   <tr>
-  <td>
-  Datetime
-  </td>
-  <td>Full date and time display, including a time zone, as shown in Figure 8-3
+    <td data-label="Type">Datetime</td>
+    <td data-label="Purpose">Full date and time display, including a time zone, as shown in Figure 8-3
   </td>
   </tr>
   <tr>
-  <td>
-  datetime-local
-  </td>
-  <td>Date and time display, with no setting or indication for time zones</td>
+    <td data-label="Type">datetime-local</td>
+    <td data-label="Purpose">Date and time display, with no setting or indication for time zones</td>
   </tr>
   <tr>
-  <td>
-  Time
-  </td>
-  <td>Time indicator and selector, with no time zone information</td>
+    <td data-label="Type">Time</td>
+    <td data-label="Purpose">Time indicator and selector, with no time zone information</td>
   </tr>
   <tr>
-  <td>
-  Date
-  </td>
-  <td>Selector for calendar date</td>
+    <td data-label="Type">Date</td>
+    <td data-label="Purpose">Selector for calendar date</td>
   </tr>
   <tr>
-  <td>
-  Week
-  </td>
-  <td>Selector for a week within a given year</td>
+    <td data-label="Type">Week</td>
+    <td data-label="Purpose">Selector for a week within a given year</td>
   </tr>
   <tr>
-  <td>
-  Month
-  </td>
-  <td>Selector for a month within a given year</td>
+    <td data-label="Type">Month</td>
+    <td data-label="Purpose">Selector for a month within a given year</td>
   </tr>
   </tbody>
   </table>
@@ -393,27 +379,21 @@
   <figcaption>Table 8-3. Autocomplete Behavior in Input Controls</figcaption>
   <table id="tab3_8">
   <thead><tr>
-  <th>Type</th>
-  <th>Purpose</th>
+    <th>Type</th>
+    <th>Purpose</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>
-  On
-  </td>
-  <td>The field is not secure, and its value can be saved and restored.</td>
+    <td data-label="Type">On</td>
+    <td data-label="Purpose">The field is not secure, and its value can be saved and restored.</td>
   </tr>
   <tr>
-  <td>
-  Off
-  </td>
-  <td>The field is secure, and its value should not be saved.</td>
+    <td data-label="Type">Off</td>
+    <td data-label="Purpose">The field is secure, and its value should not be saved.</td>
   </tr>
   <tr>
-  <td>
-  unspecified
-  </td>
-  <td>Default to the setting on the containing &lt;form&gt;. If not contained in a form, or no value is set on the form, then behave as if on.</td>
+    <td data-label="Type">unspecified</td>
+    <td data-label="Purpose">Default to the setting on the containing &lt;form&gt;. If not contained in a form, or no value is set on the form, then behave as if on.</td>
   </tr>
   </tbody>
   </table>
@@ -974,33 +954,33 @@ evt.preventDefault();</code></pre>
   <figcaption>Table 8-4. CSS Pseudoclasses for HTML5 Form Validation</figcaption>
   <table id="tab4_8">
   <thead><tr>
-  <th>Type</th>
-  <th>Purpose</th>
+    <th>Type</th>
+    <th>Purpose</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>valid</td>
-  <td>This pseudo-class selects any form element that passes all validity rules. In other words, this form element has state that is ready to be submitted.</td>
+    <td data-label="Type">valid</td>
+    <td data-label="Purpose">This pseudo-class selects any form element that passes all validity rules. In other words, this form element has state that is ready to be submitted.</td>
   </tr>
   <tr>
-  <td>invalid</td>
-  <td>This pseudo-class selects any form element that has errors or problems preventing it from being submitted. Selectors with this class are useful for showing users errors on the page.</td>
+    <td data-label="Type">invalid</td>
+    <td data-label="Purpose">This pseudo-class selects any form element that has errors or problems preventing it from being submitted. Selectors with this class are useful for showing users errors on the page.</td>
   </tr>
   <tr>
-  <td>in-range</td>
-  <td>This pseudo-class only selects elements such as inputs of type range where the current value is safely between the minimum and maximum values.</td>
+    <td data-label="Type">in-range</td>
+    <td data-label="Purpose">This pseudo-class only selects elements such as inputs of type range where the current value is safely between the minimum and maximum values.</td>
   </tr>
   <tr>
-  <td>out-of-range</td>
-  <td>This pseudo-class selects elements with inputs that have values outside of the accepted range.</td>
+    <td data-label="Type">out-of-range</td>
+    <td data-label="Purpose">This pseudo-class selects elements with inputs that have values outside of the accepted range.</td>
   </tr>
   <tr>
-  <td>required</td>
-  <td>Any elements that have been marked as required will be selected by this pseudo-class.</td>
+    <td data-label="Type">required</td>
+    <td data-label="Purpose">Any elements that have been marked as required will be selected by this pseudo-class.</td>
   </tr>
   <tr>
-  <td>optional</td>
-  <td>Form elements that are not marked as required fall into this pseudo-class. Only form elements fit this category.</td>
+    <td data-label="Type">optional</td>
+    <td data-label="Purpose">Form elements that are not marked as required fall into this pseudo-class. Only form elements fit this category.</td>
   </tr>
   </tbody>
   </table>

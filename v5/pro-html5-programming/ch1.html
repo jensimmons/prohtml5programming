@@ -353,38 +353,38 @@ ID="prohtml5"</code></pre>
   </tr></thead>
   <tbody>
   <tr>
-  <td>Embedded</td>
-  <td>ContentEmbedded content type that imports other resources into the document, for example audio, video, canvas, and iframe</td>
+  <td data-label="Content Type">Embedded</td>
+  <td data-label="Description">ContentEmbedded content type that imports other resources into the document, for example audio, video, canvas, and iframe</td>
   </tr>
   <tr>
-  <td>FlowF
+  <td data-label="Content Type">FlowF
   </td>
-  <td>Elements used in the body of documents and applications, for example form, h1, and small</td>
+  <td data-label="Description">Elements used in the body of documents and applications, for example form, h1, and small</td>
   </tr>
   <tr>
-  <td>Heading
+  <td data-label="Content Type">Heading
   </td>
-  <td>Section headers, for example h1, h2, and hgroup</td>
+  <td data-label="Description">Section headers, for example h1, h2, and hgroup</td>
   </tr>
   <tr>
-  <td>Interactive
+  <td data-label="Content Type">Interactive
   </td>
-  <td>Content that users interact with, for example audio or video controls, button, and textarea</td>
+  <td data-label="Description">Content that users interact with, for example audio or video controls, button, and textarea</td>
   </tr>
   <tr>
-  <td>Metadata
+  <td data-label="Content Type">Metadata
   </td>
-  <td>Elements—commonly found in the head section— that set up the presentation or behavior of the rest of the document, for example script, style, and title</td>
+  <td data-label="Description">Elements—commonly found in the head section— that set up the presentation or behavior of the rest of the document, for example script, style, and title</td>
   </tr>
   <tr>
-  <td>Phrasing
+  <td data-label="Content Type">Phrasing
   </td>
-  <td>Text and text markup elements, for example mark, kbd, sub, and sup</td>
+  <td data-label="Description">Text and text markup elements, for example mark, kbd, sub, and sup</td>
   </tr>
   <tr>
-  <td>Sectioning
+  <td data-label="Content Type">Sectioning
   </td>
-  <td>Elements that define sections in the document, for example article, aside, and title</td>
+  <td data-label="Description">Elements that define sections in the document, for example article, aside, and title</td>
   </tr>
   </tbody>
   </table>
@@ -415,28 +415,28 @@ ID="prohtml5"</code></pre>
   </tr></thead>
   <tbody>
   <tr>
-  <td>header</td>
-  <td>Header content (for a page or a section of the page)</td>
+  <td data-label="Sectioning Element">header</td>
+  <td data-label="Description">Header content (for a page or a section of the page)</td>
   </tr>
   <tr>
-  <td>footer</td>
-  <td>Footer content (for a page or a section of the page)</td>
+  <td data-label="Sectioning Element">footer</td>
+  <td data-label="Description">Footer content (for a page or a section of the page)</td>
   </tr>
   <tr>
-  <td>section</td>
-  <td>A section in a web page</td>
+  <td data-label="Sectioning Element">section</td>
+  <td data-label="Description">A section in a web page</td>
   </tr>
   <tr>
-  <td>article</td>
-  <td>Independent article content</td>
+  <td data-label="Sectioning Element">article</td>
+  <td data-label="Description">Independent article content</td>
   </tr>
   <tr>
-  <td>aside</td>
-  <td>Related content or pull quotes</td>
+  <td data-label="Sectioning Element">aside</td>
+  <td data-label="Description">Related content or pull quotes</td>
   </tr>
   <tr>
-  <td>nav</td>
-  <td>Navigational aids</td>
+  <td data-label="Sectioning Element">nav</td>
+  <td data-label="Description">Navigational aids</td>
   </tr>
   </tbody>
   </table>
@@ -687,22 +687,19 @@ a:hover {
   </tr></thead>
   <tbody>
   <tr>
-  <td>getElementById()
-  </td>
-  <td>Returns the element with the specified id attribute value</td>
-  <td>&lt;div id="foo"&gt;  getElementById("foo");</td>
+    <td data-label="Function">getElementById()</td>
+    <td data-label="Description">Returns the element with the specified id attribute value</td>
+    <td data-label="Example">&lt;div id="foo"&gt;  getElementById("foo");</td>
   </tr>
   <tr>
-  <td>getElementsByName()
-  </td>
-  <td>Returns all elements whose name attribute has the specified value</td>
-  <td>&lt;input type="text" name="foo"&gt;getElementsByName("foo");</td>
+    <td data-label="Function">getElementsByName()</td>
+    <td data-label="Description">Returns all elements whose name attribute has the specified value</td>
+    <td data-label="Example">&lt;input type="text" name="foo"&gt;getElementsByName("foo");</td>
   </tr>
   <tr>
-  <td>getElementsByTagName()
-  </td>
-  <td>Return all elements whose tag name matches the specified value</td>
-  <td>&lt;input type="text"&gt;getElementsByTagName("input");</td>
+    <td data-label="Function">getElementsByTagName()</td>
+    <td data-label="Description">Return all elements whose tag name matches the specified value</td>
+    <td data-label="Example">&lt;input type="text"&gt;getElementsByTagName("input");</td>
   </tr>
   </tbody>
   </table>
@@ -722,16 +719,16 @@ a:hover {
   </tr></thead>
   <tbody>
   <tr>
-  <td>querySelector()</td>
-  <td>Return the first element in the page which matches the specified selector rules(s)</td>
-  <td>document.querySelector("input.error");</td>
-  <td>Return the first input field with a style class of “error”</td>
+  <td data-label="Function">querySelector()</td>
+  <td data-label="Description">Return the first element in the page which matches the specified selector rules(s)</td>
+  <td data-label="Example">document.querySelector("input.error");</td>
+  <td data-label="Result">Return the first input field with a style class of “error”</td>
   </tr>
   <tr>
-  <td>querySelectorAll()</td>
-  <td>Returns all elements which match the specified rule or rules</td>
-  <td>document.querySelectorAll("#results td");</td>
-  <td>Return any table cells inside the element with id results</td>
+  <td data-label="Function">querySelectorAll()</td>
+  <td data-label="Description">Returns all elements which match the specified rule or rules</td>
+  <td data-label="Example">document.querySelectorAll("#results td");</td>
+  <td data-label="Result">Return any table cells inside the element with id results</td>
   </tr>
   </tbody>
   </table>
@@ -852,45 +849,37 @@ var x = document.querySelector(“.highClass”, “.lowClass”);</code></pre>
 <figure class="table">
   <figcaption>Table 1-5. Web Browser JavaScript Engines</figcaption>
   <table id="tab5_1">
-  <thead><tr>
-  <th>Browser</th>
-  <th>Engine Name</th>
-  <th>Notes</th>
+  <thead>
+  <tr>
+    <th>Browser</th>
+    <th>Engine Name</th>
+    <th>Notes</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>Apple Safari
-  </td>
-  <td>Nitro (otherwise know as SquirrelFish Extreme)</td>
-  <td>Released in Safari 4 and refined in version 5, it introduces byte code optimizations and a context-threaded native compiler.</td>
+    <td data-label="Browser">Apple Safari</td>
+    <td data-label="Engine Name">Nitro (otherwise know as SquirrelFish Extreme)</td>
+    <td data-label="Notes">Released in Safari 4 and refined in version 5, it introduces byte code optimizations and a context-threaded native compiler.</td>
   </tr>
   <tr>
-  <td>Google Chrome
-  </td>
-  <td>V8
-  </td>
-  <td>Since Chrome 2, it uses generational garbage collection for high memory scalability without interruptions.</td>
+    <td data-label="Browser">Google Chrome</td>
+    <td data-label="Engine Name">V8</td>
+    <td data-label="Notes">Since Chrome 2, it uses generational garbage collection for high memory scalability without interruptions.</td>
   </tr>
   <tr>
-  <td>Microsoft Internet Explorer
-  </td>
-  <td>Chakra
-  </td>
-  <td>Introduced in IE 9, Chakra focuses on background compilation and an efficient type system and demonstrates a tenfold improvement over IE8.</td>
+    <td data-label="Browser">Microsoft Internet Explorer</td>
+    <td data-label="Engine Name">Chakra</td>
+    <td data-label="Notes">Introduced in IE 9, Chakra focuses on background compilation and an efficient type system and demonstrates a tenfold improvement over IE8.</td>
   </tr>
   <tr>
-  <td>Mozilla Firefox
-  </td>
-  <td>JägerMonkey
-  </td>
-  <td>Refined from version 3.5, this combines fast interpretation with native compilation from trace trees.</td>
+    <td data-label="Browser">Mozilla Firefox</td>
+    <td data-label="Engine Name">JägerMonkey</td>
+    <td data-label="Notes">Refined from version 3.5, this combines fast interpretation with native compilation from trace trees.</td>
   </tr>
   <tr>
-  <td>Opera
-  </td>
-  <td>Carakan
-  </td>
-  <td>This one uses register-based byte code and selective native compilation and claims improvements of 75% on version 10.50.</td>
+    <td data-label="Browser">Opera</td>
+    <td data-label="Engine Name">Carakan</td>
+    <td data-label="Notes">This one uses register-based byte code and selective native compilation and claims improvements of 75% on version 10.50.</td>
   </tr>
   </tbody>
   </table>
