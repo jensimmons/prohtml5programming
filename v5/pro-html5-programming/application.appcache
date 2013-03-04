@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 0.4
+# version 0.5
 
 
 
@@ -183,11 +183,6 @@ images/ch12/fig12-5.png
 
 images/ch13/9781430227908_Fig13-01.jpg
 images/ch13/9781430227908_Fig13-02.jpg
-
-
-# intro video
-video/ch-test/testvideo.webm
-
 
 # fonts
 ../assets/fonts/source-sans/SourceSansPro-Light-webfont.woff
