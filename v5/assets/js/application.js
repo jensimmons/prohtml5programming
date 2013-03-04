@@ -245,6 +245,13 @@ APRI.UTILS = {
      APRI.CME.localStorageSupport = true;
    } 
  },
+ logAppCacheErrors: function () {
+   if (window && window.console) {
+     window.applicationCache.onerror = function(e) {
+         log("Application cache error" + e);
+     }
+   }
+ },
  /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
  formatStaticCode: function () {
    var staticCodeareas = [];
