@@ -647,7 +647,8 @@ ol {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003149}}
 hr {
   height: 1px;
-  border: 1px solid #666;
+  border: 0;
+  border-bottom: 1px solid #555;
   padding-bottom: -1px;
   margin: 1.625em 0;
 }
