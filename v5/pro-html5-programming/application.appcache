@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 0.5
+# version 0.14
 
 
 
@@ -183,6 +183,8 @@ images/ch12/fig12-5.png
 
 images/ch13/9781430227908_Fig13-01.jpg
 images/ch13/9781430227908_Fig13-02.jpg
+
+video/apress_022813_12.appleuniversal.png
 
 # fonts
 ../assets/fonts/source-sans/SourceSansPro-Light-webfont.woff

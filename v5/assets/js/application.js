@@ -160,12 +160,12 @@ APRI.CME = { // CodeMirror editors
      }
    });
    this.resetControl.bind('click', function (evt) {
-     // evt.stopPropagation();
+     evt.stopPropagation();
      evt.preventDefault();
      me.reset();
    });
    this.saveControl.bind('click', function (evt) {
-     // evt.stopPropagation();
+     evt.stopPropagation();
      evt.preventDefault();
      me.save();
    });
@@ -194,7 +194,7 @@ APRI.CME = { // CodeMirror editors
    });
    // bind the trigger events
    jQuery(".show-inline-editor:not('.open')").bind('click', function (evt) {
-     // evt.stopPropagation();
+     evt.stopPropagation();
      evt.preventDefault();
      var $this = jQuery(this);
      var $figure = $this.parents('figure:first');
@@ -205,7 +205,7 @@ APRI.CME = { // CodeMirror editors
      jQuery('.static-code-container:first', $figure).hide();
    });
    jQuery('.close-inline-editor').bind('click', function (evt) {
-     // evt.stopPropagation();
+     evt.stopPropagation();
      evt.preventDefault();
      var $this = jQuery(this);
      var $figure = $this.parents('figure:first');
@@ -253,6 +253,10 @@ APRI.UTILS = {
          log("Application cache error" + e);
      }
    }
+ },
+ offlineVideoContent: function () {
+   var msg = "<div class=\"offline-video-content\"><p>You are not currently online. When you connect to the internet again, a video will appear here.</p></div>";
+   jQuery('video').after(msg);
  },
  /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
  formatStaticCode: function () {
@@ -302,5 +306,6 @@ jQuery(function () {
  APRI.UTILS.checkStorageSupport();
  APRI.CME.initCodeEditors();
  APRI.UTILS.formatStaticCode();
+ 
 
 });
