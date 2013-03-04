@@ -65,6 +65,11 @@ APRI.UI = {
    // remove hidden nav if jPanel is good to go (do we need checks here (like, for silk browser?))
    jQuery('.jPanelMenu-panel > .nav-container').remove();
    jQuery('.jPanelMenu-panel > #main-navigation').remove();
+   
+   if (!jQuery('#jPanelMenu-menu').length)  {
+     // hide trigger
+     jQuery('.menu-trigger a').hide();
+   } 
  },
  // initialize font-size controls
  initTextResizeHandler: function () {
