@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 0.0.32
+# version 0.2
 
 
 # files to cache
@@ -20,7 +20,7 @@ ch10.html
 ch11.html
 ch12.html
 ch13.html
-
+info.html
 
 ../assets/libraries/codemirror/lib/codemirror.css
 ../assets/libraries/codemirror/theme/ambiance.css
@@ -94,6 +94,7 @@ images/ch3/fig3-8.png
 images/ch3/fig3-9.png
 images/ch3/fig3-10.png
 images/ch3/fig3-11.png
+images/ch3/fig3-12.png
 images/ch3/fig3-13.png
 
 images/ch4/fig4-1.png
@@ -108,12 +109,13 @@ images/ch5/fig5-3.png
 images/ch5/fig5-4.png
 images/ch5/fig5-5.png
 images/ch5/list5-6.jpg
+images/ch5/fig5-6.png
 
 images/ch6/fig6-1.jpg
 images/ch6/fig6-2.png
 images/ch6/fig6-3.gif
 images/ch6/fig6-4.gif
-# images/ch6/fig6-5.png
+images/ch6/fig6-5.jpg
 images/ch6/fig6-6.gif
 
 images/ch7/fig7-1.gif
@@ -159,6 +161,7 @@ images/ch10/fig10-8.jpg
 
 images/ch11/fig11-1.png
 images/ch11/fig11-2.png
+images/ch11/fig11-3.png
 images/ch11/fig11-3-after.png
 images/ch11/fig11-4.png
 images/ch11/fig11-5.png
@@ -186,9 +189,9 @@ video/ch-test/testvideo.webm
 
 
 # fonts
-../assets/fonts/source-sans/SourceSansPro-Light-webfont.ttf
-../assets/fonts/source-sans/SourceSansPro-Regular-webfont.ttf
-../assets/fonts/source-sans/SourceSansPro-Semibold-webfont.ttf
+../assets/fonts/source-sans/SourceSansPro-Light-webfont.woff
+../assets/fonts/source-sans/SourceSansPro-Regular-webfont.woff
+../assets/fonts/source-sans/SourceSansPro-Semibold-webfont.woff
 
 # js code listings & associated files
 code_listings/code_listings_ch1.js
