@@ -553,29 +553,31 @@ Access-Control-Allow-Credentials: true</code></pre></figure>
 <p>XMLHttpRequest Level 2 introduces progress events with meaningful names. Table 6-2 shows the new progress event names. You can listen for each of these events by setting a callback function for the event handler attribute. For example, when the <code>loadstart</code> event fires, the callback for the <code>onloadstart</code> property is called.
 </p>
 <table id="tab1_6">
-<thead><tr>
-<td>Progress Event Name</td>
-</tr></thead>
-<tbody>
-<tr>
-<td>loadstart</td>
-</tr>
-<tr>
-<td>progress</td>
-</tr>
-<tr>
-<td>abort</td>
-</tr>
-<tr>
-<td>error</td>
-</tr>
-<tr>
-<td>load</td>
-</tr>
-<tr>
-<td>loadend</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Progress Event Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td data-label="Progress Event Name">loadstart</td>
+  </tr>
+  <tr>
+    <td>progress</td>
+  </tr>
+  <tr>
+    <td>abort</td>
+  </tr>
+  <tr>
+    <td>error</td>
+  </tr>
+  <tr>
+    <td>load</td>
+  </tr>
+  <tr>
+    <td>loadend</td>
+  </tr>
+  </tbody>
 </table>
 <p>The old <code>readyState</code> property<span class="index-term"><span class="primary">readyState property</span></span><span class="index-term"><span class="primary">XMLHttpRequest Level 2</span><span class="secondary">progress events</span></span> and <code>readystatechange</code> events will be retained for backward compatibility.</p>
 

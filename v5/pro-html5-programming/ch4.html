@@ -193,32 +193,34 @@
 <figure class="table">
   <figcaption>Table 4-1. Audio and Video Codec and Container Support</figcaption>
   <table id="tab1_4">
-  <thead><tr>
-  <th>Browser</th>
-  <th>Codec and Container Support</th>
-  </tr></thead>
-  <tbody>
-  <tr>
-  <td>Chrome</td>
-  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)<br />MPEG 4 (H.264 and AAC)</td>
-  </tr>
-  <tr>
-  <td>Firefox</td>
-  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
-  </tr>
-  <tr>
-  <td>Internet Explorer</td>
-  <td>MPEG 4 (H.264 and AAC)</td>
-  </tr>
-  <tr>
-  <td>Opera</td>
-  <td>Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
-  </tr>
-  <tr>
-  <td>Safari</td>
-  <td>MPEG 4 (H.264 and AAC)</td>
-  </tr>
-  </tbody>
+    <thead>
+      <tr>
+        <th>Browser</th>
+        <th>Codec and Container Support</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td data-label="Browser">Chrome</td>
+      <td data-label="Codec">Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)<br />MPEG 4 (H.264 and AAC)</td>
+    </tr>
+    <tr>
+      <td data-label="Browser">Firefox</td>
+      <td data-label="Codec">Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
+    </tr>
+    <tr>
+      <td data-label="Browser">Internet Explorer</td>
+      <td data-label="Codec">MPEG 4 (H.264 and AAC)</td>
+    </tr>
+    <tr>
+      <td data-label="Browser">Opera</td>
+      <td data-label="Codec">Ogg (Theora and Vorbis)<br />WebM (VP8 and Vorbis)</td>
+    </tr>
+    <tr>
+      <td data-label="Browser">Safari</td>
+      <td data-label="Codec">MPEG 4 (H.264 and AAC)</td>
+    </tr>
+    </tbody>
   </table>
 </figure>
 
@@ -381,39 +383,29 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
   <figcaption>Table 4-2. Media Types and Attribute Values</figcaption>
   <table id="tab2_4">
   <thead><tr>
-  <th>Type</th>
-  <th>Attribute Value</th>
+    <th>Type</th>
+    <th>Attribute Value</th>
   </tr></thead>
   <tbody>
   <tr>
-  <td>Theora video and Vorbis audio in an Ogg container</td>
-  <td>
-  type='video/ogg; codecs="theora, vorbis"'
-  </td>
+    <td data-label="Type">Theora video and Vorbis audio in an Ogg container</td>
+    <td data-label="Attribute Value">type='video/ogg; codecs="theora, vorbis"'</td>
   </tr>
   <tr>
-  <td>Vorbis audio in an Ogg container</td>
-  <td>
-  type='audio/ogg; codecs=vorbis'
-  </td>
+    <td data-label="Type">Vorbis audio in an Ogg container</td>
+    <td data-label="Attribute Value">type='audio/ogg; codecs=vorbis'</td>
   </tr>
   <tr>
-  <td>WebM video in a Matroska container</td>
-  <td>
-  type='video/webm; codecs="vp8, vorbis"'
-  </td>
+    <td data-label="Type">WebM video in a Matroska container</td>
+    <td data-label="Attribute Value">type='video/webm; codecs="vp8, vorbis"'</td>
   </tr>
   <tr>
-  <td>Simple baseline H.264 video and low complexity AAC audio in an MP4 container</td>
-  <td>
-  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-  </td>
+    <td data-label="Type">Simple baseline H.264 video and low complexity AAC audio in an MP4 container</td>
+    <td data-label="Attribute Value">type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'</td>
   </tr>
   <tr>
-  <td>MPEG-4 visual simple profile and low media source filescomplexity AAC audio in an MP4 container</td>
-  <td>
-  type='video/mp4; codecs="mp4v.20.8, mp4a.40.2"'
-  </td>
+    <td data-label="Type">MPEG-4 visual simple profile and low media source filescomplexity AAC audio in an MP4 container</td>
+    <td data-label="Attribute Value">type='video/mp4; codecs="mp4v.20.8, mp4a.40.2"'</td>
   </tr>
   </tbody>
   </table>
@@ -447,28 +439,20 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
   </tr></thead>
   <tbody>
   <tr>
-  <td>
-  load()
-  </td>
-  <td>Loads the media file and prepares it for playback. Normally does not need to be called unless the element itself is dynamically created. Useful for loading in advance of actual playback.</td>
+    <td data-label="Function">load()</td>
+    <td data-label="Behavior">Loads the media file and prepares it for playback. Normally does not need to be called unless the element itself is dynamically created. Useful for loading in advance of actual playback.</td>
   </tr>
   <tr>
-  <td>
-  play()
-  </td>
-  <td>Loads (if necessary) and plays the media file. Plays from the beginning unless the media is already paused at another position.</td>
+    <td data-label="Function">play()</td>
+    <td data-label="Behavior">Loads (if necessary) and plays the media file. Plays from the beginning unless the media is already paused at another position.</td>
   </tr>
   <tr>
-  <td>
-  pause()
-  </td>
-  <td>Pauses playback if currently active.</td>
+    <td data-label="Function">pause()</td>
+    <td data-label="Behavior">Pauses playback if currently active.</td>
   </tr>
   <tr>
-  <td>
-  canPlayType(type)
-  </td>
-  <td>Tests to see whether the video element can play a hypothetical file of the given MIME type.</td>
+    <td data-label="Function">canPlayType(type)</td>
+    <td data-label="Behavior">Tests to see whether the video element can play a hypothetical file of the given MIME type.</td>
   </tr>
   </tbody>
   </table>
@@ -491,40 +475,40 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
   </tr></thead>
   <tbody>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   duration
   </td>
-  <td>The duration of the full media clip, in seconds. If the full duration is not known, NaN is returned.</td>
+  <td data-label="Value">The duration of the full media clip, in seconds. If the full duration is not known, NaN is returned.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   paused
   </td>
-  <td>Returns true if the media clip is currently paused. Defaults to true if the clip has not started playing.</td>
+  <td data-label="Value">Returns true if the media clip is currently paused. Defaults to true if the clip has not started playing.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   ended
   </td>
-  <td>Returns true if the media clip has finished playing.</td>
+  <td data-label="Value">Returns true if the media clip has finished playing.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   startTime
   </td>
-  <td>Returns the earliest possible value for playback start time. This will usually be 0.0 unless the media clip is streamed and earlier content has left the buffer.</td>
+  <td data-label="Value">Returns the earliest possible value for playback start time. This will usually be 0.0 unless the media clip is streamed and earlier content has left the buffer.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   error
   </td>
-  <td>An error code, if an error has occurred.</td>
+  <td data-label="Value">An error code, if an error has occurred.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Read-only Attribute">
   currentSrc
   </td>
-  <td>Returns the string representing the file that is currently being displayed or loaded. This will match the source element selected by the browser.</td>
+  <td data-label="Value">Returns the string representing the file that is currently being displayed or loaded. This will match the source element selected by the browser.</td>
   </tr>
   </tbody>
   </table>
@@ -542,46 +526,46 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
   </tr></thead>
   <tbody>
   <tr>
-  <td>
+  <td data-label="Attribute">
   autoplay
   </td>
-  <td>Sets the media clip to play upon creation or query whether it is set to autoplay.</td>
+  <td data-label="Value">Sets the media clip to play upon creation or query whether it is set to autoplay.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   loop
   </td>
-  <td>Returns true if the clip will restart upon ending or sets the clip to loop (or not loop).</td>
+  <td data-label="Value">Returns true if the clip will restart upon ending or sets the clip to loop (or not loop).</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   currentTime
   </td>
-  <td>Returns the current time in seconds that has elapsed since the beginning of the playback. Sets currentTime to seek to a specific position in the clip playback.</td>
+  <td data-label="Value">Returns the current time in seconds that has elapsed since the beginning of the playback. Sets currentTime to seek to a specific position in the clip playback.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   controls
   </td>
-  <td>Shows or hides the user controls, or queries whether they are currently visible.</td>
+  <td data-label="Value">Shows or hides the user controls, or queries whether they are currently visible.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   volume
   </td>
-  <td>Sets the audio volume to a relative value between 0.0 and 1.0, or queries the value of the same.</td>
+  <td data-label="Value">Sets the audio volume to a relative value between 0.0 and 1.0, or queries the value of the same.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   muted
   </td>
-  <td>Mutes or unmutes the audio, or determines the current mute state.</td>
+  <td data-label="Value">Mutes or unmutes the audio, or determines the current mute state.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   autobuffer
   </td>
-  <td>Tells the player whether or not to attempt to load the media file before playback is initiated. If the media is set for auto-playback, this attribute is ignored.</td>
+  <td data-label="Value">Tells the player whether or not to attempt to load the media file before playback is initiated. If the media is set for auto-playback, this attribute is ignored.</td>
   </tr>
   </tbody>
   </table>
@@ -669,22 +653,22 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
   </tr></thead>
   <tbody>
   <tr>
-  <td>
+  <td data-label="Attribute">
   poster
   </td>
-  <td>The URL of an image file used to represent the video content before it has loaded. Think “movie poster.” This attribute can be read or altered to change the poster.</td>
+  <td data-label="Value">The URL of an image file used to represent the video content before it has loaded. Think “movie poster.” This attribute can be read or altered to change the poster.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   width, height
   </td>
-  <td>Read or set the visual display size. This may cause centering, letterboxing, or pillaring if the set width does not match the size of the video itself.</td>
+  <td data-label="Value">Read or set the visual display size. This may cause centering, letterboxing, or pillaring if the set width does not match the size of the video itself.</td>
   </tr>
   <tr>
-  <td>
+  <td data-label="Attribute">
   videoWidth, videoHeight
   </td>
-  <td>Return the intrinsic or natural width and height of the video. They cannot be set.</td>
+  <td data-label="Value">Return the intrinsic or natural width and height of the video. They cannot be set.</td>
   </tr>
   </tbody>
   </table>
