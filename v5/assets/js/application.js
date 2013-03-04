@@ -126,6 +126,7 @@ APRI.CME = { // CodeMirror editors
    var currentCode = iEditor.editor.getValue();
    if (iEditor.cache !== currentCode) {
      iEditor.cache = currentCode;
+     iEditor.save(); // auto-save
      var previewFrame = jQuery('#preview', iEditor.container).get(0);
      var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
      preview.open();
@@ -159,12 +160,12 @@ APRI.CME = { // CodeMirror editors
      }
    });
    this.resetControl.bind('click', function (evt) {
-     evt.stopPropagation();
+     // evt.stopPropagation();
      evt.preventDefault();
      me.reset();
    });
    this.saveControl.bind('click', function (evt) {
-     evt.stopPropagation();
+     // evt.stopPropagation();
      evt.preventDefault();
      me.save();
    });
@@ -174,6 +175,7 @@ APRI.CME = { // CodeMirror editors
      me.container.html('');
    };
    this.retrieve();
+   this.saveControl.hide(); // auto-save
    // this.reset();
    // jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
    jQuery('#preview', this.container).height(this.previewHeight);
@@ -192,7 +194,7 @@ APRI.CME = { // CodeMirror editors
    });
    // bind the trigger events
    jQuery(".show-inline-editor:not('.open')").bind('click', function (evt) {
-     evt.stopPropagation();
+     // evt.stopPropagation();
      evt.preventDefault();
      var $this = jQuery(this);
      var $figure = $this.parents('figure:first');
@@ -203,7 +205,7 @@ APRI.CME = { // CodeMirror editors
      jQuery('.static-code-container:first', $figure).hide();
    });
    jQuery('.close-inline-editor').bind('click', function (evt) {
-     evt.stopPropagation();
+     // evt.stopPropagation();
      evt.preventDefault();
      var $this = jQuery(this);
      var $figure = $this.parents('figure:first');
