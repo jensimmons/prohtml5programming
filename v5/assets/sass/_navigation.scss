@@ -180,8 +180,6 @@ a.fs-larger {
   z-index: 100;
   top: 0;
   right: 0;
-  font-family: $sourcesans-light;
-  color: lighten($text, 50%);
   padding: 0 0 0 1em;
   a {
     display: block;
@@ -212,6 +210,8 @@ a.fs-larger {
   position:absolute;
 }
 ul.toc-dropdown {
+  font-family: $sourcesans-light;
+  color: lighten($text, 50%);
   list-style: none;
   border: 1px solid #ddd;
   border-color: #ddd #ddd #999999 #999999;
