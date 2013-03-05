@@ -17,6 +17,11 @@
 // Import fonts
 @import "fontface";
 
+// Import CodeMirror styling
+@import "codemirror_base";
+@import "codemirror_ambiance";
+@import "codemirror_static";
+
 // General Book Styling
 @import "typography";
 @import "layout";
@@ -30,4 +35,3 @@
 
 // Import CSS for the Dashboard
 @import "dashboard";
-
