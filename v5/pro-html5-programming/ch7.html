@@ -322,9 +322,10 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 
 </aside><aside>
 <h3>Note</h3>
-<p>If you are implementing a WebSocket server, you should refer to the protocol draft at the IETF at <code>http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol or the latest specification</code>.</p>
+<p>If you are implementing a WebSocket server, you should refer to the protocol draft at the IETF at <a href="http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol">tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol</a> or the latest specification.</p>
+</aside>
 
-</aside><pre><code># write out response headers
+<pre><code># write out response headers
 self.send_bytes("HTTP/1.1 101 Switching Protocols\r\n")
 self.send_bytes("Upgrade: WebSocket\r\n")
 self.send_bytes("Connection: Upgrade\r\n")
@@ -332,12 +333,6 @@ self.send_bytes("Sec-WebSocket-Accept: %s\r\n" % self.hash_key(key))
 if "Sec-WebSocket-Protocol" in headers:
     protocol = headers["Sec-WebSocket-Protocol"]
     self.send_bytes("Sec-WebSocket-Protocol: %s\r\n" % protocol)</code></pre>
-
-
-
-
-
-
 
 <section id="sec9_7">
 <a id="hdr_sec9_7" class="section-anchor"></a>
