@@ -742,9 +742,9 @@ div[role='main'] h1 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003104}}
 .purchased-books img {
   display: block;
-  -webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 18px 12px -12px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 18px 12px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 18px 12px -12px rgba(0, 0, 0, 0.5);
   margin-bottom: 2em;
   width: 100%;
 }
@@ -803,8 +803,11 @@ div[role='main'] h1 {
 .recommendations img {
   margin: 0 1em 0.5em 0;
   float: left;
+  -webkit-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.3);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003156}}
 .recommendations p {
   text-indent: 0;
   margin: 0.5em;
@@ -813,35 +816,35 @@ div[role='main'] h1 {
   line-height: 1.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003169}}
 .wrapper {
   width: 90%;
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003173}}
 div[role='main'] {
   width: 90%;
   margin: 0 auto;
   padding: 0 0 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003177}}
 div[role='main'] .wrapper {
   margin-top: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003180}}
 div[role='main'] li {
   overflow: hidden;
   *zoom: 1;
 }
 
 @media screen and (min-width: 30em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003185}}
   div[role='main'] {
     width: 100%;
     margin: 0 auto;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003188}}
   div[role='main'] li {
     float: left;
     margin: 0 5%;
@@ -849,7 +852,7 @@ div[role='main'] li {
   }
 }
 @media screen and (min-width: 35em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003197}}
   div[role='main'] li {
     float: left;
     margin: 1em 5% 1em 0;
@@ -857,7 +860,7 @@ div[role='main'] li {
   }
 }
 @media screen and (min-width: 40em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003206}}
   div[role='main'] li {
     float: left;
     margin: 1em 5% 1em 0;
@@ -865,7 +868,7 @@ div[role='main'] li {
   }
 }
 @media screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003215}}
   div[role='main'] li {
     float: left;
     margin: 1em 5% 1em 0;

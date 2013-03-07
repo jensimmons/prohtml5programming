@@ -103,7 +103,7 @@ div[role='main'] {
   }
   img {
     display: block;
-    @include box-shadow (0px 3px 10px 0 rgba(0, 0, 0, 0.5));
+    @include box-shadow (0 18px 12px -12px rgba(0, 0, 0, 0.5));
     margin-bottom: 2em;
     width: 100%;
 
@@ -151,6 +151,7 @@ div[role='main'] {
   img {
     margin: 0 1em 0.5em 0;
     float: left;
+    @include box-shadow (0 6px 4px -4px rgba(0, 0, 0, 0.3));
   }
   p {
     text-indent: 0;
