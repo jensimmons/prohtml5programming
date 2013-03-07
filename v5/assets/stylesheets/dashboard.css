@@ -1,0 +1,874 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000322}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000332}}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000343}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000354}}
+[hidden] {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000369}}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000384}}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\0000392}}
+body {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003104}}
+a:focus {
+  outline: thin dotted;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003113}}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003127}}
+Typography
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003132}}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003137}}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003142}}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003147}}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003152}}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003161}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003170}}
+b,
+strong {
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003174}}
+blockquote {
+  margin: 1em 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003182}}
+dfn {
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003190}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003200}}
+p,
+pre {
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003211}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003221}}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003231}}
+q {
+  quotes: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003240}}
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003249}}
+small {
+  font-size: 80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003258}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003265}}
+sup {
+  top: -0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003269}}
+sub {
+  bottom: -0.25em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003284}}
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003288}}
+dd {
+  margin: 0 0 0 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003298}}
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003307}}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003321}}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003330}}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003342}}
+figure {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003354}}
+form {
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003362}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003374}}
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003391}}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003404}}
+button,
+input {
+  line-height: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003421}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003432}}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003444}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003457}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003470}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003479}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003489}}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_normalize\.scss}line{font-family:\00003502}}
+Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000310}}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000313}}
+img {
+  max-width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000361}}
+* html {
+  font-size: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/_vertical_rhythm\.scss}line{font-family:\0000364}}
+html {
+  font-size: 16px;
+  line-height: 1.625em;
+}
+
+@font-face {
+  font-family: 'SourceSansProSemiboldItalic';
+  src: url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-SemiboldIt-webfont.svg#SourceSansProSemiboldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBold';
+  src: url("../fonts/source-sans/SourceSansPro-Bold-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Bold-webfont.svg#SourceSansProBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBoldItalic';
+  src: url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-BoldIt-webfont.svg#SourceSansProBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBlack';
+  src: url("../fonts/source-sans/SourceSansPro-Black-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Black-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Black-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Black-webfont.svg#SourceSansProBlack") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProBlackItalic';
+  src: url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-BlackIt-webfont.svg#SourceSansProBlackItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProExtraLight';
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-ExtraLight-webfont.svg#SourceSansProExtraLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProExtraLightItalic';
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-ExtraLightIt-webfont.svg#SourceSansProExtraLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProLight';
+  src: url("../fonts/source-sans/SourceSansPro-Light-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Light-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Light-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Light-webfont.svg#SourceSansProLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProLightItalic';
+  src: url("../fonts/source-sans/SourceSansPro-LightIt-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-LightIt-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-LightIt-webfont.svg#SourceSansProLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProRegular';
+  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Regular-webfont.svg#SourceSansProRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProItalic';
+  src: url("../fonts/source-sans/SourceSansPro-It-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-It-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-It-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-It-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-It-webfont.svg#SourceSansProItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansProSemibold';
+  src: url("../fonts/source-sans/SourceSansPro-Semibold-webfont.eot");
+  src: url("../fonts/source-sans/SourceSansPro-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.woff") format("woff"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.ttf") format("truetype"), url("../fonts/source-sans/SourceSansPro-Semibold-webfont.svg#SourceSansProSemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =============================================================================
+   Typography
+
+   To achieve a pleasant vertical rhythm, we use Compass' Vertical Rhythm mixins
+   so that the line height of our base font becomes the basic unit of vertical
+   measurement. We use multiples of that unit to set the top and bottom margins
+   for our block level elements and to set the line heights of any fonts.
+   For more information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000311}}
+body {
+  font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+  color: #1b1d1e;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000316}}
+h1, h2, h3, h4, h5, h6 {
+  font-family: SourceSansProSemibold, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-weight: 500;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000320}}
+h1 {
+  font-size: 2em;
+  line-height: 1.625em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000323}}
+h1 + h1 {
+  margin-top: 0em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000326}}
+h2 {
+  font-size: 1.85em;
+  line-height: 1.75676em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  line-height: 1.05405em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000332}}
+h3 {
+  font-size: 1.3em;
+  line-height: 1.25em;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  line-height: 1.05405em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000338}}
+h4 {
+  font-size: 1.2em;
+  line-height: 1.35417em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000343}}
+h5 {
+  font-size: 1em;
+  line-height: 1.625em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000348}}
+h6 {
+  font-size: 0.83em;
+  line-height: 1.95783em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000354}}
+p {
+  margin: 0.65em 0;
+  text-indent: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000357}}
+p.noindent, p.caption p {
+  text-indent: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000360}}
+p.caption {
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000362}}
+.lightbox p.caption {
+  color: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000370}}
+a,
+a:link,
+a:visited {
+  color: #b12b0a;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000374}}
+a:hover, a:focus,
+a:link:hover,
+a:link:focus,
+a:visited:hover,
+a:visited:focus {
+  color: #e1370d;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000378}}
+a.section-anchor {
+  display: block;
+  padding-top: 55px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000383}}
+::-moz-selection {
+  background: #ffee98;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000387}}
+::selection {
+  background: #ffee98;
+  text-shadow: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000392}}
+img {
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\0000395}}
+figcaption {
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  color: #4b5154;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003101}}
+blockquote {
+  margin: 0.8125em 24px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003104}}
+cite {
+  margin: 0.8125em 24px;
+  font-size: 0.75em;
+  line-height: 2.16667em;
+  color: #636b6f;
+  font-style: normal;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003111}}
+canvas {
+  background: #fff;
+  margin: 1.625em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003116}}
+pre {
+  margin: 0.5em 0 1em 24px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003119}}
+.static-code-container {
+  font-size: 0.8125em;
+  line-height: 2em;
+  line-height: 1em;
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003127}}
+code,
+kbd,
+samp {
+  margin: 1.625em 0;
+  font-size: 0.8125em;
+  line-height: 2em;
+  line-height: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003137}}
+dl,
+menu,
+ol,
+ul,
+.item-list ul {
+  margin: 0.8em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003140}}
+ul {
+  padding-left: 38.4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003143}}
+ol {
+  padding-left: 45.6px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/_typography\.scss}line{font-family:\00003147}}
+hr {
+  height: 1px;
+  border: 0;
+  border-bottom: 1px solid #555;
+  padding-bottom: -1px;
+  margin: 1.625em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000339}}
+html {
+  background: #E5E7EA;
+  background: url("../dashboard/retina_wood.png") repeat #fcfcfc;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000349}}
+header[role='banner'] {
+  background-color: #000;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(100%, #000000));
+  background-image: -webkit-linear-gradient(center top, #222222, #000000);
+  background-image: -moz-linear-gradient(center top, #222222, #000000);
+  background-image: -o-linear-gradient(center top, #222222, #000000);
+  background-image: linear-gradient(center top, #222222, #000000);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000352}}
+header[role='banner'] .outer-wrapper {
+  background: url("../dashboard/header.png") no-repeat right top;
+  padding: 1em 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000356}}
+header[role='banner'] h1 {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000359}}
+header[role='banner'] a {
+  color: #d3291a;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000361}}
+header[role='banner'] a:hover {
+  color: #f30;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000366}}
+header[role='banner'] img {
+  max-width: 45%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000369}}
+.user-menu {
+  float: right;
+  top: 0;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000380}}
+div[role='main'] {
+  background: #fff;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000384}}
+div[role='main'] h1 {
+  margin: 0;
+  line-height: 1em;
+  font-size: 1.125em;
+  line-height: 1.44444em;
+  color: #c10e01;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000391}}
+.purchased-books {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/typography\/lists\/_bullets\.scss}line{font-family:\0000311}}
+.purchased-books li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\0000395}}
+.purchased-books h2 {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003101}}
+.purchased-books a {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003104}}
+.purchased-books img {
+  display: block;
+  -webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003120}}
+.recommendations {
+  clear: both;
+  padding: 2em 0;
+  font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+  line-height: 1.4em;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003126}}
+.recommendations article {
+  overflow: hidden;
+  *zoom: 1;
+  margin: 1em 2% 0 0;
+  float: left;
+  width: 31%;
+  padding: 0.8em 0.75em 0.5em;
+  background: rgba(255, 255, 255, 0.2);
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, rgba(255, 255, 255, 0.01)), color-stop(100%, rgba(0, 0, 0, 0.05)));
+  background-image: -webkit-linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.05));
+  background-image: -moz-linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.05));
+  background-image: -o-linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.05));
+  background-image: linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0, 0, 0, 0.05));
+  -webkit-box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003139}}
+.recommendations h2 {
+  font-size: 1em;
+  line-height: 1.625em;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  line-height: 1.3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003146}}
+.recommendations h3, .recommendations h4 {
+  font-size: 0.875em;
+  line-height: 1.85714em;
+  font-weight: normal;
+  line-height: 1.3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003151}}
+.recommendations img {
+  margin: 0 1em 0.5em 0;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003155}}
+.recommendations p {
+  text-indent: 0;
+  margin: 0.5em;
+  font-size: 0.75em;
+  line-height: 2.16667em;
+  line-height: 1.4em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003168}}
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003172}}
+div[role='main'] {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 0 2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003176}}
+div[role='main'] .wrapper {
+  margin-top: 2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003179}}
+div[role='main'] li {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@media screen and (min-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003184}}
+  div[role='main'] {
+    width: 100%;
+    margin: 0 auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003187}}
+  div[role='main'] li {
+    float: left;
+    margin: 0 5%;
+    width: 45%;
+  }
+}
+@media screen and (min-width: 35em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003196}}
+  div[role='main'] li {
+    float: left;
+    margin: 1em 5% 1em 0;
+    width: 45%;
+  }
+}
+@media screen and (min-width: 40em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003205}}
+  div[role='main'] li {
+    float: left;
+    margin: 1em 5% 1em 0;
+    width: 30%;
+  }
+}
+@media screen and (min-width: 45em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/dashboard\.scss}line{font-family:\00003214}}
+  div[role='main'] li {
+    float: left;
+    margin: 1em 5% 1em 0;
+    width: 25%;
+  }
+}

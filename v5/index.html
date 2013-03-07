@@ -5,76 +5,123 @@
 <!--[if IE 8]>         <html class="ie8 ie7-8 ie6-8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Apress: Digital Book Series</title>
+  <title>Apress: Digital Book Series</title>
 
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS -->
-  	<link rel="stylesheet" href="assets/stylesheets/style.css" />
+<script src="https://get.gridsetapp.com/16808/overlay/"></script>
 
-    <!-- JavaScript -->
-    <!--[if (lt IE 9) & (!IEMobile)]>
-    <script src="js/selectivizr-min.js"></script>
-    <![endif]-->
-        
-    <script src="assets/js/jquery-1.8.0.min.js"></script>
-    <script src="assets/js/modernizr-latest.js"></script>
+  <!-- CSS -->
+	<link rel="stylesheet" href="assets/stylesheets/dashboard.css" />
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" /> <!-- For iPhone 3G, iPod Touch and Android -->
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" /> <!-- For iPad 1-->
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" /> <!-- For iPhone 4 -->
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" /> <!-- For the new iPad -->    
-    <link rel="shortcut icon" href="apple-touch-icon.png"> <!-- For Nokia -->
-    <link rel="shortcut icon" href="favicon.ico"> <!-- For everything else -->
-    
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Apress Books">
-    <link rel="apple-touch-startup-image" href="images/cover/cover.jpg">
-    
-    
-    <meta http-equiv="cleartype" content="on">
-
-  </head>
-
-  <body class="dashboard">
-
-    <div role="main">
-      <h1>My Dashboard</h1>
+  <!-- JavaScript -->
+  <!--[if (lt IE 9) & (!IEMobile)]>
+  <script src="js/selectivizr-min.js"></script>
+  <![endif]-->
       
-      <section class="purchased-books">
-        <h1>Purchased books</h1>
-        <ul>
-          <li>
-            <a href="pro-html5-programming/ch0.html">
-              <img src="pro-html5-programming/images/cover/cover_500.jpg">
-              <h2>Pro HTML5 Programming</h2>
-            </a>
-          </li>
-          <li>
-            <a href="pro-css3-animation/ch2.html">
-              <img src="pro-css3-animation/images/cover/cover_500.jpg">
-              <h2>Pro CSS3 Animation</h2>
-            </a>
-          </li>
-        </ul>
-      </section>
-      
+  <script src="assets/js/jquery-1.8.0.min.js"></script>
+  <script src="assets/js/modernizr-latest.js"></script>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" /> <!-- For iPhone 3G, iPod Touch and Android -->
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" /> <!-- For iPad 1-->
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" /> <!-- For iPhone 4 -->
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" /> <!-- For the new iPad -->    
+  <link rel="shortcut icon" href="apple-touch-icon.png"> <!-- For Nokia -->
+  <link rel="shortcut icon" href="favicon.ico"> <!-- For everything else -->
+  
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Apress Books">
+  <link rel="apple-touch-startup-image" href="images/cover/cover.jpg">
+  
+  
+  <meta http-equiv="cleartype" content="on">
+
+</head>
+
+<body class="dashboard">
+
+  <header role="banner">
+    <div class="outer-wrapper"><div class="wrapper">
+      <a href="http://apress.com"><img src="assets/dashboard/ApressLogo.gif" alt="Apress logo"></a>
+      <h1>My Apress Dashboard</h1>
       <nav class="user-menu">
         <a href="">My Account</a> | <a href="">Logout</a>
       </nav>
-      
-    </div>
+    </div></div>
+  </header>
+  
+  <div role="main"><div class="wrapper">
+
+    <h1>Purchased books and chapters</h1>
+    <ul class="purchased-books">
+      <li>
+        <a href="pro-html5-programming/ch0.html">
+          <img src="pro-html5-programming/images/cover/cover_500.jpg" alt="">
+          <h2>Pro HTML5 Programming</h2>
+        </a>
+      </li>
+      <li>
+        <a href="pro-css3-animation/ch2.html">
+          <img src="pro-css3-animation/images/cover/cover_500.jpg" alt="">
+          <h2>Pro CSS3 Animation</h2>
+        </a>
+      </li>
+    </ul>
+
+  </div></div>
+
+
+  <aside class="recommendations"><div class="wrapper">
+    <h2>Recommended for you</h2>
+
+    <article>
+      <a href="http://www.apress.com/web-development/css/9781430237808">
+        <img src="dashboard-images/A9781430237808-small.png">
+        <h3>Pro HTML5 and CSS3 Design Patterns</h3>
+      </a>
+      <h4>Michael Bowers, Dionysios Synodinos, Victor Sumner</h4>
+      <p>An update of Michael Bowers' Pro CSS and HTML Design Patterns to include the new features present in HTML5 and CSS3.</p>
+      <p><a href="http://www.apress.com/web-development/css/9781430237808">Learn More</a> | <a href="https://www.apress.com/wishlist/index/add/product/5105/">Add to Wishlist</a></p>
+    </article>
     
-  </body>
+
+    <article>
+      <a href="http://www.apress.com/web-development/css/9781430237860">
+        <img src="dashboard-images/A9781430237860-small.png">
+        <h3>The Essential Guide to HTML5 and CSS3 Web Design</h3>
+      </a>
+      <h4>Craig Grannell, Victor Sumner, Dionysios Synodinos</h4>
+      <p>A contemporary update of Craig Grannell's acclaimed <i>The Essential Guide to CSS and HTML Web Design</i> &#8212; now featuring coverage of HTML5 and CSS3!</p>
+      <p><a href="http://www.apress.com/web-development/css/9781430237860">Learn More</a> | <a href="https://www.apress.com/wishlist/index/add/product/5105/">Add to Wishlist</a></p>
+    </article>
+
+
+    <article>
+      <a href="http://www.apress.com/9781590598047">
+        <img src="dashboard-images/A9781590598047-small.png">
+        <h3>Pro CSS and HTML Design Patterns</h3>
+      </a>
+      <h4>Michael Bowers</h4>
+      <p>Pro CSS and HTML Design Patterns is a reference book and a cookbook on how to style web pages using CSS and XHTML. It contains 350 ready-to-use patterns you can copy and paste into your code. </p>
+      <p><a href="http://www.apress.com/9781590598047">Learn More</a> | <a href="https://www.apress.com/wishlist/index/add/product/1701/">Add to Wishlist</a></p>
+    </article>
+
+
+
+  </div></aside>    
+
+    
+  
+</body>
 
 </html>
