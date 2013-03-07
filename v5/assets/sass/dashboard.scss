@@ -125,10 +125,6 @@ div[role='main'] {
   @include clearfix;
   article {
     @include clearfix;
-    margin: 1em 2% 0 0;
-    float: left;
-    width: 31%;
-    padding: 0.8em 0.75em 0.5em;
     background: rgba(255, 255, 255, 0.2);
     @include background-image(linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0,0,0, 0.05)));
     @include box-shadow (inset 0 1px 4px 0 rgba(0, 0, 0, 0.2));
@@ -149,8 +145,6 @@ div[role='main'] {
     line-height: 1.3em;
   }
   img {
-    margin: 0 1em 0.5em 0;
-    float: left;
     @include box-shadow (0 6px 4px -4px rgba(0, 0, 0, 0.3));
   }
   p {
@@ -171,8 +165,6 @@ div[role='main'] {
   margin: 0 auto;
 }
 div[role='main'] {
-  width: 90%;
-  margin: 0 auto;
   padding: 0 0 2em;
   .wrapper {
     margin-top: 2em;
@@ -181,25 +173,43 @@ div[role='main'] {
     @include clearfix;
   }
 }
-@media screen and (min-width: 30em) { // 480px
+.recommendations {
+  article {
+    padding: 0.8em 0.75em 0.5em;  
+    margin: 1em 0;
+  }
+  img {
+    margin: 0 0 1em;
+  }
+}
+
+@media screen and (min-width: 17em) { // 272px
+  .recommendations {
+    img {
+      margin: 0 1em 0.5em 0;
+      float: left;
+    }
+  }
+}
+@media screen and (min-width: 25em) { // 400px
   div[role='main'] {
-  width: 100%;
-  margin: 0 auto;
     li {
       float: left;
-      margin: 0 5%;
-      width: 45%;
+      margin: 1em 4% 1em 0;
+      width: 46%;
+    }
+  }
+}
+@media screen and (min-width: 30em) { // 480px
+  .recommendations {
+    article {
+      margin: 1em 4% 0 0;
+      float: left;
+      width: 46%;
     }
   }
 }
 @media screen and (min-width: 35em) { // 560px
-  div[role='main'] {
-    li {
-      float: left;
-      margin: 1em 5% 1em 0;
-      width: 45%;
-    }
-  }
 }
 @media screen and (min-width: 40em) { // 640px
   div[role='main'] {
@@ -214,8 +224,15 @@ div[role='main'] {
   div[role='main'] {
     li {
       float: left;
-      margin: 1em 5% 1em 0;
-      width: 25%;
+      margin: 1em 4% 1em 0;
+      width: 22%;
+    }
+  }
+  .recommendations {
+    article {
+      margin: 1em 3% 0 0;
+      float: left;
+      width: 30%;
     }
   }
 }
