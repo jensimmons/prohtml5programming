@@ -156,7 +156,7 @@ APRI.CME = { // CodeMirror editors
      lineNumbers: true,
      onChange: function () {
        window.clearTimeout(me.delay);
-       me.delay = window.setTimeout(APRI.CME.updatePreview, 300, [me]);
+       me.delay = window.setTimeout(function () { APRI.CME.updatePreview([me]) }, 300);
      }
    });
    this.resetControl.bind('click', function (evt) {

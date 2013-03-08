@@ -1,4 +1,4 @@
-/* Default theme */
+// Default theme
 
 .cm-s-static span.cm-keyword {color: #2E6CC2;}
 .cm-s-static span.cm-atom {color: #2E6CC2;}
@@ -23,7 +23,7 @@
 .cm-s-static span.cm-quote {color: #2E6CC2;}
 .cm-s-static span.cm-hr {color: #2E6CC2;}
 .cm-s-static span.cm-link {color: #2E6CC2;}
-/* hmn, no default color? */
+// hmn, no default color? 
 .cm-s-static pre {color: #2e6cc2; }
 
 .cm-s-static pre.cm-strong {font-weight: bold !important;}
@@ -35,9 +35,6 @@ span.cm-link {text-decoration: underline;}
 
 div.CodeMirror .cm-s-static span.CodeMirror-matchingbracket {color: #2E6CC2;}
 div.CodeMirror .cm-s-static span.CodeMirror-nonmatchingbracket {color: #2E6CC2;}
-div.CodeMirror pre {
-  line-height: 1.7em;
-}
 
 
 

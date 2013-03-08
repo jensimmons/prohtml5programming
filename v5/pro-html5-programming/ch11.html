@@ -28,9 +28,6 @@
     <link rel="shortcut icon" href="favicon.ico">    
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/libraries/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/ambiance.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/static.css">
   	<link rel="stylesheet" href="../assets/stylesheets/style.css" />
 
     <!-- JavaScript -->
@@ -893,7 +890,7 @@ autoincrement, name)');
   <p>The Indexed Database API eschews query strings in favor of a low-level API that allows values to be stored directly in JavaScript objects. Values stored in the database can be retrieved by key or using indexes, and the API can be accessed in either synchronous or asynchronous manner. Like the WebSQL proposal, indexed databases are scoped by origin so that you can only access the storage created in your own web pages.</p>
   <p>Creation or modification of Indexed Database storage is done under the context of transactions, which can be classified as either READ_ONLY, READ_WRITE, or VERSION_CHANGE. While the first two may be self-explanatory, the VERSION_CHANGE transaction type is used whenever an operation will modify the structure of the database.</p>
   <p>Retrieving records from an Indexed Database is done via a cursor object. A cursor object iterates over a range of records in either increasing or decreasing order. At any time a cursor either has a value or does not, due to the fact that it is either in the process of loading or has reached the end of its iteration.</p>
-  <p>A detailed description of the Indexed Database API is beyond the scope of this book. If you are intending to implement a query engine on top of the built-in API, you should consult the official specification at <a href="http://www.w3.org/TR/IndexedDB/" target="_blank">http://www.w3.org/TR/IndexedDB/</a>. Otherwise, you would be wise to wait for one of the proposed engines layered on top of the standard to be made available to use a more developer-friendly database API. At this point, no third-party libraries have gained prominence or significant backing.</p>
+  <p>A detailed description of the Indexed Database API is beyond the scope of this book. If you are intending to implement a query engine on top of the built-in API, you should consult the official specification at <a href="http://www.w3.org/TR/IndexedDB/">http://www.w3.org/TR/IndexedDB/</a>. Otherwise, you would be wise to wait for one of the proposed engines layered on top of the standard to be made available to use a more developer-friendly database API. At this point, no third-party libraries have gained prominence or significant backing.</p>
 
   <aside>
     <h3>Why Use a Hammer&#x2026;</h3>

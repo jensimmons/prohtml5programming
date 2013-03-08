@@ -14,7 +14,7 @@
 }
 
 h1.book-title {
-  @include adjust-font-size-to(14px);
+  font-size: 14px;
   text-align: center;
   font-style: italic;  
   font-family: $sourcesans-light;
@@ -124,7 +124,13 @@ nav#menu {
     }
   }
 }
-
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)  {
+  nav#jPanelMenu-menu,
+  nav#menu {
+    background-image: url('../images/background@2X.png');
+    background-size: 50%; 
+  }
+}
 
 //-----------------------------------------------------------------------
 // Font size controls
@@ -180,8 +186,6 @@ a.fs-larger {
   z-index: 100;
   top: 0;
   right: 0;
-  font-family: $sourcesans-light;
-  color: lighten($text, 50%);
   padding: 0 0 0 1em;
   a {
     display: block;
@@ -212,6 +216,8 @@ a.fs-larger {
   position:absolute;
 }
 ul.toc-dropdown {
+  font-family: $sourcesans-light;
+  color: lighten($text, 50%);
   list-style: none;
   border: 1px solid #ddd;
   border-color: #ddd #ddd #999999 #999999;
@@ -253,7 +259,7 @@ ul.toc-dropdown {
       @include box-shadow (0 1px 2px 0 rgba(0, 0, 0, 0.1));
       padding: 0.45em 1em 0.22em;
       text-align: center;
-      width: 50%;    
+      width: 10em;    
     }
   }
 }

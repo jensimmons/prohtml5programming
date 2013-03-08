@@ -28,9 +28,6 @@
     <link rel="shortcut icon" href="favicon.ico">    
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/libraries/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/ambiance.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/static.css">
   	<link rel="stylesheet" href="../assets/stylesheets/style.css" />
 
     <!-- JavaScript -->
@@ -268,19 +265,13 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 </ul>
 <p>That’s an enormous amount of unnecessary network overhead. Consider if we rebuilt the application to use WebSocket, adding an event handler to the web page to asynchronously listen for stock update messages from the message broker (more on that in just a little bit). Each of these messages is a WebSocket frame that has as little as two bytes of overhead (instead of 871). Take a look at how that affects the <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>network overhead</tertiary></span>network overhead in our three use cases.</p>
 <ul>
-<li><strong>Use case A</strong>: 1,000 clients receive 1 message per second: Network traffic is</p>
-
-<p>(2 × 1,000) = 2,000 bytes = 16,000 bits per second (0.015 Mbps)</li>
-<li><strong>Use case B</strong>: 10,000 clients receive 1 message per second: Network traffic is</p>
-
-<p>(2 × 10,000) = 20,000 bytes = 160,000 bits per second (0.153 Mbps)</li>
-<li><strong>Use case C:</strong> 100,000 clients receive 1 message per second: Network traffic is</p>
-
-<p>(2 × 100,000) = 200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</li>
+<li><strong>Use case A</strong>: 1,000 clients receive 1 message per second: Network traffic is<br />(2 × 1,000) = 2,000 bytes = 16,000 bits per second (0.015 Mbps)</li>
+<li><strong>Use case B</strong>: 10,000 clients receive 1 message per second: Network traffic is<br />(2 × 10,000) = 20,000 bytes = 160,000 bits per second (0.153 Mbps)</li>
+<li><strong>Use case C:</strong> 100,000 clients receive 1 message per second: Network traffic is<br />
+  (2 × 100,000) = 200,000 bytes = 1,600,000 bits per second (1.526 Mbps)</li>
 </ul>
-<p>As you can see in <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>vs. polling solution</tertiary></span>Figure <span class="internal-reference" id="ir_fig4_7">7-4</span>, WebSocket provides a dramatic reduction of unnecessary network traffic compared to the polling solution.
+<p>As you can see in <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>vs. polling solution</tertiary></span>Figure <span class="internal-reference" id="ir_fig4_7">7-4</span>, WebSocket provides a dramatic reduction of unnecessary network traffic compared to the polling solution.</p>
 
-</p>
 <figure id="fig4_7" class="image"><img src="images/ch7/fig7-4.gif"><figcaption>Figure 7-4. Comparison of the unnecessary network overhead between the polling WebSocket traffic <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>vs. polling solution</tertiary></span>
 </figcaption></figure><p>And what about the reduction <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>reduction</tertiary></span>in latency? Take a look at Figure <span class="internal-reference" id="ir_fig5_7">7-5</span>. In the top half, you can see the latency of the<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>half-duplex polling solution</tertiary></span> half-duplex polling solution. If we assume, for this example, that it takes 50 milliseconds for a message to travel from the server to the browser, then the polling application introduces a lot of extra latency, because a new request has to be sent to the server when the response is complete. This new request takes another 50 ms and during this time the server cannot send any messages to the browser, resulting in additional server memory consumption.
 
@@ -325,9 +316,10 @@ Date: Sat, 07 Nov 2009 00:32:46 GMT</code></pre></figure><p>Just for fun (ha!), 
 
 </aside><aside>
 <h3>Note</h3>
-<p>If you are implementing a WebSocket server, you should refer to the protocol draft at the IETF at <code>http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol or the latest specification</code>.</p>
+<p>If you are implementing a WebSocket server, you should refer to the protocol draft at the IETF at <a href="http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol">tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol</a> or the latest specification.</p>
+</aside>
 
-</aside><pre><code># write out response headers
+<pre><code># write out response headers
 self.send_bytes("HTTP/1.1 101 Switching Protocols\r\n")
 self.send_bytes("Upgrade: WebSocket\r\n")
 self.send_bytes("Connection: Upgrade\r\n")
@@ -335,12 +327,6 @@ self.send_bytes("Sec-WebSocket-Accept: %s\r\n" % self.hash_key(key))
 if "Sec-WebSocket-Protocol" in headers:
     protocol = headers["Sec-WebSocket-Protocol"]
     self.send_bytes("Sec-WebSocket-Protocol: %s\r\n" % protocol)</code></pre>
-
-
-
-
-
-
 
 <section id="sec9_7">
 <a id="hdr_sec9_7" class="section-anchor"></a>

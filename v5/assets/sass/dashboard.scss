@@ -1,0 +1,254 @@
+
+// Import Compass: http://compass-style.org
+@import "compass";
+
+// Import additional mixins
+@import "mixins";
+
+// Reset
+@import "normalize";
+* {
+  @include box-sizing(border-box);
+}
+img {
+    max-width: 100%;
+}
+
+// Set universal variables
+@import "variables";
+
+// Import fonts
+@import "fontface";
+
+// General Styling
+@import "typography";
+//@import "layout";
+//@import "page";
+//@import "navigation";
+//@import "code";
+//@import "cover";
+//@import "introduction";
+
+@import "gridset";
+
+
+//-----------------------------------------------------------------------
+// Whole Page
+//-----------------------------------------------------------------------
+
+html {
+  background: #E5E7EA;
+  background: url("../dashboard/retina_wood.png") repeat #fcfcfc;
+}
+
+
+//-----------------------------------------------------------------------
+// Header
+//-----------------------------------------------------------------------
+
+header[role='banner'] {
+  background-color: #000;
+  @include background-image(linear-gradient(center top, #222, #000));
+  .outer-wrapper {
+    background: url("../dashboard/header.png") no-repeat right top;
+    padding: 1em 0;
+  }
+  h1 {
+    @include element-invisible;
+  }
+  a {
+    color: $apress-red; 
+    &:hover {
+      color: #f30;
+    }
+  }
+}
+header[role='banner'] img {
+  max-width: 45%;
+}
+.user-menu {
+  float: right;
+  top: 0;
+  font-family: $accent-font;
+}
+
+
+//-----------------------------------------------------------------------
+// Main Content
+//-----------------------------------------------------------------------
+
+div[role='main'] {
+  background: #fff;
+  @include clearfix;
+//  @include box-shadow (inset 0 0 5px 0 rgba(0, 0, 0, 0.4));
+  h1 {
+    margin: 0;
+    line-height: 1em;
+    @include adjust-font-size-to(18px);
+    color: #c10e01; 
+  }
+}
+.purchased-books { 
+  @include no-bullets;
+  padding: 0;
+  margin: 0;
+  h2 {
+    @include element-invisible;
+  }
+  li {
+
+  }
+  a {
+    display: block;
+  }
+  img {
+    display: block;
+    @include box-shadow (0 18px 12px -12px rgba(0, 0, 0, 0.5));
+    margin-bottom: 2em;
+    width: 100%;
+
+//    -webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.66, transparent), to(rgba(255, 255, 255, 0.2)));
+//    margin-bottom: 8em;
+  }
+}
+
+
+//-----------------------------------------------------------------------
+// Secondary Content
+//-----------------------------------------------------------------------
+
+.recommendations {
+  clear: both;
+  padding: 2em 0;
+  font-family: $sourcesans;
+  line-height: 1.4em;
+  @include clearfix;
+  article {
+    @include clearfix;
+    background: rgba(255, 255, 255, 0.2);
+    @include background-image(linear-gradient(center bottom, rgba(255, 255, 255, 0.01), rgba(0,0,0, 0.05)));
+    @include box-shadow (inset 0 1px 4px 0 rgba(0, 0, 0, 0.2));
+    @include border-radius (8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  h2 {
+    @include adjust-font-size-to(16px);
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: 1.3em;
+  }
+  h3, h4 {
+    @include adjust-font-size-to(14px);
+    font-weight: normal;
+    line-height: 1.3em;
+  }
+  img {
+    @include box-shadow (0 6px 4px -4px rgba(0, 0, 0, 0.3));
+  }
+  p {
+    text-indent: 0;
+    margin: 0.5em;
+    @include adjust-font-size-to(12px);
+    line-height: 1.4em;
+  }
+}
+
+
+//-----------------------------------------------------------------------
+// Layout
+//-----------------------------------------------------------------------
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+div[role='main'] {
+  padding: 0 0 2em;
+  .wrapper {
+    margin-top: 2em;
+  }
+  li {
+    @include clearfix;
+  }
+}
+.recommendations {
+  article {
+    padding: 0.8em 0.75em 0.5em;  
+    margin-top: 1em;
+  }
+  img {
+    margin: 0 0 1em;
+  }
+}
+
+
+@media screen and (min-width: 17em) { // 272px
+  .recommendations {
+    img {
+      margin: 0 1em 0.5em 0;
+      float: left;
+    }
+  }
+}
+@media screen and (min-width: 25em) { // 400px
+  div[role='main'] {
+    li {
+      float: left;
+      margin: 1em 4% 1em 0;
+      width: 46%;
+    }
+  }
+}
+@media screen and (min-width: 30em) { // 480px
+  .recommendations {
+    article {
+      width: 47.95%;
+      float: left;
+      margin-right: -100%;
+    }
+    article:nth-child(odd) {
+      margin-left: 51.95%;
+    }
+    article:nth-child(even) {
+      clear: both;
+    }
+  }
+}
+@media screen and (min-width: 35em) { // 560px
+}
+@media screen and (min-width: 40em) { // 640px
+  div[role='main'] {
+    li {
+      float: left;
+      margin: 1em 5% 1em 0;
+      width: 30%;
+    }
+  }
+}
+@media screen and (min-width: 45em) { // 720px
+  div[role='main'] {
+    li {
+      float: left;
+      margin: 1em 4% 1em 0;
+      width: 22%;
+    }
+  }
+  .recommendations {
+    article {
+      float: left;
+      width: 31.6458%;
+      margin-right: -100%;  
+    }
+    article:nth-child(2) {
+      margin-left: 34.1458%;
+    }
+    article:nth-child(3) {
+      margin-left: 68.2917%;
+    }
+  }
+}
+
+
+

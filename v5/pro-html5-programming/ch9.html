@@ -28,9 +28,6 @@
     <link rel="shortcut icon" href="favicon.ico">    
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/libraries/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/ambiance.css">
-    <link rel="stylesheet" href="../assets/libraries/codemirror/theme/static.css">
   	<link rel="stylesheet" href="../assets/stylesheets/style.css" />
 
     <!-- JavaScript -->
@@ -110,21 +107,11 @@
 
 <p>For example, by handling the following DOM events, it is possible to move items around in a web page if you code a set of logical steps (and some caveats):</p>
 <ul>
-<li>
-<p><code>mousedown</code>: The user is starting some mouse operation. (Is it a drag or just a click?)</p>
-</li>
-<li>
-<p><code>mousemove</code>: If the mouse is not up yet, a move operation is starting. (Is it a drag or a select?)</p>
-</li>
-<li>
-<p><code>mouseover</code>: The mouse has moved over an element. (Is it one of the ones I want to drop on?)</p>
-</li>
-<li>
-<p><code>mouseout</code>: The mouse has left an element that will no longer be a possible place to drop. (Do I need to draw feedback?)</p>
-</li>
-<li>
-<p><code>mouseup</code>: The mouse has released, possibly triggering a drop operation. (Should the drop complete on this location based on where it started from?)</p>
-</li>
+<li><code>mousedown</code>: The user is starting some mouse operation. (Is it a drag or just a click?)</li>
+<li><code>mousemove</code>: If the mouse is not up yet, a move operation is starting. (Is it a drag or a select?)</li>
+<li><code>mouseover</code>: The mouse has moved over an element. (Is it one of the ones I want to drop on?)</li>
+<li><code>mouseout</code>: The mouse has left an element that will no longer be a possible place to drop. (Do I need to draw feedback?)</li>
+<li><code>mouseup</code>: The mouse has released, possibly triggering a drop operation. (Should the drop complete on this location based on where it started from?)</li>
 </ul>
 <p>Although modeling a crude drag-and-drop system using low-level events is possible, it suffers from some notable drawbacks. First, the logic necessary to handle the mouse events is more complex than you might imagine, as each of the listed events has many edge cases that must be accounted for. Although some were in the previous list, the reality is that there are enough of them to warrant their own chapter. During these events, CSS must be carefully updated to provide feedback to the user about the possibility of dragging or dropping at any particular location.</p>
 
@@ -158,15 +145,9 @@
 
 <p>So far, so good. But simply holding down the mouse and moving it to another part of an application is not what constitutes a drag-and-drop. Rather, it is the feedback during the operation that makes for a <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">successful interaction</span></span>successful interaction. Consider your own uses of drag-and-drop in past experiences; the ones that are the most intuitive are those where the system is giving constant updates to let you know what will happen if you release at this point in time:</p>
 <ul>
-<li>
-<p>Does the cursor indicate that the current position is a valid drop target, or does it imply a rejection with a “forbidden” cursor indicator?</p>
-</li>
-<li>
-<p>Does the cursor imply to the user that the operation will be a move, link, or a copy, such as with a “plus” sign indicator on the cursor?</p>
-</li>
-<li>
-<p>Does the area or target you are hovering over change its appearance in any way to indicate that it is currently selected as a drop if you release right now?</p>
-</li>
+<li>Does the cursor indicate that the current position is a valid drop target, or does it imply a rejection with a “forbidden” cursor indicator?</li>
+<li>Does the cursor imply to the user that the operation will be a move, link, or a copy, such as with a “plus” sign indicator on the cursor?</li>
+<li>Does the area or target you are hovering over change its appearance in any way to indicate that it is currently selected as a drop if you release right now?</li>
 </ul>
 <p>In order to give similar feedback<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">feedback</span></span> to users over the course of an HTML drag-and-drop operation, the browsers will emit a whole slew of events over the course of a single drag. This proves quite handy, as during these events we will have full power to change the DOM and style of the page elements to give just the type of feedback that users will be expecting.</p>
 
@@ -241,7 +222,7 @@
 
 <aside>
 <h3>Note</h3>
-<p>Microsoft has provided a great interactive demo of event models at <code>http://ie.microsoft.com/testdrive/HTML5/ComparingEventModels</code>.</p>
+<p>Microsoft has provided a great interactive demo of event models at <a href="http://ie.microsoft.com/testdrive/HTML5/ComparingEventModels">ie.microsoft.com/testdrive/HTML5/ComparingEventModels</a>.</p>
 
 </aside><p>Browsers also have default implementations for how some events will be handled. For example, when a user clicks on a page link, the default behavior is to navigate the browser to the destination specified by the link. Developers can prevent this by intercepting the event in a handler and calling <code>preventDefault</code> on it. This allows code to override the default behaviors of some built-in events. It is also how a developer can cancel a drag-and-drop operation in an event handler.</p>
 
@@ -348,42 +329,22 @@
 
 <p>As discussed in Listing 9-1, the <code>dataTransfer</code> is used to get and set the actual drop data during the negotiation between source and target. This is done using the following functions and properties:</p>
 <ul>
-<li>
-<p><code>setData(format, data)</code>: Calling this function during <code>dragStart</code> allows you to register one transfer item under a MIME type format.</p>
-</li>
-<li>
-<p><code>getData(format)</code>: This function allows the registered data item for a given type to be retrieved.</p>
-</li>
-<li>
-<p><code>types</code>: This property returns an array of all currently registered formats.</p>
-</li>
-<li>
-<p><code>items</code>: This property returns a list of all items and their associated formats together.</p>
-</li>
-<li>
-<p><code>files</code>: This property returns any files associated with the drop. This is discussed in more detail in a later section.</p>
-</li>
-<li>
-<p><code>clearData()</code>: Calling this function with no argument clears out all registered data. Calling it with a format argument removes only that specific registration.</p>
-</li>
+<li><code>setData(format, data)</code>: Calling this function during <code>dragStart</code> allows you to register one transfer item under a MIME type format.</li>
+<li><code>getData(format)</code>: This function allows the registered data item for a given type to be retrieved.</li>
+<li><code>types</code>: This property returns an array of all currently registered formats.</li>
+<li><code>items</code>: This property returns a list of all items and their associated formats together.</li>
+<li><code>files</code>: This property returns any files associated with the drop. This is discussed in more detail in a later section.</li>
+<li><code>clearData()</code>: Calling this function with no argument clears out all registered data. Calling it with a format argument removes only that specific registration.</li>
 </ul>
 <p>Two more functions can be used to alter the feedback during a drag operation:</p>
 <ul>
-<li>
-<p><code>setDragImage(element, x, y)</code><span class="index-term"><span class="primary">setDragImage</span></span>: Tells the browser to use an existing image element as the drag image, which will display alongside the cursor to hint to the user about the drag operation effects. If x and y coordinates are provided, then those coordinates will be considered as the drop point for the mouse.</p>
-</li>
-<li>
-<p><code>addElement(element)</code><span class="index-term"><span class="primary">addElement</span></span>: By calling this function with a provided page element, you tell the browser to draw that element as a drag feedback image.</p>
-</li>
+<li><code>setDragImage(element, x, y)</code><span class="index-term"><span class="primary">setDragImage</span></span>: Tells the browser to use an existing image element as the drag image, which will display alongside the cursor to hint to the user about the drag operation effects. If x and y coordinates are provided, then those coordinates will be considered as the drop point for the mouse.</li>
+<li><code>addElement(element)</code><span class="index-term"><span class="primary">addElement</span></span>: By calling this function with a provided page element, you tell the browser to draw that element as a drag feedback image.</li>
 </ul>
 <p>A final set of properties allows the developer to set and/or query the types of drag operations that are allowed:</p>
 <ul>
-<li>
-<p><code>effectAllowed</code><span class="index-term"><span class="primary">effectAllowed</span></span>: Setting this property to one of none, copy, copyLink, copyMove, link, linkMove, move, or all tells the browser that only the type(s) of operations listed here are to be allowed for the user. For example, if copy is set, only copy operations will be allowed, and move or link operations will be prevented.</p>
-</li>
-<li>
-<p><code>dropEffect</code><span class="index-term"><span class="primary">dropEffect</span></span>: This property can be used to determine which type of operation is currently underway or set to force a particular operation type. The types of operations are copy, link, and move. Or, the value none can be set to prevent any drop from happening at that point in time.</p>
-</li>
+<li><code>effectAllowed</code><span class="index-term"><span class="primary">effectAllowed</span></span>: Setting this property to one of none, copy, copyLink, copyMove, link, linkMove, move, or all tells the browser that only the type(s) of operations listed here are to be allowed for the user. For example, if copy is set, only copy operations will be allowed, and move or link operations will be prevented.</li>
+<li><code>dropEffect</code><span class="index-term"><span class="primary">dropEffect</span></span>: This property can be used to determine which type of operation is currently underway or set to force a particular operation type. The types of operations are copy, link, and move. Or, the value none can be set to prevent any drop from happening at that point in time.</li>
 </ul>
 <p>Together, these operations give a fine level of <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">event flow</span><tertiary>transfer and control</tertiary></span>control over drag-and-drop. Now, let’s see them in action.</p>
 
@@ -750,7 +711,7 @@ function handleDragEnd(evt) {
 
 <aside>
 <h3>Note</h3>
-<p>The W3C File API is documented online at <code>www.w3.org/TR/FileAPI</code>.</p>
+<p>The W3C File API is documented online at <a href="http://www.w3.org/TR/FileAPI">www.w3.org/TR/FileAPI</a>.</p>
 
 </aside><p>The File API contains functionality for asynchronously reading files in a web page, uploading them to servers while tracking process, and turning files into page elements. However, affiliated specifications such as drag-and-drop use a subset of the File API, and that is the area where we will focus our attention in this chapter.</p>
 
@@ -764,18 +725,10 @@ function handleDragEnd(evt) {
 
 <p>The file items<span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>items</tertiary></span> in our file list support the following properties:</p>
 <ul>
-<li>
-<p><strong>name</strong>: The full filename with extension</p>
-</li>
-<li>
-<p><strong>type</strong>: The MIME type of the file</p>
-</li>
-<li>
-<p><strong>size</strong>: The size of the file in bytes</p>
-</li>
-<li>
-<p><strong>lastModifiedDate</strong>: The timestamp for when the file contents were last modified</p>
-</li>
+<li><strong>name</strong>: The full filename with extension</li>
+<li><strong>type</strong>: The MIME type of the file</li>
+<li><strong>size</strong>: The size of the file in bytes</li>
+<li><strong>lastModifiedDate</strong>: The timestamp for when the file contents were last modified</li>
 </ul>
 <p>Let’s walk through a simple example of file drag-and-drop where we will show the characteristics of any file dropped onto our page, shown in Figure <span class="internal-reference" id="ir_fig5_9">9-5</span>. This code is contained in the <span class="index-term"><span class="primary">HTML5 drag-and-drop</span><span class="secondary">file handling</span><tertiary>fileDrag.html</tertiary></span>fileDrag.html example included with the book.
 

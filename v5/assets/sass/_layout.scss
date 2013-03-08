@@ -4,12 +4,12 @@
 //-----------------------------------------------------------------------
 
 article {
-  margin: 0 2em;
+  margin: 0 30px;
   padding: 1em 0 2.5em;
 }
 aside {
   margin: 1em 0;
-  padding: 1em 2em;    
+  padding: 1em 30px;    
 }
 img {
   max-width: 100%;
@@ -20,7 +20,7 @@ figure {
 
 @media screen and (min-width: 30em) { // 480px
   article {
-    margin: 1em;
+    margin: 1em 30px;
     padding: 1em 0 2.5em;
   }
 }
@@ -40,7 +40,7 @@ figure {
 }
 @media screen and (min-width: 45em) { // 720px
   article {
-    width: 40em; 
+    width: 640px; 
     padding: 2em 0;
   }
   aside {
@@ -50,14 +50,14 @@ figure {
     margin-left: 5%;
   }
   figure {
-    margin: 2em -2em;
+    margin: 2em -32px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -2em;
+    margin: 2em -32px;
   }
   figure.open-editor {
     .code-mirror-container, 
@@ -85,14 +85,14 @@ figure {
     width: 50%;
   }
   figure {
-    margin: 2em -3em;
+    margin: 2em -48px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -4em;
+    margin: 2em -64px;
   }
 }
 @media screen and (min-width: 55em) { // 880px
@@ -101,14 +101,14 @@ figure {
     width: 55%;
   }
   figure {
-    margin: 2em -4em;
+    margin: 2em -64px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -6em;
+    margin: 2em -96px;
   }
 }
 @media screen and (min-width: 60em) { // 960px
@@ -117,14 +117,14 @@ figure {
     width: 60%;
   }
   figure {
-    margin: 2em -5em;
+    margin: 2em -80px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -8em;
+    margin: 2em -128px;
   }
 }
 @media screen and (min-width: 65em) { // 1040px
@@ -133,14 +133,14 @@ figure {
     width: 65%;
   }
   figure {
-    margin: 2em -6em;
+    margin: 2em -96px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -11em;
+    margin: 2em -176px;
     .code-mirror-container { 
       max-height: 800px;
     }
@@ -152,14 +152,14 @@ figure {
     width: 70%;
   }
   figure {
-    margin: 2em -7em;
+    margin: 2em -112px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -14em;
+    margin: 2em -266px;
   }
 }
 @media screen and (min-width: 75em) { // 1200px
@@ -168,29 +168,29 @@ figure {
     width: 75%;
   }
   figure {
-    margin: 2em -8em;
+    margin: 2em -128px;
   }
   figure.listing {
     margin-left: 0;
     margin-right: 0;
   }
   figure.open-editor {
-    margin: 2em -16em;
+    margin: 2em -256px;
   }
 }
 @media screen and (min-width: 80em) { // 1280px
   figure.open-editor {
-    margin: 2em -18em;
+    margin: 2em -288px;
   }
 }
 @media screen and (min-width: 85em) { // 1360px
   figure.open-editor {
-    margin: 2em -20em;
+    margin: 2em -320px;
   }
 }
 @media screen and (min-width: 90em) { // 1440px
   figure.open-editor {
-    margin: 2em -22em;
+    margin: 2em -352px;
   }
 }
 
