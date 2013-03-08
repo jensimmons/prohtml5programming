@@ -120,12 +120,8 @@
 
 <p>Latitude and longitude coordinates can be expressed in different ways:</p>
 <ul>
-<li>
-<p>Decimal format (for example, 39.17222)</p>
-</li>
-<li>
-<p>Degree Minute Second (DMS) format (for example, 39° 10' 20')</p>
-</li>
+<li>Decimal format (for example, 39.17222)</li>
+<li>Degree Minute Second (DMS) format (for example, 39° 10' 20')</li>
 </ul>
 
 <aside>
@@ -152,24 +148,12 @@
 <p>A device can use any of the following sources:
 </p>
 <ul>
-<li>
-<p>IP address</p>
-</li>
-<li>
-<p>Coordinate triangulation</p>
-</li>
-<li>
-<p>Global Positioning System (GPS)</p>
-</li>
-<li>
-<p>Wi-Fi with MAC addresses from RFID, Wi-Fi, and Bluetooth</p>
-</li>
-<li>
-<p>GSM or CDMA cell phone IDs</p>
-</li>
-<li>
-<p>User defined</p>
-</li>
+<li>IP address</li>
+<li>Coordinate triangulation</li>
+<li>Global Positioning System (GPS)</li>
+<li>Wi-Fi with MAC addresses from RFID, Wi-Fi, and Bluetooth</li>
+<li>GSM or CDMA cell phone IDs</li>
+<li>User defined</li>
 </ul>
 <p>Many devices use a combination of one or more sources to ensure an even higher accuracy. Each of these methods has its own pros and cons, <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>sources of</tertiary></span>as explained in the next sections.</p></section>
 
@@ -374,18 +358,10 @@
 
 <p>The following steps are shown in the diagram:</p>
 <ol>
-<li>
-<p>A user navigates to a location-aware application in the browser.</p>
-</li>
-<li>
-<p>The application web page loads and requests coordinates from the browser by making a Geolocation function call. The browser intercepts this and requests user permission. Let's assume, in this case, that the permission is granted.</p>
-</li>
-<li>
-<p>The browser retrieves coordinate information from the device it is running on. For example, a combination of IP address, Wi-Fi, and possibly GPS coordinates. This is an internal function of the browser.</p>
-</li>
-<li>
-<p>The browser sends these coordinates to a trusted external location service, which returns location coordinates that can now <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>be sent back to the host of the Geolocation application.</p>
-</li>
+<li>A user navigates to a location-aware application in the browser.</li>
+<li>The application web page loads and requests coordinates from the browser by making a Geolocation function call. The browser intercepts this and requests user permission. Let's assume, in this case, that the permission is granted.</li>
+<li>The browser retrieves coordinate information from the device it is running on. For example, a combination of IP address, Wi-Fi, and possibly GPS coordinates. This is an internal function of the browser.</li>
+<li>The browser sends these coordinates to a trusted external location service, which returns location coordinates that can now <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>be sent back to the host of the Geolocation application.</li>
 </ol>
 
 <aside>
@@ -423,24 +399,12 @@
 
 <p>Therefore, if you retransmit the location data, it is recommended that you first encrypt the data. Regarding the collection of geolocation data, your application should prominently show the following:</p>
 <ul>
-<li>
-<p>That you are collecting location data</p>
-</li>
-<li>
-<p>Why you are collecting location data</p>
-</li>
-<li>
-<p>How long the location data is kept</p>
-</li>
-<li>
-<p>How you are securing the data</p>
-</li>
-<li>
-<p>How and with whom the location data is shared (if it is)</p>
-</li>
-<li>
-<p>How users can check<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>dealing with location information</tertiary></span> and update their location data</p>
-</li>
+<li>That you are collecting location data</li>
+<li>Why you are collecting location data</li>
+<li>How long the location data is kept</li>
+<li>How you are securing the data</li>
+<li>How and with whom the location data is shared (if it is)</li>
+<li>How users can check<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>dealing with location information</tertiary></span> and update their location data</li>
 </ul></section></section><section id="sec14_5">
 <a id="hdr_sec14_5" class="section-anchor"></a>
 
@@ -469,12 +433,8 @@
 <h3>Position Requests</h3>
 <p>There are <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span></span>two types of position requests:</p>
 <ul>
-<li>
-<p>One-shot position request</p>
-</li>
-<li>
-<p>Repeated position updates</p>
-</li>
+<li>One-shot position request</li>
+<li>Repeated position updates</li>
 </ul></section><section id="sec17_5">
 <a id="hdr_sec17_5" class="section-anchor"></a>
 
@@ -491,15 +451,9 @@
 
 <p>The function takes one required parameter, and two optional ones.</p>
 <ul>
-<li>
-<p>The successCallback function<span class="index-term"><span class="primary">successCallback function</span></span> parameter tells the browser which function you want called when the location data is made available. This is important because operations such as fetching location data may take a long time to complete. No user wants the browser to be locked up while the location is retrieved, and no developer wants his program to pause indefinitely—especially because fetching the location data will often be waiting on a user to grant permission. The successCallback is where you will receive the actual location information and act on it.</p>
-</li>
-<li>
-<p>However, as in most programming scenarios, it is good to plan for failure cases. It is quite possible that the request for location information may not complete for reasons beyond your control, and for those cases you will want to provide an errorCallback function that can present the user with an explanation, or perhaps make an attempt to try again. While optional, it is recommended that you provide one.</p>
-</li>
-<li>
-<p>Finally, an options object can be provided to the Geolocation service to fine-tune the way it gathers data. This is an optional parameter that we will examine later.</p>
-</li>
+<li>The successCallback function<span class="index-term"><span class="primary">successCallback function</span></span> parameter tells the browser which function you want called when the location data is made available. This is important because operations such as fetching location data may take a long time to complete. No user wants the browser to be locked up while the location is retrieved, and no developer wants his program to pause indefinitely—especially because fetching the location data will often be waiting on a user to grant permission. The successCallback is where you will receive the actual location information and act on it.</li>
+<li>However, as in most programming scenarios, it is good to plan for failure cases. It is quite possible that the request for location information may not complete for reasons beyond your control, and for those cases you will want to provide an errorCallback function that can present the user with an explanation, or perhaps make an attempt to try again. While optional, it is recommended that you provide one.</li>
+<li>Finally, an options object can be provided to the Geolocation service to fine-tune the way it gathers data. This is an optional parameter that we will examine later.</li>
 </ul>
 <p>Let’s say that you’ve created a JavaScript function on our page named <code>updateLocation()</code> in which you update the contents of the page with the new location data. Similarly, you’ve created a <code>handleLocationError()</code> function to handle the error cases. We’ll examine the details of those functions next, but that means that your core request to access the user’s position would look something like this:</p>
 
@@ -510,32 +464,18 @@
 
 <p>The coordinates always have multiple attributes on them, but it is up to the browser and the hardware of the user’s device whether they will have meaningful values. The following are the first three attributes:</p>
 <ul>
-<li>
-<p>latitude</p>
-</li>
-<li>
-<p>longitude</p>
-</li>
-<li>
-<p>accuracy</p>
-</li>
+<li>latitude</li>
+<li>longitude</li>
+<li>accuracy</li>
 </ul>
 <p>These attributes are guaranteed to have values and are fairly self-explanatory. latitude and longitude will contain the Geolocation service’s best determined value of the user’s location specified in decimal degrees. accuracy will contain a value in meters that specifies how close the latitude and longitude values are to the actual location, with a 95% confidence level. It can therefore be used to display a proximity radius around the location to give people a visual clue about the accuracy. Due to the nature of Geolocation implementations, approximation will be common and coarse. Make sure to check the accuracy of the returned values before you present them with any certainty. Recommending a user to visit a “nearby” shoe store that is actually hours away could have unintended consequences.</p>
 
 <p>The other attributes of the coordinates are not guaranteed to be supported, but they will return a null value if they are not available (for example, if you’re on a desktop computer, you’re unlikely to have access to this information):</p>
 <ul>
-<li>
-<p>altitude—the height of the user’s location, in meters</p>
-</li>
-<li>
-<p>altitudeAccuracy—once again in meters, or null if no altitude is provided</p>
-</li>
-<li>
-<p>heading—direction of travel, in degrees relative to true north</p>
-</li>
-<li>
-<p>speed—ground speed in meters per second</p>
-</li>
+<li>altitude—the height of the user’s location, in meters</li>
+<li>altitudeAccuracy—once again in meters, or null if no altitude is provided</li>
+<li>heading—direction of travel, in degrees relative to true north</li>
+<li>speed—ground speed in meters per second</li>
 </ul>
 <p>Unless you are sure that your users have devices with access to such information, it is recommended that you not rely on them as critical to your application. While global positioning devices are likely to provide this level of detail, simple network triangulation will not.</p>
 
@@ -560,15 +500,9 @@
 
 <p>Handling errors is very important for a Geolocation application because there are many moving parts and therefore many possibilities for the location calculation services to go awry. Fortunately, the API defines error codes for all the cases you will need to handle, and it sets them on the error object passed to your error handler as the code attribute. Let’s look at them in turn:</p>
 <ul>
-<li>
-<p><code>PERMISSION_DENIED</code> (error code 1)—The user chose not to let the browser have access to the location information.</p>
-</li>
-<li>
-<p><code>POSITION_UNAVAILABLE</code> (error code 2)—The technique used to determine the user’s location was attempted, but failed.</p>
-</li>
-<li>
-<p><code>TIMEOUT</code> (error code 3)—A timeout value was set as an option, and the attempt to determine the location exceeded that limit.</p>
-</li>
+<li><code>PERMISSION_DENIED</code> (error code 1)—The user chose not to let the browser have access to the location information.</li>
+<li><code>POSITION_UNAVAILABLE</code> (error code 2)—The technique used to determine the user’s location was attempted, but failed.</li>
+<li><code>TIMEOUT</code> (error code 3)—A timeout value was set as an option, and the attempt to determine the location exceeded that limit.</li>
 </ul>
 <p>In these cases, you will probably want to let the user know that something went wrong. You may want to retry getting the values in the case of an unavailable or timed-out request.</p>
 
@@ -602,9 +536,7 @@
 <h4>Optional Geolocation Request Attributes</h4>
 <p>With both the normal and <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">request attributes, optional</span></span>error cases handled, you should turn your attention to the three optional attributes that you can pass to the Geolocation service in order to fine-tune how it gathers its data. Note that these three attributes can be passed using shorthand object notation, making it trivial to add them to your Geolocation request calls.</p>
 <ul>
-<li>
-<p>enableHighAccuracy–This is a<span class="index-term"><span class="primary">enableHighAccuracy attribute</span></span> hint to the browser that, if available, you would like the Geolocation service to use a higher accuracy-detection mode. This defaults to false, but when turned on, it may not cause any difference, or it may cause the machine to take more time or power to determine location. Use with caution.</p>
-</li>
+<li>enableHighAccuracy–This is a<span class="index-term"><span class="primary">enableHighAccuracy attribute</span></span> hint to the browser that, if available, you would like the Geolocation service to use a higher accuracy-detection mode. This defaults to false, but when turned on, it may not cause any difference, or it may cause the machine to take more time or power to determine location. Use with caution.</li>
 </ul>
 <aside>
 <h3>Note</h3>
@@ -614,12 +546,8 @@
 
 
 <ul>
-<li>
-<p>timeout—This optional <span class="index-term"><span class="primary">timeout attribute</span></span>value, provided in milliseconds, tells the browser the maximum amount of time it is allowed to calculate the current location. If the calculation does not complete in this amount of time, the error handler is called instead. This value defaults to Infinity, or no limit.</p>
-</li>
-<li>
-<p>maximumAge—This value<span class="index-term"><span class="primary">maximumAge attribute</span></span> indicates how old a location value can be before the browser must attempt to recalculate. Again, it is a value in milliseconds. This value defaults to zero, meaning that the browser must attempt to recalculate a value immediately.</p>
-</li>
+<li>timeout—This optional <span class="index-term"><span class="primary">timeout attribute</span></span>value, provided in milliseconds, tells the browser the maximum amount of time it is allowed to calculate the current location. If the calculation does not complete in this amount of time, the error handler is called instead. This value defaults to Infinity, or no limit.</li>
+<li>maximumAge—This value<span class="index-term"><span class="primary">maximumAge attribute</span></span> indicates how old a location value can be before the browser must attempt to recalculate. Again, it is a value in milliseconds. This value defaults to zero, meaning that the browser must attempt to recalculate a value immediately.</li>
 </ul>
 <aside>
 <h3>Note</h3>
@@ -648,16 +576,12 @@
 </h3>
 <p>Sometimes you have to make repeated position requests. Thankfully, the designers of the Geolocation API made it trivial to switch from an application that requests a user location one time to one that requests the location at regular intervals. In fact, it’s largely as trivial as switching the request call, as shown in the following examples:</p>
 <ul>
-<li>
-<p>One-shot update:</p>
+<li>One-shot update:</p>
 
-<p>navigator.geolocation.<strong>getCurrentPosition</strong>(updateLocation, handleLocationError);</p>
-</li>
-<li>
-<p>Repeated updates:</p>
+<p>navigator.geolocation.<strong>getCurrentPosition</strong>(updateLocation, handleLocationError);</li>
+<li>Repeated updates:</p>
 
-<p>navigator.geolocation.<strong>watchPosition</strong>(updateLocation, handleLocationError);</p>
-</li>
+<p>navigator.geolocation.<strong>watchPosition</strong>(updateLocation, handleLocationError);</li>
 </ul>
 <p>This simple change will cause the Geolocation service to call your updateLocation handler repeatedly as the user’s location changes, rather than one time. It acts as though your program is <em>watching</em> the location and will let you know whenever the location changes.</p>
 
