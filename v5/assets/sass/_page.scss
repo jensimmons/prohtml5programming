@@ -39,7 +39,7 @@ hgroup {
 
 aside {
   background: url("../images/honeycomb.jpg") repeat #fcfcfc;
-//  background: url("../images/honeycomb_alt.jpg") repeat #fff4b8; - alt version
+  background-size: 15%; 
   @include box-shadow (0 0 8px 2px rgba(0, 0, 0, 0.1));
   border: 1px solid #ddd; //or #FFE5AA for alt version
   box-decoration-break: clone;
@@ -65,7 +65,7 @@ aside {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)  {
   aside {
     background-image: url('../images/honeycomb_@2X.jpg');
-    background-size: 25%; 
+    background-size: 15%; 
   }
 }
 
