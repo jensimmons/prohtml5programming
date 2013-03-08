@@ -14,7 +14,7 @@
 }
 
 h1.book-title {
-  @include adjust-font-size-to(14px);
+  font-size: 14px;
   text-align: center;
   font-style: italic;  
   font-family: $sourcesans-light;

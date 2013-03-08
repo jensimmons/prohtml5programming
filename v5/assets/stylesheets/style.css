@@ -1146,14 +1146,14 @@ hr {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\000036}}
 article {
-  margin: 0 2em;
+  margin: 0 30px;
   padding: 1em 0 2.5em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000310}}
 aside {
   margin: 1em 0;
-  padding: 1em 2em;
+  padding: 1em 30px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000314}}
@@ -1169,7 +1169,7 @@ figure {
 @media screen and (min-width: 30em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000322}}
   article {
-    margin: 1em;
+    margin: 1em 30px;
     padding: 1em 0 2.5em;
   }
 }
@@ -1192,7 +1192,7 @@ figure {
 @media screen and (min-width: 45em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000342}}
   article {
-    width: 40em;
+    width: 640px;
     padding: 2em 0;
   }
 
@@ -1206,7 +1206,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000352}}
   figure {
-    margin: 2em -2em;
+    margin: 2em -32px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000355}}
@@ -1217,7 +1217,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000359}}
   figure.open-editor {
-    margin: 2em -2em;
+    margin: 2em -32px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000364}}
@@ -1248,7 +1248,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000387}}
   figure {
-    margin: 2em -3em;
+    margin: 2em -48px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000390}}
@@ -1259,7 +1259,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\0000394}}
   figure.open-editor {
-    margin: 2em -4em;
+    margin: 2em -64px;
   }
 }
 @media screen and (min-width: 55em) {
@@ -1271,7 +1271,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003103}}
   figure {
-    margin: 2em -4em;
+    margin: 2em -64px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003106}}
@@ -1282,7 +1282,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003110}}
   figure.open-editor {
-    margin: 2em -6em;
+    margin: 2em -96px;
   }
 }
 @media screen and (min-width: 60em) {
@@ -1294,7 +1294,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003119}}
   figure {
-    margin: 2em -5em;
+    margin: 2em -80px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003122}}
@@ -1305,7 +1305,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003126}}
   figure.open-editor {
-    margin: 2em -8em;
+    margin: 2em -128px;
   }
 }
 @media screen and (min-width: 65em) {
@@ -1317,7 +1317,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003135}}
   figure {
-    margin: 2em -6em;
+    margin: 2em -96px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003138}}
@@ -1328,7 +1328,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003142}}
   figure.open-editor {
-    margin: 2em -11em;
+    margin: 2em -176px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003144}}
   figure.open-editor .code-mirror-container {
@@ -1344,7 +1344,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003154}}
   figure {
-    margin: 2em -7em;
+    margin: 2em -112px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003157}}
@@ -1355,7 +1355,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003161}}
   figure.open-editor {
-    margin: 2em -14em;
+    margin: 2em -266px;
   }
 }
 @media screen and (min-width: 75em) {
@@ -1367,7 +1367,7 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003170}}
   figure {
-    margin: 2em -8em;
+    margin: 2em -128px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003173}}
@@ -1378,25 +1378,25 @@ figure {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003177}}
   figure.open-editor {
-    margin: 2em -16em;
+    margin: 2em -256px;
   }
 }
 @media screen and (min-width: 80em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003182}}
   figure.open-editor {
-    margin: 2em -18em;
+    margin: 2em -288px;
   }
 }
 @media screen and (min-width: 85em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003187}}
   figure.open-editor {
-    margin: 2em -20em;
+    margin: 2em -320px;
   }
 }
 @media screen and (min-width: 90em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_layout\.scss}line{font-family:\00003192}}
   figure.open-editor {
-    margin: 2em -22em;
+    margin: 2em -352px;
   }
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_page\.scss}line{font-family:\000036}}
@@ -1762,8 +1762,7 @@ img.inlinemediaobject {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v5\/assets\/sass\/_navigation\.scss}line{font-family:\0000316}}
 h1.book-title {
-  font-size: 0.875em;
-  line-height: 1.85714em;
+  font-size: 14px;
   text-align: center;
   font-style: italic;
   font-family: SourceSansProLight, Verdana, Tahoma, "DejaVu Sans", sans-serif;
