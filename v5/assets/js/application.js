@@ -126,6 +126,7 @@ APRI.CME = { // CodeMirror editors
    var currentCode = iEditor.editor.getValue();
    if (iEditor.cache !== currentCode) {
      iEditor.cache = currentCode;
+     iEditor.save(); // auto-save
      var previewFrame = jQuery('#preview', iEditor.container).get(0);
      var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
      preview.open();
@@ -174,6 +175,7 @@ APRI.CME = { // CodeMirror editors
      me.container.html('');
    };
    this.retrieve();
+   this.saveControl.hide(); // auto-save
    // this.reset();
    // jQuery('#preview', this.container).height( jQuery('.code-mirror-container', this.container).height() );
    jQuery('#preview', this.container).height(this.previewHeight);
@@ -245,6 +247,17 @@ APRI.UTILS = {
      APRI.CME.localStorageSupport = true;
    } 
  },
+ logAppCacheErrors: function () {
+   if (window && window.console) {
+     window.applicationCache.onerror = function(e) {
+         log("Application cache error" + e);
+     }
+   }
+ },
+ offlineVideoContent: function () {
+   var msg = "<div class=\"offline-video-content\"><p>You are not currently online. When you connect to the internet again, a video will appear here.</p></div>";
+   jQuery('video').after(msg);
+ },
  /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
  formatStaticCode: function () {
    var staticCodeareas = [];
@@ -293,5 +306,6 @@ jQuery(function () {
  APRI.UTILS.checkStorageSupport();
  APRI.CME.initCodeEditors();
  APRI.UTILS.formatStaticCode();
+ 
 
 });
