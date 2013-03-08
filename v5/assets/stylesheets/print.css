@@ -1,82 +1,108 @@
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
-@media print {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\000037}}
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000315}}
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000319}}
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000323}}
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links for images, or javascript/internal links
-   */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000333}}
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000338}}
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000343}}
-  thead {
-    display: table-header-group;
-    /* h5bp.com/t */
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000348}}
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000352}}
-  img {
-    max-width: 100% !important;
-  }
-
-  @page {
-    margin: 0.5cm;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\000037}}
+* {
+  background: transparent !important;
+  color: #000 !important;
+  /* Black prints faster: h5bp.com/s */
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000362}}
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000315}}
+a,
+a:visited {
+  text-decoration: underline;
+  word-wrap: break-word;
+}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/coconnor\/projects\/apress\/prohtml5programming\/v4\/sass\/print\.scss}line{font-family:\0000368}}
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000320}}
+a[href]:after {
+  content: " (" attr(href) ")";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000324}}
+abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000333}}
+html {
+  font-size: 13px !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000336}}
+img {
+  max-width: 500px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000339}}
+video, audio {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000342}}
+header.controls-bar {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000345}}
+.editor-trigger {
+  display: none !important;
+}
+
+@page {
+  margin: 1.5in 2in 1in;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000351}}
+aside, figure.image {
+  page-break-inside: avoid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000362}}
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000367}}
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000372}}
+thead {
+  display: table-header-group;
+  /* h5bp.com/t */
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000377}}
+tr,
+img {
+  page-break-inside: avoid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000381}}
+img {
+  max-width: 100% !important;
+}
+
+@page {
+  margin: 0.5cm;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000391}}
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jensimmons\/Sites\/apress\/prohtml5programming\/v5\/assets\/sass\/print\.scss}line{font-family:\0000397}}
+h2,
+h3 {
+  page-break-after: avoid;
 }

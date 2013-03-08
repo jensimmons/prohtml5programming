@@ -120,12 +120,8 @@
 
 <p>Latitude and longitude coordinates can be expressed in different ways:</p>
 <ul>
-<li>
-<p>Decimal format (for example, 39.17222)</p>
-</li>
-<li>
-<p>Degree Minute Second (DMS) format (for example, 39° 10' 20')</p>
-</li>
+<li>Decimal format (for example, 39.17222)</li>
+<li>Degree Minute Second (DMS) format (for example, 39° 10' 20')</li>
 </ul>
 
 <aside>
@@ -152,24 +148,12 @@
 <p>A device can use any of the following sources:
 </p>
 <ul>
-<li>
-<p>IP address</p>
-</li>
-<li>
-<p>Coordinate triangulation</p>
-</li>
-<li>
-<p>Global Positioning System (GPS)</p>
-</li>
-<li>
-<p>Wi-Fi with MAC addresses from RFID, Wi-Fi, and Bluetooth</p>
-</li>
-<li>
-<p>GSM or CDMA cell phone IDs</p>
-</li>
-<li>
-<p>User defined</p>
-</li>
+<li>IP address</li>
+<li>Coordinate triangulation</li>
+<li>Global Positioning System (GPS)</li>
+<li>Wi-Fi with MAC addresses from RFID, Wi-Fi, and Bluetooth</li>
+<li>GSM or CDMA cell phone IDs</li>
+<li>User defined</li>
 </ul>
 <p>Many devices use a combination of one or more sources to ensure an even higher accuracy. Each of these methods has its own pros and cons, <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">location information</span><tertiary>sources of</tertiary></span>as explained in the next sections.</p></section>
 
@@ -374,18 +358,10 @@
 
 <p>The following steps are shown in the diagram:</p>
 <ol>
-<li>
-<p>A user navigates to a location-aware application in the browser.</p>
-</li>
-<li>
-<p>The application web page loads and requests coordinates from the browser by making a Geolocation function call. The browser intercepts this and requests user permission. Let's assume, in this case, that the permission is granted.</p>
-</li>
-<li>
-<p>The browser retrieves coordinate information from the device it is running on. For example, a combination of IP address, Wi-Fi, and possibly GPS coordinates. This is an internal function of the browser.</p>
-</li>
-<li>
-<p>The browser sends these coordinates to a trusted external location service, which returns location coordinates that can now <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>be sent back to the host of the Geolocation application.</p>
-</li>
+<li>A user navigates to a location-aware application in the browser.</li>
+<li>The application web page loads and requests coordinates from the browser by making a Geolocation function call. The browser intercepts this and requests user permission. Let's assume, in this case, that the permission is granted.</li>
+<li>The browser retrieves coordinate information from the device it is running on. For example, a combination of IP address, Wi-Fi, and possibly GPS coordinates. This is an internal function of the browser.</li>
+<li>The browser sends these coordinates to a trusted external location service, which returns location coordinates that can now <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span></span>be sent back to the host of the Geolocation application.</li>
 </ol>
 
 <aside>
@@ -423,24 +399,12 @@
 
 <p>Therefore, if you retransmit the location data, it is recommended that you first encrypt the data. Regarding the collection of geolocation data, your application should prominently show the following:</p>
 <ul>
-<li>
-<p>That you are collecting location data</p>
-</li>
-<li>
-<p>Why you are collecting location data</p>
-</li>
-<li>
-<p>How long the location data is kept</p>
-</li>
-<li>
-<p>How you are securing the data</p>
-</li>
-<li>
-<p>How and with whom the location data is shared (if it is)</p>
-</li>
-<li>
-<p>How users can check<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>dealing with location information</tertiary></span> and update their location data</p>
-</li>
+<li>That you are collecting location data</li>
+<li>Why you are collecting location data</li>
+<li>How long the location data is kept</li>
+<li>How you are securing the data</li>
+<li>How and with whom the location data is shared (if it is)</li>
+<li>How users can check<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">privacy</span><tertiary>dealing with location information</tertiary></span> and update their location data</li>
 </ul></section></section><section id="sec14_5">
 <a id="hdr_sec14_5" class="section-anchor"></a>
 
@@ -453,13 +417,15 @@
 <h3>Checking for Browser Support</h3>
 <p>Before you call <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">checking for browser support</span></span>the Geolocation API functions, you will want to make sure that there is support in the browser for what you’re about to do. This way, you can provide some alternate text, prompting the users of your application to dump their dinosaur-like browsers or install a plugin such as Gears, which augments the existing browser functionality. Listing 5-1 shows one way you can use to test for browser support.</p>
 
-<figure class="listing"><figcaption>Listing 5-1. Checking for Browser Support</figcaption><pre><code data-cm-mode="text/javascript">function loadDemo() {
+<figure class="listing"><figcaption>Listing 5-1. Checking for Browser Support</figcaption><pre><code data-cm-mode="text/javascript">
+function loadDemo() {
   if(navigator.geolocation) {
     document.getElementById("support").innerHTML = "Geolocation supported.";
   } else {
     document.getElementById("support").innerHTML = "Geolocation is not supported in your browser.";
   }
-}</code></pre></figure>
+}
+</code></pre></figure>
 
 <p>In this example, you test for browser support in the loadDemo function, which might be called when the application’s page is loaded. A call to navigator.geolocation (you can also use Modernizr) will return the Geolocation object if it exists, or trigger the failure case if it does not. In this case, the page is updated to reflect whether there is browser support or not by updating a previously defined support element on the page with a suitable message.</p></section>
 
@@ -469,21 +435,19 @@
 <h3>Position Requests</h3>
 <p>There are <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span></span>two types of position requests:</p>
 <ul>
-<li>
-<p>One-shot position request</p>
-</li>
-<li>
-<p>Repeated position updates</p>
-</li>
+<li>One-shot position request</li>
+<li>Repeated position updates</li>
 </ul></section><section id="sec17_5">
 <a id="hdr_sec17_5" class="section-anchor"></a>
 
 <h3>One-Shot Position Requests</h3>
 <p>In many applications, it <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>one-shot</tertiary></span><span class="index-term"><span class="primary">One-shot position requests</span></span>will be acceptable to retrieve the user’s location only once, or only by request. For example, if someone is looking for the nearest movie theater showing today’s popular movie in the next hour, the simplest form of the Geolocation API shown in Listing 5-2 can be used.</p>
 
-<figure class="listing"><figcaption>Listing 5-2. One-Shot Position Request</figcaption><pre><code data-cm-mode="text/javascript">void getCurrentPosition(in PositionCallback successCallback,
+<figure class="listing"><figcaption>Listing 5-2. One-Shot Position Request</figcaption><pre><code data-cm-mode="text/javascript">
+void getCurrentPosition(in PositionCallback successCallback,
                  in optional PositionErrorCallback errorCallback,
-                 in optional PositionOptions options);</code></pre></figure>
+                 in optional PositionOptions options);
+</code></pre></figure>
                  
 <p>Let’s take a look at this core function call in more detail.</p>
 
@@ -491,15 +455,9 @@
 
 <p>The function takes one required parameter, and two optional ones.</p>
 <ul>
-<li>
-<p>The successCallback function<span class="index-term"><span class="primary">successCallback function</span></span> parameter tells the browser which function you want called when the location data is made available. This is important because operations such as fetching location data may take a long time to complete. No user wants the browser to be locked up while the location is retrieved, and no developer wants his program to pause indefinitely—especially because fetching the location data will often be waiting on a user to grant permission. The successCallback is where you will receive the actual location information and act on it.</p>
-</li>
-<li>
-<p>However, as in most programming scenarios, it is good to plan for failure cases. It is quite possible that the request for location information may not complete for reasons beyond your control, and for those cases you will want to provide an errorCallback function that can present the user with an explanation, or perhaps make an attempt to try again. While optional, it is recommended that you provide one.</p>
-</li>
-<li>
-<p>Finally, an options object can be provided to the Geolocation service to fine-tune the way it gathers data. This is an optional parameter that we will examine later.</p>
-</li>
+<li>The successCallback function<span class="index-term"><span class="primary">successCallback function</span></span> parameter tells the browser which function you want called when the location data is made available. This is important because operations such as fetching location data may take a long time to complete. No user wants the browser to be locked up while the location is retrieved, and no developer wants his program to pause indefinitely—especially because fetching the location data will often be waiting on a user to grant permission. The successCallback is where you will receive the actual location information and act on it.</li>
+<li>However, as in most programming scenarios, it is good to plan for failure cases. It is quite possible that the request for location information may not complete for reasons beyond your control, and for those cases you will want to provide an errorCallback function that can present the user with an explanation, or perhaps make an attempt to try again. While optional, it is recommended that you provide one.</li>
+<li>Finally, an options object can be provided to the Geolocation service to fine-tune the way it gathers data. This is an optional parameter that we will examine later.</li>
 </ul>
 <p>Let’s say that you’ve created a JavaScript function on our page named <code>updateLocation()</code> in which you update the contents of the page with the new location data. Similarly, you’ve created a <code>handleLocationError()</code> function to handle the error cases. We’ll examine the details of those functions next, but that means that your core request to access the user’s position would look something like this:</p>
 
@@ -510,38 +468,25 @@
 
 <p>The coordinates always have multiple attributes on them, but it is up to the browser and the hardware of the user’s device whether they will have meaningful values. The following are the first three attributes:</p>
 <ul>
-<li>
-<p>latitude</p>
-</li>
-<li>
-<p>longitude</p>
-</li>
-<li>
-<p>accuracy</p>
-</li>
+<li>latitude</li>
+<li>longitude</li>
+<li>accuracy</li>
 </ul>
 <p>These attributes are guaranteed to have values and are fairly self-explanatory. latitude and longitude will contain the Geolocation service’s best determined value of the user’s location specified in decimal degrees. accuracy will contain a value in meters that specifies how close the latitude and longitude values are to the actual location, with a 95% confidence level. It can therefore be used to display a proximity radius around the location to give people a visual clue about the accuracy. Due to the nature of Geolocation implementations, approximation will be common and coarse. Make sure to check the accuracy of the returned values before you present them with any certainty. Recommending a user to visit a “nearby” shoe store that is actually hours away could have unintended consequences.</p>
 
 <p>The other attributes of the coordinates are not guaranteed to be supported, but they will return a null value if they are not available (for example, if you’re on a desktop computer, you’re unlikely to have access to this information):</p>
 <ul>
-<li>
-<p>altitude—the height of the user’s location, in meters</p>
-</li>
-<li>
-<p>altitudeAccuracy—once again in meters, or null if no altitude is provided</p>
-</li>
-<li>
-<p>heading—direction of travel, in degrees relative to true north</p>
-</li>
-<li>
-<p>speed—ground speed in meters per second</p>
-</li>
+<li>altitude—the height of the user’s location, in meters</li>
+<li>altitudeAccuracy—once again in meters, or null if no altitude is provided</li>
+<li>heading—direction of travel, in degrees relative to true north</li>
+<li>speed—ground speed in meters per second</li>
 </ul>
 <p>Unless you are sure that your users have devices with access to such information, it is recommended that you not rely on them as critical to your application. While global positioning devices are likely to provide this level of detail, simple network triangulation will not.</p>
 
 <p>Now let’s take a look at a <span class="index-term"><span class="primary">updateLocation() function</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>one-shot</tertiary></span><span class="index-term"><span class="primary">One-shot position requests</span></span>code implementation of our updateLocation() function that performs some trivial updates with the coordinates (see Listing 5-3).</p>
 
-<figure class="listing" data-listing="5-3" data-preview-height="500"><figcaption>Listing 5-3. Example of Using the updateLocation() Function</figcaption><pre><code data-cm-mode="text/javascript">function updateLocation(position) {
+<figure class="listing" data-listing="5-3" data-preview-height="500"><figcaption>Listing 5-3. Example of Using the updateLocation() Function</figcaption><pre><code data-cm-mode="text/javascript">
+function updateLocation(position) {
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
   var accuracy = position.coords.accuracy;
@@ -551,7 +496,8 @@
   document.getElementById("longitude").innerHTML = longitude;
   document.getElementById(“accuracy”).innerHTML = accuracy
   document.getElementById("timestamp").innerHTML = timestamp;
-}</code></pre></figure>
+}
+</code></pre></figure>
 
 <p>In this example, the updateLocation() callback is used to update the text in different elements of our page; we put the <span class="index-term"><span class="primary">updateLocation() function</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>one-shot</tertiary></span><span class="index-term"><span class="primary">One-shot position requests</span></span>value of the longitude attribute in the longitude element, the latitude attribute in the latitude element, and accuracy and timestamp in their corresponding fields.</p>
 
@@ -560,21 +506,16 @@
 
 <p>Handling errors is very important for a Geolocation application because there are many moving parts and therefore many possibilities for the location calculation services to go awry. Fortunately, the API defines error codes for all the cases you will need to handle, and it sets them on the error object passed to your error handler as the code attribute. Let’s look at them in turn:</p>
 <ul>
-<li>
-<p><code>PERMISSION_DENIED</code> (error code 1)—The user chose not to let the browser have access to the location information.</p>
-</li>
-<li>
-<p><code>POSITION_UNAVAILABLE</code> (error code 2)—The technique used to determine the user’s location was attempted, but failed.</p>
-</li>
-<li>
-<p><code>TIMEOUT</code> (error code 3)—A timeout value was set as an option, and the attempt to determine the location exceeded that limit.</p>
-</li>
+<li><code>PERMISSION_DENIED</code> (error code 1)—The user chose not to let the browser have access to the location information.</li>
+<li><code>POSITION_UNAVAILABLE</code> (error code 2)—The technique used to determine the user’s location was attempted, but failed.</li>
+<li><code>TIMEOUT</code> (error code 3)—A timeout value was set as an option, and the attempt to determine the location exceeded that limit.</li>
 </ul>
 <p>In these cases, you will probably want to let the user know that something went wrong. You may want to retry getting the values in the case of an unavailable or timed-out request.</p>
 
 <p>Listing 5-4 shows an example of an error handler in action.</p>
 
-<figure class="listing"><figcaption>Listing 5-4. Using an Error Handler</figcaption><pre><code data-cm-mode="text/javascript">function handleLocationError(error) {
+<figure class="listing"><figcaption>Listing 5-4. Using an Error Handler</figcaption><pre><code data-cm-mode="text/javascript">
+function handleLocationError(error) {
   switch(error.code){
   case 0:
     updateStatus("There was an error while retrieving your location: " +
@@ -591,7 +532,8 @@
   updateStatus("The browser timed out before retrieving the location.");
   break;
   }
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>The error codes are accessed from the code attribute of the provided error object, while the message attribute will give access to a more detailed description of what went wrong. In all cases, we call our own routine to update the status of the page with the<span class="index-term"><span class="primary">handleLocationError() function</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>one-shot</tertiary></span><span class="index-term"><span class="primary">One-shot position requests</span></span> necessary info.</p>
 
@@ -602,9 +544,7 @@
 <h4>Optional Geolocation Request Attributes</h4>
 <p>With both the normal and <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">request attributes, optional</span></span>error cases handled, you should turn your attention to the three optional attributes that you can pass to the Geolocation service in order to fine-tune how it gathers its data. Note that these three attributes can be passed using shorthand object notation, making it trivial to add them to your Geolocation request calls.</p>
 <ul>
-<li>
-<p>enableHighAccuracy–This is a<span class="index-term"><span class="primary">enableHighAccuracy attribute</span></span> hint to the browser that, if available, you would like the Geolocation service to use a higher accuracy-detection mode. This defaults to false, but when turned on, it may not cause any difference, or it may cause the machine to take more time or power to determine location. Use with caution.</p>
-</li>
+<li>enableHighAccuracy–This is a<span class="index-term"><span class="primary">enableHighAccuracy attribute</span></span> hint to the browser that, if available, you would like the Geolocation service to use a higher accuracy-detection mode. This defaults to false, but when turned on, it may not cause any difference, or it may cause the machine to take more time or power to determine location. Use with caution.</li>
 </ul>
 <aside>
 <h3>Note</h3>
@@ -614,12 +554,8 @@
 
 
 <ul>
-<li>
-<p>timeout—This optional <span class="index-term"><span class="primary">timeout attribute</span></span>value, provided in milliseconds, tells the browser the maximum amount of time it is allowed to calculate the current location. If the calculation does not complete in this amount of time, the error handler is called instead. This value defaults to Infinity, or no limit.</p>
-</li>
-<li>
-<p>maximumAge—This value<span class="index-term"><span class="primary">maximumAge attribute</span></span> indicates how old a location value can be before the browser must attempt to recalculate. Again, it is a value in milliseconds. This value defaults to zero, meaning that the browser must attempt to recalculate a value immediately.</p>
-</li>
+<li>timeout—This optional <span class="index-term"><span class="primary">timeout attribute</span></span>value, provided in milliseconds, tells the browser the maximum amount of time it is allowed to calculate the current location. If the calculation does not complete in this amount of time, the error handler is called instead. This value defaults to Infinity, or no limit.</li>
+<li>maximumAge—This value<span class="index-term"><span class="primary">maximumAge attribute</span></span> indicates how old a location value can be before the browser must attempt to recalculate. Again, it is a value in milliseconds. This value defaults to zero, meaning that the browser must attempt to recalculate a value immediately.</li>
 </ul>
 <aside>
 <h3>Note</h3>
@@ -631,13 +567,14 @@
 
 <p>Let’s update our location request to include an optional parameter using shorthand notation, as shown in the following example:</p>
 
-<pre><code>navigator.geolocation.getCurrentPosition(updateLocation,handleLocationError,
-                                         {timeout:10000});</code></pre>
+<pre><code>
+navigator.geolocation.getCurrentPosition(updateLocation, handleLocationError, {timeout:10000});
+</code></pre>
 
 <p>This new call ensures that any request for location that takes longer than 10 seconds (10,000 milliseconds) should trigger an error, in <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>one-shot</tertiary></span><span class="index-term"><span class="primary">One-shot position requests</span></span><span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">request attributes, optional</span></span>which case the handleLocationError function will be called with the TIMEOUT error code. We can combine the Geolocation calls that we discussed so far and display the relevant data on a page as shown in Figure <span class="internal-reference" id="ir_fig4_5">5-4</span>.
 
 </p>
-<figure id="fig4_5" class="image"><img src="images/ch5/fig5-4.png"><figcaption>Figure 5-4. Geolocation data displayed on a mobile device</figcaption></figure>
+<figure id="fig4_5" class="image"><img src="images/ch5/fig5-4.gif"><figcaption>Figure 5-4. Geolocation data displayed on a mobile device</figcaption></figure>
 
 </section>
 
@@ -648,16 +585,8 @@
 </h3>
 <p>Sometimes you have to make repeated position requests. Thankfully, the designers of the Geolocation API made it trivial to switch from an application that requests a user location one time to one that requests the location at regular intervals. In fact, it’s largely as trivial as switching the request call, as shown in the following examples:</p>
 <ul>
-<li>
-<p>One-shot update:</p>
-
-<p>navigator.geolocation.<strong>getCurrentPosition</strong>(updateLocation, handleLocationError);</p>
-</li>
-<li>
-<p>Repeated updates:</p>
-
-<p>navigator.geolocation.<strong>watchPosition</strong>(updateLocation, handleLocationError);</p>
-</li>
+<li>One-shot update: <code>navigator.geolocation.<strong>getCurrentPosition</strong>(updateLocation, handleLocationError);</code></li>
+<li>Repeated updates: <code>navigator.geolocation.<strong>watchPosition</strong>(updateLocation, handleLocationError);</code>
 </ul>
 <p>This simple change will cause the Geolocation service to call your updateLocation handler repeatedly as the user’s location changes, rather than one time. It acts as though your program is <em>watching</em> the location and will let you know whenever the location changes.</p>
 
@@ -670,12 +599,13 @@
 <pre><code>navigator.geolocation.clearWatch(watchId);</code></pre>
 <p>This function will inform the Geolocation service that you no longer want to receive updates on a user’s location. But what is the watchID and where did it come from? It is actually the return value from the watchPosition() <span class="index-term"><span class="primary">watchPosition() function</span></span>call. It identifies the unique monitor request in order to allow us to cancel it later. So, if your application <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">position requests</span><tertiary>repeated</tertiary></span><span class="index-term"><span class="primary">Repeated position requests</span></span>ever needs to stop receiving location updates, you would write some code, as shown in Listing 5-5.</p>
 
-<figure class="listing"><figcaption>Listing 5-5. Using watchPostion</figcaption><pre><code data-cm-mode="text/javascript">var watchId = navigator.geolocation.watchPosition(updateLocation,
-                                                  handleLocationError);
+<figure class="listing"><figcaption>Listing 5-5. Using watchPostion</figcaption><pre><code data-cm-mode="text/javascript">
+var watchId = navigator.geolocation.watchPosition(updateLocation, handleLocationError);
 // do something fun with the location updates!
 
 // OK, now we are ready to stop receiving location updates
-navigator.geolocation.clearWatch(watchId);</code></pre></figure>
+navigator.geolocation.clearWatch(watchId);
+</code></pre></figure>
 
 </section></section>
 
@@ -686,20 +616,21 @@ navigator.geolocation.clearWatch(watchId);</code></pre></figure>
 <p>So far, we’ve mainly focused on <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span>single-shot location requests. Let’s see how powerful the Geolocation API can really be by using its multirequest feature to build a small but useful application: a web page with a distance tracker.</p>
 
 <p>If you’ve ever wanted a quick way to determine how far you’ve traveled in a certain amount of time, you would normally use a dedicated device such as a GPS navigation system or a pedometer. Using the power of the Geolocation service, you can create a web page that tracks how far you have traveled from where the page was originally loaded. Although less useful on a desktop computer, this page is ideal for the millions of web-enabled phones that ship with Geolocation support today. Simply point your smartphone browser to this example page, grant the page permission to access your location, and every few seconds it will update with the distance you just traveled and add it to a running total (see Figure <span class="internal-reference" id="ir_fig5_5">5-5</span>).
-
 </p>
+
 <figure id="fig5_5" class="image"><img src="images/ch5/fig5-5.png"><figcaption>Figure 5-5. Our Geolocation example application in action</figcaption></figure>
 
 <p>This sample works by using<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span> the watchPosition()<span class="index-term"><span class="primary">watchPosition() function</span></span> capability we discussed in the last section. Every time a new position is sent to us, we will compare it to the last known position and calculate the distance traveled. This is accomplished using a well-known calculation known as the Haversine formula, which allows us to calculate distance between two longitude and latitude positions on a sphere. Listing 5-6 displays what the Haversine formula tells us.</p>
 
-<figure class="listing">
+<figure class="image">
 <figcaption>Listing 5-6. The Haversine Formula</figcaption>
 <img src="images/ch5/list5-6.jpg">
 </figure>
 
 <p>If you're hoping to learn how the Haversine formula works, you’ll be sorely disappointed. Instead, we’ll present you a JavaScript implementation of the<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span> formula, which allows anyone to use it to calculate the distance between two positions (see Listing 5-7).</p>
 
-<figure class="listing"><figcaption>Listing 5-7. A JavaScript Haversine Implementation</figcaption><pre><code data-cm-mode="text/javascript">Number.prototype.toRadians = function() {
+<figure class="listing"><figcaption>Listing 5-7. A JavaScript Haversine Implementation</figcaption><pre><code data-cm-mode="text/javascript">
+Number.prototype.toRadians = function() {
   return this * Math.PI / 180;
 }
 
@@ -721,7 +652,8 @@ function distance(latitude1, longitude1, latitude2, longitude2) {
                          Math.sqrt(1-a));
   var d = R * c;
   return d;
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>If you want to know why or how this formula works, consult a teenager’s math textbook. For our purposes, we have written a conversion from degrees to radians, and we provided a distance() function to calculate the distance between two <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span></span>latitude and longitude position values.</p>
 
@@ -733,7 +665,8 @@ function distance(latitude1, longitude1, latitude2, longitude2) {
 <h3>Writing the HTML Display</h3>
 <p>Let’s start with the HTML display. We <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>writing HTML display</tertiary></span>kept it quite simple for this exercise because the real interest is in the script driving the data. We display a page with the pertinent Geolocation data. In addition, we’ll put a few status text indicators in place so that the user can see the summary of distance traveled (see Listing 5-8).</p>
 
-<figure class="listing"><figcaption>Listing 5-8. Code for the Distance Tracker HTML Page</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing"><figcaption>Listing 5-8. Code for the Distance Tracker HTML Page</figcaption><pre><code data-cm-mode="text/html">
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -780,7 +713,8 @@ function distance(latitude1, longitude1, latitude2, longitude2) {
 .
 .
  &lt;/body&gt;
-&lt;/html&gt;</code></pre></figure>
+&lt;/html&gt;
+</code></pre></figure>
 
 <p>These values are all defaulted<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>writing HTML display</tertiary></span> for now and are populated once data starts flowing into the application.</p>
 
@@ -792,7 +726,8 @@ function distance(latitude1, longitude1, latitude2, longitude2) {
 <h3>Processing the Geolocation Data</h3>
 <p>Our first JavaScript <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span>code section should look familiar. We’ve set a handler–<code>loadDemo()</code>–that will execute as soon as the page completes loading. This script will detect if Geolocation is supported in the browser and use a status update functions to change the status message at the top of the page to indicate what it finds. It will then request a watch of the user’s position, as shown in Listing 5-9.</p>
 
-<figure class="listing"><figcaption>Listing 5-9. Adding the loadDemo() and Status Update Functions</figcaption><pre><code data-cm-mode="text/javascript">var totalDistance = 0.0;
+<figure class="listing"><figcaption>Listing 5-9. Adding the loadDemo() and Status Update Functions</figcaption><pre><code data-cm-mode="text/javascript">
+var totalDistance = 0.0;
 var lastLat;
 var lastLong;
    
@@ -812,14 +747,16 @@ function loadDemo() {
     navigator.geolocation.watchPosition(updateLocation, handleLocationError,
                                             {timeout:20000});
   }
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>Note that we are setting a maximumAge option on our position watch: {maximumAge:20000}. This will tell the location service that we don’t want any cached location values that are greater than 20 seconds (or 20,000 milliseconds) old. Setting this option will keep our page updating at regular intervals, but feel free to adjust this number and experiment with larger and smaller cache sizes.<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span>
 </p>
 
 <p>For error handling, we’ll use the same routine we identified earlier, as it is generic enough to work for our distance tracker. In it we’ll check the error code of any error we receive and update the status message on the page accordingly as shown in Listing 5-10.</p>
 
-<figure class="listing"><figcaption>Listing 5-10. Adding the Error Handling Code</figcaption><pre><code data-cm-mode="text/javascript">function handleLocationError(error) {
+<figure class="listing"><figcaption>Listing 5-10. Adding the Error Handling Code</figcaption><pre><code data-cm-mode="text/javascript">
+function handleLocationError(error) {
   switch(error.code)
   {
   case 0:
@@ -837,11 +774,13 @@ function loadDemo() {
     updateErrorStatus("The browser timed out before retrieving the location.");
     break;
   }
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>The bulk of our work will be done in our <code>updateLocation()</code> function. Here we will update the page with our most recent values and calculate the<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span> distance traveled, as shown in Listing 5-11.</p>
 
-<figure class="listing"><figcaption>Listing 5-11. Adding the updateLocation() Function</figcaption><pre><code data-cm-mode="text/javascript">function updateLocation(position) {
+<figure class="listing"><figcaption>Listing 5-11. Adding the updateLocation() Function</figcaption><pre><code data-cm-mode="text/javascript">
+function updateLocation(position) {
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
   var accuracy = position.coords.accuracy;
@@ -850,7 +789,8 @@ function loadDemo() {
   document.getElementById("latitude").innerHTML = "Latitude: " + latitude;
   document.getElementById("longitude").innerHTML = "Longitude: " + longitude;
   document.getElementById("accuracy").innerHTML = "Accuracy: " + accuracy + " meters";
-  document.getElementById("timestamp").innerHTML = "Timestamp: " + timestamp;</code></pre></figure>
+  document.getElementById("timestamp").innerHTML = "Timestamp: " + timestamp;
+</code></pre></figure>
       
 <p>As you might expect, the first thing we will do when we receive an updated set of position coordinates is to record all the information. We gather the latitude, longitude, accuracy, and timestamp, and then update the table values with the new data.</p>
 
@@ -858,12 +798,14 @@ function loadDemo() {
 
 <p>The accuracy value is given to us in meters and might at first seem unnecessary. However, any data depends on its accuracy. Even if you don’t present the user with the accuracy values, you should take them into account in your own code. Presenting inaccurate values could give the user a skewed idea of his or her location. Therefore, we will throw out any position updates with an unreasonably low accuracy, as shown in Listing 5-12.</p>
 
-<figure class="listing"><figcaption>Listing 5-12. Ignoring Inaccurate Accuracy Updates</figcaption><pre><code data-cm-mode="text/javascript">// sanity test… don't calculate distance if accuracy
+<figure class="listing"><figcaption>Listing 5-12. Ignoring Inaccurate Accuracy Updates</figcaption><pre><code data-cm-mode="text/javascript">
+// sanity test… don't calculate distance if accuracy
 // value too large
 if (accuracy &gt;= 30000) {
   updateStatus("Need more accurate values to calculate distance.");
   return;
-}</code></pre></figure>
+}
+</code></pre></figure>
 
 <aside>
 <h3>The Easiest Way to Travel</h3>
@@ -875,7 +817,8 @@ if (accuracy &gt;= 30000) {
 
 <p>Finally, we will calculate the distance traveled, assuming that we have already received at least one accurate position value before. We will update the totals of travel distance and display them for the user, and we will store the current values for future comparison. To keep our interface a little less cluttered, it is a good idea to round or truncate the calculated values, as shown in<span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span> Listing 5-13.</p>
 
-<figure class="listing"><figcaption>Listing 5-13. Adding the Distance Calculation Code</figcaption><pre><code data-cm-mode="text/javascript">// calculate distance
+<figure class="listing"><figcaption>Listing 5-13. Adding the Distance Calculation Code</figcaption><pre><code data-cm-mode="text/javascript">
+// calculate distance
   if ((lastLat != null) &amp;&amp; (lastLong != null)) {
     var currentDistance = distance(latitude, longitude, lastLat, lastLong);
     document.getElementById("currDist").innerHTML =
@@ -887,7 +830,8 @@ if (accuracy &gt;= 30000) {
   }
   lastLat = latitude;
   lastLong = longitude;
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>That’s it. In fewer than 200 lines of HTML and script, we’ve created a sample application that monitors the viewer’s position over time and demonstrated nearly the entire Geolocation API, complete with error handling. Although this example is inherently less interesting when viewed on a desktop computer, try it out on your favorite geolocation–enabled phone or <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>processing geolocation data</tertiary></span><span class="index-term"><span class="primary">loadDemo() function</span></span>device and see how mobile you truly are during the course of a day.</p>
 
@@ -899,7 +843,8 @@ if (accuracy &gt;= 30000) {
 <h3>The Final Code</h3>
 <p>The full code <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">building application with</span><tertiary>code sample</tertiary></span>sample is shown in Listing 5-14.</p>
 
-<figure class="listing" data-listing="5-14" data-preview-height="600"><figcaption>Listing 5-14. Complete Distance Tracker Code</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="5-14" data-preview-height="600"><figcaption>Listing 5-14. Complete Distance Tracker Code</figcaption><pre><code data-cm-mode="text/html">
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -1047,10 +992,8 @@ Geolocation APIbuilding application withcode sample
   
 &lt;/body&gt;
 
-&lt;/html&gt;</code></pre></figure>
-
-
-
+&lt;/html&gt;
+</code></pre></figure>
 
 </section>
 </section><section id="sec24_5">
@@ -1069,7 +1012,8 @@ Geolocation APIbuilding application withcode sample
 
 <p>In Listing 5-15, we’ll kick off a JavaScript interval timer to regularly update the status display with a new progress indicator value.</p>
 
-<figure class="listing"><figcaption>Listing 5-15. Adding a Status Bar</figcaption><pre><code data-cm-mode="text/javascript">function updateStatus(message) {
+<figure class="listing"><figcaption>Listing 5-15. Adding a Status Bar</figcaption><pre><code data-cm-mode="text/javascript">
+function updateStatus(message) {
   document.getElementById("status").innerHTML = message;
   }
   function endRequest() {
@@ -1092,30 +1036,34 @@ updateStatus(“Requesting Geolocation data…”);</code></pre></figure>
 <p>Let’s break that example <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">status bar</span></span>
 <span class="index-term"><span class="primary">Status bar</span></span>down a little. As before, we’ve got a function to update our status value on the page, as shown in the following example.</p>
 
-<pre><code>function updateStatus(message) {
+<pre><code>
+function updateStatus(message) {
   document.getElementById("status").innerHTML = message;
 }</code></pre>
 
-
 <p>Our status here will be a simple text display, although this approach applies equally well for more compelling graphical status displays (see Listing 5-16).</p>
 
-<figure class="listing"><figcaption>Listing 5-16. Showing the Status</figcaption><pre><code data-cm-mode="text/javascript">navigator.geolocation.getCurrentPosition(updateLocation,
+<figure class="listing"><figcaption>Listing 5-16. Showing the Status</figcaption><pre><code data-cm-mode="text/javascript">
+navigator.geolocation.getCurrentPosition(updateLocation,
                                          handleLocationError,
                                          {timeout:10000});
                                          // 10 second timeout value
-updateStatus(“Requesting location data…”);</code></pre></figure>
+updateStatus(“Requesting location data…”);
+</code></pre></figure>
 
 <p>Once again, we use the Geolocation API to get the user’s current position, but with a set timeout of ten seconds. Once ten seconds have elapsed, we should either have a success or failure due to the timeout option.</p>
 
 <p>We immediately update the status text display to indicate that a position request is in progress. Then, once the request completes or ten seconds elapses—whichever comes first—you use the callback method to reset the status text, as shown in Listing 5-17.</p>
 
-<figure class="listing"><figcaption>Listing 5-17. Resetting the Status Text</figcaption><pre><code data-cm-mode="text/javascript">function endRequest() {
+<figure class="listing"><figcaption>Listing 5-17. Resetting the Status Text</figcaption><pre><code data-cm-mode="text/javascript">
+function endRequest() {
   updateStatus("Done.");
 }
 function updateLocation(position) {
   endRequest();
   // handle the position data
-}</code></pre></figure>
+}
+</code></pre></figure>
     
 <p>A simple extra, but easy to extend.</p>
 
@@ -1136,7 +1084,8 @@ function updateLocation(position) {
 
 <p>However, it is also possible to do this yourself. Although the Google Map API is beyond the scope of this book, it has (not coincidentally) been designed to take decimal latitude and longitude locations. Therefore, you can easily pass the results of your position lookup to the Google Map API, as shown in Listing 5-18. You can read more on this subject in <em>Beginning Google Maps Applications</em>, Second Edition (Apress, 2010).</p>
 
-<figure class="listing"><figcaption>Listing 5-18. Passing a Position to <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">Google Maps and</span></span><span class="index-term"><span class="primary">Google Maps</span></span> the Google Map API</figcaption><pre><code data-cm-mode="text/javascript">//Include the Google maps library
+<figure class="listing"><figcaption>Listing 5-18. Passing a Position to <span class="index-term"><span class="primary">Geolocation API</span><span class="secondary">Google Maps and</span></span><span class="index-term"><span class="primary">Google Maps</span></span> the Google Map API</figcaption><pre><code data-cm-mode="text/javascript">
+//Include the Google maps library
 &lt;script src="http://maps.google.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
 
 // Create a Google Map… see Google API for more detail
@@ -1147,7 +1096,8 @@ function updateLocation(position) {
   map.setCenter(new google.maps.LatLng(parseFloat(position.coords.latitude),
                                parseFloat(position.coords.longitude));
   navigator.geolocation.getCurrentPosition(updateLocation,
-                                         handleLocationError);</code></pre></figure>
+                                         handleLocationError);
+</code></pre></figure>
                                        
 </section></section>
 
