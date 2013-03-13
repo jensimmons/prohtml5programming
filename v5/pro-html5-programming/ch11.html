@@ -395,7 +395,7 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
   <p>In order to achieve this, we&#x2019;ll need to introduce a demonstration web site that can save and restore our racer data. We&#x2019;ve created a three-page example running race site and placed it in our online resources in the folder <code>code/storage</code>, but you can use any site of your choosing for your own demonstration. The key here is merely that you have multiple web pages that are easily traversed by a user. We will insert a bit of dynamic content into those pages to represent a live leader board, or a list of race participants and their current distance from the finish line. Figure 11-8 shows the three pages that make up the race site.</p>
 
   <figure class="image">
-    <img src="images/ch11/fig11-8.gif" />
+    <img src="images/ch11/fig11-8.png" />
     <figcaption>Figure 11-8. The example race website</figcaption>
   </figure>
 
@@ -471,7 +471,7 @@ function displayRacerLocation(name, distance) {
   <p>This utility is a simple display routine, which takes the racer&#x2019;s name and distance from the finish line. Figure 11-9 shows what the leader board section looks like on the <code>index.html</code> page.</p>
 
   <figure class="image">
-    <img src="images/ch11/fig11-9.gif" />
+    <img src="images/ch11/fig11-9.png" />
     <figcaption>Figure 11-9. The race leader board</figcaption>
   </figure>
 
@@ -701,7 +701,7 @@ if (window.WebSocket) {
   <p>To try it out for yourself, open two windows in a browser that supports Web Storage, Geolocation, and WebSocket, such as Google Chrome. In the first, load the running club&#x2019;s <code>index.html</code> page. You will see it connect to the race broadcast site using WebSocket and then await any racer data notifications. In the second window, open the <code>racerBroadcast.html</code> file. After this page, too, has connected to the WebSocket broadcast site, enter a name for your racer, and click the Start button. You&#x2019;ll see that the racer broadcast has transmitted the location of your favorite racer, and it should show up in the leader board in your other browser window. Figure 11-10 shows what this looks like.</p>
 
   <figure class="image">
-    <img src="images/ch11/fig11-10.gif" />
+    <img src="images/ch11/fig11-10.png" />
     <figcaption>Figure 11-10. Race page and racerBroadcast.html side by side</figcaption>
   </figure>
 
@@ -965,7 +965,7 @@ window.addEventListener("storage", displayStorageEvent, true);</code></pre>
   <p>After registering an event listener for the <code>storage</code> event type, this window will receive notification of storage changes in any pages. For example, if a browser window viewing <code>http://www.example.com/browser-test.html</code> that is currently browsing the same origin sets or changes a new storage value, the <code>storageLog.html</code> page will receive a notification. Therefore, to send a message to a receiving window, the sending window need only modify a storage object, and its old and new values will be sent as part of the notification. For example, if a storage value is updated using <code>localStorage.setItem()</code>, then the <code>displayStorageEvent()</code> handler in the <code>storageLog.html</code> page hosted at the same origin will receive an event. By carefully coordinating event names and values, the two pages can now communicate, a feat which has been difficult to accomplish before. Figure 11-13 shows the <code>storageLog.html</code> page in action, simply logging storage events it receives.</p>
 
   <figure class="image">
-    <img src="images/ch11/fig11-13.gif" />
+    <img src="images/ch11/fig11-13.png" />
     <figcaption>Figure 11-13. The storageLog.html page logging storage eventsSummary</figcaption>
   </figure>
 
