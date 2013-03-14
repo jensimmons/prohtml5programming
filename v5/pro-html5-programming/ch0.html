@@ -37,10 +37,10 @@
 
     <!-- THIRD-PARTY JS: JPANELMENU + BOOTSTRAP (NAV), CODEMIRROR (CODE EDITOR) //-->
     <script src="../assets/js/jquery-1.8.0.min.js"></script>
-    <script src="../assets/js/modernizr-latest.js"></script>
+    <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
     <script src="../assets/js/jquery.popbox.js"></script>
-    <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
+    <script src="../assets/libraries/codemirror/lib/codemirror.min.js"></script>
     <script src="../assets/libraries/codemirror/mode/xml/xml.js"></script>
     <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
     <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
@@ -90,8 +90,11 @@
   <h1>About This Interactive Book</h1>
 </hgroup>
 
-<video controls>
+<video controls poster="video/apress_022813_12.appleuniversal.png" onclick="if(/Android/.test(navigator.userAgent))this.play();">
   <source src="video/apress_022813_12.appleuniversal.mp4" type='video/mp4;' />
+<!--    <source src="video/apress_022813_12.ipad.mp4" type='video/mp4;' /> -->
+<!--    <source src="video/apress_022813_12.iphone4.mp4" type='video/mp4;' /> -->
+<!--    <source src="video/apress_022813_12.normal800x480.mp4" type='video/mp4;' />-->
   <source src="video/apress_022813_12.webmsd.webm" type='video/webm; codecs="vp8, vorbis"' />
   <img src="video/apress_022813_12.appleuniversal.png" alt="" />
 </video>

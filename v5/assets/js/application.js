@@ -242,57 +242,56 @@ APRI.CME.inlineEditor.prototype.reset = function () {
 };
 
 APRI.UTILS = {
- checkStorageSupport: function () {
-   if (Modernizr.localstorage) {
-     APRI.CME.localStorageSupport = true;
-   } 
- },
- logAppCacheErrors: function () {
-   if (window && window.console) {
-     window.applicationCache.onerror = function(e) {
-         log("Application cache error" + e);
-     }
-   }
- },
- offlineVideoContent: function () {
-   var msg = "<div class=\"offline-video-content\"><p>You are not currently online. When you connect to the internet again, a video will appear here.</p></div>";
-   jQuery('video').after(msg);
- },
- /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
- formatStaticCode: function () {
-   var staticCodeareas = [];
-   var figures = jQuery('figure.listing');
-   var codeStr, $figure, $pre, $code, boldLines, staticArea, editor, cmMode;
-   var staticCodeContainer = '<div class="static-code-container"></div>';
-   figures.each(function () {
-     $figure = jQuery(this);
-     $pre = jQuery('pre:first', $figure);
-     $code = jQuery('code:first', $pre);
-     codeStr = $code.text();
-     cmMode = $code.data('cm-mode') ? $code.data('cm-mode') : 'javascript';
-     boldLines = $code.data('bold') ? $code.data('bold').split(',') : [];
-     staticArea = jQuery(staticCodeContainer).insertAfter($pre).get(0);
-     $pre.remove();
-     editor = new CodeMirror( staticArea, {
-         mode: cmMode,
-         tabMode: 'indent',
-         theme: 'static',
-         readOnly: true,
-         lineWrapping: true,
-         lineNumbers: false,
-         pollInterval: 3000,
-         value: codeStr
-       } 
-     );
-     staticCodeareas.push(editor);
-     if (boldLines.length) {
-       for(var i=0, l = boldLines.length; i< l; i++) {
-         editor.setLineClass(parseInt(boldLines[i], 10), 'cm-strong');
-       }
-     } 
-   });
- }
-};
+  logAppCacheErrors: function () {
+    if (window && window.console) {
+      window.applicationCache.onerror = function(e) {
+          log("Application cache error" + e);
+      }
+    }
+  },
+  checkStorageSupport: function () {
+    if (Modernizr.localstorage) {
+      APRI.CME.localStorageSupport = true;
+    }
+  },
+  offlineVideoContent: function () {
+    var msg = "<div class=\"offline-video-content\"><p>You appear to be offline. When you connect to the internet again, a video will appear here.</p></div>";
+    jQuery('video').after(msg);
+  },
+  /* initializes all static code blocks within a figure as instances of codemirror for formatting purposes */
+  formatStaticCode: function () {
+    var staticCodeareas = [];
+    var figures = jQuery('figure.listing');
+    var codeStr, $figure, $pre, $code, boldLines, staticArea, editor, cmMode;
+    var staticCodeContainer = '<div class="static-code-container"></div>';
+    figures.each(function () {
+      $figure = jQuery(this);
+      $pre = jQuery('pre:first', $figure);
+      $code = jQuery('code:first', $pre);
+      codeStr = $code.text();
+      cmMode = $code.data('cm-mode') ? $code.data('cm-mode') : 'javascript';
+      boldLines = $code.data('bold') ? $code.data('bold').split(',') : [];
+      staticArea = jQuery(staticCodeContainer).insertAfter($pre).get(0);
+      $pre.remove();
+      editor = new CodeMirror( staticArea, {
+          mode: cmMode,
+          tabMode: 'indent',
+          theme: 'static',
+          readOnly: true,
+          lineWrapping: true,
+          lineNumbers: false,
+          pollInterval: 3000,
+          value: codeStr
+        }
+      );
+      staticCodeareas.push(editor);
+      if (boldLines.length) {
+        for(var i=0, l = boldLines.length; i< l; i++) {
+          editor.setLineClass(parseInt(boldLines[i], 10), 'cm-strong');
+        }
+      }
+    });
+  }};
 
 jQuery(function () {
 
@@ -307,5 +306,9 @@ jQuery(function () {
  APRI.CME.initCodeEditors();
  APRI.UTILS.formatStaticCode();
  
+
+ if (navigator && !navigator.onLine) {
+   APRI.UTILS.offlineVideoContent();
+ }
 
 });
