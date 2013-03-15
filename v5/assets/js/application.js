@@ -184,14 +184,24 @@ APRI.CME = { // CodeMirror editors
    jQuery("figure.listing[data-listing]").each(function () {
      var $thisFigure = jQuery(this);
      var thisListing = $thisFigure.data('listing');
+     var msg;
      // TODO: ensure we have a code listing for this figure.listing
-            
-     // append the editor container template
-     jQuery('figcaption:first', $thisFigure).after(jQuery(APRI.CME.templates.editorContainerTemplate));
-     // set the data-listing on the triggers
-     jQuery('.button', $thisFigure).data('listing', thisListing);
-            
+
+       // append the editor container template
+       jQuery('figcaption:first', $thisFigure).after(jQuery(APRI.CME.templates.editorContainerTemplate));
+       // set the data-listing on the triggers
+       jQuery('.button', $thisFigure).data('listing', thisListing);
+       
+       // simple online-check for now
+       if($thisFigure.data('online-required') !== undefined) {
+         if (navigator && !navigator.onLine) {
+           msg = '<p>You appear to be offline. You may edit this code example by going back online.</p>';
+           jQuery('.show-inline-editor', $thisFigure).remove();
+           jQuery('figcaption:first', $thisFigure).before(msg);
+         }
+       }
    });
+
    // bind the trigger events
    jQuery(".show-inline-editor:not('.open')").bind('click', function (evt) {
      evt.stopPropagation();
