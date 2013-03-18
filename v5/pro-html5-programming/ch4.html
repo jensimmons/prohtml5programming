@@ -37,10 +37,10 @@
 
     <!-- THIRD-PARTY JS: JPANELMENU + BOOTSTRAP (NAV), CODEMIRROR (CODE EDITOR) //-->
     <script src="../assets/js/jquery-1.8.0.min.js"></script>
-    <script src="../assets/js/modernizr-latest.js"></script>
+    <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
     <script src="../assets/js/jquery.popbox.js"></script>
-    <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
+    <script src="../assets/libraries/codemirror/lib/codemirror.min.js"></script>
     <script src="../assets/libraries/codemirror/mode/xml/xml.js"></script>
     <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
     <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
@@ -325,7 +325,7 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 
 <p>For the very simplest example (the example file <code>audio.html</code>), let’s create a page that shows an audio player for a soothing, satisfying, and very public domain audio clip: Johann Sebastian Bach’s “Air” (shown in Listing 4-5).</p>
 
-<figure class="listing" data-listing="4-5"><figcaption>Listing 4-5. HTML Page with an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-5" data-online-required="true"><figcaption>Listing 4-5. HTML Page with an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;title&gt; HTML5 Audio &lt;/title&gt;
   &lt;audio controls src="johann_sebastian_bach_air.ogg"&gt;
@@ -353,7 +353,7 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 <h3>Using the Source</h3>
 <p>Finally, we<span class="index-term"><span class="primary">media source files</span></span> come<span class="index-term"><span class="primary">audio element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">source</span></span><span class="index-term"><span class="primary">src attribute</span></span> to the most important<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> attribute: <code>src</code>. In the simplest setup, a single <code>src</code> attribute points to the file containing the media clip. But what if the browser in question does not support that container or codec (in this case, Ogg and Vorbis)? Then, an alternate declaration is shown in Listing 4-6; it includes multiple sources from which the browser can choose (see the example file <code>audio_multisource.html</code>).</p>
 
-<figure class="listing" data-listing="4-6"><figcaption>Listing 4-6. An Audio Element with Multiple Source Elements</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
+<figure class="listing" data-listing="4-6" data-online-required="true"><figcaption>Listing 4-6. An Audio Element with Multiple Source Elements</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
   &lt;source src="johann_sebastian_bach_air.ogg"&gt;
   &lt;source src="johann_sebastian_bach_air.mp3"&gt;
   An audio clip from Johann Sebastian Bach.
@@ -367,7 +367,7 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 
 <p>However, there is another way to give the browser hints about which media source to use. Recall that a container for media can support many different codec types, and you will understand that a browser may be misled into which types it does or does not support based on the extension of the declared source file. If you specify a type attribute that does not match your source, the browser may refuse to play the media. It may be wise to include the type only if you know it with certainty. Otherwise, it is better to omit this attribute and let the browser detect the encoding as shown in Listing 4-7 (in the example file <code>audio_type.html</code>). Also note that the WebM format allows only one audio codec and one video codec. That means the <code>.webm</code> extension or the video/webm content-type tells you everything you need to know about the file. If a browser can play .webm, it should be able to play any valid <code>.webm</code> file.</p>
 
-<figure class="listing" data-listing="4-7"><figcaption>Listing 4-7. Including Type and Codec Information in an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
+<figure class="listing" data-listing="4-7" data-online-required="true"><figcaption>Listing 4-7. Including Type and Codec Information in an Audio Element</figcaption><pre><code data-cm-mode="text/html">&lt;audio controls&gt;
   &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
   &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
   An audio clip from Johann Sebastian Bach.
@@ -416,7 +416,7 @@ I think it’s great. I can’t wait for all the browsers to support it!</code><
 <h3>Taking Control</h3>
 <p>You’ve already seen that the <span class="index-term"><span class="primary">media controls</span></span><span class="index-term"><span class="primary">audio element</span><span class="secondary">playback controls</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">playback controls</span></span>default playback controls can be displayed by using the <code>controls</code> attribute<span class="index-term"><span class="primary">controls attribute</span></span> in the <code>video</code> or <code>audio</code> tag. As you might expect, leaving out this attribute will not display controls when the media is displayed, but it will also not show anything at all in the case of <em>audio</em> files, as the only visual representation of an audio element is its controls. (A video without controls still displays the video content.) Leaving out the <code>controls</code> attribute should not display any content that affects the normal rendering of the page. One way to cause the media to play is to set another attribute in<span class="index-term"><span class="primary">autoplay attribute</span></span> the tag: <code>autoplay</code> (see Listing 4-8 and the example file <code>audio_no_control.html</code>).</p>
 
-<figure class="listing" data-listing="4-8"><figcaption>Listing 4-8. Using the Autoplay Attribute</figcaption><pre><code data-cm-mode="text/html">&lt;audio autoplay&gt;
+<figure class="listing" data-listing="4-8" data-online-required="true"><figcaption>Listing 4-8. Using the Autoplay Attribute</figcaption><pre><code data-cm-mode="text/html">&lt;audio autoplay&gt;
   &lt;source src="johann_sebastian_bach_air.ogg" type="audio/ogg; codecs=vorbis"&gt;
   &lt;source src="johann_sebastian_bach_air.mp3" type="audio/mpeg"&gt;
   An audio clip from Johann Sebastian Bach.
@@ -584,7 +584,7 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
 <h3>Audio Activation</h3>
 <p>If your user interface<span class="index-term"><span class="primary">audio</span><span class="secondary">activation</span></span> needs to play <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>an audio clip for users, but you don’t want to affect the display with a playback timeline or controls, you can create an invisible <code>audio</code> element—one with the <code>controls</code> attribute unset or set to <code>false</code> —and present your own controls for audio playback. Consider the simple code in Listing 4-9, also available in the sample code file <code>audioCue.html</code>.</p>
 
-<figure class="listing" data-listing="4-9"><figcaption>Listing 4-9. Adding Your Own Play Button to Control Audio</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-9" data-online-required="true"><figcaption>Listing 4-9. Adding Your Own Play Button to Control Audio</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Audio cue&lt;/title&gt;
@@ -687,7 +687,7 @@ Note that this function returns the very non-binary “null,” “maybe,” or 
 </p>
 
 <figure id="fig3_4" class="image">
-  <img src="images/ch4/fig4-3.gif">
+  <img src="images/ch4/fig4-3.jpg">
   <figcaption>Figure 4-3. The video timeline application</figcaption>
 </figure>
 </section>
@@ -966,7 +966,7 @@ function stopTimeline() {
 <h3>The Final Code</h3>
 <p>Listing 4-10 shows the complete code for the video timeline page<span class="index-term"><span class="primary">video element</span><span class="secondary">timeline code</span></span>.</p>
 
-<figure class="listing" data-listing="4-10" data-preview-height="700"><figcaption>Listing 4-10. The Complete Video Timeline Code</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-10" data-preview-height="700" data-online-required="true"><figcaption>Listing 4-10. The Complete Video Timeline Code</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Video Timeline&lt;/title&gt;
@@ -1087,7 +1087,7 @@ onended="stopTimeline()" autobuffer="true"
 <h3>Background Noise in a Page</h3>
 <p>Many a web site has <span class="index-term"><span class="primary">audio element</span><span class="secondary">background noise in a page</span></span>attempted to entertain its viewers by playing audio by default for any visitors. While we don’t condone this practice, Audio support makes it quite easy to achieve this, as shown in Listing 4-11.</p>
 
-<figure class="listing" data-listing="4-11"><figcaption>Listing 4-11. Using the Loop and Autoplay Attributes</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-11" data-online-required="true"><figcaption>Listing 4-11. Using the Loop and Autoplay Attributes</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Background Music&lt;/title&gt;
@@ -1099,7 +1099,7 @@ onended="stopTimeline()" autobuffer="true"
 &lt;/html&gt;</code></pre></figure><p>As you can see, playing a looping <span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span>background sound is as easy as declaring a single <code>audio</code> tag with the <code>autoplay</code> <span class="index-term"><span class="primary">audio element</span><span class="secondary">background noise in a page</span></span><span class="index-term"><span class="primary">autoplay attribute</span></span><span class="index-term"><span class="primary">loop attribute</span></span>and <code>loop</code> attributes set (see Figure <span class="internal-reference" id="ir_fig4_4">4-4</span>).
 
 </p>
-<figure id="fig4_4" class="image"><img src="images/ch4/fig4-4.gif"><figcaption>Figure 4-4. Using autoplay to play music when a page loads</figcaption></figure><aside>
+<figure id="fig4_4" class="image"><img src="images/ch4/fig4-4.png"><figcaption>Figure 4-4. Using autoplay to play music when a page loads</figcaption></figure><aside>
 <h3>Losing Viewers in The &lt;Blink&gt; of an Eye</h3>
 <p><strong>Brian says</strong>: “With great power comes great responsibility, and just because you <em>can</em>, doesn’t mean you <em>should</em>. If you want an example, just remember the <code>&lt;blink&gt;</code> tag!”</p>
 
@@ -1114,7 +1114,7 @@ onended="stopTimeline()" autobuffer="true"
 <h3>Mouseover Video Playback</h3>
 <p>Another way to use<span class="index-term"><span class="primary">mouseover video playback</span></span><span class="index-term"><span class="primary">video element</span><span class="secondary">mouseover video playback</span></span> simple scripting effectively with video clips is to trigger the <code>play</code> and <code>pause</code> routines, based on mouse movement over the video. This could be useful in a site that needs to display many video clips and let the user choose which ones to play. The video gallery can display short preview clips on when a user moves the mouse over them and a full video display when the<span class="index-term"><span class="primary">audio</span><span class="secondary">Audio API</span></span><span class="index-term"><span class="primary">video</span><span class="secondary">Video API</span></span> user clicks. It is quite easy to achieve this affect using a code sample similar to Listing 4-12 (see the example file <code>mouseoverVideo.html</code>).</p>
 
-<figure class="listing" data-listing="4-12" data-preview-height="500"><figcaption>Listing 4-12. Mouse Detection on a Video Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
+<figure class="listing" data-listing="4-12" data-preview-height="500" data-online-required="true"><figcaption>Listing 4-12. Mouse Detection on a Video Element</figcaption><pre><code data-cm-mode="text/html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;link rel="stylesheet" href="styles.css"&gt;
   &lt;title&gt; Mouseover Video&lt;/title&gt;
@@ -1130,7 +1130,7 @@ onended="stopTimeline()" autobuffer="true"
 <p>By simply setting a few extra attributes, the preview playback can trigger when a user points at the video, as shown in Figure <span class="internal-reference" id="ir_fig5_4">4-5</span>.
 
 </p>
-<figure id="fig5_4" class="image"><img src="images/ch4/fig4-5.gif"><figcaption>Figure 4-5. Mouseover<span class="index-term"><span class="primary">
+<figure id="fig5_4" class="image"><img src="images/ch4/fig4-5.jpg"><figcaption>Figure 4-5. Mouseover<span class="index-term"><span class="primary">
 <em>mouseover video playback</em>
 </span></span><span class="index-term"><span class="primary">
 <em>video element</em>

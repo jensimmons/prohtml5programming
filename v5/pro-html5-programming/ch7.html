@@ -37,10 +37,10 @@
 
     <!-- THIRD-PARTY JS: JPANELMENU + BOOTSTRAP (NAV), CODEMIRROR (CODE EDITOR) //-->
     <script src="../assets/js/jquery-1.8.0.min.js"></script>
-    <script src="../assets/js/modernizr-latest.js"></script>
+    <script src="../assets/js/modernizr.min.js"></script>
     <script src="../assets/js/jpanelmenu-1.0.0.js"></script>
     <script src="../assets/js/jquery.popbox.js"></script>
-    <script src="../assets/libraries/codemirror/lib/codemirror.js"></script>
+    <script src="../assets/libraries/codemirror/lib/codemirror.min.js"></script>
     <script src="../assets/libraries/codemirror/mode/xml/xml.js"></script>
     <script src="../assets/libraries/codemirror/mode/javascript/javascript.js"></script>
     <script src="../assets/libraries/codemirror/mode/css/css.js"></script>
@@ -124,7 +124,7 @@
 
 <p>Ultimately, all of <span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span>these methods for providing real-time data involve HTTP request<span class="index-term"><span class="primary">HTTP request headers</span></span><span class="index-term"><span class="primary">HTTP response headers</span></span> and <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>request and response headers</tertiary></span>response headers, which contain lots of additional, unnecessary header data and introduce latency. On top of that, full-duplex connectivity requires more than just the downstream connection from server to client. In an effort to simulate full-duplex communication over half-duplex HTTP, many of today’s solutions use two connections: one for the downstream and one for the upstream. The maintenance and coordination of these two connections introduces significant overhead in terms of resource consumption and adds lots of <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>complexity applications</tertiary></span>complexity. Simply put, HTTP wasn’t designed for real-time, full-duplex communication as you can see in the Figure <span class="internal-reference" id="ir_fig1_7">7-1</span>, which shows the complexities associated with building a web application that displays real-time data from a back-end data source using a publish/subscribe model over half-duplex HTTP.
 </p>
-<figure id="fig1_7" class="image"><img src="images/ch7/fig7-1.gif"><figcaption>Figure 7-1. The complexity of real-time HTTP <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>complexity applications</tertiary></span>applications<span class="index-term"><span class="primary">Comet applications</span></span>
+<figure id="fig1_7" class="image"><img src="images/ch7/fig7-1.png"><figcaption>Figure 7-1. The complexity of real-time HTTP <span class="index-term"><span class="primary">Websocket API</span><span class="secondary">real-time and HTTP</span><tertiary>complexity applications</tertiary></span>applications<span class="index-term"><span class="primary">Comet applications</span></span>
 </figcaption></figure><p>It gets even worse when you try to scale out those solutions. Simulating bidirectional browser communication over HTTP is error-prone and complex and all that complexity does not scale. Even though your end users might be enjoying something that looks like a real-time web application, this “real-time” experience has a high price tag. It’s a price that you will pay in additional<span class="index-term"><span class="primary">Real-time web</span><span class="secondary">history of</span></span> latency, unnecessary network traffic and a drag on CPU performance.</p>
 </section>
 
@@ -152,7 +152,7 @@
 <p>To establish a WebSocket<span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">protocol</span></span><span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">handshake</span></span> connection, the client and server upgrade from the HTTP protocol to the WebSocket protocol during their initial handshake, as shown in Figure <span class="internal-reference" id="ir_fig2_7">7-2</span>. Note that this connection description represents draft 17 of the protocol.
 
 </p>
-<figure id="fig2_7" class="image"><img src="images/ch7/fig7-2.gif"><figcaption>Figure 7-2. The WebSocket Upgrade handshake</figcaption></figure><figure class="listing"><figcaption>Listing 7-1. The WebSocket Upgrade Handshake</figcaption><pre><code></code></pre></figure><p><strong>From client to server:</strong></p>
+<figure id="fig2_7" class="image"><img src="images/ch7/fig7-2.png"><figcaption>Figure 7-2. The WebSocket Upgrade handshake</figcaption></figure><figure class="listing"><figcaption>Listing 7-1. The WebSocket Upgrade Handshake</figcaption><pre><code></code></pre></figure><p><strong>From client to server:</strong></p>
 
 <pre><code>GET /chat HTTP/1.1
 Host: example.com
@@ -230,7 +230,7 @@ myWebSocket.onclose = function(evt) { alert("Connection closed."); };</code></pr
 <p>So how efficient can WebSocket be? Let’s compare a polling application and a WebSocket application side by side. To illustrate polling, we will examine a web application in which a web page requests real-time stock data from a web server using a traditional polling model. It does this by <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>polling</tertiary></span>polling a Java Servlet that is hosted on a web server. A message broker receives data from a fictitious stock price feed with continuously updating prices. The web page connects and subscribes to a specific stock channel (a topic on the message broker) and uses an <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>XMLHTTPRequest</tertiary></span>XMLHttpRequest<span class="index-term"><span class="primary">XMLHttpRequest</span></span> to poll for updates once per second. When updates are received, some calculations are performed and the stock data is displayed as shown in Figure <span class="internal-reference" id="ir_fig3_7">7-3</span>.
 
 </p>
-<figure id="fig3_7" class="image"><img src="images/ch7/fig7-3.gif"><figcaption>Figure 7-3. Example JavaScript stock ticker application</figcaption></figure><p>It all sounds great, but a look under the hood reveals there are some serious issues with this application. For example, in Mozilla Firefox with Firebug, you can see that GET requests hammer the server at one-second intervals. Looking at the HTTP headers reveals the shocking amount of overhead that is associated with each request. Listings 7-3 and 7-4 show the HTTP header <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>HTTP request header</tertiary></span>data for just a single request and response.</p>
+<figure id="fig3_7" class="image"><img src="images/ch7/fig7-3.png"><figcaption>Figure 7-3. Example JavaScript stock ticker application</figcaption></figure><p>It all sounds great, but a look under the hood reveals there are some serious issues with this application. For example, in Mozilla Firefox with Firebug, you can see that GET requests hammer the server at one-second intervals. Looking at the HTTP headers reveals the shocking amount of overhead that is associated with each request. Listings 7-3 and 7-4 show the HTTP header <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>HTTP request header</tertiary></span>data for just a single request and response.</p>
 
 <figure class="listing"><figcaption>Listing 7-3. <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">network traffic and latency</span><tertiary>HTTP request header</tertiary></span> HTTP Request Header<span class="index-term"><span class="primary">HTTP request header</span></span></figcaption><pre><code>GET /PollingStock//PollingStock HTTP/1.1
 Host: localhost:8080
@@ -643,7 +643,7 @@ asyncore.loop()</code></pre></figure><p>Now that we’ve got a working echo serv
 <p>Another way to see if WebSocket is supported in your browser, is to use the browser’s console (Firebug or Chrome Developer Tools for example). Figure <span class="internal-reference" id="ir_fig7_7">7-7</span> shows how you can test whether WebSocket is supported natively in Google Chrome (if it is not, <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">browser support for</span></span><span class="index-term"><span class="primary">browser support</span><span class="secondary">for WebSocket API</span></span>the <code>window.WebSocket</code> command<span class="index-term"><span class="primary">window.WebSocket command</span></span> returns “undefined.”)
 
 </p>
-<figure id="fig7_7" class="image"><img src="images/ch7/fig7-7.gif"><figcaption>Figure 7-7. Testing WebSocket support in Google Chrome Developer Tools</figcaption></figure>
+<figure id="fig7_7" class="image"><img src="images/ch7/fig7-7.png"><figcaption>Figure 7-7. Testing WebSocket support in Google Chrome Developer Tools</figcaption></figure>
 </section>
 
 <section id="sec12_7">
@@ -812,7 +812,7 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 <p>Figure <span class="internal-reference" id="ir_fig8_7">7-8</span> shows the web page in action.
 
 </p>
-<figure id="fig8_7" class="image"><img src="images/ch7/fig7-8.gif"><figcaption>Figure 7-8. websocket.html in action
+<figure id="fig8_7" class="image"><img src="images/ch7/fig7-8.png"><figcaption>Figure 7-8. websocket.html in action
 </figcaption></figure><p>The example code folder also contains a web page that connects to the broadcast service that was created in the previous section. To see that action, close the command prompt that is running the WebSocket server and navigate to the folder that contains the WebSocket code, and issue the following command to run the python WebSocket server.</p>
 
 <pre><code>python broadcast.py</code></pre>
@@ -821,7 +821,7 @@ Running the WebSocket Page</code></pre></figure><p>To test <span class="index-te
 <p>Figure <span class="internal-reference" id="ir_fig9_7">7-9</span> shows the broadcast WebSocket server in action on two separate web pages.
 
 </p>
-<figure id="fig9_7" class="image"><img src="images/ch7/fig7-9.gif"><figcaption>Figure 7-9. <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">applications</span><tertiary>sending messages</tertiary></span>
+<figure id="fig9_7" class="image"><img src="images/ch7/fig7-9.png"><figcaption>Figure 7-9. <span class="index-term"><span class="primary">WebSocket API</span><span class="secondary">applications</span><tertiary>sending messages</tertiary></span>
 <em>broadcast.html</em><span class="index-term"><span class="primary">Broadcast.html</span></span> <em>in action in two browsers</em>
 </figcaption></figure>
 </section></section>

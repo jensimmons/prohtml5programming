@@ -8,7 +8,7 @@ APRI.toc = {
   'chapters': [
     {'Cover': 'cover.html'},
     {'Introduction': 'introduction.html'},
-    {'About the Interactive Book': 'ch0.html'},
+    {'About This Interactive Book': 'ch0.html'},
     {'Chapter 1: Overview of HTML5': 'ch1.html'},
     {'Chapter 2: Using the Canvas API': 'ch2.html'},
     {'Chapter 3: Working with Scalable Vector Graphics': 'ch3.html'},
