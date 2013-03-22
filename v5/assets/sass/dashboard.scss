@@ -216,9 +216,7 @@ div[role='main'] {
     }
   }
 }
-@media screen and (min-width: 35em) { // 560px
-}
-@media screen and (min-width: 40em) { // 640px
+@media screen and (min-width: 45em) { // 640px
   div[role='main'] {
     li {
       float: left;
@@ -228,13 +226,6 @@ div[role='main'] {
   }
 }
 @media screen and (min-width: 45em) { // 720px
-  div[role='main'] {
-    li {
-      float: left;
-      margin: 1em 4% 1em 0;
-      width: 22%;
-    }
-  }
   .recommendations {
     article {
       float: left;
@@ -252,6 +243,14 @@ div[role='main'] {
     }
   }
 }
-
+@media screen and (min-width: 60em) { 
+  div[role='main'] {
+    li {
+      float: left;
+      margin: 1em 4% 1em 0;
+      width: 22%;
+    }
+  }
+}
 
 
