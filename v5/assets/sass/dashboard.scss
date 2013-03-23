@@ -196,8 +196,11 @@ div[role='main'] {
   div[role='main'] {
     li {
       float: left;
-      margin: 1em 4% 1em 0;
+      margin: 1em 0 1em 0;
       width: 46%;
+    }
+    li:nth-child(odd) {
+      margin-right: 4%;
     }
   }
 }
