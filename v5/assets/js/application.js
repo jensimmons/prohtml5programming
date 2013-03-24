@@ -301,7 +301,9 @@ jQuery(function () {
  APRI.UI.initTextResizeHandler();
 
  APRI.UI.initTOC();
- $('.popbox').popbox();
+ $('#toc').popbox({
+   type: 'toc'
+ });
 
  APRI.UTILS.checkStorageSupport();
  APRI.CME.initCodeEditors();
