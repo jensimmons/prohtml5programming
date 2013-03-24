@@ -11,7 +11,24 @@
 body {
   font-family: $base-font;
   color: $text;
+
+  &.georgia {
+    font-family: $georgia;
+  }
+  &.palatino {
+    font-family: $palatino;
+  }
+  &.source-sans {
+    font-family: $sourcesans;
+  }
+  &.times-new-roman {
+    font-family: $timesnewroman;
+  }
+  &.verdana {
+    font-family: $verdana;
+  }
 }
+
  
 h1, h2, h3, h4 ,h5 ,h6 {
   font-family: $headline-font;
