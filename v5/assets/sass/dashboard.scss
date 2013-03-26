@@ -196,8 +196,11 @@ div[role='main'] {
   div[role='main'] {
     li {
       float: left;
-      margin: 1em 4% 1em 0;
+      margin: 1em 0 1em 0;
       width: 46%;
+    }
+    li:nth-child(odd) {
+      margin-right: 4%;
     }
   }
 }
@@ -216,9 +219,7 @@ div[role='main'] {
     }
   }
 }
-@media screen and (min-width: 35em) { // 560px
-}
-@media screen and (min-width: 40em) { // 640px
+@media screen and (min-width: 45em) { // 640px
   div[role='main'] {
     li {
       float: left;
@@ -228,6 +229,24 @@ div[role='main'] {
   }
 }
 @media screen and (min-width: 45em) { // 720px
+  .recommendations {
+    article {
+      float: left;
+      width: 31.6458%;
+      margin-right: -100%;  
+    }
+    article:nth-child(even) {
+      clear: none;
+    }
+    article:nth-child(3) {
+      margin-left: 34.1458%;
+    }
+    article:nth-child(4) {
+      margin-left: 68.2917%;
+    }
+  }
+}
+@media screen and (min-width: 60em) { 
   div[role='main'] {
     li {
       float: left;
@@ -235,20 +254,6 @@ div[role='main'] {
       width: 22%;
     }
   }
-  .recommendations {
-    article {
-      float: left;
-      width: 31.6458%;
-      margin-right: -100%;  
-    }
-    article:nth-child(2) {
-      margin-left: 34.1458%;
-    }
-    article:nth-child(3) {
-      margin-left: 68.2917%;
-    }
-  }
 }
-
 
 

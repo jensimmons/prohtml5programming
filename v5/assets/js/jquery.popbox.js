@@ -4,6 +4,7 @@
     var increment = 1;
     var settings = $.extend({
       selector      : this.selector,
+      type          : 'normal',
       open          : '.trigger',
       box           : '.box',
       arrow         : '.arrow',
@@ -33,43 +34,49 @@
           // console.log(trigger.offset().left);
           // console.log(box.width());
           box.css({'display': 'block', 'top': triggerTop, 'left': triggerLeft });
-          
-          $(window).on('scroll.popbox.box' + increment, function (e) {
-            var boxOuterHeight = box.outerHeight(true),
-            windowOuterHeight = $(window).outerHeight(true),
-            triggerOuterHeight = trigger.outerHeight(true),
-            triggerOffsetTop = trigger.offset().top,
-            windowScrollTop = $(window).scrollTop(),
-            boxOffsetTop = box.offset().top,
-            panelTop = jQuery('.jPanelMenu-panel').offset().top;
 
-            // if box height < window height - trigger.outerHeight, keep at top of screen
-            if (boxOuterHeight <= windowOuterHeight - triggerOuterHeight) {
-              box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
-            } else { // box height > window height - trigger.outerHeight (box is greater than remaining window height)
-              // if windowScrollTop + windowOuterHeight > boxOffsetTop + boxOuterHeight => ( if we've scrolled past bottom of box, glue to bottom of window)
-              if ((windowScrollTop  + windowOuterHeight) > (boxOffsetTop + boxOuterHeight)) {
-                box.css({'top': windowScrollTop + windowOuterHeight - boxOuterHeight - panelTop });
-              } else if ( windowScrollTop + triggerOuterHeight < boxOffsetTop ) { 
-                // if window.scrollTop() + trigger.outHeight() > box.offset().top => (if we've scrolled before top of box, glue to bottom of trigger)
+          if( settings['type'] === 'toc' ) {
+
+            $(window).on('scroll.popbox.box' + increment, function (e) {
+              var boxOuterHeight = box.outerHeight(true),
+              windowOuterHeight = $(window).outerHeight(true),
+              triggerOuterHeight = trigger.outerHeight(true),
+              triggerOffsetTop = trigger.offset().top,
+              windowScrollTop = $(window).scrollTop(),
+              boxOffsetTop = box.offset().top,
+              panelTop = jQuery('.jPanelMenu-panel').offset().top;
+
+              // if box height < window height - trigger.outerHeight, keep at top of screen
+              if (boxOuterHeight <= windowOuterHeight - triggerOuterHeight) {
                 box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
+              } else { // box height > window height - trigger.outerHeight (box is greater than remaining window height)
+                // if windowScrollTop + windowOuterHeight > boxOffsetTop + boxOuterHeight => ( if we've scrolled past bottom of box, glue to bottom of window)
+                if ((windowScrollTop  + windowOuterHeight) > (boxOffsetTop + boxOuterHeight)) {
+                  box.css({'top': windowScrollTop + windowOuterHeight - boxOuterHeight - panelTop });
+                } else if ( windowScrollTop + triggerOuterHeight < boxOffsetTop ) { 
+                  // if window.scrollTop() + trigger.outHeight() > box.offset().top => (if we've scrolled before top of box, glue to bottom of trigger)
+                  box.css({'top': triggerOffsetTop + triggerOuterHeight - panelTop });
+                }
               }
-            }
-            
-          });
-          
-          $(window).on('resize.popbox.box' + increment, function (e) {
-            triggerLeft = ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth()) < 0 ?  0 : ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth());
-            box.css({ 'left': triggerLeft });
-          });
+
+            });
+
+            $(window).on('resize.popbox.box' + increment, function (e) {
+              triggerLeft = ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth()) < 0 ?  0 : ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth());
+              box.css({ 'left': triggerLeft });
+            });
+          }
         }
       },
 
       close: function(){
         $(settings['box']).fadeOut("fast");
         
-        $(window).off('scroll.popbox.box' + increment);
-        $(window).off('resize.popbox.box' + increment);
+        if( settings['type'] === 'toc' ) {
+          $(window).off('scroll.popbox.box' + increment);
+          $(window).off('resize.popbox.box' + increment);
+        }
+
       }
     };
 
