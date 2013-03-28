@@ -1,7 +1,8 @@
 (function(){
 
   $.fn.popbox = function(options){
-    var increment = 1;
+    // added popid to uniquely identify event bindings per popbox
+    // pass in unique open and box ids for multiple popboxes
     var settings = $.extend({
       selector      : this.selector,
       type          : 'normal',
@@ -9,7 +10,8 @@
       box           : '.box',
       arrow         : '.arrow',
       arrow_border  : '.arrow-border',
-      close         : '.close'
+      close         : '.close',
+      popid         : '1'
     }, options);
 
     var methods = {
@@ -20,6 +22,8 @@
         var box = $(settings['box']);
         var trigger = $(settings['open']);
         var triggerLeft, triggerTop, panelTop;
+        var type = settings['type'];
+        var popid = settings['popid'];
 
         // box.find(settings['arrow']).css({'left': box.width()/2 - 10});
         // box.find(settings['arrow_border']).css({'left': box.width()/2 - 10});
@@ -27,17 +31,17 @@
         if(box.css('display') == 'block'){
           methods.close();
         } else {
+
           // box.css({'display': 'block', 'top': 10, 'left': ((pop.parent().width()/2) -box.width()/2 )});
           panelTop = jQuery('.jPanelMenu-panel').offset().top; // needs to be a child of panel so that we're in same postiion: relative context with toc header
           triggerTop = trigger.offset().top + trigger.outerHeight() - panelTop;
           triggerLeft = ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth()) < 0 ?  0 : ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth());
-          // console.log(trigger.offset().left);
-          // console.log(box.width());
+
           box.css({'display': 'block', 'top': triggerTop, 'left': triggerLeft });
 
-          if( settings['type'] === 'toc' ) {
-
-            $(window).on('scroll.popbox.box' + increment, function (e) {
+          if( type === 'toc' ) {
+            console.log('should scroll right');
+            $(window).on('scroll.popbox.box' + popid, function (e) {
               var boxOuterHeight = box.outerHeight(true),
               windowOuterHeight = $(window).outerHeight(true),
               triggerOuterHeight = trigger.outerHeight(true),
@@ -61,7 +65,7 @@
 
             });
 
-            $(window).on('resize.popbox.box' + increment, function (e) {
+            $(window).on('resize.popbox.box' + popid, function (e) {
               triggerLeft = ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth()) < 0 ?  0 : ((trigger.offset().left + trigger.outerWidth()/2) - box.outerWidth());
               box.css({ 'left': triggerLeft });
             });
@@ -73,8 +77,8 @@
         $(settings['box']).fadeOut("fast");
         
         if( settings['type'] === 'toc' ) {
-          $(window).off('scroll.popbox.box' + increment);
-          $(window).off('resize.popbox.box' + increment);
+          $(window).off('scroll.popbox.box' + settings['popid']);
+          $(window).off('resize.popbox.box' + settings['popid']);
         }
 
       }
@@ -88,15 +92,20 @@
 
     $(document).bind('click', function(event){
       if(!$(event.target).closest(settings['selector']).length){
-        methods.close();
+        if(settings['persist'] === 'true' && $(event.target).closest(settings['box']).length) {
+          console.log('persist');
+        } else {
+          methods.close();
+        }
+        
       }
     });
     
 
 
     return this.each(function(){
-      increment++;
-      $(this).css({'width': $(settings['box']).width()}); // Width needs to be set otherwise popbox will not move when window resized.
+      // $(this).css({'width': $(settings['box']).width()}); // Width needs to be set otherwise popbox will not move when window resized.
+      console.log( $(settings['popid']) );
       $(settings['open'], this).bind('click', methods.open);
       // $(settings['open'], this).parent().find(settings['close']).bind('click', function(event){
       //   event.preventDefault();

@@ -16,6 +16,7 @@ APRI.UI = {
    if (Modernizr.localstorage) {
      localStorage.font_size_pref = newSize;
    }
+   $(window).trigger('scroll');
  },
  // create TOC & append to toc link
  initTOC: function () {
@@ -73,24 +74,21 @@ APRI.UI = {
  },
  // initialize font-size controls
  initTextResizeHandler: function () {
-   var me = this;
+   var that = this;
    jQuery('.btn.fs-smaller').bind('click', function (e) {
-     e.stopPropagation();
      e.preventDefault();
-     me.textResize(-1);
+     that.textResize(-1);
    });
    jQuery('.btn.fs-default').bind('click', function (e) {
-     e.stopPropagation();
      e.preventDefault();
-     me.textResize(0);
+     that.textResize(0);
    });
    jQuery('.btn.fs-larger').bind('click', function (e) {
-     e.stopPropagation();
      e.preventDefault();
-     me.textResize(1);
+     that.textResize(1);
    });
 
-   // pick up fontSize from cookie if exists
+   // pick up fontSize from localStorage if exists
    if (Modernizr.localstorage && localStorage.font_size_pref !== undefined) {
      $('html').css('font-size', localStorage.font_size_pref );
    }
@@ -294,23 +292,53 @@ APRI.UTILS = {
     });
   }};
 
+  var selectFont = function (newFont) {
+    var fonts = 'georgia palatino source-sans times-new-roman verdana',
+      $body = $('body');
+    if (Modernizr.localstorage) {
+      localStorage.font_face_pref = newFont;
+    }
+    $body.removeClass(fonts).addClass(newFont);
+  };
+
 jQuery(function () {
 
 
- APRI.UI.initPanelNavigation();
- APRI.UI.initTextResizeHandler();
+  APRI.UI.initPanelNavigation();
+  APRI.UI.initTextResizeHandler();
 
- APRI.UI.initTOC();
- $('#toc').popbox({
-   type: 'toc'
- });
+  APRI.UI.initTOC();
+  $('#toc').popbox({
+    type: 'toc',
+    popid: '3'
+  });
 
- APRI.UTILS.checkStorageSupport();
- APRI.CME.initCodeEditors();
- APRI.UTILS.formatStaticCode();
+  APRI.UTILS.checkStorageSupport();
+  APRI.CME.initCodeEditors();
+  APRI.UTILS.formatStaticCode();
 
- if (navigator && !navigator.onLine) {
-   APRI.UTILS.offlineVideoContent();
- }
+  if (navigator && !navigator.onLine) {
+    APRI.UTILS.offlineVideoContent();
+  }
+
+  jQuery('.font-tools-popbox li').on('click', function (e) {
+    e.preventDefault();
+    var $this = $(this),
+      font = $this.data('font');
+      $this.addClass('selected').siblings().removeClass('selected');
+      selectFont(font);
+  });
+  if (Modernizr.localstorage && localStorage.font_face_pref !== undefined) {
+    // trigger the selection manually to update the UI
+    jQuery('.font-tools-popbox li[data-font=' + localStorage.font_face_pref + ']').click();
+  }
+  
+  $('.font-tools-trigger-container').popbox({
+    type: 'toc',
+    box: '#font-popbox-box',
+    open: '#font-popbox-trigger',
+    popid: '2',
+    persist: 'true'
+  });
 
 });

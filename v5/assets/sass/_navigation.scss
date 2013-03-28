@@ -133,13 +133,92 @@ nav#menu {
 }
 
 //-----------------------------------------------------------------------
-// Font size controls
+// Font tools
 //-----------------------------------------------------------------------
 
-.font-size-controls {
+.font-tools-trigger-container {
   position: fixed; 
   top: 0px; 
   right: 60px;
+//width: 100px;
+  a {
+    cursor: default;
+    height: 44px;
+    width: 44px;
+    text-indent: -9999px;
+    display: block;
+    float: left;
+    outline: none;
+  }
+  #font-popbox-trigger {
+    background: transparent url(../images/bigA.svg) no-repeat scroll center center;
+  }
+}
+
+body div.font-tools-popbox {
+  display: none;
+  font-family: $interface-font;
+  
+}
+.font-selector {
+  padding-top: 10px;
+  clear: both;
+}
+.font-tools-popbox {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid #ddd;
+  border-color: #ddd #ddd #999999 #999999;
+  box-shadow: -1px 1px 7px -3px rgba(0, 0, 0, 0.6);
+  @include border-radius(8px 0px 8px 8px);
+  background: #fff;
+  background: rgba(250,250,250,0.97);
+  padding: 1em;
+  margin-top: 1px;
+  margin: 0;
+
+  ul, li {
+    list-style: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    clear: left;
+  }
+  li {
+    color: #666;
+    margin: 0;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    border-bottom: none medium;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  li.last {
+    border-bottom: 1px solid #ccc;
+  }
+  li.selected {
+    background: transparent url(../images/icn_checkmark.png) 92% center no-repeat scroll;
+    color: $text;
+  }
+
+}
+
+//-----------------------------------------------------------------------
+// Font size controls
+//-----------------------------------------------------------------------
+
+.text-sizer {
+//  position: fixed; 
+//  top: 0px; 
+//  right: 60px;
+width: 100%;
   a {
     cursor: default;
     height: 44px;
@@ -151,16 +230,22 @@ nav#menu {
   }
 }
 a.fs-smaller {
-  background: url('../images/littleA.svg') no-repeat  scroll 21px 16px;
+  background: url('../images/littleA.svg') no-repeat  scroll center 17px;
+  width: 40%;
+  float: left;
+  border: 1px solid #ccc;
 }
 a.fs-larger {
-  background: url('../images/bigA.svg') no-repeat  scroll 0px 10px;
+  background: url('../images/bigA.svg') no-repeat  scroll center 11px;
+  width: 40%;
+  float: right;
+  border: 1px solid #ccc;
 }
 .ie6-8 a.fs-smaller {
-  background: url('../images/littleA.png') no-repeat  scroll 21px 16px; // for old IE, which doesn't support SVG
+  background: url('../images/littleA.png') no-repeat  scroll center 17px; // for old IE, which doesn't support SVG
 }
 .ie6-8 a.fs-larger {
-  background: url('../images/bigA.png') no-repeat  scroll 0px 10px; // for old IE, which doesn't support SVG
+  background: url('../images/bigA.png') no-repeat  scroll center 11px; // for old IE, which doesn't support SVG
 }
 @media screen and (min-width: 40em) { // 640px
   .font-size-controls {
@@ -344,13 +429,13 @@ a.button {
 //-----------------------------------------------------------------------
 
 body[data-menu-position="open"] {
-  .font-size-controls,
+  .font-tools-trigger-container,
   .toc-link {
     display: none;
   }
 }
 body[data-menu-position="closed"] {
-  .font-size-controls,
+  .font-tools-trigger-container,
   .toc-link {
     display: block;
   }
@@ -362,3 +447,4 @@ body[data-menu-position="closed"] {
 .jPanelMenu-panel {
   background-color: #fff;
 }
+
