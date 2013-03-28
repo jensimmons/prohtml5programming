@@ -40,7 +40,7 @@
           box.css({'display': 'block', 'top': triggerTop, 'left': triggerLeft });
 
           if( type === 'toc' ) {
-            console.log('should scroll right');
+
             $(window).on('scroll.popbox.box' + popid, function (e) {
               var boxOuterHeight = box.outerHeight(true),
               windowOuterHeight = $(window).outerHeight(true),
@@ -93,7 +93,7 @@
     $(document).bind('click', function(event){
       if(!$(event.target).closest(settings['selector']).length){
         if(settings['persist'] === 'true' && $(event.target).closest(settings['box']).length) {
-          console.log('persist');
+
         } else {
           methods.close();
         }
@@ -105,7 +105,7 @@
 
     return this.each(function(){
       // $(this).css({'width': $(settings['box']).width()}); // Width needs to be set otherwise popbox will not move when window resized.
-      console.log( $(settings['popid']) );
+
       $(settings['open'], this).bind('click', methods.open);
       // $(settings['open'], this).parent().find(settings['close']).bind('click', function(event){
       //   event.preventDefault();
